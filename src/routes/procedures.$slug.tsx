@@ -39,7 +39,7 @@ function ProcedurePage() {
           <h1 className="mt-8 text-display text-[clamp(2.4rem,6vw,5rem)]">{p.name}</h1>
           <p className="mt-6 text-[17px] text-[var(--ink-dim)]">{p.oneLiner}</p>
           <ol className="mt-16 space-y-10">
-            {p.beats.map((b, i) => (
+            {p.beats.map((b: string, i: number) => (
               <li key={i} className="grid grid-cols-[60px_1fr] gap-6">
                 <span className="text-mono-label pt-2">0{i + 1}</span>
                 <p className="text-display text-2xl leading-snug">{b}</p>
