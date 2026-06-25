@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const steps = [
   { n: "01", title: "Consultation", body: "Symptoms heard. History reviewed. The first decision is whether intervention is needed at all." },
@@ -22,23 +22,16 @@ export function Journey() {
           <h2 className="mt-4 text-display text-[clamp(2rem,4.5vw,4rem)]">What happens to you.</h2>
         </div>
         <motion.div style={{ x }} className="flex gap-8 px-[5vw] will-change-transform">
-          {steps.map((s, i) => <JourneyCard key={s.n} {...s} progress={scrollYProgress} index={i} total={steps.length} />)}
+          {steps.map((s) => (
+            <article key={s.n} className="shrink-0 w-[78vw] sm:w-[60vw] lg:w-[48vw] max-w-[720px] rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-transparent p-10 lg:p-14">
+              <p className="text-mono-label">Stage {s.n}</p>
+              <h3 className="mt-6 text-display text-4xl lg:text-6xl">{s.title}</h3>
+              <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
+            </article>
+          ))}
         </motion.div>
       </div>
     </section>
   );
 }
 
-function JourneyCard({ n, title, body, progress, index, total }: { n: string; title: string; body: string; progress: MotionValue<number>; index: number; total: number }) {
-  const center = (index + 0.5) / total;
-  const span = 1 / total;
-  const scale = useTransform(progress, [center - span, center, center + span], [0.92, 1, 0.92]);
-  const opacity = useTransform(progress, [center - span, center, center + span], [0.4, 1, 0.4]);
-  return (
-    <motion.article style={{ scale, opacity }} className="shrink-0 w-[78vw] sm:w-[60vw] lg:w-[48vw] max-w-[720px] rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-transparent p-10 lg:p-14">
-      <p className="text-mono-label">Stage {n}</p>
-      <h3 className="mt-6 text-display text-4xl lg:text-6xl">{title}</h3>
-      <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--ink-dim)]">{body}</p>
-    </motion.article>
-  );
-}
