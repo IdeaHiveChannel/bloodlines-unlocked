@@ -9,38 +9,186 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ProceduresRouteImport } from './routes/procedures'
+import { Route as ExpertiseRouteImport } from './routes/expertise'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConditionsRouteImport } from './routes/conditions'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProceduresSlugRouteImport } from './routes/procedures.$slug'
+import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProceduresRoute = ProceduresRouteImport.update({
+  id: '/procedures',
+  path: '/procedures',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpertiseRoute = ExpertiseRouteImport.update({
+  id: '/expertise',
+  path: '/expertise',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConditionsRoute = ConditionsRouteImport.update({
+  id: '/conditions',
+  path: '/conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProceduresSlugRoute = ProceduresSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ProceduresRoute,
+} as any)
+const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ConditionsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/expertise': typeof ExpertiseRoute
+  '/procedures': typeof ProceduresRouteWithChildren
+  '/resources': typeof ResourcesRoute
+  '/conditions/$slug': typeof ConditionsSlugRoute
+  '/procedures/$slug': typeof ProceduresSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/expertise': typeof ExpertiseRoute
+  '/procedures': typeof ProceduresRouteWithChildren
+  '/resources': typeof ResourcesRoute
+  '/conditions/$slug': typeof ConditionsSlugRoute
+  '/procedures/$slug': typeof ProceduresSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/expertise': typeof ExpertiseRoute
+  '/procedures': typeof ProceduresRouteWithChildren
+  '/resources': typeof ResourcesRoute
+  '/conditions/$slug': typeof ConditionsSlugRoute
+  '/procedures/$slug': typeof ProceduresSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/conditions'
+    | '/contact'
+    | '/expertise'
+    | '/procedures'
+    | '/resources'
+    | '/conditions/$slug'
+    | '/procedures/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/conditions'
+    | '/contact'
+    | '/expertise'
+    | '/procedures'
+    | '/resources'
+    | '/conditions/$slug'
+    | '/procedures/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/conditions'
+    | '/contact'
+    | '/expertise'
+    | '/procedures'
+    | '/resources'
+    | '/conditions/$slug'
+    | '/procedures/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ConditionsRoute: typeof ConditionsRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  ExpertiseRoute: typeof ExpertiseRoute
+  ProceduresRoute: typeof ProceduresRouteWithChildren
+  ResourcesRoute: typeof ResourcesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/procedures': {
+      id: '/procedures'
+      path: '/procedures'
+      fullPath: '/procedures'
+      preLoaderRoute: typeof ProceduresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expertise': {
+      id: '/expertise'
+      path: '/expertise'
+      fullPath: '/expertise'
+      preLoaderRoute: typeof ExpertiseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conditions': {
+      id: '/conditions'
+      path: '/conditions'
+      fullPath: '/conditions'
+      preLoaderRoute: typeof ConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +196,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/procedures/$slug': {
+      id: '/procedures/$slug'
+      path: '/$slug'
+      fullPath: '/procedures/$slug'
+      preLoaderRoute: typeof ProceduresSlugRouteImport
+      parentRoute: typeof ProceduresRoute
+    }
+    '/conditions/$slug': {
+      id: '/conditions/$slug'
+      path: '/$slug'
+      fullPath: '/conditions/$slug'
+      preLoaderRoute: typeof ConditionsSlugRouteImport
+      parentRoute: typeof ConditionsRoute
+    }
   }
 }
 
+interface ConditionsRouteChildren {
+  ConditionsSlugRoute: typeof ConditionsSlugRoute
+}
+
+const ConditionsRouteChildren: ConditionsRouteChildren = {
+  ConditionsSlugRoute: ConditionsSlugRoute,
+}
+
+const ConditionsRouteWithChildren = ConditionsRoute._addFileChildren(
+  ConditionsRouteChildren,
+)
+
+interface ProceduresRouteChildren {
+  ProceduresSlugRoute: typeof ProceduresSlugRoute
+}
+
+const ProceduresRouteChildren: ProceduresRouteChildren = {
+  ProceduresSlugRoute: ProceduresSlugRoute,
+}
+
+const ProceduresRouteWithChildren = ProceduresRoute._addFileChildren(
+  ProceduresRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ConditionsRoute: ConditionsRouteWithChildren,
+  ContactRoute: ContactRoute,
+  ExpertiseRoute: ExpertiseRoute,
+  ProceduresRoute: ProceduresRouteWithChildren,
+  ResourcesRoute: ResourcesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

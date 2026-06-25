@@ -52,13 +52,13 @@ function ConditionPage() {
             <div className="bg-[#050B16] p-8">
               <p className="text-mono-label">Symptoms</p>
               <ul className="mt-4 space-y-2 text-[14px]">
-                {c.symptoms.map((s) => <li key={s}>· {s}</li>)}
+                {c.symptoms.map((s: string) => <li key={s}>· {s}</li>)}
               </ul>
             </div>
             <div className="bg-[#050B16] p-8">
               <p className="text-mono-label">Treatments offered</p>
               <ul className="mt-4 space-y-2 text-[14px]">
-                {c.treatments.map((t) => <li key={t}>· {t}</li>)}
+                {c.treatments.map((t: string) => <li key={t}>· {t}</li>)}
               </ul>
             </div>
           </div>
