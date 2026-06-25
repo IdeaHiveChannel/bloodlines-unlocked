@@ -46,17 +46,26 @@ function ProcedureStory({ index, name, oneLiner, beats }: { index: number; name:
 function Beat({ text, index, total, progress }: { text: string; index: number; total: number; progress: MotionValue<number> }) {
   const center = (index + 0.5) / total;
   const span = 1 / total;
-  const opacity = useTransform(progress, [center - span, center - span * 0.4, center + span * 0.4, center + span], [0, 1, 1, 0]);
-  const y = useTransform(progress, [center - span, center, center + span], [40, 0, -40]);
-  const blur = useTransform(progress, [center - span, center - span * 0.4, center + span * 0.4, center + span], [10, 0, 0, 10]);
+  const clamp = (n: number) => Math.max(0, Math.min(1, n));
+  const a = clamp(center - span);
+  const b = clamp(center - span * 0.4);
+  const c = clamp(center + span * 0.4);
+  const d = clamp(center + span);
+  // ensure strictly increasing
+  const eps = 0.0001;
+  const xa = a, xb = Math.max(xa + eps, b), xc = Math.max(xb + eps, c), xd = Math.max(xc + eps, d);
+  const opacity = useTransform(progress, [xa, xb, xc, xd], [0, 1, 1, 0]);
+  const y = useTransform(progress, [xa, (xb + xc) / 2, xd], [40, 0, -40]);
+  const filter = useTransform(progress, [xa, xb, xc, xd], ["blur(10px)", "blur(0px)", "blur(0px)", "blur(10px)"]);
   return (
-    <motion.div style={{ opacity, y, filter: useTransform(blur, (v) => `blur(${v}px)`) }}
+    <motion.div style={{ opacity, y, filter }}
       className="absolute inset-0 flex flex-col justify-center">
       <p className="text-mono-label">Beat · 0{index + 1}</p>
       <p className="mt-4 text-display text-2xl sm:text-3xl leading-tight max-w-md">{text}</p>
     </motion.div>
   );
 }
+
 
 function ProcedureCanvas({ progress, beats }: { slug: string; progress: MotionValue<number>; beats: number }) {
   // animated artery + catheter + balloon driven by scroll
