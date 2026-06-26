@@ -27,7 +27,7 @@ function Expertise() {
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
-          <p className="text-mono-label">Practice</p>
+          <p className="text-label">Practice</p>
           <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,6rem)] max-w-3xl">Areas of expertise.</h1>
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
             {pillars.map((p) => (
@@ -38,7 +38,7 @@ function Expertise() {
             ))}
           </div>
           <div className="mt-16">
-            <Link to="/conditions" className="text-mono-label underline" data-cursor="link">See conditions treated →</Link>
+            <Link to="/conditions" className="text-label underline" data-cursor="link">See conditions treated →</Link>
           </div>
         </div>
       </main>

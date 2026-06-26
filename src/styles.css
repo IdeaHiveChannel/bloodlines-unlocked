@@ -281,7 +281,7 @@
   line-height: 1.02;
 }
 
-@utility text-mono-label {
+@utility text-label {
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 11px;

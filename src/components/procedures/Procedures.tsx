@@ -6,7 +6,7 @@ export function Procedures() {
   return (
     <section className="relative bg-[#050B16]">
       <div className="mx-auto max-w-[1480px] px-6 sm:px-10 pt-32 pb-12">
-        <p className="text-mono-label">Chapter 04 · Intervention</p>
+        <p className="text-label">Chapter 04 · Intervention</p>
         <h2 className="mt-6 text-display text-[clamp(2.4rem,5vw,4.5rem)] max-w-3xl">
           Every procedure, told as a story.
         </h2>
@@ -26,7 +26,7 @@ function ProcedureStory({ index, name, oneLiner, beats }: { index: number; name:
     <div ref={ref} className="relative" style={{ height: `${beats.length * 70}vh` }}>
       <div className="sticky top-0 h-screen flex flex-col">
         <div className="mx-auto w-full max-w-[1480px] px-6 sm:px-10 pt-32">
-          <p className="text-mono-label">Procedure {String(index + 1).padStart(2, "0")}</p>
+          <p className="text-label">Procedure {String(index + 1).padStart(2, "0")}</p>
           <h3 className="mt-3 text-display text-[clamp(2rem,5vw,4rem)]">{name}</h3>
           <p className="mt-3 text-[14px] text-[var(--ink-dim)] max-w-md">{oneLiner}</p>
         </div>
@@ -60,7 +60,7 @@ function Beat({ text, index, total, progress }: { text: string; index: number; t
   return (
     <motion.div style={{ opacity, y, filter }}
       className="absolute inset-0 flex flex-col justify-center">
-      <p className="text-mono-label">Beat · 0{index + 1}</p>
+      <p className="text-label">Beat · 0{index + 1}</p>
       <p className="mt-4 text-display text-2xl sm:text-3xl leading-tight max-w-md">{text}</p>
     </motion.div>
   );

@@ -24,7 +24,7 @@ function ConditionsIndex() {
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
-          <p className="text-mono-label">Catalogue</p>
+          <p className="text-label">Catalogue</p>
           <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,6rem)] max-w-3xl">Conditions treated.</h1>
           <p className="mt-6 max-w-xl text-[14px] text-[var(--ink-dim)]">
             Each condition links to a focused explanation of what it is, what it feels like, and how it is treated through image-guided intervention.
@@ -32,14 +32,14 @@ function ConditionsIndex() {
           <div className="mt-16 space-y-16">
             {Object.entries(byRegion).map(([region, list]) => (
               <section key={region}>
-                <p className="text-mono-label">{labels[region] ?? region}</p>
+                <p className="text-label">{labels[region] ?? region}</p>
                 <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
                   {list.map((c) => (
                     <Link key={c.slug} to="/conditions/$slug" params={{ slug: c.slug }} data-cursor="link"
                       className="group bg-[#050B16] p-6 hover:bg-white/[0.03] transition-colors">
                       <h3 className="text-display text-2xl">{c.name}</h3>
                       <p className="mt-3 text-[13px] leading-relaxed text-[var(--ink-dim)] line-clamp-3">{c.intro}</p>
-                      <p className="mt-4 text-mono-label opacity-0 group-hover:opacity-100 transition-opacity">Read →</p>
+                      <p className="mt-4 text-label opacity-0 group-hover:opacity-100 transition-opacity">Read →</p>
                     </Link>
                   ))}
                 </div>

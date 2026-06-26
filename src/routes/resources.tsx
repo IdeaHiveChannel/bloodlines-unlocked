@@ -31,7 +31,7 @@ function Resources() {
     <>
       <main className="pt-36 pb-24 bg-[#050B16] min-h-screen">
         <div className="mx-auto max-w-3xl px-6 sm:px-10">
-          <p className="text-mono-label">Patient Education</p>
+          <p className="text-label">Patient Education</p>
           <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)]">Resources.</h1>
           <div className="mt-10 relative">
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-dim)]" />
@@ -44,12 +44,12 @@ function Resources() {
               <li key={i.type + i.name}>
                 <Link to={i.to} params={i.params} data-cursor="link"
                   className="grid grid-cols-[100px_1fr_auto] items-center gap-6 py-6 hover:bg-white/[0.02] px-2 transition-colors">
-                  <span className="text-mono-label">{i.type}</span>
+                  <span className="text-label">{i.type}</span>
                   <div>
                     <p className="text-display text-2xl">{i.name}</p>
                     <p className="mt-1 text-[13px] text-[var(--ink-dim)] line-clamp-1">{i.text}</p>
                   </div>
-                  <span className="text-mono-label">→</span>
+                  <span className="text-label">→</span>
                 </Link>
               </li>
             ))}

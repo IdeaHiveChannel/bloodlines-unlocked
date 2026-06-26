@@ -23,7 +23,7 @@ export function Anatomy() {
       <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
         <div className="flex items-end justify-between flex-wrap gap-4">
           <div>
-            <p className="text-mono-label">Chapter 02 · Anatomy</p>
+            <p className="text-label">Chapter 02 · Anatomy</p>
             <h2 className="mt-6 text-display text-[clamp(2.4rem,5vw,4.5rem)] max-w-2xl">
               Find where the disease lives.
             </h2>
@@ -91,7 +91,7 @@ export function Anatomy() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -8, filter: "blur(6px)" }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}>
-                <p className="text-mono-label">Region · {regions.find(r => r.id === active)?.label}</p>
+                <p className="text-label">Region · {regions.find(r => r.id === active)?.label}</p>
                 <h3 className="mt-4 text-display text-3xl sm:text-4xl">{list.length} condition{list.length === 1 ? "" : "s"} treated here</h3>
                 <div className="mt-8 space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
                   {list.map((c) => (
@@ -105,7 +105,7 @@ export function Anatomy() {
                             {c.treatments.map((t) => <span key={t}>· {t}</span>)}
                           </div>
                         </div>
-                        <span className="text-mono-label opacity-0 group-hover:opacity-100 transition-opacity shrink-0">Read →</span>
+                        <span className="text-label opacity-0 group-hover:opacity-100 transition-opacity shrink-0">Read →</span>
                       </div>
                     </Link>
                   ))}
