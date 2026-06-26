@@ -26,14 +26,14 @@ export function Navigation() {
           <Link to="/" className="group flex items-center gap-3" data-cursor="link">
             <span className="inline-block size-2 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <span className="leading-none">
-              <span className="block text-[13px] font-medium tracking-[0.04em]">Dr Mandeep Sagar</span>
-              <span className="block text-[9px] tracking-[0.28em] uppercase text-[var(--ink-dim)] mt-0.5">Vascular · Neuro Interventional</span>
+              <span className="block text-nav">Dr Mandeep Sagar</span>
+              <span className="block text-[9px] tracking-[0.28em] uppercase text-[var(--ink-dim)] mt-0.5 font-medium">Vascular · neuro interventional</span>
             </span>
           </Link>
           <ul className="hidden lg:flex items-center gap-7">
             {items.map((i) => (
               <li key={i.to}>
-                <Link to={i.to} className="group relative text-[12.5px] tracking-wide text-[var(--ink-dim)] hover:text-white transition-colors" data-cursor="link">
+                <Link to={i.to} className="group relative text-nav text-[var(--ink-dim)] hover:text-white transition-colors" data-cursor="link">
                   {i.label}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
                 </Link>
@@ -41,8 +41,8 @@ export function Navigation() {
             ))}
           </ul>
           <div className="flex items-center gap-3">
-            <Link to="/contact" className="hidden md:inline-flex rounded-full bg-white text-black px-4 py-2 text-[12px] tracking-wide hover:bg-[var(--accent)] hover:text-black transition-colors" data-cursor="cta">
-              Book Consultation
+            <Link to="/contact" className="hidden md:inline-flex rounded-full bg-white text-black px-5 py-2.5 text-button hover:bg-[var(--accent)] hover:text-black transition-colors" data-cursor="cta">
+              Book consultation
             </Link>
             <button className="lg:hidden text-white" onClick={() => setOpen(true)} aria-label="Menu" data-cursor="link">
               <Menu size={20} />
@@ -58,10 +58,10 @@ export function Navigation() {
           <ul className="flex flex-col items-center justify-center flex-1 gap-6">
             {items.map((i) => (
               <li key={i.to}>
-                <Link to={i.to} onClick={() => setOpen(false)} className="text-display text-4xl" data-cursor="link">{i.label}</Link>
+                <Link to={i.to} onClick={() => setOpen(false)} className="text-h2" data-cursor="link">{i.label}</Link>
               </li>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)} className="mt-6 rounded-full bg-white text-black px-6 py-3" data-cursor="cta">Book Consultation</Link>
+            <Link to="/contact" onClick={() => setOpen(false)} className="mt-6 rounded-full bg-white text-black px-7 py-3.5 text-button" data-cursor="cta">Book consultation</Link>
           </ul>
         </div>
       )}
