@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Calendar, MessageCircle, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 const tiles = [
-  { href: "/contact", icon: Calendar, label: "Book Appointment", sub: "Reserve a consultation slot" },
+  { href: "/contact", icon: Calendar, label: "Book appointment", sub: "Reserve a consultation slot" },
   { href: "https://wa.me/", icon: MessageCircle, label: "WhatsApp", sub: "Direct message", ext: true },
   { href: "tel:+", icon: Phone, label: "Call the clinic", sub: "Speak to the team" },
   { href: "#", icon: MapPin, label: "Directions", sub: "Find the clinic" },

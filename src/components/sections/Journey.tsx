@@ -18,7 +18,7 @@ export function Journey() {
     <section ref={ref} className="relative bg-[#050B16]" style={{ height: `${steps.length * 90}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
         <div className="mx-auto max-w-[1480px] px-6 sm:px-10 mb-12">
-          <p className="text-label">Patient Journey</p>
+          <p className="text-label">Patient journey</p>
           <h2 className="mt-4 text-display text-[clamp(2rem,4.5vw,4rem)]">What happens to you.</h2>
         </div>
         <motion.div style={{ x }} className="flex gap-8 px-[5vw] will-change-transform">

@@ -7,7 +7,7 @@ export function Doctor() {
   return (
     <section className="relative bg-[#050B16] py-32">
       <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
-        <p className="text-label">Chapter 06 · The Physician</p>
+        <p className="text-label">Chapter 06 · The physician</p>
         <div className="mt-10 grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
             <h2 className="text-display text-[clamp(2.4rem,5.5vw,5rem)]">
@@ -36,7 +36,7 @@ export function Doctor() {
 
             <div className="mt-10 flex gap-4">
               <Link to="/about" data-cursor="link" className="inline-flex rounded-full border border-white/15 px-5 py-3 text-[12.5px] tracking-wide hover:bg-white/5 transition-colors">Full profile</Link>
-              <Link to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-[12.5px] tracking-wide hover:bg-[var(--accent)] transition-colors">Book Consultation</Link>
+              <Link to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-[12.5px] tracking-wide hover:bg-[var(--accent)] transition-colors">Book consultation</Link>
             </div>
           </div>
           <div className="lg:col-span-5">
