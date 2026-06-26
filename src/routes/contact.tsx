@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
       <div className="pt-24"><Consultation /></div>
       <div className="bg-[#050B16] py-20 border-t border-white/[0.05]">
         <div className="mx-auto max-w-3xl px-6 sm:px-10 text-center">
-          <p className="text-mono-label">Clinic details</p>
+          <p className="text-label">Clinic details</p>
           <p className="mt-6 text-display text-3xl">Clinic address, phone, and hours will appear here once provided.</p>
           <p className="mt-6 text-[13px] text-[var(--ink-dim)] italic">No phone number or address has been published on this page until verified.</p>
         </div>

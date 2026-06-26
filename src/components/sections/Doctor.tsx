@@ -7,7 +7,7 @@ export function Doctor() {
   return (
     <section className="relative bg-[#050B16] py-32">
       <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
-        <p className="text-mono-label">Chapter 06 · The Physician</p>
+        <p className="text-label">Chapter 06 · The physician</p>
         <div className="mt-10 grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
             <h2 className="text-display text-[clamp(2.4rem,5.5vw,5rem)]">
@@ -28,7 +28,7 @@ export function Doctor() {
                 { k: "Setting", v: "Hybrid Cath Lab" },
               ].map((d) => (
                 <div key={d.k} className="bg-[#050B16] p-6">
-                  <p className="text-mono-label">{d.k}</p>
+                  <p className="text-label">{d.k}</p>
                   <p className="mt-3 text-[14px] text-[var(--ink)]">{d.v}</p>
                 </div>
               ))}
@@ -36,7 +36,7 @@ export function Doctor() {
 
             <div className="mt-10 flex gap-4">
               <Link to="/about" data-cursor="link" className="inline-flex rounded-full border border-white/15 px-5 py-3 text-[12.5px] tracking-wide hover:bg-white/5 transition-colors">Full profile</Link>
-              <Link to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-[12.5px] tracking-wide hover:bg-[var(--accent)] transition-colors">Book Consultation</Link>
+              <Link to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-[12.5px] tracking-wide hover:bg-[var(--accent)] transition-colors">Book consultation</Link>
             </div>
           </div>
           <div className="lg:col-span-5">
@@ -45,7 +45,7 @@ export function Doctor() {
                 className="absolute inset-0 h-full w-full object-cover object-top opacity-95" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050B16] via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6">
-                <p className="text-mono-label">On Practice</p>
+                <p className="text-label">On Practice</p>
                 <p className="mt-2 text-display text-xl max-w-[260px]">"The disease is approached where it lives — through the vessel itself."</p>
               </div>
             </div>

@@ -61,23 +61,23 @@ export function Hero() {
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
             <span className="size-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
-            <span className="text-mono-label">Chapter 01 · Arrival</span>
+            <span className="text-label">Chapter 01 · Arrival</span>
           </div>
-          <h1 className="mt-8 text-display text-[clamp(3.2rem,9vw,9rem)]">
+          <h1 className="mt-8 text-display-xxl">
             Restoring
             <br />
-            <span className="italic font-extralight text-[color-mix(in_oklab,var(--accent)_75%,white)]">blood flow.</span>
+            <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">blood flow.</span>
           </h1>
-          <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+          <p className="mt-8 max-w-xl text-body-lg text-[var(--ink-dim)]">
             Advanced vascular and neurointerventional procedures performed through pinpoint incisions, guided by real-time imaging. Greater precision. Faster recovery. Care that meets the disease where it lives.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link to="/contact" data-cursor="cta" className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-[13px] tracking-wide text-black hover:bg-[var(--accent)] transition-colors">
-              Book Consultation
+            <Link to="/contact" data-cursor="cta" className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-button text-black hover:bg-[var(--accent)] transition-colors">
+              Book consultation
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link to="/procedures" data-cursor="link" className="inline-flex items-center gap-3 rounded-full border border-white/15 px-6 py-3.5 text-[13px] tracking-wide hover:bg-white/5 transition-colors">
-              Explore Treatments
+            <Link to="/procedures" data-cursor="link" className="inline-flex items-center gap-3 rounded-full border border-white/15 px-7 py-3.5 text-button hover:bg-white/5 transition-colors">
+              Explore treatments
             </Link>
           </div>
         </motion.div>
@@ -107,7 +107,7 @@ export function Hero() {
               }} />
             )}
           </div>
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-mono-label whitespace-nowrap">
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-label whitespace-nowrap">
             Hover to reveal vascular anatomy
           </div>
         </motion.div>
@@ -115,7 +115,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-mono-label">Scroll</span>
+        <span className="text-label">Scroll</span>
         <svg viewBox="0 0 4 80" width="4" height="80">
           <line x1="2" y1="0" x2="2" y2="80" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
           <line x1="2" y1="0" x2="2" y2="20" stroke="var(--accent)" strokeWidth="2"

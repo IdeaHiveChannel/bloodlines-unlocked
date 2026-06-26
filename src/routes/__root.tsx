@@ -20,7 +20,7 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
-        <p className="text-mono-label">404 — off the map</p>
+        <p className="text-label">404 — off the map</p>
         <h1 className="text-display mt-6 text-6xl">This page does not exist.</h1>
         <div className="mt-8">
           <Link
@@ -44,7 +44,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
-        <p className="text-mono-label">interruption</p>
+        <p className="text-label">interruption</p>
         <h1 className="text-display mt-6 text-5xl">Something stopped the flow.</h1>
         <p className="mt-4 text-sm text-[var(--ink-dim)]">Try once more, or return home.</p>
         <div className="mt-8 flex justify-center gap-3">
@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200..600&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" },
     ],
   }),
   shellComponent: RootShell,

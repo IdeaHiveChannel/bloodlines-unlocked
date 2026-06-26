@@ -12,7 +12,7 @@ export function Recovery() {
   return (
     <section className="relative bg-[#050B16] py-32">
       <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
-        <p className="text-mono-label">Chapter 05 · Recovery</p>
+        <p className="text-label">Chapter 05 · Recovery</p>
         <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-3xl">
           Minimally invasive means measurably faster.
         </h2>
@@ -28,7 +28,7 @@ export function Recovery() {
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="relative rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6">
               <div className="size-3 rounded-full bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
-              <p className="mt-4 text-mono-label">{s.t}</p>
+              <p className="mt-4 text-label">{s.t}</p>
               <h3 className="mt-2 text-display text-2xl">{s.title}</h3>
               <p className="mt-3 text-[13px] leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
             </motion.li>
