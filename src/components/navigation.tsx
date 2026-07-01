@@ -5,12 +5,8 @@ import { Menu, X } from "lucide-react";
 const items = [
   { to: "/about", label: "About" },
   { to: "/expertise", label: "Expertise" },
-  { to: "/anatomy", label: "Anatomy" },
-  { to: "/procedures", label: "Procedures" },
   { to: "/conditions", label: "Conditions" },
-  { to: "/results", label: "Results" },
-  { to: "/recovery", label: "Recovery" },
-  { to: "/journey", label: "Journey" },
+  { to: "/procedures", label: "Procedures" },
   { to: "/resources", label: "Resources" },
   { to: "/contact", label: "Contact" },
 ];

@@ -9,43 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ResultsRouteImport } from './routes/results'
 import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as RecoveryRouteImport } from './routes/recovery'
 import { Route as ProceduresRouteImport } from './routes/procedures'
-import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as ExpertiseRouteImport } from './routes/expertise'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConditionsRouteImport } from './routes/conditions'
-import { Route as AnatomyRouteImport } from './routes/anatomy'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProceduresSlugRouteImport } from './routes/procedures.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
-const ResultsRoute = ResultsRouteImport.update({
-  id: '/results',
-  path: '/results',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RecoveryRoute = RecoveryRouteImport.update({
-  id: '/recovery',
-  path: '/recovery',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProceduresRoute = ProceduresRouteImport.update({
   id: '/procedures',
   path: '/procedures',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JourneyRoute = JourneyRouteImport.update({
-  id: '/journey',
-  path: '/journey',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExpertiseRoute = ExpertiseRouteImport.update({
@@ -61,11 +42,6 @@ const ContactRoute = ContactRouteImport.update({
 const ConditionsRoute = ConditionsRouteImport.update({
   id: '/conditions',
   path: '/conditions',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AnatomyRoute = AnatomyRouteImport.update({
-  id: '/anatomy',
-  path: '/anatomy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -92,30 +68,22 @@ const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/anatomy': typeof AnatomyRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
-  '/journey': typeof JourneyRoute
   '/procedures': typeof ProceduresRouteWithChildren
-  '/recovery': typeof RecoveryRoute
   '/resources': typeof ResourcesRoute
-  '/results': typeof ResultsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/anatomy': typeof AnatomyRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
-  '/journey': typeof JourneyRoute
   '/procedures': typeof ProceduresRouteWithChildren
-  '/recovery': typeof RecoveryRoute
   '/resources': typeof ResourcesRoute
-  '/results': typeof ResultsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
 }
@@ -123,15 +91,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/anatomy': typeof AnatomyRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
-  '/journey': typeof JourneyRoute
   '/procedures': typeof ProceduresRouteWithChildren
-  '/recovery': typeof RecoveryRoute
   '/resources': typeof ResourcesRoute
-  '/results': typeof ResultsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
 }
@@ -140,45 +104,33 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/anatomy'
     | '/conditions'
     | '/contact'
     | '/expertise'
-    | '/journey'
     | '/procedures'
-    | '/recovery'
     | '/resources'
-    | '/results'
     | '/conditions/$slug'
     | '/procedures/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/anatomy'
     | '/conditions'
     | '/contact'
     | '/expertise'
-    | '/journey'
     | '/procedures'
-    | '/recovery'
     | '/resources'
-    | '/results'
     | '/conditions/$slug'
     | '/procedures/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/anatomy'
     | '/conditions'
     | '/contact'
     | '/expertise'
-    | '/journey'
     | '/procedures'
-    | '/recovery'
     | '/resources'
-    | '/results'
     | '/conditions/$slug'
     | '/procedures/$slug'
   fileRoutesById: FileRoutesById
@@ -186,26 +138,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AnatomyRoute: typeof AnatomyRoute
   ConditionsRoute: typeof ConditionsRouteWithChildren
   ContactRoute: typeof ContactRoute
   ExpertiseRoute: typeof ExpertiseRoute
-  JourneyRoute: typeof JourneyRoute
   ProceduresRoute: typeof ProceduresRouteWithChildren
-  RecoveryRoute: typeof RecoveryRoute
   ResourcesRoute: typeof ResourcesRoute
-  ResultsRoute: typeof ResultsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/results': {
-      id: '/results'
-      path: '/results'
-      fullPath: '/results'
-      preLoaderRoute: typeof ResultsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/resources': {
       id: '/resources'
       path: '/resources'
@@ -213,25 +154,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/recovery': {
-      id: '/recovery'
-      path: '/recovery'
-      fullPath: '/recovery'
-      preLoaderRoute: typeof RecoveryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/procedures': {
       id: '/procedures'
       path: '/procedures'
       fullPath: '/procedures'
       preLoaderRoute: typeof ProceduresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/journey': {
-      id: '/journey'
-      path: '/journey'
-      fullPath: '/journey'
-      preLoaderRoute: typeof JourneyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/expertise': {
@@ -253,13 +180,6 @@ declare module '@tanstack/react-router' {
       path: '/conditions'
       fullPath: '/conditions'
       preLoaderRoute: typeof ConditionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/anatomy': {
-      id: '/anatomy'
-      path: '/anatomy'
-      fullPath: '/anatomy'
-      preLoaderRoute: typeof AnatomyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -320,16 +240,22 @@ const ProceduresRouteWithChildren = ProceduresRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AnatomyRoute: AnatomyRoute,
   ConditionsRoute: ConditionsRouteWithChildren,
   ContactRoute: ContactRoute,
   ExpertiseRoute: ExpertiseRoute,
-  JourneyRoute: JourneyRoute,
   ProceduresRoute: ProceduresRouteWithChildren,
-  RecoveryRoute: RecoveryRoute,
   ResourcesRoute: ResourcesRoute,
-  ResultsRoute: ResultsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
