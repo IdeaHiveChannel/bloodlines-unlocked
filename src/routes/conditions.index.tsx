@@ -3,6 +3,8 @@ import { conditions } from "../lib/content";
 import { conditionToPillar } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/conditions/")({
   head: () => ({
     meta: [
@@ -12,14 +14,16 @@ export const Route = createFileRoute("/conditions/")({
         content:
           "The full disease library treated through image-guided intervention — from stroke and aneurysms to fibroids, liver tumours, diabetic foot and varicose veins.",
       },
-      { property: "og:title", content: "Conditions treated" },
+      { property: "og:title", content: "Conditions treated by Dr. Mandeep Sagar" },
       {
         property: "og:description",
         content: "Featured guides and the complete catalogue of conditions treated without major surgery.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/conditions` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/conditions` }],
   }),
   component: ConditionsIndex,
 });

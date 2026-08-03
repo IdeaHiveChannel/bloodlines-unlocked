@@ -2,14 +2,20 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { procedures } from "../lib/content";
 import { Footer } from "../components/sections/Footer";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/procedures/")({
   head: () => ({
     meta: [
       { title: "Procedures — Dr. Mandeep Sagar" },
-      { name: "description", content: "Image-guided vascular and neurointerventional procedures, told beat by beat." },
-      { property: "og:title", content: "Procedures" },
-      { property: "og:description", content: "Angioplasty, thrombectomy, aneurysm repair, vein ablation — every procedure as a story." },
+      { name: "description", content: "Angioplasty, thrombectomy, aneurysm repair, embolization and vein ablation — image-guided procedures explained beat by beat." },
+      { property: "og:title", content: "Procedures performed by Dr. Mandeep Sagar" },
+      { property: "og:description", content: "Angioplasty, thrombectomy, aneurysm repair, embolization and vein ablation — every procedure told as a story." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/procedures` },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/procedures` }],
   }),
   component: ProceduresIndex,
 });

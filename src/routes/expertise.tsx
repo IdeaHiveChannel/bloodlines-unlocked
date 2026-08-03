@@ -18,14 +18,28 @@ const pillars = [
 ];
 
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/expertise")({
   head: () => ({
     meta: [
-      { title: "Expertise — Dr. Mandeep Sagar" },
-      { name: "description", content: "Areas of vascular and neurointerventional practice." },
-      { property: "og:title", content: "Expertise" },
-      { property: "og:description", content: "The full scope of image-guided vascular intervention." },
+      { title: "Areas of expertise — Dr. Mandeep Sagar" },
+      {
+        name: "description",
+        content:
+          "Neurointervention, stroke care, peripheral vascular and aortic disease, venous disease, interventional oncology, thyroid, renal and dialysis access work.",
+      },
+      { property: "og:title", content: "Areas of expertise — Dr. Mandeep Sagar" },
+      {
+        property: "og:description",
+        content:
+          "The full scope of image-guided vascular, neuro and oncologic intervention practised by Dr. Mandeep Sagar.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/expertise` },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/expertise` }],
   }),
   component: Expertise,
 });

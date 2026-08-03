@@ -4,16 +4,20 @@ import { Search } from "lucide-react";
 import { conditions, procedures, resources } from "../lib/content";
 import { Footer } from "../components/sections/Footer";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — Dr. Mandeep Sagar" },
-      { name: "description", content: "Search conditions, procedures, animated films, patient guides and recovery notes." },
-      { property: "og:title", content: "Patient Resources" },
-      { property: "og:description", content: "Educational material on vascular and neurointerventional care." },
+      { title: "Patient resources — Dr. Mandeep Sagar" },
+      { name: "description", content: "Search conditions, procedures, animated films, patient guides and recovery notes on image-guided vascular treatment." },
+      { property: "og:title", content: "Patient resources — Dr. Mandeep Sagar" },
+      { property: "og:description", content: "Searchable educational material on vascular and neurointerventional care, written for patients and families." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/resources` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/resources` }],
   }),
   component: Resources,
 });
