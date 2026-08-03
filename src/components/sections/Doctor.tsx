@@ -44,9 +44,10 @@ export function Doctor() {
               <img src={portraitAsset.url} alt="Dr. Mandeep Sagar"
                 className="absolute inset-0 h-full w-full object-cover object-top opacity-95" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050B16] via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6">
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
                 <p className="text-label">On Practice</p>
-                <p className="mt-2 text-display text-xl max-w-[260px]">"The disease is approached where it lives — through the vessel itself."</p>
+                <p className="mt-2 text-h3 max-w-[260px]">"The disease is approached where it lives — through the vessel itself."</p>
+
               </div>
             </div>
             <div className="mt-6 grid grid-cols-2 gap-6">
