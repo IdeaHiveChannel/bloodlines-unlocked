@@ -1,26 +1,36 @@
-import aneurysmCoiling from "../assets/video-aneurysm-coiling.mp4.asset.json";
-import aneurysmRepair from "../assets/video-aneurysm-repair.mp4.asset.json";
-import thrombectomy from "../assets/video-thrombectomy.mp4.asset.json";
-import varicose from "../assets/video-varicose-vein-ablation.mp4.asset.json";
+// Media coverage, publications, awards and talks.
+// Entries are added only once verified — the timeline stays empty rather than filled.
 
-export type ProcedureVideoMeta = { url: string; caption: string };
+export type MediaKind = "media" | "publication" | "award" | "talk";
 
-/** Procedure slug → animation film shown at the top of its page. */
-export const procedureVideos: Record<string, ProcedureVideoMeta> = {
-  "aneurysm-coiling": {
-    url: aneurysmCoiling.url,
-    caption: "Cerebral aneurysm coiling — the sac is packed from within the vessel.",
-  },
-  thrombectomy: {
-    url: thrombectomy.url,
-    caption: "Mechanical thrombectomy — the clot is captured and withdrawn.",
-  },
-  "aneurysm-repair": {
-    url: aneurysmRepair.url,
-    caption: "Endovascular aneurysm repair — a stent graft is deployed inside the aorta.",
-  },
-  "varicose-vein-ablation": {
-    url: varicose.url,
-    caption: "Endovenous ablation — the failing vein is sealed along its length.",
-  },
+export type MediaEntry = {
+  year: string;
+  kind: MediaKind;
+  title: string;
+  /** Outlet, journal, society or awarding body. */
+  outlet: string;
+  summary: string;
+  /** External link to the article, paper or citation. */
+  url?: string;
+  /** Disease guide slug this entry relates to, when applicable. */
+  guide?: string;
 };
+
+export const mediaKinds: { key: MediaKind; label: string }[] = [
+  { key: "media", label: "Media" },
+  { key: "publication", label: "Publications" },
+  { key: "award", label: "Awards" },
+  { key: "talk", label: "Talks" },
+];
+
+export const mediaEntries: MediaEntry[] = [];
+
+export function groupByYear(entries: MediaEntry[]) {
+  const map = new Map<string, MediaEntry[]>();
+  for (const e of entries) {
+    const list = map.get(e.year) ?? [];
+    list.push(e);
+    map.set(e.year, list);
+  }
+  return [...map.entries()].sort((a, b) => Number(b[0]) - Number(a[0]));
+}
