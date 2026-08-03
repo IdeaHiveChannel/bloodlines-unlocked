@@ -56,7 +56,7 @@ export function ExpertiseTimeline() {
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="mt-4 max-w-2xl text-[14.5px] leading-relaxed text-[var(--ink-dim)]">
+                      <p className="mt-4 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
                         {m.summary}
                       </p>
                       {m.to && (

@@ -40,7 +40,7 @@ function ProcedurePage() {
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <Link to="/procedures" className="text-label" data-cursor="link">← All procedures</Link>
           <h1 className="text-display-xl mt-8">{p.name}</h1>
-          <p className="mt-6 text-[17px] text-[var(--ink-dim)]">{p.oneLiner}</p>
+          <p className="mt-6 text-body text-[var(--ink-dim)]">{p.oneLiner}</p>
           {video && <ProcedureVideo video={video} />}
           <ol className="mt-16 space-y-10">
             {p.beats.map((b: string, i: number) => (

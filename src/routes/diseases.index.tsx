@@ -37,7 +37,7 @@ function DiseasesIndex() {
           <h1 className="text-display-xl mt-6 max-w-3xl">
             Fourteen conditions, explained end to end.
           </h1>
-          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+          <p className="mt-6 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
             Each guide runs from the first symptom to the final follow-up — what it is, which tests
             answer it, every treatment route, how it is treated here, and what recovery actually looks
             like.
@@ -62,7 +62,7 @@ function DiseasesIndex() {
                         </span>
                       )}
                     </h2>
-                    <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-[var(--ink-dim)]">
+                    <p className="mt-3 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
                       {p.summary}
                     </p>
                   </div>

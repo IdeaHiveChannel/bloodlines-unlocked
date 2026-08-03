@@ -13,10 +13,10 @@ export function Doctor() {
             <h2 className="text-display-xl">
               A practice built around image-guided precision.
             </h2>
-            <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+            <p className="mt-8 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
               Dr. Mandeep Sagar is a Vascular and Neuro Interventional Radiologist. The work spans the full vascular system — from cerebral aneurysms to below-knee revascularisation — performed through pinpoint access, under real-time imaging.
             </p>
-            <p className="mt-6 max-w-xl text-[13px] leading-relaxed text-[var(--ink-dim)] italic">
+            <p className="mt-6 max-w-xl text-caption leading-relaxed text-[var(--ink-dim)] italic">
               Verified credentials, fellowships, hospital affiliations and publications will be listed here once supplied. No claims are made on this page without source.
             </p>
 
@@ -29,14 +29,14 @@ export function Doctor() {
               ].map((d) => (
                 <div key={d.k} className="bg-[#050B16] p-6">
                   <p className="text-label">{d.k}</p>
-                  <p className="mt-3 text-[14px] text-[var(--ink)]">{d.v}</p>
+                  <p className="mt-3 text-small text-[var(--ink)]">{d.v}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-10 flex gap-4">
-              <Link to="/about" data-cursor="link" className="inline-flex rounded-full border border-white/15 px-5 py-3 text-[12.5px] tracking-wide hover:bg-white/5 transition-colors">Full profile</Link>
-              <Link to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-[12.5px] tracking-wide hover:bg-[var(--accent)] transition-colors">Book consultation</Link>
+              <Link to="/about" data-cursor="link" className="inline-flex rounded-full border border-white/15 px-5 py-3 text-caption tracking-wide hover:bg-white/5 transition-colors">Full profile</Link>
+              <Link to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-caption tracking-wide hover:bg-[var(--accent)] transition-colors">Book consultation</Link>
             </div>
           </div>
           <div className="lg:col-span-5">

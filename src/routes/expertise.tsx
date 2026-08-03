@@ -41,7 +41,7 @@ function Expertise() {
             {pillars.map((p) => (
               <div key={p.t} className="bg-[#050B16] p-10">
                 <h2 className="text-h3">{p.t}</h2>
-                <p className="mt-4 text-[14px] leading-relaxed text-[var(--ink-dim)]">{p.body}</p>
+                <p className="mt-4 text-small leading-relaxed text-[var(--ink-dim)]">{p.body}</p>
               </div>
             ))}
           </div>
@@ -50,7 +50,7 @@ function Expertise() {
             <h2 className="text-h1 mt-6 max-w-2xl">
               Training, teaching, and the practice it built.
             </h2>
-            <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-[var(--ink-dim)]">
+            <p className="mt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
               In sequence — foundation, fellowship, high-volume practice, and the international
               courses that keep technique current.
             </p>

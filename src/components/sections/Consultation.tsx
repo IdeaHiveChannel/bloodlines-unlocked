@@ -44,7 +44,7 @@ export function Consultation() {
         <h2 className="text-display-xl mt-6 max-w-3xl">
           When you're ready, we're here.
         </h2>
-        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+        <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
           Whether you're seeking a diagnosis, a second opinion or treatment options, the first step is
           understanding the condition. Share your reports, speak with the team or schedule a consultation.
         </p>
@@ -55,7 +55,7 @@ export function Consultation() {
               <div className="group relative h-full rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 hover:bg-white/[0.05] hover:border-white/15 transition-all duration-300">
                 <Icon size={20} className="text-[var(--accent)]" />
                 <p className="text-card-title mt-10">{t.label}</p>
-                <p className="mt-2 text-[13px] text-[var(--ink-dim)]">{t.sub}</p>
+                <p className="mt-2 text-caption text-[var(--ink-dim)]">{t.sub}</p>
                 <ArrowUpRight
                   size={16}
                   className="absolute top-8 right-8 text-[var(--ink-dim)] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
@@ -73,7 +73,7 @@ export function Consultation() {
             );
           })}
         </div>
-        <p className="mt-8 text-[12px] text-[var(--ink-dim)]">
+        <p className="mt-8 text-caption text-[var(--ink-dim)]">
           Reports can be shared directly on WhatsApp — PDFs, CD images, angiography stills or photographs of a wound.
         </p>
       </div>

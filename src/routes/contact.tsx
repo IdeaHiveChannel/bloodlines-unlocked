@@ -29,12 +29,12 @@ export const Route = createFileRoute("/contact")({
                 className="bg-[#050B16] p-8 hover:bg-white/[0.03] transition-colors">
                 <p className="text-label">Clinic</p>
                 <p className="text-h3 mt-4">{l.city}</p>
-                <p className="mt-2 text-[13px] text-[var(--ink-dim)]">{l.state}</p>
+                <p className="mt-2 text-caption text-[var(--ink-dim)]">{l.state}</p>
                 <p className="mt-6 text-label">Open in maps →</p>
               </a>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-[14px]">
+          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-small">
             <a href={contact.phoneHref} data-cursor="cta" className="text-[var(--ink)]">
               {contact.phoneDisplay}
             </a>
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/contact")({
               {contact.email}
             </a>
           </div>
-          <p className="mt-6 text-[13px] text-[var(--ink-dim)]">
+          <p className="mt-6 text-caption text-[var(--ink-dim)]">
             Consulting days and clinic addresses for each city are confirmed at the time of booking.
           </p>
         </div>

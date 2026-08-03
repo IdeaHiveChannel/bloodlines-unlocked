@@ -50,7 +50,7 @@ function ConditionsIndex() {
           <h1 className="text-display-xl mt-6 max-w-3xl">
             Conditions treated.
           </h1>
-          <p className="mt-6 max-w-xl text-[14px] leading-relaxed text-[var(--ink-dim)]">
+          <p className="mt-6 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
             Each condition links to a focused explanation of what it is, what it feels like, and how
             it is treated through image-guided intervention. The featured diseases carry a complete
             guide — symptoms, causes, diagnosis, treatment options, recovery and questions.
@@ -69,10 +69,10 @@ function ConditionsIndex() {
                 >
                   <p className="text-label">{labels[c.region] ?? c.region}</p>
                   <h2 className="text-card-title mt-4">{c.name}</h2>
-                  <p className="mt-3 text-[13px] leading-relaxed text-[var(--ink-dim)] line-clamp-3">
+                  <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)] line-clamp-3">
                     {c.intro}
                   </p>
-                  <p className="mt-5 text-[12px] tracking-[0.16em] uppercase text-[var(--accent)]">
+                  <p className="mt-5 text-caption tracking-[0.16em] uppercase text-[var(--accent)]">
                     Complete guide →
                   </p>
                 </Link>
@@ -95,7 +95,7 @@ function ConditionsIndex() {
                       className="group bg-[#050B16] p-6 hover:bg-white/[0.03] transition-colors"
                     >
                       <h3 className="text-card-title">{c.name}</h3>
-                      <p className="mt-3 text-[13px] leading-relaxed text-[var(--ink-dim)] line-clamp-3">
+                      <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)] line-clamp-3">
                         {c.intro}
                       </p>
                       <p className="mt-4 text-label opacity-0 group-hover:opacity-100 transition-opacity">

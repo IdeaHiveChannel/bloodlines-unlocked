@@ -34,7 +34,7 @@ export function Transition() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="mx-auto mt-6 max-w-2xl text-[14.5px] leading-relaxed text-[var(--ink-dim)]"
+          className="mx-auto mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]"
         >
           Image-guided intervention reaches the disease from within, preserving healthy tissue and
           reducing recovery wherever appropriate.

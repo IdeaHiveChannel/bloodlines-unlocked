@@ -28,7 +28,7 @@ export function Navigation() {
             <span className="inline-block size-2 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <span className="min-w-0 leading-none">
               <span className="block truncate text-nav">Dr Mandeep Sagar</span>
-              <span className="mt-0.5 hidden text-[9px] font-medium uppercase tracking-[0.24em] text-[var(--ink-dim)] xs:block">Vascular · neuro interventional</span>
+              <span className="mt-0.5 hidden text-[0.6875rem] font-medium uppercase tracking-[0.24em] text-[var(--ink-dim)] xs:block">Vascular · neuro interventional</span>
             </span>
           </Link>
           <ul className="hidden items-center gap-5 lg:flex xl:gap-7">

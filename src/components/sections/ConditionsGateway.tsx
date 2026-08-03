@@ -12,7 +12,7 @@ export function ConditionsGateway() {
           <h2 className="text-display-xl lg:col-span-6">
             Different diseases. One philosophy.
           </h2>
-          <p className="lg:col-span-6 lg:pt-4 max-w-xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+          <p className="lg:col-span-6 lg:pt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
             Every condition has its own cause, its own behaviour and its own treatment pathway.
             Explore how image-guided intervention is used across the body — from emergency stroke
             care to limb salvage, thyroid nodules and liver tumours.
@@ -39,7 +39,7 @@ export function ConditionsGateway() {
                   <span className="text-h1 block transition-colors group-hover:text-[color-mix(in_oklab,var(--accent)_75%,white)]">
                     {p.name}
                   </span>
-                  <span className="mt-2 block text-[13.5px] leading-relaxed text-[var(--ink-dim)] max-w-2xl line-clamp-1 sm:line-clamp-none">
+                  <span className="mt-2 block text-caption leading-relaxed text-[var(--ink-dim)] max-w-2xl line-clamp-1 sm:line-clamp-none">
                     {p.summary}
                   </span>
                 </span>

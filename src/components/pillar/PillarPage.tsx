@@ -49,7 +49,7 @@ function Bullets({ items }: { items: string[] }) {
   return (
     <ul className="grid gap-3 sm:grid-cols-2">
       {items.map((s) => (
-        <li key={s} className="flex gap-3 text-[15px] leading-relaxed text-[var(--ink-dim)]">
+        <li key={s} className="flex gap-3 text-small leading-relaxed text-[var(--ink-dim)]">
           <span className="mt-2 inline-block size-1 shrink-0 rounded-full bg-[var(--accent)]" />
           <span>{s}</span>
         </li>
@@ -127,10 +127,10 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             <h1 className="text-display-xl mt-5 max-w-4xl">
               {pillar.heroQuote}
             </h1>
-            <p className="mt-4 text-[15px] uppercase tracking-[0.22em] text-[var(--ink-dim)]">
+            <p className="mt-4 text-small uppercase tracking-[0.22em] text-[var(--ink-dim)]">
               {pillar.title}
             </p>
-            <p className="mt-8 max-w-2xl text-[17px] leading-relaxed text-[var(--ink-dim)]">
+            <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">
               {pillar.heroLead}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -174,7 +174,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               {pillar.warningSigns.map((w) => (
                 <li
                   key={w}
-                  className="rounded-xl border border-[var(--accent)]/25 bg-[var(--accent)]/[0.05] px-5 py-4 text-[15px] leading-relaxed"
+                  className="rounded-xl border border-[var(--accent)]/25 bg-[var(--accent)]/[0.05] px-5 py-4 text-small leading-relaxed"
                 >
                   {w}
                 </li>
@@ -189,7 +189,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 <li key={d.step} className="grid gap-4 py-6 sm:grid-cols-[60px_180px_1fr]">
                   <span className="text-label pt-1">0{i + 1}</span>
                   <p className="text-display text-xl">{d.step}</p>
-                  <p className="text-[15px] leading-relaxed text-[var(--ink-dim)]">{d.detail}</p>
+                  <p className="text-small leading-relaxed text-[var(--ink-dim)]">{d.detail}</p>
                 </li>
               ))}
             </ol>
@@ -201,7 +201,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               {pillar.tests.map((t) => (
                 <div key={t.name} className="bg-[#050B16] p-6">
                   <h3 className="text-display text-xl">{t.name}</h3>
-                  <p className="mt-3 text-[14px] leading-relaxed text-[var(--ink-dim)]">{t.why}</p>
+                  <p className="mt-3 text-small leading-relaxed text-[var(--ink-dim)]">{t.why}</p>
                 </div>
               ))}
             </div>
@@ -216,7 +216,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                     <p className="text-display text-xl">{t.name}</p>
                     <p className="mt-1 text-label">{t.kind}</p>
                   </div>
-                  <p className="text-[15px] leading-relaxed text-[var(--ink-dim)]">{t.detail}</p>
+                  <p className="text-small leading-relaxed text-[var(--ink-dim)]">{t.detail}</p>
                 </li>
               ))}
             </ul>
@@ -228,7 +228,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               {pillar.approach.map((a, i) => (
                 <li key={a} className="grid grid-cols-[54px_1fr] gap-5">
                   <span className="text-label pt-2">0{i + 1}</span>
-                  <p className="text-[16px] leading-relaxed">{a}</p>
+                  <p className="text-body leading-relaxed">{a}</p>
                 </li>
               ))}
             </ol>
@@ -248,7 +248,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                     >
                       <div>
                         <p className="text-card-title">{entry.name}</p>
-                        <p className="mt-2 text-[14px] text-[var(--ink-dim)]">{entry.oneLiner}</p>
+                        <p className="mt-2 text-small text-[var(--ink-dim)]">{entry.oneLiner}</p>
                       </div>
                       <span className="text-label">→</span>
                     </Link>
@@ -256,7 +256,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 ) : (
                   <li key={slug} className="px-2 py-6">
                     <p className="text-card-title">{slugToLabel(slug)}</p>
-                    <p className="mt-2 text-[14px] text-[var(--ink-dim)]">
+                    <p className="mt-2 text-small text-[var(--ink-dim)]">
                       Performed through a small puncture under image guidance — discussed in detail at consultation.
                     </p>
                   </li>
@@ -272,7 +272,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 <li key={r.when} className="relative pb-9 last:pb-0">
                   <span className="absolute -left-[37px] top-2 size-2 rounded-full bg-[var(--accent)]" />
                   <p className="text-label">{r.when}</p>
-                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--ink-dim)]">{r.what}</p>
+                  <p className="mt-2 text-small leading-relaxed text-[var(--ink-dim)]">{r.what}</p>
                 </li>
               ))}
             </ol>
@@ -293,13 +293,13 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             <div className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillar.faqs.map((f) => (
                 <details key={f.q} className="group py-5" data-cursor="link">
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[16px] leading-snug marker:hidden">
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-body leading-snug marker:hidden">
                     <span>{f.q}</span>
                     <span className="mt-1 shrink-0 text-[var(--ink-dim)] transition-transform group-open:rotate-45">
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[var(--ink-dim)]">{f.a}</p>
+                  <p className="mt-3 max-w-3xl text-small leading-relaxed text-[var(--ink-dim)]">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -307,7 +307,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
 
           {/* 14 */}
           <Section id="patient-stories" index={14} label="Patient stories" title="Verified accounts only.">
-            <p className="max-w-2xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+            <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
               No testimonials are published here yet. Patient accounts will appear only once they are
               consented and verified — nothing on this page is written on a patient's behalf.
             </p>
@@ -325,7 +325,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 ))}
               </div>
             ) : (
-              <p className="max-w-2xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+              <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
                 Animated films for this condition are being produced. In the meantime, the procedure
                 pages above set out each step in sequence.
               </p>
@@ -338,7 +338,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               {pillar.relatedSymptoms.map((s) => (
                 <li
                   key={s}
-                  className="rounded-full border border-white/[0.1] px-4 py-2 text-[13px] text-[var(--ink-dim)]"
+                  className="rounded-full border border-white/[0.1] px-4 py-2 text-caption text-[var(--ink-dim)]"
                 >
                   {s}
                 </li>
@@ -371,7 +371,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                       className="block h-full p-6 transition-colors hover:bg-white/[0.03]"
                     >
                       <p className="text-display text-xl">{r.condition?.name ?? slugToLabel(r.slug)}</p>
-                      <p className="mt-3 line-clamp-2 text-[13px] text-[var(--ink-dim)]">
+                      <p className="mt-3 line-clamp-2 text-caption text-[var(--ink-dim)]">
                         {r.condition?.intro}
                       </p>
                     </Link>

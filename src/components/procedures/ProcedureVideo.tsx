@@ -37,7 +37,7 @@ export function ProcedureVideo({ video }: { video: ProcedureVideoMeta }) {
           className="h-full w-full object-cover"
         />
       </div>
-      <figcaption className="mt-4 text-[13px] text-[var(--ink-dim)]">{video.caption}</figcaption>
+      <figcaption className="mt-4 text-caption text-[var(--ink-dim)]">{video.caption}</figcaption>
     </figure>
   );
 }

@@ -67,12 +67,12 @@ function Resources() {
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-dim)]" />
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a symptom, condition, or procedure"
               data-cursor="link"
-              className="w-full rounded-full border border-white/15 bg-white/[0.02] pl-11 pr-6 py-4 text-[14px] focus:outline-none focus:border-[var(--accent)] transition-colors" />
+              className="w-full rounded-full border border-white/15 bg-white/[0.02] pl-11 pr-6 py-4 text-small focus:outline-none focus:border-[var(--accent)] transition-colors" />
           </div>
           <div className="mt-5 flex flex-wrap gap-2">
             {chips.map((c) => (
               <button key={c} type="button" data-cursor="link" onClick={() => setChip(c)}
-                className={`rounded-full border px-4 py-2 text-[12px] tracking-wide transition-colors ${
+                className={`rounded-full border px-4 py-2 text-caption tracking-wide transition-colors ${
                   chip === c
                     ? "border-transparent bg-white text-black"
                     : "border-white/15 text-[var(--ink-dim)] hover:bg-white/5"
@@ -88,7 +88,7 @@ function Resources() {
                   <span className="text-label">{i.type}</span>
                   <div>
                     <p className="text-card-title">{i.name}</p>
-                    <p className="mt-1 text-[13px] text-[var(--ink-dim)] line-clamp-1">{i.text}</p>
+                    <p className="mt-1 text-caption text-[var(--ink-dim)] line-clamp-1">{i.text}</p>
                   </div>
                   <span className="text-label">{i.disabled ? "" : "→"}</span>
                 </>

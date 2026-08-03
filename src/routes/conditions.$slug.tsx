@@ -56,7 +56,7 @@ function ConditionPage() {
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <Link to="/conditions" className="text-label" data-cursor="link">← All conditions</Link>
           <h1 className="text-display-xl mt-8">{c.name}</h1>
-          <p className="mt-8 text-[17px] leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
+          <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
 
           {guide && (
             <Link
@@ -68,7 +68,7 @@ function ConditionPage() {
               <span>
                 <span className="block text-label text-[var(--accent)]">Complete guide</span>
                 <span className="mt-2 block text-display text-xl">{guide.title}</span>
-                <span className="mt-1 block text-[13px] text-[var(--ink-dim)]">
+                <span className="mt-1 block text-caption text-[var(--ink-dim)]">
                   Symptoms, tests, every treatment route, recovery and {guide.faqs.length} answered questions.
                 </span>
               </span>
@@ -79,13 +79,13 @@ function ConditionPage() {
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
             <div className="bg-[#050B16] p-8">
               <p className="text-label">Symptoms</p>
-              <ul className="mt-4 space-y-2 text-[14px]">
+              <ul className="mt-4 space-y-2 text-small">
                 {c.symptoms.map((s: string) => <li key={s}>· {s}</li>)}
               </ul>
             </div>
             <div className="bg-[#050B16] p-8">
               <p className="text-label">Treatments offered</p>
-              <ul className="mt-4 space-y-2 text-[14px]">
+              <ul className="mt-4 space-y-2 text-small">
                 {c.treatments.map((t: string) => <li key={t}>· {t}</li>)}
               </ul>
             </div>
@@ -102,7 +102,7 @@ function ConditionPage() {
                       <span className="text-label">Procedure</span>
                       <div>
                         <p className="text-display text-xl">{p.name}</p>
-                        <p className="mt-1 text-[13px] text-[var(--ink-dim)]">{p.oneLiner}</p>
+                        <p className="mt-1 text-caption text-[var(--ink-dim)]">{p.oneLiner}</p>
                       </div>
                       <span className="text-label">→</span>
                     </Link>
@@ -116,7 +116,7 @@ function ConditionPage() {
                         <span className="text-label">{r.kind}</span>
                         <div>
                           <p className="text-display text-xl">{r.title}</p>
-                          <p className="mt-1 text-[13px] text-[var(--ink-dim)]">{r.text}</p>
+                          <p className="mt-1 text-caption text-[var(--ink-dim)]">{r.text}</p>
                         </div>
                         <span className="text-label">→</span>
                       </Link>
@@ -126,7 +126,7 @@ function ConditionPage() {
                       <span className="text-label">{r.kind}</span>
                       <div>
                         <p className="text-display text-xl">{r.title}</p>
-                        <p className="mt-1 text-[13px] text-[var(--ink-dim)]">{r.text}</p>
+                        <p className="mt-1 text-caption text-[var(--ink-dim)]">{r.text}</p>
                       </div>
                       <span />
                     </li>

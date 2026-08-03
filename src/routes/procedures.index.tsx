@@ -28,7 +28,7 @@ function ProceduresIndex() {
                 <span className="text-label">{p.slug.slice(0,3).toUpperCase()}</span>
                 <div>
                   <h3 className="text-h2">{p.name}</h3>
-                  <p className="mt-2 text-[13px] text-[var(--ink-dim)]">{p.oneLiner}</p>
+                  <p className="mt-2 text-caption text-[var(--ink-dim)]">{p.oneLiner}</p>
                 </div>
                 <span className="text-label group-hover:translate-x-1 transition-transform">→</span>
               </Link>

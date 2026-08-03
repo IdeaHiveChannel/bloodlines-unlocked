@@ -22,7 +22,7 @@ function Testimonials() {
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <p className="text-label">Chapter 09 · Patient care today</p>
           <h1 className="text-display-xl mt-6">Patient stories.</h1>
-          <p className="mt-8 text-[17px] leading-relaxed text-[var(--ink-dim)]">
+          <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">
             Verified patient experiences will be published here, in the patient's own words and only with written consent. Nothing on this page is written on their behalf.
           </p>
           <div className="mt-14 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-10">

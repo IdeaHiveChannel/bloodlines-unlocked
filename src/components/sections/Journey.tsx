@@ -21,14 +21,14 @@ export function Journey() {
         <div className="shell mb-12">
           <p className="text-label">Patient journey</p>
           <h2 className="text-h1 mt-4">From diagnosis to recovery.</h2>
-          <p className="mt-5 max-w-2xl text-[14.5px] leading-relaxed text-[var(--ink-dim)]">Every decision begins with understanding the disease. Imaging guides the diagnosis, treatment is planned around the individual patient, and follow-up continues long after the procedure is complete.</p>
+          <p className="mt-5 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">Every decision begins with understanding the disease. Imaging guides the diagnosis, treatment is planned around the individual patient, and follow-up continues long after the procedure is complete.</p>
         </div>
         <motion.div style={{ x }} className="flex gap-8 px-[5vw] will-change-transform">
           {steps.map((s) => (
             <article key={s.n} className="shrink-0 w-[78vw] sm:w-[60vw] lg:w-[48vw] max-w-[720px] rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-transparent p-10 lg:p-14">
               <p className="text-label">Stage {s.n}</p>
               <h3 className="text-display-xl mt-6">{s.title}</h3>
-              <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
+              <p className="mt-8 max-w-md text-small leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
             </article>
           ))}
         </motion.div>
