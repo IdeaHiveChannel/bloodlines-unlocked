@@ -43,7 +43,7 @@ export function ExpertiseTimeline() {
                   <span className="text-label text-[var(--accent)]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-display text-2xl sm:text-3xl">{m.title}</span>
+                  <span className="text-h3">{m.title}</span>
                   <span className="text-label">{m.meta}</span>
                 </div>
 

@@ -10,7 +10,7 @@ export function Doctor() {
         <p className="text-label">Chapter 06 · The physician</p>
         <div className="mt-10 grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
-            <h2 className="text-display text-[clamp(2.4rem,5.5vw,5rem)]">
+            <h2 className="text-display-xl">
               A practice built around image-guided precision.
             </h2>
             <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-[var(--ink-dim)]">

@@ -37,7 +37,7 @@ function Section({
           </p>
         </div>
         <div>
-          <h2 className="text-display text-[clamp(1.7rem,3.4vw,2.6rem)] leading-tight">{title}</h2>
+          <h2 className="text-h1">{title}</h2>
           <div className="mt-8">{children}</div>
         </div>
       </div>
@@ -124,7 +124,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             <p className="mt-10 text-label text-[var(--accent)]">
               {pillar.patientTerm ? "Patient guide" : "Condition"}
             </p>
-            <h1 className="mt-5 max-w-4xl text-display text-[clamp(2.6rem,7vw,6rem)] leading-[0.95]">
+            <h1 className="text-display-xl mt-5 max-w-4xl">
               {pillar.heroQuote}
             </h1>
             <p className="mt-4 text-[15px] uppercase tracking-[0.22em] text-[var(--ink-dim)]">
@@ -247,7 +247,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                       className="grid grid-cols-[1fr_auto] items-center gap-6 px-2 py-6 transition-colors hover:bg-white/[0.02]"
                     >
                       <div>
-                        <p className="text-display text-2xl">{entry.name}</p>
+                        <p className="text-card-title">{entry.name}</p>
                         <p className="mt-2 text-[14px] text-[var(--ink-dim)]">{entry.oneLiner}</p>
                       </div>
                       <span className="text-label">→</span>
@@ -255,7 +255,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                   </li>
                 ) : (
                   <li key={slug} className="px-2 py-6">
-                    <p className="text-display text-2xl">{slugToLabel(slug)}</p>
+                    <p className="text-card-title">{slugToLabel(slug)}</p>
                     <p className="mt-2 text-[14px] text-[var(--ink-dim)]">
                       Performed through a small puncture under image guidance — discussed in detail at consultation.
                     </p>

@@ -39,14 +39,14 @@ function ProcedurePage() {
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <Link to="/procedures" className="text-label" data-cursor="link">← All procedures</Link>
-          <h1 className="mt-8 text-display text-[clamp(2.4rem,6vw,5rem)]">{p.name}</h1>
+          <h1 className="text-display-xl mt-8">{p.name}</h1>
           <p className="mt-6 text-[17px] text-[var(--ink-dim)]">{p.oneLiner}</p>
           {video && <ProcedureVideo video={video} />}
           <ol className="mt-16 space-y-10">
             {p.beats.map((b: string, i: number) => (
               <li key={i} className="grid grid-cols-[60px_1fr] gap-6">
                 <span className="text-label pt-2">0{i + 1}</span>
-                <p className="text-display text-2xl leading-snug">{b}</p>
+                <p className="text-card-title">{b}</p>
               </li>
             ))}
           </ol>

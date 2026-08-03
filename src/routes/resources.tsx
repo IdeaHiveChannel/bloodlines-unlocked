@@ -62,7 +62,7 @@ function Resources() {
       <main className="pt-36 pb-24 bg-[#050B16] min-h-screen">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <p className="text-label">Patient Education</p>
-          <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)]">Resources.</h1>
+          <h1 className="text-display-xl mt-6">Resources.</h1>
           <div className="mt-10 relative">
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-dim)]" />
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a symptom, condition, or procedure"
@@ -87,7 +87,7 @@ function Resources() {
                 <>
                   <span className="text-label">{i.type}</span>
                   <div>
-                    <p className="text-display text-2xl">{i.name}</p>
+                    <p className="text-card-title">{i.name}</p>
                     <p className="mt-1 text-[13px] text-[var(--ink-dim)] line-clamp-1">{i.text}</p>
                   </div>
                   <span className="text-label">{i.disabled ? "" : "→"}</span>

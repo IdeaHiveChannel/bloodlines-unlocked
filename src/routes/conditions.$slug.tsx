@@ -25,7 +25,7 @@ export const Route = createFileRoute("/conditions/$slug")({
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
         <p className="text-label">Not found</p>
-        <h1 className="text-display text-5xl mt-4">This condition isn't catalogued yet.</h1>
+        <h1 className="text-h2 mt-4">This condition isn't catalogued yet.</h1>
         <Link to="/conditions" className="mt-8 inline-block underline" data-cursor="link">All conditions</Link>
       </div>
     </div>
@@ -55,7 +55,7 @@ function ConditionPage() {
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <Link to="/conditions" className="text-label" data-cursor="link">← All conditions</Link>
-          <h1 className="mt-8 text-display text-[clamp(2.4rem,6vw,5rem)]">{c.name}</h1>
+          <h1 className="text-display-xl mt-8">{c.name}</h1>
           <p className="mt-8 text-[17px] leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
 
           {guide && (

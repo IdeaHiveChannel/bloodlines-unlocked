@@ -9,7 +9,7 @@ export function ConditionsGateway() {
       <div className="shell">
         <p className="text-label">Chapter 03 · Conditions</p>
         <div className="mt-6 grid lg:grid-cols-12 gap-10">
-          <h2 className="lg:col-span-6 text-display text-[clamp(2.4rem,5vw,4.5rem)]">
+          <h2 className="text-display-xl lg:col-span-6">
             Different diseases. One philosophy.
           </h2>
           <p className="lg:col-span-6 lg:pt-4 max-w-xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
@@ -36,7 +36,7 @@ export function ConditionsGateway() {
               >
                 <span className="text-label shrink-0 w-10">{String(i + 1).padStart(2, "0")}</span>
                 <span className="flex-1 min-w-0">
-                  <span className="block text-display text-[clamp(1.5rem,3vw,2.6rem)] leading-tight transition-colors group-hover:text-[color-mix(in_oklab,var(--accent)_75%,white)]">
+                  <span className="text-h1 block transition-colors group-hover:text-[color-mix(in_oklab,var(--accent)_75%,white)]">
                     {p.name}
                   </span>
                   <span className="mt-2 block text-[13.5px] leading-relaxed text-[var(--ink-dim)] max-w-2xl line-clamp-1 sm:line-clamp-none">

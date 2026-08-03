@@ -16,7 +16,7 @@ export function Transition() {
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-display text-[clamp(2.2rem,5.5vw,4.5rem)]"
+          className="text-display-xl"
         >
           Every organ depends on blood.
         </motion.h2>

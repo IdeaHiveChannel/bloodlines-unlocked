@@ -47,7 +47,7 @@ function ConditionsIndex() {
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="shell">
           <p className="text-label">Catalogue</p>
-          <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,6rem)] max-w-3xl">
+          <h1 className="text-display-xl mt-6 max-w-3xl">
             Conditions treated.
           </h1>
           <p className="mt-6 max-w-xl text-[14px] leading-relaxed text-[var(--ink-dim)]">
@@ -68,7 +68,7 @@ function ConditionsIndex() {
                   className="group bg-[#050B16] p-8 hover:bg-white/[0.03] transition-colors"
                 >
                   <p className="text-label">{labels[c.region] ?? c.region}</p>
-                  <h2 className="mt-4 text-display text-2xl">{c.name}</h2>
+                  <h2 className="text-card-title mt-4">{c.name}</h2>
                   <p className="mt-3 text-[13px] leading-relaxed text-[var(--ink-dim)] line-clamp-3">
                     {c.intro}
                   </p>
@@ -94,7 +94,7 @@ function ConditionsIndex() {
                       data-cursor="link"
                       className="group bg-[#050B16] p-6 hover:bg-white/[0.03] transition-colors"
                     >
-                      <h3 className="text-display text-2xl">{c.name}</h3>
+                      <h3 className="text-card-title">{c.name}</h3>
                       <p className="mt-3 text-[13px] leading-relaxed text-[var(--ink-dim)] line-clamp-3">
                         {c.intro}
                       </p>

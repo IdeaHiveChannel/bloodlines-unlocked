@@ -20,7 +20,7 @@ export const Route = createFileRoute("/contact")({
       <div className="bg-[#050B16] section-y border-t border-white/[0.05]">
         <div className="shell">
           <p className="text-label">Where to find the practice</p>
-          <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-2xl">
+          <h2 className="text-h1 mt-6 max-w-2xl">
             Three cities. One phone line.
           </h2>
           <div className="mt-14 grid sm:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/contact")({
               <a key={l.city} href={l.mapsUrl} target="_blank" rel="noreferrer" data-cursor="link"
                 className="bg-[#050B16] p-8 hover:bg-white/[0.03] transition-colors">
                 <p className="text-label">Clinic</p>
-                <p className="mt-4 text-display text-3xl">{l.city}</p>
+                <p className="text-h3 mt-4">{l.city}</p>
                 <p className="mt-2 text-[13px] text-[var(--ink-dim)]">{l.state}</p>
                 <p className="mt-6 text-label">Open in maps →</p>
               </a>
