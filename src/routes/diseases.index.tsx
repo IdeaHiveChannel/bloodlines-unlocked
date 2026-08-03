@@ -32,12 +32,12 @@ function DiseasesIndex() {
   return (
     <>
       <main className="bg-[#050B16] pt-36 pb-24">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+        <div className="shell">
           <p className="text-label">Patient guides</p>
-          <h1 className="mt-6 max-w-3xl text-display text-[clamp(2.4rem,6vw,6rem)] leading-[0.95]">
+          <h1 className="text-display-xl mt-6 max-w-3xl">
             Fourteen conditions, explained end to end.
           </h1>
-          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+          <p className="mt-6 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
             Each guide runs from the first symptom to the final follow-up — what it is, which tests
             answer it, every treatment route, how it is treated here, and what recovery actually looks
             like.
@@ -50,11 +50,11 @@ function DiseasesIndex() {
                   to="/diseases/$slug"
                   params={{ slug: p.slug }}
                   data-cursor="link"
-                  className="group grid items-start gap-5 px-2 py-8 transition-colors hover:bg-white/[0.02] sm:grid-cols-[70px_1fr_auto]"
+                  className="group grid items-start gap-5 px-2 py-8 transition-colors hover:bg-white/[0.02] sm:grid-cols-[70px_minmax(0,1fr)_auto]"
                 >
                   <span className="text-label pt-2">{String(i + 1).padStart(2, "0")}</span>
                   <div>
-                    <h2 className="text-display text-[clamp(1.5rem,3vw,2.2rem)] leading-tight">
+                    <h2 className="text-h1">
                       {p.name}
                       {p.patientTerm && (
                         <span className="ml-3 align-middle text-label text-[var(--accent)]">
@@ -62,7 +62,7 @@ function DiseasesIndex() {
                         </span>
                       )}
                     </h2>
-                    <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-[var(--ink-dim)]">
+                    <p className="mt-3 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
                       {p.summary}
                     </p>
                   </div>

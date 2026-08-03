@@ -67,7 +67,7 @@ export const Route = createFileRoute("/diseases/$slug")({
     <div className="flex min-h-screen items-center justify-center px-6">
       <div className="text-center">
         <p className="text-label">Not found</p>
-        <h1 className="mt-4 text-display text-4xl">This guide doesn't exist yet.</h1>
+        <h1 className="text-h2 mt-4">This guide doesn't exist yet.</h1>
         <Link to="/diseases" className="mt-8 inline-block underline" data-cursor="link">
           All conditions
         </Link>

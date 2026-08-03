@@ -17,10 +17,10 @@ export const Route = createFileRoute("/contact")({
   component: () => (
     <>
       <div className="pt-24"><Consultation /></div>
-      <div className="bg-[#050B16] py-24 border-t border-white/[0.05]">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+      <div className="bg-[#050B16] section-y border-t border-white/[0.05]">
+        <div className="shell">
           <p className="text-label">Where to find the practice</p>
-          <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-2xl">
+          <h2 className="text-h1 mt-6 max-w-2xl">
             Three cities. One phone line.
           </h2>
           <div className="mt-14 grid sm:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
@@ -28,13 +28,13 @@ export const Route = createFileRoute("/contact")({
               <a key={l.city} href={l.mapsUrl} target="_blank" rel="noreferrer" data-cursor="link"
                 className="bg-[#050B16] p-8 hover:bg-white/[0.03] transition-colors">
                 <p className="text-label">Clinic</p>
-                <p className="mt-4 text-display text-3xl">{l.city}</p>
-                <p className="mt-2 text-[13px] text-[var(--ink-dim)]">{l.state}</p>
+                <p className="text-h3 mt-4">{l.city}</p>
+                <p className="mt-2 text-caption text-[var(--ink-dim)]">{l.state}</p>
                 <p className="mt-6 text-label">Open in maps →</p>
               </a>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-[14px]">
+          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-small">
             <a href={contact.phoneHref} data-cursor="cta" className="text-[var(--ink)]">
               {contact.phoneDisplay}
             </a>
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/contact")({
               {contact.email}
             </a>
           </div>
-          <p className="mt-6 text-[13px] text-[var(--ink-dim)]">
+          <p className="mt-6 text-caption text-[var(--ink-dim)]">
             Consulting days and clinic addresses for each city are confirmed at the time of booking.
           </p>
         </div>

@@ -43,7 +43,7 @@ export function ExpertiseTimeline() {
                   <span className="text-label text-[var(--accent)]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-display text-2xl sm:text-3xl">{m.title}</span>
+                  <span className="text-h3">{m.title}</span>
                   <span className="text-label">{m.meta}</span>
                 </div>
 
@@ -56,7 +56,7 @@ export function ExpertiseTimeline() {
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="mt-4 max-w-2xl text-[14.5px] leading-relaxed text-[var(--ink-dim)]">
+                      <p className="mt-4 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
                         {m.summary}
                       </p>
                       {m.to && (

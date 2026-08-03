@@ -10,13 +10,13 @@ const stages = [
 
 export function Recovery() {
   return (
-    <section className="relative bg-[#050B16] py-32">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+    <section className="relative bg-[#050B16] section-y">
+      <div className="shell">
         <p className="text-label">Chapter 06 · Recovery</p>
-        <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-3xl">
+        <h2 className="text-h1 mt-6 max-w-3xl">
           Treatment is only one part of recovery.
         </h2>
-        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+        <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
           Minimally invasive intervention is designed to reduce trauma, shorten hospital stays and help
           patients return to daily life sooner, while maintaining long-term follow-up where required.
         </p>
@@ -33,8 +33,8 @@ export function Recovery() {
               className="relative rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6">
               <div className="size-3 rounded-full bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
               <p className="mt-4 text-label">{s.t}</p>
-              <h3 className="mt-2 text-display text-2xl">{s.title}</h3>
-              <p className="mt-3 text-[13px] leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
+              <h3 className="text-card-title mt-2">{s.title}</h3>
+              <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
             </motion.li>
           ))}
         </ol>

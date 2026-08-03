@@ -3,7 +3,7 @@ import { contact, locations, whatsappLink, whatsappMessages } from "../../lib/co
 export function Footer() {
   return (
     <footer className="relative bg-[#050B16] pt-24 pb-10 border-t border-white/[0.05]">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+      <div className="shell">
         <h2 className="text-display-xxl">
           Advanced,
           <br />

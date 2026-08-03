@@ -60,19 +60,19 @@ function Resources() {
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16] min-h-screen">
-        <div className="mx-auto max-w-3xl px-6 sm:px-10">
+        <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <p className="text-label">Patient Education</p>
-          <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)]">Resources.</h1>
+          <h1 className="text-display-xl mt-6">Resources.</h1>
           <div className="mt-10 relative">
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-dim)]" />
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a symptom, condition, or procedure"
               data-cursor="link"
-              className="w-full rounded-full border border-white/15 bg-white/[0.02] pl-11 pr-6 py-4 text-[14px] focus:outline-none focus:border-[var(--accent)] transition-colors" />
+              className="w-full rounded-full border border-white/15 bg-white/[0.02] pl-11 pr-6 py-4 text-small focus:outline-none focus:border-[var(--accent)] transition-colors" />
           </div>
           <div className="mt-5 flex flex-wrap gap-2">
             {chips.map((c) => (
               <button key={c} type="button" data-cursor="link" onClick={() => setChip(c)}
-                className={`rounded-full border px-4 py-2 text-[12px] tracking-wide transition-colors ${
+                className={`rounded-full border px-4 py-2 text-caption tracking-wide transition-colors ${
                   chip === c
                     ? "border-transparent bg-white text-black"
                     : "border-white/15 text-[var(--ink-dim)] hover:bg-white/5"
@@ -87,13 +87,13 @@ function Resources() {
                 <>
                   <span className="text-label">{i.type}</span>
                   <div>
-                    <p className="text-display text-2xl">{i.name}</p>
-                    <p className="mt-1 text-[13px] text-[var(--ink-dim)] line-clamp-1">{i.text}</p>
+                    <p className="text-card-title">{i.name}</p>
+                    <p className="mt-1 text-caption text-[var(--ink-dim)] line-clamp-1">{i.text}</p>
                   </div>
                   <span className="text-label">{i.disabled ? "" : "→"}</span>
                 </>
               );
-              const cls = "grid grid-cols-[100px_1fr_auto] items-center gap-6 py-6 px-2 transition-colors";
+              const cls = "grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-5 sm:grid-cols-[100px_minmax(0,1fr)_auto] sm:gap-6 sm:py-6 transition-colors";
               return (
                 <li key={i.type + i.name}>
                   {i.disabled ? (

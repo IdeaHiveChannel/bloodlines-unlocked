@@ -5,14 +5,14 @@ import { pillars } from "../../lib/pillars";
 
 export function ConditionsGateway() {
   return (
-    <section className="relative bg-[#050B16] py-32 border-t border-white/[0.05]">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+    <section className="relative bg-[#050B16] section-y border-t border-white/[0.05]">
+      <div className="shell">
         <p className="text-label">Chapter 03 · Conditions</p>
         <div className="mt-6 grid lg:grid-cols-12 gap-10">
-          <h2 className="lg:col-span-6 text-display text-[clamp(2.4rem,5vw,4.5rem)]">
+          <h2 className="text-display-xl lg:col-span-6">
             Different diseases. One philosophy.
           </h2>
-          <p className="lg:col-span-6 lg:pt-4 max-w-xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+          <p className="lg:col-span-6 lg:pt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
             Every condition has its own cause, its own behaviour and its own treatment pathway.
             Explore how image-guided intervention is used across the body — from emergency stroke
             care to limb salvage, thyroid nodules and liver tumours.
@@ -36,10 +36,10 @@ export function ConditionsGateway() {
               >
                 <span className="text-label shrink-0 w-10">{String(i + 1).padStart(2, "0")}</span>
                 <span className="flex-1 min-w-0">
-                  <span className="block text-display text-[clamp(1.5rem,3vw,2.6rem)] leading-tight transition-colors group-hover:text-[color-mix(in_oklab,var(--accent)_75%,white)]">
+                  <span className="text-h1 block transition-colors group-hover:text-[color-mix(in_oklab,var(--accent)_75%,white)]">
                     {p.name}
                   </span>
-                  <span className="mt-2 block text-[13.5px] leading-relaxed text-[var(--ink-dim)] max-w-2xl line-clamp-1 sm:line-clamp-none">
+                  <span className="mt-2 block text-caption leading-relaxed text-[var(--ink-dim)] max-w-2xl line-clamp-1 sm:line-clamp-none">
                     {p.summary}
                   </span>
                 </span>

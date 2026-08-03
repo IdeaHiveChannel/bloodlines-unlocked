@@ -21,7 +21,7 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
         <p className="text-label">404 — off the map</p>
-        <h1 className="text-display mt-6 text-6xl">This page does not exist.</h1>
+        <h1 className="text-display-xl mt-6">This page does not exist.</h1>
         <div className="mt-8">
           <Link
             to="/"
@@ -45,7 +45,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
         <p className="text-label">interruption</p>
-        <h1 className="text-display mt-6 text-5xl">Something stopped the flow.</h1>
+        <h1 className="text-h2 mt-6">Something stopped the flow.</h1>
         <p className="mt-4 text-sm text-[var(--ink-dim)]">Try once more, or return home.</p>
         <div className="mt-8 flex justify-center gap-3">
           <button

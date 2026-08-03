@@ -34,23 +34,23 @@ function Expertise() {
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+        <div className="shell">
           <p className="text-label">Practice</p>
-          <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,6rem)] max-w-3xl">Areas of expertise.</h1>
+          <h1 className="text-display-xl mt-6 max-w-3xl">Areas of expertise.</h1>
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
             {pillars.map((p) => (
               <div key={p.t} className="bg-[#050B16] p-10">
-                <h2 className="text-display text-3xl">{p.t}</h2>
-                <p className="mt-4 text-[14px] leading-relaxed text-[var(--ink-dim)]">{p.body}</p>
+                <h2 className="text-h3">{p.t}</h2>
+                <p className="mt-4 text-small leading-relaxed text-[var(--ink-dim)]">{p.body}</p>
               </div>
             ))}
           </div>
           <div className="mt-28">
             <p className="text-label">Professional journey</p>
-            <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-2xl">
+            <h2 className="text-h1 mt-6 max-w-2xl">
               Training, teaching, and the practice it built.
             </h2>
-            <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-[var(--ink-dim)]">
+            <p className="mt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
               In sequence — foundation, fellowship, high-volume practice, and the international
               courses that keep technique current.
             </p>

@@ -7,12 +7,12 @@ import { StoryboardCanvas } from "./canvases";
 export function Procedures() {
   return (
     <section className="relative bg-[#050B16]">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10 pt-32 pb-12">
+      <div className="shell pt-20 pb-8 sm:pt-28 sm:pb-12">
         <p className="text-label">Chapter 04 · Procedures</p>
-        <h2 className="mt-6 text-display text-[clamp(2.4rem,5vw,4.5rem)] max-w-3xl">
+        <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
           Every procedure has its own story.
         </h2>
-        <p className="mt-6 max-w-xl text-[14px] text-[var(--ink-dim)]">
+        <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)] sm:mt-6">
           No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.
         </p>
       </div>
@@ -27,7 +27,7 @@ export function Procedures() {
           storyboard={p.storyboard}
         />
       ))}
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10 pb-32">
+      <div className="shell pb-20 sm:pb-28">
         <Link to="/procedures" data-cursor="link" className="text-label underline">
           See every procedure →
         </Link>
@@ -54,17 +54,17 @@ function ProcedureStory({
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   return (
-    <div ref={ref} className="relative" style={{ height: `${beats.length * 70}vh` }}>
-      <div className="sticky top-0 h-screen flex flex-col">
-        <div className="mx-auto w-full max-w-[1480px] px-6 sm:px-10 pt-32">
+    <div ref={ref} className="relative" style={{ height: `${beats.length * 70}svh` }}>
+      <div className="sticky top-0 flex h-[100svh] flex-col justify-center">
+        <div className="shell pt-24 sm:pt-28">
           <p className="text-label">Procedure {String(index + 1).padStart(2, "0")}</p>
           <Link to="/procedures/$slug" params={{ slug }} data-cursor="link">
-            <h3 className="mt-3 text-display text-[clamp(2rem,5vw,4rem)]">{name}</h3>
+            <h3 className="mt-2 text-h2">{name}</h3>
           </Link>
-          <p className="mt-3 text-[14px] text-[var(--ink-dim)] max-w-md">{oneLiner}</p>
+          <p className="mt-2 max-w-md text-small text-[var(--ink-dim)]">{oneLiner}</p>
         </div>
-        <div className="flex-1 grid lg:grid-cols-2 items-center gap-10 mx-auto w-full max-w-[1480px] px-6 sm:px-10 pb-20">
-          <div className="relative aspect-square w-full max-w-[560px] mx-auto rounded-3xl border border-white/[0.06] overflow-hidden bg-gradient-to-br from-white/[0.02] to-transparent">
+        <div className="shell grid flex-1 items-center gap-5 pb-10 sm:gap-8 lg:grid-cols-2 lg:pb-16">
+          <div className="relative mx-auto aspect-square w-full max-w-[260px] sm:max-w-[360px] lg:max-w-[560px] rounded-3xl border border-white/[0.06] overflow-hidden bg-gradient-to-br from-white/[0.02] to-transparent">
             <StoryboardCanvas storyboard={storyboard} progress={scrollYProgress} />
             <div className="absolute bottom-4 left-4 right-4 flex gap-1">
               {beats.map((_, i) => (
@@ -74,7 +74,7 @@ function ProcedureStory({
               ))}
             </div>
           </div>
-          <div className="relative h-[60vh] sm:h-[50vh]">
+          <div className="relative h-[28svh] sm:h-[34svh] lg:h-[46vh]">
             {beats.map((b, i) => (
               <Beat key={i} text={b} index={i} total={beats.length} progress={scrollYProgress} />
             ))}
@@ -114,7 +114,7 @@ function Beat({
   return (
     <motion.div style={{ opacity, y, filter }} className="absolute inset-0 flex flex-col justify-center">
       <p className="text-label">Beat · 0{index + 1}</p>
-      <p className="mt-4 text-display text-2xl sm:text-3xl leading-tight max-w-md">{text}</p>
+      <p className="mt-3 max-w-md text-h3">{text}</p>
     </motion.div>
   );
 }

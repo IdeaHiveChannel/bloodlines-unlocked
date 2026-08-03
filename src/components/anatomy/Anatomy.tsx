@@ -193,26 +193,26 @@ export function Anatomy() {
   const guide = regionGuide[active];
 
   return (
-    <section className="relative bg-[#050B16] py-32 sm:py-40">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
-        <div className="flex items-end justify-between flex-wrap gap-4">
+    <section className="relative bg-[#050B16] section-y">
+      <div className="shell">
+        <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
             <p className="text-label">Chapter 02 · Anatomy</p>
-            <h2 className="mt-6 text-display text-[clamp(2.4rem,5vw,4.5rem)] max-w-2xl">
+            <h2 className="mt-4 max-w-2xl text-h1 sm:mt-6">
               The body, seen through its blood vessels.
             </h2>
           </div>
-          <p className="text-[13px] leading-relaxed text-[var(--ink-dim)] max-w-sm">
+          <p className="max-w-sm text-small text-[var(--ink-dim)]">
             From the brain to the feet, blood vessels connect every organ. Explore each region to
             understand how modern image-guided treatment addresses disease throughout the body.
           </p>
         </div>
 
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-14 lg:grid-cols-12 lg:gap-16">
           {/* Anatomy panel */}
           <div className="lg:col-span-5">
-            <div className="relative aspect-[2/3] w-full max-w-[520px] mx-auto rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent overflow-hidden">
+            <div className="relative mx-auto aspect-[2/3] w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[520px] rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent overflow-hidden">
               <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full">
                 <defs>
                   <radialGradient id="bodyGlow" cx="50%" cy="50%" r="50%">
@@ -289,7 +289,7 @@ export function Anatomy() {
                       tabIndex={0}
                       role="button"
                       aria-label={regionLabels[h.id]}
-                      style={{ cursor: "none", outline: "none" }}
+                      style={{ outline: "none" }}
                       data-cursor="link"
                     >
                       <circle
@@ -334,7 +334,7 @@ export function Anatomy() {
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p className="text-label">Region · {regionLabels[active]}</p>
-                <h3 className="mt-4 text-display text-3xl sm:text-4xl">
+                <h3 className="mt-3 text-h3">
                   {list.length} condition{list.length === 1 ? "" : "s"} treated here
                 </h3>
 
@@ -346,19 +346,19 @@ export function Anatomy() {
                       to="/conditions/$slug"
                       params={{ slug: c.slug }}
                       data-cursor="link"
-                      className="group block bg-white/[0.02] hover:bg-white/[0.04] transition-colors p-6"
+                      className="group block bg-white/[0.02] p-4 transition-colors hover:bg-white/[0.04] sm:p-6"
                     >
-                      <div className="flex items-start justify-between gap-6">
+                      <div className="flex items-start justify-between gap-4 sm:gap-6">
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-display text-2xl">{c.name}</h4>
-                          <p className="mt-2 text-[12px] tracking-[0.16em] uppercase text-[var(--accent)]">
+                          <h4 className="text-card-title">{c.name}</h4>
+                          <p className="mt-2 text-[0.6875rem] uppercase tracking-[0.16em] text-[var(--accent)]">
                             ↓ {c.intervention}
                           </p>
-                          <p className="mt-3 text-[14px] leading-relaxed text-[var(--ink-dim)] line-clamp-2">
+                          <p className="mt-2 line-clamp-2 text-small text-[var(--ink-dim)]">
                             {c.intro}
                           </p>
                         </div>
-                        <span className="text-label opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                        <span className="hidden shrink-0 text-label opacity-0 transition-opacity group-hover:opacity-100 lg:block">
                           Read →
                         </span>
                       </div>
@@ -366,19 +366,19 @@ export function Anatomy() {
                   ))}
                 </div>
 
-                <p className="mt-10 text-label">Procedures performed in this region</p>
-                <ul className="mt-4 flex flex-wrap gap-3">
+                <p className="mt-8 text-label">Procedures performed in this region</p>
+                <ul className="mt-4 flex flex-wrap gap-2 sm:gap-3">
                   {(regionProcedures[active] ?? []).map((p) => (
                     <li
                       key={p}
-                      className="rounded-full border border-white/[0.1] bg-white/[0.02] px-4 py-2 text-[12.5px] text-[var(--ink)]"
+                      className="rounded-full border border-white/[0.1] bg-white/[0.02] px-3.5 py-2 text-caption text-[var(--ink)] sm:px-4"
                     >
                       {p}
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-10 flex flex-wrap gap-6">
+                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
                   {guide ? (
                     <Link
                       to="/diseases/$slug"

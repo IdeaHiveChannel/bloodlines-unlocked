@@ -17,20 +17,20 @@ export const Route = createFileRoute("/procedures/")({
 function ProceduresIndex() {
   return (
     <>
-      <main className="pt-36 pb-24 bg-[#050B16]">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+      <main className="bg-[#050B16] pt-28 pb-20 sm:pt-36 sm:pb-24">
+        <div className="shell">
           <p className="text-label">Index</p>
-          <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,6rem)] max-w-3xl">Procedures.</h1>
-          <div className="mt-16 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+          <h1 className="mt-4 max-w-3xl text-display-xl sm:mt-6">Procedures.</h1>
+          <div className="mt-10 divide-y sm:mt-16 divide-white/[0.06] border-y border-white/[0.06]">
             {procedures.map((p) => (
               <Link key={p.slug} to="/procedures/$slug" params={{ slug: p.slug }} data-cursor="link"
-                className="group grid grid-cols-[80px_1fr_auto] items-center gap-6 py-8 hover:bg-white/[0.02] transition-colors px-2">
-                <span className="text-label">{p.slug.slice(0,3).toUpperCase()}</span>
-                <div>
-                  <h3 className="text-display text-3xl sm:text-4xl">{p.name}</h3>
-                  <p className="mt-2 text-[13px] text-[var(--ink-dim)]">{p.oneLiner}</p>
+                className="group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-6 transition-colors hover:bg-white/[0.02] sm:grid-cols-[70px_minmax(0,1fr)_auto] sm:gap-6 sm:py-8">
+                <span className="hidden text-label sm:block">{p.slug.slice(0, 3).toUpperCase()}</span>
+                <div className="min-w-0">
+                  <h3 className="text-h3">{p.name}</h3>
+                  <p className="mt-2 text-caption text-[var(--ink-dim)]">{p.oneLiner}</p>
                 </div>
-                <span className="text-label group-hover:translate-x-1 transition-transform">→</span>
+                <span className="shrink-0 text-label transition-transform group-hover:translate-x-1">→</span>
               </Link>
             ))}
           </div>
