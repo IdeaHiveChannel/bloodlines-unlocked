@@ -61,14 +61,14 @@ const ConditionsIndexRoute = ConditionsIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProceduresSlugRoute = ProceduresSlugRouteImport.update({
-  id: '/procedures/$slug',
-  path: '/procedures/$slug',
-  getParentRoute: () => rootRouteImport,
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ProceduresRoute,
 } as any)
 const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
-  id: '/conditions/$slug',
-  path: '/conditions/$slug',
-  getParentRoute: () => rootRouteImport,
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ConditionsRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -154,8 +154,6 @@ export interface RootRouteChildren {
   ExpertiseRoute: typeof ExpertiseRoute
   ResourcesRoute: typeof ResourcesRoute
   TestimonialsRoute: typeof TestimonialsRoute
-  ConditionsSlugRoute: typeof ConditionsSlugRoute
-  ProceduresSlugRoute: typeof ProceduresSlugRoute
   ConditionsIndexRoute: typeof ConditionsIndexRoute
   ProceduresIndexRoute: typeof ProceduresIndexRoute
 }
@@ -220,17 +218,17 @@ declare module '@tanstack/react-router' {
     }
     '/procedures/$slug': {
       id: '/procedures/$slug'
-      path: '/procedures/$slug'
+      path: '/$slug'
       fullPath: '/procedures/$slug'
       preLoaderRoute: typeof ProceduresSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ProceduresRoute
     }
     '/conditions/$slug': {
       id: '/conditions/$slug'
-      path: '/conditions/$slug'
+      path: '/$slug'
       fullPath: '/conditions/$slug'
       preLoaderRoute: typeof ConditionsSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ConditionsRoute
     }
   }
 }
@@ -242,11 +240,19 @@ const rootRouteChildren: RootRouteChildren = {
   ExpertiseRoute: ExpertiseRoute,
   ResourcesRoute: ResourcesRoute,
   TestimonialsRoute: TestimonialsRoute,
-  ConditionsSlugRoute: ConditionsSlugRoute,
-  ProceduresSlugRoute: ProceduresSlugRoute,
   ConditionsIndexRoute: ConditionsIndexRoute,
   ProceduresIndexRoute: ProceduresIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
