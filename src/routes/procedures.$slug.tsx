@@ -27,7 +27,7 @@ export const Route = createFileRoute("/procedures/$slug")({
       links: [{ rel: "canonical", href: url }],
     };
   },
-  loader: ({ params }) => {
+  loader: ({ params }): Procedure => {
     const p = procedures.find((x) => x.slug === params.slug);
     if (!p) throw notFound();
     return p;

@@ -26,7 +26,7 @@ export const Route = createFileRoute("/conditions/$slug")({
       links: [{ rel: "canonical", href: url }],
     };
   },
-  loader: ({ params }) => {
+  loader: ({ params }): Condition => {
     const c = conditions.find((x) => x.slug === params.slug);
     if (!c) throw notFound();
     return c;
