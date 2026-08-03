@@ -51,12 +51,11 @@ export function ResponsiveVideo({
     <div
       style={{
         aspectRatio: String(ratio),
-        maxWidth: portrait
-          ? `min(100%, calc(70svh * ${ratio}))`
-          : `min(100%, calc(70svh * ${ratio}))`,
+        maxWidth: `min(100%, calc(70svh * ${ratio}))`,
       }}
-      className={`relative mx-auto w-full min-w-0 max-h-[70svh] overflow-hidden rounded-xl border border-white/[0.06] bg-black landscape:max-h-[80svh] ${frameClassName}`}
+      className={`relative mx-auto w-full min-w-0 max-h-[70svh] overflow-hidden rounded-xl border border-white/[0.06] bg-black ${frameClassName}`}
     >
+
       <video
         ref={ref}
         src={src}
