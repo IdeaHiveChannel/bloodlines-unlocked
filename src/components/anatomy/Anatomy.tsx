@@ -192,14 +192,15 @@ export function Anatomy() {
           <div>
             <p className="text-label">Chapter 02 · Anatomy</p>
             <h2 className="mt-6 text-display text-[clamp(2.4rem,5vw,4.5rem)] max-w-2xl">
-              The entire human body, treated through blood vessels.
+              The body, seen through its blood vessels.
             </h2>
           </div>
-          <p className="text-[13px] text-[var(--ink-dim)] max-w-sm">
-            Brain to foot, eye to kidney. Move over any region — each one illuminates the conditions
-            treated there through image-guided intervention.
+          <p className="text-[13px] leading-relaxed text-[var(--ink-dim)] max-w-sm">
+            From the brain to the feet, blood vessels connect every organ. Explore each region to
+            understand how modern image-guided treatment addresses disease throughout the body.
           </p>
         </div>
+
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Anatomy panel */}
