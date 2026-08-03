@@ -56,8 +56,6 @@ export function Footer() {
         </div>
         <div className="mt-16 pt-6 border-t border-white/[0.05] flex flex-wrap justify-between gap-4 text-caption text-[var(--ink-dim)]">
           <p>© {new Date().getFullYear()} Dr. Mandeep Sagar. All rights reserved.</p>
-          <p className="text-label">Created by Muad Ahamed · 2026</p>
-
         </div>
       </div>
     </footer>
