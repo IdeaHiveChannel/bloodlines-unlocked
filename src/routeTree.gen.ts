@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ProceduresRouteImport } from './routes/procedures'
 import { Route as ExpertiseRouteImport } from './routes/expertise'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProceduresSlugRouteImport } from './routes/procedures.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/expertise': typeof ExpertiseRoute
   '/procedures': typeof ProceduresRouteWithChildren
   '/resources': typeof ResourcesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/expertise': typeof ExpertiseRoute
   '/procedures': typeof ProceduresRouteWithChildren
   '/resources': typeof ResourcesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/expertise': typeof ExpertiseRoute
   '/procedures': typeof ProceduresRouteWithChildren
   '/resources': typeof ResourcesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/expertise'
     | '/procedures'
     | '/resources'
+    | '/testimonials'
     | '/conditions/$slug'
     | '/procedures/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/expertise'
     | '/procedures'
     | '/resources'
+    | '/testimonials'
     | '/conditions/$slug'
     | '/procedures/$slug'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/expertise'
     | '/procedures'
     | '/resources'
+    | '/testimonials'
     | '/conditions/$slug'
     | '/procedures/$slug'
   fileRoutesById: FileRoutesById
@@ -143,10 +155,18 @@ export interface RootRouteChildren {
   ExpertiseRoute: typeof ExpertiseRoute
   ProceduresRoute: typeof ProceduresRouteWithChildren
   ResourcesRoute: typeof ResourcesRoute
+  TestimonialsRoute: typeof TestimonialsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resources': {
       id: '/resources'
       path: '/resources'
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExpertiseRoute: ExpertiseRoute,
   ProceduresRoute: ProceduresRouteWithChildren,
   ResourcesRoute: ResourcesRoute,
+  TestimonialsRoute: TestimonialsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
