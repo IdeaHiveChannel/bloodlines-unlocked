@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
 import { ArrowRight } from "lucide-react";
@@ -14,23 +14,8 @@ export function Hero() {
   const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const bgScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.15]);
 
-  // Scan reveal mask position
-  const portraitWrapRef = useRef<HTMLDivElement>(null);
-  const [scan, setScan] = useState({ x: 50, y: 50, on: false });
-  useEffect(() => {
-    const el = portraitWrapRef.current;
-    if (!el) return;
-    const onMove = (e: PointerEvent) => {
-      const r = el.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width) * 100;
-      const y = ((e.clientY - r.top) / r.height) * 100;
-      setScan({ x, y, on: true });
-    };
-    const onLeave = () => setScan((s) => ({ ...s, on: false }));
-    el.addEventListener("pointermove", onMove);
-    el.addEventListener("pointerleave", onLeave);
-    return () => { el.removeEventListener("pointermove", onMove); el.removeEventListener("pointerleave", onLeave); };
-  }, []);
+
+
 
   return (
     <section
