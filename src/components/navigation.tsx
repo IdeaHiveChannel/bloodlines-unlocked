@@ -2,17 +2,24 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const items = [
+// Desktop keeps a short primary rail; the rest live in the menu (and at xl+).
+const primary = [
   { to: "/about", label: "About" },
-  { to: "/expertise", label: "Expertise" },
   { to: "/diseases", label: "Diseases" },
-  { to: "/conditions", label: "Conditions" },
   { to: "/procedures", label: "Procedures" },
   { to: "/second-opinion", label: "Second opinion" },
+];
+
+const secondary = [
+  { to: "/expertise", label: "Expertise" },
+  { to: "/conditions", label: "Conditions" },
   { to: "/media", label: "Media" },
   { to: "/resources", label: "Resources" },
   { to: "/contact", label: "Contact" },
 ];
+
+const items = [...primary, ...secondary];
+
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
