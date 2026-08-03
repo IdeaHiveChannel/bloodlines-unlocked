@@ -84,5 +84,6 @@ export const Route = createFileRoute("/diseases/$slug")({
 
 function DiseaseRoute() {
   const pillar = Route.useLoaderData();
+  if (!pillar) return null;
   return <PillarPage pillar={pillar} />;
 }
