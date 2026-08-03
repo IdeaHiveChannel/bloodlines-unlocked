@@ -93,7 +93,7 @@ function Resources() {
                   <span className="text-label">{i.disabled ? "" : "→"}</span>
                 </>
               );
-              const cls = "grid grid-cols-[100px_1fr_auto] items-center gap-6 py-6 px-2 transition-colors";
+              const cls = "grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-5 sm:grid-cols-[100px_minmax(0,1fr)_auto] sm:gap-6 sm:py-6 transition-colors";
               return (
                 <li key={i.type + i.name}>
                   {i.disabled ? (

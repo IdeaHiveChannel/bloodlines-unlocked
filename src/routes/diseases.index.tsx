@@ -50,7 +50,7 @@ function DiseasesIndex() {
                   to="/diseases/$slug"
                   params={{ slug: p.slug }}
                   data-cursor="link"
-                  className="group grid items-start gap-5 px-2 py-8 transition-colors hover:bg-white/[0.02] sm:grid-cols-[70px_1fr_auto]"
+                  className="group grid items-start gap-5 px-2 py-8 transition-colors hover:bg-white/[0.02] sm:grid-cols-[70px_minmax(0,1fr)_auto]"
                 >
                   <span className="text-label pt-2">{String(i + 1).padStart(2, "0")}</span>
                   <div>

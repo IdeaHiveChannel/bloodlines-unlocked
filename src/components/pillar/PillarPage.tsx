@@ -30,7 +30,7 @@ function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-32 border-t border-white/[0.06] py-16 sm:section-y">
-      <div className="grid gap-8 lg:grid-cols-[220px_1fr]">
+      <div className="grid gap-6 lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-8">
         <div>
           <p className="text-label">
             {String(index).padStart(2, "0")} · {label}
@@ -186,7 +186,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           <Section id="diagnosis" index={6} label="Diagnosis" title="How it is confirmed.">
             <ol className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillar.diagnosis.map((d, i) => (
-                <li key={d.step} className="grid gap-4 py-6 sm:grid-cols-[60px_180px_1fr]">
+                <li key={d.step} className="grid gap-3 py-5 sm:grid-cols-[56px_170px_minmax(0,1fr)] sm:gap-4 sm:py-6">
                   <span className="text-label pt-1">0{i + 1}</span>
                   <p className="text-display text-xl">{d.step}</p>
                   <p className="text-small leading-relaxed text-[var(--ink-dim)]">{d.detail}</p>
@@ -211,7 +211,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           <Section id="treatment" index={8} label="Treatment options" title="Every route, stated plainly.">
             <ul className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillar.treatments.map((t) => (
-                <li key={t.name} className="grid gap-3 py-6 sm:grid-cols-[1fr_2fr]">
+                <li key={t.name} className="grid gap-3 py-5 sm:grid-cols-[minmax(0,1fr)_2fr] sm:py-6">
                   <div>
                     <p className="text-display text-xl">{t.name}</p>
                     <p className="mt-1 text-label">{t.kind}</p>
@@ -226,7 +226,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           <Section id="approach" index={9} label="The approach" title="How Dr. Mandeep treats it.">
             <ol className="space-y-6">
               {pillar.approach.map((a, i) => (
-                <li key={a} className="grid grid-cols-[54px_1fr] gap-5">
+                <li key={a} className="grid grid-cols-[40px_minmax(0,1fr)] gap-4 sm:grid-cols-[54px_minmax(0,1fr)] sm:gap-5">
                   <span className="text-label pt-2">0{i + 1}</span>
                   <p className="text-body leading-relaxed">{a}</p>
                 </li>
@@ -244,7 +244,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                       to="/procedures/$slug"
                       params={{ slug }}
                       data-cursor="link"
-                      className="grid grid-cols-[1fr_auto] items-center gap-6 px-2 py-6 transition-colors hover:bg-white/[0.02]"
+                      className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-2 py-5 sm:gap-6 sm:py-6 transition-colors hover:bg-white/[0.02]"
                     >
                       <div>
                         <p className="text-card-title">{entry.name}</p>

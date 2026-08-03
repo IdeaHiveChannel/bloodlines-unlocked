@@ -98,7 +98,7 @@ function ConditionPage() {
                 {relatedProcedures.map((p) => (
                   <li key={p.slug}>
                     <Link to="/procedures/$slug" params={{ slug: p.slug }} data-cursor="link"
-                      className="grid grid-cols-[110px_1fr_auto] items-center gap-6 px-2 py-5 hover:bg-white/[0.02] transition-colors">
+                      className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-4 sm:grid-cols-[110px_minmax(0,1fr)_auto] sm:gap-6 sm:py-5 hover:bg-white/[0.02] transition-colors">
                       <span className="text-label">Procedure</span>
                       <div>
                         <p className="text-display text-xl">{p.name}</p>
@@ -112,7 +112,7 @@ function ConditionPage() {
                   r.procedure ? (
                     <li key={r.id}>
                       <Link to="/procedures/$slug" params={{ slug: r.procedure }} data-cursor="link"
-                        className="grid grid-cols-[110px_1fr_auto] items-center gap-6 px-2 py-5 hover:bg-white/[0.02] transition-colors">
+                        className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-4 sm:grid-cols-[110px_minmax(0,1fr)_auto] sm:gap-6 sm:py-5 hover:bg-white/[0.02] transition-colors">
                         <span className="text-label">{r.kind}</span>
                         <div>
                           <p className="text-display text-xl">{r.title}</p>
@@ -122,7 +122,7 @@ function ConditionPage() {
                       </Link>
                     </li>
                   ) : (
-                    <li key={r.id} className="grid grid-cols-[110px_1fr_auto] items-center gap-6 px-2 py-5">
+                    <li key={r.id} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-4 sm:grid-cols-[110px_minmax(0,1fr)_auto] sm:gap-6 sm:py-5">
                       <span className="text-label">{r.kind}</span>
                       <div>
                         <p className="text-display text-xl">{r.title}</p>

@@ -44,7 +44,7 @@ function ProcedurePage() {
           {video && <ProcedureVideo video={video} />}
           <ol className="mt-16 space-y-10">
             {p.beats.map((b: string, i: number) => (
-              <li key={i} className="grid grid-cols-[60px_1fr] gap-6">
+              <li key={i} className="grid grid-cols-[44px_minmax(0,1fr)] gap-4 sm:grid-cols-[60px_minmax(0,1fr)] sm:gap-6">
                 <span className="text-label pt-2">0{i + 1}</span>
                 <p className="text-card-title">{b}</p>
               </li>
