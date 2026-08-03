@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { conditions } from "../lib/content";
 import { Footer } from "../components/sections/Footer";
 
-export const Route = createFileRoute("/conditions")({
+export const Route = createFileRoute("/conditions/")({
   head: () => ({
     meta: [
       { title: "Conditions Treated — Dr. Mandeep Sagar" },

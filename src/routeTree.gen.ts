@@ -11,12 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as ProceduresRouteImport } from './routes/procedures'
 import { Route as ExpertiseRouteImport } from './routes/expertise'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProceduresIndexRouteImport } from './routes/procedures.index'
+import { Route as ConditionsIndexRouteImport } from './routes/conditions.index'
 import { Route as ProceduresSlugRouteImport } from './routes/procedures.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
@@ -30,11 +30,6 @@ const ResourcesRoute = ResourcesRouteImport.update({
   path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProceduresRoute = ProceduresRouteImport.update({
-  id: '/procedures',
-  path: '/procedures',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ExpertiseRoute = ExpertiseRouteImport.update({
   id: '/expertise',
   path: '/expertise',
@@ -43,11 +38,6 @@ const ExpertiseRoute = ExpertiseRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConditionsRoute = ConditionsRouteImport.update({
-  id: '/conditions',
-  path: '/conditions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -60,102 +50,114 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProceduresIndexRoute = ProceduresIndexRouteImport.update({
+  id: '/procedures/',
+  path: '/procedures/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConditionsIndexRoute = ConditionsIndexRouteImport.update({
+  id: '/conditions/',
+  path: '/conditions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProceduresSlugRoute = ProceduresSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ProceduresRoute,
+  id: '/procedures/$slug',
+  path: '/procedures/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ConditionsRoute,
+  id: '/conditions/$slug',
+  path: '/conditions/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
-  '/procedures': typeof ProceduresRouteWithChildren
   '/resources': typeof ResourcesRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/conditions/': typeof ConditionsIndexRoute
+  '/procedures/': typeof ProceduresIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
-  '/procedures': typeof ProceduresRouteWithChildren
   '/resources': typeof ResourcesRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/conditions': typeof ConditionsIndexRoute
+  '/procedures': typeof ProceduresIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
-  '/procedures': typeof ProceduresRouteWithChildren
   '/resources': typeof ResourcesRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/conditions/': typeof ConditionsIndexRoute
+  '/procedures/': typeof ProceduresIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/conditions'
     | '/contact'
     | '/expertise'
-    | '/procedures'
     | '/resources'
     | '/testimonials'
     | '/conditions/$slug'
     | '/procedures/$slug'
+    | '/conditions/'
+    | '/procedures/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/conditions'
     | '/contact'
     | '/expertise'
-    | '/procedures'
     | '/resources'
     | '/testimonials'
     | '/conditions/$slug'
     | '/procedures/$slug'
+    | '/conditions'
+    | '/procedures'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/conditions'
     | '/contact'
     | '/expertise'
-    | '/procedures'
     | '/resources'
     | '/testimonials'
     | '/conditions/$slug'
     | '/procedures/$slug'
+    | '/conditions/'
+    | '/procedures/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ConditionsRoute: typeof ConditionsRouteWithChildren
   ContactRoute: typeof ContactRoute
   ExpertiseRoute: typeof ExpertiseRoute
-  ProceduresRoute: typeof ProceduresRouteWithChildren
   ResourcesRoute: typeof ResourcesRoute
   TestimonialsRoute: typeof TestimonialsRoute
+  ConditionsSlugRoute: typeof ConditionsSlugRoute
+  ProceduresSlugRoute: typeof ProceduresSlugRoute
+  ConditionsIndexRoute: typeof ConditionsIndexRoute
+  ProceduresIndexRoute: typeof ProceduresIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -174,13 +176,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/procedures': {
-      id: '/procedures'
-      path: '/procedures'
-      fullPath: '/procedures'
-      preLoaderRoute: typeof ProceduresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/expertise': {
       id: '/expertise'
       path: '/expertise'
@@ -193,13 +188,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/conditions': {
-      id: '/conditions'
-      path: '/conditions'
-      fullPath: '/conditions'
-      preLoaderRoute: typeof ConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -216,67 +204,49 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/procedures/': {
+      id: '/procedures/'
+      path: '/procedures'
+      fullPath: '/procedures/'
+      preLoaderRoute: typeof ProceduresIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conditions/': {
+      id: '/conditions/'
+      path: '/conditions'
+      fullPath: '/conditions/'
+      preLoaderRoute: typeof ConditionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/procedures/$slug': {
       id: '/procedures/$slug'
-      path: '/$slug'
+      path: '/procedures/$slug'
       fullPath: '/procedures/$slug'
       preLoaderRoute: typeof ProceduresSlugRouteImport
-      parentRoute: typeof ProceduresRoute
+      parentRoute: typeof rootRouteImport
     }
     '/conditions/$slug': {
       id: '/conditions/$slug'
-      path: '/$slug'
+      path: '/conditions/$slug'
       fullPath: '/conditions/$slug'
       preLoaderRoute: typeof ConditionsSlugRouteImport
-      parentRoute: typeof ConditionsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface ConditionsRouteChildren {
-  ConditionsSlugRoute: typeof ConditionsSlugRoute
-}
-
-const ConditionsRouteChildren: ConditionsRouteChildren = {
-  ConditionsSlugRoute: ConditionsSlugRoute,
-}
-
-const ConditionsRouteWithChildren = ConditionsRoute._addFileChildren(
-  ConditionsRouteChildren,
-)
-
-interface ProceduresRouteChildren {
-  ProceduresSlugRoute: typeof ProceduresSlugRoute
-}
-
-const ProceduresRouteChildren: ProceduresRouteChildren = {
-  ProceduresSlugRoute: ProceduresSlugRoute,
-}
-
-const ProceduresRouteWithChildren = ProceduresRoute._addFileChildren(
-  ProceduresRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ConditionsRoute: ConditionsRouteWithChildren,
   ContactRoute: ContactRoute,
   ExpertiseRoute: ExpertiseRoute,
-  ProceduresRoute: ProceduresRouteWithChildren,
   ResourcesRoute: ResourcesRoute,
   TestimonialsRoute: TestimonialsRoute,
+  ConditionsSlugRoute: ConditionsSlugRoute,
+  ProceduresSlugRoute: ProceduresSlugRoute,
+  ConditionsIndexRoute: ConditionsIndexRoute,
+  ProceduresIndexRoute: ProceduresIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
