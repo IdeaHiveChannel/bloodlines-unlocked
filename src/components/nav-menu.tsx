@@ -93,7 +93,7 @@ export function NavMenu({
               {links.map((l) => (
                 <li key={l.to + l.label}>
                   <Link
-                    to={l.to}
+                    {...({ to: l.to } as never)}
                     onClick={() => setOpen(false)}
                     className="block rounded-xl px-3 py-2 text-small text-[var(--ink-dim)] transition-colors hover:bg-white/[0.06] hover:text-white"
                     data-cursor="link"
