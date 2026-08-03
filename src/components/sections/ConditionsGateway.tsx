@@ -40,7 +40,7 @@ export function ConditionsGateway() {
                     {p.name}
                   </span>
                   <span className="mt-2 block text-[13.5px] leading-relaxed text-[var(--ink-dim)] max-w-2xl line-clamp-1 sm:line-clamp-none">
-                    {p.tagline}
+                    {p.summary}
                   </span>
                 </span>
                 <ArrowUpRight
