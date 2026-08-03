@@ -53,20 +53,21 @@ export function Navigation() {
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-[60] bg-[#050B16]/95 backdrop-blur-xl flex flex-col">
-          <div className="flex justify-end p-6">
-            <button onClick={() => setOpen(false)} aria-label="Close" data-cursor="link"><X size={22} /></button>
+        <div className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-[#050B16]/95 backdrop-blur-xl">
+          <div className="flex justify-end p-4">
+            <button onClick={() => setOpen(false)} aria-label="Close menu" data-cursor="link" className="grid size-11 place-items-center"><X size={22} /></button>
           </div>
-          <ul className="flex flex-col items-center justify-center flex-1 gap-6">
+          <ul className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-8 sm:gap-6">
             {items.map((i) => (
               <li key={i.to}>
-                <Link to={i.to} onClick={() => setOpen(false)} className="text-h2" data-cursor="link">{i.label}</Link>
+                <Link to={i.to} onClick={() => setOpen(false)} className="block py-1 text-h3" data-cursor="link">{i.label}</Link>
               </li>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)} className="mt-6 rounded-full bg-white text-black px-7 py-3.5 text-button" data-cursor="cta">Book consultation</Link>
+            <Link to="/contact" onClick={() => setOpen(false)} className="mt-4 inline-flex min-h-11 items-center rounded-full bg-white px-7 text-button text-black" data-cursor="cta">Book consultation</Link>
           </ul>
         </div>
       )}
+
     </>
   );
 }
