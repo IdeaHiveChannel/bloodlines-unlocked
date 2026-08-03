@@ -49,3 +49,27 @@ export function slugToLabel(slug: string) {
     .map((w) => (w.length <= 4 && w === w.toUpperCase() ? w : w[0].toUpperCase() + w.slice(1)))
     .join(" ");
 }
+
+/** Condition slug (content.ts) → pillar guide slug, where the naming differs. */
+export const conditionToPillar: Record<string, string> = {
+  "acute-ischemic-stroke": "stroke",
+  "varicose-veins": "varicose-veins",
+  "diabetic-foot": "diabetic-foot",
+  "peripheral-artery-disease": "peripheral-arterial-disease",
+  "critical-limb-ischemia": "peripheral-arterial-disease",
+  "deep-vein-thrombosis": "deep-vein-thrombosis",
+  "thyroid-nodules": "thyroid-nodules",
+  "knee-osteoarthritis": "knee-osteoarthritis",
+  "chronic-knee-pain": "knee-osteoarthritis",
+  "enlarged-prostate": "enlarged-prostate",
+  "uterine-fibroids": "uterine-fibroids",
+  "cerebral-aneurysm": "brain-aneurysm",
+  "brain-avm": "brain-avm-avf",
+  "dural-avf": "brain-avm-avf",
+  "hepatocellular-carcinoma": "liver-tumours",
+};
+
+export function pillarForCondition(slug: string) {
+  const target = conditionToPillar[slug];
+  return target ? getPillar(target) : undefined;
+}

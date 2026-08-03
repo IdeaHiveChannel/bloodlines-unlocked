@@ -16,8 +16,10 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProceduresIndexRouteImport } from './routes/procedures.index'
+import { Route as DiseasesIndexRouteImport } from './routes/diseases.index'
 import { Route as ConditionsIndexRouteImport } from './routes/conditions.index'
 import { Route as ProceduresSlugRouteImport } from './routes/procedures.$slug'
+import { Route as DiseasesSlugRouteImport } from './routes/diseases.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
 const TestimonialsRoute = TestimonialsRouteImport.update({
@@ -55,6 +57,11 @@ const ProceduresIndexRoute = ProceduresIndexRouteImport.update({
   path: '/procedures/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DiseasesIndexRoute = DiseasesIndexRouteImport.update({
+  id: '/diseases/',
+  path: '/diseases/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConditionsIndexRoute = ConditionsIndexRouteImport.update({
   id: '/conditions/',
   path: '/conditions/',
@@ -63,6 +70,11 @@ const ConditionsIndexRoute = ConditionsIndexRouteImport.update({
 const ProceduresSlugRoute = ProceduresSlugRouteImport.update({
   id: '/procedures/$slug',
   path: '/procedures/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiseasesSlugRoute = DiseasesSlugRouteImport.update({
+  id: '/diseases/$slug',
+  path: '/diseases/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
@@ -79,8 +91,10 @@ export interface FileRoutesByFullPath {
   '/resources': typeof ResourcesRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/diseases/$slug': typeof DiseasesSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
   '/conditions/': typeof ConditionsIndexRoute
+  '/diseases/': typeof DiseasesIndexRoute
   '/procedures/': typeof ProceduresIndexRoute
 }
 export interface FileRoutesByTo {
@@ -91,8 +105,10 @@ export interface FileRoutesByTo {
   '/resources': typeof ResourcesRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/diseases/$slug': typeof DiseasesSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
   '/conditions': typeof ConditionsIndexRoute
+  '/diseases': typeof DiseasesIndexRoute
   '/procedures': typeof ProceduresIndexRoute
 }
 export interface FileRoutesById {
@@ -104,8 +120,10 @@ export interface FileRoutesById {
   '/resources': typeof ResourcesRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/diseases/$slug': typeof DiseasesSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
   '/conditions/': typeof ConditionsIndexRoute
+  '/diseases/': typeof DiseasesIndexRoute
   '/procedures/': typeof ProceduresIndexRoute
 }
 export interface FileRouteTypes {
@@ -118,8 +136,10 @@ export interface FileRouteTypes {
     | '/resources'
     | '/testimonials'
     | '/conditions/$slug'
+    | '/diseases/$slug'
     | '/procedures/$slug'
     | '/conditions/'
+    | '/diseases/'
     | '/procedures/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -130,8 +150,10 @@ export interface FileRouteTypes {
     | '/resources'
     | '/testimonials'
     | '/conditions/$slug'
+    | '/diseases/$slug'
     | '/procedures/$slug'
     | '/conditions'
+    | '/diseases'
     | '/procedures'
   id:
     | '__root__'
@@ -142,8 +164,10 @@ export interface FileRouteTypes {
     | '/resources'
     | '/testimonials'
     | '/conditions/$slug'
+    | '/diseases/$slug'
     | '/procedures/$slug'
     | '/conditions/'
+    | '/diseases/'
     | '/procedures/'
   fileRoutesById: FileRoutesById
 }
@@ -155,8 +179,10 @@ export interface RootRouteChildren {
   ResourcesRoute: typeof ResourcesRoute
   TestimonialsRoute: typeof TestimonialsRoute
   ConditionsSlugRoute: typeof ConditionsSlugRoute
+  DiseasesSlugRoute: typeof DiseasesSlugRoute
   ProceduresSlugRoute: typeof ProceduresSlugRoute
   ConditionsIndexRoute: typeof ConditionsIndexRoute
+  DiseasesIndexRoute: typeof DiseasesIndexRoute
   ProceduresIndexRoute: typeof ProceduresIndexRoute
 }
 
@@ -211,6 +237,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProceduresIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/diseases/': {
+      id: '/diseases/'
+      path: '/diseases'
+      fullPath: '/diseases/'
+      preLoaderRoute: typeof DiseasesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/conditions/': {
       id: '/conditions/'
       path: '/conditions'
@@ -223,6 +256,13 @@ declare module '@tanstack/react-router' {
       path: '/procedures/$slug'
       fullPath: '/procedures/$slug'
       preLoaderRoute: typeof ProceduresSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diseases/$slug': {
+      id: '/diseases/$slug'
+      path: '/diseases/$slug'
+      fullPath: '/diseases/$slug'
+      preLoaderRoute: typeof DiseasesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/conditions/$slug': {
@@ -243,8 +283,10 @@ const rootRouteChildren: RootRouteChildren = {
   ResourcesRoute: ResourcesRoute,
   TestimonialsRoute: TestimonialsRoute,
   ConditionsSlugRoute: ConditionsSlugRoute,
+  DiseasesSlugRoute: DiseasesSlugRoute,
   ProceduresSlugRoute: ProceduresSlugRoute,
   ConditionsIndexRoute: ConditionsIndexRoute,
+  DiseasesIndexRoute: DiseasesIndexRoute,
   ProceduresIndexRoute: ProceduresIndexRoute,
 }
 export const routeTree = rootRouteImport
