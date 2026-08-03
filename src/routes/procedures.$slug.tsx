@@ -1,5 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { procedures } from "../lib/content";
+import { procedureVideos } from "../lib/media";
+import { ProcedureVideo } from "../components/procedures/ProcedureVideo";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
