@@ -41,6 +41,7 @@ export const Route = createFileRoute("/conditions/$slug")({
 
 function ConditionPage() {
   const c = Route.useLoaderData();
+  const guide = pillarForCondition(c.slug);
   const related = resourcesForCondition(c.slug);
   const relatedProcedures = procedures.filter((p) =>
     c.treatments.some(
@@ -56,6 +57,24 @@ function ConditionPage() {
           <Link to="/conditions" className="text-label" data-cursor="link">← All conditions</Link>
           <h1 className="mt-8 text-display text-[clamp(2.4rem,6vw,5rem)]">{c.name}</h1>
           <p className="mt-8 text-[17px] leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
+
+          {guide && (
+            <Link
+              to="/diseases/$slug"
+              params={{ slug: guide.slug }}
+              data-cursor="link"
+              className="mt-10 flex items-center justify-between gap-6 rounded-2xl border border-[var(--accent)]/25 bg-[var(--accent)]/[0.05] px-6 py-5 transition-colors hover:bg-[var(--accent)]/[0.09]"
+            >
+              <span>
+                <span className="block text-label text-[var(--accent)]">Complete guide</span>
+                <span className="mt-2 block text-display text-xl">{guide.title}</span>
+                <span className="mt-1 block text-[13px] text-[var(--ink-dim)]">
+                  Symptoms, tests, every treatment route, recovery and {guide.faqs.length} answered questions.
+                </span>
+              </span>
+              <span className="text-label">→</span>
+            </Link>
+          )}
 
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
             <div className="bg-[#050B16] p-8">
