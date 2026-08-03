@@ -63,7 +63,7 @@ export function Navigation() {
             <Link to="/contact" className="hidden min-h-11 items-center rounded-full bg-white px-5 text-button text-black transition-colors hover:bg-[var(--accent)] hover:text-black md:inline-flex" data-cursor="cta">
               Book consultation
             </Link>
-            <button className="grid size-11 place-items-center text-white lg:hidden" onClick={() => setOpen(true)} aria-label="Open menu" data-cursor="link">
+            <button className="grid size-11 place-items-center text-white" onClick={() => setOpen(true)} aria-label="Open menu" data-cursor="link">
               <Menu size={20} />
             </button>
           </div>
