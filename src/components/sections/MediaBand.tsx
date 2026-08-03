@@ -6,7 +6,7 @@ import hybridOt from "../../assets/hybrid-ot.jpg";
 import handsCatheter from "../../assets/hands-catheter.jpg";
 import thrombectomy from "../../assets/video-thrombectomy.mp4.asset.json";
 import varicose from "../../assets/video-varicose-vein-ablation.mp4.asset.json";
-import { MediaFrame, mediaFillClass } from "../media/MediaFrame";
+import { ResponsiveVideo } from "../media/ResponsiveVideo";
 
 
 const stills = [
