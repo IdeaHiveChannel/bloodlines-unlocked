@@ -2,17 +2,24 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const items = [
+// Desktop keeps a short primary rail; the rest live in the menu (and at xl+).
+const primary = [
   { to: "/about", label: "About" },
-  { to: "/expertise", label: "Expertise" },
   { to: "/diseases", label: "Diseases" },
-  { to: "/conditions", label: "Conditions" },
   { to: "/procedures", label: "Procedures" },
   { to: "/second-opinion", label: "Second opinion" },
+];
+
+const secondary = [
+  { to: "/expertise", label: "Expertise" },
+  { to: "/conditions", label: "Conditions" },
   { to: "/media", label: "Media" },
   { to: "/resources", label: "Resources" },
   { to: "/contact", label: "Contact" },
 ];
+
+const items = [...primary, ...secondary];
+
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,8 +40,8 @@ export function Navigation() {
               <span className="mt-0.5 hidden text-[0.6875rem] font-medium uppercase tracking-[0.24em] text-[var(--ink-dim)] xs:block">Vascular · neuro interventional</span>
             </span>
           </Link>
-          <ul className="hidden items-center gap-5 lg:flex xl:gap-7">
-            {items.map((i) => (
+          <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
+            {primary.map((i) => (
               <li key={i.to}>
                 <Link to={i.to} className="group relative text-nav text-[var(--ink-dim)] hover:text-white transition-colors" data-cursor="link">
                   {i.label}
@@ -42,12 +49,21 @@ export function Navigation() {
                 </Link>
               </li>
             ))}
+            {secondary.slice(0, 3).map((i) => (
+              <li key={i.to} className="hidden xl:block">
+                <Link to={i.to} className="group relative text-nav text-[var(--ink-dim)] hover:text-white transition-colors" data-cursor="link">
+                  {i.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
+                </Link>
+              </li>
+            ))}
           </ul>
+
           <div className="flex shrink-0 items-center gap-2">
             <Link to="/contact" className="hidden min-h-11 items-center rounded-full bg-white px-5 text-button text-black transition-colors hover:bg-[var(--accent)] hover:text-black md:inline-flex" data-cursor="cta">
               Book consultation
             </Link>
-            <button className="grid size-11 place-items-center text-white lg:hidden" onClick={() => setOpen(true)} aria-label="Open menu" data-cursor="link">
+            <button className="grid size-11 place-items-center text-white" onClick={() => setOpen(true)} aria-label="Open menu" data-cursor="link">
               <Menu size={20} />
             </button>
           </div>
