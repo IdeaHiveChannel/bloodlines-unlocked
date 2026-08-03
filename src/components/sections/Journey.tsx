@@ -18,7 +18,7 @@ export function Journey() {
   return (
     <section ref={ref} className="relative bg-[#050B16]" style={{ height: `${steps.length * 90}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10 mb-12">
+        <div className="shell mb-12">
           <p className="text-label">Patient journey</p>
           <h2 className="mt-4 text-display text-[clamp(2rem,4.5vw,4rem)]">From diagnosis to recovery.</h2>
           <p className="mt-5 max-w-2xl text-[14.5px] leading-relaxed text-[var(--ink-dim)]">Every decision begins with understanding the disease. Imaging guides the diagnosis, treatment is planned around the individual patient, and follow-up continues long after the procedure is complete.</p>

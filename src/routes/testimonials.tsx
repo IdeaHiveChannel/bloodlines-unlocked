@@ -19,7 +19,7 @@ function Testimonials() {
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16] min-h-screen">
-        <div className="mx-auto max-w-3xl px-6 sm:px-10">
+        <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <p className="text-label">Chapter 09 · Patient care today</p>
           <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)]">Patient stories.</h1>
           <p className="mt-8 text-[17px] leading-relaxed text-[var(--ink-dim)]">

@@ -7,7 +7,7 @@ import { StoryboardCanvas } from "./canvases";
 export function Procedures() {
   return (
     <section className="relative bg-[#050B16]">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10 pt-32 pb-12">
+      <div className="shell pt-32 pb-12">
         <p className="text-label">Chapter 04 · Procedures</p>
         <h2 className="mt-6 text-display text-[clamp(2.4rem,5vw,4.5rem)] max-w-3xl">
           Every procedure has its own story.
@@ -27,7 +27,7 @@ export function Procedures() {
           storyboard={p.storyboard}
         />
       ))}
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10 pb-32">
+      <div className="shell pb-32">
         <Link to="/procedures" data-cursor="link" className="text-label underline">
           See every procedure →
         </Link>
@@ -56,14 +56,14 @@ function ProcedureStory({
   return (
     <div ref={ref} className="relative" style={{ height: `${beats.length * 70}vh` }}>
       <div className="sticky top-0 h-screen flex flex-col">
-        <div className="mx-auto w-full max-w-[1480px] px-6 sm:px-10 pt-32">
+        <div className="shell pt-32">
           <p className="text-label">Procedure {String(index + 1).padStart(2, "0")}</p>
           <Link to="/procedures/$slug" params={{ slug }} data-cursor="link">
             <h3 className="mt-3 text-display text-[clamp(2rem,5vw,4rem)]">{name}</h3>
           </Link>
           <p className="mt-3 text-[14px] text-[var(--ink-dim)] max-w-md">{oneLiner}</p>
         </div>
-        <div className="flex-1 grid lg:grid-cols-2 items-center gap-10 mx-auto w-full max-w-[1480px] px-6 sm:px-10 pb-20">
+        <div className="flex-1 grid lg:grid-cols-2 items-center gap-10 shell pb-20">
           <div className="relative aspect-square w-full max-w-[560px] mx-auto rounded-3xl border border-white/[0.06] overflow-hidden bg-gradient-to-br from-white/[0.02] to-transparent">
             <StoryboardCanvas storyboard={storyboard} progress={scrollYProgress} />
             <div className="absolute bottom-4 left-4 right-4 flex gap-1">

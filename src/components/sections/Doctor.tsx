@@ -5,8 +5,8 @@ import { Link } from "@tanstack/react-router";
 
 export function Doctor() {
   return (
-    <section className="relative bg-[#050B16] py-32">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+    <section className="relative bg-[#050B16] section-y">
+      <div className="shell">
         <p className="text-label">Chapter 06 · The physician</p>
         <div className="mt-10 grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">

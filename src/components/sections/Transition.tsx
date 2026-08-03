@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Transition() {
   return (
-    <section className="relative bg-[#050B16] py-32 sm:py-44 border-t border-white/[0.05]">
+    <section className="relative bg-[#050B16] section-y sm:py-44 border-t border-white/[0.05]">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -10,7 +10,7 @@ export function Transition() {
             "radial-gradient(45% 60% at 50% 50%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 75%)",
         }}
       />
-      <div className="relative mx-auto max-w-[1100px] px-6 sm:px-10 text-center">
+      <div className="relative mx-auto max-w-[1100px] px-5 sm:px-10 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}

@@ -5,8 +5,8 @@ import { pillars } from "../../lib/pillars";
 
 export function ConditionsGateway() {
   return (
-    <section className="relative bg-[#050B16] py-32 border-t border-white/[0.05]">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+    <section className="relative bg-[#050B16] section-y border-t border-white/[0.05]">
+      <div className="shell">
         <p className="text-label">Chapter 03 · Conditions</p>
         <div className="mt-6 grid lg:grid-cols-12 gap-10">
           <h2 className="lg:col-span-6 text-display text-[clamp(2.4rem,5vw,4.5rem)]">

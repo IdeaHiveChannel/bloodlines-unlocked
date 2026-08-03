@@ -17,8 +17,8 @@ export const Route = createFileRoute("/contact")({
   component: () => (
     <>
       <div className="pt-24"><Consultation /></div>
-      <div className="bg-[#050B16] py-24 border-t border-white/[0.05]">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+      <div className="bg-[#050B16] section-y border-t border-white/[0.05]">
+        <div className="shell">
           <p className="text-label">Where to find the practice</p>
           <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-2xl">
             Three cities. One phone line.

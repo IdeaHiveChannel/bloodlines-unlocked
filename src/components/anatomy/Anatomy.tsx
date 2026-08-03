@@ -193,8 +193,8 @@ export function Anatomy() {
   const guide = regionGuide[active];
 
   return (
-    <section className="relative bg-[#050B16] py-32 sm:py-40">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+    <section className="relative bg-[#050B16] section-y sm:section-y">
+      <div className="shell">
         <div className="flex items-end justify-between flex-wrap gap-4">
           <div>
             <p className="text-label">Chapter 02 · Anatomy</p>

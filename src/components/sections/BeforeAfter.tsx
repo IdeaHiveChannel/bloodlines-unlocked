@@ -140,8 +140,8 @@ export function BeforeAfter() {
   const [active, setActive] = useState(0);
   const item = cases[active];
   return (
-    <section className="relative bg-[#050B16] py-32">
-      <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+    <section className="relative bg-[#050B16] section-y">
+      <div className="shell">
         <p className="text-label">Chapter 06 · Evidence</p>
         <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-3xl">
           Before. After. The same patient, the same vessel.

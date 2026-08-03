@@ -45,7 +45,7 @@ function ConditionsIndex() {
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+        <div className="shell">
           <p className="text-label">Catalogue</p>
           <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,6rem)] max-w-3xl">
             Conditions treated.

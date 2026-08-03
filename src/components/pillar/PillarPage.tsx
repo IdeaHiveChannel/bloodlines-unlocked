@@ -29,7 +29,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-32 border-t border-white/[0.06] py-16 sm:py-20">
+    <section id={id} className="scroll-mt-32 border-t border-white/[0.06] py-16 sm:section-y">
       <div className="grid gap-8 lg:grid-cols-[220px_1fr]">
         <div>
           <p className="text-label">
@@ -115,7 +115,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
   return (
     <>
       <main className="bg-[#050B16] pt-32">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+        <div className="shell">
           {/* 01 — Hero */}
           <header className="pb-14 pt-6">
             <Link to="/diseases" className="text-label" data-cursor="link">

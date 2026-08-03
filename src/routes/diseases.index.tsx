@@ -32,7 +32,7 @@ function DiseasesIndex() {
   return (
     <>
       <main className="bg-[#050B16] pt-36 pb-24">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
+        <div className="shell">
           <p className="text-label">Patient guides</p>
           <h1 className="mt-6 max-w-3xl text-display text-[clamp(2.4rem,6vw,6rem)] leading-[0.95]">
             Fourteen conditions, explained end to end.

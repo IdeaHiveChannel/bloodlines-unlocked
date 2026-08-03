@@ -60,7 +60,7 @@ function Resources() {
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16] min-h-screen">
-        <div className="mx-auto max-w-3xl px-6 sm:px-10">
+        <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <p className="text-label">Patient Education</p>
           <h1 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)]">Resources.</h1>
           <div className="mt-10 relative">
