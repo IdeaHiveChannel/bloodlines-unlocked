@@ -4,16 +4,31 @@ import { pillarForCondition } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/conditions/$slug")({
   head: ({ params }) => {
     const c = conditions.find((x) => x.slug === params.slug);
+    const url = `${SITE}/conditions/${params.slug}`;
+    if (!c) {
+      return {
+        meta: [
+          { title: "Condition not catalogued — Dr. Mandeep Sagar" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
+    }
     return {
       meta: [
-        { title: c ? `${c.name} — Dr. Mandeep Sagar` : "Condition" },
-        { name: "description", content: c?.intro ?? "" },
-        { property: "og:title", content: c ? `${c.name} — Treatment` : "Condition" },
-        { property: "og:description", content: c?.intro ?? "" },
+        { title: `${c.name} — treatment | Dr. Mandeep Sagar`.slice(0, 60) },
+        { name: "description", content: c.intro.slice(0, 158) },
+        { property: "og:title", content: `${c.name} — image-guided treatment` },
+        { property: "og:description", content: c.intro.slice(0, 158) },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
   loader: ({ params }) => {
