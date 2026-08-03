@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { ProcedureVideoMeta } from "../../lib/media";
+import { MediaFrame, mediaFillClass } from "../media/MediaFrame";
+
 
 export function ProcedureVideo({ video }: { video: ProcedureVideoMeta }) {
   const ref = useRef<HTMLVideoElement>(null);
