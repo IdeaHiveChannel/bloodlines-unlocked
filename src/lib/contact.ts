@@ -13,6 +13,16 @@ export const contact = {
   verified: true,
 };
 
+// Official public profiles. Used in the footer, contact page and JSON-LD sameAs.
+export const socialLinks = [
+  { label: "Facebook", url: "https://www.facebook.com/profile.php?id=61591086347527" },
+  { label: "Instagram", url: "https://www.instagram.com/vascularcaredoctor" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/dr-mandeep-sagar-749b641b2/" },
+  { label: "Google Business Profile", url: "https://share.google/guFKPiZuiF0l76gqf" },
+];
+
+export const socialUrls = socialLinks.map((s) => s.url);
+
 export const locations = [
   { city: "Kannur", state: "Kerala, India" },
   { city: "Mangalore", state: "Karnataka, India" },

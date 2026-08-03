@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { socialUrls } from "../lib/contact";
 import { Hero } from "../components/hero/Hero";
 import { Transition } from "../components/sections/Transition";
 import { Anatomy } from "../components/anatomy/Anatomy";
@@ -7,6 +8,7 @@ import { Procedures } from "../components/procedures/Procedures";
 import { BeforeAfter } from "../components/sections/BeforeAfter";
 import { Recovery } from "../components/sections/Recovery";
 import { PatientStories } from "../components/sections/PatientStories";
+import { MediaBand } from "../components/sections/MediaBand";
 import { Journey } from "../components/sections/Journey";
 import { Doctor } from "../components/sections/Doctor";
 import { Consultation } from "../components/sections/Consultation";
@@ -43,6 +45,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Physician",
+          sameAs: socialUrls,
           name: "Dr. Mandeep Sagar",
           medicalSpecialty: "Radiology",
           description:
@@ -73,6 +76,7 @@ function Index() {
       <Procedures />
       <BeforeAfter />
       <Recovery />
+      <MediaBand />
       <PatientStories />
       <Journey />
       <Doctor />

@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
 import { ArrowRight } from "lucide-react";
@@ -14,23 +14,8 @@ export function Hero() {
   const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const bgScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.15]);
 
-  // Scan reveal mask position
-  const portraitWrapRef = useRef<HTMLDivElement>(null);
-  const [scan, setScan] = useState({ x: 50, y: 50, on: false });
-  useEffect(() => {
-    const el = portraitWrapRef.current;
-    if (!el) return;
-    const onMove = (e: PointerEvent) => {
-      const r = el.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width) * 100;
-      const y = ((e.clientY - r.top) / r.height) * 100;
-      setScan({ x, y, on: true });
-    };
-    const onLeave = () => setScan((s) => ({ ...s, on: false }));
-    el.addEventListener("pointermove", onMove);
-    el.addEventListener("pointerleave", onLeave);
-    return () => { el.removeEventListener("pointermove", onMove); el.removeEventListener("pointerleave", onLeave); };
-  }, []);
+
+
 
   return (
     <section
@@ -60,62 +45,48 @@ export function Hero() {
       <Particles />
 
       {/* Content grid */}
-      <div className="shell relative z-10 flex h-full flex-col pt-28 pb-14 sm:pt-32 lg:flex-row lg:items-center lg:gap-10 lg:pt-40">
+      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-12 sm:pt-28 lg:flex-row lg:items-center lg:gap-10 lg:pt-32">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
             <span className="text-label">Vascular &amp; neuro interventional radiology</span>
           </div>
-          <h1 className="mt-6 text-display-xxl sm:mt-8">
+          <h1 className="mt-4 text-display-xxl sm:mt-5">
             Modern medicine,
             <br />
             <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">through a pinpoint opening.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-body-lg text-[var(--ink-dim)] sm:mt-8">
+          <p className="mt-4 max-w-xl text-body-lg text-[var(--ink-dim)] sm:mt-5">
             Advanced image-guided treatment for vascular, neurovascular and minimally invasive procedures, performed with precision through blood vessels rather than large surgical incisions.
           </p>
-          <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 sm:mt-10">
-            <Link to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-7 py-3.5 text-button text-black hover:bg-[var(--accent)] transition-colors">
+          <div className="mt-6 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 sm:mt-7">
+            <Link to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
               Book consultation
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-7 py-3.5 text-button hover:bg-white/5 transition-colors">
+            <Link to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-3 text-button hover:bg-white/5 transition-colors">
               Explore conditions
             </Link>
           </div>
         </motion.div>
 
-        {/* Right: portrait with scan reveal */}
-        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-12 flex-1 lg:mt-0 lg:w-[45%]">
-          <div ref={portraitWrapRef} data-cursor="scan"
-            className="relative mx-auto aspect-[4/5] w-full max-w-[340px] sm:max-w-[440px] lg:aspect-auto lg:h-[640px] lg:max-w-[520px]">
-            {/* Vessel anatomy reveal layer */}
-            <VesselSVG />
-            {/* Doctor portrait, with scan mask */}
+        {/* Right: portrait */}
+        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-10 flex-1 lg:mt-0 lg:w-[45%]">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[300px] sm:max-w-[380px] lg:aspect-auto lg:h-[540px] lg:max-w-[460px]">
             <img src={portraitAsset.url} alt="Dr. Mandeep Sagar, interventional radiologist"
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"
               style={{
                 filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6))",
                 animation: "heartbeat 8s ease-in-out infinite",
-                WebkitMaskImage: scan.on ? `radial-gradient(circle at ${scan.x}% ${scan.y}%, transparent 0, transparent 90px, black 200px)` : "none",
-                maskImage: scan.on ? `radial-gradient(circle at ${scan.x}% ${scan.y}%, transparent 0, transparent 90px, black 200px)` : "none",
-                transition: "mask-image 120ms linear, -webkit-mask-image 120ms linear",
               }}
               draggable={false}
             />
-            {/* Scan ring */}
-            {scan.on && (
-              <div className="pointer-events-none absolute inset-0" style={{
-                background: `radial-gradient(circle at ${scan.x}% ${scan.y}%, transparent 80px, color-mix(in oklab, var(--accent) 30%, transparent) 130px, transparent 200px)`,
-              }} />
-            )}
-          </div>
-          <div className="mt-3 hidden text-center text-label lg:block">
-            Hover to reveal vascular anatomy
           </div>
         </motion.div>
       </div>
+
+
 
       {/* Scroll indicator */}
       <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex">
@@ -152,44 +123,5 @@ function Particles() {
       })}
       <style>{`@keyframes floatY { from { transform: translate3d(0,0,0); } to { transform: translate3d(20px,-40px,0); } }`}</style>
     </div>
-  );
-}
-
-function VesselSVG() {
-  return (
-    <svg viewBox="0 0 400 640" className="absolute inset-0 h-full w-full vessel-glow" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <linearGradient id="vg" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="color-mix(in oklab, var(--accent) 90%, white)" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.4" />
-        </linearGradient>
-      </defs>
-      <g fill="none" stroke="url(#vg)" strokeWidth="1.2" opacity="0.85">
-        {/* Cerebral circle */}
-        <circle cx="200" cy="90" r="34" />
-        <path d="M180,124 C180,160 175,180 180,210" />
-        <path d="M220,124 C220,160 225,180 220,210" />
-        {/* Carotids */}
-        <path d="M180,210 C175,250 160,280 150,320" />
-        <path d="M220,210 C225,250 240,280 250,320" />
-        {/* Aortic arch */}
-        <path d="M150,320 C150,340 180,360 200,360 C220,360 250,340 250,320" strokeWidth="1.8" />
-        {/* Aorta down */}
-        <path d="M200,360 L200,520" strokeWidth="2" />
-        {/* Iliac */}
-        <path d="M200,520 C190,545 165,560 145,590" />
-        <path d="M200,520 C210,545 235,560 255,590" />
-        {/* Branches */}
-        <path d="M180,260 L120,295" />
-        <path d="M220,260 L280,295" />
-        <path d="M200,430 L140,460" />
-        <path d="M200,430 L260,460" />
-      </g>
-      {/* Flow */}
-      <g stroke="var(--accent)" strokeWidth="2.5" fill="none" strokeLinecap="round"
-        style={{ filter: "drop-shadow(0 0 4px var(--accent))" }}>
-        <path d="M200,360 L200,520" strokeDasharray="10 200" style={{ animation: "flow 4s linear infinite" }} />
-      </g>
-    </svg>
   );
 }

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Doctor } from "../components/sections/Doctor";
 import { Footer } from "../components/sections/Footer";
-import { contact } from "../lib/contact";
+import { contact, socialUrls } from "../lib/contact";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
@@ -31,6 +31,7 @@ export const Route = createFileRoute("/about")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Physician",
+          sameAs: socialUrls,
           name: "Dr. Mandeep Sagar",
           medicalSpecialty: "Radiology",
           url: `${SITE}/about`,
