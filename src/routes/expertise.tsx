@@ -50,8 +50,13 @@ function Expertise() {
             <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-2xl">
               Training, teaching, and the practice it built.
             </h2>
+            <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-[var(--ink-dim)]">
+              In sequence — foundation, fellowship, high-volume practice, and the international
+              courses that keep technique current.
+            </p>
             <ExpertiseTimeline />
           </div>
+
 
           <div className="mt-20">
             <Link to="/conditions" className="text-label underline" data-cursor="link">See conditions treated →</Link>
