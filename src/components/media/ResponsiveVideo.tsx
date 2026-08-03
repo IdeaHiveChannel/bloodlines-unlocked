@@ -77,10 +77,23 @@ export function ResponsiveVideo({
         className={`group relative mx-auto w-full min-w-0 max-h-[70svh] overflow-hidden rounded-xl border border-white/[0.06] bg-[#050B16] ${frameClassName}`}
       >
         {/* Skeleton — visible only until the first frame is decodable. */}
-        {!ready && (
+        {!ready && !poster && (
           <div
             aria-hidden
             className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-white/[0.06]"
+          />
+        )}
+        {/* Poster layer — paints instantly, fades out once the video can render. */}
+        {poster && (
+          <img
+            src={poster}
+            alt=""
+            aria-hidden
+            loading="lazy"
+            decoding="async"
+            className={`absolute inset-0 h-full w-full object-center transition-opacity duration-500 ${
+              objectFit === "cover" ? "object-cover" : "object-contain"
+            } ${ready ? "opacity-0" : "opacity-100"}`}
           />
         )}
         <video
@@ -94,10 +107,12 @@ export function ResponsiveVideo({
           controls={reduced}
           onLoadedMetadata={readRatio}
           onLoadedData={() => setReady(true)}
+          onCanPlay={() => setReady(true)}
           className={`absolute inset-0 block h-full w-full max-w-full object-center transition-opacity duration-500 ${
             objectFit === "cover" ? "object-cover" : "object-contain"
           } ${ready ? "opacity-100" : "opacity-0"} ${className}`}
         />
+
         {expandable && !reduced && (
           <button
             type="button"
