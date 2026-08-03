@@ -60,61 +60,47 @@ export function Hero() {
       <Particles />
 
       {/* Content grid */}
-      <div className="shell relative z-10 flex h-full flex-col pt-28 pb-14 sm:pt-32 lg:flex-row lg:items-center lg:gap-10 lg:pt-40">
+      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-12 sm:pt-28 lg:flex-row lg:items-center lg:gap-10 lg:pt-32">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
             <span className="text-label">Vascular &amp; neuro interventional radiology</span>
           </div>
-          <h1 className="mt-6 text-display-xxl sm:mt-8">
+          <h1 className="mt-4 text-display-xxl sm:mt-5">
             Modern medicine,
             <br />
             <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">through a pinpoint opening.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-body-lg text-[var(--ink-dim)] sm:mt-8">
+          <p className="mt-4 max-w-xl text-body-lg text-[var(--ink-dim)] sm:mt-5">
             Advanced image-guided treatment for vascular, neurovascular and minimally invasive procedures, performed with precision through blood vessels rather than large surgical incisions.
           </p>
-          <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 sm:mt-10">
-            <Link to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-7 py-3.5 text-button text-black hover:bg-[var(--accent)] transition-colors">
+          <div className="mt-6 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 sm:mt-7">
+            <Link to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
               Book consultation
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-7 py-3.5 text-button hover:bg-white/5 transition-colors">
+            <Link to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-3 text-button hover:bg-white/5 transition-colors">
               Explore conditions
             </Link>
           </div>
         </motion.div>
 
-        {/* Right: portrait with scan reveal */}
-        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-12 flex-1 lg:mt-0 lg:w-[45%]">
-          <div ref={portraitWrapRef} data-cursor="scan"
-            className="relative mx-auto aspect-[4/5] w-full max-w-[340px] sm:max-w-[440px] lg:aspect-auto lg:h-[640px] lg:max-w-[520px]">
-            {/* Vessel anatomy reveal layer */}
-            <VesselSVG />
-            {/* Doctor portrait, with scan mask */}
+        {/* Right: portrait */}
+        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-10 flex-1 lg:mt-0 lg:w-[45%]">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[300px] sm:max-w-[380px] lg:aspect-auto lg:h-[540px] lg:max-w-[460px]">
             <img src={portraitAsset.url} alt="Dr. Mandeep Sagar, interventional radiologist"
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"
               style={{
                 filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6))",
                 animation: "heartbeat 8s ease-in-out infinite",
-                WebkitMaskImage: scan.on ? `radial-gradient(circle at ${scan.x}% ${scan.y}%, transparent 0, transparent 90px, black 200px)` : "none",
-                maskImage: scan.on ? `radial-gradient(circle at ${scan.x}% ${scan.y}%, transparent 0, transparent 90px, black 200px)` : "none",
-                transition: "mask-image 120ms linear, -webkit-mask-image 120ms linear",
               }}
               draggable={false}
             />
-            {/* Scan ring */}
-            {scan.on && (
-              <div className="pointer-events-none absolute inset-0" style={{
-                background: `radial-gradient(circle at ${scan.x}% ${scan.y}%, transparent 80px, color-mix(in oklab, var(--accent) 30%, transparent) 130px, transparent 200px)`,
-              }} />
-            )}
-          </div>
-          <div className="mt-3 hidden text-center text-label lg:block">
-            Hover to reveal vascular anatomy
           </div>
         </motion.div>
+      </div>
+
       </div>
 
       {/* Scroll indicator */}
