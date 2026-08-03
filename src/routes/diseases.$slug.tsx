@@ -10,11 +10,11 @@ export const Route = createFileRoute("/diseases/$slug")({
     if (!p) {
       return { meta: [{ title: "Condition not found" }, { name: "robots", content: "noindex" }] };
     }
-    const title = `${p.title} — symptoms, tests and treatment | Dr. Mandeep Sagar`;
+    const title = `${p.title} — treatment | Dr. Mandeep Sagar`;
     const url = `${SITE}/diseases/${p.slug}`;
     return {
       meta: [
-        { title: title.slice(0, 68) },
+        { title: title.length > 60 ? `${p.title} — Dr. Mandeep Sagar`.slice(0, 60) : title },
         { name: "description", content: p.summary.slice(0, 158) },
         { property: "og:title", content: `${p.title} — Dr. Mandeep Sagar` },
         { property: "og:description", content: p.summary.slice(0, 158) },

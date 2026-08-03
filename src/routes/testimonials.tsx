@@ -2,16 +2,20 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
 import { patientStories, consentNote } from "../lib/stories";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
       { title: "Patient stories — Dr. Mandeep Sagar" },
       { name: "description", content: "Verified patient experiences of image-guided vascular and neurointerventional care, published only with written consent." },
-      { property: "og:title", content: "Patient stories" },
-      { property: "og:description", content: "Verified patient experiences, published only with consent." },
+      { property: "og:title", content: "Patient stories — Dr. Mandeep Sagar" },
+      { property: "og:description", content: "Verified accounts from patients treated through image-guided intervention, published only with written consent." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/testimonials` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/testimonials` }],
   }),
   component: Testimonials,
 });

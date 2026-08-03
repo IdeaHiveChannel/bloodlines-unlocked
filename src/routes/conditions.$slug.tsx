@@ -1,22 +1,33 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { conditions, procedures, resourcesForCondition } from "../lib/content";
+import type { Condition } from "../lib/content";
 import { pillarForCondition } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/conditions/$slug")({
   head: ({ params }) => {
     const c = conditions.find((x) => x.slug === params.slug);
+    const url = `${SITE}/conditions/${params.slug}`;
+    const name = c?.name ?? "Condition not catalogued";
+    const intro = (c?.intro ?? "This condition is not in the catalogue.").slice(0, 158);
     return {
       meta: [
-        { title: c ? `${c.name} — Dr. Mandeep Sagar` : "Condition" },
-        { name: "description", content: c?.intro ?? "" },
-        { property: "og:title", content: c ? `${c.name} — Treatment` : "Condition" },
-        { property: "og:description", content: c?.intro ?? "" },
+        { title: `${name} — treatment | Dr. Mandeep Sagar`.slice(0, 60) },
+        { name: "description", content: intro },
+        { property: "og:title", content: `${name} — image-guided treatment` },
+        { property: "og:description", content: intro },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { name: "robots", content: c ? "index,follow" : "noindex" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
-  loader: ({ params }) => {
+  loader: ({ params }): Condition => {
     const c = conditions.find((x) => x.slug === params.slug);
     if (!c) throw notFound();
     return c;
@@ -40,7 +51,7 @@ export const Route = createFileRoute("/conditions/$slug")({
 });
 
 function ConditionPage() {
-  const c = Route.useLoaderData();
+  const c = Route.useLoaderData() as Condition;
   const guide = pillarForCondition(c.slug);
   const related = resourcesForCondition(c.slug);
   const relatedProcedures = procedures.filter((p) =>

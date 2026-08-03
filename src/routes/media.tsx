@@ -2,10 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
 import { MediaTimeline } from "../components/sections/MediaTimeline";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/media")({
   head: () => ({
     meta: [
-      { title: "Media, publications and awards — Dr. Mandeep Sagar" },
+      { title: "Media, publications and awards — Dr. Sagar" },
       {
         name: "description",
         content:
@@ -14,11 +16,14 @@ export const Route = createFileRoute("/media")({
       { property: "og:title", content: "Media, publications and awards" },
       {
         property: "og:description",
-        content: "A verified record of research, talks, recognitions and press coverage.",
+        content:
+          "A verified record of research, conference talks, recognitions and press coverage in interventional radiology.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/media` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/media` }],
   }),
   component: MediaPage,
 });

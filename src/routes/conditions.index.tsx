@@ -3,6 +3,8 @@ import { conditions } from "../lib/content";
 import { conditionToPillar } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/conditions/")({
   head: () => ({
     meta: [
@@ -12,14 +14,16 @@ export const Route = createFileRoute("/conditions/")({
         content:
           "The full disease library treated through image-guided intervention — from stroke and aneurysms to fibroids, liver tumours, diabetic foot and varicose veins.",
       },
-      { property: "og:title", content: "Conditions treated" },
+      { property: "og:title", content: "Conditions treated by Dr. Mandeep Sagar" },
       {
         property: "og:description",
         content: "Featured guides and the complete catalogue of conditions treated without major surgery.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/conditions` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/conditions` }],
   }),
   component: ConditionsIndex,
 });
@@ -57,7 +61,7 @@ function ConditionsIndex() {
           </p>
 
           <section className="mt-20">
-            <p className="text-label">Featured — complete guides</p>
+            <h2 className="text-label">Featured — complete guides</h2>
             <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
               {featured.map((c) => (
                 <Link
@@ -68,7 +72,7 @@ function ConditionsIndex() {
                   className="group bg-[#050B16] p-8 hover:bg-white/[0.03] transition-colors"
                 >
                   <p className="text-label">{labels[c.region] ?? c.region}</p>
-                  <h2 className="text-card-title mt-4">{c.name}</h2>
+                  <h3 className="text-card-title mt-4">{c.name}</h3>
                   <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)] line-clamp-3">
                     {c.intro}
                   </p>
@@ -84,7 +88,7 @@ function ConditionsIndex() {
             <p className="text-label">Other conditions treated</p>
             {Object.entries(byRegion).map(([region, list]) => (
               <div key={region}>
-                <p className="text-label">{labels[region] ?? region}</p>
+                <h2 className="text-label">{labels[region] ?? region}</h2>
                 <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
                   {list.map((c) => (
                     <Link

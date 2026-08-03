@@ -3,10 +3,12 @@ import { Footer } from "../components/sections/Footer";
 import { SecondOpinionForm } from "../components/sections/SecondOpinionForm";
 import { contact, whatsappLink, whatsappMessages } from "../lib/contact";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/second-opinion")({
   head: () => ({
     meta: [
-      { title: "Second opinion on your scans — Dr. Mandeep Sagar" },
+      { title: "Second opinion on your scans — Dr. Sagar" },
       {
         name: "description",
         content:
@@ -16,11 +18,13 @@ export const Route = createFileRoute("/second-opinion")({
       {
         property: "og:description",
         content:
-          "An interventional radiology review of your existing scans, before you commit to major surgery.",
+          "An interventional radiology review of your existing scans and reports, before you commit to major surgery.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/second-opinion` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/second-opinion` }],
   }),
   component: SecondOpinion,
 });

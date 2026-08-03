@@ -1,23 +1,34 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { procedures } from "../lib/content";
+import type { Procedure } from "../lib/content";
 import { procedureVideos } from "../lib/media";
 import { ProcedureVideo } from "../components/procedures/ProcedureVideo";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/procedures/$slug")({
   head: ({ params }) => {
     const p = procedures.find((x) => x.slug === params.slug);
+    const url = `${SITE}/procedures/${params.slug}`;
+    const name = p?.name ?? "Procedure not catalogued";
+    const line = (p?.oneLiner ?? "This procedure is not in the catalogue.").slice(0, 158);
     return {
       meta: [
-        { title: p ? `${p.name} — Dr. Mandeep Sagar` : "Procedure" },
-        { name: "description", content: p?.oneLiner ?? "" },
-        { property: "og:title", content: p?.name ?? "Procedure" },
-        { property: "og:description", content: p?.oneLiner ?? "" },
+        { title: `${name} — Dr. Mandeep Sagar`.slice(0, 60) },
+        { name: "description", content: line },
+        { property: "og:title", content: `${name} — image-guided procedure` },
+        { property: "og:description", content: line },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { name: "robots", content: p ? "index,follow" : "noindex" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
-  loader: ({ params }) => {
+  loader: ({ params }): Procedure => {
     const p = procedures.find((x) => x.slug === params.slug);
     if (!p) throw notFound();
     return p;
@@ -32,7 +43,7 @@ export const Route = createFileRoute("/procedures/$slug")({
 });
 
 function ProcedurePage() {
-  const p = Route.useLoaderData();
+  const p = Route.useLoaderData() as Procedure;
   const video = procedureVideos[p.slug];
   return (
     <>
