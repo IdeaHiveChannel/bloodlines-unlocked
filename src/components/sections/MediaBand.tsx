@@ -19,9 +19,13 @@ const stills = [
 ];
 
 const films = [
-  { url: thrombectomy.url, caption: "Mechanical thrombectomy — the clot is withdrawn" },
-  { url: varicose.url, caption: "Endovenous ablation — the failing vein is sealed" },
+  { ...procedureVideos["thrombectomy"]!, caption: "Mechanical thrombectomy — the clot is withdrawn" },
+  {
+    ...procedureVideos["varicose-vein-ablation"]!,
+    caption: "Endovenous ablation — the failing vein is sealed",
+  },
 ];
+
 
 export function MediaBand() {
   return (
