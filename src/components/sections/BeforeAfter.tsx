@@ -98,7 +98,7 @@ function Slider({ item }: { item: Case }) {
       }}
       onPointerDown={drag}
       data-cursor="link"
-      className="relative aspect-video w-full overflow-hidden rounded-3xl border border-white/[0.06] select-none touch-none"
+      className="relative aspect-[4/3] w-full select-none touch-none overflow-hidden rounded-2xl border border-white/[0.06] sm:aspect-video sm:rounded-3xl"
     >
       <img
         src={item.after}
@@ -122,14 +122,14 @@ function Slider({ item }: { item: Case }) {
         className="absolute top-0 bottom-0 w-px bg-[var(--accent)] vessel-glow"
         style={{ left: `${pos}%` }}
       >
-        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 size-10 rounded-full bg-[var(--accent)] grid place-items-center text-black text-xs font-bold">
+        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 size-11 rounded-full bg-[var(--accent)] grid place-items-center text-black text-xs font-bold">
           ⇔
         </div>
       </div>
-      <div className="absolute top-4 left-4 text-label bg-black/50 px-3 py-1 rounded-full">
+      <div className="absolute left-3 top-3 max-w-[45%] truncate rounded-full bg-black/60 px-2.5 py-1 text-label sm:left-4 sm:top-4 sm:px-3">
         Before · {item.beforeCaption}
       </div>
-      <div className="absolute top-4 right-4 text-label bg-black/50 px-3 py-1 rounded-full">
+      <div className="absolute right-3 top-3 max-w-[45%] truncate rounded-full bg-black/60 px-2.5 py-1 text-label sm:right-4 sm:top-4 sm:px-3">
         After · {item.afterCaption}
       </div>
     </div>
@@ -143,22 +143,22 @@ export function BeforeAfter() {
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
         <p className="text-label">Chapter 06 · Evidence</p>
-        <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-3xl">
+        <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
           Before. After. The same patient, the same vessel.
         </h2>
-        <p className="mt-4 text-[14px] leading-relaxed text-[var(--ink-dim)] max-w-xl">
+        <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)]">
           Interventional radiology is judged on images, not adjectives. Drag the line across each
           case to see what changed. Representative illustrations of typical treated cases, not
           identifiable patient records.
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="scroll-x -mx-5 mt-8 flex gap-2 px-5 sm:mx-0 sm:flex-wrap sm:px-0 sm:gap-3">
           {cases.map((c, i) => (
             <button
               key={c.id}
               onClick={() => setActive(i)}
               data-cursor="link"
-              className={`rounded-full border px-5 py-2.5 text-[12.5px] transition-colors ${
+              className={`min-h-11 shrink-0 whitespace-nowrap rounded-full border px-4 py-2.5 text-caption transition-colors sm:px-5 ${
                 i === active
                   ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--ink)]"
                   : "border-white/[0.1] text-[var(--ink-dim)] hover:text-[var(--ink)]"
@@ -169,15 +169,15 @@ export function BeforeAfter() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-10 lg:grid-cols-[1.7fr_1fr] lg:items-end">
+        <div className="mt-6 grid gap-6 sm:mt-8 lg:grid-cols-[1.7fr_1fr] lg:items-end lg:gap-10">
           <Slider key={item.id} item={item} />
           <div className="pb-2">
             <p className="text-label">Case {String(active + 1).padStart(2, "0")}</p>
-            <h3 className="mt-4 text-display text-3xl">{item.title}</h3>
-            <p className="mt-2 text-[12px] tracking-[0.16em] uppercase text-[var(--accent)]">
+            <h3 className="mt-3 text-h3">{item.title}</h3>
+            <p className="mt-2 text-[0.6875rem] uppercase tracking-[0.16em] text-[var(--accent)]">
               ↓ {item.procedure}
             </p>
-            <p className="mt-5 text-[15px] leading-relaxed text-[var(--ink-dim)]">{item.note}</p>
+            <p className="mt-4 text-body text-[var(--ink-dim)]">{item.note}</p>
           </div>
         </div>
       </div>
