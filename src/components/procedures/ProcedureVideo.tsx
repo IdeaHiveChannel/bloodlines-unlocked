@@ -24,8 +24,8 @@ export function ProcedureVideo({ video }: { video: ProcedureVideoMeta }) {
   }, [reduced]);
 
   return (
-    <figure className="mt-14">
-      <div className="overflow-hidden rounded-3xl border border-white/[0.08] bg-black">
+    <figure className="mt-10 w-full max-w-full">
+      <div className="w-full max-w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-black sm:rounded-3xl">
         <video
           ref={ref}
           src={video.url}
@@ -34,7 +34,7 @@ export function ProcedureVideo({ video }: { video: ProcedureVideoMeta }) {
           playsInline
           preload="metadata"
           controls={reduced}
-          className="h-full w-full object-cover"
+          className="block aspect-video h-auto max-h-[70svh] w-full max-w-full object-contain"
         />
       </div>
       <figcaption className="mt-4 text-caption text-[var(--ink-dim)]">{video.caption}</figcaption>
