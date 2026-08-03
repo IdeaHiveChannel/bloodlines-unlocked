@@ -330,7 +330,9 @@ export function Anatomy() {
                 <h3 className="mt-4 text-display text-3xl sm:text-4xl">
                   {list.length} condition{list.length === 1 ? "" : "s"} treated here
                 </h3>
-                <div className="mt-8 space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
+
+                <p className="mt-8 text-label">Conditions &amp; the intervention used</p>
+                <div className="mt-4 space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
                   {list.map((c) => (
                     <Link
                       key={c.slug}
@@ -356,6 +358,46 @@ export function Anatomy() {
                     </Link>
                   ))}
                 </div>
+
+                <p className="mt-10 text-label">Procedures performed in this region</p>
+                <ul className="mt-4 flex flex-wrap gap-3">
+                  {(regionProcedures[active] ?? []).map((p) => (
+                    <li
+                      key={p}
+                      className="rounded-full border border-white/[0.1] bg-white/[0.02] px-4 py-2 text-[12.5px] text-[var(--ink)]"
+                    >
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-10 flex flex-wrap gap-6">
+                  {guide ? (
+                    <Link
+                      to="/diseases/$slug"
+                      params={{ slug: guide }}
+                      data-cursor="cta"
+                      className="text-label underline"
+                    >
+                      Read more — complete guide →
+                    </Link>
+                  ) : (
+                    list[0] && (
+                      <Link
+                        to="/conditions/$slug"
+                        params={{ slug: list[0].slug }}
+                        data-cursor="cta"
+                        className="text-label underline"
+                      >
+                        Read more →
+                      </Link>
+                    )
+                  )}
+                  <Link to="/procedures" data-cursor="link" className="text-label underline">
+                    All procedures →
+                  </Link>
+                </div>
+
               </motion.div>
             </AnimatePresence>
           </div>
