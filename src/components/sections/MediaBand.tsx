@@ -6,7 +6,7 @@ import hybridOt from "../../assets/hybrid-ot.jpg";
 import handsCatheter from "../../assets/hands-catheter.jpg";
 import thrombectomy from "../../assets/video-thrombectomy.mp4.asset.json";
 import varicose from "../../assets/video-varicose-vein-ablation.mp4.asset.json";
-import { MediaFrame, mediaFillClass } from "../media/MediaFrame";
+import { ResponsiveVideo } from "../media/ResponsiveVideo";
 
 
 const stills = [
@@ -33,17 +33,8 @@ export function MediaBand() {
         <div className="mt-8 grid gap-3 sm:grid-cols-[repeat(2,minmax(0,1fr))]">
           {films.map((f) => (
             <figure key={f.url} className="min-w-0 overflow-hidden rounded-xl border border-white/[0.06]">
-              <MediaFrame className="rounded-none border-0">
-                <video
-                  src={f.url}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  className={mediaFillClass}
-                />
-              </MediaFrame>
+              <ResponsiveVideo src={f.url} frameClassName="rounded-none border-0" />
+
               <figcaption className="px-4 py-3 text-caption text-[var(--ink-dim)]">{f.caption}</figcaption>
             </figure>
           ))}
