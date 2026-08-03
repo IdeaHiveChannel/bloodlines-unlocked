@@ -16,6 +16,15 @@ export function Footer() {
             <p className="text-label">Practice</p>
             <p className="mt-3 text-[var(--ink)]">Dr. Mandeep Sagar</p>
             <p className="mt-1">Vascular &amp; neuro interventional radiology</p>
+            <ul className="mt-4 space-y-1">
+              {locations.map((l) => (
+                <li key={l.city}>
+                  <a href={l.mapsUrl} target="_blank" rel="noreferrer" data-cursor="link">
+                    {l.city} · {l.state}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
           <div>
             <p className="text-label">Explore</p>
@@ -23,6 +32,7 @@ export function Footer() {
               <li><a href="/conditions" data-cursor="link">Conditions</a></li>
               <li><a href="/procedures" data-cursor="link">Procedures</a></li>
               <li><a href="/about" data-cursor="link">About</a></li>
+              <li><a href="/expertise" data-cursor="link">Expertise</a></li>
               <li><a href="/resources" data-cursor="link">Resources</a></li>
             </ul>
           </div>
@@ -30,8 +40,13 @@ export function Footer() {
             <p className="text-label">Contact</p>
             <ul className="mt-3 space-y-2">
               <li><a href="/contact" data-cursor="link">Book consultation</a></li>
-              <li><a href="#" data-cursor="link">WhatsApp</a></li>
-              <li><a href="#" data-cursor="link">Directions</a></li>
+              <li><a href={contact.phoneHref} data-cursor="link">{contact.phoneDisplay}</a></li>
+              <li>
+                <a href={whatsappLink(whatsappMessages.general)} target="_blank" rel="noreferrer" data-cursor="link">
+                  WhatsApp
+                </a>
+              </li>
+              <li><a href={contact.emailHref} data-cursor="link">{contact.email}</a></li>
             </ul>
           </div>
           <div>
