@@ -4,9 +4,9 @@ import consultDesk from "../../assets/consult-desk.jpg";
 import recoveryRoom from "../../assets/recovery-room.jpg";
 import hybridOt from "../../assets/hybrid-ot.jpg";
 import handsCatheter from "../../assets/hands-catheter.jpg";
-import thrombectomy from "../../assets/video-thrombectomy.mp4.asset.json";
-import varicose from "../../assets/video-varicose-vein-ablation.mp4.asset.json";
+import { procedureVideos } from "../../lib/media";
 import { ResponsiveVideo } from "../media/ResponsiveVideo";
+
 
 
 const stills = [
@@ -19,9 +19,13 @@ const stills = [
 ];
 
 const films = [
-  { url: thrombectomy.url, caption: "Mechanical thrombectomy — the clot is withdrawn" },
-  { url: varicose.url, caption: "Endovenous ablation — the failing vein is sealed" },
+  { ...procedureVideos["thrombectomy"]!, caption: "Mechanical thrombectomy — the clot is withdrawn" },
+  {
+    ...procedureVideos["varicose-vein-ablation"]!,
+    caption: "Endovenous ablation — the failing vein is sealed",
+  },
 ];
+
 
 export function MediaBand() {
   return (
@@ -33,7 +37,15 @@ export function MediaBand() {
         <div className="mt-8 grid gap-3 sm:grid-cols-[repeat(2,minmax(0,1fr))]">
           {films.map((f) => (
             <figure key={f.url} className="min-w-0 overflow-hidden rounded-xl border border-white/[0.06]">
-              <ResponsiveVideo src={f.url} frameClassName="rounded-none border-0" />
+              <ResponsiveVideo
+                src={f.url}
+                poster={f.poster}
+                ratio={f.ratio}
+                fit="contain"
+                frameClassName="rounded-none border-0"
+                label={`Open fullscreen: ${f.caption}`}
+              />
+
 
               <figcaption className="px-4 py-3 text-caption text-[var(--ink-dim)]">{f.caption}</figcaption>
             </figure>
