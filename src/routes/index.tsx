@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { socialUrls } from "../lib/contact";
 import { Hero } from "../components/hero/Hero";
 import { Transition } from "../components/sections/Transition";
 import { Anatomy } from "../components/anatomy/Anatomy";
@@ -43,6 +44,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Physician",
+          sameAs: socialUrls,
           name: "Dr. Mandeep Sagar",
           medicalSpecialty: "Radiology",
           description:
