@@ -1,11 +1,39 @@
 import { Link } from "@tanstack/react-router";
-import { Calendar, MessageCircle, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Calendar, MessageCircle, Phone, Users, Upload, ArrowUpRight } from "lucide-react";
+import { contact, whatsappLink, whatsappMessages } from "../../lib/contact";
 
 const tiles = [
-  { href: "/contact", icon: Calendar, label: "Book appointment", sub: "Reserve a consultation slot" },
-  { href: "https://wa.me/", icon: MessageCircle, label: "WhatsApp", sub: "Direct message", ext: true },
-  { href: "tel:+", icon: Phone, label: "Call the clinic", sub: "Speak to the team" },
-  { href: "#", icon: MapPin, label: "Directions", sub: "Find the clinic" },
+  {
+    href: "/contact",
+    internal: true,
+    icon: Calendar,
+    label: "Book consultation",
+    sub: "Reserve a slot with Dr. Sagar",
+  },
+  {
+    href: whatsappLink(whatsappMessages.general),
+    icon: MessageCircle,
+    label: "WhatsApp",
+    sub: "Direct message to the practice",
+  },
+  {
+    href: contact.phoneHref,
+    icon: Phone,
+    label: "Clinic reception",
+    sub: contact.verified ? contact.phoneDisplay : "Speak to the front desk",
+  },
+  {
+    href: whatsappLink(whatsappMessages.coordinator),
+    icon: Users,
+    label: "Patient coordinator",
+    sub: "For relatives arranging treatment",
+  },
+  {
+    href: whatsappLink(whatsappMessages.uploadReports),
+    icon: Upload,
+    label: "Upload reports",
+    sub: "Send scans and reports on WhatsApp",
+  },
 ];
 
 export function Consultation() {
@@ -16,7 +44,7 @@ export function Consultation() {
         <h2 className="mt-6 text-display text-[clamp(2.4rem,6vw,6rem)] max-w-3xl">
           When you're ready, the door is one tap away.
         </h2>
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {tiles.map((t) => {
             const Icon = t.icon;
             const inner = (
@@ -24,14 +52,26 @@ export function Consultation() {
                 <Icon size={20} className="text-[var(--accent)]" />
                 <p className="mt-10 text-display text-2xl">{t.label}</p>
                 <p className="mt-2 text-[13px] text-[var(--ink-dim)]">{t.sub}</p>
-                <ArrowUpRight size={16} className="absolute top-8 right-8 text-[var(--ink-dim)] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                <ArrowUpRight
+                  size={16}
+                  className="absolute top-8 right-8 text-[var(--ink-dim)] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                />
               </div>
             );
-            return t.ext || t.href.startsWith("tel") || t.href.startsWith("http") || t.href === "#"
-              ? <a key={t.label} href={t.href} data-cursor="cta">{inner}</a>
-              : <Link key={t.label} to={t.href} data-cursor="cta">{inner}</Link>;
+            return t.internal ? (
+              <Link key={t.label} to="/contact" data-cursor="cta">
+                {inner}
+              </Link>
+            ) : (
+              <a key={t.label} href={t.href} target="_blank" rel="noreferrer" data-cursor="cta">
+                {inner}
+              </a>
+            );
           })}
         </div>
+        <p className="mt-8 text-[12px] text-[var(--ink-dim)]">
+          Reports can be shared directly on WhatsApp — PDFs, CD images, angiography stills or photographs of a wound.
+        </p>
       </div>
     </section>
   );
