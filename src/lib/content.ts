@@ -1,172 +1,808 @@
 // Editorial copy: original documentary tone. Conditions/procedures match the
 // verified scope the user provided. No fabricated credentials or testimonials.
 
+export const regionOrder = [
+  "brain",
+  "eye",
+  "carotid",
+  "thyroid",
+  "chest",
+  "liver",
+  "kidney",
+  "arms",
+  "pelvis",
+  "knee",
+  "legs",
+  "veins",
+] as const;
+
+export type Region = (typeof regionOrder)[number];
+
+export const regionLabels: Record<Region, string> = {
+  brain: "Brain",
+  eye: "Eye",
+  carotid: "Carotid",
+  thyroid: "Thyroid",
+  chest: "Aorta & chest",
+  liver: "Liver",
+  kidney: "Kidneys",
+  arms: "Arms — dialysis access",
+  pelvis: "Pelvis",
+  knee: "Knee",
+  legs: "Lower limbs",
+  veins: "Veins",
+};
+
 export type Condition = {
   slug: string;
   name: string;
-  region: "brain" | "neck" | "chest" | "abdomen" | "pelvis" | "legs";
+  region: Region;
+  /** The headline intervention shown beneath the condition on the anatomy map. */
+  intervention: string;
   intro: string;
   symptoms: string[];
   treatments: string[];
 };
 
 export const conditions: Condition[] = [
+  // ── Brain ────────────────────────────────────────────────────────────────
   {
     slug: "acute-ischemic-stroke",
-    name: "Acute Ischemic Stroke",
+    name: "Acute ischemic stroke",
     region: "brain",
-    intro: "When a clot blocks a vessel inside the brain, every minute reshapes a life. Image-guided thrombectomy reaches the clot through a single puncture and restores flow before tissue is lost.",
+    intervention: "Mechanical thrombectomy",
+    intro:
+      "When a clot blocks a vessel inside the brain, every minute reshapes a life. Image-guided thrombectomy reaches the clot through a single puncture and restores flow before tissue is lost.",
     symptoms: ["Sudden weakness on one side", "Facial droop", "Slurred speech", "Loss of vision"],
     treatments: ["Mechanical thrombectomy", "Intra-arterial thrombolysis"],
   },
   {
-    slug: "carotid-artery-disease",
-    name: "Carotid Artery Disease",
-    region: "neck",
-    intro: "The carotid arteries carry oxygen-rich blood to the brain. When narrowing develops, the risk is silent until the day it isn't. Targeted intervention restores the channel and protects the brain downstream.",
-    symptoms: ["Mini-strokes (TIAs)", "Temporary vision loss", "Often silent"],
-    treatments: ["Carotid stenting", "Angioplasty"],
+    slug: "cerebral-aneurysm",
+    name: "Cerebral aneurysm",
+    region: "brain",
+    intervention: "Coiling",
+    intro:
+      "A weak point on a brain artery slowly fills under pressure. Coils placed from inside the vessel pack the sac until blood no longer enters it — the skull is never opened.",
+    symptoms: ["Often silent", "Sudden severe headache", "Vision change", "Neck stiffness"],
+    treatments: ["Endovascular coiling", "Flow-diverter stenting", "Balloon-assisted coiling"],
   },
+  {
+    slug: "brain-avm",
+    name: "Arteriovenous malformation (AVM)",
+    region: "brain",
+    intervention: "Embolization",
+    intro:
+      "A tangle of vessels where arteries and veins meet directly, bypassing the capillary bed. Targeted embolization closes the abnormal connection from within, often before any incision is considered.",
+    symptoms: ["Headache", "Seizure", "Bleeding", "Progressive weakness"],
+    treatments: ["Endovascular embolization", "Staged embolization before radiosurgery"],
+  },
+  {
+    slug: "dural-avf",
+    name: "Dural arteriovenous fistula (AVF)",
+    region: "brain",
+    intervention: "Embolization",
+    intro:
+      "An abnormal shortcut between an artery and a vein in the covering of the brain. Pressure builds where it was never meant to. Embolic material delivered through a microcatheter seals the shunt.",
+    symptoms: ["Pulsatile tinnitus", "Headache", "Vision change", "Bleeding"],
+    treatments: ["Transarterial embolization", "Transvenous embolization"],
+  },
+  {
+    slug: "carotid-cavernous-fistula",
+    name: "Carotid cavernous fistula (CCF)",
+    region: "eye",
+    intervention: "Image-guided embolization",
+    intro:
+      "High-pressure arterial blood escapes into the venous channels behind the eye. The eye reddens, bulges and pulses. Closing the fistula from inside the vessel reverses it — often visibly, within days.",
+    symptoms: ["Red, bulging eye", "Pulsating sensation", "Double vision", "Whooshing sound"],
+    treatments: ["Transvenous coil embolization", "Balloon-assisted closure"],
+  },
+
+  // ── Neck ────────────────────────────────────────────────────────────────
+  {
+    slug: "carotid-artery-disease",
+    name: "Carotid artery disease",
+    region: "carotid",
+    intervention: "Carotid stenting",
+    intro:
+      "The carotid arteries carry oxygen-rich blood to the brain. When narrowing develops, the risk is silent until the day it isn't. Targeted intervention restores the channel and protects the brain downstream.",
+    symptoms: ["Mini-strokes (TIAs)", "Temporary vision loss", "Often silent"],
+    treatments: ["Carotid stenting with protection device", "Angioplasty"],
+  },
+  {
+    slug: "thyroid-nodules",
+    name: "Thyroid nodules & goitre",
+    region: "thyroid",
+    intervention: "Ablation or embolization",
+    intro:
+      "A benign nodule can press, disfigure and worry without ever being cancer. Heat delivered through a needle shrinks it in place; blocking its artery shrinks a larger goitre. No scar, no thyroid hormone tablets for life.",
+    symptoms: ["Neck swelling", "Pressure when swallowing", "Voice change", "Cosmetic concern"],
+    treatments: ["Radiofrequency / microwave thyroid ablation", "Thyroid artery embolization"],
+  },
+
+  // ── Aorta & chest ───────────────────────────────────────────────────────
   {
     slug: "aortic-aneurysm",
-    name: "Aortic Aneurysm",
+    name: "Aortic aneurysm",
     region: "chest",
-    intro: "The largest vessel in the body can quietly weaken and expand. Endovascular stent-graft repair excludes the aneurysm from circulation through small access points, redirecting blood through a reinforced channel.",
+    intervention: "EVAR / TEVAR",
+    intro:
+      "The largest vessel in the body can quietly weaken and expand. Endovascular stent-graft repair excludes the aneurysm from circulation through small access points, redirecting blood through a reinforced channel.",
     symptoms: ["Often silent", "Deep abdominal or back ache", "Pulsating sensation"],
-    treatments: ["EVAR — Endovascular Aneurysm Repair", "TEVAR"],
+    treatments: ["EVAR — endovascular aneurysm repair", "TEVAR"],
   },
   {
+    slug: "aortic-dissection",
+    name: "Aortic dissection",
+    region: "chest",
+    intervention: "Stent-graft repair",
+    intro:
+      "The inner lining of the aorta tears and blood forces a second channel along the wall. Covering the entry tear from within redirects flow back into the true lumen.",
+    symptoms: ["Tearing chest or back pain", "Unequal pulses", "Collapse"],
+    treatments: ["TEVAR", "Fenestration and branch stenting"],
+  },
+
+  // ── Liver ───────────────────────────────────────────────────────────────
+  {
+    slug: "hepatocellular-carcinoma",
+    name: "Hepatocellular carcinoma",
+    region: "liver",
+    intervention: "TACE & microwave ablation",
+    intro:
+      "A liver tumour lives on its own artery. Chemotherapy beads delivered directly into that artery starve it from the inside; heat delivered through a needle destroys smaller tumours outright. The rest of the liver is left alone.",
+    symptoms: ["Often silent early", "Right upper abdominal ache", "Weight loss", "Found on surveillance scans"],
+    treatments: ["TACE — transarterial chemoembolization", "Microwave ablation", "Radioembolization"],
+  },
+  {
+    slug: "gi-bleeding",
+    name: "Gastrointestinal bleeding",
+    region: "liver",
+    intervention: "Emergency embolization",
+    intro:
+      "When bleeding cannot be reached by endoscopy, angiography finds the exact vessel. Closing it takes minutes and can end a haemorrhage that surgery would struggle to reach.",
+    symptoms: ["Vomiting blood", "Black stools", "Sudden weakness", "Falling blood pressure"],
+    treatments: ["Emergency transcatheter embolization", "Coil and particle embolization"],
+  },
+  {
+    slug: "portal-hypertension",
+    name: "Portal hypertension",
+    region: "liver",
+    intervention: "TIPS",
+    intro:
+      "Scarred liver tissue resists the blood trying to pass through it, and pressure backs up into the gut and abdomen. A channel created between the portal and hepatic veins gives that pressure somewhere to go.",
+    symptoms: ["Abdominal fluid (ascites)", "Variceal bleeding", "Enlarged spleen"],
+    treatments: ["TIPS — transjugular intrahepatic portosystemic shunt", "Ascites management"],
+  },
+  {
+    slug: "variceal-bleeding",
+    name: "Gastric variceal bleeding",
+    region: "liver",
+    intervention: "BRTO",
+    intro:
+      "Swollen veins in the stomach wall can bleed catastrophically. Approached through a vein rather than an artery, they are occluded from below and allowed to collapse.",
+    symptoms: ["Massive vomiting of blood", "Black stools", "Known liver disease"],
+    treatments: ["BRTO — balloon-occluded retrograde transvenous obliteration", "Variceal embolization"],
+  },
+  {
+    slug: "transjugular-liver-biopsy",
+    name: "Liver biopsy in high-risk patients",
+    region: "liver",
+    intervention: "Transjugular liver biopsy",
+    intro:
+      "When clotting is poor or fluid surrounds the liver, a needle through the skin is unsafe. Reaching the liver from inside a neck vein takes the sample without ever crossing the capsule.",
+    symptoms: ["Abnormal liver tests", "Unexplained cirrhosis", "Coagulopathy"],
+    treatments: ["Transjugular liver biopsy", "Hepatic venous pressure measurement"],
+  },
+
+  // ── Kidney ──────────────────────────────────────────────────────────────
+  {
+    slug: "renal-artery-stenosis",
+    name: "Renal artery stenosis",
+    region: "kidney",
+    intervention: "Renal artery stenting",
+    intro:
+      "A narrowed kidney artery drives blood pressure that no tablet fully controls, and slowly starves the kidney. Reopening the vessel treats the cause rather than the reading.",
+    symptoms: ["Resistant hypertension", "Declining kidney function", "Flash pulmonary oedema"],
+    treatments: ["Renal artery angioplasty", "Renal artery stenting"],
+  },
+  {
+    slug: "renal-tumour",
+    name: "Renal tumour",
+    region: "kidney",
+    intervention: "Tumour ablation",
+    intro:
+      "A small kidney tumour can be destroyed in place with heat or cold delivered through a needle, preserving every gram of working kidney around it.",
+    symptoms: ["Often found incidentally", "Blood in urine", "Flank ache"],
+    treatments: ["Microwave / radiofrequency ablation", "Cryoablation", "Pre-surgical embolization"],
+  },
+  {
+    slug: "renal-artery-aneurysm",
+    name: "Renal artery aneurysm",
+    region: "kidney",
+    intervention: "Embolization",
+    intro:
+      "A bulge on the kidney artery carries a quiet risk of rupture. Coils or a covered stent exclude it while keeping the kidney perfused.",
+    symptoms: ["Usually silent", "Hypertension", "Flank pain if it bleeds"],
+    treatments: ["Coil embolization", "Covered stent exclusion"],
+  },
+
+  // ── Arms / dialysis access ──────────────────────────────────────────────
+  {
+    slug: "dialysis-access-failure",
+    name: "Dialysis access dysfunction",
+    region: "arms",
+    intervention: "Fistuloplasty & declotting",
+    intro:
+      "A fistula is a lifeline. When flow drops or it clots, dialysis stops. Angioplasty and declotting through a needle puncture keep the same access working for years instead of starting again in a new limb.",
+    symptoms: ["Poor dialysis flows", "Prolonged bleeding after needling", "Loss of thrill", "Arm swelling"],
+    treatments: ["Fistuloplasty", "Mechanical declotting", "Stent placement"],
+  },
+  {
+    slug: "central-vein-stenosis",
+    name: "Central vein stenosis",
+    region: "arms",
+    intervention: "Central venoplasty",
+    intro:
+      "Years of catheters narrow the large veins in the chest, and the whole arm swells. Balloon venoplasty reopens the outflow so the access — and the arm — work again.",
+    symptoms: ["Swollen arm or face", "Visible chest wall veins", "Poor dialysis flow"],
+    treatments: ["Central venoplasty", "Stenting of subclavian / brachiocephalic vein"],
+  },
+  {
+    slug: "peripheral-avm",
+    name: "Peripheral vascular malformation",
+    region: "arms",
+    intervention: "Embolization & sclerotherapy",
+    intro:
+      "A malformation present since birth can grow with the person — painful, disfiguring, sometimes bleeding. Treated through the vessels and under image guidance, it is reduced without disfiguring surgery.",
+    symptoms: ["Soft swelling", "Pain", "Discolouration", "Growth over time"],
+    treatments: ["Transarterial embolization", "Percutaneous sclerotherapy", "Staged treatment"],
+  },
+
+  // ── Pelvis ──────────────────────────────────────────────────────────────
+  {
+    slug: "uterine-fibroids",
+    name: "Uterine fibroids",
+    region: "pelvis",
+    intervention: "Fibroid embolization",
+    intro:
+      "Fibroids depend on their blood supply. Blocking the uterine arteries shrinks them over months, treating bleeding and pressure without removing the uterus.",
+    symptoms: ["Heavy periods", "Pelvic pressure", "Frequent urination", "Anaemia"],
+    treatments: ["Uterine fibroid embolization (UFE)"],
+  },
+  {
+    slug: "enlarged-prostate",
+    name: "Enlarged prostate (BPH)",
+    region: "pelvis",
+    intervention: "Prostate artery embolization",
+    intro:
+      "An enlarged prostate obstructs the bladder outlet. Reducing its arterial supply softens and shrinks the gland, easing symptoms without cutting into it.",
+    symptoms: ["Weak stream", "Night-time urination", "Incomplete emptying", "Catheter dependence"],
+    treatments: ["Prostate artery embolization (PAE)"],
+  },
+  {
+    slug: "endometriosis-pelvic-congestion",
+    name: "Endometriosis & pelvic congestion",
+    region: "pelvis",
+    intervention: "Ablation & vein embolization",
+    intro:
+      "Chronic pelvic pain often has a vascular component. Refluxing pelvic veins can be closed from within, and focal deposits treated with image-guided ablation.",
+    symptoms: ["Chronic pelvic pain", "Pain worse on standing", "Painful periods"],
+    treatments: ["Ovarian vein embolization", "Image-guided ablation"],
+  },
+  {
+    slug: "aorto-iliac-disease",
+    name: "Aorto-iliac disease",
+    region: "pelvis",
+    intervention: "Kissing-balloon stenting",
+    intro:
+      "Where the aorta divides into the legs, disease affects both limbs at once. Balloons and stents deployed together at the bifurcation restore inflow to each side.",
+    symptoms: ["Buttock and thigh claudication", "Weak femoral pulses", "Erectile dysfunction"],
+    treatments: ["Kissing-balloon angioplasty", "Iliac stenting"],
+  },
+
+  // ── Knee ────────────────────────────────────────────────────────────────
+  {
+    slug: "knee-osteoarthritis",
+    name: "Knee osteoarthritis",
+    region: "knee",
+    intervention: "Genicular artery embolization",
+    intro:
+      "In a painful arthritic knee, abnormal small vessels feed inflamed lining tissue. Reducing that supply reduces pain — an option for patients who are not ready, or not fit, for replacement.",
+    symptoms: ["Persistent knee pain", "Pain at night", "Limited walking distance"],
+    treatments: ["Genicular artery embolization (GAE)", "Genicular nerve ablation"],
+  },
+  {
+    slug: "chronic-knee-pain",
+    name: "Chronic knee pain after replacement",
+    region: "knee",
+    intervention: "Genicular nerve ablation",
+    intro:
+      "Pain can persist even after a technically perfect joint replacement. Targeting the nerves that carry it, under image guidance, offers relief without further surgery.",
+    symptoms: ["Pain despite surgery", "Tenderness", "Difficulty sleeping"],
+    treatments: ["Radiofrequency genicular nerve ablation"],
+  },
+
+  // ── Lower limbs ─────────────────────────────────────────────────────────
+  {
     slug: "peripheral-artery-disease",
-    name: "Peripheral Artery Disease",
+    name: "Peripheral artery disease",
     region: "legs",
-    intro: "Every healthy artery carries oxygen-rich blood to the body. Over time, plaque can narrow these vessels and reduce circulation in the legs. Through a small puncture, a catheter is guided to the blockage and a balloon gently restores the passage so blood begins flowing freely again.",
+    intervention: "Angioplasty & stenting",
+    intro:
+      "Every healthy artery carries oxygen-rich blood to the body. Over time, plaque can narrow these vessels and reduce circulation in the legs. Through a small puncture, a catheter is guided to the blockage and a balloon gently restores the passage so blood begins flowing freely again.",
     symptoms: ["Cramping when walking", "Cold feet", "Slow-healing wounds"],
     treatments: ["Angioplasty", "Atherectomy", "Drug-eluting stenting"],
   },
   {
     slug: "critical-limb-ischemia",
-    name: "Critical Limb Ischemia",
+    name: "Critical limb ischemia",
     region: "legs",
-    intro: "When circulation in a limb falls below what tissue needs to survive, time becomes the most important variable. Endovascular revascularisation reopens the smallest below-knee vessels to give the limb a chance.",
+    intervention: "Below-knee revascularisation",
+    intro:
+      "When circulation in a limb falls below what tissue needs to survive, time becomes the most important variable. Endovascular revascularisation reopens the smallest below-knee vessels to give the limb a chance.",
     symptoms: ["Rest pain", "Non-healing ulcers", "Gangrene"],
     treatments: ["Below-knee angioplasty", "Pedal-loop reconstruction"],
   },
   {
     slug: "diabetic-foot",
-    name: "Diabetic Foot (vascular causes)",
+    name: "Diabetic foot (vascular causes)",
     region: "legs",
-    intro: "In diabetes, the foot's tiny vessels often close earlier than anyone notices. Restoring inflow — sometimes one millimetre at a time — is the difference between healing and amputation.",
+    intervention: "Tibial & pedal angioplasty",
+    intro:
+      "In diabetes, the foot's tiny vessels often close earlier than anyone notices. Restoring inflow — sometimes one millimetre at a time — is the difference between healing and amputation.",
     symptoms: ["Non-healing ulcer", "Numbness", "Blackened toes"],
     treatments: ["Tibial and pedal angioplasty", "Wound-directed revascularisation"],
   },
   {
-    slug: "varicose-veins",
-    name: "Varicose Veins",
+    slug: "fava-malformation",
+    name: "FAVA & vascular malformations of the limb",
     region: "legs",
-    intro: "When the one-way valves in leg veins fail, blood pools where it should be travelling upward. A thin laser fibre, guided by ultrasound, closes the faulty vein from the inside — circulation reroutes naturally.",
-    symptoms: ["Bulging veins", "Heaviness", "Itching", "Night cramps"],
-    treatments: ["Endovenous Laser Ablation", "Radiofrequency Ablation", "Sclerotherapy"],
+    intervention: "Cryoablation",
+    intro:
+      "Fibro-adipose vascular anomaly is rare, painful and often misdiagnosed for years. Freezing the lesion under image guidance treats the pain at its source.",
+    symptoms: ["Deep muscle pain", "Contracture", "Firm swelling", "Long diagnostic delay"],
+    treatments: ["Cryoablation", "Sclerotherapy", "Embolization"],
+  },
+
+  // ── Veins ───────────────────────────────────────────────────────────────
+  {
+    slug: "varicose-veins",
+    name: "Varicose veins",
+    region: "veins",
+    intervention: "Endovenous laser ablation",
+    intro:
+      "When the one-way valves in a leg vein fail, blood pools where it should be rising. A fibre passed inside the vein closes it, and healthy veins take over the work the same day.",
+    symptoms: ["Bulging veins", "Aching, heavy legs", "Ankle swelling", "Skin discolouration"],
+    treatments: ["Endovenous laser ablation", "Glue closure", "Foam sclerotherapy"],
   },
   {
     slug: "deep-vein-thrombosis",
-    name: "Deep Vein Thrombosis",
-    region: "legs",
-    intro: "A clot inside a deep vein can swell a limb and travel where it must not. Catheter-directed therapy dissolves and extracts the clot, often within a single session.",
-    symptoms: ["Sudden leg swelling", "Warmth", "Persistent calf pain"],
-    treatments: ["Catheter-directed thrombolysis", "Mechanical thrombectomy", "IVC filter"],
+    name: "Deep vein thrombosis",
+    region: "veins",
+    intervention: "Catheter-directed thrombolysis",
+    intro:
+      "A clot in the deep veins of the leg threatens both the lung and the long-term health of the limb. Dissolving and extracting it early protects the valves that would otherwise be destroyed.",
+    symptoms: ["Sudden leg swelling", "Pain in the calf or thigh", "Warmth and redness"],
+    treatments: ["Catheter-directed thrombolysis", "Mechanical thrombectomy", "Venous stenting"],
   },
   {
-    slug: "uterine-fibroids",
-    name: "Uterine Fibroid Embolization",
-    region: "pelvis",
-    intro: "Fibroids are fed by their own blood supply. Embolization quietly interrupts that supply through a single puncture — preserving the uterus and avoiding surgery.",
-    symptoms: ["Heavy menstrual bleeding", "Pelvic pressure", "Pain"],
-    treatments: ["Uterine Artery Embolization (UAE)"],
-  },
-  {
-    slug: "prostate-artery-embolization",
-    name: "Prostate Artery Embolization",
-    region: "pelvis",
-    intro: "An enlarged prostate can compress the urinary stream and disturb sleep. Embolization shrinks the gland gradually by reducing its arterial supply — without incisions, catheters in the bladder, or general anaesthesia.",
-    symptoms: ["Weak urinary stream", "Frequency", "Nocturia"],
-    treatments: ["Prostate Artery Embolization (PAE)"],
-  },
-  {
-    slug: "dialysis-access",
-    name: "Dialysis Access Maintenance",
-    region: "chest",
-    intro: "Dialysis fistulas and grafts must stay open to keep a life on schedule. Angioplasty and declotting restore failing access, often outpatient, often the same day.",
-    symptoms: ["Reduced fistula thrill", "Prolonged bleeding", "Arm swelling"],
-    treatments: ["Fistuloplasty", "Declotting", "Stent placement"],
-  },
-  {
-    slug: "avm",
-    name: "Arteriovenous Malformations",
-    region: "brain",
-    intro: "A tangle of vessels where arteries and veins meet directly. Targeted embolization closes the abnormal connection from within, often before any incision is considered.",
-    symptoms: ["Headache", "Seizure", "Bleeding"],
-    treatments: ["Endovascular embolization"],
+    slug: "venous-ulcer",
+    name: "Venous leg ulcer",
+    region: "veins",
+    intervention: "Reflux ablation",
+    intro:
+      "An ulcer that will not heal above the ankle is usually a pressure problem, not a wound problem. Correcting the underlying reflux is what finally allows it to close.",
+    symptoms: ["Non-healing ankle ulcer", "Skin thickening", "Chronic swelling"],
+    treatments: ["Endovenous ablation", "Perforator ablation", "Sclerotherapy"],
   },
 ];
+
+export function conditionsByRegion(region: Region) {
+  return conditions.filter((c) => c.region === region);
+}
+
+// ── Procedures ─────────────────────────────────────────────────────────────
+
+export type Storyboard =
+  | "angioplasty"
+  | "thrombectomy"
+  | "evar"
+  | "laser"
+  | "tace"
+  | "ablation"
+  | "coiling"
+  | "embolization";
 
 export type Procedure = {
   slug: string;
   name: string;
   oneLiner: string;
+  storyboard: Storyboard;
   beats: string[];
+  /** Shown on the homepage scroll chapters. */
+  featured?: boolean;
 };
 
 export const procedures: Procedure[] = [
   {
     slug: "angioplasty",
-    name: "Angioplasty",
+    name: "Angioplasty & stenting",
     oneLiner: "Reopening a narrowed artery from the inside.",
+    storyboard: "angioplasty",
+    featured: true,
     beats: [
-      "An artery once flowed freely.",
-      "Over years, plaque settled along its wall.",
-      "Through a puncture no larger than a needle tip, a catheter is guided to the narrowing.",
+      "An artery once flowed freely. Over years, plaque settled along its wall.",
+      "A guidewire is steered across the narrowing — the hardest millimetres of the case.",
       "A balloon expands gently, compressing the plaque outward.",
-      "If needed, a fine mesh stent holds the channel open.",
+      "A fine mesh stent is deployed to hold the channel open.",
       "Blood begins flowing again. The patient walks the same day.",
     ],
   },
   {
     slug: "thrombectomy",
-    name: "Mechanical Thrombectomy",
-    oneLiner: "Removing a clot before tissue is lost.",
+    name: "Mechanical thrombectomy",
+    oneLiner: "Removing a clot before brain tissue is lost.",
+    storyboard: "thrombectomy",
+    featured: true,
     beats: [
-      "A clot has stopped flow inside a vessel.",
-      "A catheter is navigated to the clot face.",
-      "A retriever expands inside the clot, capturing it.",
-      "The catheter withdraws — the clot leaves with it.",
-      "Flow restores in a single heartbeat.",
+      "A clot has stopped flow inside a vessel. Downstream, tissue is on a clock.",
+      "A stent retriever is opened inside the clot and left to grip it.",
+      "The clot is captured within the struts of the retriever.",
+      "A large-bore catheter aspirates as the retriever is withdrawn.",
+      "The clot leaves the body. Reperfusion is immediate.",
       "Function returns where it can.",
     ],
   },
   {
     slug: "aneurysm-repair",
-    name: "Endovascular Aneurysm Repair",
+    name: "Endovascular aneurysm repair",
     oneLiner: "Excluding the aneurysm from circulation.",
+    storyboard: "evar",
+    featured: true,
     beats: [
-      "A weakened vessel wall has begun to balloon.",
+      "A weakened aortic wall has begun to balloon under pressure.",
       "Through groin access, a stent-graft is delivered folded inside a sheath.",
-      "The graft deploys, anchoring above and below the aneurysm.",
+      "The graft unfolds, anchoring above and below the aneurysm.",
       "Blood now flows through reinforced fabric, not the diseased wall.",
-      "The aneurysm is sealed off from pressure.",
+      "A completion angiogram confirms there is no endoleak.",
       "Recovery is measured in days, not weeks.",
     ],
   },
   {
     slug: "varicose-vein-ablation",
-    name: "Endovenous Laser Ablation",
+    name: "Endovenous laser ablation",
     oneLiner: "Closing a failing vein from within.",
+    storyboard: "laser",
+    featured: true,
     beats: [
-      "A vein's one-way valves no longer hold.",
-      "Under ultrasound, a thin fibre enters the faulty vein.",
-      "Energy delivered along its length closes it gently.",
-      "Healthy nearby veins assume the work.",
-      "The leg drains as it should.",
-      "Discomfort fades within days.",
+      "A vein's one-way valves no longer hold. Blood falls back down the leg.",
+      "Under ultrasound, a thin laser fibre is passed inside the faulty vein.",
+      "Energy is delivered along its length as the fibre is withdrawn.",
+      "The vein collapses and seals behind it.",
+      "Healthy deep veins reroute the flow.",
+      "The patient walks out; discomfort fades within days.",
+    ],
+  },
+  {
+    slug: "tace",
+    name: "TACE — chemoembolization",
+    oneLiner: "Delivering chemotherapy into a tumour's own artery.",
+    storyboard: "tace",
+    featured: true,
+    beats: [
+      "A liver tumour lights up on angiography, fed by its own artery.",
+      "A microcatheter is navigated into that feeding branch alone.",
+      "Drug-eluting beads are released directly into the tumour bed.",
+      "The feeding artery is blocked behind them.",
+      "The tumour blush fades. Healthy liver is untouched.",
+    ],
+  },
+  {
+    slug: "microwave-ablation",
+    name: "Microwave ablation",
+    oneLiner: "Destroying a tumour with heat, through a needle.",
+    storyboard: "ablation",
+    featured: true,
+    beats: [
+      "The tumour is located precisely on CT or ultrasound.",
+      "A single antenna is advanced through the skin into its centre.",
+      "Microwave energy raises the temperature within seconds.",
+      "The ablation zone expands outward past the tumour margin.",
+      "The tumour is destroyed in place. One puncture. No incision.",
+    ],
+  },
+  {
+    slug: "aneurysm-coiling",
+    name: "Cerebral aneurysm coiling",
+    oneLiner: "Packing an aneurysm until blood no longer enters it.",
+    storyboard: "coiling",
+    beats: [
+      "An aneurysm sac fills with every heartbeat.",
+      "A microcatheter is parked at the neck of the sac.",
+      "Soft platinum coils are delivered one by one into the dome.",
+      "The sac packs densely; flow at the neck slows and stops.",
+      "The aneurysm is excluded from the circulation.",
+    ],
+  },
+  {
+    slug: "thyroid-ablation",
+    name: "Thyroid nodule ablation",
+    oneLiner: "Shrinking a nodule without removing the gland.",
+    storyboard: "ablation",
+    beats: [
+      "A benign nodule is mapped on ultrasound.",
+      "A fine electrode enters through the skin — no incision, no scar.",
+      "Energy is applied in a moving, controlled pattern.",
+      "The treated tissue shrinks steadily over the following months.",
+      "Thyroid function is preserved; no lifelong hormone tablets.",
+    ],
+  },
+  {
+    slug: "genicular-artery-embolization",
+    name: "Genicular artery embolization",
+    oneLiner: "Reducing the abnormal blood supply that drives knee pain.",
+    storyboard: "embolization",
+    beats: [
+      "Angiography shows an abnormal blush over the inflamed knee lining.",
+      "A microcatheter is advanced into the genicular branch feeding it.",
+      "Microspheres are released to reduce that supply.",
+      "The blush disappears under fluoroscopy.",
+      "Pain improves over the following weeks. No joint is opened.",
+    ],
+  },
+  {
+    slug: "dialysis-fistuloplasty",
+    name: "Dialysis fistuloplasty",
+    oneLiner: "Keeping a lifeline open.",
+    storyboard: "angioplasty",
+    beats: [
+      "Dialysis flows have fallen. A stenosis is found in the outflow vein.",
+      "The fistula itself is punctured and crossed with a wire.",
+      "A high-pressure balloon is inflated across the narrowing.",
+      "The thrill returns under the fingertips.",
+      "The same access continues to be used — no new line, no new limb.",
+    ],
+  },
+  {
+    slug: "tips",
+    name: "TIPS",
+    oneLiner: "Giving portal pressure somewhere to go.",
+    storyboard: "embolization",
+    beats: [
+      "Scarred liver tissue resists the blood trying to cross it.",
+      "From a neck vein, a tract is created through the liver parenchyma.",
+      "A covered stent holds that tract open between portal and hepatic veins.",
+      "Portal pressure falls immediately and is measured on the table.",
+      "Ascites and variceal bleeding recede.",
     ],
   },
 ];
+
+export const featuredProcedures = procedures.filter((p) => p.featured);
+
+// ── Professional journey ───────────────────────────────────────────────────
+
+export type Milestone = {
+  id: string;
+  title: string;
+  meta: string;
+  summary: string;
+  /** Only the final milestone navigates away. */
+  to?: "/testimonials";
+};
+
+export const milestones: Milestone[] = [
+  {
+    id: "md",
+    title: "MD Radiodiagnosis",
+    meta: "Foundation",
+    summary:
+      "Formal specialist training in diagnostic imaging — the discipline of reading the body before touching it. Every intervention that follows rests on this.",
+  },
+  {
+    id: "nhrims",
+    title: "NHRIMS Shillong",
+    meta: "Neurovascular intervention fellowship",
+    summary:
+      "Dedicated fellowship training in neurovascular intervention: acute stroke thrombectomy, aneurysm embolization and the management of intracranial vascular malformations.",
+  },
+  {
+    id: "gmc-nagpur",
+    title: "GMC Nagpur",
+    meta: "Advanced endovascular & neurovascular training",
+    summary:
+      "High-volume advanced training across the endovascular and neurovascular spectrum, in a tertiary referral setting where cases arrive at their most complex.",
+  },
+  {
+    id: "lincc",
+    title: "LINCC Paris",
+    meta: "Prof. Jacques Moret meeting",
+    summary:
+      "Live interventional neuroradiology course in Paris, including a meeting with Prof. Jacques Moret — one of the founding figures of endovascular neurosurgery.",
+  },
+  {
+    id: "wlnc-turkey",
+    title: "WLNC Turkey",
+    meta: "World Live Neurovascular Conference",
+    summary:
+      "Live case transmission and international faculty discussion on evolving neurovascular technique.",
+  },
+  {
+    id: "wlnc-portugal",
+    title: "WLNC Portugal",
+    meta: "World Live Neurovascular Conference",
+    summary:
+      "Continued participation in the global live neurovascular programme, tracking device and technique evolution as it happens.",
+  },
+  {
+    id: "kcr-seoul",
+    title: "KCR Seoul",
+    meta: "Korean Congress of Radiology",
+    summary:
+      "Exposure to Asian-Pacific interventional practice, ablation technique and oncological intervention at one of the region's principal radiology congresses.",
+  },
+  {
+    id: "twice-gurgaon",
+    title: "TWICE Gurgaon",
+    meta: "Interventional workshop",
+    summary:
+      "Hands-on interventional workshop with case-based faculty sessions and device training.",
+  },
+  {
+    id: "guest-lectures",
+    title: "Guest lectures",
+    meta: "Teaching",
+    summary:
+      "Invited talks on stroke intervention, limb salvage and the widening role of interventional radiology across organ systems.",
+  },
+  {
+    id: "workshops",
+    title: "Workshops",
+    meta: "Skills transfer",
+    summary:
+      "Practical workshops on access, wire and catheter technique, and image-guided ablation for practising clinicians.",
+  },
+  {
+    id: "residents",
+    title: "Training residents",
+    meta: "Mentorship",
+    summary:
+      "Ongoing supervision and teaching of radiology residents — from first puncture to independent case planning.",
+  },
+  {
+    id: "ima",
+    title: "IMA scientific sessions",
+    meta: "Medical community",
+    summary:
+      "Scientific sessions with the wider medical community, translating interventional options into terms referring physicians can act on.",
+  },
+  {
+    id: "national",
+    title: "National conferences",
+    meta: "Presentation",
+    summary:
+      "Case and technique presentations at national interventional and radiology conferences.",
+  },
+  {
+    id: "today",
+    title: "Patient care today",
+    meta: "Practice",
+    summary:
+      "Everything above exists for one reason: the person on the table. See what patients say about their care.",
+    to: "/testimonials",
+  },
+];
+
+// ── Resource library ───────────────────────────────────────────────────────
+
+export type ResourceKind = "Video" | "Patient guide" | "FAQ" | "Recovery";
+
+export type Resource = {
+  id: string;
+  kind: ResourceKind;
+  title: string;
+  text: string;
+  /** Related condition slugs. */
+  related: string[];
+  pending?: boolean;
+};
+
+export const resources: Resource[] = [
+  {
+    id: "video-angioplasty",
+    kind: "Video",
+    title: "What happens during an angioplasty",
+    text: "A short walkthrough of the procedure from access to closure, filmed in the cath lab.",
+    related: ["peripheral-artery-disease", "critical-limb-ischemia", "diabetic-foot"],
+    pending: true,
+  },
+  {
+    id: "video-stroke",
+    kind: "Video",
+    title: "Stroke: the first sixty minutes",
+    text: "Why time is brain, and what a thrombectomy pathway looks like from door to reperfusion.",
+    related: ["acute-ischemic-stroke"],
+    pending: true,
+  },
+  {
+    id: "video-uterine-fibroid",
+    kind: "Video",
+    title: "Fibroid embolization explained",
+    text: "How blocking the uterine arteries shrinks fibroids without removing the uterus.",
+    related: ["uterine-fibroids"],
+    pending: true,
+  },
+  {
+    id: "guide-before-procedure",
+    kind: "Patient guide",
+    title: "Preparing for your procedure",
+    text: "Fasting, medication, blood thinners, what to bring, and who should come with you.",
+    related: [],
+  },
+  {
+    id: "guide-diabetic-foot",
+    kind: "Patient guide",
+    title: "Caring for a diabetic foot wound",
+    text: "Daily inspection, offloading, and the warning signs that mean the same-day clinic, not next week.",
+    related: ["diabetic-foot", "critical-limb-ischemia"],
+  },
+  {
+    id: "guide-dialysis-access",
+    kind: "Patient guide",
+    title: "Protecting your dialysis fistula",
+    text: "How to check the thrill daily and what a falling flow rate is telling you.",
+    related: ["dialysis-access-failure", "central-vein-stenosis"],
+  },
+  {
+    id: "faq-anaesthesia",
+    kind: "FAQ",
+    title: "Will I be asleep?",
+    text: "Most interventions are performed under local anaesthesia with sedation. You are comfortable and usually awake.",
+    related: [],
+  },
+  {
+    id: "faq-scar",
+    kind: "FAQ",
+    title: "Will there be a scar?",
+    text: "Access is usually through a puncture a few millimetres wide. There is no surgical incision to close.",
+    related: [],
+  },
+  {
+    id: "faq-radiation",
+    kind: "FAQ",
+    title: "Is the X-ray exposure safe?",
+    text: "Dose is actively minimised with modern equipment and protocols, and is weighed against the risk of the untreated disease.",
+    related: [],
+  },
+  {
+    id: "faq-second-opinion",
+    kind: "FAQ",
+    title: "Can I get a second opinion on my scans?",
+    text: "Yes. Share your CT, MRI or angiography reports and they will be reviewed before any recommendation is made.",
+    related: [],
+  },
+  {
+    id: "recovery-day-case",
+    kind: "Recovery",
+    title: "Going home the same day",
+    text: "What the first six hours after a day-case intervention look like, and when you can drive, bathe and work.",
+    related: ["peripheral-artery-disease", "varicose-veins"],
+  },
+  {
+    id: "recovery-ablation",
+    kind: "Recovery",
+    title: "After an ablation",
+    text: "Expected soreness, the low-grade fever that can follow, and the imaging follow-up schedule.",
+    related: ["hepatocellular-carcinoma", "renal-tumour", "thyroid-nodules"],
+  },
+  {
+    id: "recovery-vein",
+    kind: "Recovery",
+    title: "After vein treatment",
+    text: "Compression stockings, walking targets, and why lying still is the one thing not to do.",
+    related: ["varicose-veins", "venous-ulcer", "deep-vein-thrombosis"],
+  },
+];
+
+export function resourcesForCondition(slug: string) {
+  return resources.filter((r) => r.related.includes(slug));
+}
