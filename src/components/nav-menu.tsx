@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactElement, type ReactNode } from "react";
 import { ChevronDown } from "lucide-react";
 
 // Menu entries come from content data as plain strings, so relax Link's typed `to`.
@@ -9,7 +9,7 @@ const AnyLink = Link as unknown as (props: {
   className?: string;
   children?: ReactNode;
   [key: string]: unknown;
-}) => JSX.Element;
+}) => ReactElement;
 
 export type MenuLink = { to: string; label: string };
 
