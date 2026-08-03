@@ -10,21 +10,12 @@ export const Route = createFileRoute("/conditions/$slug")({
   head: ({ params }) => {
     const c = conditions.find((x) => x.slug === params.slug);
     const url = `${SITE}/conditions/${params.slug}`;
-    if (!c) {
-      return {
-        meta: [
-          { title: "Condition not catalogued — Dr. Mandeep Sagar" },
-          { name: "robots", content: "noindex" },
-        ],
-        links: [],
-      };
-    }
     return {
       meta: [
-        { title: `${c.name} — treatment | Dr. Mandeep Sagar`.slice(0, 60) },
-        { name: "description", content: c.intro.slice(0, 158) },
-        { property: "og:title", content: `${c.name} — image-guided treatment` },
-        { property: "og:description", content: c.intro.slice(0, 158) },
+        { title: `${c!.name} — treatment | Dr. Mandeep Sagar`.slice(0, 60) },
+        { name: "description", content: c!.intro.slice(0, 158) },
+        { property: "og:title", content: `${c!.name} — image-guided treatment` },
+        { property: "og:description", content: c!.intro.slice(0, 158) },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
@@ -71,8 +62,8 @@ function ConditionPage() {
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <Link to="/conditions" className="text-label" data-cursor="link">← All conditions</Link>
-          <h1 className="text-display-xl mt-8">{c.name}</h1>
-          <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
+          <h1 className="text-display-xl mt-8">{c!.name}</h1>
+          <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">{c!.intro}</p>
 
           {guide && (
             <Link
