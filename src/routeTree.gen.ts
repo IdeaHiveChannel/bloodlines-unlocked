@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as SecondOpinionRouteImport } from './routes/second-opinion'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as MediaRouteImport } from './routes/media'
 import { Route as ExpertiseRouteImport } from './routes/expertise'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -27,9 +29,19 @@ const TestimonialsRoute = TestimonialsRouteImport.update({
   path: '/testimonials',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SecondOpinionRoute = SecondOpinionRouteImport.update({
+  id: '/second-opinion',
+  path: '/second-opinion',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaRoute = MediaRouteImport.update({
+  id: '/media',
+  path: '/media',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExpertiseRoute = ExpertiseRouteImport.update({
@@ -88,7 +100,9 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
+  '/media': typeof MediaRoute
   '/resources': typeof ResourcesRoute
+  '/second-opinion': typeof SecondOpinionRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
@@ -102,7 +116,9 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
+  '/media': typeof MediaRoute
   '/resources': typeof ResourcesRoute
+  '/second-opinion': typeof SecondOpinionRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
@@ -117,7 +133,9 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
+  '/media': typeof MediaRoute
   '/resources': typeof ResourcesRoute
+  '/second-opinion': typeof SecondOpinionRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
@@ -133,7 +151,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/expertise'
+    | '/media'
     | '/resources'
+    | '/second-opinion'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
@@ -147,7 +167,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/expertise'
+    | '/media'
     | '/resources'
+    | '/second-opinion'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
@@ -161,7 +183,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/expertise'
+    | '/media'
     | '/resources'
+    | '/second-opinion'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
@@ -176,7 +200,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   ExpertiseRoute: typeof ExpertiseRoute
+  MediaRoute: typeof MediaRoute
   ResourcesRoute: typeof ResourcesRoute
+  SecondOpinionRoute: typeof SecondOpinionRoute
   TestimonialsRoute: typeof TestimonialsRoute
   ConditionsSlugRoute: typeof ConditionsSlugRoute
   DiseasesSlugRoute: typeof DiseasesSlugRoute
@@ -195,11 +221,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/second-opinion': {
+      id: '/second-opinion'
+      path: '/second-opinion'
+      fullPath: '/second-opinion'
+      preLoaderRoute: typeof SecondOpinionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resources': {
       id: '/resources'
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media': {
+      id: '/media'
+      path: '/media'
+      fullPath: '/media'
+      preLoaderRoute: typeof MediaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/expertise': {
@@ -280,7 +320,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   ExpertiseRoute: ExpertiseRoute,
+  MediaRoute: MediaRoute,
   ResourcesRoute: ResourcesRoute,
+  SecondOpinionRoute: SecondOpinionRoute,
   TestimonialsRoute: TestimonialsRoute,
   ConditionsSlugRoute: ConditionsSlugRoute,
   DiseasesSlugRoute: DiseasesSlugRoute,
@@ -292,13 +334,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

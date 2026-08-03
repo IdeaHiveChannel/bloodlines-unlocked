@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
+import { patientStories, consentNote } from "../lib/stories";
 
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
       { title: "Patient stories — Dr. Mandeep Sagar" },
-      { name: "description", content: "Verified patient experiences of image-guided vascular and neurointerventional care." },
+      { name: "description", content: "Verified patient experiences of image-guided vascular and neurointerventional care, published only with written consent." },
       { property: "og:title", content: "Patient stories" },
       { property: "og:description", content: "Verified patient experiences, published only with consent." },
       { property: "og:type", content: "website" },
@@ -16,31 +17,57 @@ export const Route = createFileRoute("/testimonials")({
 });
 
 function Testimonials() {
+  const stories = patientStories;
   return (
     <>
-      <main className="pt-36 pb-24 bg-[#050B16] min-h-screen">
-        <div className="mx-auto max-w-3xl px-5 sm:px-10">
+      <main className="min-h-screen bg-[#050B16] pb-24 pt-32 sm:pt-36">
+        <div className="shell">
           <p className="text-label">Chapter 09 · Patient care today</p>
-          <h1 className="text-display-xl mt-6">Patient stories.</h1>
-          <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">
-            Verified patient experiences will be published here, in the patient's own words and only with written consent. Nothing on this page is written on their behalf.
-          </p>
-          <div className="mt-14 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-10">
-            <p className="text-label">Currently</p>
-            <p className="text-card-title mt-4">
-              No stories are published yet. Until they are, this page stays empty rather than filled.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/contact" data-cursor="cta"
-                className="inline-flex rounded-full bg-white text-black px-6 py-3 text-button hover:bg-[var(--accent)] transition-colors">
-                Book consultation
-              </Link>
-              <Link to="/expertise" data-cursor="link"
-                className="inline-flex rounded-full border border-white/15 px-6 py-3 text-button hover:bg-white/5 transition-colors">
-                Back to the journey
-              </Link>
+          <h1 className="text-display-xl mt-6 max-w-4xl">Patient stories.</h1>
+          <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">{consentNote}</p>
+
+          {stories.length === 0 ? (
+            <div className="mt-14 max-w-3xl rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 sm:p-10">
+              <p className="text-label">Currently</p>
+              <p className="text-card-title mt-4">
+                No stories are published yet. Until they are, this page stays empty rather than filled.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3 sm:gap-4">
+                <Link to="/contact" data-cursor="cta"
+                  className="inline-flex min-h-12 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]">
+                  Book consultation
+                </Link>
+                <Link to="/second-opinion" data-cursor="link"
+                  className="inline-flex min-h-12 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5">
+                  Request a second opinion
+                </Link>
+              </div>
             </div>
-          </div>
+          ) : (
+            <ul className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {stories.map((s, i) => (
+                <li key={`${s.name}-${i}`} className="flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6">
+                  <span aria-hidden className="text-h2 leading-none text-[color-mix(in_oklab,var(--accent)_60%,transparent)]">&ldquo;</span>
+                  <blockquote className="mt-3 flex-1 text-small leading-relaxed text-[var(--ink)]">{s.quote}</blockquote>
+                  <div className="mt-6 border-t border-white/[0.06] pt-4">
+                    <p className="text-card-title">{s.name}</p>
+                    <p className="mt-1 text-caption text-[var(--ink-dim)]">
+                      {s.condition} · {s.city}{s.year ? ` · ${s.year}` : ""}
+                    </p>
+                    {s.guide ? (
+                      <Link to="/diseases/$slug" params={{ slug: s.guide }} data-cursor="link" className="mt-3 inline-block text-label underline">
+                        Read the case guide →
+                      </Link>
+                    ) : s.conditionSlug ? (
+                      <Link to="/conditions/$slug" params={{ slug: s.conditionSlug }} data-cursor="link" className="mt-3 inline-block text-label underline">
+                        About this condition →
+                      </Link>
+                    ) : null}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </main>
       <Footer />

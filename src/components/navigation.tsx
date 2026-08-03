@@ -8,6 +8,8 @@ const items = [
   { to: "/diseases", label: "Diseases" },
   { to: "/conditions", label: "Conditions" },
   { to: "/procedures", label: "Procedures" },
+  { to: "/second-opinion", label: "Second opinion" },
+  { to: "/media", label: "Media" },
   { to: "/resources", label: "Resources" },
   { to: "/contact", label: "Contact" },
 ];
