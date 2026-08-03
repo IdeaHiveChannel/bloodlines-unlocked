@@ -75,7 +75,7 @@ export function MediaTimeline() {
                   <div className="absolute left-0 top-2 hidden size-4 items-center justify-center sm:flex">
                     <span className="size-2 rounded-full bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
                   </div>
-                  <p className="text-label">{year}</p>
+                  <h2 className="text-label">{year}</h2>
                   <ul className="mt-5 space-y-px overflow-hidden rounded-2xl border border-white/[0.06]">
                     {entries.map((e, i) => (
                       <motion.li
