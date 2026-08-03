@@ -16,6 +16,7 @@ export const Route = createFileRoute("/conditions/$slug")({
           { title: "Condition not catalogued — Dr. Mandeep Sagar" },
           { name: "robots", content: "noindex" },
         ],
+        links: [],
       };
     }
     return {
