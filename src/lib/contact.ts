@@ -1,17 +1,28 @@
 // Single source of truth for every contact path on the site.
-// Replace the placeholder values below with the verified clinic details.
 
 export const contact = {
   // Digits only, international format, no "+" — used to build wa.me links.
-  whatsappNumber: "910000000000",
-  phoneDisplay: "+91 00000 00000",
-  phoneHref: "tel:+910000000000",
-  coordinatorDisplay: "+91 00000 00000",
-  coordinatorHref: "tel:+910000000000",
-  email: "clinic@example.com",
-  mapsUrl: "https://maps.google.com/",
-  verified: false,
+  whatsappNumber: "916366330505",
+  phoneDisplay: "063663 30505",
+  phoneHref: "tel:+916366330505",
+  coordinatorDisplay: "063663 30505",
+  coordinatorHref: "tel:+916366330505",
+  email: "vascularcaredr@gmail.com",
+  emailHref: "mailto:vascularcaredr@gmail.com",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kannur%2C%20Kerala",
+  verified: true,
 };
+
+export const locations = [
+  { city: "Kannur", state: "Kerala, India" },
+  { city: "Mangalore", state: "Karnataka, India" },
+  { city: "Kasaragod", state: "Kerala, India" },
+].map((l) => ({
+  ...l,
+  mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${l.city}, ${l.state}`,
+  )}`,
+}));
 
 export function whatsappLink(message: string) {
   return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(message.slice(0, 900))}`;
