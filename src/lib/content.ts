@@ -575,9 +575,64 @@ export const procedures: Procedure[] = [
       "Ascites and variceal bleeding recede.",
     ],
   },
+  {
+    slug: "prostate-artery-embolization",
+    name: "Prostate artery embolization (PAE)",
+    oneLiner: "Shrinking the prostate by closing its supply.",
+    storyboard: "embolization",
+    beats: [
+      "An enlarged prostate presses on the urethra and rules the day by the hour.",
+      "A microcatheter is navigated into the prostatic arteries from a single wrist or groin puncture.",
+      "Tiny particles are released, reducing blood supply to the gland.",
+      "Over weeks the gland softens and shrinks, and the stream improves.",
+      "Sexual function is preserved. No catheter through the urethra, no resection.",
+    ],
+  },
+  {
+    slug: "uterine-fibroid-embolization",
+    name: "Uterine fibroid embolization (UFE)",
+    oneLiner: "Treating fibroids without removing the uterus.",
+    storyboard: "embolization",
+    beats: [
+      "Fibroids grow on a dense, abnormal blood supply of their own.",
+      "Both uterine arteries are catheterised through one small puncture.",
+      "Embolic particles cut off the fibroid supply while the healthy uterus keeps its own.",
+      "The fibroids infarct and shrink over the following months.",
+      "Bleeding settles, pressure eases, and the uterus stays.",
+    ],
+  },
 ];
 
 export const featuredProcedures = procedures.filter((p) => p.featured);
+
+// ── Region → procedures & guide ────────────────────────────────────────────
+
+/** Procedures offered per anatomical region, shown alongside conditions on the map. */
+export const regionProcedures: Record<Region, string[]> = {
+  brain: ["Mechanical thrombectomy", "Aneurysm coiling", "Flow diversion", "AVM embolization"],
+  eye: ["Transvenous embolization", "Balloon-assisted closure"],
+  carotid: ["Carotid stenting", "Angioplasty with protection"],
+  thyroid: ["Radiofrequency / microwave ablation", "Thyroid artery embolization"],
+  chest: ["EVAR / TEVAR", "Bronchial artery embolization", "Aortic stent grafting"],
+  liver: ["TACE", "Microwave ablation", "TIPS", "Portal vein embolization"],
+  kidney: ["Renal artery angioplasty", "Renal tumour ablation", "Renal embolization"],
+  arms: ["Fistuloplasty", "Declotting", "Central vein recanalisation"],
+  pelvis: ["Uterine fibroid embolization", "Prostate artery embolization", "Pelvic vein embolization"],
+  knee: ["Genicular artery embolization"],
+  legs: ["Angioplasty & stenting", "Atherectomy", "Below-knee revascularisation"],
+  veins: ["Endovenous laser ablation", "Catheter-directed thrombolysis", "Venous stenting"],
+};
+
+/** Region → the pillar guide that best represents it, when one exists. */
+export const regionGuide: Partial<Record<Region, string>> = {
+  brain: "stroke",
+  thyroid: "thyroid-nodules",
+  liver: "liver-tumours",
+  pelvis: "uterine-fibroids",
+  knee: "knee-osteoarthritis",
+  legs: "peripheral-arterial-disease",
+  veins: "varicose-veins",
+};
 
 // ── Professional journey ───────────────────────────────────────────────────
 
