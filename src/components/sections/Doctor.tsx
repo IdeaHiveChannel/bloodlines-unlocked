@@ -1,4 +1,4 @@
-import portrait from "../../assets/doctor-portrait.png";
+import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import hands from "../../assets/hands-catheter.jpg";
 import ot from "../../assets/hybrid-ot.jpg";
 import { Link } from "@tanstack/react-router";
