@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { conditions, procedures, resourcesForCondition } from "../lib/content";
+import { pillarForCondition } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
