@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { conditionsByRegion, regionLabels, type Region } from "../../lib/content";
+import {
+  conditionsByRegion,
+  regionGuide,
+  regionLabels,
+  regionProcedures,
+  type Region,
+} from "../../lib/content";
 
 type Hotspot = {
   id: Region;
@@ -184,6 +190,7 @@ export function Anatomy() {
   const [active, setActive] = useState<Region>("brain");
   const list = conditionsByRegion(active);
   const spot = hotspots.find((h) => h.id === active)!;
+  const guide = regionGuide[active];
 
   return (
     <section className="relative bg-[#050B16] py-32 sm:py-40">
