@@ -63,37 +63,40 @@ export function Hero() {
       <div className="relative z-10 mx-auto flex h-full max-w-[1480px] flex-col px-6 pt-32 pb-16 sm:px-10 lg:flex-row lg:items-center lg:gap-10 lg:pt-40">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
+      <div className="shell relative z-10 flex h-full flex-col pt-28 pb-14 sm:pt-32 lg:flex-row lg:items-center lg:gap-10 lg:pt-40">
+        {/* Left: content */}
+        <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
-            <span className="size-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
-            <span className="text-label">Vascular & neuro interventional radiology</span>
+            <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
+            <span className="text-label">Vascular &amp; neuro interventional radiology</span>
           </div>
-          <h1 className="mt-8 text-display-xxl">
+          <h1 className="mt-6 text-display-xxl sm:mt-8">
             Modern medicine,
             <br />
             <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">through a pinpoint opening.</span>
           </h1>
-          <p className="mt-8 max-w-xl text-body-lg text-[var(--ink-dim)]">
+          <p className="mt-6 max-w-xl text-body-lg text-[var(--ink-dim)] sm:mt-8">
             Advanced image-guided treatment for vascular, neurovascular and minimally invasive procedures, performed with precision through blood vessels rather than large surgical incisions.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link to="/contact" data-cursor="cta" className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-button text-black hover:bg-[var(--accent)] transition-colors">
+          <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 sm:mt-10">
+            <Link to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-7 py-3.5 text-button text-black hover:bg-[var(--accent)] transition-colors">
               Book consultation
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link to="/diseases" data-cursor="link" className="inline-flex items-center gap-3 rounded-full border border-white/15 px-7 py-3.5 text-button hover:bg-white/5 transition-colors">
+            <Link to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-7 py-3.5 text-button hover:bg-white/5 transition-colors">
               Explore conditions
             </Link>
           </div>
         </motion.div>
 
         {/* Right: portrait with scan reveal */}
-        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative lg:w-[45%] mt-12 lg:mt-0 flex-1 min-h-[420px]">
+        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-12 flex-1 lg:mt-0 lg:w-[45%]">
           <div ref={portraitWrapRef} data-cursor="scan"
-            className="relative mx-auto h-[520px] w-full max-w-[520px] lg:h-[640px]">
+            className="relative mx-auto aspect-[4/5] w-full max-w-[340px] sm:max-w-[440px] lg:aspect-auto lg:h-[640px] lg:max-w-[520px]">
             {/* Vessel anatomy reveal layer */}
             <VesselSVG />
             {/* Doctor portrait, with scan mask */}
-            <img src={portraitAsset.url} alt="Dr. Mandeep Sagar"
+            <img src={portraitAsset.url} alt="Dr. Mandeep Sagar, interventional radiologist"
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"
               style={{
                 filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6))",
@@ -111,14 +114,15 @@ export function Hero() {
               }} />
             )}
           </div>
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-label whitespace-nowrap">
+          <div className="mt-3 hidden text-center text-label lg:block">
             Hover to reveal vascular anatomy
           </div>
         </motion.div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+      <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex">
+
         <span className="text-label">Scroll</span>
         <svg viewBox="0 0 4 80" width="4" height="80">
           <line x1="2" y1="0" x2="2" y2="80" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
