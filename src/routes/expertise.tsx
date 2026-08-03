@@ -38,7 +38,15 @@ function Expertise() {
               </div>
             ))}
           </div>
-          <div className="mt-16">
+          <div className="mt-28">
+            <p className="text-label">Professional journey</p>
+            <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-2xl">
+              Training, teaching, and the practice it built.
+            </h2>
+            <ExpertiseTimeline />
+          </div>
+
+          <div className="mt-20">
             <Link to="/conditions" className="text-label underline" data-cursor="link">See conditions treated →</Link>
           </div>
         </div>
