@@ -40,8 +40,8 @@ export function Navigation() {
               <span className="mt-0.5 hidden text-[0.6875rem] font-medium uppercase tracking-[0.24em] text-[var(--ink-dim)] xs:block">Vascular · neuro interventional</span>
             </span>
           </Link>
-          <ul className="hidden items-center gap-5 lg:flex xl:gap-7">
-            {items.map((i) => (
+          <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
+            {primary.map((i) => (
               <li key={i.to}>
                 <Link to={i.to} className="group relative text-nav text-[var(--ink-dim)] hover:text-white transition-colors" data-cursor="link">
                   {i.label}
@@ -49,7 +49,16 @@ export function Navigation() {
                 </Link>
               </li>
             ))}
+            {secondary.slice(0, 3).map((i) => (
+              <li key={i.to} className="hidden xl:block">
+                <Link to={i.to} className="group relative text-nav text-[var(--ink-dim)] hover:text-white transition-colors" data-cursor="link">
+                  {i.label}
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
+                </Link>
+              </li>
+            ))}
           </ul>
+
           <div className="flex shrink-0 items-center gap-2">
             <Link to="/contact" className="hidden min-h-11 items-center rounded-full bg-white px-5 text-button text-black transition-colors hover:bg-[var(--accent)] hover:text-black md:inline-flex" data-cursor="cta">
               Book consultation
