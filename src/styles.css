@@ -134,9 +134,10 @@
     outline-offset: 3px;
     border-radius: 4px;
   }
-  @media (pointer: fine) {
+  @media (hover: hover) and (pointer: fine) and (width >= 64rem) {
     html, body, * { cursor: none !important; }
   }
+  img, video, svg { max-width: 100%; }
 }
 
 /* ------------------------------------------------------------------ */
