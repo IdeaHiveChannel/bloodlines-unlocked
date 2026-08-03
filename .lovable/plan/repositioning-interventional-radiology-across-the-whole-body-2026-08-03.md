@@ -55,7 +55,9 @@ Keep the search field, add filter chips: Conditions · Procedures · Videos · P
 
 Expand the four tiles to five: Book Consultation · WhatsApp · Clinic Reception · Patient Coordinator (family / relative assistance) · Upload Reports.
 
-Upload Reports opens a short secure form — patient name, contact, note, and one or more report files. Files go to Lovable Cloud storage in a private bucket; the clinic gets a record row per submission. No public read access; only the clinic can retrieve files.
+Upload Reports opens a short secure form — patient name, contact, note, and one or more report files. Files go to Whatsapp number provided. -   
+  
+Use these whatsapp, contact and email for everything. Mention Created by Muad Ahamed in the end 2026.
 
 ## Technical notes
 
@@ -65,4 +67,5 @@ Upload Reports opens a short secure form — patient name, contact, note, and on
 - New route `src/routes/testimonials.tsx`; expertise timeline moves into its own component with hover-expand state.
 - Lovable Cloud is enabled for report uploads: a private `patient-reports` bucket, a `report_submissions` table with RLS (insert allowed for the public form, reads restricted), and a server function that validates input and stores the file reference.
 - Every new or changed route keeps its own `head()` metadata.
-- No fabricated testimonials, credentials, phone numbers or addresses are introduced.
+- No fabricated testimonials, credentials, phone numbers or addresses are introduced.  
+  
