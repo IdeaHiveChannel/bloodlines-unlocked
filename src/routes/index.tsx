@@ -8,6 +8,7 @@ import { Procedures } from "../components/procedures/Procedures";
 import { BeforeAfter } from "../components/sections/BeforeAfter";
 import { Recovery } from "../components/sections/Recovery";
 import { PatientStories } from "../components/sections/PatientStories";
+import { MediaBand } from "../components/sections/MediaBand";
 import { Journey } from "../components/sections/Journey";
 import { Doctor } from "../components/sections/Doctor";
 import { Consultation } from "../components/sections/Consultation";
@@ -75,6 +76,7 @@ function Index() {
       <Procedures />
       <BeforeAfter />
       <Recovery />
+      <MediaBand />
       <PatientStories />
       <Journey />
       <Doctor />
