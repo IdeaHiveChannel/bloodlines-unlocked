@@ -33,7 +33,11 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={ref} className="relative h-[100dvh] min-h-[760px] w-full overflow-hidden bg-[#050B16]">
+    <section
+      ref={ref}
+      className="relative min-h-[100svh] w-full overflow-hidden bg-[#050B16] lg:h-[100dvh] lg:min-h-[720px]"
+    >
+
       {/* Layer 1: cinematic bg */}
       <motion.div style={{ scale: bgScale }} className="absolute inset-0">
         <img src={heroBg} alt="" className="h-full w-full object-cover opacity-40" />
