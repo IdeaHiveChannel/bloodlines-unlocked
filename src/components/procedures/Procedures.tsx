@@ -8,12 +8,12 @@ export function Procedures() {
   return (
     <section className="relative bg-[#050B16]">
       <div className="mx-auto max-w-[1480px] px-6 sm:px-10 pt-32 pb-12">
-        <p className="text-label">Chapter 04 · Intervention</p>
+        <p className="text-label">Chapter 04 · Procedures</p>
         <h2 className="mt-6 text-display text-[clamp(2.4rem,5vw,4.5rem)] max-w-3xl">
-          Every procedure, told as its own story.
+          Every procedure has its own story.
         </h2>
         <p className="mt-6 max-w-xl text-[14px] text-[var(--ink-dim)]">
-          Scroll through each intervention beat by beat. No two look alike, because no two are alike.
+          No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.
         </p>
       </div>
       {featuredProcedures.map((p, idx) => (

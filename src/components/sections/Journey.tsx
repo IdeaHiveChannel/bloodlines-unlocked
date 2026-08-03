@@ -5,9 +5,10 @@ const steps = [
   { n: "01", title: "Consultation", body: "Symptoms heard. History reviewed. The first decision is whether intervention is needed at all." },
   { n: "02", title: "Imaging", body: "Doppler. CT angiography. MR angiography. The disease is seen before it is touched." },
   { n: "03", title: "Diagnosis", body: "The plan is shared in plain language. Options weighed. Questions answered." },
-  { n: "04", title: "Procedure", body: "Performed in a hybrid cath lab. Real-time imaging guides every millimetre." },
-  { n: "05", title: "Recovery", body: "Short stay. Same-day or next-day discharge for most procedures." },
-  { n: "06", title: "Follow-up", body: "Imaging review and long-term care to keep what was restored." },
+  { n: "04", title: "Treatment planning", body: "Every option is put on the table — including doing nothing. Risk, benefit and timing are discussed until the choice is yours." },
+  { n: "05", title: "Procedure", body: "Performed in a hybrid cath lab. Real-time imaging guides every millimetre." },
+  { n: "06", title: "Recovery", body: "Short stay. Same-day or next-day discharge for most procedures." },
+  { n: "07", title: "Follow-up", body: "Imaging review and long-term care to keep what was restored." },
 ];
 
 export function Journey() {
@@ -19,7 +20,8 @@ export function Journey() {
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
         <div className="mx-auto max-w-[1480px] px-6 sm:px-10 mb-12">
           <p className="text-label">Patient journey</p>
-          <h2 className="mt-4 text-display text-[clamp(2rem,4.5vw,4rem)]">What happens to you.</h2>
+          <h2 className="mt-4 text-display text-[clamp(2rem,4.5vw,4rem)]">From diagnosis to recovery.</h2>
+          <p className="mt-5 max-w-2xl text-[14.5px] leading-relaxed text-[var(--ink-dim)]">Every decision begins with understanding the disease. Imaging guides the diagnosis, treatment is planned around the individual patient, and follow-up continues long after the procedure is complete.</p>
         </div>
         <motion.div style={{ x }} className="flex gap-8 px-[5vw] will-change-transform">
           {steps.map((s) => (

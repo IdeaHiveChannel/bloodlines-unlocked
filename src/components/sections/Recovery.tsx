@@ -12,10 +12,14 @@ export function Recovery() {
   return (
     <section className="relative bg-[#050B16] py-32">
       <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
-        <p className="text-label">Chapter 05 · Recovery</p>
+        <p className="text-label">Chapter 06 · Recovery</p>
         <h2 className="mt-6 text-display text-[clamp(2rem,4.5vw,4rem)] max-w-3xl">
-          Minimally invasive means measurably faster.
+          Treatment is only one part of recovery.
         </h2>
+        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+          Minimally invasive intervention is designed to reduce trauma, shorten hospital stays and help
+          patients return to daily life sooner, while maintaining long-term follow-up where required.
+        </p>
         <ol className="mt-16 relative grid gap-6 md:grid-cols-5">
           <div className="hidden md:block absolute top-[34px] left-6 right-6 h-px bg-white/10">
             <div className="h-full w-full bg-[var(--accent)] origin-left animate-pulse opacity-40" />

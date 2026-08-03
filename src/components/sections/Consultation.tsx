@@ -42,8 +42,12 @@ export function Consultation() {
       <div className="mx-auto max-w-[1480px] px-6 sm:px-10">
         <p className="text-label">Chapter 08 · Consultation</p>
         <h2 className="mt-6 text-display text-[clamp(2.4rem,6vw,6rem)] max-w-3xl">
-          When you're ready, the door is one tap away.
+          When you're ready, we're here.
         </h2>
+        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[var(--ink-dim)]">
+          Whether you're seeking a diagnosis, a second opinion or treatment options, the first step is
+          understanding the condition. Share your reports, speak with the team or schedule a consultation.
+        </p>
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {tiles.map((t) => {
             const Icon = t.icon;

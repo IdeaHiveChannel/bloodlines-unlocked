@@ -61,23 +61,23 @@ export function Hero() {
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
             <span className="size-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
-            <span className="text-label">Chapter 01 · Arrival</span>
+            <span className="text-label">Vascular & neuro interventional radiology</span>
           </div>
           <h1 className="mt-8 text-display-xxl">
-            Restoring
+            Modern medicine,
             <br />
-            <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">blood flow.</span>
+            <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">through a pinpoint opening.</span>
           </h1>
           <p className="mt-8 max-w-xl text-body-lg text-[var(--ink-dim)]">
-            Advanced vascular and neurointerventional procedures performed through pinpoint incisions, guided by real-time imaging. Greater precision. Faster recovery. Care that meets the disease where it lives.
+            Advanced image-guided treatment for vascular, neurovascular and minimally invasive procedures, performed with precision through blood vessels rather than large surgical incisions.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link to="/contact" data-cursor="cta" className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-button text-black hover:bg-[var(--accent)] transition-colors">
               Book consultation
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link to="/procedures" data-cursor="link" className="inline-flex items-center gap-3 rounded-full border border-white/15 px-7 py-3.5 text-button hover:bg-white/5 transition-colors">
-              Explore treatments
+            <Link to="/diseases" data-cursor="link" className="inline-flex items-center gap-3 rounded-full border border-white/15 px-7 py-3.5 text-button hover:bg-white/5 transition-colors">
+              Explore conditions
             </Link>
           </div>
         </motion.div>

@@ -19,7 +19,7 @@ export function ExpertiseTimeline() {
       />
 
       <ol className="space-y-px">
-        {milestones.map((m) => {
+        {milestones.map((m, i) => {
           const isOpen = open === m.id;
           return (
             <li key={m.id} className="relative">
@@ -40,9 +40,13 @@ export function ExpertiseTimeline() {
                 className="w-full text-left py-5 border-b border-white/[0.06] hover:bg-white/[0.02] transition-colors px-2"
               >
                 <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
+                  <span className="text-label text-[var(--accent)]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <span className="text-display text-2xl sm:text-3xl">{m.title}</span>
                   <span className="text-label">{m.meta}</span>
                 </div>
+
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div

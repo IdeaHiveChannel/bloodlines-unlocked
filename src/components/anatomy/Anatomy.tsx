@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { conditionsByRegion, regionLabels, type Region } from "../../lib/content";
+import {
+  conditionsByRegion,
+  regionGuide,
+  regionLabels,
+  regionProcedures,
+  type Region,
+} from "../../lib/content";
 
 type Hotspot = {
   id: Region;
@@ -184,6 +190,7 @@ export function Anatomy() {
   const [active, setActive] = useState<Region>("brain");
   const list = conditionsByRegion(active);
   const spot = hotspots.find((h) => h.id === active)!;
+  const guide = regionGuide[active];
 
   return (
     <section className="relative bg-[#050B16] py-32 sm:py-40">
@@ -192,14 +199,15 @@ export function Anatomy() {
           <div>
             <p className="text-label">Chapter 02 · Anatomy</p>
             <h2 className="mt-6 text-display text-[clamp(2.4rem,5vw,4.5rem)] max-w-2xl">
-              The entire human body, treated through blood vessels.
+              The body, seen through its blood vessels.
             </h2>
           </div>
-          <p className="text-[13px] text-[var(--ink-dim)] max-w-sm">
-            Brain to foot, eye to kidney. Move over any region — each one illuminates the conditions
-            treated there through image-guided intervention.
+          <p className="text-[13px] leading-relaxed text-[var(--ink-dim)] max-w-sm">
+            From the brain to the feet, blood vessels connect every organ. Explore each region to
+            understand how modern image-guided treatment addresses disease throughout the body.
           </p>
         </div>
+
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Anatomy panel */}
@@ -329,7 +337,9 @@ export function Anatomy() {
                 <h3 className="mt-4 text-display text-3xl sm:text-4xl">
                   {list.length} condition{list.length === 1 ? "" : "s"} treated here
                 </h3>
-                <div className="mt-8 space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
+
+                <p className="mt-8 text-label">Conditions &amp; the intervention used</p>
+                <div className="mt-4 space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
                   {list.map((c) => (
                     <Link
                       key={c.slug}
@@ -355,6 +365,46 @@ export function Anatomy() {
                     </Link>
                   ))}
                 </div>
+
+                <p className="mt-10 text-label">Procedures performed in this region</p>
+                <ul className="mt-4 flex flex-wrap gap-3">
+                  {(regionProcedures[active] ?? []).map((p) => (
+                    <li
+                      key={p}
+                      className="rounded-full border border-white/[0.1] bg-white/[0.02] px-4 py-2 text-[12.5px] text-[var(--ink)]"
+                    >
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-10 flex flex-wrap gap-6">
+                  {guide ? (
+                    <Link
+                      to="/diseases/$slug"
+                      params={{ slug: guide }}
+                      data-cursor="cta"
+                      className="text-label underline"
+                    >
+                      Read more — complete guide →
+                    </Link>
+                  ) : (
+                    list[0] && (
+                      <Link
+                        to="/conditions/$slug"
+                        params={{ slug: list[0].slug }}
+                        data-cursor="cta"
+                        className="text-label underline"
+                      >
+                        Read more →
+                      </Link>
+                    )
+                  )}
+                  <Link to="/procedures" data-cursor="link" className="text-label underline">
+                    All procedures →
+                  </Link>
+                </div>
+
               </motion.div>
             </AnimatePresence>
           </div>
