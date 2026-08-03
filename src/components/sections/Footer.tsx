@@ -1,4 +1,4 @@
-import { contact, locations, whatsappLink, whatsappMessages } from "../../lib/contact";
+import { contact, locations, socialLinks, whatsappLink, whatsappMessages } from "../../lib/contact";
 
 export function Footer() {
   return (
@@ -53,11 +53,19 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-label">Notice</p>
+            <p className="text-label">Follow</p>
+            <ul className="mt-3 space-y-2">
+              {socialLinks.map((s) => (
+                <li key={s.label}>
+                  <a href={s.url} target="_blank" rel="noreferrer" data-cursor="link">{s.label}</a>
+                </li>
+              ))}
+            </ul>
+            <p className="text-label mt-6">Notice</p>
             <p className="mt-3">The information presented is educational. It does not constitute medical advice. Consult a qualified physician for diagnosis and treatment.</p>
           </div>
         </div>
-        <div className="mt-16 pt-6 border-t border-white/[0.05] flex flex-wrap justify-between gap-4 text-caption text-[var(--ink-dim)]">
+        <div className="mt-12 pt-6 border-t border-white/[0.05] flex flex-wrap justify-between gap-4 text-caption text-[var(--ink-dim)]">
           <p>© {new Date().getFullYear()} Dr. Mandeep Sagar. All rights reserved.</p>
         </div>
       </div>
