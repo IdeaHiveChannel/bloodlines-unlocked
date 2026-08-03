@@ -30,11 +30,11 @@ const socialIcon: Record<string, ComponentType<IconProps>> = {
   "Google Business Profile": MapPin,
 };
 
-/** Fixed bottom-right dock: tiny social row above two large contact actions. */
+/** Fixed bottom-right dock: tiny vertical social stack above two large contact actions. */
 export function ContactDock() {
   return (
     <div className="fixed bottom-0 right-0 z-[60] flex flex-col items-end gap-2 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:p-6">
-      <ul className="flex items-center gap-2 rounded-full border border-white/[0.08] bg-[#050B16]/80 px-2.5 py-1.5 backdrop-blur-md">
+      <ul className="flex flex-col items-center gap-2 rounded-2xl border border-white/[0.08] bg-[#050B16]/80 px-1.5 py-2 backdrop-blur-md">
         {socialLinks.map((s) => {
           const Icon = socialIcon[s.label] ?? MapPin;
           return (
