@@ -3,20 +3,49 @@ import { Consultation } from "../components/sections/Consultation";
 import { Footer } from "../components/sections/Footer";
 import { contact, locations } from "../lib/contact";
 
+const SITE = "https://bloodlines-unlocked.lovable.app";
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book Consultation — Dr. Mandeep Sagar" },
+      { title: "Book a consultation — Dr. Mandeep Sagar" },
       { name: "description", content: "Reach the practice by appointment, WhatsApp, phone, or email. Clinics in Kannur, Mangalore and Kasaragod." },
-      { property: "og:title", content: "Book a Consultation" },
-      { property: "og:description", content: "When you're ready, the door is one tap away." },
+      { property: "og:title", content: "Book a consultation with Dr. Mandeep Sagar" },
+      { property: "og:description", content: "Appointment timings, clinic addresses and direct contact for the interventional radiology practice." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/contact` },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: `${SITE}/contact` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          name: "Dr. Mandeep Sagar — Interventional radiology practice",
+          url: `${SITE}/contact`,
+          telephone: "+91 63663 30505",
+          email: contact.email,
+          address: locations.map((l) => ({
+            "@type": "PostalAddress",
+            addressLocality: l.city,
+            addressRegion: l.state.replace(", India", ""),
+            addressCountry: "IN",
+          })),
+        }),
+      },
     ],
   }),
   component: () => (
     <>
-      <div className="pt-24"><Consultation /></div>
+      <div className="pt-28 sm:pt-32">
+        <div className="shell">
+          <p className="text-label">Consultation</p>
+          <h1 className="text-display-xl mt-5 max-w-3xl">Book a consultation.</h1>
+        </div>
+        <Consultation />
+      </div>
       <div className="bg-[#050B16] section-y border-t border-white/[0.05]">
         <div className="shell">
           <p className="text-label">Where to find the practice</p>
