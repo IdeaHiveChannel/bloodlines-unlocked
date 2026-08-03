@@ -12,9 +12,13 @@
  */
 
 @theme inline {
+  --breakpoint-xs: 26rem;
+
   --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-sans:    "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-mono:    "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+
 
   --radius-sm: 8px;
   --radius-md: 12px;
