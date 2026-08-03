@@ -33,6 +33,8 @@ export function Footer() {
               <li><a href="/procedures" data-cursor="link">Procedures</a></li>
               <li><a href="/about" data-cursor="link">About</a></li>
               <li><a href="/expertise" data-cursor="link">Expertise</a></li>
+              <li><a href="/media" data-cursor="link">Media &amp; publications</a></li>
+              <li><a href="/testimonials" data-cursor="link">Patient stories</a></li>
               <li><a href="/resources" data-cursor="link">Resources</a></li>
             </ul>
           </div>
@@ -40,6 +42,7 @@ export function Footer() {
             <p className="text-label">Contact</p>
             <ul className="mt-3 space-y-2">
               <li><a href="/contact" data-cursor="link">Book consultation</a></li>
+              <li><a href="/second-opinion" data-cursor="link">Second opinion</a></li>
               <li><a href={contact.phoneHref} data-cursor="link">{contact.phoneDisplay}</a></li>
               <li>
                 <a href={whatsappLink(whatsappMessages.general)} target="_blank" rel="noreferrer" data-cursor="link">
