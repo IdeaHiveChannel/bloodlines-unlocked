@@ -15,6 +15,7 @@ import { LenisProvider } from "../components/lenis-provider";
 import { Cursor } from "../components/cursor";
 import { Loader } from "../components/loader";
 import { Navigation } from "../components/navigation";
+import { ContactDock } from "../components/contact-dock";
 
 function NotFoundComponent() {
   return (
@@ -128,6 +129,7 @@ function RootComponent() {
         <Cursor />
         <Navigation />
         <Outlet />
+        <ContactDock />
       </LenisProvider>
     </QueryClientProvider>
   );
