@@ -108,9 +108,10 @@ export function ResponsiveVideo({
           onLoadedMetadata={readRatio}
           onLoadedData={() => setReady(true)}
           onCanPlay={() => setReady(true)}
-          className={`absolute inset-0 block h-full w-full max-w-full object-center transition-opacity duration-500 ${
+          className={`absolute inset-0 block h-full w-full max-w-full object-center ${
             objectFit === "cover" ? "object-cover" : "object-contain"
-          } ${ready ? "opacity-100" : "opacity-0"} ${className}`}
+          } ${className}`}
+
         />
 
         {expandable && !reduced && (
