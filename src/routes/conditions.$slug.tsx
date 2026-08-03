@@ -10,14 +10,17 @@ export const Route = createFileRoute("/conditions/$slug")({
   head: ({ params }) => {
     const c = conditions.find((x) => x.slug === params.slug);
     const url = `${SITE}/conditions/${params.slug}`;
+    const name = c?.name ?? "Condition not catalogued";
+    const intro = (c?.intro ?? "This condition is not in the catalogue.").slice(0, 158);
     return {
       meta: [
-        { title: `${c!.name} — treatment | Dr. Mandeep Sagar`.slice(0, 60) },
-        { name: "description", content: c!.intro.slice(0, 158) },
-        { property: "og:title", content: `${c!.name} — image-guided treatment` },
-        { property: "og:description", content: c!.intro.slice(0, 158) },
+        { title: `${name} — treatment | Dr. Mandeep Sagar`.slice(0, 60) },
+        { name: "description", content: intro },
+        { property: "og:title", content: `${name} — image-guided treatment` },
+        { property: "og:description", content: intro },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        { name: "robots", content: c ? "index,follow" : "noindex" },
         { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [{ rel: "canonical", href: url }],

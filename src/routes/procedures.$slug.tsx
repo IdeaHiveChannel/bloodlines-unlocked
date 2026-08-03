@@ -11,23 +11,17 @@ export const Route = createFileRoute("/procedures/$slug")({
   head: ({ params }) => {
     const p = procedures.find((x) => x.slug === params.slug);
     const url = `${SITE}/procedures/${params.slug}`;
-    if (!p) {
-      return {
-        meta: [
-          { title: "Procedure not catalogued — Dr. Mandeep Sagar" },
-          { name: "robots", content: "noindex" },
-        ],
-        links: [],
-      };
-    }
+    const name = p?.name ?? "Procedure not catalogued";
+    const line = (p?.oneLiner ?? "This procedure is not in the catalogue.").slice(0, 158);
     return {
       meta: [
-        { title: `${p.name} — Dr. Mandeep Sagar`.slice(0, 60) },
-        { name: "description", content: p.oneLiner.slice(0, 158) },
-        { property: "og:title", content: `${p.name} — image-guided procedure` },
-        { property: "og:description", content: p.oneLiner.slice(0, 158) },
+        { title: `${name} — Dr. Mandeep Sagar`.slice(0, 60) },
+        { name: "description", content: line },
+        { property: "og:title", content: `${name} — image-guided procedure` },
+        { property: "og:description", content: line },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        { name: "robots", content: p ? "index,follow" : "noindex" },
         { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [{ rel: "canonical", href: url }],
