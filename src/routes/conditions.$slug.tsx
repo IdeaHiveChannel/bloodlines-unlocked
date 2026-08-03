@@ -51,7 +51,7 @@ export const Route = createFileRoute("/conditions/$slug")({
 });
 
 function ConditionPage() {
-  const c = Route.useLoaderData();
+  const c = Route.useLoaderData() as Condition;
   const guide = pillarForCondition(c.slug);
   const related = resourcesForCondition(c.slug);
   const relatedProcedures = procedures.filter((p) =>
@@ -66,8 +66,8 @@ function ConditionPage() {
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
           <Link to="/conditions" className="text-label" data-cursor="link">← All conditions</Link>
-          <h1 className="text-display-xl mt-8">{c!.name}</h1>
-          <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">{c!.intro}</p>
+          <h1 className="text-display-xl mt-8">{c.name}</h1>
+          <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
 
           {guide && (
             <Link

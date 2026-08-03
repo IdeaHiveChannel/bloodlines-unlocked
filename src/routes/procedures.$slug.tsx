@@ -43,7 +43,7 @@ export const Route = createFileRoute("/procedures/$slug")({
 });
 
 function ProcedurePage() {
-  const p = Route.useLoaderData();
+  const p = Route.useLoaderData() as Procedure;
   const video = procedureVideos[p.slug];
   return (
     <>
