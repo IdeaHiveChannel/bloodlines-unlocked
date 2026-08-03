@@ -1,3 +1,5 @@
+import { contact, locations, whatsappLink, whatsappMessages } from "../../lib/contact";
+
 export function Footer() {
   return (
     <footer className="relative bg-[#050B16] pt-24 pb-10 border-t border-white/[0.05]">
