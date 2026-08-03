@@ -3,13 +3,20 @@ import { Footer } from "../components/sections/Footer";
 import { ExpertiseTimeline } from "../components/sections/ExpertiseTimeline";
 
 const pillars = [
-  { t: "Neurointervention", body: "Acute stroke thrombectomy. Cerebral aneurysm embolization. AVM management. Time-critical, image-guided." },
-  { t: "Peripheral Vascular", body: "From iliac to pedal arch — angioplasty, stenting, atherectomy. Limb-salvage strategies for critical ischemia and diabetic foot." },
-  { t: "Aortic Disease", body: "Endovascular repair of aortic aneurysms (EVAR / TEVAR) through small access points, with reduced recovery time." },
-  { t: "Venous Disease", body: "Endovenous ablation for varicose veins. Catheter-directed therapy for DVT. Restoration of venous return without surgery." },
-  { t: "Embolization", body: "Uterine fibroid and prostate artery embolization. Targeted devascularisation of disease that does not require excision." },
-  { t: "Dialysis Access", body: "Maintenance of fistulas and grafts — fistuloplasty, declotting, salvage. Keeping lifelines open." },
+  { t: "Neurointervention", body: "Acute stroke thrombectomy, cerebral aneurysm embolization, AVM and dural fistula management. Time-critical work, performed under live imaging." },
+  { t: "Stroke care", body: "The clock-driven pathway: recognition, imaging, decision, and clot retrieval. Coordination matters as much as the catheter." },
+  { t: "Peripheral vascular", body: "From iliac to pedal arch — angioplasty, stenting, atherectomy. Limb-salvage strategies for critical ischaemia and diabetic foot." },
+  { t: "Aortic disease", body: "Endovascular repair of aortic aneurysms and dissections (EVAR / TEVAR) through small access points, with shorter recovery." },
+  { t: "Venous disease", body: "Endovenous ablation for varicose veins, catheter-directed therapy for DVT, venous stenting for outflow obstruction." },
+  { t: "Interventional oncology", body: "TACE, microwave ablation and portal vein embolization — treatment delivered into the tumour, sparing the organ around it." },
+  { t: "Hepatobiliary & portal", body: "TIPS for portal hypertension, variceal bleeding control, biliary drainage and transjugular biopsy." },
+  { t: "Thyroid intervention", body: "Radiofrequency and microwave ablation of benign thyroid nodules — no incision, no scar, no lifelong replacement." },
+  { t: "Renal & genitourinary", body: "Renal artery angioplasty, renal tumour ablation, prostate artery embolization and varicocele treatment." },
+  { t: "Musculoskeletal & pain", body: "Genicular artery embolization for knee osteoarthritis, and image-guided treatment of chronic joint pain." },
+  { t: "Women's health", body: "Uterine fibroid embolization and pelvic vein embolization for pelvic congestion — organ-preserving by design." },
+  { t: "Dialysis access", body: "Maintenance of fistulas and grafts — fistuloplasty, declotting, central vein recanalisation. Keeping lifelines open." },
 ];
+
 
 export const Route = createFileRoute("/expertise")({
   head: () => ({
