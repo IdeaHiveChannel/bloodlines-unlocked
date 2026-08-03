@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import portrait from "../../assets/doctor-portrait.png";
+import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
