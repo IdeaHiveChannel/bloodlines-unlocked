@@ -4,9 +4,9 @@ import consultDesk from "../../assets/consult-desk.jpg";
 import recoveryRoom from "../../assets/recovery-room.jpg";
 import hybridOt from "../../assets/hybrid-ot.jpg";
 import handsCatheter from "../../assets/hands-catheter.jpg";
-import thrombectomy from "../../assets/video-thrombectomy.mp4.asset.json";
-import varicose from "../../assets/video-varicose-vein-ablation.mp4.asset.json";
+import { procedureVideos } from "../../lib/media";
 import { ResponsiveVideo } from "../media/ResponsiveVideo";
+
 
 
 const stills = [
