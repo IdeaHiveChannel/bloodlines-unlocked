@@ -141,6 +141,13 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               >
                 Book consultation
               </Link>
+              <Link
+                to="/second-opinion"
+                data-cursor="link"
+                className="rounded-full border border-white/[0.14] px-6 py-3 text-button transition-colors hover:border-white/40"
+              >
+                Second opinion on your scans
+              </Link>
               <a
                 href="#treatment"
                 data-cursor="link"
