@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
+import { ExpertiseTimeline } from "../components/sections/ExpertiseTimeline";
 
 const pillars = [
   { t: "Neurointervention", body: "Acute stroke thrombectomy. Cerebral aneurysm embolization. AVM management. Time-critical, image-guided." },
