@@ -14,8 +14,9 @@ export function MediaFrame({
 }) {
   return (
     <div
-      className={`relative w-full min-w-0 max-w-full overflow-hidden rounded-xl border border-white/[0.06] bg-black aspect-video max-h-[70svh] landscape:max-h-[55svh] [@media(max-height:520px)]:max-h-[70svh] mx-auto ${className}`}
+      className={`relative mx-auto aspect-video w-full min-w-0 max-w-full overflow-hidden rounded-xl border border-white/[0.06] bg-black max-h-[70svh] max-w-[min(100%,calc(70svh*16/9))] landscape:max-h-[55svh] landscape:max-w-[min(100%,calc(55svh*16/9))] ${className}`}
     >
+
       {children}
     </div>
   );
