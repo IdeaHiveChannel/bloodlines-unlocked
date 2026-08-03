@@ -60,9 +60,6 @@ export function Hero() {
       <Particles />
 
       {/* Content grid */}
-      <div className="relative z-10 mx-auto flex h-full max-w-[1480px] flex-col px-6 pt-32 pb-16 sm:px-10 lg:flex-row lg:items-center lg:gap-10 lg:pt-40">
-        {/* Left: content */}
-        <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
       <div className="shell relative z-10 flex h-full flex-col pt-28 pb-14 sm:pt-32 lg:flex-row lg:items-center lg:gap-10 lg:pt-40">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
