@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SecondOpinionRouteImport } from './routes/second-opinion'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as MediaRouteImport } from './routes/media'
@@ -27,6 +28,11 @@ import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 const TestimonialsRoute = TestimonialsRouteImport.update({
   id: '/testimonials',
   path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SecondOpinionRoute = SecondOpinionRouteImport.update({
@@ -103,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/media': typeof MediaRoute
   '/resources': typeof ResourcesRoute
   '/second-opinion': typeof SecondOpinionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByTo {
   '/media': typeof MediaRoute
   '/resources': typeof ResourcesRoute
   '/second-opinion': typeof SecondOpinionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   '/media': typeof MediaRoute
   '/resources': typeof ResourcesRoute
   '/second-opinion': typeof SecondOpinionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
@@ -154,6 +163,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/resources'
     | '/second-opinion'
+    | '/sitemap.xml'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
@@ -170,6 +180,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/resources'
     | '/second-opinion'
+    | '/sitemap.xml'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
@@ -186,6 +197,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/resources'
     | '/second-opinion'
+    | '/sitemap.xml'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
@@ -203,6 +215,7 @@ export interface RootRouteChildren {
   MediaRoute: typeof MediaRoute
   ResourcesRoute: typeof ResourcesRoute
   SecondOpinionRoute: typeof SecondOpinionRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TestimonialsRoute: typeof TestimonialsRoute
   ConditionsSlugRoute: typeof ConditionsSlugRoute
   DiseasesSlugRoute: typeof DiseasesSlugRoute
@@ -219,6 +232,13 @@ declare module '@tanstack/react-router' {
       path: '/testimonials'
       fullPath: '/testimonials'
       preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/second-opinion': {
@@ -323,6 +343,7 @@ const rootRouteChildren: RootRouteChildren = {
   MediaRoute: MediaRoute,
   ResourcesRoute: ResourcesRoute,
   SecondOpinionRoute: SecondOpinionRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TestimonialsRoute: TestimonialsRoute,
   ConditionsSlugRoute: ConditionsSlugRoute,
   DiseasesSlugRoute: DiseasesSlugRoute,
@@ -334,3 +355,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
