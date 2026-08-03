@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { ProcedureVideoMeta } from "../../lib/media";
+import { MediaFrame, mediaFillClass } from "../media/MediaFrame";
+
 
 export function ProcedureVideo({ video }: { video: ProcedureVideoMeta }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -24,8 +26,8 @@ export function ProcedureVideo({ video }: { video: ProcedureVideoMeta }) {
   }, [reduced]);
 
   return (
-    <figure className="mt-10 w-full max-w-full">
-      <div className="w-full max-w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-black sm:rounded-3xl">
+    <figure className="mt-10 w-full min-w-0 max-w-full">
+      <MediaFrame className="sm:rounded-3xl">
         <video
           ref={ref}
           src={video.url}
@@ -34,10 +36,11 @@ export function ProcedureVideo({ video }: { video: ProcedureVideoMeta }) {
           playsInline
           preload="metadata"
           controls={reduced}
-          className="block aspect-video h-auto max-h-[70svh] w-full max-w-full object-contain"
+          className={mediaFillClass}
         />
-      </div>
+      </MediaFrame>
       <figcaption className="mt-4 text-caption text-[var(--ink-dim)]">{video.caption}</figcaption>
     </figure>
   );
 }
+
