@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { procedures } from "../lib/content";
 import { Footer } from "../components/sections/Footer";
 
-export const Route = createFileRoute("/procedures")({
+export const Route = createFileRoute("/procedures/")({
   head: () => ({
     meta: [
       { title: "Procedures — Dr. Mandeep Sagar" },

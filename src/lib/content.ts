@@ -703,33 +703,43 @@ export type Resource = {
   text: string;
   /** Related condition slugs. */
   related: string[];
+  /** Procedure page this resource links to, when it has one. */
+  procedure?: string;
   pending?: boolean;
 };
 
 export const resources: Resource[] = [
   {
-    id: "video-angioplasty",
+    id: "video-thrombectomy",
     kind: "Video",
-    title: "What happens during an angioplasty",
-    text: "A short walkthrough of the procedure from access to closure, filmed in the cath lab.",
-    related: ["peripheral-artery-disease", "critical-limb-ischemia", "diabetic-foot"],
-    pending: true,
-  },
-  {
-    id: "video-stroke",
-    kind: "Video",
-    title: "Stroke: the first sixty minutes",
-    text: "Why time is brain, and what a thrombectomy pathway looks like from door to reperfusion.",
+    title: "Mechanical thrombectomy, animated",
+    text: "How a clot in a brain artery is captured and withdrawn through a single puncture.",
     related: ["acute-ischemic-stroke"],
-    pending: true,
+    procedure: "thrombectomy",
   },
   {
-    id: "video-uterine-fibroid",
+    id: "video-aneurysm-coiling",
     kind: "Video",
-    title: "Fibroid embolization explained",
-    text: "How blocking the uterine arteries shrinks fibroids without removing the uterus.",
-    related: ["uterine-fibroids"],
-    pending: true,
+    title: "Cerebral aneurysm coiling, animated",
+    text: "The aneurysm sac is packed from inside the vessel until flow no longer enters it.",
+    related: ["cerebral-aneurysm"],
+    procedure: "aneurysm-coiling",
+  },
+  {
+    id: "video-evar",
+    kind: "Video",
+    title: "Endovascular aneurysm repair, animated",
+    text: "A stent graft is carried up through the groin and deployed to reline the aorta.",
+    related: ["aortic-aneurysm", "aortic-dissection"],
+    procedure: "aneurysm-repair",
+  },
+  {
+    id: "video-varicose",
+    kind: "Video",
+    title: "Varicose vein treatment, animated",
+    text: "The failing vein is sealed along its length and flow reroutes to healthy veins.",
+    related: ["varicose-veins", "venous-ulcer"],
+    procedure: "varicose-vein-ablation",
   },
   {
     id: "guide-before-procedure",

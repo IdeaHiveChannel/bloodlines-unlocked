@@ -1,5 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { procedures } from "../lib/content";
+import { procedureVideos } from "../lib/media";
+import { ProcedureVideo } from "../components/procedures/ProcedureVideo";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
@@ -31,6 +33,7 @@ export const Route = createFileRoute("/procedures/$slug")({
 
 function ProcedurePage() {
   const p = Route.useLoaderData();
+  const video = procedureVideos[p.slug];
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
@@ -38,6 +41,7 @@ function ProcedurePage() {
           <Link to="/procedures" className="text-label" data-cursor="link">← All procedures</Link>
           <h1 className="mt-8 text-display text-[clamp(2.4rem,6vw,5rem)]">{p.name}</h1>
           <p className="mt-6 text-[17px] text-[var(--ink-dim)]">{p.oneLiner}</p>
+          {video && <ProcedureVideo video={video} />}
           <ol className="mt-16 space-y-10">
             {p.beats.map((b: string, i: number) => (
               <li key={i} className="grid grid-cols-[60px_1fr] gap-6">

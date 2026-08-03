@@ -1,4 +1,4 @@
-import portrait from "../../assets/doctor-portrait.png";
+import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import hands from "../../assets/hands-catheter.jpg";
 import ot from "../../assets/hybrid-ot.jpg";
 import { Link } from "@tanstack/react-router";
@@ -41,7 +41,7 @@ export function Doctor() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/[0.06] bg-[#0a1525]">
-              <img src={portrait} alt="Dr. Mandeep Sagar"
+              <img src={portraitAsset.url} alt="Dr. Mandeep Sagar"
                 className="absolute inset-0 h-full w-full object-cover object-top opacity-95" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050B16] via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6">

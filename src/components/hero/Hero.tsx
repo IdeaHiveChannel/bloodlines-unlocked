@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import portrait from "../../assets/doctor-portrait.png";
+import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -89,7 +89,7 @@ export function Hero() {
             {/* Vessel anatomy reveal layer */}
             <VesselSVG />
             {/* Doctor portrait, with scan mask */}
-            <img src={portrait} alt="Dr. Mandeep Sagar"
+            <img src={portraitAsset.url} alt="Dr. Mandeep Sagar"
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"
               style={{
                 filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6))",
