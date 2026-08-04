@@ -93,14 +93,14 @@ export function NavMenu({
             <ul className={columns === 2 ? "grid grid-cols-2 gap-x-1" : ""}>
               {links.map((l) => (
                 <li key={l.to + l.label}>
-                  <AnyLink
+                  <LocaleLink
                     to={l.to}
                     onClick={() => setOpen(false)}
                     className="block rounded-xl px-3 py-2 text-small text-[var(--ink-dim)] transition-colors hover:bg-white/[0.06] hover:text-white"
                     data-cursor="link"
                   >
                     {l.label}
-                  </AnyLink>
+                  </LocaleLink>
                 </li>
               ))}
             </ul>
