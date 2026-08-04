@@ -1,6 +1,6 @@
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
-import { pillars } from "../lib/pillars";
+import { usePillars } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
@@ -45,7 +45,7 @@ function DiseasesIndex() {
           </p>
 
           <ol className="mt-16 divide-y divide-white/[0.06] border-y border-white/[0.06]">
-            {pillars.map((p, i) => (
+            {items.map((p, i) => (
               <li key={p.slug}>
                 <LocaleLink
                   to="/diseases/$slug"

@@ -1,6 +1,8 @@
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { conditions, procedures, resourcesForCondition } from "../lib/content";
+import { getCondition, getProcedures } from "../lib/i18n/data";
+import { useLocale } from "../lib/i18n/react";
 import type { Condition } from "../lib/content";
 import { pillarForCondition } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
@@ -10,7 +12,7 @@ const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
   head: ({ params }) => {
-    const c = conditions.find((x) => x.slug === params.slug);
+    const c = getCondition(params.slug, params.locale === "ml" ? "ml" : "en");
     const url = `${SITE}/conditions/${params.slug}`;
     const name = c?.name ?? "Condition not catalogued";
     const intro = (c?.intro ?? "This condition is not in the catalogue.").slice(0, 158);

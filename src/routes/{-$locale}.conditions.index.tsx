@@ -1,6 +1,6 @@
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
-import { conditions } from "../lib/content";
+import { useConditions } from "../lib/i18n/data";
 import { conditionToPillar } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
 
@@ -39,6 +39,7 @@ const labels: Record<string, string> = {
 };
 
 function ConditionsIndex() {
+  const conditions = useConditions();
   const featured = conditions.filter((c) => conditionToPillar[c.slug]);
   const others = conditions.filter((c) => !conditionToPillar[c.slug]);
 
