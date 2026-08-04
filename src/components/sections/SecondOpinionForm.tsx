@@ -82,8 +82,8 @@ export function SecondOpinionForm() {
       <h2 className="text-h3 mt-4 max-w-xl">Tell us the essentials, then send the scans.</h2>
       <p className="mt-3 max-w-xl text-caption leading-relaxed text-[var(--ink-dim)]">
         This form does not upload or store anything on this website. When you submit, it opens a
-        WhatsApp message addressed to the practice with your details filled in — you attach the scan
-        files directly in that chat, where they stay between you and the clinical team.
+        WhatsApp message addressed to Dr. Sagar with your details filled in — you attach the scan
+        files directly in that chat, where they stay between you and Dr. Sagar.
       </p>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2">

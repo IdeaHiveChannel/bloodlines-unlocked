@@ -19,8 +19,8 @@ const tiles = [
   {
     href: contact.phoneHref,
     icon: Phone,
-    label: "Clinic reception",
-    sub: contact.verified ? contact.phoneDisplay : "Speak to the front desk",
+    label: "Call Dr. Sagar",
+    sub: contact.phoneDisplay,
   },
   {
     href: whatsappLink(whatsappMessages.coordinator),
