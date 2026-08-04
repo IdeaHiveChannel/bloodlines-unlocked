@@ -7,7 +7,7 @@ import { Consultation } from "../components/sections/Consultation";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("/conditions/$slug")({
+export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
   head: ({ params }) => {
     const c = conditions.find((x) => x.slug === params.slug);
     const url = `${SITE}/conditions/${params.slug}`;

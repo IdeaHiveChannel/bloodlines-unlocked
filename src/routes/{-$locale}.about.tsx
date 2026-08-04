@@ -5,7 +5,7 @@ import { contact, socialUrls } from "../lib/contact";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("\/\{\-\}\/about")({
+export const Route = createFileRoute("/{-$locale}/about")({
   head: () => ({
     meta: [
       { title: "About Dr. Mandeep Sagar — Interventional radiologist" },

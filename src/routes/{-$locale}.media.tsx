@@ -4,7 +4,7 @@ import { MediaTimeline } from "../components/sections/MediaTimeline";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("\/\{\-\}\/media")({
+export const Route = createFileRoute("/{-$locale}/media")({
   head: () => ({
     meta: [
       { title: "Media, publications and awards — Dr. Sagar" },

@@ -5,7 +5,7 @@ import { contact, whatsappLink, whatsappMessages } from "../lib/contact";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("\/\{\-\}\/second\-opinion")({
+export const Route = createFileRoute("/{-$locale}/second-opinion")({
   head: () => ({
     meta: [
       { title: "Second opinion on your scans — Dr. Sagar" },

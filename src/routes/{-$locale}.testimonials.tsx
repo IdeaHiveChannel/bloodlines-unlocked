@@ -4,7 +4,7 @@ import { patientStories, consentNote } from "../lib/stories";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("\/\{\-\}\/testimonials")({
+export const Route = createFileRoute("/{-$locale}/testimonials")({
   head: () => ({
     meta: [
       { title: "Patient stories — Dr. Mandeep Sagar" },

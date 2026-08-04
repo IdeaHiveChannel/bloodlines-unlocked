@@ -4,7 +4,7 @@ import { PillarPage } from "../components/pillar/PillarPage";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("/diseases/$slug")({
+export const Route = createFileRoute("/{-$locale}/diseases/$slug")({
   head: ({ params }) => {
     const p = getPillar(params.slug);
     if (!p) {
