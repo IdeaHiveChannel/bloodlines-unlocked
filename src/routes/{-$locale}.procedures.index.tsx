@@ -1,4 +1,3 @@
-import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
 import { useProcedures } from "../lib/i18n/data";
@@ -23,14 +22,13 @@ export const Route = createFileRoute("/{-$locale}/procedures/")({
 });
 
 function ProceduresIndex() {
-  const tx = useTx();
   const items = useProcedures();
   return (
     <>
       <main className="bg-[#050B16] pt-28 pb-20 sm:pt-36 sm:pb-24">
         <div className="shell">
-          <p className="text-label">{tx("Index")}</p>
-          <h1 className="mt-4 max-w-3xl text-display-xl sm:mt-6">{tx("Procedures.")}</h1>
+          <p className="text-label">Index</p>
+          <h1 className="mt-4 max-w-3xl text-display-xl sm:mt-6">Procedures.</h1>
           <div className="mt-10 divide-y sm:mt-16 divide-white/[0.06] border-y border-white/[0.06]">
             {items.map((p) => (
               <LocaleLink key={p.slug} to="/procedures/$slug" params={{ slug: p.slug }} data-cursor="link"

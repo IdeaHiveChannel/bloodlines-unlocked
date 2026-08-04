@@ -1,4 +1,3 @@
-import { useTx } from "@/lib/i18n/tx";
 import { useRef, useState } from "react";
 import angioBefore from "../../assets/angio-before.jpg";
 import angioAfter from "../../assets/angio-after.jpg";
@@ -138,18 +137,19 @@ function Slider({ item }: { item: Case }) {
 }
 
 export function BeforeAfter() {
-  const tx = useTx();
   const [active, setActive] = useState(0);
   const item = cases[active];
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 06 · Evidence")}</p>
+        <p className="text-label">Chapter 06 · Evidence</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
-          {tx("Before. After. The same patient, the same vessel.")}
+          Before. After. The same patient, the same vessel.
         </h2>
         <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)]">
-          {tx("Interventional radiology is judged on images, not adjectives. Drag the line across each\n          case to see what changed. Representative illustrations of typical treated cases, not\n          identifiable patient records.")}
+          Interventional radiology is judged on images, not adjectives. Drag the line across each
+          case to see what changed. Representative illustrations of typical treated cases, not
+          identifiable patient records.
         </p>
 
         <div className="scroll-x -mx-5 mt-8 flex gap-2 px-5 sm:mx-0 sm:flex-wrap sm:px-0 sm:gap-3">

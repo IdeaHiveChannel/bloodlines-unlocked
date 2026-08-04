@@ -1,21 +1,21 @@
-import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { pillars } from "../../lib/pillars";
 
 export function ConditionsGateway() {
-  const tx = useTx();
   return (
     <section className="relative bg-[#050B16] section-y border-t border-white/[0.05]">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 03 · Conditions")}</p>
+        <p className="text-label">Chapter 03 · Conditions</p>
         <div className="mt-6 grid lg:grid-cols-12 gap-10">
           <h2 className="text-display-xl lg:col-span-6">
-            {tx("Different diseases. One philosophy.")}
+            Different diseases. One philosophy.
           </h2>
           <p className="lg:col-span-6 lg:pt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-            {tx("Every condition has its own cause, its own behaviour and its own treatment pathway.\n            Explore how image-guided intervention is used across the body — from emergency stroke\n            care to limb salvage, thyroid nodules and liver tumours.")}
+            Every condition has its own cause, its own behaviour and its own treatment pathway.
+            Explore how image-guided intervention is used across the body — from emergency stroke
+            care to limb salvage, thyroid nodules and liver tumours.
           </p>
         </div>
 
@@ -54,10 +54,10 @@ export function ConditionsGateway() {
 
         <div className="mt-12 flex flex-wrap gap-6">
           <LocaleLink to="/diseases" data-cursor="link" className="text-label underline">
-            {tx("All disease guides →")}
+            All disease guides →
           </LocaleLink>
           <LocaleLink to="/conditions" data-cursor="link" className="text-label underline">
-            {tx("Full conditions catalogue →")}
+            Full conditions catalogue →
           </LocaleLink>
         </div>
       </div>

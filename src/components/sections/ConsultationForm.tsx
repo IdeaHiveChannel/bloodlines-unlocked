@@ -1,4 +1,3 @@
-import { useTx } from "@/lib/i18n/tx";
 import { useState } from "react";
 import { z } from "zod";
 import { MessageCircle, Mail } from "lucide-react";
@@ -38,14 +37,13 @@ const baseSchema = z.object({
 type Errors = Partial<Record<keyof z.infer<typeof baseSchema>, string>>;
 
 export function ConsultationForm() {
-  const tx = useTx();
   const [channel, setChannel] = useState<Channel>("whatsapp");
   const [form, setForm] = useState({ name: "", phone: "", email: "", city: "", reason: "", preferred: "" });
   const [reports, setReports] = useState<string[]>([]);
   const [errors, setErrors] = useState<Errors>({});
 
   const set =
-    (k: keyof typeof form) => {tx("(e: React.ChangeEvent")}<HTMLInputElement | HTMLTextAreaElement>) =>
+    (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const toggleReport = (r: string) =>
@@ -127,31 +125,33 @@ export function ConsultationForm() {
       noValidate
       className="rounded-3xl border border-white/[0.06] bg-white/[0.02] p-6 sm:p-8 lg:p-10"
     >
-      <p className="text-label">{tx("Consultation request")}</p>
-      <h2 className="text-h3 mt-4 max-w-xl">{tx("Send your details to Dr. Sagar directly.")}</h2>
+      <p className="text-label">Consultation request</p>
+      <h2 className="text-h3 mt-4 max-w-xl">Send your details to Dr. Sagar directly.</h2>
       <p className="mt-3 max-w-xl text-caption leading-relaxed text-[var(--ink-dim)]">
-        {tx("Nothing is uploaded or stored on this website. Choose WhatsApp or email and this form opens a\n        message to Dr. Sagar with your details filled in — you attach any scans or reports to that\n        message yourself.")}
+        Nothing is uploaded or stored on this website. Choose WhatsApp or email and this form opens a
+        message to Dr. Sagar with your details filled in — you attach any scans or reports to that
+        message yourself.
       </p>
 
       <div className="mt-8 max-w-md rounded-full border border-white/[0.1] p-1">
         <div className="flex gap-1">
           <button type="button" onClick={() => setChannel("whatsapp")} className={tab(channel === "whatsapp")} data-cursor="cta">
-            <MessageCircle size={16} /> {tx("WhatsApp")}
+            <MessageCircle size={16} /> WhatsApp
           </button>
           <button type="button" onClick={() => setChannel("email")} className={tab(channel === "email")} data-cursor="cta">
-            <Mail size={16} /> {tx("Email")}
+            <Mail size={16} /> Email
           </button>
         </div>
       </div>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="c-name" className="text-label">{tx("Your name")}</label>
+          <label htmlFor="c-name" className="text-label">Your name</label>
           <input id="c-name" value={form.name} onChange={set("name")} maxLength={80} className={field} placeholder="Full name" />
           {errors.name && <p className={err}>{errors.name}</p>}
         </div>
         <div>
-          <label htmlFor="c-phone" className="text-label">{tx("Phone number")}</label>
+          <label htmlFor="c-phone" className="text-label">Phone number</label>
           <input id="c-phone" value={form.phone} onChange={set("phone")} inputMode="tel" maxLength={20} className={field} placeholder="+91 …" />
           {errors.phone && <p className={err}>{errors.phone}</p>}
         </div>
@@ -163,24 +163,24 @@ export function ConsultationForm() {
           {errors.email && <p className={err}>{errors.email}</p>}
         </div>
         <div>
-          <label htmlFor="c-city" className="text-label">{tx("City (optional)")}</label>
+          <label htmlFor="c-city" className="text-label">City (optional)</label>
           <input id="c-city" value={form.city} onChange={set("city")} maxLength={60} className={field} placeholder="Where you are travelling from" />
           {errors.city && <p className={err}>{errors.city}</p>}
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="c-reason" className="text-label">{tx("Condition or reason for consultation")}</label>
+          <label htmlFor="c-reason" className="text-label">Condition or reason for consultation</label>
           <textarea id="c-reason" value={form.reason} onChange={set("reason")} maxLength={400} rows={3} className={field} placeholder="For example: varicose veins, non-healing foot ulcer, uterine fibroids" />
           {errors.reason && <p className={err}>{errors.reason}</p>}
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="c-preferred" className="text-label">{tx("Preferred date and time (optional)")}</label>
+          <label htmlFor="c-preferred" className="text-label">Preferred date and time (optional)</label>
           <input id="c-preferred" value={form.preferred} onChange={set("preferred")} maxLength={120} className={field} placeholder="e.g. any weekday morning" />
           {errors.preferred && <p className={err}>{errors.preferred}</p>}
         </div>
       </div>
 
       <fieldset className="mt-8">
-        <legend className="text-label">{tx("Reports you can attach")}</legend>
+        <legend className="text-label">Reports you can attach</legend>
         <div className="mt-4 flex flex-wrap gap-2">
           {reportOptions.map((r) => {
             const on = reports.includes(r);

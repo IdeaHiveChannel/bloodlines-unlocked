@@ -1,4 +1,3 @@
-import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
@@ -7,16 +6,15 @@ import { featuredProcedures, type Storyboard } from "../../lib/content";
 import { StoryboardCanvas } from "./canvases";
 
 export function Procedures() {
-  const tx = useTx();
   return (
     <section className="relative bg-[#050B16]">
       <div className="shell pt-20 pb-8 sm:pt-28 sm:pb-12">
-        <p className="text-label">{tx("Chapter 04 · Procedures")}</p>
+        <p className="text-label">Chapter 04 · Procedures</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
-          {tx("Every procedure has its own story.")}
+          Every procedure has its own story.
         </h2>
         <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)] sm:mt-6">
-          {tx("No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.")}
+          No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.
         </p>
       </div>
       {featuredProcedures.map((p, idx) => (
@@ -32,7 +30,7 @@ export function Procedures() {
       ))}
       <div className="shell pb-20 sm:pb-28">
         <LocaleLink to="/procedures" data-cursor="link" className="text-label underline">
-          {tx("See every procedure →")}
+          See every procedure →
         </LocaleLink>
       </div>
     </section>
@@ -89,7 +87,6 @@ function ProcedureStory({
 }
 
 function Beat({
-  const tx = useTx();
   text,
   index,
   total,
@@ -102,7 +99,20 @@ function Beat({
 }) {
   const center = (index + 0.5) / total;
   const span = 1 / total;
-  const clamp = (n: number) => {tx("Math.max(0, Math.min(1, n));\n  const a = clamp(center - span);\n  const b = clamp(center - span * 0.4);\n  const c = clamp(center + span * 0.4);\n  const d = clamp(center + span);\n  const eps = 0.0001;\n  const xa = a;\n  const xb = Math.max(xa + eps, b);\n  const xc = Math.max(xb + eps, c);\n  const xd = Math.max(xc + eps, d);\n  const opacity = useTransform(progress, [xa, xb, xc, xd], [0, 1, 1, 0]);\n  const y = useTransform(progress, [xa, (xb + xc) / 2, xd], [40, 0, -40]);\n  const filter = useTransform(progress, [xa, xb, xc, xd], [\"blur(10px)\", \"blur(0px)\", \"blur(0px)\", \"blur(10px)\"]);\n  return (")}
+  const clamp = (n: number) => Math.max(0, Math.min(1, n));
+  const a = clamp(center - span);
+  const b = clamp(center - span * 0.4);
+  const c = clamp(center + span * 0.4);
+  const d = clamp(center + span);
+  const eps = 0.0001;
+  const xa = a;
+  const xb = Math.max(xa + eps, b);
+  const xc = Math.max(xb + eps, c);
+  const xd = Math.max(xc + eps, d);
+  const opacity = useTransform(progress, [xa, xb, xc, xd], [0, 1, 1, 0]);
+  const y = useTransform(progress, [xa, (xb + xc) / 2, xd], [40, 0, -40]);
+  const filter = useTransform(progress, [xa, xb, xc, xd], ["blur(10px)", "blur(0px)", "blur(0px)", "blur(10px)"]);
+  return (
     <motion.div style={{ opacity, y, filter }} className="absolute inset-0 flex flex-col justify-center">
       <p className="text-label">Beat · 0{index + 1}</p>
       <p className="mt-3 max-w-md text-h3">{text}</p>

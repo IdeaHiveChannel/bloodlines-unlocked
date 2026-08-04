@@ -1,4 +1,3 @@
-import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getPillar } from "../lib/i18n/data";
@@ -70,17 +69,17 @@ export const Route = createFileRoute("/{-$locale}/diseases/$slug")({
   notFoundComponent: () => (
     <div className="flex min-h-screen items-center justify-center px-6">
       <div className="text-center">
-        <p className="text-label">{tx("Not found")}</p>
-        <h1 className="text-h2 mt-4">{tx("This guide doesn't exist yet.")}</h1>
+        <p className="text-label">Not found</p>
+        <h1 className="text-h2 mt-4">This guide doesn't exist yet.</h1>
         <LocaleLink to="/diseases" className="mt-8 inline-block underline" data-cursor="link">
-          {tx("All conditions")}
+          All conditions
         </LocaleLink>
       </div>
     </div>
   ),
   errorComponent: ({ reset }) => (
     <button onClick={reset} className="m-10 underline">
-      {tx("Try again")}
+      Try again
     </button>
   ),
   component: DiseaseRoute,

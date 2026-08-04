@@ -1,24 +1,23 @@
-import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { motion } from "framer-motion";
 import { patientStories, consentNote } from "../../lib/stories";
 
 export function PatientStories() {
-  const tx = useTx();
   const stories = patientStories;
 
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 09 · Patient stories")}</p>
-        <h2 className="text-h1 mt-6 max-w-3xl">{tx("In the patient's own words.")}</h2>
+        <p className="text-label">Chapter 09 · Patient stories</p>
+        <h2 className="text-h1 mt-6 max-w-3xl">In the patient's own words.</h2>
         <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">{consentNote}</p>
 
         {stories.length === 0 ? (
           <div className="mt-12 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 sm:p-10">
-            <p className="text-label">{tx("Currently")}</p>
+            <p className="text-label">Currently</p>
             <p className="text-card-title mt-4 max-w-2xl">
-              {tx("No stories are published yet. Until consented accounts are available, this section stays\n              empty rather than filled with words no patient said.")}
+              No stories are published yet. Until consented accounts are available, this section stays
+              empty rather than filled with words no patient said.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
               <LocaleLink
@@ -26,14 +25,14 @@ export function PatientStories() {
                 data-cursor="cta"
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
-                {tx("Read the clinical guides")}
+                Read the clinical guides
               </LocaleLink>
               <LocaleLink
                 to="/second-opinion"
                 data-cursor="link"
                 className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5"
               >
-                {tx("Request a second opinion")}
+                Request a second opinion
               </LocaleLink>
             </div>
           </div>
@@ -53,7 +52,7 @@ export function PatientStories() {
                     aria-hidden
                     className="text-h2 leading-none text-[color-mix(in_oklab,var(--accent)_60%,transparent)]"
                   >
-                    {tx("&ldquo;")}
+                    &ldquo;
                   </span>
                   <blockquote className="mt-3 flex-1 text-small leading-relaxed text-[var(--ink)]">
                     {s.quote}
@@ -71,16 +70,16 @@ export function PatientStories() {
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"
                       >
-                        {tx("Read the case guide →")}
+                        Read the case guide →
                       </LocaleLink>
-                    {tx(") : s.conditionSlug ? (")}
+                    ) : s.conditionSlug ? (
                       <LocaleLink
                         to="/conditions/$slug"
                         params={{ slug: s.conditionSlug }}
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"
                       >
-                        {tx("About this condition →")}
+                        About this condition →
                       </LocaleLink>
                     ) : null}
                   </div>
@@ -89,7 +88,7 @@ export function PatientStories() {
             </ul>
             <div className="mt-10">
               <LocaleLink to="/testimonials" data-cursor="cta" className="text-label underline">
-                {tx("All patient stories →")}
+                All patient stories →
               </LocaleLink>
             </div>
           </>

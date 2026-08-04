@@ -1,8 +1,6 @@
-import { useTx } from "@/lib/i18n/tx";
 import { motion } from "framer-motion";
 
 export function Transition() {
-  const tx = useTx();
   return (
     <section className="relative bg-[#050B16] section-y sm:py-44 border-t border-white/[0.05]">
       <div
@@ -20,7 +18,7 @@ export function Transition() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="text-display-xl"
         >
-          {tx("Every organ depends on blood.")}
+          Every organ depends on blood.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +27,7 @@ export function Transition() {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto mt-10 max-w-2xl text-body-lg text-[var(--ink-dim)]"
         >
-          {tx("When disease begins inside a vessel, treatment changes.")}
+          When disease begins inside a vessel, treatment changes.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +36,8 @@ export function Transition() {
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]"
         >
-          {tx("Image-guided intervention reaches the disease from within, preserving healthy tissue and\n          reducing recovery wherever appropriate.")}
+          Image-guided intervention reaches the disease from within, preserving healthy tissue and
+          reducing recovery wherever appropriate.
         </motion.p>
       </div>
     </section>

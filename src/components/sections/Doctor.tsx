@@ -1,4 +1,3 @@
-import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import hands from "../../assets/hands-catheter.jpg";
@@ -6,21 +5,20 @@ import ot from "../../assets/hybrid-ot.jpg";
 
 
 export function Doctor() {
-  const tx = useTx();
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 06 · The physician")}</p>
+        <p className="text-label">Chapter 06 · The physician</p>
         <div className="mt-10 grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
             <h2 className="text-display-xl">
-              {tx("A practice built around image-guided precision.")}
+              A practice built around image-guided precision.
             </h2>
             <p className="mt-8 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-              {tx("Dr. Mandeep Sagar is a Vascular and Neuro Interventional Radiologist. The work spans the full vascular system — from cerebral aneurysms to below-knee revascularisation — performed through pinpoint access, under real-time imaging.")}
+              Dr. Mandeep Sagar is a Vascular and Neuro Interventional Radiologist. The work spans the full vascular system — from cerebral aneurysms to below-knee revascularisation — performed through pinpoint access, under real-time imaging.
             </p>
             <p className="mt-6 max-w-xl text-caption leading-relaxed text-[var(--ink-dim)] italic">
-              {tx("Verified credentials, fellowships, hospital affiliations and publications will be listed here once supplied. No claims are made on this page without source.")}
+              Verified credentials, fellowships, hospital affiliations and publications will be listed here once supplied. No claims are made on this page without source.
             </p>
 
             <div className="mt-12 grid sm:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
@@ -38,8 +36,8 @@ export function Doctor() {
             </div>
 
             <div className="mt-10 flex gap-4">
-              <LocaleLink to="/about" data-cursor="link" className="inline-flex rounded-full border border-white/15 px-5 py-3 text-caption tracking-wide hover:bg-white/5 transition-colors">{tx("Full profile")}</LocaleLink>
-              <LocaleLink to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-caption tracking-wide hover:bg-[var(--accent)] transition-colors">{tx("Book consultation")}</LocaleLink>
+              <LocaleLink to="/about" data-cursor="link" className="inline-flex rounded-full border border-white/15 px-5 py-3 text-caption tracking-wide hover:bg-white/5 transition-colors">Full profile</LocaleLink>
+              <LocaleLink to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-caption tracking-wide hover:bg-[var(--accent)] transition-colors">Book consultation</LocaleLink>
             </div>
           </div>
           <div className="lg:col-span-5">
@@ -48,8 +46,8 @@ export function Doctor() {
                 className="absolute inset-0 h-full w-full object-cover object-top opacity-95" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050B16] via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
-                <p className="text-label">{tx("On Practice")}</p>
-                <p className="mt-2 text-h3 max-w-[260px]">{tx("\"The disease is approached where it lives — through the vessel itself.\"")}</p>
+                <p className="text-label">On Practice</p>
+                <p className="mt-2 text-h3 max-w-[260px]">"The disease is approached where it lives — through the vessel itself."</p>
 
               </div>
             </div>

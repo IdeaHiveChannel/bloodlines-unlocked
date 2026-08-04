@@ -1,4 +1,3 @@
-import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { conditions, procedures, resourcesForCondition } from "../lib/content";
@@ -39,15 +38,15 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
   notFoundComponent: () => (
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
-        <p className="text-label">{tx("Not found")}</p>
-        <h1 className="text-h2 mt-4">{tx("This condition isn't catalogued yet.")}</h1>
-        <LocaleLink to="/conditions" className="mt-8 inline-block underline" data-cursor="link">{tx("All conditions")}</LocaleLink>
+        <p className="text-label">Not found</p>
+        <h1 className="text-h2 mt-4">This condition isn't catalogued yet.</h1>
+        <LocaleLink to="/conditions" className="mt-8 inline-block underline" data-cursor="link">All conditions</LocaleLink>
       </div>
     </div>
   ),
   errorComponent: ({ error, reset }) => (
     <div className="min-h-screen flex items-center justify-center px-6">
-      <button onClick={reset} className="underline">{tx("Try again")}</button>
+      <button onClick={reset} className="underline">Try again</button>
       <pre className="hidden">{String(error)}</pre>
     </div>
   ),
@@ -55,18 +54,21 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
 });
 
 function ConditionPage() {
-  const tx = useTx();
   const c = Route.useLoaderData() as Condition;
   const guide = pillarForCondition(c.slug);
   const related = resourcesForCondition(c.slug);
   const relatedProcedures = getProcedures(useLocale()).filter((p) =>
     c.treatments.some(
       (t: string) =>
-        {tx("t.toLowerCase().includes(p.name.split(\" \")[0].toLowerCase()) ||\n        p.name.toLowerCase().includes(t.split(\" \")[0].toLowerCase()),\n    ),\n  );\n  return (")}
+        t.toLowerCase().includes(p.name.split(" ")[0].toLowerCase()) ||
+        p.name.toLowerCase().includes(t.split(" ")[0].toLowerCase()),
+    ),
+  );
+  return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
-          <LocaleLink to="/conditions" className="text-label" data-cursor="link">{tx("← All conditions")}</LocaleLink>
+          <LocaleLink to="/conditions" className="text-label" data-cursor="link">← All conditions</LocaleLink>
           <h1 className="text-display-xl mt-8">{c.name}</h1>
           <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
 
@@ -78,7 +80,7 @@ function ConditionPage() {
               className="mt-10 flex items-center justify-between gap-6 rounded-2xl border border-[var(--accent)]/25 bg-[var(--accent)]/[0.05] px-6 py-5 transition-colors hover:bg-[var(--accent)]/[0.09]"
             >
               <span>
-                <span className="block text-label text-[var(--accent)]">{tx("Complete guide")}</span>
+                <span className="block text-label text-[var(--accent)]">Complete guide</span>
                 <span className="mt-2 block text-display text-xl">{guide.title}</span>
                 <span className="mt-1 block text-caption text-[var(--ink-dim)]">
                   Symptoms, tests, every treatment route, recovery and {guide.faqs.length} answered questions.
@@ -90,13 +92,13 @@ function ConditionPage() {
 
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
             <div className="bg-[#050B16] p-8">
-              <p className="text-label">{tx("Symptoms")}</p>
+              <p className="text-label">Symptoms</p>
               <ul className="mt-4 space-y-2 text-small">
                 {c.symptoms.map((s: string) => <li key={s}>· {s}</li>)}
               </ul>
             </div>
             <div className="bg-[#050B16] p-8">
-              <p className="text-label">{tx("Treatments offered")}</p>
+              <p className="text-label">Treatments offered</p>
               <ul className="mt-4 space-y-2 text-small">
                 {c.treatments.map((t: string) => <li key={t}>· {t}</li>)}
               </ul>
@@ -105,13 +107,13 @@ function ConditionPage() {
 
           {(relatedProcedures.length > 0 || related.length > 0) && (
             <div className="mt-20">
-              <p className="text-label">{tx("Related")}</p>
+              <p className="text-label">Related</p>
               <ul className="mt-6 divide-y divide-white/[0.06] border-y border-white/[0.06]">
                 {relatedProcedures.map((p) => (
                   <li key={p.slug}>
                     <LocaleLink to="/procedures/$slug" params={{ slug: p.slug }} data-cursor="link"
                       className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-4 sm:grid-cols-[110px_minmax(0,1fr)_auto] sm:gap-6 sm:py-5 hover:bg-white/[0.02] transition-colors">
-                      <span className="text-label">{tx("Procedure")}</span>
+                      <span className="text-label">Procedure</span>
                       <div>
                         <p className="text-display text-xl">{p.name}</p>
                         <p className="mt-1 text-caption text-[var(--ink-dim)]">{p.oneLiner}</p>
@@ -121,7 +123,7 @@ function ConditionPage() {
                   </li>
                 ))}
                 {related.map((r) =>
-                  {tx("r.procedure ? (")}
+                  r.procedure ? (
                     <li key={r.id}>
                       <LocaleLink to="/procedures/$slug" params={{ slug: r.procedure }} data-cursor="link"
                         className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-4 sm:grid-cols-[110px_minmax(0,1fr)_auto] sm:gap-6 sm:py-5 hover:bg-white/[0.02] transition-colors">

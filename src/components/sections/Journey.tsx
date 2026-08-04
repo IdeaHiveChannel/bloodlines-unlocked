@@ -1,4 +1,3 @@
-import { useTx } from "@/lib/i18n/tx";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -13,7 +12,6 @@ const steps = [
 ];
 
 export function Journey() {
-  const tx = useTx();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const x = useTransform(scrollYProgress, [0, 1], ["5vw", `-${(steps.length - 1) * 80}vw`]);
@@ -21,9 +19,9 @@ export function Journey() {
     <section ref={ref} className="relative bg-[#050B16]" style={{ height: `${steps.length * 90}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
         <div className="shell mb-12">
-          <p className="text-label">{tx("Patient journey")}</p>
-          <h2 className="text-h1 mt-4">{tx("From diagnosis to recovery.")}</h2>
-          <p className="mt-5 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">{tx("Every decision begins with understanding the disease. Imaging guides the diagnosis, treatment is planned around the individual patient, and follow-up continues long after the procedure is complete.")}</p>
+          <p className="text-label">Patient journey</p>
+          <h2 className="text-h1 mt-4">From diagnosis to recovery.</h2>
+          <p className="mt-5 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">Every decision begins with understanding the disease. Imaging guides the diagnosis, treatment is planned around the individual patient, and follow-up continues long after the procedure is complete.</p>
         </div>
         <motion.div style={{ x }} className="flex gap-8 px-[5vw] will-change-transform">
           {steps.map((s) => (
