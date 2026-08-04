@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useEffect, useState } from "react";
 import type { Pillar } from "../../lib/pillars";
@@ -96,13 +97,13 @@ function SubNav() {
 }
 
 export function PillarPage({ pillar }: { pillar: Pillar }) {
+  const tx = useTx();
   const pillarProcedures = pillar.procedures.map((slug) => ({
     slug,
     entry: procedures.find((p) => p.slug === slug),
   }));
   const videos = pillar.procedures
-    .map((slug) => procedureVideos[slug])
-    .filter((v): v is NonNullable<typeof v> => Boolean(v));
+    .map((slug) => {tx("procedureVideos[slug])\n    .filter((v): v is NonNullable")}<typeof v> => Boolean(v));
   const related = pillar.relatedConditions
     .filter((slug) => slug !== pillar.slug)
     .map((slug) => ({
@@ -110,16 +111,14 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
       pillar: hasPillar(slug),
       condition: conditions.find((c) => c.slug === slug),
     }))
-    .filter((r) => r.pillar || r.condition);
-
-  return (
+    .filter((r) => {tx("r.pillar || r.condition);\n\n  return (")}
     <>
       <main className="bg-[#050B16] pt-32">
         <div className="shell">
           {/* 01 — Hero */}
           <header className="pb-14 pt-6">
             <LocaleLink to="/diseases" className="text-label" data-cursor="link">
-              ← All conditions
+              {tx("← All conditions")}
             </LocaleLink>
             <p className="mt-10 text-label text-[var(--accent)]">
               {pillar.patientTerm ? "Patient guide" : "Condition"}
@@ -139,21 +138,21 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 data-cursor="cta"
                 className="rounded-full bg-white px-6 py-3 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
-                Book consultation
+                {tx("Book consultation")}
               </LocaleLink>
               <LocaleLink
                 to="/second-opinion"
                 data-cursor="link"
                 className="rounded-full border border-white/[0.14] px-6 py-3 text-button transition-colors hover:border-white/40"
               >
-                Second opinion on your scans
+                {tx("Second opinion on your scans")}
               </LocaleLink>
               <a
                 href="#treatment"
                 data-cursor="link"
                 className="rounded-full border border-white/[0.14] px-6 py-3 text-button transition-colors hover:border-white/40"
               >
-                How it is treated
+                {tx("How it is treated")}
               </a>
             </div>
           </header>
@@ -245,7 +244,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           <Section id="procedures" index={10} label="Procedures" title="What is actually performed.">
             <ul className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillarProcedures.map(({ slug, entry }) =>
-                entry ? (
+                {tx("entry ? (")}
                   <li key={slug}>
                     <LocaleLink
                       to="/procedures/$slug"
@@ -264,7 +263,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                   <li key={slug} className="px-2 py-6">
                     <p className="text-card-title">{slugToLabel(slug)}</p>
                     <p className="mt-2 text-small text-[var(--ink-dim)]">
-                      Performed through a small puncture under image guidance — discussed in detail at consultation.
+                      {tx("Performed through a small puncture under image guidance — discussed in detail at consultation.")}
                     </p>
                   </li>
                 ),
@@ -315,11 +314,10 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           {/* 14 */}
           <Section id="patient-stories" index={14} label="Patient stories" title="Verified accounts only.">
             <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-              No testimonials are published here yet. Patient accounts will appear only once they are
-              consented and verified — nothing on this page is written on a patient's behalf.
+              {tx("No testimonials are published here yet. Patient accounts will appear only once they are\n              consented and verified — nothing on this page is written on a patient's behalf.")}
             </p>
             <LocaleLink to="/testimonials" className="mt-6 inline-block text-label" data-cursor="link">
-              Patient stories →
+              {tx("Patient stories →")}
             </LocaleLink>
           </Section>
 
@@ -333,8 +331,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               </div>
             ) : (
               <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-                Animated films for this condition are being produced. In the meantime, the procedure
-                pages above set out each step in sequence.
+                {tx("Animated films for this condition are being produced. In the meantime, the procedure\n                pages above set out each step in sequence.")}
               </p>
             )}
           </Section>
@@ -343,7 +340,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           <Section id="related-diseases" index={16} label="Related diseases" title="Conditions that travel together.">
             <ul className="grid gap-px overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) =>
-                r.pillar ? (
+                {tx("r.pillar ? (")}
                   <li key={r.slug} className="bg-[#050B16]">
                     <LocaleLink
                       to="/diseases/$slug"
@@ -352,7 +349,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                       className="block h-full p-6 transition-colors hover:bg-white/[0.03]"
                     >
                       <p className="text-display text-xl">{slugToLabel(r.slug)}</p>
-                      <p className="mt-3 text-label">Full guide →</p>
+                      <p className="mt-3 text-label">{tx("Full guide →")}</p>
                     </LocaleLink>
                   </li>
                 ) : (

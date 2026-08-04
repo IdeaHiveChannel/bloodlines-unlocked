@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
@@ -5,12 +6,11 @@ import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { milestones } from "../../lib/content";
 
 export function ExpertiseTimeline() {
+  const tx = useTx();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 80%", "end 60%"] });
   const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
-  const [open, setOpen] = useState<string | null>(milestones[0]?.id ?? null);
-
-  return (
+  const [open, setOpen] = useState<string | null>{tx("(milestones[0]?.id ?? null);\n\n  return (")}
     <div ref={ref} className="relative mt-16 pl-8 sm:pl-12">
       {/* rail */}
       <div className="absolute left-[7px] sm:left-[11px] top-2 bottom-2 w-px bg-white/[0.08]" />
@@ -66,7 +66,7 @@ export function ExpertiseTimeline() {
                           data-cursor="cta"
                           className="mt-5 inline-flex text-label underline"
                         >
-                          Read patient stories →
+                          {tx("Read patient stories →")}
                         </LocaleLink>
                       )}
                     </motion.div>
