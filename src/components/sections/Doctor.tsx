@@ -1,7 +1,8 @@
+import { LocaleLink } from "../../components/locale-link";
 import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import hands from "../../assets/hands-catheter.jpg";
 import ot from "../../assets/hybrid-ot.jpg";
-import { Link } from "@tanstack/react-router";
+
 
 export function Doctor() {
   return (
@@ -35,8 +36,8 @@ export function Doctor() {
             </div>
 
             <div className="mt-10 flex gap-4">
-              <Link to="/about" data-cursor="link" className="inline-flex rounded-full border border-white/15 px-5 py-3 text-caption tracking-wide hover:bg-white/5 transition-colors">Full profile</Link>
-              <Link to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-caption tracking-wide hover:bg-[var(--accent)] transition-colors">Book consultation</Link>
+              <LocaleLink to="/about" data-cursor="link" className="inline-flex rounded-full border border-white/15 px-5 py-3 text-caption tracking-wide hover:bg-white/5 transition-colors">Full profile</LocaleLink>
+              <LocaleLink to="/contact" data-cursor="cta" className="inline-flex rounded-full bg-white text-black px-5 py-3 text-caption tracking-wide hover:bg-[var(--accent)] transition-colors">Book consultation</LocaleLink>
             </div>
           </div>
           <div className="lg:col-span-5">

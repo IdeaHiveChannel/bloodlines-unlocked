@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
 import { ExpertiseTimeline } from "../components/sections/ExpertiseTimeline";
 
@@ -73,7 +74,7 @@ function Expertise() {
 
 
           <div className="mt-20">
-            <Link to="/conditions" className="text-label underline" data-cursor="link">See conditions treated →</Link>
+            <LocaleLink to="/conditions" className="text-label underline" data-cursor="link">See conditions treated →</LocaleLink>
           </div>
         </div>
       </main>

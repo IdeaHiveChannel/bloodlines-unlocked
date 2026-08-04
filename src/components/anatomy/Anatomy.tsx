@@ -1,6 +1,7 @@
+import { LocaleLink } from "../../components/locale-link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+
 import {
   conditionsByRegion,
   regionGuide,
@@ -341,7 +342,7 @@ export function Anatomy() {
                 <p className="mt-8 text-label">Conditions &amp; the intervention used</p>
                 <div className="mt-4 space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
                   {list.map((c) => (
-                    <Link
+                    <LocaleLink
                       key={c.slug}
                       to="/conditions/$slug"
                       params={{ slug: c.slug }}
@@ -362,7 +363,7 @@ export function Anatomy() {
                           Read →
                         </span>
                       </div>
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
 
@@ -380,29 +381,29 @@ export function Anatomy() {
 
                 <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
                   {guide ? (
-                    <Link
+                    <LocaleLink
                       to="/diseases/$slug"
                       params={{ slug: guide }}
                       data-cursor="cta"
                       className="text-label underline"
                     >
                       Read more — complete guide →
-                    </Link>
+                    </LocaleLink>
                   ) : (
                     list[0] && (
-                      <Link
+                      <LocaleLink
                         to="/conditions/$slug"
                         params={{ slug: list[0].slug }}
                         data-cursor="cta"
                         className="text-label underline"
                       >
                         Read more →
-                      </Link>
+                      </LocaleLink>
                     )
                   )}
-                  <Link to="/procedures" data-cursor="link" className="text-label underline">
+                  <LocaleLink to="/procedures" data-cursor="link" className="text-label underline">
                     All procedures →
-                  </Link>
+                  </LocaleLink>
                 </div>
 
               </motion.div>

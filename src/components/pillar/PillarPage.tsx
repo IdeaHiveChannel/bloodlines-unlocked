@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { LocaleLink } from "../../components/locale-link";
 import { useEffect, useState } from "react";
 import type { Pillar } from "../../lib/pillars";
 import { hasPillar, slugToLabel } from "../../lib/pillars";
@@ -118,9 +118,9 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
         <div className="shell">
           {/* 01 — Hero */}
           <header className="pb-14 pt-6">
-            <Link to="/diseases" className="text-label" data-cursor="link">
+            <LocaleLink to="/diseases" className="text-label" data-cursor="link">
               ← All conditions
-            </Link>
+            </LocaleLink>
             <p className="mt-10 text-label text-[var(--accent)]">
               {pillar.patientTerm ? "Patient guide" : "Condition"}
             </p>
@@ -134,20 +134,20 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               {pillar.heroLead}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Link
+              <LocaleLink
                 to="/contact"
                 data-cursor="cta"
                 className="rounded-full bg-white px-6 py-3 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
                 Book consultation
-              </Link>
-              <Link
+              </LocaleLink>
+              <LocaleLink
                 to="/second-opinion"
                 data-cursor="link"
                 className="rounded-full border border-white/[0.14] px-6 py-3 text-button transition-colors hover:border-white/40"
               >
                 Second opinion on your scans
-              </Link>
+              </LocaleLink>
               <a
                 href="#treatment"
                 data-cursor="link"
@@ -247,7 +247,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               {pillarProcedures.map(({ slug, entry }) =>
                 entry ? (
                   <li key={slug}>
-                    <Link
+                    <LocaleLink
                       to="/procedures/$slug"
                       params={{ slug }}
                       data-cursor="link"
@@ -258,7 +258,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                         <p className="mt-2 text-small text-[var(--ink-dim)]">{entry.oneLiner}</p>
                       </div>
                       <span className="text-label">→</span>
-                    </Link>
+                    </LocaleLink>
                   </li>
                 ) : (
                   <li key={slug} className="px-2 py-6">
@@ -318,9 +318,9 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               No testimonials are published here yet. Patient accounts will appear only once they are
               consented and verified — nothing on this page is written on a patient's behalf.
             </p>
-            <Link to="/testimonials" className="mt-6 inline-block text-label" data-cursor="link">
+            <LocaleLink to="/testimonials" className="mt-6 inline-block text-label" data-cursor="link">
               Patient stories →
-            </Link>
+            </LocaleLink>
           </Section>
 
           {/* 15 */}
@@ -345,7 +345,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               {related.map((r) =>
                 r.pillar ? (
                   <li key={r.slug} className="bg-[#050B16]">
-                    <Link
+                    <LocaleLink
                       to="/diseases/$slug"
                       params={{ slug: r.slug }}
                       data-cursor="link"
@@ -353,11 +353,11 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                     >
                       <p className="text-display text-xl">{slugToLabel(r.slug)}</p>
                       <p className="mt-3 text-label">Full guide →</p>
-                    </Link>
+                    </LocaleLink>
                   </li>
                 ) : (
                   <li key={r.slug} className="bg-[#050B16]">
-                    <Link
+                    <LocaleLink
                       to="/conditions/$slug"
                       params={{ slug: r.slug }}
                       data-cursor="link"
@@ -367,7 +367,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                       <p className="mt-3 line-clamp-2 text-caption text-[var(--ink-dim)]">
                         {r.condition?.intro}
                       </p>
-                    </Link>
+                    </LocaleLink>
                   </li>
                 ),
               )}

@@ -1,4 +1,5 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { conditions, procedures, resourcesForCondition } from "../lib/content";
 import type { Condition } from "../lib/content";
 import { pillarForCondition } from "../lib/pillars";
@@ -37,7 +38,7 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
       <div className="text-center">
         <p className="text-label">Not found</p>
         <h1 className="text-h2 mt-4">This condition isn't catalogued yet.</h1>
-        <Link to="/conditions" className="mt-8 inline-block underline" data-cursor="link">All conditions</Link>
+        <LocaleLink to="/conditions" className="mt-8 inline-block underline" data-cursor="link">All conditions</LocaleLink>
       </div>
     </div>
   ),
@@ -65,12 +66,12 @@ function ConditionPage() {
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
-          <Link to="/conditions" className="text-label" data-cursor="link">← All conditions</Link>
+          <LocaleLink to="/conditions" className="text-label" data-cursor="link">← All conditions</LocaleLink>
           <h1 className="text-display-xl mt-8">{c.name}</h1>
           <p className="mt-8 text-body leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
 
           {guide && (
-            <Link
+            <LocaleLink
               to="/diseases/$slug"
               params={{ slug: guide.slug }}
               data-cursor="link"
@@ -84,7 +85,7 @@ function ConditionPage() {
                 </span>
               </span>
               <span className="text-label">→</span>
-            </Link>
+            </LocaleLink>
           )}
 
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
@@ -108,7 +109,7 @@ function ConditionPage() {
               <ul className="mt-6 divide-y divide-white/[0.06] border-y border-white/[0.06]">
                 {relatedProcedures.map((p) => (
                   <li key={p.slug}>
-                    <Link to="/procedures/$slug" params={{ slug: p.slug }} data-cursor="link"
+                    <LocaleLink to="/procedures/$slug" params={{ slug: p.slug }} data-cursor="link"
                       className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-4 sm:grid-cols-[110px_minmax(0,1fr)_auto] sm:gap-6 sm:py-5 hover:bg-white/[0.02] transition-colors">
                       <span className="text-label">Procedure</span>
                       <div>
@@ -116,13 +117,13 @@ function ConditionPage() {
                         <p className="mt-1 text-caption text-[var(--ink-dim)]">{p.oneLiner}</p>
                       </div>
                       <span className="text-label">→</span>
-                    </Link>
+                    </LocaleLink>
                   </li>
                 ))}
                 {related.map((r) =>
                   r.procedure ? (
                     <li key={r.id}>
-                      <Link to="/procedures/$slug" params={{ slug: r.procedure }} data-cursor="link"
+                      <LocaleLink to="/procedures/$slug" params={{ slug: r.procedure }} data-cursor="link"
                         className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-4 sm:grid-cols-[110px_minmax(0,1fr)_auto] sm:gap-6 sm:py-5 hover:bg-white/[0.02] transition-colors">
                         <span className="text-label">{r.kind}</span>
                         <div>
@@ -130,7 +131,7 @@ function ConditionPage() {
                           <p className="mt-1 text-caption text-[var(--ink-dim)]">{r.text}</p>
                         </div>
                         <span className="text-label">→</span>
-                      </Link>
+                      </LocaleLink>
                     </li>
                   ) : (
                     <li key={r.id} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 px-2 py-4 sm:grid-cols-[110px_minmax(0,1fr)_auto] sm:gap-6 sm:py-5">

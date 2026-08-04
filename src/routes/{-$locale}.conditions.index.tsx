@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute } from "@tanstack/react-router";
 import { conditions } from "../lib/content";
 import { conditionToPillar } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
@@ -64,7 +65,7 @@ function ConditionsIndex() {
             <h2 className="text-label">Featured — complete guides</h2>
             <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
               {featured.map((c) => (
-                <Link
+                <LocaleLink
                   key={c.slug}
                   to="/conditions/$slug"
                   params={{ slug: c.slug }}
@@ -79,7 +80,7 @@ function ConditionsIndex() {
                   <p className="mt-5 text-caption tracking-[0.16em] uppercase text-[var(--accent)]">
                     Complete guide →
                   </p>
-                </Link>
+                </LocaleLink>
               ))}
             </div>
           </section>
@@ -91,7 +92,7 @@ function ConditionsIndex() {
                 <h2 className="text-label">{labels[region] ?? region}</h2>
                 <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
                   {list.map((c) => (
-                    <Link
+                    <LocaleLink
                       key={c.slug}
                       to="/conditions/$slug"
                       params={{ slug: c.slug }}
@@ -105,7 +106,7 @@ function ConditionsIndex() {
                       <p className="mt-4 text-label opacity-0 group-hover:opacity-100 transition-opacity">
                         Read →
                       </p>
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
               </div>

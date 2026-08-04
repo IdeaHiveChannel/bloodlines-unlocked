@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { LocaleLink } from "../../components/locale-link";
 import { Calendar, MessageCircle, Phone, Users, Upload, ArrowUpRight } from "lucide-react";
 import { contact, whatsappLink, whatsappMessages } from "../../lib/contact";
 
@@ -63,9 +63,9 @@ export function Consultation() {
               </div>
             );
             return t.internal ? (
-              <Link key={t.label} to="/contact" data-cursor="cta">
+              <LocaleLink key={t.label} to="/contact" data-cursor="cta">
                 {inner}
-              </Link>
+              </LocaleLink>
             ) : (
               <a key={t.label} href={t.href} target="_blank" rel="noreferrer" data-cursor="cta">
                 {inner}

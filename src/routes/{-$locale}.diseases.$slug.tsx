@@ -1,4 +1,5 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getPillar } from "../lib/pillars";
 import { PillarPage } from "../components/pillar/PillarPage";
 
@@ -68,9 +69,9 @@ export const Route = createFileRoute("/{-$locale}/diseases/$slug")({
       <div className="text-center">
         <p className="text-label">Not found</p>
         <h1 className="text-h2 mt-4">This guide doesn't exist yet.</h1>
-        <Link to="/diseases" className="mt-8 inline-block underline" data-cursor="link">
+        <LocaleLink to="/diseases" className="mt-8 inline-block underline" data-cursor="link">
           All conditions
-        </Link>
+        </LocaleLink>
       </div>
     </div>
   ),

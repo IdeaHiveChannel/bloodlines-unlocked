@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavMenu, type MenuLink } from "./nav-menu";
@@ -63,7 +63,7 @@ export function Navigation() {
             scrolled ? "bg-[#050B16]/70 backdrop-blur-md" : "bg-transparent"
           }`}
         >
-          <Link to="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3" data-cursor="link">
+          <LocaleLink to="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3" data-cursor="link">
             <span className="inline-block size-2 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <span className="min-w-0 leading-none">
               <span className="block truncate text-nav">Dr Mandeep Sagar</span>
@@ -71,18 +71,18 @@ export function Navigation() {
                 Vascular · neuro interventional
               </span>
             </span>
-          </Link>
+          </LocaleLink>
 
           <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
             <li>
-              <Link
+              <LocaleLink
                 to="/about"
                 className="group relative text-nav text-[var(--ink-dim)] transition-colors hover:text-white"
                 data-cursor="link"
               >
                 About
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
-              </Link>
+              </LocaleLink>
             </li>
             {groups.map((g) => (
               <NavMenu key={g.label} label={g.label} links={g.links} columns={g.columns} />
@@ -90,13 +90,13 @@ export function Navigation() {
           </ul>
 
           <div className="flex shrink-0 items-center gap-2">
-            <Link
+            <LocaleLink
               to="/contact"
               className="hidden min-h-11 items-center rounded-full bg-white px-5 text-button text-black transition-colors hover:bg-[var(--accent)] hover:text-black md:inline-flex"
               data-cursor="cta"
             >
               Book consultation
-            </Link>
+            </LocaleLink>
             <button
               className="grid size-11 place-items-center text-white lg:hidden"
               onClick={() => setOpen(true)}
@@ -125,14 +125,14 @@ export function Navigation() {
           <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 pb-[max(2rem,env(safe-area-inset-bottom))]">
             <ul className="mx-auto flex w-full max-w-md flex-col gap-1">
               <li>
-                <Link
+                <LocaleLink
                   to="/about"
                   onClick={() => setOpen(false)}
                   className="block py-3 text-h3"
                   data-cursor="link"
                 >
                   About
-                </Link>
+                </LocaleLink>
               </li>
               {groups.map((g) => {
                 const isOpen = section === g.label;
@@ -171,14 +171,14 @@ export function Navigation() {
                 );
               })}
               <li className="pt-4">
-                <Link
+                <LocaleLink
                   to="/contact"
                   onClick={() => setOpen(false)}
                   className="inline-flex min-h-11 items-center rounded-full bg-white px-7 text-button text-black"
                   data-cursor="cta"
                 >
                   Book consultation
-                </Link>
+                </LocaleLink>
               </li>
             </ul>
           </div>

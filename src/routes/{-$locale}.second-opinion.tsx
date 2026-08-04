@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
 import { SecondOpinionForm } from "../components/sections/SecondOpinionForm";
 import { contact, whatsappLink, whatsappMessages } from "../lib/contact";
@@ -121,13 +122,13 @@ function SecondOpinion() {
             </ol>
 
             <div className="mt-12 flex flex-wrap gap-3 sm:gap-4">
-              <Link
+              <LocaleLink
                 to="/contact"
                 data-cursor="cta"
                 className="inline-flex min-h-12 items-center rounded-full bg-white px-7 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
                 Book a consultation
-              </Link>
+              </LocaleLink>
               <a
                 href={whatsappLink(whatsappMessages.uploadReports)}
                 target="_blank"

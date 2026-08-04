@@ -1,9 +1,10 @@
+import { LocaleLink } from "../../components/locale-link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
 import { ArrowRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -61,13 +62,13 @@ export function Hero() {
             Advanced image-guided treatment for vascular, neurovascular and minimally invasive procedures, performed with precision through blood vessels rather than large surgical incisions.
           </p>
           <div className="mt-6 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 sm:mt-7">
-            <Link to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
+            <LocaleLink to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
               Book consultation
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-3 text-button hover:bg-white/5 transition-colors">
+            </LocaleLink>
+            <LocaleLink to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-3 text-button hover:bg-white/5 transition-colors">
               Explore conditions
-            </Link>
+            </LocaleLink>
           </div>
         </motion.div>
 

@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
 import { patientStories, consentNote } from "../lib/stories";
 
@@ -37,14 +38,14 @@ function Testimonials() {
                 No stories are published yet. Until they are, this page stays empty rather than filled.
               </p>
               <div className="mt-10 flex flex-wrap gap-3 sm:gap-4">
-                <Link to="/contact" data-cursor="cta"
+                <LocaleLink to="/contact" data-cursor="cta"
                   className="inline-flex min-h-12 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]">
                   Book consultation
-                </Link>
-                <Link to="/second-opinion" data-cursor="link"
+                </LocaleLink>
+                <LocaleLink to="/second-opinion" data-cursor="link"
                   className="inline-flex min-h-12 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5">
                   Request a second opinion
-                </Link>
+                </LocaleLink>
               </div>
             </div>
           ) : (
@@ -59,13 +60,13 @@ function Testimonials() {
                       {s.condition} · {s.city}{s.year ? ` · ${s.year}` : ""}
                     </p>
                     {s.guide ? (
-                      <Link to="/diseases/$slug" params={{ slug: s.guide }} data-cursor="link" className="mt-3 inline-block text-label underline">
+                      <LocaleLink to="/diseases/$slug" params={{ slug: s.guide }} data-cursor="link" className="mt-3 inline-block text-label underline">
                         Read the case guide →
-                      </Link>
+                      </LocaleLink>
                     ) : s.conditionSlug ? (
-                      <Link to="/conditions/$slug" params={{ slug: s.conditionSlug }} data-cursor="link" className="mt-3 inline-block text-label underline">
+                      <LocaleLink to="/conditions/$slug" params={{ slug: s.conditionSlug }} data-cursor="link" className="mt-3 inline-block text-label underline">
                         About this condition →
-                      </Link>
+                      </LocaleLink>
                     ) : null}
                   </div>
                 </li>

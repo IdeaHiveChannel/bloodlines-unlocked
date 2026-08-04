@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { LocaleLink } from "../../components/locale-link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { pillars } from "../../lib/pillars";
@@ -28,7 +28,7 @@ export function ConditionsGateway() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: Math.min(i, 6) * 0.04 }}
             >
-              <Link
+              <LocaleLink
                 to="/diseases/$slug"
                 params={{ slug: p.slug }}
                 data-cursor="link"
@@ -47,18 +47,18 @@ export function ConditionsGateway() {
                   size={18}
                   className="shrink-0 text-[var(--ink-dim)] transition-all group-hover:text-[var(--accent)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
-              </Link>
+              </LocaleLink>
             </motion.li>
           ))}
         </ol>
 
         <div className="mt-12 flex flex-wrap gap-6">
-          <Link to="/diseases" data-cursor="link" className="text-label underline">
+          <LocaleLink to="/diseases" data-cursor="link" className="text-label underline">
             All disease guides →
-          </Link>
-          <Link to="/conditions" data-cursor="link" className="text-label underline">
+          </LocaleLink>
+          <LocaleLink to="/conditions" data-cursor="link" className="text-label underline">
             Full conditions catalogue →
-          </Link>
+          </LocaleLink>
         </div>
       </div>
     </section>

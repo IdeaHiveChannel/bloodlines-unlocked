@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { conditions, procedures, resources } from "../lib/content";
@@ -103,9 +104,9 @@ function Resources() {
                   {i.disabled ? (
                     <div className={cls}>{body}</div>
                   ) : (
-                    <Link to={i.to} params={i.params} data-cursor="link" className={`${cls} hover:bg-white/[0.02]`}>
+                    <LocaleLink to={i.to} params={i.params} data-cursor="link" className={`${cls} hover:bg-white/[0.02]`}>
                       {body}
-                    </Link>
+                    </LocaleLink>
                   )}
                 </li>
               );

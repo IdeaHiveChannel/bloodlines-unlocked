@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { LocaleLink } from "../../components/locale-link";
 import { motion } from "framer-motion";
 import { patientStories, consentNote } from "../../lib/stories";
 
@@ -20,20 +20,20 @@ export function PatientStories() {
               empty rather than filled with words no patient said.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
-              <Link
+              <LocaleLink
                 to="/diseases"
                 data-cursor="cta"
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
                 Read the clinical guides
-              </Link>
-              <Link
+              </LocaleLink>
+              <LocaleLink
                 to="/second-opinion"
                 data-cursor="link"
                 className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5"
               >
                 Request a second opinion
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         ) : (
@@ -64,32 +64,32 @@ export function PatientStories() {
                       {s.year ? ` · ${s.year}` : ""}
                     </p>
                     {s.guide ? (
-                      <Link
+                      <LocaleLink
                         to="/diseases/$slug"
                         params={{ slug: s.guide }}
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"
                       >
                         Read the case guide →
-                      </Link>
+                      </LocaleLink>
                     ) : s.conditionSlug ? (
-                      <Link
+                      <LocaleLink
                         to="/conditions/$slug"
                         params={{ slug: s.conditionSlug }}
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"
                       >
                         About this condition →
-                      </Link>
+                      </LocaleLink>
                     ) : null}
                   </div>
                 </motion.li>
               ))}
             </ul>
             <div className="mt-10">
-              <Link to="/testimonials" data-cursor="cta" className="text-label underline">
+              <LocaleLink to="/testimonials" data-cursor="cta" className="text-label underline">
                 All patient stories →
-              </Link>
+              </LocaleLink>
             </div>
           </>
         )}

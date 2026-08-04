@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute } from "@tanstack/react-router";
 import { pillars } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
@@ -46,7 +47,7 @@ function DiseasesIndex() {
           <ol className="mt-16 divide-y divide-white/[0.06] border-y border-white/[0.06]">
             {pillars.map((p, i) => (
               <li key={p.slug}>
-                <Link
+                <LocaleLink
                   to="/diseases/$slug"
                   params={{ slug: p.slug }}
                   data-cursor="link"
@@ -69,7 +70,7 @@ function DiseasesIndex() {
                   <span className="text-label opacity-0 transition-opacity group-hover:opacity-100 sm:pt-3">
                     Read →
                   </span>
-                </Link>
+                </LocaleLink>
               </li>
             ))}
           </ol>

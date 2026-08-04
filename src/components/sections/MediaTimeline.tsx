@@ -1,5 +1,6 @@
+import { LocaleLink } from "../../components/locale-link";
 import { useMemo, useState } from "react";
-import { Link } from "@tanstack/react-router";
+
 import { motion } from "framer-motion";
 import { pressEntries, pressKinds, groupByYear, type PressKind } from "../../lib/press";
 
@@ -50,20 +51,20 @@ export function MediaTimeline() {
               appearance is verified — nothing is listed before then.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
-              <Link
+              <LocaleLink
                 to="/expertise"
                 data-cursor="cta"
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
                 See clinical expertise
-              </Link>
-              <Link
+              </LocaleLink>
+              <LocaleLink
                 to="/resources"
                 data-cursor="link"
                 className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5"
               >
                 Patient resources
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         ) : (
@@ -109,14 +110,14 @@ export function MediaTimeline() {
                             </a>
                           )}
                           {e.guide && (
-                            <Link
+                            <LocaleLink
                               to="/diseases/$slug"
                               params={{ slug: e.guide }}
                               data-cursor="link"
                               className="text-label underline"
                             >
                               Related guide →
-                            </Link>
+                            </LocaleLink>
                           )}
                         </div>
                       </motion.li>
