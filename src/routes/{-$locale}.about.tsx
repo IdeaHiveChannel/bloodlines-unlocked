@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { createFileRoute } from "@tanstack/react-router";
 import { Doctor } from "../components/sections/Doctor";
 import { Footer } from "../components/sections/Footer";
@@ -51,18 +52,17 @@ export const Route = createFileRoute("/{-$locale}/about")({
 });
 
 function About() {
+  const tx = useTx();
   return (
     <>
       <main className="bg-[#050B16] pt-28 sm:pt-32">
         <div className="shell">
-          <p className="text-label">The physician</p>
+          <p className="text-label">{tx("The physician")}</p>
           <h1 className="text-display-xl mt-5 max-w-3xl">
-            About Dr. Mandeep Sagar.
+            {tx("About Dr. Mandeep Sagar.")}
           </h1>
           <p className="mt-6 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">
-            A vascular and neuro interventional radiologist whose work is defined by one idea:
-            reach the disease through the smallest possible opening, and leave the body otherwise
-            untouched.
+            {tx("A vascular and neuro interventional radiologist whose work is defined by one idea: reach the disease through the smallest possible opening, and leave the body otherwise untouched.")}
           </p>
         </div>
         <Doctor />

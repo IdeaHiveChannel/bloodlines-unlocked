@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
@@ -6,15 +7,16 @@ import { featuredProcedures, type Storyboard } from "../../lib/content";
 import { StoryboardCanvas } from "./canvases";
 
 export function Procedures() {
+  const tx = useTx();
   return (
     <section className="relative bg-[#050B16]">
       <div className="shell pt-20 pb-8 sm:pt-28 sm:pb-12">
-        <p className="text-label">Chapter 04 · Procedures</p>
+        <p className="text-label">{tx("Chapter 04 · Procedures")}</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
-          Every procedure has its own story.
+          {tx("Every procedure has its own story.")}
         </h2>
         <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)] sm:mt-6">
-          No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.
+          {tx("No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.")}
         </p>
       </div>
       {featuredProcedures.map((p, idx) => (
@@ -30,7 +32,7 @@ export function Procedures() {
       ))}
       <div className="shell pb-20 sm:pb-28">
         <LocaleLink to="/procedures" data-cursor="link" className="text-label underline">
-          See every procedure →
+          {tx("See every procedure →")}
         </LocaleLink>
       </div>
     </section>

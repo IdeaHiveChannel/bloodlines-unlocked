@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useEffect, useState } from "react";
 import type { Pillar } from "../../lib/pillars";
@@ -96,6 +97,7 @@ function SubNav() {
 }
 
 export function PillarPage({ pillar }: { pillar: Pillar }) {
+  const tx = useTx();
   const pillarProcedures = pillar.procedures.map((slug) => ({
     slug,
     entry: procedures.find((p) => p.slug === slug),
@@ -264,7 +266,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                   <li key={slug} className="px-2 py-6">
                     <p className="text-card-title">{slugToLabel(slug)}</p>
                     <p className="mt-2 text-small text-[var(--ink-dim)]">
-                      Performed through a small puncture under image guidance — discussed in detail at consultation.
+                      {tx("Performed through a small puncture under image guidance — discussed in detail at consultation.")}
                     </p>
                   </li>
                 ),
@@ -315,11 +317,10 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           {/* 14 */}
           <Section id="patient-stories" index={14} label="Patient stories" title="Verified accounts only.">
             <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-              No testimonials are published here yet. Patient accounts will appear only once they are
-              consented and verified — nothing on this page is written on a patient's behalf.
+              {tx("No testimonials are published here yet. Patient accounts will appear only once they are consented and verified — nothing on this page is written on a patient's behalf.")}
             </p>
             <LocaleLink to="/testimonials" className="mt-6 inline-block text-label" data-cursor="link">
-              Patient stories →
+              {tx("Patient stories →")}
             </LocaleLink>
           </Section>
 
@@ -333,8 +334,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
               </div>
             ) : (
               <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-                Animated films for this condition are being produced. In the meantime, the procedure
-                pages above set out each step in sequence.
+                {tx("Animated films for this condition are being produced. In the meantime, the procedure pages above set out each step in sequence.")}
               </p>
             )}
           </Section>
@@ -352,7 +352,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                       className="block h-full p-6 transition-colors hover:bg-white/[0.03]"
                     >
                       <p className="text-display text-xl">{slugToLabel(r.slug)}</p>
-                      <p className="mt-3 text-label">Full guide →</p>
+                      <p className="mt-3 text-label">{tx("Full guide →")}</p>
                     </LocaleLink>
                   </li>
                 ) : (

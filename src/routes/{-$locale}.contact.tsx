@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { createFileRoute } from "@tanstack/react-router";
 import { Consultation } from "../components/sections/Consultation";
 import { ConsultationForm } from "../components/sections/ConsultationForm";
@@ -43,10 +44,10 @@ export const Route = createFileRoute("/{-$locale}/contact")({
     <>
       <div className="pt-28 sm:pt-32">
         <div className="shell">
-          <p className="text-label">Consultation</p>
-          <h1 className="text-display-xl mt-5 max-w-3xl">Book a consultation.</h1>
+          <p className="text-label">{tx("Consultation")}</p>
+          <h1 className="text-display-xl mt-5 max-w-3xl">{tx("Book a consultation.")}</h1>
           <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-            Send your details straight to Dr. Sagar on WhatsApp or by email, or call the number below.
+            {tx("Send your details straight to Dr. Sagar on WhatsApp or by email, or call the number below.")}
           </p>
           <div className="mt-12">
             <ConsultationForm />
@@ -56,18 +57,18 @@ export const Route = createFileRoute("/{-$locale}/contact")({
       </div>
       <div className="bg-[#050B16] section-y border-t border-white/[0.05]">
         <div className="shell">
-          <p className="text-label">Where Dr. Sagar consults</p>
+          <p className="text-label">{tx("Where Dr. Sagar consults")}</p>
           <h2 className="text-h1 mt-6 max-w-2xl">
-            Three cities. One direct number.
+            {tx("Three cities. One direct number.")}
           </h2>
           <div className="mt-14 grid sm:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
             {locations.map((l) => (
               <a key={l.city} href={l.mapsUrl} target="_blank" rel="noreferrer" data-cursor="link"
                 className="bg-[#050B16] p-8 hover:bg-white/[0.03] transition-colors">
-                <p className="text-label">Consulting in</p>
+                <p className="text-label">{tx("Consulting in")}</p>
                 <p className="text-h3 mt-4">{l.city}</p>
                 <p className="mt-2 text-caption text-[var(--ink-dim)]">{l.state}</p>
-                <p className="mt-6 text-label">Open in maps →</p>
+                <p className="mt-6 text-label">{tx("Open in maps →")}</p>
               </a>
             ))}
           </div>
@@ -80,7 +81,7 @@ export const Route = createFileRoute("/{-$locale}/contact")({
             </a>
           </div>
           <p className="mt-6 text-caption text-[var(--ink-dim)]">
-            Consulting days and the exact address for each city are confirmed at the time of booking.
+            {tx("Consulting days and the exact address for each city are confirmed at the time of booking.")}
           </p>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useMemo, useState } from "react";
 
@@ -5,6 +6,7 @@ import { motion } from "framer-motion";
 import { pressEntries, pressKinds, groupByYear, type PressKind } from "../../lib/press";
 
 export function MediaTimeline() {
+  const tx = useTx();
   const [filter, setFilter] = useState<PressKind | "all">("all");
 
   const grouped = useMemo(
@@ -15,12 +17,10 @@ export function MediaTimeline() {
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">Chapter 10 · Beyond the cath lab</p>
-        <h1 className="text-display-xl mt-6 max-w-4xl">Media, publications and awards.</h1>
+        <p className="text-label">{tx("Chapter 10 · Beyond the cath lab")}</p>
+        <h1 className="text-display-xl mt-6 max-w-4xl">{tx("Media, publications and awards.")}</h1>
         <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-          Interventional radiology moves quickly. What follows is a record of the work outside the
-          procedure room — peer-reviewed papers, conference talks, recognitions and press coverage.
-          Entries are listed only once verified.
+          {tx("Interventional radiology moves quickly. What follows is a record of the work outside the procedure room — peer-reviewed papers, conference talks, recognitions and press coverage. Entries are listed only once verified.")}
         </p>
 
         <div className="mt-10 flex flex-wrap gap-2 sm:gap-3">
@@ -45,10 +45,9 @@ export function MediaTimeline() {
 
         {grouped.length === 0 ? (
           <div className="mt-14 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 sm:p-10">
-            <p className="text-label">Currently</p>
+            <p className="text-label">{tx("Currently")}</p>
             <p className="text-card-title mt-4 max-w-2xl">
-              This record is being compiled. Entries are added as each publication, award and
-              appearance is verified — nothing is listed before then.
+              {tx("This record is being compiled. Entries are added as each publication, award and appearance is verified — nothing is listed before then.")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
               <LocaleLink

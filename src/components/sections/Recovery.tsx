@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { motion } from "framer-motion";
 
 const stages = [
@@ -9,16 +10,16 @@ const stages = [
 ];
 
 export function Recovery() {
+  const tx = useTx();
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">Chapter 06 · Recovery</p>
+        <p className="text-label">{tx("Chapter 06 · Recovery")}</p>
         <h2 className="text-h1 mt-6 max-w-3xl">
-          Treatment is only one part of recovery.
+          {tx("Treatment is only one part of recovery.")}
         </h2>
         <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-          Minimally invasive intervention is designed to reduce trauma, shorten hospital stays and help
-          patients return to daily life sooner, while maintaining long-term follow-up where required.
+          {tx("Minimally invasive intervention is designed to reduce trauma, shorten hospital stays and help patients return to daily life sooner, while maintaining long-term follow-up where required.")}
         </p>
         <ol className="mt-16 relative grid gap-6 md:grid-cols-5">
           <div className="hidden md:block absolute top-[34px] left-6 right-6 h-px bg-white/10">

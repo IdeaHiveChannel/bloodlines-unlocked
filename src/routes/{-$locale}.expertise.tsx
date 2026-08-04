@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
@@ -46,12 +47,13 @@ export const Route = createFileRoute("/{-$locale}/expertise")({
 });
 
 function Expertise() {
+  const tx = useTx();
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="shell">
-          <p className="text-label">Practice</p>
-          <h1 className="text-display-xl mt-6 max-w-3xl">Areas of expertise.</h1>
+          <p className="text-label">{tx("Practice")}</p>
+          <h1 className="text-display-xl mt-6 max-w-3xl">{tx("Areas of expertise.")}</h1>
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
             {pillars.map((p) => (
               <div key={p.t} className="bg-[#050B16] p-10">
@@ -61,20 +63,19 @@ function Expertise() {
             ))}
           </div>
           <div className="mt-28">
-            <p className="text-label">Professional journey</p>
+            <p className="text-label">{tx("Professional journey")}</p>
             <h2 className="text-h1 mt-6 max-w-2xl">
-              Training, teaching, and the practice it built.
+              {tx("Training, teaching, and the practice it built.")}
             </h2>
             <p className="mt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-              In sequence — foundation, fellowship, high-volume practice, and the international
-              courses that keep technique current.
+              {tx("In sequence — foundation, fellowship, high-volume practice, and the international courses that keep technique current.")}
             </p>
             <ExpertiseTimeline />
           </div>
 
 
           <div className="mt-20">
-            <LocaleLink to="/conditions" className="text-label underline" data-cursor="link">See conditions treated →</LocaleLink>
+            <LocaleLink to="/conditions" className="text-label underline" data-cursor="link">{tx("See conditions treated →")}</LocaleLink>
           </div>
         </div>
       </main>

@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import suiteControl from "../../assets/suite-control.jpg";
 import microcatheter from "../../assets/microcatheter.jpg";
 import consultDesk from "../../assets/consult-desk.jpg";
@@ -28,11 +29,12 @@ const films = [
 
 
 export function MediaBand() {
+  const tx = useTx();
   return (
     <section className="section-y border-t border-white/[0.05] bg-[#050B16]">
       <div className="shell">
-        <p className="text-label">Inside the work</p>
-        <h2 className="text-h2 mt-3 max-w-2xl">A look at how the treatment actually happens.</h2>
+        <p className="text-label">{tx("Inside the work")}</p>
+        <h2 className="text-h2 mt-3 max-w-2xl">{tx("A look at how the treatment actually happens.")}</h2>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-[repeat(2,minmax(0,1fr))]">
           {films.map((f) => (
