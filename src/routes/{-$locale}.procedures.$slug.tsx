@@ -1,8 +1,7 @@
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { procedures } from "../lib/content";
+
 import { getProcedure } from "../lib/i18n/data";
-import { useLocale } from "../lib/i18n/react";
 import type { Procedure } from "../lib/content";
 import { procedureVideos } from "../lib/media";
 import { ProcedureVideo } from "../components/procedures/ProcedureVideo";
