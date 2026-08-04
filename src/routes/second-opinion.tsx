@@ -96,8 +96,8 @@ function SecondOpinion() {
 
                 <p className="mt-10 text-label">Privacy</p>
                 <p className="mt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-                  This website stores nothing. Your details and files travel directly to the practice
-                  over WhatsApp, and are used only for the clinical review you asked for.
+                  This website stores nothing. Your details and files travel directly to Dr. Sagar
+                  over WhatsApp, and are used only for the review you asked for.
                 </p>
               </div>
 

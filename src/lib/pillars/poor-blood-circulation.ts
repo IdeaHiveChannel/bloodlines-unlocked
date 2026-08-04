@@ -115,7 +115,7 @@ export const poorCirculation: Pillar = {
     { q: "What is Raynaud phenomenon?", a: "Spasm of small arteries in the fingers or toes triggered by cold or stress, causing them to turn white, then blue, then red. It is usually benign but is investigated if severe." },
     { q: "Can heart problems cause leg symptoms?", a: "Yes. Heart failure typically causes swelling in both legs, which is a different pattern from one-sided clot or arterial disease." },
     { q: "Why do my legs cramp at night?", a: "Common causes include venous insufficiency, electrolyte imbalance, medication and, less often, arterial disease. The pattern and a scan distinguish them." },
-    { q: "How long does it take to get an answer?", a: "In most cases a clinic visit and two ultrasound scans within a week are enough to give a specific diagnosis and a plan." },
+    { q: "How long does it take to get an answer?", a: "In most cases a consultation and two ultrasound scans within a week are enough to give a specific diagnosis and a plan." },
     { q: "Which conditions should I read about next?", a: "Start with peripheral arterial disease if you have cramping on walking, varicose veins if you have evening swelling and heaviness, DVT if one leg swelled suddenly, and diabetic foot if you have a wound." },
   ],
   relatedConditions: ["peripheral-artery-disease", "varicose-veins", "deep-vein-thrombosis", "diabetic-foot"],
