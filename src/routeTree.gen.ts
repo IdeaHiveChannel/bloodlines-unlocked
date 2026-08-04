@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SecondOpinionRouteImport } from './routes/second-opinion'
-import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as MediaRouteImport } from './routes/media'
 import { Route as ExpertiseRouteImport } from './routes/expertise'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -21,6 +20,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProceduresIndexRouteImport } from './routes/procedures.index'
 import { Route as DiseasesIndexRouteImport } from './routes/diseases.index'
 import { Route as ConditionsIndexRouteImport } from './routes/conditions.index'
+import { Route as Char123LocaleChar125ResourcesRouteImport } from './routes/{-$locale}.resources'
 import { Route as ProceduresSlugRouteImport } from './routes/procedures.$slug'
 import { Route as DiseasesSlugRouteImport } from './routes/diseases.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
@@ -38,11 +38,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const SecondOpinionRoute = SecondOpinionRouteImport.update({
   id: '/second-opinion',
   path: '/second-opinion',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MediaRoute = MediaRouteImport.update({
@@ -85,6 +80,12 @@ const ConditionsIndexRoute = ConditionsIndexRouteImport.update({
   path: '/conditions/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char123LocaleChar125ResourcesRoute =
+  Char123LocaleChar125ResourcesRouteImport.update({
+    id: '/{-$locale}/resources',
+    path: '/{-$locale}/resources',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProceduresSlugRoute = ProceduresSlugRouteImport.update({
   id: '/procedures/$slug',
   path: '/procedures/$slug',
@@ -107,13 +108,13 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
   '/media': typeof MediaRoute
-  '/resources': typeof ResourcesRoute
   '/second-opinion': typeof SecondOpinionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/conditions/': typeof ConditionsIndexRoute
   '/diseases/': typeof DiseasesIndexRoute
   '/procedures/': typeof ProceduresIndexRoute
@@ -124,13 +125,13 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
   '/media': typeof MediaRoute
-  '/resources': typeof ResourcesRoute
   '/second-opinion': typeof SecondOpinionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/conditions': typeof ConditionsIndexRoute
   '/diseases': typeof DiseasesIndexRoute
   '/procedures': typeof ProceduresIndexRoute
@@ -142,13 +143,13 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/expertise': typeof ExpertiseRoute
   '/media': typeof MediaRoute
-  '/resources': typeof ResourcesRoute
   '/second-opinion': typeof SecondOpinionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/diseases/$slug': typeof DiseasesSlugRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/conditions/': typeof ConditionsIndexRoute
   '/diseases/': typeof DiseasesIndexRoute
   '/procedures/': typeof ProceduresIndexRoute
@@ -161,13 +162,13 @@ export interface FileRouteTypes {
     | '/contact'
     | '/expertise'
     | '/media'
-    | '/resources'
     | '/second-opinion'
     | '/sitemap.xml'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
     | '/procedures/$slug'
+    | '/{-$locale}/resources'
     | '/conditions/'
     | '/diseases/'
     | '/procedures/'
@@ -178,13 +179,13 @@ export interface FileRouteTypes {
     | '/contact'
     | '/expertise'
     | '/media'
-    | '/resources'
     | '/second-opinion'
     | '/sitemap.xml'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
     | '/procedures/$slug'
+    | '/{-$locale}/resources'
     | '/conditions'
     | '/diseases'
     | '/procedures'
@@ -195,13 +196,13 @@ export interface FileRouteTypes {
     | '/contact'
     | '/expertise'
     | '/media'
-    | '/resources'
     | '/second-opinion'
     | '/sitemap.xml'
     | '/testimonials'
     | '/conditions/$slug'
     | '/diseases/$slug'
     | '/procedures/$slug'
+    | '/{-$locale}/resources'
     | '/conditions/'
     | '/diseases/'
     | '/procedures/'
@@ -213,13 +214,13 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ExpertiseRoute: typeof ExpertiseRoute
   MediaRoute: typeof MediaRoute
-  ResourcesRoute: typeof ResourcesRoute
   SecondOpinionRoute: typeof SecondOpinionRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TestimonialsRoute: typeof TestimonialsRoute
   ConditionsSlugRoute: typeof ConditionsSlugRoute
   DiseasesSlugRoute: typeof DiseasesSlugRoute
   ProceduresSlugRoute: typeof ProceduresSlugRoute
+  Char123LocaleChar125ResourcesRoute: typeof Char123LocaleChar125ResourcesRoute
   ConditionsIndexRoute: typeof ConditionsIndexRoute
   DiseasesIndexRoute: typeof DiseasesIndexRoute
   ProceduresIndexRoute: typeof ProceduresIndexRoute
@@ -246,13 +247,6 @@ declare module '@tanstack/react-router' {
       path: '/second-opinion'
       fullPath: '/second-opinion'
       preLoaderRoute: typeof SecondOpinionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/media': {
@@ -311,6 +305,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConditionsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/{-$locale}/resources': {
+      id: '/{-$locale}/resources'
+      path: '/{-$locale}/resources'
+      fullPath: '/{-$locale}/resources'
+      preLoaderRoute: typeof Char123LocaleChar125ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/procedures/$slug': {
       id: '/procedures/$slug'
       path: '/procedures/$slug'
@@ -341,13 +342,13 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ExpertiseRoute: ExpertiseRoute,
   MediaRoute: MediaRoute,
-  ResourcesRoute: ResourcesRoute,
   SecondOpinionRoute: SecondOpinionRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TestimonialsRoute: TestimonialsRoute,
   ConditionsSlugRoute: ConditionsSlugRoute,
   DiseasesSlugRoute: DiseasesSlugRoute,
   ProceduresSlugRoute: ProceduresSlugRoute,
+  Char123LocaleChar125ResourcesRoute: Char123LocaleChar125ResourcesRoute,
   ConditionsIndexRoute: ConditionsIndexRoute,
   DiseasesIndexRoute: DiseasesIndexRoute,
   ProceduresIndexRoute: ProceduresIndexRoute,
@@ -355,13 +356,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
