@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "@tanstack/react-router";
 import { useLocale } from "../lib/i18n/react";
-import { stripLocale, withLocale } from "../lib/i18n";
+import { localePath, stripLocale } from "../lib/i18n";
 
 /** EN | മലയാളം switch. Keeps the visitor on the same page in the other language. */
 export function LanguageToggle() {
@@ -11,7 +11,7 @@ export function LanguageToggle() {
   const go = (next: "en" | "ml") => {
     if (next === locale) return;
     const base = stripLocale(pathname);
-    navigate({ to: withLocale(base, next) as never });
+    navigate({ to: localePath(base, next) as never });
   };
 
   return (
