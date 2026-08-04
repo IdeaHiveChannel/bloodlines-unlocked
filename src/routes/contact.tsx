@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Consultation } from "../components/sections/Consultation";
+import { ConsultationForm } from "../components/sections/ConsultationForm";
 import { Footer } from "../components/sections/Footer";
 import { contact, locations, socialUrls } from "../lib/contact";
 
@@ -9,9 +10,9 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Book a consultation — Dr. Mandeep Sagar" },
-      { name: "description", content: "Reach the practice by appointment, WhatsApp, phone, or email. Clinics in Kannur, Mangalore and Kasaragod." },
+      { name: "description", content: "Send your details to Dr. Mandeep Sagar by WhatsApp, email or phone. Consulting in Kannur, Mangalore and Kasaragod." },
       { property: "og:title", content: "Book a consultation with Dr. Mandeep Sagar" },
-      { property: "og:description", content: "Appointment timings, clinic addresses and direct contact for the interventional radiology practice." },
+      { property: "og:description", content: "Consultation request form, direct number and consulting cities for the interventional radiology practice." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE}/contact` },
       { name: "twitter:card", content: "summary_large_image" },
