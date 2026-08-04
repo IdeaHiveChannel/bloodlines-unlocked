@@ -5,7 +5,7 @@ import { Consultation } from "../components/sections/Consultation";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("/diseases/")({
+export const Route = createFileRoute("\/\{\-\}\/diseases\/")({
   head: () => ({
     meta: [
       { title: "Conditions treated — Dr. Mandeep Sagar" },

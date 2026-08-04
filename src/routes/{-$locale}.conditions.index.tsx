@@ -5,7 +5,7 @@ import { Footer } from "../components/sections/Footer";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("/conditions/")({
+export const Route = createFileRoute("\/\{\-\}\/conditions\/")({
   head: () => ({
     meta: [
       { title: "Conditions treated — Dr. Mandeep Sagar" },
