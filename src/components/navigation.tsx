@@ -1,45 +1,57 @@
-import { Link } from "@tanstack/react-router";
+import { LocaleLink } from "./locale-link";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavMenu, type MenuLink } from "./nav-menu";
 import { pillars } from "../lib/pillars";
 import { conditions, featuredProcedures } from "../lib/content";
-
-const diseaseLinks: MenuLink[] = [
-  ...pillars.map((p) => ({ to: `/diseases/${p.slug}`, label: p.name })),
-  { to: "/diseases", label: "All diseases" },
-];
-
-const conditionLinks: MenuLink[] = [
-  ...conditions.slice(0, 10).map((c) => ({ to: `/conditions/${c.slug}`, label: c.name })),
-  { to: "/conditions", label: "All conditions" },
-];
-
-const procedureLinks: MenuLink[] = [
-  ...featuredProcedures.map((p) => ({ to: `/procedures/${p.slug}`, label: p.name })),
-  { to: "/procedures", label: "All procedures" },
-];
-
-const moreLinks: MenuLink[] = [
-  { to: "/expertise", label: "Expertise" },
-  { to: "/media", label: "Media & publications" },
-  { to: "/testimonials", label: "Patient stories" },
-  { to: "/resources", label: "Resources" },
-  { to: "/second-opinion", label: "Second opinion" },
-  { to: "/contact", label: "Contact" },
-];
-
-const groups: { label: string; links: MenuLink[]; columns?: 1 | 2 }[] = [
-  { label: "Diseases", links: diseaseLinks, columns: 2 },
-  { label: "Conditions", links: conditionLinks, columns: 2 },
-  { label: "Procedures", links: procedureLinks },
-  { label: "More", links: moreLinks },
-];
+import { useLocale, useT } from "../lib/i18n/react";
+import { useNames } from "../lib/i18n/content";
+import { LanguageToggle } from "./language-toggle";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [section, setSection] = useState<string | null>(null);
+  const t = useT();
+  const locale = useLocale();
+  const n = useNames();
+
+  const diseaseLinks: MenuLink[] = [
+    ...pillars.map((p) => ({ to: `/diseases/${p.slug}`, label: n.pillar(p.slug, p.name) })),
+    { to: "/diseases", label: t.nav.allDiseases },
+  ];
+
+  const conditionLinks: MenuLink[] = [
+    ...conditions.slice(0, 10).map((c) => ({
+      to: `/conditions/${c.slug}`,
+      label: n.condition(c.slug, c.name),
+    })),
+    { to: "/conditions", label: t.nav.allConditions },
+  ];
+
+  const procedureLinks: MenuLink[] = [
+    ...featuredProcedures.map((p) => ({
+      to: `/procedures/${p.slug}`,
+      label: n.procedure(p.slug, p.name),
+    })),
+    { to: "/procedures", label: t.nav.allProcedures },
+  ];
+
+  const moreLinks: MenuLink[] = [
+    { to: "/expertise", label: t.nav.expertise },
+    { to: "/media", label: t.nav.media },
+    { to: "/testimonials", label: t.nav.stories },
+    { to: "/resources", label: t.nav.resources },
+    { to: "/second-opinion", label: t.nav.secondOpinion },
+    { to: "/contact", label: t.nav.contact },
+  ];
+
+  const groups: { label: string; links: MenuLink[]; columns?: 1 | 2 }[] = [
+    { label: t.nav.diseases, links: diseaseLinks, columns: 2 },
+    { label: t.nav.conditions, links: conditionLinks, columns: 2 },
+    { label: t.nav.procedures, links: procedureLinks },
+    { label: t.nav.more, links: moreLinks },
+  ];
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 40);
@@ -63,26 +75,26 @@ export function Navigation() {
             scrolled ? "bg-[#050B16]/70 backdrop-blur-md" : "bg-transparent"
           }`}
         >
-          <Link to="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3" data-cursor="link">
+          <LocaleLink to="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3" data-cursor="link">
             <span className="inline-block size-2 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <span className="min-w-0 leading-none">
-              <span className="block truncate text-nav">Dr Mandeep Sagar</span>
+              <span className="block truncate text-nav">{t.brand.name}</span>
               <span className="mt-0.5 hidden text-[0.6875rem] font-medium uppercase tracking-[0.24em] text-[var(--ink-dim)] xs:block">
-                Vascular · neuro interventional
+                {t.brand.tagline}
               </span>
             </span>
-          </Link>
+          </LocaleLink>
 
           <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
             <li>
-              <Link
+              <LocaleLink
                 to="/about"
                 className="group relative text-nav text-[var(--ink-dim)] transition-colors hover:text-white"
                 data-cursor="link"
               >
-                About
+                {t.nav.about}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
-              </Link>
+              </LocaleLink>
             </li>
             {groups.map((g) => (
               <NavMenu key={g.label} label={g.label} links={g.links} columns={g.columns} />
@@ -90,17 +102,18 @@ export function Navigation() {
           </ul>
 
           <div className="flex shrink-0 items-center gap-2">
-            <Link
+            <LanguageToggle />
+            <LocaleLink
               to="/contact"
-              className="hidden min-h-11 items-center rounded-full bg-white px-5 text-button text-black transition-colors hover:bg-[var(--accent)] hover:text-black md:inline-flex"
+              className="hidden min-h-11 items-center rounded-full bg-white px-5 text-button text-black transition-colors hover:bg-[var(--accent)] hover:text-black xl:inline-flex"
               data-cursor="cta"
             >
-              Book consultation
-            </Link>
+              {t.nav.book}
+            </LocaleLink>
             <button
               className="grid size-11 place-items-center text-white lg:hidden"
               onClick={() => setOpen(true)}
-              aria-label="Open menu"
+              aria-label={t.nav.openMenu}
               data-cursor="link"
             >
               <Menu size={20} />
@@ -111,10 +124,11 @@ export function Navigation() {
 
       {open && (
         <div className="fixed inset-0 z-[70] flex h-dvh flex-col bg-[#050B16]/97 backdrop-blur-xl">
-          <div className="flex shrink-0 justify-end p-4">
+          <div className="flex shrink-0 items-center justify-between p-4">
+            <LanguageToggle />
             <button
               onClick={() => setOpen(false)}
-              aria-label="Close menu"
+              aria-label={t.nav.closeMenu}
               data-cursor="link"
               className="grid size-11 place-items-center"
             >
@@ -125,14 +139,14 @@ export function Navigation() {
           <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 pb-[max(2rem,env(safe-area-inset-bottom))]">
             <ul className="mx-auto flex w-full max-w-md flex-col gap-1">
               <li>
-                <Link
+                <LocaleLink
                   to="/about"
                   onClick={() => setOpen(false)}
                   className="block py-3 text-h3"
                   data-cursor="link"
                 >
-                  About
-                </Link>
+                  {t.nav.about}
+                </LocaleLink>
               </li>
               {groups.map((g) => {
                 const isOpen = section === g.label;
@@ -155,14 +169,14 @@ export function Navigation() {
                       <ul className="pb-3">
                         {g.links.map((l) => (
                           <li key={l.to}>
-                            <a
-                              href={l.to}
+                            <LocaleLink
+                              to={l.to}
                               onClick={() => setOpen(false)}
                               className="block py-2 text-small text-[var(--ink-dim)]"
                               data-cursor="link"
                             >
                               {l.label}
-                            </a>
+                            </LocaleLink>
                           </li>
                         ))}
                       </ul>
@@ -171,19 +185,20 @@ export function Navigation() {
                 );
               })}
               <li className="pt-4">
-                <Link
+                <LocaleLink
                   to="/contact"
                   onClick={() => setOpen(false)}
                   className="inline-flex min-h-11 items-center rounded-full bg-white px-7 text-button text-black"
                   data-cursor="cta"
                 >
-                  Book consultation
-                </Link>
+                  {t.nav.book}
+                </LocaleLink>
               </li>
             </ul>
           </div>
         </div>
       )}
+      <span className="hidden">{locale}</span>
     </>
   );
 }

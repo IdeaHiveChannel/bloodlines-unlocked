@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTx } from "@/lib/i18n/tx";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { conditions, procedures, resources } from "../lib/content";
@@ -6,7 +8,7 @@ import { Footer } from "../components/sections/Footer";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("/resources")({
+export const Route = createFileRoute("/{-$locale}/resources")({
   head: () => ({
     meta: [
       { title: "Patient resources — Dr. Mandeep Sagar" },
@@ -34,6 +36,7 @@ type Item = {
 const chips = ["All", "Condition", "Procedure", "Video", "Patient guide", "FAQ", "Recovery"] as const;
 
 function Resources() {
+  const tx = useTx();
   const [q, setQ] = useState("");
   const [chip, setChip] = useState<(typeof chips)[number]>("All");
 
@@ -65,8 +68,8 @@ function Resources() {
     <>
       <main className="pt-36 pb-24 bg-[#050B16] min-h-screen">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
-          <p className="text-label">Patient Education</p>
-          <h1 className="text-display-xl mt-6">Resources.</h1>
+          <p className="text-label">{tx("Patient Education")}</p>
+          <h1 className="text-display-xl mt-6">{tx("Resources.")}</h1>
           <div className="mt-10 relative">
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-dim)]" />
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a symptom, condition, or procedure"
@@ -103,14 +106,14 @@ function Resources() {
                   {i.disabled ? (
                     <div className={cls}>{body}</div>
                   ) : (
-                    <Link to={i.to} params={i.params} data-cursor="link" className={`${cls} hover:bg-white/[0.02]`}>
+                    <LocaleLink to={i.to} params={i.params} data-cursor="link" className={`${cls} hover:bg-white/[0.02]`}>
                       {body}
-                    </Link>
+                    </LocaleLink>
                   )}
                 </li>
               );
             })}
-            {items.length === 0 && <li className="py-10 text-[var(--ink-dim)] text-sm">Nothing matched. Try a broader term.</li>}
+            {items.length === 0 && <li className="py-10 text-[var(--ink-dim)] text-sm">{tx("Nothing matched. Try a broader term.")}</li>}
           </ul>
         </div>
       </main>

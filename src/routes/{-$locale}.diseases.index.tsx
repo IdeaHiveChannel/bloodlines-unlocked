@@ -1,11 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { pillars } from "../lib/pillars";
+import { useTx } from "@/lib/i18n/tx";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute } from "@tanstack/react-router";
+import { usePillars } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("/diseases/")({
+export const Route = createFileRoute("/{-$locale}/diseases/")({
   head: () => ({
     meta: [
       { title: "Conditions treated — Dr. Mandeep Sagar" },
@@ -29,24 +31,24 @@ export const Route = createFileRoute("/diseases/")({
 });
 
 function DiseasesIndex() {
+  const tx = useTx();
+  const items = usePillars();
   return (
     <>
       <main className="bg-[#050B16] pt-36 pb-24">
         <div className="shell">
-          <p className="text-label">Patient guides</p>
+          <p className="text-label">{tx("Patient guides")}</p>
           <h1 className="text-display-xl mt-6 max-w-3xl">
-            Fourteen conditions, explained end to end.
+            {tx("Fourteen conditions, explained end to end.")}
           </h1>
           <p className="mt-6 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-            Each guide runs from the first symptom to the final follow-up — what it is, which tests
-            answer it, every treatment route, how it is treated here, and what recovery actually looks
-            like.
+            {tx("Each guide runs from the first symptom to the final follow-up — what it is, which tests answer it, every treatment route, how it is treated here, and what recovery actually looks like.")}
           </p>
 
           <ol className="mt-16 divide-y divide-white/[0.06] border-y border-white/[0.06]">
-            {pillars.map((p, i) => (
+            {items.map((p, i) => (
               <li key={p.slug}>
-                <Link
+                <LocaleLink
                   to="/diseases/$slug"
                   params={{ slug: p.slug }}
                   data-cursor="link"
@@ -58,7 +60,7 @@ function DiseasesIndex() {
                       {p.name}
                       {p.patientTerm && (
                         <span className="ml-3 align-middle text-label text-[var(--accent)]">
-                          Patient term
+                          {tx("Patient term")}
                         </span>
                       )}
                     </h2>
@@ -67,9 +69,9 @@ function DiseasesIndex() {
                     </p>
                   </div>
                   <span className="text-label opacity-0 transition-opacity group-hover:opacity-100 sm:pt-3">
-                    Read →
+                    {tx("Read →")}
                   </span>
-                </Link>
+                </LocaleLink>
               </li>
             ))}
           </ol>

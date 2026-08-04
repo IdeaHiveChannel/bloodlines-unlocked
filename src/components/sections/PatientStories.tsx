@@ -1,39 +1,40 @@
-import { Link } from "@tanstack/react-router";
+import { useTx } from "@/lib/i18n/tx";
+import { LocaleLink } from "../../components/locale-link";
 import { motion } from "framer-motion";
 import { patientStories, consentNote } from "../../lib/stories";
 
 export function PatientStories() {
+  const tx = useTx();
   const stories = patientStories;
 
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">Chapter 09 · Patient stories</p>
-        <h2 className="text-h1 mt-6 max-w-3xl">In the patient's own words.</h2>
+        <p className="text-label">{tx("Chapter 09 · Patient stories")}</p>
+        <h2 className="text-h1 mt-6 max-w-3xl">{tx("In the patient's own words.")}</h2>
         <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">{consentNote}</p>
 
         {stories.length === 0 ? (
           <div className="mt-12 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 sm:p-10">
-            <p className="text-label">Currently</p>
+            <p className="text-label">{tx("Currently")}</p>
             <p className="text-card-title mt-4 max-w-2xl">
-              No stories are published yet. Until consented accounts are available, this section stays
-              empty rather than filled with words no patient said.
+              {tx("No stories are published yet. Until consented accounts are available, this section stays empty rather than filled with words no patient said.")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
-              <Link
+              <LocaleLink
                 to="/diseases"
                 data-cursor="cta"
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
                 Read the clinical guides
-              </Link>
-              <Link
+              </LocaleLink>
+              <LocaleLink
                 to="/second-opinion"
                 data-cursor="link"
                 className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5"
               >
                 Request a second opinion
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         ) : (
@@ -64,32 +65,32 @@ export function PatientStories() {
                       {s.year ? ` · ${s.year}` : ""}
                     </p>
                     {s.guide ? (
-                      <Link
+                      <LocaleLink
                         to="/diseases/$slug"
                         params={{ slug: s.guide }}
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"
                       >
                         Read the case guide →
-                      </Link>
+                      </LocaleLink>
                     ) : s.conditionSlug ? (
-                      <Link
+                      <LocaleLink
                         to="/conditions/$slug"
                         params={{ slug: s.conditionSlug }}
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"
                       >
                         About this condition →
-                      </Link>
+                      </LocaleLink>
                     ) : null}
                   </div>
                 </motion.li>
               ))}
             </ul>
             <div className="mt-10">
-              <Link to="/testimonials" data-cursor="cta" className="text-label underline">
-                All patient stories →
-              </Link>
+              <LocaleLink to="/testimonials" data-cursor="cta" className="text-label underline">
+                {tx("All patient stories →")}
+              </LocaleLink>
             </div>
           </>
         )}

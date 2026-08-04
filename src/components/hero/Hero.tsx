@@ -1,11 +1,14 @@
+import { LocaleLink } from "../../components/locale-link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
 import { ArrowRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { useT } from "../../lib/i18n/react";
+
 
 export function Hero() {
+  const t = useT();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const headlineY = useTransform(scrollYProgress, [0, 1], [0, -120]);
@@ -50,24 +53,24 @@ export function Hero() {
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
-            <span className="text-label">Vascular &amp; neuro interventional radiology</span>
+            <span className="text-label">{t.hero.eyebrow}</span>
           </div>
           <h1 className="mt-4 text-display-xxl sm:mt-5">
-            Modern medicine,
+            {t.hero.headline1}
             <br />
-            <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">through a pinpoint opening.</span>
+            <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">{t.hero.headline2}</span>
           </h1>
           <p className="mt-4 max-w-xl text-body-lg text-[var(--ink-dim)] sm:mt-5">
-            Advanced image-guided treatment for vascular, neurovascular and minimally invasive procedures, performed with precision through blood vessels rather than large surgical incisions.
+            {t.hero.lead}
           </p>
           <div className="mt-6 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 sm:mt-7">
-            <Link to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
-              Book consultation
+            <LocaleLink to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
+              {t.nav.book}
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-3 text-button hover:bg-white/5 transition-colors">
-              Explore conditions
-            </Link>
+            </LocaleLink>
+            <LocaleLink to="/diseases" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-3 text-button hover:bg-white/5 transition-colors">
+              {t.common.explore}
+            </LocaleLink>
           </div>
         </motion.div>
 
@@ -91,7 +94,7 @@ export function Hero() {
       {/* Scroll indicator */}
       <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex">
 
-        <span className="text-label">Scroll</span>
+        <span className="text-label">{t.common.scroll}</span>
         <svg viewBox="0 0 4 80" width="4" height="80">
           <line x1="2" y1="0" x2="2" y2="80" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
           <line x1="2" y1="0" x2="2" y2="20" stroke="var(--accent)" strokeWidth="2"

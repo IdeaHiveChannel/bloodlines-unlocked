@@ -1,0 +1,89 @@
+/**
+ * Malayalam translations for catalogue entries (disease guides, conditions and
+ * procedures). Keyed by slug so the English data files stay untouched.
+ * Names only — long-form guide bodies are translated in guides-ml.ts.
+ */
+
+export const pillarNamesMl: Record<string, { name: string; title: string }> = {
+  "brain-aneurysm": { name: "മസ്തിഷ്ക അനൂറിസം", title: "മസ്തിഷ്ക അനൂറിസം (ബ്രെയിൻ അനൂറിസം)" },
+  "brain-avm-avf": { name: "ബ്രെയിൻ AVM / AVF", title: "മസ്തിഷ്കത്തിലെ AVM, AVF" },
+  "deep-vein-thrombosis": { name: "ഡീപ് വെയിൻ ത്രോംബോസിസ്", title: "ഡീപ് വെയിൻ ത്രോംബോസിസ് (കാലിലെ രക്തക്കട്ട)" },
+  "diabetic-foot": { name: "പ്രമേഹ പാദം", title: "പ്രമേഹ പാദം (ഡയബറ്റിക് ഫൂട്ട്)" },
+  "enlarged-prostate": { name: "പ്രോസ്റ്റേറ്റ് വീക്കം (BPH)", title: "പ്രോസ്റ്റേറ്റ് ഗ്രന്ഥിയുടെ വീക്കം" },
+  gangrene: { name: "ഗാൻഗ്രീൻ", title: "ഗാൻഗ്രീൻ (കോശങ്ങൾ അഴുകൽ)" },
+  "knee-osteoarthritis": { name: "കാൽമുട്ട് തേയ്മാനം", title: "കാൽമുട്ടിലെ തേയ്മാനം (ഓസ്റ്റിയോ ആർത്രൈറ്റിസ്)" },
+  "liver-tumours": { name: "കരൾ മുഴകൾ", title: "കരളിലെ മുഴകൾ" },
+  "peripheral-arterial-disease": { name: "പെരിഫറൽ ആർട്ടീരിയൽ ഡിസീസ്", title: "കാലുകളിലെ ധമനി തടസ്സം (PAD)" },
+  "poor-blood-circulation": { name: "രക്തയോട്ടക്കുറവ്", title: "ശരീരത്തിലെ രക്തയോട്ടക്കുറവ്" },
+  stroke: { name: "സ്ട്രോക്ക്", title: "സ്ട്രോക്ക് (പക്ഷാഘാതം)" },
+  "thyroid-nodules": { name: "തൈറോയ്ഡ് മുഴകൾ", title: "തൈറോയ്ഡ് മുഴകളും കഴുത്തിലെ വീക്കവും" },
+  "uterine-fibroids": { name: "ഗർഭാശയ ഫൈബ്രോയിഡ്", title: "ഗർഭാശയത്തിലെ ഫൈബ്രോയിഡ് മുഴകൾ" },
+  "varicose-veins": { name: "വെരിക്കോസ് വെയിൻ", title: "വെരിക്കോസ് വെയിൻ (ഞരമ്പു വീക്കം)" },
+};
+
+export const conditionNamesMl: Record<string, string> = {
+  "acute-ischemic-stroke": "അക്യൂട്ട് ഇസ്കീമിക് സ്ട്രോക്ക്",
+  "cerebral-aneurysm": "മസ്തിഷ്ക അനൂറിസം",
+  "brain-avm": "ആർട്ടീരിയോവീനസ് മാൽഫോർമേഷൻ (AVM)",
+  "dural-avf": "ഡ്യൂറൽ ആർട്ടീരിയോവീനസ് ഫിസ്റ്റുല (AVF)",
+  "carotid-cavernous-fistula": "കരോട്ടിഡ് കാവർണസ് ഫിസ്റ്റുല (CCF)",
+  "carotid-artery-disease": "കരോട്ടിഡ് ധമനി രോഗം",
+  "thyroid-nodules": "തൈറോയ്ഡ് മുഴകളും ഗോയിറ്ററും",
+  "aortic-aneurysm": "അയോർട്ടിക് അനൂറിസം",
+  "aortic-dissection": "അയോർട്ടിക് ഡിസെക്ഷൻ",
+  "hepatocellular-carcinoma": "കരൾ അർബുദം (HCC)",
+  "gi-bleeding": "ദഹനനാളത്തിലെ രക്തസ്രാവം",
+  "portal-hypertension": "പോർട്ടൽ ഹൈപ്പർടെൻഷൻ",
+  "variceal-bleeding": "ആമാശയ വെരിക്കോസ് രക്തസ്രാവം",
+  "transjugular-liver-biopsy": "അപകടസാധ്യതയുള്ളവരിൽ കരൾ ബയോപ്സി",
+  "renal-artery-stenosis": "വൃക്ക ധമനി ചുരുങ്ങൽ",
+  "renal-tumour": "വൃക്കയിലെ മുഴ",
+  "renal-artery-aneurysm": "വൃക്ക ധമനി അനൂറിസം",
+  "dialysis-access-failure": "ഡയാലിസിസ് ഫിസ്റ്റുല തകരാർ",
+  "central-vein-stenosis": "സെൻട്രൽ വെയിൻ ചുരുങ്ങൽ",
+  "peripheral-avm": "ശരീരഭാഗങ്ങളിലെ രക്തക്കുഴൽ വൈകല്യം",
+  "uterine-fibroids": "ഗർഭാശയ ഫൈബ്രോയിഡ്",
+  "enlarged-prostate": "പ്രോസ്റ്റേറ്റ് വീക്കം (BPH)",
+  "endometriosis-pelvic-congestion": "എൻഡോമെട്രിയോസിസും പെൽവിക് കൺജഷനും",
+  "aorto-iliac-disease": "അയോർട്ടോ-ഇലിയാക് രോഗം",
+  "knee-osteoarthritis": "കാൽമുട്ട് തേയ്മാനം",
+  "chronic-knee-pain": "മുട്ടുമാറ്റ ശസ്ത്രക്രിയയ്ക്കു ശേഷമുള്ള വേദന",
+  "peripheral-artery-disease": "പെരിഫറൽ ആർട്ടറി ഡിസീസ്",
+  "critical-limb-ischemia": "ക്രിട്ടിക്കൽ ലിംബ് ഇസ്കീമിയ",
+  "diabetic-foot": "പ്രമേഹ പാദം (രക്തക്കുഴൽ കാരണങ്ങൾ)",
+  "fava-malformation": "FAVA, കൈകാലുകളിലെ രക്തക്കുഴൽ വൈകല്യങ്ങൾ",
+  "varicose-veins": "വെരിക്കോസ് വെയിൻ",
+  "deep-vein-thrombosis": "ഡീപ് വെയിൻ ത്രോംബോസിസ്",
+  "venous-ulcer": "വെനസ് ലെഗ് അൾസർ",
+};
+
+export const procedureNamesMl: Record<string, string> = {
+  angioplasty: "ആൻജിയോപ്ലാസ്റ്റിയും സ്റ്റെന്റിംഗും",
+  thrombectomy: "മെക്കാനിക്കൽ ത്രോംബെക്ടമി",
+  "aneurysm-repair": "എൻഡോവാസ്കുലർ അനൂറിസം റിപ്പയർ",
+  "varicose-vein-ablation": "എൻഡോവീനസ് ലേസർ അബ്ലേഷൻ",
+  tace: "TACE — കീമോഎംബോളൈസേഷൻ",
+  "microwave-ablation": "മൈക്രോവേവ് അബ്ലേഷൻ",
+  "aneurysm-coiling": "മസ്തിഷ്ക അനൂറിസം കോയിലിംഗ്",
+  "thyroid-ablation": "തൈറോയ്ഡ് മുഴ അബ്ലേഷൻ",
+  "genicular-artery-embolization": "ജെനിക്യുലർ ആർട്ടറി എംബോളൈസേഷൻ",
+  "dialysis-fistuloplasty": "ഡയാലിസിസ് ഫിസ്റ്റുലോപ്ലാസ്റ്റി",
+  tips: "TIPS",
+  "prostate-artery-embolization": "പ്രോസ്റ്റേറ്റ് ആർട്ടറി എംബോളൈസേഷൻ (PAE)",
+  "uterine-fibroid-embolization": "ഗർഭാശയ ഫൈബ്രോയിഡ് എംബോളൈസേഷൻ (UFE)",
+};
+
+export const regionLabelsMl: Record<string, string> = {
+  brain: "തലച്ചോറ്",
+  eye: "കണ്ണ്",
+  carotid: "കരോട്ടിഡ്",
+  thyroid: "തൈറോയ്ഡ്",
+  chest: "അയോർട്ടയും നെഞ്ചും",
+  liver: "കരൾ",
+  kidney: "വൃക്കകൾ",
+  arms: "കൈകൾ — ഡയാലിസിസ് ആക്സസ്",
+  pelvis: "പെൽവിസ്",
+  knee: "കാൽമുട്ട്",
+  legs: "കാലുകൾ",
+  veins: "സിരകൾ",
+};

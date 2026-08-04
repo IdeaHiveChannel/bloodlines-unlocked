@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -106,11 +107,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const SITE = "https://vascularcaredr.com";
+
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isMl = pathname === "/ml" || pathname.startsWith("/ml/");
+  const base = isMl ? (pathname === "/ml" ? "/" : pathname.slice(3)) : pathname;
+  const mlPath = base === "/" ? "/ml" : `/ml${base}`;
   return (
-    <html lang="en">
+    <html lang={isMl ? "ml" : "en"}>
       <head>
         <HeadContent />
+        <link rel="alternate" hrefLang="en" href={`${SITE}${base}`} />
+        <link rel="alternate" hrefLang="ml" href={`${SITE}${mlPath}`} />
+        <link rel="alternate" hrefLang="x-default" href={`${SITE}${base}`} />
       </head>
       <body>
         {children}
@@ -119,6 +129,7 @@ function RootShell({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();

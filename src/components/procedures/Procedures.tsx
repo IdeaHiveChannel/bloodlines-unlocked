@@ -1,19 +1,22 @@
+import { useTx } from "@/lib/i18n/tx";
+import { LocaleLink } from "../../components/locale-link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+
 import { featuredProcedures, type Storyboard } from "../../lib/content";
 import { StoryboardCanvas } from "./canvases";
 
 export function Procedures() {
+  const tx = useTx();
   return (
     <section className="relative bg-[#050B16]">
       <div className="shell pt-20 pb-8 sm:pt-28 sm:pb-12">
-        <p className="text-label">Chapter 04 · Procedures</p>
+        <p className="text-label">{tx("Chapter 04 · Procedures")}</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
-          Every procedure has its own story.
+          {tx("Every procedure has its own story.")}
         </h2>
         <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)] sm:mt-6">
-          No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.
+          {tx("No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.")}
         </p>
       </div>
       {featuredProcedures.map((p, idx) => (
@@ -28,9 +31,9 @@ export function Procedures() {
         />
       ))}
       <div className="shell pb-20 sm:pb-28">
-        <Link to="/procedures" data-cursor="link" className="text-label underline">
-          See every procedure →
-        </Link>
+        <LocaleLink to="/procedures" data-cursor="link" className="text-label underline">
+          {tx("See every procedure →")}
+        </LocaleLink>
       </div>
     </section>
   );
@@ -58,9 +61,9 @@ function ProcedureStory({
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center">
         <div className="shell pt-24 sm:pt-28">
           <p className="text-label">Procedure {String(index + 1).padStart(2, "0")}</p>
-          <Link to="/procedures/$slug" params={{ slug }} data-cursor="link">
+          <LocaleLink to="/procedures/$slug" params={{ slug }} data-cursor="link">
             <h3 className="mt-2 text-h2">{name}</h3>
-          </Link>
+          </LocaleLink>
           <p className="mt-2 max-w-md text-small text-[var(--ink-dim)]">{oneLiner}</p>
         </div>
         <div className="shell grid flex-1 items-center gap-5 pb-10 sm:gap-8 lg:grid-cols-2 lg:pb-16">

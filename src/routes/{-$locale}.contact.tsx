@@ -1,3 +1,4 @@
+import { useTx } from "@/lib/i18n/tx";
 import { createFileRoute } from "@tanstack/react-router";
 import { Consultation } from "../components/sections/Consultation";
 import { ConsultationForm } from "../components/sections/ConsultationForm";
@@ -6,7 +7,7 @@ import { contact, locations, socialUrls } from "../lib/contact";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("/contact")({
+export const Route = createFileRoute("/{-$locale}/contact")({
   head: () => ({
     meta: [
       { title: "Book a consultation — Dr. Mandeep Sagar" },

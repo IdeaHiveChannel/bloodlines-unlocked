@@ -1,6 +1,8 @@
+import { useTx } from "@/lib/i18n/tx";
+import { LocaleLink } from "../../components/locale-link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+
 import {
   conditionsByRegion,
   regionGuide,
@@ -187,6 +189,7 @@ const hotspots: Hotspot[] = [
 ];
 
 export function Anatomy() {
+  const tx = useTx();
   const [active, setActive] = useState<Region>("brain");
   const list = conditionsByRegion(active);
   const spot = hotspots.find((h) => h.id === active)!;
@@ -197,14 +200,13 @@ export function Anatomy() {
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p className="text-label">Chapter 02 · Anatomy</p>
+            <p className="text-label">{tx("Chapter 02 · Anatomy")}</p>
             <h2 className="mt-4 max-w-2xl text-h1 sm:mt-6">
-              The body, seen through its blood vessels.
+              {tx("The body, seen through its blood vessels.")}
             </h2>
           </div>
           <p className="max-w-sm text-small text-[var(--ink-dim)]">
-            From the brain to the feet, blood vessels connect every organ. Explore each region to
-            understand how modern image-guided treatment addresses disease throughout the body.
+            {tx("From the brain to the feet, blood vessels connect every organ. Explore each region to understand how modern image-guided treatment addresses disease throughout the body.")}
           </p>
         </div>
 
@@ -338,10 +340,10 @@ export function Anatomy() {
                   {list.length} condition{list.length === 1 ? "" : "s"} treated here
                 </h3>
 
-                <p className="mt-8 text-label">Conditions &amp; the intervention used</p>
+                <p className="mt-8 text-label">{tx("Conditions &amp; the intervention used")}</p>
                 <div className="mt-4 space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
                   {list.map((c) => (
-                    <Link
+                    <LocaleLink
                       key={c.slug}
                       to="/conditions/$slug"
                       params={{ slug: c.slug }}
@@ -359,14 +361,14 @@ export function Anatomy() {
                           </p>
                         </div>
                         <span className="hidden shrink-0 text-label opacity-0 transition-opacity group-hover:opacity-100 lg:block">
-                          Read →
+                          {tx("Read →")}
                         </span>
                       </div>
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
 
-                <p className="mt-8 text-label">Procedures performed in this region</p>
+                <p className="mt-8 text-label">{tx("Procedures performed in this region")}</p>
                 <ul className="mt-4 flex flex-wrap gap-2 sm:gap-3">
                   {(regionProcedures[active] ?? []).map((p) => (
                     <li
@@ -380,29 +382,29 @@ export function Anatomy() {
 
                 <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
                   {guide ? (
-                    <Link
+                    <LocaleLink
                       to="/diseases/$slug"
                       params={{ slug: guide }}
                       data-cursor="cta"
                       className="text-label underline"
                     >
                       Read more — complete guide →
-                    </Link>
+                    </LocaleLink>
                   ) : (
                     list[0] && (
-                      <Link
+                      <LocaleLink
                         to="/conditions/$slug"
                         params={{ slug: list[0].slug }}
                         data-cursor="cta"
                         className="text-label underline"
                       >
                         Read more →
-                      </Link>
+                      </LocaleLink>
                     )
                   )}
-                  <Link to="/procedures" data-cursor="link" className="text-label underline">
-                    All procedures →
-                  </Link>
+                  <LocaleLink to="/procedures" data-cursor="link" className="text-label underline">
+                    {tx("All procedures →")}
+                  </LocaleLink>
                 </div>
 
               </motion.div>

@@ -1,5 +1,8 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { procedures } from "../lib/content";
+import { useTx } from "@/lib/i18n/tx";
+import { LocaleLink } from "../components/locale-link";
+import { createFileRoute, notFound } from "@tanstack/react-router";
+
+import { getProcedure } from "../lib/i18n/data";
 import type { Procedure } from "../lib/content";
 import { procedureVideos } from "../lib/media";
 import { ProcedureVideo } from "../components/procedures/ProcedureVideo";
@@ -8,9 +11,9 @@ import { Consultation } from "../components/sections/Consultation";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
-export const Route = createFileRoute("/procedures/$slug")({
+export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
   head: ({ params }) => {
-    const p = procedures.find((x) => x.slug === params.slug);
+    const p = getProcedure(params.slug, params.locale === "ml" ? "ml" : "en");
     const url = `${SITE}/procedures/${params.slug}`;
     const name = p?.name ?? "Procedure not catalogued";
     const line = (p?.oneLiner ?? "This procedure is not in the catalogue.").slice(0, 158);
@@ -29,13 +32,13 @@ export const Route = createFileRoute("/procedures/$slug")({
     };
   },
   loader: ({ params }): Procedure => {
-    const p = procedures.find((x) => x.slug === params.slug);
+    const p = getProcedure(params.slug, params.locale === "ml" ? "ml" : "en");
     if (!p) throw notFound();
     return p;
   },
   notFoundComponent: () => (
     <div className="min-h-screen grid place-items-center px-6">
-      <Link to="/procedures" className="underline" data-cursor="link">All procedures</Link>
+      <LocaleLink to="/procedures" className="underline" data-cursor="link">All procedures</LocaleLink>
     </div>
   ),
   errorComponent: ({ reset }) => <button onClick={reset} className="m-10 underline">Try again</button>,
@@ -49,7 +52,7 @@ function ProcedurePage() {
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
-          <Link to="/procedures" className="text-label" data-cursor="link">← All procedures</Link>
+          <LocaleLink to="/procedures" className="text-label" data-cursor="link">← All procedures</LocaleLink>
           <h1 className="text-display-xl mt-8">{p.name}</h1>
           <p className="mt-6 text-body text-[var(--ink-dim)]">{p.oneLiner}</p>
           {video && <ProcedureVideo video={video} />}

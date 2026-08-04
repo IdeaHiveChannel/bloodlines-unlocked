@@ -1,6 +1,7 @@
+import { LocaleLink } from "../../components/locale-link";
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+
 import { milestones } from "../../lib/content";
 
 export function ExpertiseTimeline() {
@@ -60,13 +61,13 @@ export function ExpertiseTimeline() {
                         {m.summary}
                       </p>
                       {m.to && (
-                        <Link
+                        <LocaleLink
                           to={m.to}
                           data-cursor="cta"
                           className="mt-5 inline-flex text-label underline"
                         >
                           Read patient stories →
-                        </Link>
+                        </LocaleLink>
                       )}
                     </motion.div>
                   )}

@@ -1,21 +1,21 @@
-import { Link } from "@tanstack/react-router";
+import { useTx } from "@/lib/i18n/tx";
+import { LocaleLink } from "../../components/locale-link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { pillars } from "../../lib/pillars";
 
 export function ConditionsGateway() {
+  const tx = useTx();
   return (
     <section className="relative bg-[#050B16] section-y border-t border-white/[0.05]">
       <div className="shell">
-        <p className="text-label">Chapter 03 · Conditions</p>
+        <p className="text-label">{tx("Chapter 03 · Conditions")}</p>
         <div className="mt-6 grid lg:grid-cols-12 gap-10">
           <h2 className="text-display-xl lg:col-span-6">
-            Different diseases. One philosophy.
+            {tx("Different diseases. One philosophy.")}
           </h2>
           <p className="lg:col-span-6 lg:pt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-            Every condition has its own cause, its own behaviour and its own treatment pathway.
-            Explore how image-guided intervention is used across the body — from emergency stroke
-            care to limb salvage, thyroid nodules and liver tumours.
+            {tx("Every condition has its own cause, its own behaviour and its own treatment pathway. Explore how image-guided intervention is used across the body — from emergency stroke care to limb salvage, thyroid nodules and liver tumours.")}
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export function ConditionsGateway() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: Math.min(i, 6) * 0.04 }}
             >
-              <Link
+              <LocaleLink
                 to="/diseases/$slug"
                 params={{ slug: p.slug }}
                 data-cursor="link"
@@ -47,18 +47,18 @@ export function ConditionsGateway() {
                   size={18}
                   className="shrink-0 text-[var(--ink-dim)] transition-all group-hover:text-[var(--accent)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
-              </Link>
+              </LocaleLink>
             </motion.li>
           ))}
         </ol>
 
         <div className="mt-12 flex flex-wrap gap-6">
-          <Link to="/diseases" data-cursor="link" className="text-label underline">
-            All disease guides →
-          </Link>
-          <Link to="/conditions" data-cursor="link" className="text-label underline">
-            Full conditions catalogue →
-          </Link>
+          <LocaleLink to="/diseases" data-cursor="link" className="text-label underline">
+            {tx("All disease guides →")}
+          </LocaleLink>
+          <LocaleLink to="/conditions" data-cursor="link" className="text-label underline">
+            {tx("Full conditions catalogue →")}
+          </LocaleLink>
         </div>
       </div>
     </section>
