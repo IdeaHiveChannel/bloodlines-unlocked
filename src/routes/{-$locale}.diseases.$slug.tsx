@@ -1,18 +1,20 @@
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { getPillar } from "../lib/pillars";
+import { getPillar } from "../lib/i18n/data";
+import { localePath } from "../lib/i18n";
 import { PillarPage } from "../components/pillar/PillarPage";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/diseases/$slug")({
   head: ({ params }) => {
-    const p = getPillar(params.slug);
+    const locale = params.locale === "ml" ? "ml" : "en";
+    const p = getPillar(params.slug, locale);
     if (!p) {
       return { meta: [{ title: "Condition not found" }, { name: "robots", content: "noindex" }] };
     }
     const title = `${p.title} — treatment | Dr. Mandeep Sagar`;
-    const url = `${SITE}/diseases/${p.slug}`;
+    const url = `${SITE}${localePath(`/diseases/${p.slug}`, locale)}`;
     return {
       meta: [
         { title: title.length > 60 ? `${p.title} — Dr. Mandeep Sagar`.slice(0, 60) : title },
@@ -60,7 +62,7 @@ export const Route = createFileRoute("/{-$locale}/diseases/$slug")({
     };
   },
   loader: ({ params }) => {
-    const p = getPillar(params.slug);
+    const p = getPillar(params.slug, params.locale === "ml" ? "ml" : "en");
     if (!p) throw notFound();
     return p;
   },
