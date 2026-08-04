@@ -22,6 +22,7 @@ export const Route = createFileRoute("/{-$locale}/procedures/")({
 });
 
 function ProceduresIndex() {
+  const items = useProcedures();
   return (
     <>
       <main className="bg-[#050B16] pt-28 pb-20 sm:pt-36 sm:pb-24">

@@ -31,7 +31,7 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
     };
   },
   loader: ({ params }): Condition => {
-    const c = conditions.find((x) => x.slug === params.slug);
+    const c = getCondition(params.slug, params.locale === "ml" ? "ml" : "en");
     if (!c) throw notFound();
     return c;
   },
@@ -57,7 +57,7 @@ function ConditionPage() {
   const c = Route.useLoaderData() as Condition;
   const guide = pillarForCondition(c.slug);
   const related = resourcesForCondition(c.slug);
-  const relatedProcedures = procedures.filter((p) =>
+  const relatedProcedures = getProcedures(useLocale()).filter((p) =>
     c.treatments.some(
       (t: string) =>
         t.toLowerCase().includes(p.name.split(" ")[0].toLowerCase()) ||

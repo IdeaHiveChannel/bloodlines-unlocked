@@ -30,6 +30,7 @@ export const Route = createFileRoute("/{-$locale}/diseases/")({
 });
 
 function DiseasesIndex() {
+  const items = usePillars();
   return (
     <>
       <main className="bg-[#050B16] pt-36 pb-24">
