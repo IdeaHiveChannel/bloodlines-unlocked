@@ -1,21 +1,24 @@
+import { LocaleLink } from "../locale-link";
 import { contact, locations, socialLinks, whatsappLink, whatsappMessages } from "../../lib/contact";
+import { useT } from "../../lib/i18n/react";
 
 export function Footer() {
+  const t = useT();
   return (
     <footer className="relative bg-[#050B16] pt-24 pb-10 border-t border-white/[0.05]">
       <div className="shell">
         <h2 className="text-display-xxl">
-          Advanced,
+          {t.footer.headline1}
           <br />
-          image-guided
+          {t.footer.headline2}
           <br />
-          <span className="text-[color-mix(in_oklab,var(--accent)_70%,white)]">vascular care.</span>
+          <span className="text-[color-mix(in_oklab,var(--accent)_70%,white)]">{t.footer.headline3}</span>
         </h2>
         <div className="mt-20 grid md:grid-cols-4 gap-8 text-small text-[var(--ink-dim)]">
           <div>
-            <p className="text-label">Practice</p>
-            <p className="mt-3 text-[var(--ink)]">Dr. Mandeep Sagar</p>
-            <p className="mt-1">Vascular &amp; neuro interventional radiology</p>
+            <p className="text-label">{t.footer.practice}</p>
+            <p className="mt-3 text-[var(--ink)]">{t.brand.name}</p>
+            <p className="mt-1">{t.brand.role}</p>
             <ul className="mt-4 space-y-1">
               {locations.map((l) => (
                 <li key={l.city}>
@@ -27,33 +30,33 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-label">Explore</p>
+            <p className="text-label">{t.footer.explore}</p>
             <ul className="mt-3 space-y-2">
-              <li><a href="/conditions" data-cursor="link">Conditions</a></li>
-              <li><a href="/procedures" data-cursor="link">Procedures</a></li>
-              <li><a href="/about" data-cursor="link">About</a></li>
-              <li><a href="/expertise" data-cursor="link">Expertise</a></li>
-              <li><a href="/media" data-cursor="link">Media &amp; publications</a></li>
-              <li><a href="/testimonials" data-cursor="link">Patient stories</a></li>
-              <li><a href="/resources" data-cursor="link">Resources</a></li>
+              <li><LocaleLink to="/conditions" data-cursor="link">{t.nav.conditions}</LocaleLink></li>
+              <li><LocaleLink to="/procedures" data-cursor="link">{t.nav.procedures}</LocaleLink></li>
+              <li><LocaleLink to="/about" data-cursor="link">{t.nav.about}</LocaleLink></li>
+              <li><LocaleLink to="/expertise" data-cursor="link">{t.nav.expertise}</LocaleLink></li>
+              <li><LocaleLink to="/media" data-cursor="link">{t.nav.media}</LocaleLink></li>
+              <li><LocaleLink to="/testimonials" data-cursor="link">{t.nav.stories}</LocaleLink></li>
+              <li><LocaleLink to="/resources" data-cursor="link">{t.nav.resources}</LocaleLink></li>
             </ul>
           </div>
           <div>
-            <p className="text-label">Contact</p>
+            <p className="text-label">{t.footer.contact}</p>
             <ul className="mt-3 space-y-2">
-              <li><a href="/contact" data-cursor="link">Book consultation</a></li>
-              <li><a href="/second-opinion" data-cursor="link">Second opinion</a></li>
+              <li><LocaleLink to="/contact" data-cursor="link">{t.nav.book}</LocaleLink></li>
+              <li><LocaleLink to="/second-opinion" data-cursor="link">{t.nav.secondOpinion}</LocaleLink></li>
               <li><a href={contact.phoneHref} data-cursor="link">{contact.phoneDisplay}</a></li>
               <li>
                 <a href={whatsappLink(whatsappMessages.general)} target="_blank" rel="noreferrer" data-cursor="link">
-                  WhatsApp
+                  {t.common.whatsapp}
                 </a>
               </li>
               <li><a href={contact.emailHref} data-cursor="link">{contact.email}</a></li>
             </ul>
           </div>
           <div>
-            <p className="text-label">Follow</p>
+            <p className="text-label">{t.footer.follow}</p>
             <ul className="mt-3 space-y-2">
               {socialLinks.map((s) => (
                 <li key={s.label}>
@@ -61,12 +64,12 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <p className="text-label mt-6">Notice</p>
-            <p className="mt-3">The information presented is educational. It does not constitute medical advice. Consult a qualified physician for diagnosis and treatment.</p>
+            <p className="text-label mt-6">{t.footer.notice}</p>
+            <p className="mt-3">{t.footer.disclaimer}</p>
           </div>
         </div>
         <div className="mt-12 pt-6 border-t border-white/[0.05] flex flex-wrap justify-between gap-4 text-caption text-[var(--ink-dim)]">
-          <p>© {new Date().getFullYear()} Dr. Mandeep Sagar. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {t.brand.name}. {t.footer.rights}</p>
         </div>
       </div>
     </footer>
