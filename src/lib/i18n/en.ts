@@ -64,6 +64,6 @@ export const en = {
     whatsapp: "Chat on WhatsApp",
     call: "Call",
   },
-} as const;
+};
 
 export type Dictionary = typeof en;
