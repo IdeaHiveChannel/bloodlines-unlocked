@@ -340,21 +340,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 16 */}
-          <Section id="related-symptoms" index={16} label="Related symptoms" title="Search language patients use.">
-            <ul className="flex flex-wrap gap-3">
-              {pillar.relatedSymptoms.map((s) => (
-                <li
-                  key={s}
-                  className="rounded-full border border-white/[0.1] px-4 py-2 text-caption text-[var(--ink-dim)]"
-                >
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </Section>
-
-          {/* 17 */}
-          <Section id="related-diseases" index={17} label="Related diseases" title="Conditions that travel together.">
+          <Section id="related-diseases" index={16} label="Related diseases" title="Conditions that travel together.">
             <ul className="grid gap-px overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) =>
                 r.pillar ? (
@@ -389,7 +375,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
         </div>
       </main>
-      {/* 18 */}
+      {/* 17 */}
       <Consultation />
       <Footer />
     </>
