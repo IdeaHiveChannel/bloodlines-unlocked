@@ -39,15 +39,15 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
   notFoundComponent: () => (
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
-        <p className="text-label">{tx("Not found")}</p>
-        <h1 className="text-h2 mt-4">{tx("This condition isn't catalogued yet.")}</h1>
-        <LocaleLink to="/conditions" className="mt-8 inline-block underline" data-cursor="link">{tx("All conditions")}</LocaleLink>
+        <p className="text-label">Not found</p>
+        <h1 className="text-h2 mt-4">This condition isn't catalogued yet.</h1>
+        <LocaleLink to="/conditions" className="mt-8 inline-block underline" data-cursor="link">All conditions</LocaleLink>
       </div>
     </div>
   ),
   errorComponent: ({ error, reset }) => (
     <div className="min-h-screen flex items-center justify-center px-6">
-      <button onClick={reset} className="underline">{tx("Try again")}</button>
+      <button onClick={reset} className="underline">Try again</button>
       <pre className="hidden">{String(error)}</pre>
     </div>
   ),

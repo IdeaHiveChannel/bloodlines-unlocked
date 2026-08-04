@@ -38,10 +38,10 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
   },
   notFoundComponent: () => (
     <div className="min-h-screen grid place-items-center px-6">
-      <LocaleLink to="/procedures" className="underline" data-cursor="link">{tx("All procedures")}</LocaleLink>
+      <LocaleLink to="/procedures" className="underline" data-cursor="link">All procedures</LocaleLink>
     </div>
   ),
-  errorComponent: ({ reset }) => <button onClick={reset} className="m-10 underline">{tx("Try again")}</button>,
+  errorComponent: ({ reset }) => <button onClick={reset} className="m-10 underline">Try again</button>,
   component: ProcedurePage,
 });
 
