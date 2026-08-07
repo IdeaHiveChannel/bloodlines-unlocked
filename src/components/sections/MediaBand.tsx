@@ -57,16 +57,16 @@ export function MediaBand() {
 
         <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {stills.map((s) => (
-            <figure key={s.caption} className="overflow-hidden rounded-xl border border-white/[0.06]">
+            <figure key={tx(s.caption)} className="overflow-hidden rounded-xl border border-white/[0.06]">
               <img
                 src={s.src}
-                alt={s.caption}
+                alt={tx(s.caption)}
                 loading="lazy"
                 width={1280}
                 height={800}
                 className="aspect-[16/10] w-full object-cover"
               />
-              <figcaption className="px-4 py-3 text-caption text-[var(--ink-dim)]">{s.caption}</figcaption>
+              <figcaption className="px-4 py-3 text-caption text-[var(--ink-dim)]">{tx(s.caption)}</figcaption>
             </figure>
           ))}
         </div>

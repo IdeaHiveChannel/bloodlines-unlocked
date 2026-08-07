@@ -89,27 +89,27 @@ export function SecondOpinionForm() {
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="so-name" className="text-label">{tx("Patient name")}</label>
-          <input id="so-name" value={form.name} onChange={set("name")} maxLength={80} className={field} placeholder="Full name" />
+          <input id="so-name" value={form.name} onChange={set("name")} maxLength={80} className={field} placeholder={tx("Full name")} />
           {errors.name && <p className="mt-2 text-caption text-[var(--danger,#ff6b6b)]">{errors.name}</p>}
         </div>
         <div>
           <label htmlFor="so-age" className="text-label">{tx("Age")}</label>
-          <input id="so-age" value={form.age} onChange={set("age")} inputMode="numeric" maxLength={3} className={field} placeholder="e.g. 58" />
+          <input id="so-age" value={form.age} onChange={set("age")} inputMode="numeric" maxLength={3} className={field} placeholder={tx("e.g. 58")} />
           {errors.age && <p className="mt-2 text-caption text-[var(--danger,#ff6b6b)]">{errors.age}</p>}
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="so-city" className="text-label">{tx("City")}</label>
-          <input id="so-city" value={form.city} onChange={set("city")} maxLength={60} className={field} placeholder="Where you are travelling from" />
+          <input id="so-city" value={form.city} onChange={set("city")} maxLength={60} className={field} placeholder={tx("Where you are travelling from")} />
           {errors.city && <p className="mt-2 text-caption text-[var(--danger,#ff6b6b)]">{errors.city}</p>}
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="so-diagnosis" className="text-label">{tx("Diagnosis or main problem")}</label>
-          <textarea id="so-diagnosis" value={form.diagnosis} onChange={set("diagnosis")} maxLength={300} rows={3} className={field} placeholder="For example: blocked leg artery, non-healing foot ulcer, uterine fibroids" />
+          <textarea id="so-diagnosis" value={form.diagnosis} onChange={set("diagnosis")} maxLength={300} rows={3} className={field} placeholder={tx("For example: blocked leg artery, non-healing foot ulcer, uterine fibroids")} />
           {errors.diagnosis && <p className="mt-2 text-caption text-[var(--danger,#ff6b6b)]">{errors.diagnosis}</p>}
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="so-advised" className="text-label">{tx("What has been advised so far")}</label>
-          <textarea id="so-advised" value={form.advised} onChange={set("advised")} maxLength={500} rows={3} className={field} placeholder="Surgery advised, amputation suggested, medication only — whatever you have been told" />
+          <textarea id="so-advised" value={form.advised} onChange={set("advised")} maxLength={500} rows={3} className={field} placeholder={tx("Surgery advised, amputation suggested, medication only — whatever you have been told")} />
           {errors.advised && <p className="mt-2 text-caption text-[var(--danger,#ff6b6b)]">{errors.advised}</p>}
         </div>
       </div>
@@ -144,7 +144,7 @@ export function SecondOpinionForm() {
         data-cursor="cta"
         className="mt-9 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-white px-7 text-button text-black transition-colors hover:bg-[var(--accent)] sm:w-auto"
       >
-        Send for review on WhatsApp
+        {tx("Send for review on WhatsApp")}
       </button>
       <p className="mt-4 text-caption text-[var(--ink-dim)]">
         {tx("A reply usually follows within one working day. Urgent symptoms need emergency care, not a second opinion form.")}

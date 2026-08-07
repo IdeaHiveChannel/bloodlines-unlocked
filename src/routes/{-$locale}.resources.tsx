@@ -72,7 +72,7 @@ function Resources() {
           <h1 className="text-display-xl mt-6">{tx("Resources.")}</h1>
           <div className="mt-10 relative">
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-dim)]" />
-            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a symptom, condition, or procedure"
+            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={tx("Search a symptom, condition, or procedure")}
               data-cursor="link"
               className="w-full rounded-full border border-white/15 bg-white/[0.02] pl-11 pr-6 py-4 text-small focus:outline-none focus:border-[var(--accent)] transition-colors" />
           </div>

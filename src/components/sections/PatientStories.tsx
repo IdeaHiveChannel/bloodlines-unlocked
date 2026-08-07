@@ -26,14 +26,14 @@ export function PatientStories() {
                 data-cursor="cta"
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
-                Read the clinical guides
+                {tx("Read the clinical guides")}
               </LocaleLink>
               <LocaleLink
                 to="/second-opinion"
                 data-cursor="link"
                 className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5"
               >
-                Request a second opinion
+                {tx("Request a second opinion")}
               </LocaleLink>
             </div>
           </div>
@@ -42,7 +42,7 @@ export function PatientStories() {
             <ul className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {stories.slice(0, 6).map((s, i) => (
                 <motion.li
-                  key={`${s.name}-${i}`}
+                  key={`${tx(s.name)}-${i}`}
                   initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-80px" }}
@@ -56,12 +56,12 @@ export function PatientStories() {
                     &ldquo;
                   </span>
                   <blockquote className="mt-3 flex-1 text-small leading-relaxed text-[var(--ink)]">
-                    {s.quote}
+                    {tx(s.quote)}
                   </blockquote>
                   <div className="mt-6 border-t border-white/[0.06] pt-4">
-                    <p className="text-card-title">{s.name}</p>
+                    <p className="text-card-title">{tx(s.name)}</p>
                     <p className="mt-1 text-caption text-[var(--ink-dim)]">
-                      {s.condition} · {s.city}
+                      {tx(s.condition)} · {tx(s.city)}
                       {s.year ? ` · ${s.year}` : ""}
                     </p>
                     {s.guide ? (
@@ -71,7 +71,7 @@ export function PatientStories() {
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"
                       >
-                        Read the case guide →
+                        {tx("Read the case guide →")}
                       </LocaleLink>
                     ) : s.conditionSlug ? (
                       <LocaleLink
@@ -80,7 +80,7 @@ export function PatientStories() {
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"
                       >
-                        About this condition →
+                        {tx("About this condition →")}
                       </LocaleLink>
                     ) : null}
                   </div>

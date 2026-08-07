@@ -3,7 +3,7 @@ import { LocaleLink } from "../../components/locale-link";
 import { useEffect, useState } from "react";
 import type { Pillar } from "../../lib/pillars";
 import { hasPillar, slugToLabel } from "../../lib/pillars";
-import { conditions, procedures } from "../../lib/content";
+import { useConditions, useProcedures } from "../../lib/i18n/data";
 import { procedureVideos } from "../../lib/media";
 import { ProcedureVideo } from "../procedures/ProcedureVideo";
 import { Consultation } from "../sections/Consultation";
@@ -60,6 +60,7 @@ function Bullets({ items }: { items: string[] }) {
 }
 
 function SubNav() {
+  const tx = useTx();
   const [active, setActive] = useState<string>("symptoms");
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -87,7 +88,7 @@ function SubNav() {
                 active === d.id ? "text-[var(--accent)]" : "text-[var(--ink-dim)] hover:text-white"
               }`}
             >
-              {d.label}
+              {tx(d.label)}
             </a>
           </li>
         ))}
@@ -98,6 +99,8 @@ function SubNav() {
 
 export function PillarPage({ pillar }: { pillar: Pillar }) {
   const tx = useTx();
+  const procedures = useProcedures();
+  const conditions = useConditions();
   const pillarProcedures = pillar.procedures.map((slug) => ({
     slug,
     entry: procedures.find((p) => p.slug === slug),
@@ -121,10 +124,10 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           {/* 01 — Hero */}
           <header className="pb-14 pt-6">
             <LocaleLink to="/diseases" className="text-label" data-cursor="link">
-              ← All conditions
+              {tx("← All conditions")}
             </LocaleLink>
             <p className="mt-10 text-label text-[var(--accent)]">
-              {pillar.patientTerm ? "Patient guide" : "Condition"}
+              {tx(pillar.patientTerm ? "Patient guide" : "Condition")}
             </p>
             <h1 className="text-display-xl mt-5 max-w-4xl">
               {pillar.heroQuote}
@@ -141,21 +144,21 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 data-cursor="cta"
                 className="rounded-full bg-white px-6 py-3 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
-                Book consultation
+                {tx("Book consultation")}
               </LocaleLink>
               <LocaleLink
                 to="/second-opinion"
                 data-cursor="link"
                 className="rounded-full border border-white/[0.14] px-6 py-3 text-button transition-colors hover:border-white/40"
               >
-                Second opinion on your scans
+                {tx("Second opinion on your scans")}
               </LocaleLink>
               <a
                 href="#treatment"
                 data-cursor="link"
                 className="rounded-full border border-white/[0.14] px-6 py-3 text-button transition-colors hover:border-white/40"
               >
-                How it is treated
+                {tx("How it is treated")}
               </a>
             </div>
           </header>
@@ -163,22 +166,22 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           <SubNav />
 
           {/* 02 */}
-          <Section id="symptoms" index={2} label="Symptoms" title="What patients notice.">
+          <Section id="symptoms" index={2} label={tx("Symptoms")} title={tx("What patients notice.")}>
             <Bullets items={pillar.symptoms} />
           </Section>
 
           {/* 03 */}
-          <Section id="causes" index={3} label="Causes" title="Why it happens.">
+          <Section id="causes" index={3} label={tx("Causes")} title={tx("Why it happens.")}>
             <Bullets items={pillar.causes} />
           </Section>
 
           {/* 04 */}
-          <Section id="risk-factors" index={4} label="Risk factors" title="Who it affects.">
+          <Section id="risk-factors" index={4} label={tx("Risk factors")} title={tx("Who it affects.")}>
             <Bullets items={pillar.riskFactors} />
           </Section>
 
           {/* 05 */}
-          <Section id="warning-signs" index={5} label="Warning signs" title="When to act immediately.">
+          <Section id="warning-signs" index={5} label={tx("Warning signs")} title={tx("When to act immediately.")}>
             <ul className="space-y-4">
               {pillar.warningSigns.map((w) => (
                 <li
@@ -192,7 +195,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 06 */}
-          <Section id="diagnosis" index={6} label="Diagnosis" title="How it is confirmed.">
+          <Section id="diagnosis" index={6} label={tx("Diagnosis")} title={tx("How it is confirmed.")}>
             <ol className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillar.diagnosis.map((d, i) => (
                 <li key={d.step} className="grid gap-3 py-5 sm:grid-cols-[56px_170px_minmax(0,1fr)] sm:gap-4 sm:py-6">
@@ -205,7 +208,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 07 */}
-          <Section id="tests" index={7} label="Tests explained" title="Why each test is done.">
+          <Section id="tests" index={7} label={tx("Tests explained")} title={tx("Why each test is done.")}>
             <div className="grid gap-px overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.06] sm:grid-cols-2">
               {pillar.tests.map((t) => (
                 <div key={t.name} className="bg-[#050B16] p-6">
@@ -217,7 +220,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 08 */}
-          <Section id="treatment" index={8} label="Treatment options" title="Every route, stated plainly.">
+          <Section id="treatment" index={8} label={tx("Treatment options")} title={tx("Every route, stated plainly.")}>
             <ul className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillar.treatments.map((t) => (
                 <li key={t.name} className="grid gap-3 py-5 sm:grid-cols-[minmax(0,1fr)_2fr] sm:py-6">
@@ -232,7 +235,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 09 */}
-          <Section id="approach" index={9} label="The approach" title="How Dr. Mandeep treats it.">
+          <Section id="approach" index={9} label={tx("The approach")} title={tx("How Dr. Mandeep treats it.")}>
             <ol className="space-y-6">
               {pillar.approach.map((a, i) => (
                 <li key={a} className="grid grid-cols-[40px_minmax(0,1fr)] gap-4 sm:grid-cols-[54px_minmax(0,1fr)] sm:gap-5">
@@ -244,7 +247,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 10 */}
-          <Section id="procedures" index={10} label="Procedures" title="What is actually performed.">
+          <Section id="procedures" index={10} label={tx("Procedures")} title={tx("What is actually performed.")}>
             <ul className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillarProcedures.map(({ slug, entry }) =>
                 entry ? (
@@ -264,7 +267,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                   </li>
                 ) : (
                   <li key={slug} className="px-2 py-6">
-                    <p className="text-card-title">{slugToLabel(slug)}</p>
+                    <p className="text-card-title">{tx(slugToLabel(slug))}</p>
                     <p className="mt-2 text-small text-[var(--ink-dim)]">
                       {tx("Performed through a small puncture under image guidance — discussed in detail at consultation.")}
                     </p>
@@ -275,7 +278,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 11 */}
-          <Section id="recovery" index={11} label="Recovery" title="What the timeline looks like.">
+          <Section id="recovery" index={11} label={tx("Recovery")} title={tx("What the timeline looks like.")}>
             <ol className="relative border-l border-white/[0.08] pl-8">
               {pillar.recovery.map((r) => (
                 <li key={r.when} className="relative pb-9 last:pb-0">
@@ -288,7 +291,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 12 */}
-          <Section id="prevention" index={12} label="Prevention" title="What keeps it from returning.">
+          <Section id="prevention" index={12} label={tx("Prevention")} title={tx("What keeps it from returning.")}>
             <Bullets items={pillar.prevention} />
           </Section>
 
@@ -296,8 +299,8 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           <Section
             id="faqs"
             index={13}
-            label="Questions"
-            title={`${pillar.faqs.length} questions patients ask.`}
+            label={tx("Questions")}
+            title={`${pillar.faqs.length} ${tx("questions patients ask.")}`}
           >
             <div className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillar.faqs.map((f) => (
@@ -315,7 +318,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 14 */}
-          <Section id="patient-stories" index={14} label="Patient stories" title="Verified accounts only.">
+          <Section id="patient-stories" index={14} label={tx("Patient stories")} title={tx("Verified accounts only.")}>
             <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
               {tx("No testimonials are published here yet. Patient accounts will appear only once they are consented and verified — nothing on this page is written on a patient's behalf.")}
             </p>
@@ -325,7 +328,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 15 */}
-          <Section id="videos" index={15} label="Videos" title="See the procedure.">
+          <Section id="videos" index={15} label={tx("Videos")} title={tx("See the procedure.")}>
             {videos.length > 0 ? (
               <div className="grid gap-8">
                 {videos.map((v) => (
@@ -340,7 +343,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 16 */}
-          <Section id="related-diseases" index={16} label="Related diseases" title="Conditions that travel together.">
+          <Section id="related-diseases" index={16} label={tx("Related diseases")} title={tx("Conditions that travel together.")}>
             <ul className="grid gap-px overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) =>
                 r.pillar ? (
@@ -351,7 +354,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                       data-cursor="link"
                       className="block h-full p-6 transition-colors hover:bg-white/[0.03]"
                     >
-                      <p className="text-display text-xl">{slugToLabel(r.slug)}</p>
+                      <p className="text-display text-xl">{tx(slugToLabel(r.slug))}</p>
                       <p className="mt-3 text-label">{tx("Full guide →")}</p>
                     </LocaleLink>
                   </li>

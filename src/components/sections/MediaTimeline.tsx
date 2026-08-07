@@ -37,7 +37,7 @@ export function MediaTimeline() {
                     : "border-white/[0.1] text-[var(--ink-dim)] hover:bg-white/[0.04] hover:text-white"
                 }`}
               >
-                {k.label}
+                {tx(k.label)}
               </button>
             );
           })}
@@ -55,14 +55,14 @@ export function MediaTimeline() {
                 data-cursor="cta"
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
-                See clinical expertise
+                {tx("See clinical expertise")}
               </LocaleLink>
               <LocaleLink
                 to="/resources"
                 data-cursor="link"
                 className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5"
               >
-                Patient resources
+                {tx("Patient resources")}
               </LocaleLink>
             </div>
           </div>
@@ -105,7 +105,7 @@ export function MediaTimeline() {
                               data-cursor="link"
                               className="text-label underline"
                             >
-                              Read the source →
+                              {tx("Read the source →")}
                             </a>
                           )}
                           {e.guide && (
@@ -115,7 +115,7 @@ export function MediaTimeline() {
                               data-cursor="link"
                               className="text-label underline"
                             >
-                              Related guide →
+                              {tx("Related guide →")}
                             </LocaleLink>
                           )}
                         </div>

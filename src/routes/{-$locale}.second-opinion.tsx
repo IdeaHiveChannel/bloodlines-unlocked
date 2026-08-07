@@ -124,7 +124,7 @@ function SecondOpinion() {
                 data-cursor="cta"
                 className="inline-flex min-h-12 items-center rounded-full bg-white px-7 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
-                Book a consultation
+                {tx("Book a consultation")}
               </LocaleLink>
               <a
                 href={whatsappLink(whatsappMessages.uploadReports)}
@@ -133,14 +133,14 @@ function SecondOpinion() {
                 data-cursor="link"
                 className="inline-flex min-h-12 items-center rounded-full border border-white/15 px-7 text-button transition-colors hover:bg-white/5"
               >
-                Send reports without the form
+                {tx("Send reports without the form")}
               </a>
               <a
                 href={contact.phoneHref}
                 data-cursor="link"
                 className="inline-flex min-h-12 items-center rounded-full border border-white/15 px-7 text-button transition-colors hover:bg-white/5"
               >
-                Call {contact.phoneDisplay}
+                {tx("Call")} {contact.phoneDisplay}
               </a>
             </div>
           </div>
