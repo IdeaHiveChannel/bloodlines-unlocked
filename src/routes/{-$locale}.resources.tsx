@@ -87,7 +87,7 @@ function Resources() {
                     ? "border-transparent bg-white text-black"
                     : "border-white/15 text-[var(--ink-dim)] hover:bg-white/5"
                 }`}>
-                {c}
+                {tx(c)}
               </button>
             ))}
           </div>
@@ -95,10 +95,10 @@ function Resources() {
             {items.map((i) => {
               const body = (
                 <>
-                  <span className="text-label">{i.type}</span>
+                  <span className="text-label">{tx(i.type)}</span>
                   <div>
-                    <p className="text-card-title">{i.name}</p>
-                    <p className="mt-1 text-caption text-[var(--ink-dim)] line-clamp-1">{i.text}</p>
+                    <p className="text-card-title">{tx(i.name)}</p>
+                    <p className="mt-1 text-caption text-[var(--ink-dim)] line-clamp-1">{tx(i.text)}</p>
                   </div>
                   <span className="text-label">{i.disabled ? "" : "→"}</span>
                 </>
