@@ -352,12 +352,12 @@ export function Anatomy() {
                     >
                       <div className="flex items-start justify-between gap-4 sm:gap-6">
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-card-title">{c.name}</h4>
+                          <h4 className="text-card-title">{tx(c.name)}</h4>
                           <p className="mt-2 text-[0.6875rem] uppercase tracking-[0.16em] text-[var(--accent)]">
-                            ↓ {c.intervention}
+                            ↓ {tx(c.intervention)}
                           </p>
                           <p className="mt-2 line-clamp-2 text-small text-[var(--ink-dim)]">
-                            {c.intro}
+                            {tx(c.intro)}
                           </p>
                         </div>
                         <span className="hidden shrink-0 text-label opacity-0 transition-opacity group-hover:opacity-100 lg:block">

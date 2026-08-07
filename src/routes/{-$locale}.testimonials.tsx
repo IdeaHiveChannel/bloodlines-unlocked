@@ -53,13 +53,13 @@ function Testimonials() {
           ) : (
             <ul className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {stories.map((s, i) => (
-                <li key={`${s.name}-${i}`} className="flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6">
+                <li key={`${tx(s.name)}-${i}`} className="flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6">
                   <span aria-hidden className="text-h2 leading-none text-[color-mix(in_oklab,var(--accent)_60%,transparent)]">&ldquo;</span>
-                  <blockquote className="mt-3 flex-1 text-small leading-relaxed text-[var(--ink)]">{s.quote}</blockquote>
+                  <blockquote className="mt-3 flex-1 text-small leading-relaxed text-[var(--ink)]">{tx(s.quote)}</blockquote>
                   <div className="mt-6 border-t border-white/[0.06] pt-4">
-                    <p className="text-card-title">{s.name}</p>
+                    <p className="text-card-title">{tx(s.name)}</p>
                     <p className="mt-1 text-caption text-[var(--ink-dim)]">
-                      {s.condition} · {s.city}{s.year ? ` · ${s.year}` : ""}
+                      {tx(s.condition)} · {tx(s.city)}{s.year ? ` · ${s.year}` : ""}
                     </p>
                     {s.guide ? (
                       <LocaleLink to="/diseases/$slug" params={{ slug: s.guide }} data-cursor="link" className="mt-3 inline-block text-label underline">

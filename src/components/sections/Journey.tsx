@@ -28,9 +28,9 @@ export function Journey() {
         <motion.div style={{ x }} className="flex gap-8 px-[5vw] will-change-transform">
           {steps.map((s) => (
             <article key={s.n} className="shrink-0 w-[78vw] sm:w-[60vw] lg:w-[48vw] max-w-[720px] rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-transparent p-10 lg:p-14">
-              <p className="text-label">Stage {s.n}</p>
-              <h3 className="text-display-xl mt-6">{s.title}</h3>
-              <p className="mt-8 max-w-md text-small leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
+              <p className="text-label">{tx("Stage")} {s.n}</p>
+              <h3 className="text-display-xl mt-6">{tx(s.title)}</h3>
+              <p className="mt-8 max-w-md text-small leading-relaxed text-[var(--ink-dim)]">{tx(s.body)}</p>
             </article>
           ))}
         </motion.div>

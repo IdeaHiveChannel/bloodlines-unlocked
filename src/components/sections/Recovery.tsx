@@ -26,16 +26,16 @@ export function Recovery() {
             <div className="h-full w-full bg-[var(--accent)] origin-left animate-pulse opacity-40" />
           </div>
           {stages.map((s, i) => (
-            <motion.li key={s.t}
+            <motion.li key={tx(s.t)}
               initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="relative rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6">
               <div className="size-3 rounded-full bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
-              <p className="mt-4 text-label">{s.t}</p>
-              <h3 className="text-card-title mt-2">{s.title}</h3>
-              <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
+              <p className="mt-4 text-label">{tx(s.t)}</p>
+              <h3 className="text-card-title mt-2">{tx(s.title)}</h3>
+              <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)]">{tx(s.body)}</p>
             </motion.li>
           ))}
         </ol>

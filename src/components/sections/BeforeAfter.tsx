@@ -82,6 +82,7 @@ const cases: Case[] = [
 ];
 
 function Slider({ item }: { item: Case }) {
+  const tx = useTx();
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(50);
   const drag = (e: React.PointerEvent) => {
@@ -103,7 +104,7 @@ function Slider({ item }: { item: Case }) {
     >
       <img
         src={item.after}
-        alt={`${item.title} after ${item.procedure}`}
+        alt={`${tx(item.title)} after ${tx(item.procedure)}`}
         loading="lazy"
         width={1280}
         height={720}
@@ -112,7 +113,7 @@ function Slider({ item }: { item: Case }) {
       <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
         <img
           src={item.before}
-          alt={`${item.title} before treatment`}
+          alt={`${tx(item.title)} before treatment`}
           loading="lazy"
           width={1280}
           height={720}
@@ -128,10 +129,10 @@ function Slider({ item }: { item: Case }) {
         </div>
       </div>
       <div className="absolute left-3 top-3 max-w-[45%] truncate rounded-full bg-black/60 px-2.5 py-1 text-label sm:left-4 sm:top-4 sm:px-3">
-        Before · {item.beforeCaption}
+        {tx("Before")} · {tx(item.beforeCaption)}
       </div>
       <div className="absolute right-3 top-3 max-w-[45%] truncate rounded-full bg-black/60 px-2.5 py-1 text-label sm:right-4 sm:top-4 sm:px-3">
-        After · {item.afterCaption}
+        {tx("After")} · {tx(item.afterCaption)}
       </div>
     </div>
   );
@@ -164,7 +165,7 @@ export function BeforeAfter() {
                   : "border-white/[0.1] text-[var(--ink-dim)] hover:text-[var(--ink)]"
               }`}
             >
-              {c.region} · {c.title}
+              {tx(c.region)} · {tx(c.title)}
             </button>
           ))}
         </div>
@@ -173,11 +174,11 @@ export function BeforeAfter() {
           <Slider key={item.id} item={item} />
           <div className="pb-2">
             <p className="text-label">Case {String(active + 1).padStart(2, "0")}</p>
-            <h3 className="mt-3 text-h3">{item.title}</h3>
+            <h3 className="mt-3 text-h3">{tx(item.title)}</h3>
             <p className="mt-2 text-[0.6875rem] uppercase tracking-[0.16em] text-[var(--accent)]">
-              ↓ {item.procedure}
+              ↓ {tx(item.procedure)}
             </p>
-            <p className="mt-4 text-body text-[var(--ink-dim)]">{item.note}</p>
+            <p className="mt-4 text-body text-[var(--ink-dim)]">{tx(item.note)}</p>
           </div>
         </div>
       </div>

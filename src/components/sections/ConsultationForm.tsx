@@ -147,34 +147,34 @@ export function ConsultationForm() {
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="c-name" className="text-label">{tx("Your name")}</label>
-          <input id="c-name" value={form.name} onChange={set("name")} maxLength={80} className={field} placeholder="Full name" />
+          <input id="c-name" value={form.name} onChange={set("name")} maxLength={80} className={field} placeholder={tx("Full name")} />
           {errors.name && <p className={err}>{errors.name}</p>}
         </div>
         <div>
           <label htmlFor="c-phone" className="text-label">{tx("Phone number")}</label>
-          <input id="c-phone" value={form.phone} onChange={set("phone")} inputMode="tel" maxLength={20} className={field} placeholder="+91 …" />
+          <input id="c-phone" value={form.phone} onChange={set("phone")} inputMode="tel" maxLength={20} className={field} placeholder={tx("+91 …")} />
           {errors.phone && <p className={err}>{errors.phone}</p>}
         </div>
         <div>
           <label htmlFor="c-email" className="text-label">
             Email {channel === "email" ? "" : "(optional)"}
           </label>
-          <input id="c-email" value={form.email} onChange={set("email")} inputMode="email" maxLength={120} className={field} placeholder="you@example.com" />
+          <input id="c-email" value={form.email} onChange={set("email")} inputMode="email" maxLength={120} className={field} placeholder={tx("you@example.com")} />
           {errors.email && <p className={err}>{errors.email}</p>}
         </div>
         <div>
           <label htmlFor="c-city" className="text-label">{tx("City (optional)")}</label>
-          <input id="c-city" value={form.city} onChange={set("city")} maxLength={60} className={field} placeholder="Where you are travelling from" />
+          <input id="c-city" value={form.city} onChange={set("city")} maxLength={60} className={field} placeholder={tx("Where you are travelling from")} />
           {errors.city && <p className={err}>{errors.city}</p>}
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="c-reason" className="text-label">{tx("Condition or reason for consultation")}</label>
-          <textarea id="c-reason" value={form.reason} onChange={set("reason")} maxLength={400} rows={3} className={field} placeholder="For example: varicose veins, non-healing foot ulcer, uterine fibroids" />
+          <textarea id="c-reason" value={form.reason} onChange={set("reason")} maxLength={400} rows={3} className={field} placeholder={tx("For example: varicose veins, non-healing foot ulcer, uterine fibroids")} />
           {errors.reason && <p className={err}>{errors.reason}</p>}
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="c-preferred" className="text-label">{tx("Preferred date and time (optional)")}</label>
-          <input id="c-preferred" value={form.preferred} onChange={set("preferred")} maxLength={120} className={field} placeholder="e.g. any weekday morning" />
+          <input id="c-preferred" value={form.preferred} onChange={set("preferred")} maxLength={120} className={field} placeholder={tx("e.g. any weekday morning")} />
           {errors.preferred && <p className={err}>{errors.preferred}</p>}
         </div>
       </div>

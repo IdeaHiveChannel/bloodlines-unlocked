@@ -3,7 +3,8 @@ import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import { conditions, procedures, resources } from "../lib/content";
+import { resources } from "../lib/content";
+import { useConditions, useProcedures } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
@@ -37,6 +38,8 @@ const chips = ["All", "Condition", "Procedure", "Video", "Patient guide", "FAQ",
 
 function Resources() {
   const tx = useTx();
+  const conditions = useConditions();
+  const procedures = useProcedures();
   const [q, setQ] = useState("");
   const [chip, setChip] = useState<(typeof chips)[number]>("All");
 
@@ -72,7 +75,7 @@ function Resources() {
           <h1 className="text-display-xl mt-6">{tx("Resources.")}</h1>
           <div className="mt-10 relative">
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-dim)]" />
-            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a symptom, condition, or procedure"
+            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={tx("Search a symptom, condition, or procedure")}
               data-cursor="link"
               className="w-full rounded-full border border-white/15 bg-white/[0.02] pl-11 pr-6 py-4 text-small focus:outline-none focus:border-[var(--accent)] transition-colors" />
           </div>
@@ -84,7 +87,7 @@ function Resources() {
                     ? "border-transparent bg-white text-black"
                     : "border-white/15 text-[var(--ink-dim)] hover:bg-white/5"
                 }`}>
-                {c}
+                {tx(c)}
               </button>
             ))}
           </div>
@@ -92,10 +95,10 @@ function Resources() {
             {items.map((i) => {
               const body = (
                 <>
-                  <span className="text-label">{i.type}</span>
+                  <span className="text-label">{tx(i.type)}</span>
                   <div>
-                    <p className="text-card-title">{i.name}</p>
-                    <p className="mt-1 text-caption text-[var(--ink-dim)] line-clamp-1">{i.text}</p>
+                    <p className="text-card-title">{tx(i.name)}</p>
+                    <p className="mt-1 text-caption text-[var(--ink-dim)] line-clamp-1">{tx(i.text)}</p>
                   </div>
                   <span className="text-label">{i.disabled ? "" : "→"}</span>
                 </>

@@ -3,8 +3,10 @@ import { useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
 import { milestones } from "../../lib/content";
+import { useTx } from "../../lib/i18n/tx";
 
 export function ExpertiseTimeline() {
+  const tx = useTx();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 80%", "end 60%"] });
   const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
@@ -44,8 +46,8 @@ export function ExpertiseTimeline() {
                   <span className="text-label text-[var(--accent)]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-h3">{m.title}</span>
-                  <span className="text-label">{m.meta}</span>
+                  <span className="text-h3">{tx(m.title)}</span>
+                  <span className="text-label">{tx(m.meta)}</span>
                 </div>
 
                 <AnimatePresence initial={false}>
@@ -58,7 +60,7 @@ export function ExpertiseTimeline() {
                       className="overflow-hidden"
                     >
                       <p className="mt-4 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-                        {m.summary}
+                        {tx(m.summary)}
                       </p>
                       {m.to && (
                         <LocaleLink
@@ -66,7 +68,7 @@ export function ExpertiseTimeline() {
                           data-cursor="cta"
                           className="mt-5 inline-flex text-label underline"
                         >
-                          Read patient stories →
+                          {tx("Read patient stories →")}
                         </LocaleLink>
                       )}
                     </motion.div>
