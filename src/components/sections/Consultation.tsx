@@ -55,8 +55,8 @@ export function Consultation() {
             const inner = (
               <div className="group relative h-full rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 hover:bg-white/[0.05] hover:border-white/15 transition-all duration-300">
                 <Icon size={20} className="text-[var(--accent)]" />
-                <p className="text-card-title mt-10">{t.label}</p>
-                <p className="mt-2 text-caption text-[var(--ink-dim)]">{t.sub}</p>
+                <p className="text-card-title mt-10">{tx(t.label)}</p>
+                <p className="mt-2 text-caption text-[var(--ink-dim)]">{tx(t.sub)}</p>
                 <ArrowUpRight
                   size={16}
                   className="absolute top-8 right-8 text-[var(--ink-dim)] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
@@ -64,11 +64,11 @@ export function Consultation() {
               </div>
             );
             return t.internal ? (
-              <LocaleLink key={t.label} to="/contact" data-cursor="cta">
+              <LocaleLink key={tx(t.label)} to="/contact" data-cursor="cta">
                 {inner}
               </LocaleLink>
             ) : (
-              <a key={t.label} href={t.href} target="_blank" rel="noreferrer" data-cursor="cta">
+              <a key={tx(t.label)} href={t.href} target="_blank" rel="noreferrer" data-cursor="cta">
                 {inner}
               </a>
             );

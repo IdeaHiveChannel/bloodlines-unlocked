@@ -3,7 +3,8 @@ import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import { conditions, procedures, resources } from "../lib/content";
+import { resources } from "../lib/content";
+import { useConditions, useProcedures } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
@@ -37,6 +38,8 @@ const chips = ["All", "Condition", "Procedure", "Video", "Patient guide", "FAQ",
 
 function Resources() {
   const tx = useTx();
+  const conditions = useConditions();
+  const procedures = useProcedures();
   const [q, setQ] = useState("");
   const [chip, setChip] = useState<(typeof chips)[number]>("All");
 
