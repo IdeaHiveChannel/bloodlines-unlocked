@@ -1,4 +1,4 @@
-import { localeHead, SITE } from "@/lib/i18n/meta";
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
