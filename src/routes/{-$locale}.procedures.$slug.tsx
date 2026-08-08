@@ -46,13 +46,14 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
 });
 
 function ProcedurePage() {
+  const tx = useTx();
   const p = Route.useLoaderData() as Procedure;
   const video = procedureVideos[p.slug];
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
-          <LocaleLink to="/procedures" className="text-label" data-cursor="link">← All procedures</LocaleLink>
+          <LocaleLink to="/procedures" className="text-label" data-cursor="link">{tx("← All procedures")}</LocaleLink>
           <h1 className="text-display-xl mt-8">{p.name}</h1>
           <p className="mt-6 text-body text-[var(--ink-dim)]">{p.oneLiner}</p>
           {video && <ProcedureVideo video={video} />}

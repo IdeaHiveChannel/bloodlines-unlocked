@@ -1,10 +1,12 @@
 import { useLocation, useNavigate } from "@tanstack/react-router";
 import { useLocale } from "../lib/i18n/react";
+import { useTx } from "../lib/i18n/tx";
 import { localePath, stripLocale } from "../lib/i18n";
 
 /** EN | മലയാളം switch. Keeps the visitor on the same page in the other language. */
 export function LanguageToggle() {
   const locale = useLocale();
+  const tx = useTx();
   const navigate = useNavigate();
   const pathname = useLocation({ select: (l) => l.pathname });
 
@@ -18,7 +20,7 @@ export function LanguageToggle() {
     <div
       className="flex items-center rounded-full border border-white/[0.1] p-0.5 text-[0.6875rem] font-medium"
       role="group"
-      aria-label="Language"
+      aria-label={tx("Language")}
     >
       <button
         type="button"

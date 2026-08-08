@@ -44,21 +44,21 @@ export function Doctor() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/[0.06] bg-[#0a1525]">
-              <img src={portraitAsset.url} alt="Dr. Mandeep Sagar"
+              <img src={portraitAsset.url} alt={tx("Dr. Mandeep Sagar")}
                 className="absolute inset-0 h-full w-full object-cover object-top opacity-95" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050B16] via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
                 <p className="text-label">{tx("On Practice")}</p>
-                <p className="mt-2 text-h3 max-w-[260px]">"The disease is approached where it lives — through the vessel itself."</p>
+                <p className="mt-2 text-h3 max-w-[260px]">{tx('"The disease is approached where it lives — through the vessel itself."')}</p>
 
               </div>
             </div>
             <div className="mt-6 grid grid-cols-2 gap-6">
               <div className="aspect-square overflow-hidden rounded-2xl border border-white/[0.06]">
-                <img src={hands} alt="Catheter manipulation" className="h-full w-full object-cover" loading="lazy" />
+                <img src={hands} alt={tx("Catheter manipulation")} className="h-full w-full object-cover" loading="lazy" />
               </div>
               <div className="aspect-square overflow-hidden rounded-2xl border border-white/[0.06]">
-                <img src={ot} alt="Hybrid operating theatre" className="h-full w-full object-cover" loading="lazy" />
+                <img src={ot} alt={tx("Hybrid operating theatre")} className="h-full w-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>

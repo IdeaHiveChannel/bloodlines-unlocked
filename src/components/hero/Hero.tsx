@@ -77,7 +77,7 @@ export function Hero() {
         {/* Right: portrait */}
         <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-10 flex-1 lg:mt-0 lg:w-[45%]">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[300px] sm:max-w-[380px] lg:aspect-auto lg:h-[540px] lg:max-w-[460px]">
-            <img src={portraitAsset.url} alt="Dr. Mandeep Sagar, interventional radiologist"
+            <img src={portraitAsset.url} alt={tx("Dr. Mandeep Sagar, interventional radiologist")}
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"
               style={{
                 filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6))",
