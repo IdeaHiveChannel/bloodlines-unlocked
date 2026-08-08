@@ -5,8 +5,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
 import { patientStories, consentNote } from "../lib/stories";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/testimonials")({
   head: ({ params }) => localeHead(params, "/testimonials", {
     title: "Patient stories — Dr. Mandeep Sagar",

@@ -1,3 +1,4 @@
+import { localeHead, SITE } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -5,28 +6,14 @@ import { Footer } from "../components/sections/Footer";
 import { SecondOpinionForm } from "../components/sections/SecondOpinionForm";
 import { contact, whatsappLink, whatsappMessages } from "../lib/contact";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/second-opinion")({
-  head: () => ({
-    meta: [
-      { title: "Second opinion on your scans — Dr. Sagar" },
-      {
-        name: "description",
-        content:
-          "Already advised surgery or amputation? Send your CT, MRI, angiography or doppler reports for an image-guided second opinion from Dr. Mandeep Sagar.",
-      },
-      { property: "og:title", content: "Second opinion on your scans" },
-      {
-        property: "og:description",
-        content:
-          "An interventional radiology review of your existing scans and reports, before you commit to major surgery.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/second-opinion` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/second-opinion` }],
+  head: ({ params }) => localeHead(params, "/second-opinion", {
+    title: "Second opinion on your scans — Dr. Sagar",
+    description:
+      "Already advised surgery or amputation? Send your CT, MRI, angiography or doppler reports for an image-guided second opinion from Dr. Mandeep Sagar.",
+    ogTitle: "Second opinion on your scans",
+    ogDescription:
+      "An interventional radiology review of your existing scans and reports, before you commit to major surgery.",
   }),
   component: SecondOpinion,
 });

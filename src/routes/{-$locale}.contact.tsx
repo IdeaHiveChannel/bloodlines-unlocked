@@ -1,3 +1,4 @@
+import { localeHead, SITE } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { createFileRoute } from "@tanstack/react-router";
 import { Consultation } from "../components/sections/Consultation";
@@ -5,20 +6,14 @@ import { ConsultationForm } from "../components/sections/ConsultationForm";
 import { Footer } from "../components/sections/Footer";
 import { contact, locations, socialUrls } from "../lib/contact";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/contact")({
-  head: () => ({
-    meta: [
-      { title: "Book a consultation — Dr. Mandeep Sagar" },
-      { name: "description", content: "Send your details to Dr. Mandeep Sagar by WhatsApp, email or phone. Consulting in Kannur, Mangalore and Kasaragod." },
-      { property: "og:title", content: "Book a consultation with Dr. Mandeep Sagar" },
-      { property: "og:description", content: "Consultation request form, direct number and consulting cities for the interventional radiology practice." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/contact` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/contact` }],
+  head: ({ params }) => localeHead(params, "/contact", {
+    title: "Book a consultation — Dr. Mandeep Sagar",
+    description:
+      "Send your details to Dr. Mandeep Sagar by WhatsApp, email or phone. Consulting in Kannur, Mangalore and Kasaragod.",
+    ogTitle: "Book a consultation with Dr. Mandeep Sagar",
+    ogDescription:
+      "Consultation request form, direct number and consulting cities for the interventional radiology practice.",
     scripts: [
       {
         type: "application/ld+json",

@@ -3,8 +3,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
 import { MediaTimeline } from "../components/sections/MediaTimeline";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/media")({
   head: ({ params }) => localeHead(params, "/media", {
     title: "Media, publications and awards — Dr. Sagar",

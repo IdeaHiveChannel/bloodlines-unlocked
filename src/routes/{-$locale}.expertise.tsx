@@ -21,8 +21,6 @@ const pillars = [
 ];
 
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/expertise")({
   head: ({ params }) => localeHead(params, "/expertise", {
     title: "Areas of expertise — Dr. Mandeep Sagar",

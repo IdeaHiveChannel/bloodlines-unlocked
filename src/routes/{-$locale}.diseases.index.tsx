@@ -6,8 +6,6 @@ import { usePillars } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/diseases/")({
   head: ({ params }) => localeHead(params, "/diseases", {
     title: "Patient guides — Dr. Mandeep Sagar",

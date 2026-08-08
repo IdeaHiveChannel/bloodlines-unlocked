@@ -6,8 +6,6 @@ import { useConditions } from "../lib/i18n/data";
 import { conditionToPillar } from "../lib/pillars";
 import { Footer } from "../components/sections/Footer";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/conditions/")({
   head: ({ params }) => localeHead(params, "/conditions", {
     title: "Conditions treated — Dr. Mandeep Sagar",

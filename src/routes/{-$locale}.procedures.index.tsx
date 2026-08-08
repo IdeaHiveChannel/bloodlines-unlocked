@@ -5,8 +5,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useProcedures } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/procedures/")({
   head: ({ params }) => localeHead(params, "/procedures", {
     title: "Procedures — Dr. Mandeep Sagar",
