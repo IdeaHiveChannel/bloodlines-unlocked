@@ -23,6 +23,8 @@ Known gaps the audit will confirm:
 
 ## 3. Malayalam typography rules
 
+The Malayalam must be normally spoken Malayalam all over website, not the rigid, professional malayalam.  
+  
 Refine the existing `html[lang="ml"]` layer in `src/styles.css` so it reads as a designed scale rather than a patch:
 
 - Font stack: `"Noto Sans Malayalam"` with a Malayalam-capable system fallback chain (Manjari, AnjaliOldLipi, Nirmala UI) before generic sans.

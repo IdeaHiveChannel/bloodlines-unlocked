@@ -12,7 +12,7 @@ export const Route = createFileRoute("/{-$locale}/diseases/$slug")({
     const locale = params.locale === "ml" ? "ml" : "en";
     const p = getPillar(params.slug, locale);
     if (!p) {
-      return { meta: [{ title: "Condition not found" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: locale === "ml" ? "രോഗാവസ്ഥ കണ്ടെത്താനായില്ല" : "Condition not found" }, { name: "robots", content: "noindex" }] };
     }
     const title = `${p.title} — treatment | Dr. Mandeep Sagar`;
     const url = `${SITE}${localePath(`/diseases/${p.slug}`, locale)}`;
@@ -23,6 +23,7 @@ export const Route = createFileRoute("/{-$locale}/diseases/$slug")({
         { property: "og:title", content: `${p.title} — Dr. Mandeep Sagar` },
         { property: "og:description", content: p.summary.slice(0, 158) },
         { property: "og:type", content: "article" },
+        { property: "og:locale", content: locale === "ml" ? "ml_IN" : "en_IN" },
         { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
       ],

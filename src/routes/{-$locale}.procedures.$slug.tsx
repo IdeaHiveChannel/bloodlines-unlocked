@@ -13,8 +13,9 @@ const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
   head: ({ params }) => {
-    const p = getProcedure(params.slug, params.locale === "ml" ? "ml" : "en");
-    const url = `${SITE}/procedures/${params.slug}`;
+    const locale = params.locale === "ml" ? ("ml" as const) : ("en" as const);
+    const p = getProcedure(params.slug, locale);
+    const url = `${SITE}${locale === "ml" ? "/ml" : ""}/procedures/${params.slug}`;
     const name = p?.name ?? "Procedure not catalogued";
     const line = (p?.oneLiner ?? "This procedure is not in the catalogue.").slice(0, 158);
     return {
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
         { property: "og:title", content: `${name} — image-guided procedure` },
         { property: "og:description", content: line },
         { property: "og:type", content: "article" },
+        { property: "og:locale", content: locale === "ml" ? "ml_IN" : "en_IN" },
         { property: "og:url", content: url },
         { name: "robots", content: p ? "index,follow" : "noindex" },
         { name: "twitter:card", content: "summary_large_image" },
@@ -46,13 +48,14 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
 });
 
 function ProcedurePage() {
+  const tx = useTx();
   const p = Route.useLoaderData() as Procedure;
   const video = procedureVideos[p.slug];
   return (
     <>
       <main className="pt-36 pb-24 bg-[#050B16]">
         <div className="mx-auto max-w-3xl px-5 sm:px-10">
-          <LocaleLink to="/procedures" className="text-label" data-cursor="link">← All procedures</LocaleLink>
+          <LocaleLink to="/procedures" className="text-label" data-cursor="link">{tx("← All procedures")}</LocaleLink>
           <h1 className="text-display-xl mt-8">{p.name}</h1>
           <p className="mt-6 text-body text-[var(--ink-dim)]">{p.oneLiner}</p>
           {video && <ProcedureVideo video={video} />}

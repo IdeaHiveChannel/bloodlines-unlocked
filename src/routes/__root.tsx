@@ -17,19 +17,21 @@ import { Cursor } from "../components/cursor";
 import { Loader } from "../components/loader";
 import { Navigation } from "../components/navigation";
 import { ContactDock } from "../components/contact-dock";
+import { useTx } from "../lib/i18n/tx";
 
 function NotFoundComponent() {
+  const tx = useTx();
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
-        <p className="text-label">404 — off the map</p>
-        <h1 className="text-display-xl mt-6">This page does not exist.</h1>
+        <p className="text-label">{tx("404 — off the map")}</p>
+        <h1 className="text-display-xl mt-6">{tx("This page does not exist.")}</h1>
         <div className="mt-8">
           <Link
-            to="/"
+            to="/{-$locale}"
             className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm tracking-wide hover:bg-white/5 transition-colors"
           >
-            Return home
+            {tx("Return home")}
           </Link>
         </div>
       </div>
@@ -40,21 +42,22 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+  const tx = useTx();
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
-        <p className="text-label">interruption</p>
-        <h1 className="text-h2 mt-6">Something stopped the flow.</h1>
-        <p className="mt-4 text-sm text-[var(--ink-dim)]">Try once more, or return home.</p>
+        <p className="text-label">{tx("interruption")}</p>
+        <h1 className="text-h2 mt-6">{tx("Something stopped the flow.")}</h1>
+        <p className="mt-4 text-sm text-[var(--ink-dim)]">{tx("Try once more, or return home.")}</p>
         <div className="mt-8 flex justify-center gap-3">
           <button
             onClick={() => { router.invalidate(); reset(); }}
             className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm text-black hover:opacity-90 transition-opacity"
-          >Try again</button>
-          <a href="/" className="rounded-full border border-white/15 px-6 py-3 text-sm hover:bg-white/5 transition-colors">Home</a>
+          >{tx("Try again")}</button>
+          <a href="/" className="rounded-full border border-white/15 px-6 py-3 text-sm hover:bg-white/5 transition-colors">{tx("Home")}</a>
         </div>
       </div>
     </div>

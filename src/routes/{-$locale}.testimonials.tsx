@@ -1,23 +1,17 @@
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/sections/Footer";
 import { patientStories, consentNote } from "../lib/stories";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/testimonials")({
-  head: () => ({
-    meta: [
-      { title: "Patient stories — Dr. Mandeep Sagar" },
-      { name: "description", content: "Verified patient experiences of image-guided vascular and neurointerventional care, published only with written consent." },
-      { property: "og:title", content: "Patient stories — Dr. Mandeep Sagar" },
-      { property: "og:description", content: "Verified accounts from patients treated through image-guided intervention, published only with written consent." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/testimonials` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/testimonials` }],
+  head: ({ params }) => localeHead(params, "/testimonials", {
+    title: "Patient stories — Dr. Mandeep Sagar",
+    description:
+      "Verified patient experiences of image-guided vascular and neurointerventional care, published only with written consent.",
+    ogDescription:
+      "Verified accounts from patients treated through image-guided intervention, published only with written consent.",
   }),
   component: Testimonials,
 });
@@ -31,7 +25,7 @@ function Testimonials() {
         <div className="shell">
           <p className="text-label">{tx("Chapter 09 · Patient care today")}</p>
           <h1 className="text-display-xl mt-6 max-w-4xl">{tx("Patient stories.")}</h1>
-          <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">{consentNote}</p>
+          <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">{tx(consentNote)}</p>
 
           {stories.length === 0 ? (
             <div className="mt-14 max-w-3xl rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 sm:p-10">

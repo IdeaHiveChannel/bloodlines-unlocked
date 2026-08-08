@@ -1,3 +1,4 @@
+import { localeHead, SITE } from "@/lib/i18n/meta";
 import { createFileRoute } from "@tanstack/react-router";
 import { socialUrls } from "../lib/contact";
 import { Hero } from "../components/hero/Hero";
@@ -14,31 +15,14 @@ import { Doctor } from "../components/sections/Doctor";
 import { Consultation } from "../components/sections/Consultation";
 import { Footer } from "../components/sections/Footer";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/")({
-  head: () => ({
-    meta: [
-      { title: "Dr. Mandeep Sagar — Interventional radiologist" },
-      {
-        name: "description",
-        content:
-          "Image-guided treatment through a pinhole opening — stroke, aneurysms, fibroids, liver tumours, diabetic foot and varicose veins, without major surgery.",
-      },
-      {
-        property: "og:title",
-        content: "Dr. Mandeep Sagar — Vascular & neuro interventional radiologist",
-      },
-      {
-        property: "og:description",
-        content:
-          "Image-guided treatment through a pinhole opening, avoiding major surgery wherever appropriate.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/` }],
+  head: ({ params }) => localeHead(params, "/", {
+    title: "Dr. Mandeep Sagar — Interventional radiologist",
+    description:
+      "Image-guided treatment through a pinhole opening — stroke, aneurysms, fibroids, liver tumours, diabetic foot and varicose veins, without major surgery.",
+    ogTitle: "Dr. Mandeep Sagar — Vascular & neuro interventional radiologist",
+    ogDescription:
+      "Image-guided treatment through a pinhole opening, avoiding major surgery wherever appropriate.",
     scripts: [
       {
         type: "application/ld+json",

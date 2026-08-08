@@ -1,3 +1,4 @@
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -5,27 +6,14 @@ import { usePillars } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/diseases/")({
-  head: () => ({
-    meta: [
-      { title: "Conditions treated — Dr. Mandeep Sagar" },
-      {
-        name: "description",
-        content:
-          "Complete patient guides to stroke, varicose veins, diabetic foot, PAD, DVT, fibroids, prostate, brain aneurysm and liver tumours.",
-      },
-      { property: "og:title", content: "Conditions treated — Dr. Mandeep Sagar" },
-      {
-        name: "og:description",
-        content: "Symptoms, tests, treatment options and recovery, explained condition by condition.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/diseases` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/diseases` }],
+  head: ({ params }) => localeHead(params, "/diseases", {
+    title: "Patient guides — Dr. Mandeep Sagar",
+    description:
+      "Complete patient guides to stroke, varicose veins, diabetic foot, PAD, DVT, fibroids, prostate, brain aneurysm and liver tumours.",
+    ogTitle: "Patient guides — Dr. Mandeep Sagar",
+    ogDescription:
+      "Symptoms, tests, treatment options and recovery, explained condition by condition.",
   }),
   component: DiseasesIndex,
 });

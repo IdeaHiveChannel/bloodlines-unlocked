@@ -1,3 +1,4 @@
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -5,28 +6,14 @@ import { Footer } from "../components/sections/Footer";
 import { SecondOpinionForm } from "../components/sections/SecondOpinionForm";
 import { contact, whatsappLink, whatsappMessages } from "../lib/contact";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
-
 export const Route = createFileRoute("/{-$locale}/second-opinion")({
-  head: () => ({
-    meta: [
-      { title: "Second opinion on your scans — Dr. Sagar" },
-      {
-        name: "description",
-        content:
-          "Already advised surgery or amputation? Send your CT, MRI, angiography or doppler reports for an image-guided second opinion from Dr. Mandeep Sagar.",
-      },
-      { property: "og:title", content: "Second opinion on your scans" },
-      {
-        property: "og:description",
-        content:
-          "An interventional radiology review of your existing scans and reports, before you commit to major surgery.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/second-opinion` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/second-opinion` }],
+  head: ({ params }) => localeHead(params, "/second-opinion", {
+    title: "Second opinion on your scans — Dr. Sagar",
+    description:
+      "Already advised surgery or amputation? Send your CT, MRI, angiography or doppler reports for an image-guided second opinion from Dr. Mandeep Sagar.",
+    ogTitle: "Second opinion on your scans",
+    ogDescription:
+      "An interventional radiology review of your existing scans and reports, before you commit to major surgery.",
   }),
   component: SecondOpinion,
 });
@@ -88,7 +75,7 @@ function SecondOpinion() {
                 <ul className="mt-5 grid gap-2 text-small text-[var(--ink-dim)] sm:grid-cols-2">
                   {reviewed.map((r) => (
                     <li key={r} className="rounded-xl border border-white/[0.06] bg-white/[0.015] px-4 py-3">
-                      {r}
+                      {tx(r)}
                     </li>
                   ))}
                 </ul>
@@ -111,9 +98,9 @@ function SecondOpinion() {
               {steps.map((s) => (
                 <li key={s.t} className="rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6">
                   <div className="size-3 rounded-full bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
-                  <p className="mt-4 text-label">{s.t}</p>
-                  <h3 className="text-card-title mt-2">{s.title}</h3>
-                  <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
+                  <p className="mt-4 text-label">{tx(s.t)}</p>
+                  <h3 className="text-card-title mt-2">{tx(s.title)}</h3>
+                  <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)]">{tx(s.body)}</p>
                 </li>
               ))}
             </ol>
