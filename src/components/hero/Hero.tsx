@@ -5,10 +5,12 @@ import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
 import { ArrowRight } from "lucide-react";
 import { useT } from "../../lib/i18n/react";
+import { useTx } from "../../lib/i18n/tx";
 
 
 export function Hero() {
   const t = useT();
+  const tx = useTx();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const headlineY = useTransform(scrollYProgress, [0, 1], [0, -120]);
