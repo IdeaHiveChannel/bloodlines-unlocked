@@ -34,7 +34,7 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
     };
   },
   loader: ({ params }): Procedure => {
-    const p = getProcedure(params.slug, locale);
+    const p = getProcedure(params.slug, params.locale === "ml" ? "ml" : "en");
     if (!p) throw notFound();
     return p;
   },

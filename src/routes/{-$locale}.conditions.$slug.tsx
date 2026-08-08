@@ -34,7 +34,7 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
     };
   },
   loader: ({ params }): Condition => {
-    const c = getCondition(params.slug, locale);
+    const c = getCondition(params.slug, params.locale === "ml" ? "ml" : "en");
     if (!c) throw notFound();
     return c;
   },
