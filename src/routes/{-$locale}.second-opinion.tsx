@@ -75,7 +75,7 @@ function SecondOpinion() {
                 <ul className="mt-5 grid gap-2 text-small text-[var(--ink-dim)] sm:grid-cols-2">
                   {reviewed.map((r) => (
                     <li key={r} className="rounded-xl border border-white/[0.06] bg-white/[0.015] px-4 py-3">
-                      {r}
+                      {tx(r)}
                     </li>
                   ))}
                 </ul>
@@ -98,9 +98,9 @@ function SecondOpinion() {
               {steps.map((s) => (
                 <li key={s.t} className="rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6">
                   <div className="size-3 rounded-full bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
-                  <p className="mt-4 text-label">{s.t}</p>
-                  <h3 className="text-card-title mt-2">{s.title}</h3>
-                  <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)]">{s.body}</p>
+                  <p className="mt-4 text-label">{tx(s.t)}</p>
+                  <h3 className="text-card-title mt-2">{tx(s.title)}</h3>
+                  <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)]">{tx(s.body)}</p>
                 </li>
               ))}
             </ol>

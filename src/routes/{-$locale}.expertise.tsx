@@ -43,8 +43,8 @@ function Expertise() {
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
             {pillars.map((p) => (
               <div key={p.t} className="bg-[#050B16] p-10">
-                <h2 className="text-h3">{p.t}</h2>
-                <p className="mt-4 text-small leading-relaxed text-[var(--ink-dim)]">{p.body}</p>
+                <h2 className="text-h3">{tx(p.t)}</h2>
+                <p className="mt-4 text-small leading-relaxed text-[var(--ink-dim)]">{tx(p.body)}</p>
               </div>
             ))}
           </div>
