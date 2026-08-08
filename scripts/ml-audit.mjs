@@ -39,6 +39,10 @@ const HAS_LETTERS = /[A-Za-z]{2,}/;
 
 const IGNORE_FILES = [
   "lib/i18n/",
+  // Resolved to Malayalam at runtime by src/lib/i18n/data.ts (ml-content/*.json).
+  "lib/content.ts",
+  "lib/pillars/",
+  "lib/media.ts",
   "routeTree.gen.ts",
   "router.tsx",
   "server.ts",
@@ -67,9 +71,12 @@ function add(file, kind, text, line) {
   if (!list.some((f) => f.text === text && f.kind === kind)) list.push({ kind, text, line });
 }
 
+const CODEY = /=>|\(\s*e\s*:|React\.|\bconst\b|\bprops\b|::|\{|\}/;
+
 function covered(text) {
   const t = text.trim();
   if (!t || !HAS_LETTERS.test(t)) return true;
+  if (CODEY.test(t)) return true;
   if (MALAYALAM.test(t)) return true;
   return dictKeys.has(t);
 }
@@ -111,7 +118,7 @@ for (const file of files) {
 }
 
 // ------------------------------------------------------------------ data libs
-const dataFiles = ["lib/press.ts", "lib/stories.ts", "lib/content.ts", "lib/contact.ts"];
+const dataFiles = ["lib/press.ts", "lib/stories.ts", "lib/contact.ts"];
 for (const rel of dataFiles) {
   const p = join(SRC, rel);
   let src;
