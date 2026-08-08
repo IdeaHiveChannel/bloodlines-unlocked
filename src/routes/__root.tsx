@@ -26,7 +26,7 @@ function NotFoundComponent() {
         <h1 className="text-display-xl mt-6">This page does not exist.</h1>
         <div className="mt-8">
           <Link
-            to="/"
+            to="/{-$locale}"
             className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm tracking-wide hover:bg-white/5 transition-colors"
           >
             Return home
