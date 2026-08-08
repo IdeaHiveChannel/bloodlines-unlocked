@@ -1,3 +1,4 @@
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -23,25 +24,12 @@ const pillars = [
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/expertise")({
-  head: () => ({
-    meta: [
-      { title: "Areas of expertise — Dr. Mandeep Sagar" },
-      {
-        name: "description",
-        content:
-          "Neurointervention, stroke care, peripheral vascular and aortic disease, venous disease, interventional oncology, thyroid, renal and dialysis access work.",
-      },
-      { property: "og:title", content: "Areas of expertise — Dr. Mandeep Sagar" },
-      {
-        property: "og:description",
-        content:
-          "The full scope of image-guided vascular, neuro and oncologic intervention practised by Dr. Mandeep Sagar.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/expertise` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/expertise` }],
+  head: ({ params }) => localeHead(params, "/expertise", {
+    title: "Areas of expertise — Dr. Mandeep Sagar",
+    description:
+      "Neurointervention, stroke care, peripheral vascular and aortic disease, venous disease, interventional oncology, thyroid, renal and dialysis access work.",
+    ogDescription:
+      "The full scope of image-guided vascular, neuro and oncologic intervention practised by Dr. Mandeep Sagar.",
   }),
   component: Expertise,
 });

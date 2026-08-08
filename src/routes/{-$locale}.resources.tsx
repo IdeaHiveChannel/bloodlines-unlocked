@@ -1,3 +1,4 @@
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -10,17 +11,12 @@ import { Footer } from "../components/sections/Footer";
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/resources")({
-  head: () => ({
-    meta: [
-      { title: "Patient resources — Dr. Mandeep Sagar" },
-      { name: "description", content: "Search conditions, procedures, animated films, patient guides and recovery notes on image-guided vascular treatment." },
-      { property: "og:title", content: "Patient resources — Dr. Mandeep Sagar" },
-      { property: "og:description", content: "Searchable educational material on vascular and neurointerventional care, written for patients and families." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/resources` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/resources` }],
+  head: ({ params }) => localeHead(params, "/resources", {
+    title: "Patient resources — Dr. Mandeep Sagar",
+    description:
+      "Search conditions, procedures, animated films, patient guides and recovery notes on image-guided vascular treatment.",
+    ogDescription:
+      "Searchable educational material on vascular and neurointerventional care, written for patients and families.",
   }),
   component: Resources,
 });

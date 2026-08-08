@@ -1,3 +1,4 @@
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -8,24 +9,13 @@ import { Footer } from "../components/sections/Footer";
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/conditions/")({
-  head: () => ({
-    meta: [
-      { title: "Conditions treated — Dr. Mandeep Sagar" },
-      {
-        name: "description",
-        content:
-          "The full disease library treated through image-guided intervention — from stroke and aneurysms to fibroids, liver tumours, diabetic foot and varicose veins.",
-      },
-      { property: "og:title", content: "Conditions treated by Dr. Mandeep Sagar" },
-      {
-        property: "og:description",
-        content: "Featured guides and the complete catalogue of conditions treated without major surgery.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/conditions` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/conditions` }],
+  head: ({ params }) => localeHead(params, "/conditions", {
+    title: "Conditions treated — Dr. Mandeep Sagar",
+    description:
+      "The full disease library treated through image-guided intervention — from stroke and aneurysms to fibroids, liver tumours, diabetic foot and varicose veins.",
+    ogTitle: "Conditions treated by Dr. Mandeep Sagar",
+    ogDescription:
+      "Featured guides and the complete catalogue of conditions treated without major surgery.",
   }),
   component: ConditionsIndex,
 });

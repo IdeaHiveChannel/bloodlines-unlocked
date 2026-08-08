@@ -1,3 +1,4 @@
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -7,17 +8,13 @@ import { Footer } from "../components/sections/Footer";
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/procedures/")({
-  head: () => ({
-    meta: [
-      { title: "Procedures — Dr. Mandeep Sagar" },
-      { name: "description", content: "Angioplasty, thrombectomy, aneurysm repair, embolization and vein ablation — image-guided procedures explained beat by beat." },
-      { property: "og:title", content: "Procedures performed by Dr. Mandeep Sagar" },
-      { property: "og:description", content: "Angioplasty, thrombectomy, aneurysm repair, embolization and vein ablation — every procedure told as a story." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/procedures` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/procedures` }],
+  head: ({ params }) => localeHead(params, "/procedures", {
+    title: "Procedures — Dr. Mandeep Sagar",
+    description:
+      "Angioplasty, thrombectomy, aneurysm repair, embolization and vein ablation — image-guided procedures explained beat by beat.",
+    ogTitle: "Procedures performed by Dr. Mandeep Sagar",
+    ogDescription:
+      "Angioplasty, thrombectomy, aneurysm repair, embolization and vein ablation — every procedure told as a story.",
   }),
   component: ProceduresIndex,
 });

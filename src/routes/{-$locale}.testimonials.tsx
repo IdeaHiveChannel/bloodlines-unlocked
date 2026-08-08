@@ -1,3 +1,4 @@
+import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -7,17 +8,12 @@ import { patientStories, consentNote } from "../lib/stories";
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/testimonials")({
-  head: () => ({
-    meta: [
-      { title: "Patient stories — Dr. Mandeep Sagar" },
-      { name: "description", content: "Verified patient experiences of image-guided vascular and neurointerventional care, published only with written consent." },
-      { property: "og:title", content: "Patient stories — Dr. Mandeep Sagar" },
-      { property: "og:description", content: "Verified accounts from patients treated through image-guided intervention, published only with written consent." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE}/testimonials` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE}/testimonials` }],
+  head: ({ params }) => localeHead(params, "/testimonials", {
+    title: "Patient stories — Dr. Mandeep Sagar",
+    description:
+      "Verified patient experiences of image-guided vascular and neurointerventional care, published only with written consent.",
+    ogDescription:
+      "Verified accounts from patients treated through image-guided intervention, published only with written consent.",
   }),
   component: Testimonials,
 });
