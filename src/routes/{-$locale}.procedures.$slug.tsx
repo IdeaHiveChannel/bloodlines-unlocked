@@ -13,8 +13,9 @@ const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
   head: ({ params }) => {
-    const p = getProcedure(params.slug, params.locale === "ml" ? "ml" : "en");
-    const url = `${SITE}/procedures/${params.slug}`;
+    const locale = locale;
+    const p = getProcedure(params.slug, locale);
+    const url = `${SITE}${locale === "ml" ? "/ml" : ""}/procedures/${params.slug}`;
     const name = p?.name ?? "Procedure not catalogued";
     const line = (p?.oneLiner ?? "This procedure is not in the catalogue.").slice(0, 158);
     return {
@@ -33,7 +34,7 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
     };
   },
   loader: ({ params }): Procedure => {
-    const p = getProcedure(params.slug, params.locale === "ml" ? "ml" : "en");
+    const p = getProcedure(params.slug, locale);
     if (!p) throw notFound();
     return p;
   },

@@ -13,8 +13,9 @@ const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
   head: ({ params }) => {
-    const c = getCondition(params.slug, params.locale === "ml" ? "ml" : "en");
-    const url = `${SITE}/conditions/${params.slug}`;
+    const locale = locale;
+    const c = getCondition(params.slug, locale);
+    const url = `${SITE}${locale === "ml" ? "/ml" : ""}/conditions/${params.slug}`;
     const name = c?.name ?? "Condition not catalogued";
     const intro = (c?.intro ?? "This condition is not in the catalogue.").slice(0, 158);
     return {
@@ -33,7 +34,7 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
     };
   },
   loader: ({ params }): Condition => {
-    const c = getCondition(params.slug, params.locale === "ml" ? "ml" : "en");
+    const c = getCondition(params.slug, locale);
     if (!c) throw notFound();
     return c;
   },
