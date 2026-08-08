@@ -13,7 +13,6 @@ const SITE = "https://bloodlines-unlocked.lovable.app";
 
 export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
   head: ({ params }) => {
-    const locale = locale;
     const p = getProcedure(params.slug, locale);
     const url = `${SITE}${locale === "ml" ? "/ml" : ""}/procedures/${params.slug}`;
     const name = p?.name ?? "Procedure not catalogued";
