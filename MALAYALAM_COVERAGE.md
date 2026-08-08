@@ -4,7 +4,7 @@ Generated 2026-08-08 by `node scripts/ml-audit.mjs`.
 
 Dictionary entries in `src/lib/i18n/strings-ml.ts`: **395**
 
-Strings still falling back to English: **7**
+Strings still falling back to English: **6**
 
 ## Accepted English fallbacks
 
@@ -24,10 +24,6 @@ Strings still falling back to English: **7**
 - L74 `metadata` — Dr. Mandeep Sagar
 - L76 `metadata` — Vital Flow — Dr. Mandeep Sagar
 - L99 `data-string` — Vital Flow — Dr. Mandeep Sagar
-
-## src/routes/{-$locale}.diseases.$slug.tsx
-
-- L15 `metadata` — Condition not found
 
 ## src/routes/{-$locale}.testimonials.tsx
 

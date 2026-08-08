@@ -24,6 +24,7 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
         { property: "og:title", content: `${name} — image-guided treatment` },
         { property: "og:description", content: intro },
         { property: "og:type", content: "article" },
+        { property: "og:locale", content: locale === "ml" ? "ml_IN" : "en_IN" },
         { property: "og:url", content: url },
         { name: "robots", content: c ? "index,follow" : "noindex" },
         { name: "twitter:card", content: "summary_large_image" },
