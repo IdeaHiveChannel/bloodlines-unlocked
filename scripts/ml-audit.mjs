@@ -71,6 +71,11 @@ function add(file, kind, text, line) {
   if (!list.some((f) => f.text === text && f.kind === kind)) list.push({ kind, text, line });
 }
 
+const TECHNICAL_META = new Set([
+  "website", "article", "profile", "summary_large_image", "summary", "noindex",
+  "width=device-width, initial-scale=1", "utf-8", "en", "ml", "en_IN", "ml_IN",
+]);
+
 const CODEY = /=>|\(\s*e\s*:|React\.|\bconst\b|\bprops\b|::|\{|\}/;
 
 function covered(text) {
@@ -92,7 +97,7 @@ for (const file of files) {
 
     // 1. Head metadata literals: { title: "..." } / content: "..."
     const meta = line.match(/\b(?:title|content):\s*"((?:[^"\\]|\\.)+)"/);
-    if (meta && HAS_LETTERS.test(meta[1]) && /routes\//.test(file)) {
+    if (meta && HAS_LETTERS.test(meta[1]) && /routes\//.test(file) && !TECHNICAL_META.has(meta[1]) && !/^https?:/.test(meta[1])) {
       if (!MALAYALAM.test(meta[1])) add(file, "metadata", meta[1], n);
       return;
     }
@@ -110,7 +115,13 @@ for (const file of files) {
     );
     if (field) {
       const text = field[2];
-      if (HAS_LETTERS.test(text) && !covered(text) && !/^https?:/.test(text)) {
+      if (
+        HAS_LETTERS.test(text) &&
+        !covered(text) &&
+        !/^https?:/.test(text) &&
+        !/^[a-z0-9:_-]+$/.test(text) &&
+        !TECHNICAL_META.has(text)
+      ) {
         add(file, "data-string", text, n);
       }
     }
