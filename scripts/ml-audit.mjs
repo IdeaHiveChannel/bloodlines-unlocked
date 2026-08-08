@@ -86,8 +86,17 @@ function covered(text) {
   return dictKeys.has(t);
 }
 
+const accepted = [];
+
 for (const file of files) {
   const src = readFileSync(file, "utf8");
+  // Routes using localeHead() resolve their metadata through src/lib/i18n/meta.ts.
+  const headLocalized = src.includes("localeHead(");
+  if (relative(SRC, file) === "routes/__root.tsx") {
+    accepted.push(
+      "`src/routes/__root.tsx` — sitewide default title/description and the JSON-LD organisation block stay in English; every content route overrides them per locale.",
+    );
+  }
   const lines = src.split("\n");
 
   lines.forEach((line, i) => {
@@ -97,7 +106,7 @@ for (const file of files) {
 
     // 1. Head metadata literals: { title: "..." } / content: "..."
     const meta = line.match(/\b(?:title|content):\s*"((?:[^"\\]|\\.)+)"/);
-    if (meta && HAS_LETTERS.test(meta[1]) && /routes\//.test(file) && !TECHNICAL_META.has(meta[1]) && !/^https?:/.test(meta[1])) {
+    if (!headLocalized && meta && HAS_LETTERS.test(meta[1]) && /routes\//.test(file) && !TECHNICAL_META.has(meta[1]) && !/^https?:/.test(meta[1])) {
       if (!MALAYALAM.test(meta[1])) add(file, "metadata", meta[1], n);
       return;
     }
@@ -115,6 +124,7 @@ for (const file of files) {
     );
     if (field) {
       const text = field[2];
+      if (headLocalized && /routes\//.test(file) && n < (src.indexOf("component:") === -1 ? 0 : src.slice(0, src.indexOf("component:")).split("\n").length)) return;
       if (
         HAS_LETTERS.test(text) &&
         !covered(text) &&
@@ -152,6 +162,10 @@ let out = `# Malayalam translation coverage audit\n\n`;
 out += `Generated ${now} by \`node scripts/ml-audit.mjs\`.\n\n`;
 out += `Dictionary entries in \`src/lib/i18n/strings-ml.ts\`: **${dictKeys.size}**\n\n`;
 out += `Strings still falling back to English: **${total}**\n\n`;
+
+if (accepted.length) {
+  out += `## Accepted English fallbacks\n\n${[...new Set(accepted)].map((a) => `- ${a}`).join("\n")}\n\n`;
+}
 
 if (total === 0) {
   out += `No user-visible English strings remain outside the translation layer.\n`;
