@@ -14,11 +14,18 @@ type Props = Omit<LinkComponentProps, "to" | "params"> & {
  */
 export function LocaleLink({ to, params, ...rest }: Props) {
   const localise = useLocalePath();
-  let path = to;
+  const [rawPath, hash] = to.split("#");
+  let path = rawPath;
   if (params) {
     for (const [key, value] of Object.entries(params)) {
       path = path.replace(`$${key}`, encodeURIComponent(value));
     }
   }
-  return <Link {...(rest as LinkComponentProps)} to={localise(path) as never} />;
+  return (
+    <Link
+      {...(rest as LinkComponentProps)}
+      to={localise(path) as never}
+      {...(hash ? { hash } : {})}
+    />
+  );
 }

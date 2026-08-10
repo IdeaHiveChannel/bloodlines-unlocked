@@ -6,18 +6,18 @@ import { Footer } from "../components/sections/Footer";
 import { ExpertiseTimeline } from "../components/sections/ExpertiseTimeline";
 
 const pillars = [
-  { t: "Neurointervention", body: "Acute stroke thrombectomy, cerebral aneurysm embolization, AVM and dural fistula management. Time-critical work, performed under live imaging." },
-  { t: "Stroke care", body: "The clock-driven pathway: recognition, imaging, decision, and clot retrieval. Coordination matters as much as the catheter." },
-  { t: "Peripheral vascular", body: "From iliac to pedal arch — angioplasty, stenting, atherectomy. Limb-salvage strategies for critical ischaemia and diabetic foot." },
-  { t: "Aortic disease", body: "Endovascular repair of aortic aneurysms and dissections (EVAR / TEVAR) through small access points, with shorter recovery." },
-  { t: "Venous disease", body: "Endovenous ablation for varicose veins, catheter-directed therapy for DVT, venous stenting for outflow obstruction." },
-  { t: "Interventional oncology", body: "TACE, microwave ablation and portal vein embolization — treatment delivered into the tumour, sparing the organ around it." },
-  { t: "Hepatobiliary & portal", body: "TIPS for portal hypertension, variceal bleeding control, biliary drainage and transjugular biopsy." },
-  { t: "Thyroid intervention", body: "Radiofrequency and microwave ablation of benign thyroid nodules — no incision, no scar, no lifelong replacement." },
-  { t: "Renal & genitourinary", body: "Renal artery angioplasty, renal tumour ablation, prostate artery embolization and varicocele treatment." },
-  { t: "Musculoskeletal & pain", body: "Genicular artery embolization for knee osteoarthritis, and image-guided treatment of chronic joint pain." },
-  { t: "Women's health", body: "Uterine fibroid embolization and pelvic vein embolization for pelvic congestion — organ-preserving by design." },
-  { t: "Dialysis access", body: "Maintenance of fistulas and grafts — fistuloplasty, declotting, central vein recanalisation. Keeping lifelines open." },
+  { id: "neurointervention", t: "Neurointervention", body: "Acute stroke thrombectomy, cerebral aneurysm embolization, AVM and dural fistula management. Time-critical work, performed under live imaging." },
+  { id: "stroke-care", t: "Stroke care", body: "The clock-driven pathway: recognition, imaging, decision, and clot retrieval. Coordination matters as much as the catheter." },
+  { id: "peripheral-vascular", t: "Peripheral vascular", body: "From iliac to pedal arch — angioplasty, stenting, atherectomy. Limb-salvage strategies for critical ischaemia and diabetic foot." },
+  { id: "aortic-disease", t: "Aortic disease", body: "Endovascular repair of aortic aneurysms and dissections (EVAR / TEVAR) through small access points, with shorter recovery." },
+  { id: "venous-disease", t: "Venous disease", body: "Endovenous ablation for varicose veins, catheter-directed therapy for DVT, venous stenting for outflow obstruction." },
+  { id: "interventional-oncology", t: "Interventional oncology", body: "TACE, microwave ablation and portal vein embolization — treatment delivered into the tumour, sparing the organ around it." },
+  { id: "hepatobiliary-portal", t: "Hepatobiliary & portal", body: "TIPS for portal hypertension, variceal bleeding control, biliary drainage and transjugular biopsy." },
+  { id: "thyroid-intervention", t: "Thyroid intervention", body: "Radiofrequency and microwave ablation of benign thyroid nodules — no incision, no scar, no lifelong replacement." },
+  { id: "renal-genitourinary", t: "Renal & genitourinary", body: "Renal artery angioplasty, renal tumour ablation, prostate artery embolization and varicocele treatment." },
+  { id: "musculoskeletal-pain", t: "Musculoskeletal & pain", body: "Genicular artery embolization for knee osteoarthritis, and image-guided treatment of chronic joint pain." },
+  { id: "womens-health", t: "Women's health", body: "Uterine fibroid embolization and pelvic vein embolization for pelvic congestion — organ-preserving by design." },
+  { id: "dialysis-access", t: "Dialysis access", body: "Maintenance of fistulas and grafts — fistuloplasty, declotting, central vein recanalisation. Keeping lifelines open." },
 ];
 
 
@@ -42,7 +42,7 @@ function Expertise() {
           <h1 className="text-display-xl mt-6 max-w-3xl">{tx("Areas of expertise.")}</h1>
           <div className="mt-16 grid md:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
             {pillars.map((p) => (
-              <div key={p.t} className="bg-[#050B16] p-10">
+              <div key={p.t} id={p.id} className="scroll-mt-32 bg-[#050B16] p-10">
                 <h2 className="text-h3">{tx(p.t)}</h2>
                 <p className="mt-4 text-small leading-relaxed text-[var(--ink-dim)]">{tx(p.body)}</p>
               </div>

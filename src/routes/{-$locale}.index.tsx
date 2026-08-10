@@ -2,6 +2,7 @@ import { localeHead, SITE } from "@/lib/i18n/meta";
 import { createFileRoute } from "@tanstack/react-router";
 import { socialUrls } from "../lib/contact";
 import { Hero } from "../components/hero/Hero";
+import { WhatITreat } from "../components/sections/WhatITreat";
 import { Transition } from "../components/sections/Transition";
 import { Anatomy } from "../components/anatomy/Anatomy";
 import { ConditionsGateway } from "../components/sections/ConditionsGateway";
@@ -37,9 +38,8 @@ export const Route = createFileRoute("/{-$locale}/")({
           url: `${SITE}/`,
           telephone: "+91 63663 30505",
           email: "vascularcaredr@gmail.com",
-          areaServed: ["Kannur, Kerala", "Mangalore, Karnataka", "Kasaragod, Kerala"],
+          areaServed: ["Mangalore, Karnataka", "Kasaragod, Kerala"],
           address: [
-            { "@type": "PostalAddress", addressLocality: "Kannur", addressRegion: "Kerala", addressCountry: "IN" },
             { "@type": "PostalAddress", addressLocality: "Mangalore", addressRegion: "Karnataka", addressCountry: "IN" },
             { "@type": "PostalAddress", addressLocality: "Kasaragod", addressRegion: "Kerala", addressCountry: "IN" },
           ],
@@ -54,16 +54,17 @@ function Index() {
   return (
     <main>
       <Hero />
+      <WhatITreat />
       <Transition />
       <Anatomy />
       <ConditionsGateway />
       <Procedures />
       <BeforeAfter />
       <Recovery />
-      <MediaBand />
-      <PatientStories />
-      <Journey />
       <Doctor />
+      <Journey />
+      <PatientStories />
+      <MediaBand />
       <Consultation />
       <Footer />
     </main>
