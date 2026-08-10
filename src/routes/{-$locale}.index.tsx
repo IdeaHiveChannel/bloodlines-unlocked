@@ -2,6 +2,7 @@ import { localeHead, SITE } from "@/lib/i18n/meta";
 import { createFileRoute } from "@tanstack/react-router";
 import { socialUrls } from "../lib/contact";
 import { Hero } from "../components/hero/Hero";
+import { WhatITreat } from "../components/sections/WhatITreat";
 import { Transition } from "../components/sections/Transition";
 import { Anatomy } from "../components/anatomy/Anatomy";
 import { ConditionsGateway } from "../components/sections/ConditionsGateway";
