@@ -10,7 +10,7 @@ export const Route = createFileRoute("/{-$locale}/contact")({
   head: ({ params }) => localeHead(params, "/contact", {
     title: "Book a consultation — Dr. Mandeep Sagar",
     description:
-      "Send your details to Dr. Mandeep Sagar by WhatsApp, email or phone. Consulting in Kannur, Mangalore and Kasaragod.",
+      "Send your details to Dr. Mandeep Sagar by WhatsApp, email or phone. Consulting in Mangalore and Kasaragod.",
     ogTitle: "Book a consultation with Dr. Mandeep Sagar",
     ogDescription:
       "Consultation request form, direct number and consulting cities for the interventional radiology practice.",

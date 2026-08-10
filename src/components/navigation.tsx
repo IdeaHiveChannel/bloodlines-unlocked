@@ -1,11 +1,9 @@
 import { LocaleLink } from "./locale-link";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { NavMenu, type MenuLink } from "./nav-menu";
-import { pillars } from "../lib/pillars";
-import { conditions, featuredProcedures } from "../lib/content";
-import { useLocale, useT } from "../lib/i18n/react";
-import { useNames } from "../lib/i18n/content";
+import { NavMenu } from "./nav-menu";
+import { useT } from "../lib/i18n/react";
+import { useSiteNav } from "../lib/nav";
 import { LanguageToggle } from "./language-toggle";
 
 export function Navigation() {
@@ -13,45 +11,7 @@ export function Navigation() {
   const [open, setOpen] = useState(false);
   const [section, setSection] = useState<string | null>(null);
   const t = useT();
-  const locale = useLocale();
-  const n = useNames();
-
-  const diseaseLinks: MenuLink[] = [
-    ...pillars.map((p) => ({ to: `/diseases/${p.slug}`, label: n.pillar(p.slug, p.name) })),
-    { to: "/diseases", label: t.nav.allDiseases },
-  ];
-
-  const conditionLinks: MenuLink[] = [
-    ...conditions.slice(0, 10).map((c) => ({
-      to: `/conditions/${c.slug}`,
-      label: n.condition(c.slug, c.name),
-    })),
-    { to: "/conditions", label: t.nav.allConditions },
-  ];
-
-  const procedureLinks: MenuLink[] = [
-    ...featuredProcedures.map((p) => ({
-      to: `/procedures/${p.slug}`,
-      label: n.procedure(p.slug, p.name),
-    })),
-    { to: "/procedures", label: t.nav.allProcedures },
-  ];
-
-  const moreLinks: MenuLink[] = [
-    { to: "/expertise", label: t.nav.expertise },
-    { to: "/media", label: t.nav.media },
-    { to: "/testimonials", label: t.nav.stories },
-    { to: "/resources", label: t.nav.resources },
-    { to: "/second-opinion", label: t.nav.secondOpinion },
-    { to: "/contact", label: t.nav.contact },
-  ];
-
-  const groups: { label: string; links: MenuLink[]; columns?: 1 | 2 }[] = [
-    { label: t.nav.diseases, links: diseaseLinks, columns: 2 },
-    { label: t.nav.conditions, links: conditionLinks, columns: 2 },
-    { label: t.nav.procedures, links: procedureLinks },
-    { label: t.nav.more, links: moreLinks },
-  ];
+  const nav = useSiteNav();
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 40);
@@ -85,30 +45,40 @@ export function Navigation() {
             </span>
           </LocaleLink>
 
-          <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
+          <ul className="hidden items-center gap-5 lg:flex xl:gap-7">
             <li>
               <LocaleLink
-                to="/about"
+                to={nav.about.to}
                 className="group relative text-nav text-[var(--ink-dim)] transition-colors hover:text-white"
                 data-cursor="link"
               >
-                {t.nav.about}
+                {nav.about.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
               </LocaleLink>
             </li>
-            {groups.map((g) => (
-              <NavMenu key={g.label} label={g.label} links={g.links} columns={g.columns} />
+            {nav.groups.map((g) => (
+              <NavMenu key={g.key} label={g.label} links={g.links} columns={g.columns} />
             ))}
+            <li>
+              <LocaleLink
+                to={nav.secondOpinion.to}
+                className="group relative text-nav text-[var(--ink-dim)] transition-colors hover:text-white"
+                data-cursor="link"
+              >
+                {nav.secondOpinion.label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
+              </LocaleLink>
+            </li>
           </ul>
 
           <div className="flex shrink-0 items-center gap-2">
             <LanguageToggle />
             <LocaleLink
-              to="/contact"
+              to={nav.book.to}
               className="hidden min-h-11 items-center rounded-full bg-white px-5 text-button text-black transition-colors hover:bg-[var(--accent)] hover:text-black xl:inline-flex"
               data-cursor="cta"
             >
-              {t.nav.book}
+              {nav.book.label}
             </LocaleLink>
             <button
               className="grid size-11 place-items-center text-white lg:hidden"
@@ -140,29 +110,29 @@ export function Navigation() {
             <ul className="mx-auto flex w-full max-w-md flex-col gap-1">
               <li>
                 <LocaleLink
-                  to="/about"
+                  to={nav.about.to}
                   onClick={() => setOpen(false)}
                   className="block py-3 text-h3"
                   data-cursor="link"
                 >
-                  {t.nav.about}
+                  {nav.about.label}
                 </LocaleLink>
               </li>
-              {groups.map((g) => {
-                const isOpen = section === g.label;
+              {nav.groups.map((g) => {
+                const isOpen = section === g.key;
                 return (
-                  <li key={g.label} className="border-t border-white/[0.06]">
+                  <li key={g.key} className="border-t border-white/[0.06]">
                     <button
                       type="button"
                       aria-expanded={isOpen}
-                      onClick={() => setSection(isOpen ? null : g.label)}
-                      className="flex w-full items-center justify-between py-3 text-h3"
+                      onClick={() => setSection(isOpen ? null : g.key)}
+                      className="flex w-full items-center justify-between gap-3 py-3 text-left text-h3"
                       data-cursor="link"
                     >
-                      {g.label}
+                      <span className="min-w-0">{g.label}</span>
                       <ChevronDown
                         size={18}
-                        className={`transition-transform duration-300 ${isOpen ? "rotate-180 text-[var(--accent)]" : "text-[var(--ink-dim)]"}`}
+                        className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[var(--accent)]" : "text-[var(--ink-dim)]"}`}
                       />
                     </button>
                     {isOpen && (
@@ -184,21 +154,30 @@ export function Navigation() {
                   </li>
                 );
               })}
+              <li className="border-t border-white/[0.06]">
+                <LocaleLink
+                  to={nav.secondOpinion.to}
+                  onClick={() => setOpen(false)}
+                  className="block py-3 text-h3"
+                  data-cursor="link"
+                >
+                  {nav.secondOpinion.label}
+                </LocaleLink>
+              </li>
               <li className="pt-4">
                 <LocaleLink
-                  to="/contact"
+                  to={nav.book.to}
                   onClick={() => setOpen(false)}
                   className="inline-flex min-h-11 items-center rounded-full bg-white px-7 text-button text-black"
                   data-cursor="cta"
                 >
-                  {t.nav.book}
+                  {nav.book.label}
                 </LocaleLink>
               </li>
             </ul>
           </div>
         </div>
       )}
-      <span className="hidden">{locale}</span>
     </>
   );
 }

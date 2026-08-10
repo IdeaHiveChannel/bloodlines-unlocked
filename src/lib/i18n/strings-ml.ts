@@ -148,7 +148,6 @@ export const stringsMl: Record<string, string> = {
   "Interventional workshop": "ഇന്റർവെൻഷണൽ ശിൽപശാല",
   "Invited talks on stroke intervention, limb salvage and the widening role of interventional radiology across organ systems.": "സ്ട്രോക്ക് ചികിത്സ, കാൽ സംരക്ഷണം, വിവിധ അവയവങ്ങളിൽ ഇന്റർവെൻഷണൽ റേഡിയോളജിയുടെ വളരുന്ന പങ്ക് എന്നിവയെക്കുറിച്ചുള്ള ക്ഷണിക്കപ്പെട്ട പ്രഭാഷണങ്ങൾ.",
   "KCR Seoul": "കെസിആർ സോൾ",
-  "Kannur": "കണ്ണൂർ",
   "Karnataka, India": "കർണാടക, ഇന്ത്യ",
   "Kasaragod": "കാസർകോട്",
   "Kerala, India": "കേരളം, ഇന്ത്യ",

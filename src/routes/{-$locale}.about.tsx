@@ -28,8 +28,8 @@ export const Route = createFileRoute("/{-$locale}/about")({
           email: contact.email,
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Kannur",
-            addressRegion: "Kerala",
+            addressLocality: "Mangalore",
+            addressRegion: "Karnataka",
             addressCountry: "IN",
           },
         }),

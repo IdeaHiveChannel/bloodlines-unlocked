@@ -1,0 +1,92 @@
+import { useTx } from "./i18n/tx";
+
+export type NavLink = { to: string; label: string };
+export type NavGroup = { key: string; label: string; links: NavLink[]; columns?: 1 | 2 };
+
+/** Slug used for the expertise page anchors, kept in one place. */
+export const expertiseAreas = [
+  { id: "neurointervention", label: "Neurointervention" },
+  { id: "stroke-care", label: "Stroke care" },
+  { id: "peripheral-vascular", label: "Peripheral vascular" },
+  { id: "aortic-disease", label: "Aortic disease" },
+  { id: "venous-disease", label: "Venous disease" },
+  { id: "interventional-oncology", label: "Interventional oncology" },
+  { id: "hepatobiliary-portal", label: "Hepatobiliary & portal" },
+  { id: "thyroid-intervention", label: "Thyroid intervention" },
+  { id: "renal-genitourinary", label: "Renal & genitourinary" },
+  { id: "musculoskeletal-pain", label: "Musculoskeletal & pain" },
+  { id: "womens-health", label: "Women's health" },
+  { id: "dialysis-access", label: "Dialysis access" },
+];
+
+const treatCategories: NavLink[] = [
+  { to: "/diseases/stroke", label: "Brain & stroke" },
+  { to: "/diseases/poor-blood-circulation", label: "Blood circulation" },
+  { to: "/diseases/varicose-veins", label: "Veins" },
+  { to: "/diseases/brain-aneurysm", label: "Aneurysms" },
+  { to: "/diseases/thyroid-nodules", label: "Thyroid" },
+  { to: "/diseases/liver-tumours", label: "Liver & tumours" },
+  { to: "/conditions/renal-artery-stenosis", label: "Kidney" },
+  { to: "/diseases/knee-osteoarthritis", label: "Knee & joint pain" },
+  { to: "/diseases/uterine-fibroids", label: "Women's health" },
+  { to: "/diseases/enlarged-prostate", label: "Prostate" },
+  { to: "/conditions/dialysis-access-failure", label: "Dialysis access" },
+  { to: "/conditions", label: "Other conditions" },
+];
+
+const treatmentCategories: NavLink[] = [
+  { to: "/procedures/angioplasty", label: "Restore blood flow" },
+  { to: "/procedures/thrombectomy", label: "Remove blood clots" },
+  { to: "/diseases/brain-avm-avf", label: "Brain vessel treatment" },
+  { to: "/procedures/aneurysm-repair", label: "Aneurysm treatment" },
+  { to: "/procedures/varicose-vein-ablation", label: "Vein treatment" },
+  { to: "/procedures/tace", label: "Tumour treatment" },
+  { to: "/procedures/thyroid-ablation", label: "Thyroid treatment" },
+  { to: "/procedures/genicular-artery-embolization", label: "Knee pain treatment" },
+  { to: "/procedures/uterine-fibroid-embolization", label: "Fibroid treatment" },
+  { to: "/procedures/prostate-artery-embolization", label: "Prostate treatment" },
+  { to: "/procedures/dialysis-fistuloplasty", label: "Dialysis access treatment" },
+  { to: "/procedures", label: "All treatments" },
+];
+
+const patientInfo: NavLink[] = [
+  { to: "/patient-information/how-treatment-works", label: "How treatment works" },
+  { to: "/patient-information/before-consultation", label: "Before consultation" },
+  { to: "/patient-information/preparing-for-treatment", label: "Preparing for treatment" },
+  { to: "/patient-information/after-treatment", label: "After treatment" },
+  { to: "/resources", label: "Resources" },
+  { to: "/testimonials", label: "Patient stories" },
+  { to: "/media", label: "Media & publications" },
+  { to: "/contact", label: "Contact" },
+];
+
+/**
+ * The single source of truth for site navigation. The header dropdowns, the
+ * mobile menu and the footer all read from here, so nothing can drift or repeat.
+ */
+export function useSiteNav() {
+  const tx = useTx();
+  const localise = (links: NavLink[]) => links.map((l) => ({ ...l, label: tx(l.label) }));
+
+  const groups: NavGroup[] = [
+    { key: "treat", label: tx("What I treat"), links: localise(treatCategories), columns: 2 },
+    { key: "treatments", label: tx("Treatments"), links: localise(treatmentCategories), columns: 2 },
+    {
+      key: "expertise",
+      label: tx("Expertise"),
+      links: [
+        ...expertiseAreas.map((a) => ({ to: `/expertise#${a.id}`, label: tx(a.label) })),
+        { to: "/expertise", label: tx("All areas of expertise") },
+      ],
+      columns: 2,
+    },
+    { key: "patient", label: tx("Patient information"), links: localise(patientInfo) },
+  ];
+
+  return {
+    groups,
+    about: { to: "/about", label: tx("About") },
+    secondOpinion: { to: "/second-opinion", label: tx("Second opinion") },
+    book: { to: "/contact", label: tx("Book consultation") },
+  };
+}

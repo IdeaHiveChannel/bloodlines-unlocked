@@ -37,9 +37,8 @@ export const Route = createFileRoute("/{-$locale}/")({
           url: `${SITE}/`,
           telephone: "+91 63663 30505",
           email: "vascularcaredr@gmail.com",
-          areaServed: ["Kannur, Kerala", "Mangalore, Karnataka", "Kasaragod, Kerala"],
+          areaServed: ["Mangalore, Karnataka", "Kasaragod, Kerala"],
           address: [
-            { "@type": "PostalAddress", addressLocality: "Kannur", addressRegion: "Kerala", addressCountry: "IN" },
             { "@type": "PostalAddress", addressLocality: "Mangalore", addressRegion: "Karnataka", addressCountry: "IN" },
             { "@type": "PostalAddress", addressLocality: "Kasaragod", addressRegion: "Kerala", addressCountry: "IN" },
           ],

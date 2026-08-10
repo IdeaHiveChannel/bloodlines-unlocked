@@ -1,9 +1,11 @@
 import { LocaleLink } from "../locale-link";
 import { contact, locations, socialLinks, whatsappLink, whatsappMessages } from "../../lib/contact";
 import { useT } from "../../lib/i18n/react";
+import { useTx } from "../../lib/i18n/tx";
 
 export function Footer() {
   const t = useT();
+  const tx = useTx();
   return (
     <footer className="relative bg-[#050B16] pt-24 pb-10 border-t border-white/[0.05]">
       <div className="shell">
@@ -32,12 +34,13 @@ export function Footer() {
           <div>
             <p className="text-label">{t.footer.explore}</p>
             <ul className="mt-3 space-y-2">
-              <li><LocaleLink to="/conditions" data-cursor="link">{t.nav.conditions}</LocaleLink></li>
-              <li><LocaleLink to="/procedures" data-cursor="link">{t.nav.procedures}</LocaleLink></li>
+              <li><LocaleLink to="/conditions" data-cursor="link">{tx("What I treat")}</LocaleLink></li>
+              <li><LocaleLink to="/procedures" data-cursor="link">{tx("Treatments")}</LocaleLink></li>
               <li><LocaleLink to="/about" data-cursor="link">{t.nav.about}</LocaleLink></li>
               <li><LocaleLink to="/expertise" data-cursor="link">{t.nav.expertise}</LocaleLink></li>
-              <li><LocaleLink to="/media" data-cursor="link">{t.nav.media}</LocaleLink></li>
+              <li><LocaleLink to="/patient-information/how-treatment-works" data-cursor="link">{tx("Patient information")}</LocaleLink></li>
               <li><LocaleLink to="/testimonials" data-cursor="link">{t.nav.stories}</LocaleLink></li>
+              <li><LocaleLink to="/media" data-cursor="link">{t.nav.media}</LocaleLink></li>
               <li><LocaleLink to="/resources" data-cursor="link">{t.nav.resources}</LocaleLink></li>
             </ul>
           </div>

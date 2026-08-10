@@ -9,7 +9,7 @@ export const contact = {
   coordinatorHref: "tel:+916366330505",
   email: "vascularcaredr@gmail.com",
   emailHref: "mailto:vascularcaredr@gmail.com",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kannur%2C%20Kerala",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Mangalore%2C%20Karnataka",
   verified: true,
 };
 
@@ -24,7 +24,6 @@ export const socialLinks = [
 export const socialUrls = socialLinks.map((s) => s.url);
 
 export const locations = [
-  { city: "Kannur", state: "Kerala, India" },
   { city: "Mangalore", state: "Karnataka, India" },
   { city: "Kasaragod", state: "Kerala, India" },
 ].map((l) => ({
