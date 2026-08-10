@@ -53,16 +53,17 @@ function Index() {
   return (
     <main>
       <Hero />
+      <WhatITreat />
       <Transition />
       <Anatomy />
       <ConditionsGateway />
       <Procedures />
       <BeforeAfter />
       <Recovery />
-      <MediaBand />
-      <PatientStories />
-      <Journey />
       <Doctor />
+      <Journey />
+      <PatientStories />
+      <MediaBand />
       <Consultation />
       <Footer />
     </main>
