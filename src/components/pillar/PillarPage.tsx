@@ -138,6 +138,30 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">
               {pillar.heroLead}
             </p>
+            {(alias || seo) && (
+              <div className="mt-8 max-w-2xl space-y-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
+                {alias && (
+                  <p className="text-small leading-relaxed text-[var(--ink-dim)]">
+                    <span className="text-label text-[var(--accent)]">{tx("Also known as")}</span>
+                    <br />
+                    {isMl ? alias.mlAlsoKnownAs : alias.alsoKnownAs}
+                  </p>
+                )}
+                {seo && (
+                  <p className="text-small leading-relaxed">
+                    {isMl ? seo.answerMl : seo.answer}
+                  </p>
+                )}
+                {seo && (
+                  <p className="text-small leading-relaxed text-[var(--ink-dim)]">
+                    <span className="text-label text-[var(--accent)]">{tx("How image-guided treatment helps")}</span>
+                    <br />
+                    {isMl ? seo.imageGuidedMl : seo.imageGuided}
+                  </p>
+                )}
+              </div>
+            )}
+
             <div className="mt-10 flex flex-wrap gap-3">
               <LocaleLink
                 to="/contact"
