@@ -99,8 +99,12 @@ function SubNav() {
 
 export function PillarPage({ pillar }: { pillar: Pillar }) {
   const tx = useTx();
+  const isMl = useLocale() === "ml";
+  const alias = aliasFor(pillar.slug);
+  const seo = pillarSeoFor(pillar.slug);
   const procedures = useProcedures();
   const conditions = useConditions();
+
   const pillarProcedures = pillar.procedures.map((slug) => ({
     slug,
     entry: procedures.find((p) => p.slug === slug),
