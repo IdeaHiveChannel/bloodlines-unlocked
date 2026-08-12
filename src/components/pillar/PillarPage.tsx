@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 import type { Pillar } from "../../lib/pillars";
 import { hasPillar, slugToLabel } from "../../lib/pillars";
 import { useConditions, useProcedures } from "../../lib/i18n/data";
+import { useLocale } from "../../lib/i18n/react";
+import { aliasFor } from "../../lib/seo/aliases";
+import { pillarSeoFor } from "../../lib/seo/pillar-seo";
+
 import { procedureVideos } from "../../lib/media";
 import { ProcedureVideo } from "../procedures/ProcedureVideo";
 import { Consultation } from "../sections/Consultation";
