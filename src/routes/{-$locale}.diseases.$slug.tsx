@@ -4,6 +4,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getPillar } from "../lib/i18n/data";
 import { localePath } from "../lib/i18n";
 import { PillarPage } from "../components/pillar/PillarPage";
+import { pillarSeoFor } from "../lib/seo/pillar-seo";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
