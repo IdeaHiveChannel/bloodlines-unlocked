@@ -125,6 +125,9 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
     }))
     .filter((r) => r.pillar || r.condition);
 
+  const searchFaqs = (seo?.searchFaqs ?? []).map((f) => ({ q: isMl ? f.qMl : f.q, a: isMl ? f.aMl : f.a }));
+  const allFaqs = [...pillar.faqs, ...searchFaqs];
+
   return (
     <>
       <main className="bg-[#050B16] pt-32">
@@ -332,10 +335,10 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             id="faqs"
             index={13}
             label={tx("Questions")}
-            title={`${pillar.faqs.length} ${tx("questions patients ask.")}`}
+            title={`${allFaqs.length} ${tx("questions patients ask.")}`}
           >
             <div className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
-              {pillar.faqs.map((f) => (
+              {allFaqs.map((f) => (
                 <details key={f.q} className="group py-5" data-cursor="link">
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-body leading-snug marker:hidden">
                     <span>{f.q}</span>
