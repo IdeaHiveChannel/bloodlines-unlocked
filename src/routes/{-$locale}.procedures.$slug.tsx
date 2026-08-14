@@ -8,6 +8,10 @@ import { procedureVideos } from "../lib/media";
 import { ProcedureVideo } from "../components/procedures/ProcedureVideo";
 import { Footer } from "../components/sections/Footer";
 import { Consultation } from "../components/sections/Consultation";
+import { procedureSeoFor } from "../lib/seo/procedure-seo";
+import { getConditions } from "../lib/i18n/data";
+import { localePath } from "../lib/i18n";
+import { useLocale } from "../lib/i18n/react";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
@@ -17,7 +21,10 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
     const p = getProcedure(params.slug, locale);
     const url = `${SITE}${locale === "ml" ? "/ml" : ""}/procedures/${params.slug}`;
     const name = p?.name ?? "Procedure not catalogued";
-    const line = (p?.oneLiner ?? "This procedure is not in the catalogue.").slice(0, 158);
+    const seo = procedureSeoFor(params.slug);
+    const intro = seo ? (locale === "ml" ? seo.searchIntroMl : seo.searchIntro) : undefined;
+    const line = (intro ?? p?.oneLiner ?? "This procedure is not in the catalogue.").slice(0, 158);
+    const faqs = (seo?.faqs ?? []).map((f) => (locale === "ml" ? { q: f.qMl, a: f.aMl } : { q: f.q, a: f.a }));
     return {
       meta: [
         { title: `${name} — Dr. Mandeep Sagar`.slice(0, 60) },
@@ -31,6 +38,50 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
         { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [{ rel: "canonical", href: url }],
+      scripts: p
+        ? [
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "MedicalProcedure",
+                name: p.name,
+                description: intro ?? p.oneLiner,
+                url,
+                procedureType: "https://schema.org/PercutaneousProcedure",
+                howPerformed: p.beats.join(" "),
+              }),
+            },
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}${localePath("/", locale)}` },
+                  { "@type": "ListItem", position: 2, name: "Treatments", item: `${SITE}${localePath("/procedures", locale)}` },
+                  { "@type": "ListItem", position: 3, name: p.name, item: url },
+                ],
+              }),
+            },
+            ...(faqs.length
+              ? [
+                  {
+                    type: "application/ld+json",
+                    children: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "FAQPage",
+                      mainEntity: faqs.map((f) => ({
+                        "@type": "Question",
+                        name: f.q,
+                        acceptedAnswer: { "@type": "Answer", text: f.a },
+                      })),
+                    }),
+                  },
+                ]
+              : []),
+          ]
+        : [],
     };
   },
   loader: ({ params }): Procedure => {
@@ -50,6 +101,15 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
 function ProcedurePage() {
   const tx = useTx();
   const p = Route.useLoaderData() as Procedure;
+  const locale = useLocale();
+  const isMl = locale === "ml";
+  const seo = procedureSeoFor(p.slug);
+  const conditions = getConditions(locale);
+  const usedFor = seo ? (isMl ? seo.usedForMl : seo.usedFor) : [];
+  const faqs = (seo?.faqs ?? []).map((f) => (isMl ? { q: f.qMl, a: f.aMl } : { q: f.q, a: f.a }));
+  const linkedConditions = (seo?.conditions ?? [])
+    .map((slug) => conditions.find((c) => c.slug === slug))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c));
   const video = procedureVideos[p.slug];
   return (
     <>
@@ -58,6 +118,41 @@ function ProcedurePage() {
           <LocaleLink to="/procedures" className="text-label" data-cursor="link">{tx("← All procedures")}</LocaleLink>
           <h1 className="text-display-xl mt-8">{p.name}</h1>
           <p className="mt-6 text-body text-[var(--ink-dim)]">{p.oneLiner}</p>
+          {seo && (
+            <div className="mt-8 space-y-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
+              <p className="text-small leading-relaxed">{isMl ? seo.searchIntroMl : seo.searchIntro}</p>
+              <p className="text-small leading-relaxed text-[var(--ink-dim)]">
+                <span className="text-label text-[var(--accent)]">{tx("What patients call it")}</span>
+                <br />
+                {isMl ? seo.patientTermMl : seo.patientTerm}
+              </p>
+            </div>
+          )}
+          {usedFor.length > 0 && (
+            <section className="mt-12">
+              <h2 className="text-h2">{tx("Used for")}</h2>
+              <ul className="mt-5 space-y-2">
+                {usedFor.map((u) => (
+                  <li key={u} className="text-small leading-relaxed text-[var(--ink-dim)]">— {u}</li>
+                ))}
+              </ul>
+              {linkedConditions.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {linkedConditions.map((c) => (
+                    <LocaleLink
+                      key={c.slug}
+                      to="/conditions/$slug"
+                      params={{ slug: c.slug }}
+                      className="rounded-full border border-white/[0.12] px-4 py-2 text-label"
+                      data-cursor="link"
+                    >
+                      {c.name}
+                    </LocaleLink>
+                  ))}
+                </div>
+              )}
+            </section>
+          )}
           {video && <ProcedureVideo video={video} />}
           <ol className="mt-16 space-y-10">
             {p.beats.map((b: string, i: number) => (
@@ -67,6 +162,30 @@ function ProcedurePage() {
               </li>
             ))}
           </ol>
+          {faqs.length > 0 && (
+            <section className="mt-16">
+              <h2 className="text-h2">{tx("Questions patients ask")}</h2>
+              <div className="mt-6 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+                {faqs.map((f) => (
+                  <details key={f.q} className="group py-5" data-cursor="link">
+                    <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-body leading-snug marker:hidden">
+                      <span>{f.q}</span>
+                      <span className="mt-1 shrink-0 text-[var(--ink-dim)] transition-transform group-open:rotate-45">+</span>
+                    </summary>
+                    <p className="mt-3 text-small leading-relaxed text-[var(--ink-dim)]">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+          <div className="mt-14 flex flex-wrap gap-3">
+            <LocaleLink to="/second-opinion" className="rounded-full border border-white/[0.12] px-5 py-3 text-button" data-cursor="link">
+              {tx("Get a second opinion")}
+            </LocaleLink>
+            <LocaleLink to="/contact" className="rounded-full bg-white px-5 py-3 text-button text-black" data-cursor="cta">
+              {tx("Book consultation")}
+            </LocaleLink>
+          </div>
         </div>
       </main>
       <Consultation />

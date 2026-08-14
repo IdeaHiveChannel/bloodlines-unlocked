@@ -4,6 +4,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getPillar } from "../lib/i18n/data";
 import { localePath } from "../lib/i18n";
 import { PillarPage } from "../components/pillar/PillarPage";
+import { pillarSeoFor } from "../lib/seo/pillar-seo";
 
 const SITE = "https://bloodlines-unlocked.lovable.app";
 
@@ -53,11 +54,28 @@ export const Route = createFileRoute("/{-$locale}/diseases/$slug")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: p.faqs.map((f) => ({
+            mainEntity: [
+              ...p.faqs,
+              ...(pillarSeoFor(params.slug)?.searchFaqs ?? []).map((f) =>
+                locale === "ml" ? { q: f.qMl, a: f.aMl } : { q: f.q, a: f.a },
+              ),
+            ].map((f) => ({
               "@type": "Question",
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },
             })),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}${localePath("/", locale)}` },
+              { "@type": "ListItem", position: 2, name: "What I treat", item: `${SITE}${localePath("/diseases", locale)}` },
+              { "@type": "ListItem", position: 3, name: p.title, item: url },
+            ],
           }),
         },
       ],
