@@ -1,5 +1,8 @@
 /** English UI copy -> Malayalam. Keyed by the exact English source string. */
 export const stringsMl: Record<string, string> = {
+  "What patients call it": "രോഗികൾ ഇതിനെ വിളിക്കുന്ന പേര്",
+  "Used for": "ഏതൊക്കെ അവസ്ഥകൾക്ക്",
+  "Questions patients ask": "രോഗികൾ ചോദിക്കുന്ന ചോദ്യങ്ങൾ",
   "What I treat": "ഞാൻ ചികിത്സിക്കുന്നത്",
   "Treatments": "ചികിത്സകൾ",
   "Expertise": "വൈദഗ്ധ്യം",
