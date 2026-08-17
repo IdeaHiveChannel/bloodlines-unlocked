@@ -158,8 +158,9 @@ function Laser({ progress }: P) {
   const deepOpacity = useTransform(progress, [0.75, 1], [0.2, 1]);
   
   // Ulcer shrinking
-  const ulcerOpacity = useTransform(progress, [0, 0.85, 1], [1, 1, 0.2]);
-  const ulcerScale = useTransform(progress, [0.8, 1], [1, 0.4]);
+  const ulcerOpacity = useTransform(progress, [0, 0.6, 1], [1, 1, 0.1]);
+  const ulcerScale = useTransform(progress, [0.6, 1], [1, 0.2]);
+
 
   // Ultrasound probe/guidance
   const usOpacity = useTransform(progress, [0.1, 0.2, 0.8, 0.9], [0, 1, 1, 0]);
