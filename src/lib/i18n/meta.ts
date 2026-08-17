@@ -15,7 +15,7 @@ type HeadScript = { type: string; children: string };
 /** Malayalam head copy, keyed by the canonical English path. */
 export const metaMl: Record<string, MetaCopy> = {
   "/": {
-    title: "ഡോ. മന്ദീപ് സാഗർ — ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
+    title: "ഡോ. മന്ദീപ് സാഗർ — വാസ്കുലാർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ് | മംഗളൂരു & കാസർകോട്",
     description:
       "ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ ആധുനിക വൈദ്യശാസ്ത്രം. Modern medicine, through a pinpoint opening. Specialized image-guided treatment for complex conditions.",
     ogTitle: "ഡോ. മന്ദീപ് സാഗർ — വാസ്കുലാർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",

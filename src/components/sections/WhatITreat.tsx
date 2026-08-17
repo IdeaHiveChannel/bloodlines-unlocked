@@ -8,20 +8,19 @@ import { LocaleLink } from "../locale-link";
  * Deliberately not the full catalogue — that lives one click away.
  */
 const categories = [
-  { to: "/diseases/stroke", label: "Brain & stroke", note: "Stroke, brain bleeds, blocked brain arteries" },
-  { to: "/diseases/poor-blood-circulation", label: "Circulation problems", note: "Leg pain on walking, cold feet, poor blood supply" },
-  { to: "/diseases/varicose-veins", label: "Vein problems", note: "Varicose veins, clots, leg swelling and ulcers" },
-  { to: "/diseases/brain-aneurysm", label: "Aneurysms", note: "Brain and aortic aneurysms" },
-  { to: "/diseases/diabetic-foot", label: "Diabetic foot & limb problems", note: "Non-healing ulcers, gangrene, threatened amputation" },
-  { to: "/diseases/thyroid-nodules", label: "Thyroid", note: "Benign thyroid nodules and neck swelling" },
-  { to: "/diseases/liver-tumours", label: "Liver tumours", note: "Liver cancer and portal hypertension" },
-  { to: "/conditions/renal-artery-stenosis", label: "Kidney & urinary problems", note: "Kidney artery narrowing and tumours" },
-  { to: "/diseases/knee-osteoarthritis", label: "Knee pain", note: "Long-standing knee osteoarthritis pain" },
-  { to: "/diseases/uterine-fibroids", label: "Women's health", note: "Fibroids and pelvic congestion" },
-  { to: "/diseases/enlarged-prostate", label: "Prostate", note: "Enlarged prostate and urinary symptoms" },
-  { to: "/conditions/visceral-aneurysm", label: "Visceral aneurysm", note: "Aneurysms of internal organ arteries" },
-  { to: "/conditions/dialysis-access-failure", label: "Dialysis access", note: "Failing fistulas and grafts" },
-
+  { to: "/diseases/stroke", label: "Stroke and blocked blood vessels in the brain", note: "Brain blood vessel clot causing stroke" },
+  { to: "/diseases/brain-aneurysm", label: "Brain aneurysm and abnormal blood vessels", note: "Bleeding from a brain aneurysm" },
+  { to: "/diseases/poor-blood-circulation", label: "Blocked arteries and poor blood circulation in the legs", note: "Pain while walking, cold feet, reduced blood supply" },
+  { to: "/diseases/diabetic-foot", label: "Diabetic foot and non-healing wounds", note: "Threatened limb and gangrene" },
+  { to: "/diseases/varicose-veins", label: "Varicose veins, blood clots and venous ulcers", note: "Swollen leg veins and non-healing sores" },
+  { to: "/conditions/visceral-aneurysm", label: "Aneurysms of the aorta and abdominal blood vessels", note: "Visceral artery aneurysms" },
+  { to: "/conditions/renal-artery-stenosis", label: "Kidney blood vessel problems and selected kidney tumours", note: "Renal artery narrowing and tumours" },
+  { to: "/diseases/liver-tumours", label: "Liver tumours and selected vascular liver conditions", note: "Hepatocellular carcinoma and hemangioma" },
+  { to: "/conditions/dialysis-access-failure", label: "Dialysis access problems", note: "Fistula and graft narrowing or blockage" },
+  { to: "/diseases/thyroid-nodules", label: "Thyroid nodules and thyroid swelling", note: "Benign neck lumps and goitre" },
+  { to: "/diseases/enlarged-prostate", label: "Enlarged prostate and urinary symptoms", note: "Difficulty passing urine and frequent urination" },
+  { to: "/diseases/uterine-fibroids", label: "Uterine fibroids and selected pelvic conditions", note: "Heavy periods and pelvic pain" },
+  { to: "/diseases/knee-osteoarthritis", label: "Knee osteoarthritis pain", note: "Chronic knee pain relief" },
 ];
 
 export function WhatITreat() {
@@ -33,7 +32,7 @@ export function WhatITreat() {
         <div className="mt-6 grid gap-10 lg:grid-cols-12">
           <h2 className="text-display-xl lg:col-span-6">{tx("Start with your problem.")}</h2>
           <p className="max-w-xl text-small leading-relaxed text-[var(--ink-dim)] lg:col-span-6 lg:pt-4">
-            {tx("Conditions affecting the brain, blood vessels, veins and other parts of the body can sometimes be treated through image-guided procedures. Explore the conditions relevant to your symptoms or diagnosis.")}
+            {tx("Conditions affecting the blood vessels of the brain, legs, abdomen and other parts of the body can sometimes be treated through image-guided minimally invasive procedures.")}
           </p>
         </div>
 

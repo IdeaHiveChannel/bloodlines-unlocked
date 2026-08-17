@@ -19,11 +19,16 @@ export const pillarNamesMl: Record<string, { name: string; title: string }> = {
   "thyroid-nodules": { name: "തൈറോയ്ഡ് മുഴകൾ", title: "തൈറോയ്ഡ് മുഴകളും കഴുത്തിലെ വീക്കവും" },
   "uterine-fibroids": { name: "ഗർഭാശയ ഫൈബ്രോയിഡ്", title: "ഗർഭാശയത്തിലെ ഫൈബ്രോയിഡ് മുഴകൾ" },
   "varicose-veins": { name: "വെരിക്കോസ് വെയിൻ", title: "വെരിക്കോസ് വെയിൻ (ഞരമ്പു വീക്കം)" },
+  "hemoptysis": "രക്തം ചുമയ്ക്കൽ (Hemoptysis)",
+  "pulmonary-avm": "ശ്വാസകോശത്തിലെ രക്തക്കുഴൽ തകരാർ",
+  "hepatic-hemangioma": "കരളിലെ രക്തക്കുഴൽ മുഴ (Hemangioma)",
+  "angiomyolipoma": "വൃക്കയിലെ മുഴ (Angiomyolipoma)",
+  "carotid-body-tumour": "കഴുത്തിലെ മുഴ (Carotid Body Tumour)",
 };
 
 export const conditionNamesMl: Record<string, string> = {
-  "acute-ischemic-stroke": "അക്യൂട്ട് ഇസ്കീമിക് സ്ട്രോക്ക്",
-  "cerebral-aneurysm": "മസ്തിഷ്ക അനൂറിസം",
+  "acute-ischemic-stroke": "മസ്തിഷ്കത്തിലെ രക്തക്കുഴലിൽ ബ്ലോക്ക് (Stroke)",
+  "cerebral-aneurysm": "മസ്തിഷ്കത്തിലെ അന്യൂറിസം",
   "brain-avm": "ആർട്ടീരിയോവീനസ് മാൽഫോർമേഷൻ (AVM)",
   "dural-avf": "ഡ്യൂറൽ ആർട്ടീരിയോവീനസ് ഫിസ്റ്റുല (AVF)",
   "carotid-cavernous-fistula": "കരോട്ടിഡ് കാവർണസ് ഫിസ്റ്റുല (CCF)",
@@ -36,7 +41,7 @@ export const conditionNamesMl: Record<string, string> = {
   "portal-hypertension": "പോർട്ടൽ ഹൈപ്പർടെൻഷൻ",
   "variceal-bleeding": "ആമാശയ വെരിക്കോസ് രക്തസ്രാവം",
   "transjugular-liver-biopsy": "അപകടസാധ്യതയുള്ളവരിൽ കരൾ ബയോപ്സി",
-  "renal-artery-stenosis": "വൃക്ക ധമനി ചുരുങ്ങൽ",
+  "renal-artery-stenosis": "വൃക്കയിലെ രക്തക്കുഴലിലെ തടസ്സം",
   "renal-tumour": "വൃക്കയിലെ മുഴ",
   "renal-artery-aneurysm": "വൃക്ക ധമനി അനൂറിസം",
   "dialysis-access-failure": "ഡയാലിസിസ് ഫിസ്റ്റുല തകരാർ",
@@ -85,16 +90,17 @@ export const procedureNamesMl: Record<string, string> = {
 };
 
 export const regionLabelsMl: Record<string, string> = {
-  brain: "തലച്ചോറ്",
+  brain: "മസ്തിഷ്കവും രക്തക്കുഴലുകളും",
   eye: "കണ്ണ്",
-  carotid: "കരോട്ടിഡ്",
+  carotid: "കഴുത്തും കരോട്ടിഡ് ധമനികളും",
   thyroid: "തൈറോയ്ഡ്",
-  chest: "അയോർട്ടയും നെഞ്ചും",
+  chest: "നെഞ്ചും അയോർട്ടയും",
   liver: "കരൾ",
-  kidney: "വൃക്കകൾ",
-  arms: "കൈകൾ — ഡയാലിസിസ് ആക്സസ്",
+  abdomen: "വയറും വയറിലെ രക്തക്കുഴലുകളും",
+  kidney: "വൃക്കകളും രക്തക്കുഴലുകളും",
+  arms: "കൈകളും ഡയാലിസിസ് ആക്സസും",
   pelvis: "പെൽവിസ്",
   knee: "കാൽമുട്ട്",
-  legs: "കാലുകൾ",
+  legs: "കാലുകളും രക്തക്കുഴലുകളും",
   veins: "സിരകൾ",
 };

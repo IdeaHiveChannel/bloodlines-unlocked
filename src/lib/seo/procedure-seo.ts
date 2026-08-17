@@ -293,6 +293,43 @@ export const procedureSeo: Record<string, ProcedureSeo> = {
       },
     ],
   },
+  'bronchial-artery-embolisation': {
+    patientTerm: 'Treatment for coughing up blood',
+    patientTermMl: 'രക്തം ചുമയ്ക്കുന്നതിനുള്ള ചികിത്സ (BAE)',
+    searchIntro: 'Bronchial artery embolisation is a life-saving procedure to stop severe coughing up of blood (hemoptysis). In selected patients, bleeding comes from abnormal or damaged blood vessels in the lungs, which are blocked from within using embolic materials.',
+    searchIntroMl: 'രക്തം ചുമച്ചു തുപ്പുന്ന അവസ്ഥയ്ക്കുള്ള (Hemoptysis) അടിയന്തര ചികിത്സയാണിത്. ശ്വാസകോശത്തിലെ തകരാറിലായ രക്തക്കുഴലുകൾ ഉള്ളിൽ നിന്ന് അടച്ചാണ് ഇത് ചെയ്യുന്നത്.',
+    usedFor: ['Hemoptysis', 'Coughing up blood'],
+    usedForMl: ['രക്തം ചുമയ്ക്കൽ', 'കഫത്തിൽ രക്തം കാണുക'],
+    conditions: ['hemoptysis'],
+    faqs: [
+      {
+        q: 'Is this a permanent cure for coughing up blood?',
+        a: 'It is highly effective at stopping the immediate bleeding. The underlying lung condition (like bronchiectasis or TB) still needs medical management to prevent recurrence.',
+        qMl: 'ഇതൊരു ശാശ്വത പരിഹാരമാണോ?',
+        aMl: 'അടിയന്തര രക്തസ്രാവം നിർത്താൻ ഇത് വളരെ ഫലപ്രദമാണ്. എന്നാൽ അടിസ്ഥാന രോഗത്തിന് ചികിത്സ തുടരേണ്ടതുണ്ട്.',
+      },
+    ],
+  },
+  'pulmonary-avm-embolisation': {
+    patientTerm: 'Treatment for abnormal lung blood vessels',
+    patientTermMl: 'ശ്വാസകോശത്തിലെ രക്തക്കുഴൽ വൈകല്യത്തിനുള്ള ചികിത്സ',
+    searchIntro: 'Pulmonary AVM embolisation closes abnormal connections between arteries and veins in the lungs. This prevents complications like strokes or brain abscesses that can occur when blood bypasses the lung's filtering mechanism.',
+    searchIntroMl: 'ശ്വാസകോശത്തിലെ ധമനികളും സിരകളും തമ്മിലുള്ള അസ്വാഭാവികമായ ബന്ധം (AVM) അടയ്ക്കുന്ന ചികിത്സയാണിത്.',
+    usedFor: ['Pulmonary AVM'],
+    usedForMl: ['ശ്വാസകോശത്തിലെ രക്തക്കുഴൽ തകരാർ'],
+    conditions: ['pulmonary-avm'],
+    faqs: [],
+  },
+  'renal-artery-stenting': {
+    patientTerm: 'Stenting for kidney blood vessel narrowing',
+    patientTermMl: 'വൃക്കയിലെ രക്തക്കുഴൽ തടസ്സത്തിനുള്ള സ്റ്റെന്റിംഗ്',
+    searchIntro: 'When high blood pressure remains difficult to control despite several medicines, narrowing of the renal artery may be a cause. Stenting restores blood flow to the kidney and may help in blood pressure management in selected cases.',
+    searchIntroMl: 'മരുന്നുകൾ കഴിച്ചിട്ടും രക്തസമ്മർദ്ദം കുറയാത്ത സാഹചര്യത്തിൽ വൃക്കയിലെ ധമനികളിലെ തടസ്സം ഒരു കാരണമായേക്കാം. സ്റ്റെന്റിംഗ് വഴി രക്തയോട്ടം പുനഃസ്ഥാപിക്കുന്നു.',
+    usedFor: ['Renal artery stenosis', 'Resistant hypertension'],
+    usedForMl: ['വൃക്കയിലെ ധമനി തടസ്സം', 'നിയന്ത്രിക്കാനാവാത്ത രക്തസമ്മർദ്ദം'],
+    conditions: ['renal-artery-stenosis'],
+    faqs: [],
+  },
 };
 
 export function procedureSeoFor(slug: string): ProcedureSeo | undefined {

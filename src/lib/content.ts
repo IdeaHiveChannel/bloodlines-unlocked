@@ -7,6 +7,7 @@ export const regionOrder = [
   "carotid",
   "thyroid",
   "chest",
+  "abdomen",
   "liver",
   "kidney",
   "arms",
@@ -19,17 +20,18 @@ export const regionOrder = [
 export type Region = (typeof regionOrder)[number];
 
 export const regionLabels: Record<Region, string> = {
-  brain: "Brain",
+  brain: "Brain & brain blood vessels",
   eye: "Eye",
-  carotid: "Carotid",
+  carotid: "Neck & carotid arteries",
   thyroid: "Thyroid",
-  chest: "Aorta & chest",
+  chest: "Chest & aorta",
+  abdomen: "Abdomen & abdominal blood vessels",
   liver: "Liver",
-  kidney: "Kidneys",
-  arms: "Arms — dialysis access",
+  kidney: "Kidneys & renal arteries",
+  arms: "Arms & hands",
   pelvis: "Pelvis",
   knee: "Knee",
-  legs: "Lower limbs",
+  legs: "Legs & peripheral blood vessels",
   veins: "Veins",
 };
 
@@ -52,8 +54,8 @@ export const conditions: Condition[] = [
     region: "brain",
     intervention: "Mechanical thrombectomy",
     intro:
-      "When a clot blocks a vessel inside the brain, every minute reshapes a life. Image-guided thrombectomy reaches the clot through a single puncture and restores flow before tissue is lost.",
-    symptoms: ["Sudden weakness on one side", "Facial droop", "Slurred speech", "Loss of vision"],
+      "When a blood clot blocks a blood vessel in the brain, blood flow to part of the brain is reduced or stopped. In selected patients with acute ischemic stroke, mechanical thrombectomy can be used to remove the clot through a small access point and restore blood flow.",
+    symptoms: ["Sudden weakness on one side", "Facial droop", "Slurred speech", "Loss of vision", "Blocked blood vessel in the brain"],
     treatments: ["Mechanical thrombectomy", "Intra-arterial thrombolysis"],
   },
   {
@@ -63,7 +65,7 @@ export const conditions: Condition[] = [
     intervention: "Coiling",
     intro:
       "A weak point on a brain artery slowly fills under pressure. Coils placed from inside the vessel pack the sac until blood no longer enters it — the skull is never opened.",
-    symptoms: ["Often silent", "Sudden severe headache", "Vision change", "Neck stiffness"],
+    symptoms: ["Often silent", "Sudden severe headache", "Vision change", "Neck stiffness", "Bleeding from a brain aneurysm"],
     treatments: ["Endovascular coiling", "Flow-diverter stenting", "Balloon-assisted coiling"],
   },
   {
@@ -73,7 +75,7 @@ export const conditions: Condition[] = [
     intervention: "Embolization",
     intro:
       "A tangle of vessels where arteries and veins meet directly, bypassing the capillary bed. Targeted embolization closes the abnormal connection from within, often before any incision is considered.",
-    symptoms: ["Headache", "Seizure", "Bleeding", "Progressive weakness"],
+    symptoms: ["Headache", "Seizure", "Bleeding", "Progressive weakness", "Abnormal connection between brain arteries and veins"],
     treatments: ["Endovascular embolization", "Staged embolization before radiosurgery"],
   },
   {
@@ -85,16 +87,6 @@ export const conditions: Condition[] = [
       "An abnormal shortcut between an artery and a vein in the covering of the brain. Pressure builds where it was never meant to. Embolic material delivered through a microcatheter seals the shunt.",
     symptoms: ["Pulsatile tinnitus", "Headache", "Vision change", "Bleeding"],
     treatments: ["Transarterial embolization", "Transvenous embolization"],
-  },
-  {
-    slug: "carotid-cavernous-fistula",
-    name: "Carotid cavernous fistula (CCF)",
-    region: "eye",
-    intervention: "Image-guided embolization",
-    intro:
-      "High-pressure arterial blood escapes into the venous channels behind the eye. The eye reddens, bulges and pulses. Closing the fistula from inside the vessel reverses it — often visibly, within days.",
-    symptoms: ["Red, bulging eye", "Pulsating sensation", "Double vision", "Whooshing sound"],
-    treatments: ["Transvenous coil embolization", "Balloon-assisted closure"],
   },
 
   // ── Neck ────────────────────────────────────────────────────────────────
@@ -109,36 +101,78 @@ export const conditions: Condition[] = [
     treatments: ["Carotid stenting with protection device", "Angioplasty"],
   },
   {
+    slug: "carotid-body-tumour",
+    name: "Carotid body tumour",
+    region: "carotid",
+    intervention: "Pre-operative embolisation",
+    intro:
+      "A carotid body tumour is a highly vascular swelling at the division of the carotid artery in the neck. Embolisation can be used to reduce blood supply before surgery by the appropriate surgical team.",
+    symptoms: ["Lump in the neck", "Pulsating mass"],
+    treatments: ["Pre-operative tumour embolisation"],
+  },
+  {
     slug: "thyroid-nodules",
     name: "Thyroid nodules & goitre",
     region: "thyroid",
     intervention: "Ablation or embolization",
     intro:
       "A benign nodule can press, disfigure and worry without ever being cancer. Heat delivered through a needle shrinks it in place; blocking its artery shrinks a larger goitre. No scar, no thyroid hormone tablets for life.",
-    symptoms: ["Neck swelling", "Pressure when swallowing", "Voice change", "Cosmetic concern"],
+    symptoms: ["Neck swelling", "Pressure when swallowing", "Voice change", "Cosmetic concern", "Thyroid swelling", "Thyroid nodule"],
     treatments: ["Radiofrequency / microwave thyroid ablation", "Thyroid artery embolization"],
   },
 
-  // ── Aorta & chest ───────────────────────────────────────────────────────
+  // ── Abdomen ──────────────────────────────────────────────────────────────
   {
-    slug: "aortic-aneurysm",
-    name: "Aortic aneurysm",
-    region: "chest",
-    intervention: "EVAR / TEVAR",
+    slug: "visceral-aneurysm",
+    name: "Visceral aneurysm",
+    region: "abdomen",
+    intervention: "Embolization & stenting",
     intro:
-      "The largest vessel in the body can quietly weaken and expand. Endovascular stent-graft repair excludes the aneurysm from circulation through small access points, redirecting blood through a reinforced channel.",
-    symptoms: ["Often silent", "Deep abdominal or back ache", "Pulsating sensation"],
-    treatments: ["EVAR — endovascular aneurysm repair", "TEVAR"],
+      "An angiomyolipoma is a usually benign kidney tumour that contains blood vessels and other tissue. Larger or selected lesions may have a risk of bleeding and can sometimes be treated with embolisation.",
+    symptoms: ["Often silent", "Vague abdominal pain", "Pulsating sensation"],
+    treatments: ["Coil embolization", "Flow-diverter stenting", "Covered stent exclusion"],
   },
   {
-    slug: "aortic-dissection",
-    name: "Aortic dissection",
-    region: "chest",
-    intervention: "Stent-graft repair",
+    slug: "hepatic-hemangioma",
+    name: "Hepatic hemangioma",
+    region: "abdomen",
+    intervention: "Embolization",
     intro:
-      "The inner lining of the aorta tears and blood forces a second channel along the wall. Covering the entry tear from within redirects flow back into the true lumen.",
-    symptoms: ["Tearing chest or back pain", "Unequal pulses", "Collapse"],
-    treatments: ["TEVAR", "Fenestration and branch stenting"],
+      "A hepatic hemangioma is a benign blood-vessel tumour of the liver. It is a non-cancerous growth that usually does not require treatment unless it is large or causing symptoms.",
+    symptoms: ["Abdominal pain", "Fullness"],
+    treatments: ["Embolization"],
+  },
+  {
+    slug: "angiomyolipoma",
+    name: "Angiomyolipoma",
+    region: "abdomen",
+    intervention: "Embolization",
+    intro:
+      "An angiomyolipoma is a usually benign kidney tumour that contains blood vessels and other tissue. Larger or selected lesions may have a risk of bleeding and can sometimes be treated with embolisation.",
+    symptoms: ["Flank pain", "Blood in urine"],
+    treatments: ["Embolization"],
+  },
+
+  // ── Chest ───────────────────────────────────────────────────────
+  {
+    slug: "hemoptysis",
+    name: "Hemoptysis (Coughing up blood)",
+    region: "chest",
+    intervention: "Bronchial artery embolisation",
+    intro:
+      "In selected patients, bleeding may come from abnormal or damaged blood vessels in the lungs. Bronchial artery embolisation can be used to block the responsible blood vessel.",
+    symptoms: ["Coughing up blood", "Blood in the cough"],
+    treatments: ["Bronchial artery embolisation"],
+  },
+  {
+    slug: "pulmonary-avm",
+    name: "Pulmonary AVM",
+    region: "chest",
+    intervention: "Embolisation",
+    intro:
+      "An abnormal connection between blood vessels in the lung (Pulmonary arteriovenous malformation).",
+    symptoms: ["Shortness of breath", "Low oxygen levels"],
+    treatments: ["Pulmonary AVM embolisation"],
   },
 
   // ── Liver ───────────────────────────────────────────────────────────────
@@ -148,49 +182,9 @@ export const conditions: Condition[] = [
     region: "liver",
     intervention: "TACE & microwave ablation",
     intro:
-      "A liver tumour lives on its own artery. Chemotherapy beads delivered directly into that artery starve it from the inside; heat delivered through a needle destroys smaller tumours outright. The rest of the liver is left alone.",
-    symptoms: ["Often silent early", "Right upper abdominal ache", "Weight loss", "Found on surveillance scans"],
-    treatments: ["TACE — transarterial chemoembolization", "Microwave ablation", "Radioembolization"],
-  },
-  {
-    slug: "gi-bleeding",
-    name: "Gastrointestinal bleeding",
-    region: "liver",
-    intervention: "Emergency embolization",
-    intro:
-      "When bleeding cannot be reached by endoscopy, angiography finds the exact vessel. Closing it takes minutes and can end a haemorrhage that surgery would struggle to reach.",
-    symptoms: ["Vomiting blood", "Black stools", "Sudden weakness", "Falling blood pressure"],
-    treatments: ["Emergency transcatheter embolization", "Coil and particle embolization"],
-  },
-  {
-    slug: "portal-hypertension",
-    name: "Portal hypertension",
-    region: "liver",
-    intervention: "TIPS",
-    intro:
-      "Scarred liver tissue resists the blood trying to pass through it, and pressure backs up into the gut and abdomen. A channel created between the portal and hepatic veins gives that pressure somewhere to go.",
-    symptoms: ["Abdominal fluid (ascites)", "Variceal bleeding", "Enlarged spleen"],
-    treatments: ["TIPS — transjugular intrahepatic portosystemic shunt", "Ascites management"],
-  },
-  {
-    slug: "variceal-bleeding",
-    name: "Gastric variceal bleeding",
-    region: "liver",
-    intervention: "BRTO",
-    intro:
-      "Swollen veins in the stomach wall can bleed catastrophically. Approached through a vein rather than an artery, they are occluded from below and allowed to collapse.",
-    symptoms: ["Massive vomiting of blood", "Black stools", "Known liver disease"],
-    treatments: ["BRTO — balloon-occluded retrograde transvenous obliteration", "Variceal embolization"],
-  },
-  {
-    slug: "transjugular-liver-biopsy",
-    name: "Liver biopsy in high-risk patients",
-    region: "liver",
-    intervention: "Transjugular liver biopsy",
-    intro:
-      "When clotting is poor or fluid surrounds the liver, a needle through the skin is unsafe. Reaching the liver from inside a neck vein takes the sample without ever crossing the capsule.",
-    symptoms: ["Abnormal liver tests", "Unexplained cirrhosis", "Coagulopathy"],
-    treatments: ["Transjugular liver biopsy", "Hepatic venous pressure measurement"],
+      "A cancerous liver tumour that lives on its own artery. Chemotherapy beads delivered directly into that artery starve it from the inside.",
+    symptoms: ["Abdominal pain", "Weight loss", "Jaundice"],
+    treatments: ["TACE — transarterial chemoembolization", "Microwave ablation"],
   },
 
   // ── Kidney ──────────────────────────────────────────────────────────────
@@ -200,400 +194,21 @@ export const conditions: Condition[] = [
     region: "kidney",
     intervention: "Renal artery stenting",
     intro:
-      "A narrowed kidney artery drives blood pressure that no tablet fully controls, and slowly starves the kidney. Reopening the vessel treats the cause rather than the reading.",
-    symptoms: ["Resistant hypertension", "Declining kidney function", "Flash pulmonary oedema"],
+      "When high blood pressure remains difficult to control despite several medicines, narrowing of the renal artery may sometimes be investigated as a possible cause.",
+    symptoms: ["Resistant hypertension", "Declining kidney function"],
     treatments: ["Renal artery angioplasty", "Renal artery stenting"],
-  },
-  {
-    slug: "renal-tumour",
-    name: "Renal tumour",
-    region: "kidney",
-    intervention: "Tumour ablation",
-    intro:
-      "A small kidney tumour can be destroyed in place with heat or cold delivered through a needle, preserving every gram of working kidney around it.",
-    symptoms: ["Often found incidentally", "Blood in urine", "Flank ache"],
-    treatments: ["Microwave / radiofrequency ablation", "Cryoablation", "Pre-surgical embolization"],
-  },
-  {
-    slug: "renal-artery-aneurysm",
-    name: "Renal artery aneurysm",
-    region: "kidney",
-    intervention: "Embolization",
-    intro:
-      "A bulge on the kidney artery carries a quiet risk of rupture. Coils or a covered stent exclude it while keeping the kidney perfused.",
-    symptoms: ["Usually silent", "Hypertension", "Flank pain if it bleeds"],
-    treatments: ["Coil embolization", "Covered stent exclusion"],
-  },
-
-  // ── Arms / dialysis access ──────────────────────────────────────────────
-  {
-    slug: "dialysis-access-failure",
-    name: "Dialysis access dysfunction",
-    region: "arms",
-    intervention: "Fistuloplasty & declotting",
-    intro:
-      "A fistula is a lifeline. When flow drops or it clots, dialysis stops. Angioplasty and declotting through a needle puncture keep the same access working for years instead of starting again in a new limb.",
-    symptoms: ["Poor dialysis flows", "Prolonged bleeding after needling", "Loss of thrill", "Arm swelling"],
-    treatments: ["Fistuloplasty", "Mechanical declotting", "Stent placement"],
-  },
-  {
-    slug: "central-vein-stenosis",
-    name: "Central vein stenosis",
-    region: "arms",
-    intervention: "Central venoplasty",
-    intro:
-      "Years of catheters narrow the large veins in the chest, and the whole arm swells. Balloon venoplasty reopens the outflow so the access — and the arm — work again.",
-    symptoms: ["Swollen arm or face", "Visible chest wall veins", "Poor dialysis flow"],
-    treatments: ["Central venoplasty", "Stenting of subclavian / brachiocephalic vein"],
-  },
-  {
-    slug: "peripheral-avm",
-    name: "Peripheral vascular malformation",
-    region: "arms",
-    intervention: "Embolization & sclerotherapy",
-    intro:
-      "A malformation present since birth can grow with the person — painful, disfiguring, sometimes bleeding. Treated through the vessels and under image guidance, it is reduced without disfiguring surgery.",
-    symptoms: ["Soft swelling", "Pain", "Discolouration", "Growth over time"],
-    treatments: ["Transarterial embolization", "Percutaneous sclerotherapy", "Staged treatment"],
-  },
-
-  // ── Pelvis ──────────────────────────────────────────────────────────────
-  {
-    slug: "uterine-fibroids",
-    name: "Uterine fibroids",
-    region: "pelvis",
-    intervention: "Fibroid embolization",
-    intro:
-      "Fibroids depend on their blood supply. Blocking the uterine arteries shrinks them over months, treating bleeding and pressure without removing the uterus.",
-    symptoms: ["Heavy periods", "Pelvic pressure", "Frequent urination", "Anaemia"],
-    treatments: ["Uterine fibroid embolization (UFE)"],
-  },
-  {
-    slug: "enlarged-prostate",
-    name: "Enlarged prostate (BPH)",
-    region: "pelvis",
-    intervention: "Prostate artery embolization",
-    intro:
-      "An enlarged prostate obstructs the bladder outlet. Reducing its arterial supply softens and shrinks the gland, easing symptoms without cutting into it.",
-    symptoms: ["Weak stream", "Night-time urination", "Incomplete emptying", "Catheter dependence"],
-    treatments: ["Prostate artery embolization (PAE)"],
-  },
-  {
-    slug: "endometriosis-pelvic-congestion",
-    name: "Endometriosis & pelvic congestion",
-    region: "pelvis",
-    intervention: "Ablation & vein embolization",
-    intro:
-      "Chronic pelvic pain often has a vascular component. Refluxing pelvic veins can be closed from within, and focal deposits treated with image-guided ablation.",
-    symptoms: ["Chronic pelvic pain", "Pain worse on standing", "Painful periods"],
-    treatments: ["Ovarian vein embolization", "Image-guided ablation"],
-  },
-  {
-    slug: "aorto-iliac-disease",
-    name: "Aorto-iliac disease",
-    region: "pelvis",
-    intervention: "Kissing-balloon stenting",
-    intro:
-      "Where the aorta divides into the legs, disease affects both limbs at once. Balloons and stents deployed together at the bifurcation restore inflow to each side.",
-    symptoms: ["Buttock and thigh claudication", "Weak femoral pulses", "Erectile dysfunction"],
-    treatments: ["Kissing-balloon angioplasty", "Iliac stenting"],
-  },
-
-  // ── Knee ────────────────────────────────────────────────────────────────
-  {
-    slug: "knee-osteoarthritis",
-    name: "Knee osteoarthritis",
-    region: "knee",
-    intervention: "Genicular artery embolization",
-    intro:
-      "In a painful arthritic knee, abnormal small vessels feed inflamed lining tissue. Reducing that supply reduces pain — an option for patients who are not ready, or not fit, for replacement.",
-    symptoms: ["Persistent knee pain", "Pain at night", "Limited walking distance"],
-    treatments: ["Genicular artery embolization (GAE)", "Genicular nerve ablation"],
-  },
-  {
-    slug: "chronic-knee-pain",
-    name: "Chronic knee pain after replacement",
-    region: "knee",
-    intervention: "Genicular nerve ablation",
-    intro:
-      "Pain can persist even after a technically perfect joint replacement. Targeting the nerves that carry it, under image guidance, offers relief without further surgery.",
-    symptoms: ["Pain despite surgery", "Tenderness", "Difficulty sleeping"],
-    treatments: ["Radiofrequency genicular nerve ablation"],
   },
 
   // ── Lower limbs ─────────────────────────────────────────────────────────
   {
-    slug: "peripheral-artery-disease",
-    name: "Peripheral artery disease",
+    slug: "poor-blood-circulation",
+    name: "Poor blood circulation in the legs",
     region: "legs",
     intervention: "Angioplasty & stenting",
     intro:
-      "Every healthy artery carries oxygen-rich blood to the body. Over time, plaque can narrow these vessels and reduce circulation in the legs. Through a small puncture, a catheter is guided to the blockage and a balloon gently restores the passage so blood begins flowing freely again.",
-    symptoms: ["Cramping when walking", "Cold feet", "Slow-healing wounds"],
-    treatments: ["Angioplasty", "Atherectomy", "Drug-eluting stenting"],
-  },
-  {
-    slug: "critical-limb-ischemia",
-    name: "Critical limb ischemia",
-    region: "legs",
-    intervention: "Below-knee revascularisation",
-    intro:
-      "When circulation in a limb falls below what tissue needs to survive, time becomes the most important variable. Endovascular revascularisation reopens the smallest below-knee vessels to give the limb a chance.",
-    symptoms: ["Rest pain", "Non-healing ulcers", "Gangrene"],
-    treatments: ["Below-knee angioplasty", "Pedal-loop reconstruction"],
-  },
-  {
-    slug: "diabetic-foot",
-    name: "Diabetic foot (vascular causes)",
-    region: "legs",
-    intervention: "Tibial & pedal angioplasty",
-    intro:
-      "In diabetes, the foot's tiny vessels often close earlier than anyone notices. Restoring inflow — sometimes one millimetre at a time — is the difference between healing and amputation.",
-    symptoms: ["Non-healing ulcer", "Numbness", "Blackened toes"],
-    treatments: ["Tibial and pedal angioplasty", "Wound-directed revascularisation"],
-  },
-  {
-    slug: "fava-malformation",
-    name: "FAVA & vascular malformations of the limb",
-    region: "legs",
-    intervention: "Cryoablation",
-    intro:
-      "Fibro-adipose vascular anomaly is rare, painful and often misdiagnosed for years. Freezing the lesion under image guidance treats the pain at its source.",
-    symptoms: ["Deep muscle pain", "Contracture", "Firm swelling", "Long diagnostic delay"],
-    treatments: ["Cryoablation", "Sclerotherapy", "Embolization"],
-  },
-
-  // ── New Conditions (SEO Brief) ───────────────────────────────────────────
-  {
-    slug: "visceral-aneurysm",
-    name: "Visceral artery aneurysm",
-    region: "liver",
-    intervention: "Embolization & stenting",
-    intro:
-      "A weak point on an artery supplying the liver, spleen or gut. Often found by accident, but carries a risk of sudden internal bleeding. Closing the aneurysm from within the vessel secures it while preserving organ blood flow.",
-    symptoms: ["Often silent", "Vague abdominal pain", "Pulsating sensation"],
-    treatments: ["Coil embolization", "Flow-diverter stenting", "Covered stent exclusion"],
-  },
-  {
-    slug: "pelvic-congestion-syndrome",
-    name: "Pelvic congestion syndrome",
-    region: "pelvis",
-    intervention: "Vein embolization",
-    intro:
-      "Chronic pelvic pain in women can sometimes be caused by swollen veins in the pelvis, similar to varicose veins in the legs. Vein embolization closes these refluxing vessels and redirects flow to healthy channels.",
-    symptoms: ["Chronic pelvic pain", "Pain worse on standing", "Pain during or after intimacy"],
-    treatments: ["Ovarian vein embolization", "Iliac vein stenting"],
-  },
-  {
-    slug: "bronchial-artery-embolisation",
-    name: "Bronchial artery embolisation",
-    region: "chest",
-    intervention: "Emergency embolization",
-    intro:
-      "Coughing up blood (hemoptysis) can be life-threatening. When it comes from the bronchial arteries, image-guided embolization can identify and close the bleeding vessel rapidly without surgery.",
-    symptoms: ["Coughing up blood", "Chest pain", "Shortness of breath"],
-    treatments: ["Bronchial artery embolization"],
-  },
-  {
-    slug: "dvt-thrombolysis",
-    name: "DVT thrombolysis & stenting",
-    region: "legs",
-    intervention: "Clot removal & stenting",
-    intro:
-      "Large blood clots in the leg or pelvis veins carry a high risk of long-term swelling and ulcers. Active removal of the clot using specialized catheters can restore flow and preserve vein function.",
-    symptoms: ["Sudden leg swelling", "Pain", "Discoloration"],
-    treatments: ["Pharmacomechanical thrombolysis", "Venous stenting"],
-  },
-  {
-    slug: "may-thurner-syndrome",
-    name: "May-Thurner syndrome",
-    region: "pelvis",
-    intervention: "Venous stenting",
-    intro:
-      "A condition where a pelvic artery compresses a pelvic vein, leading to left leg swelling and DVT. A stent placed inside the vein keeps it open and prevents future clots.",
-    symptoms: ["Left leg swelling", "Pain", "Recurrent DVT"],
-    treatments: ["Iliac vein stenting", "Angioplasty"],
-  },
-  {
-    slug: "ivc-filter-placement",
-    name: "IVC filter placement & retrieval",
-    region: "chest",
-    intervention: "Vena cava filter",
-    intro:
-      "When blood thinners cannot be used for DVT, a filter is placed in the main vein (IVC) to catch clots before they reach the lungs. Most modern filters are designed to be removed once the risk passes.",
-    symptoms: ["Risk of pulmonary embolism", "Inability to use anticoagulation"],
-    treatments: ["IVC filter placement", "Complex IVC filter retrieval"],
-  },
-  {
-    slug: "budd-chiari-syndrome",
-    name: "Budd-Chiari syndrome",
-    region: "liver",
-    intervention: "TIPS & recanalization",
-    intro:
-      "Obstruction of the veins draining the liver leads to sudden liver failure or fluid buildup. Reopening the veins or creating a bypass (TIPS) restores drainage and protects liver function.",
-    symptoms: ["Abdominal pain", "Ascites", "Liver enlargement"],
-    treatments: ["Hepatic vein stenting", "TIPS", "DIPS"],
-  },
-  {
-    slug: "mesenteric-ischemia",
-    name: "Mesenteric ischemia",
-    region: "liver",
-    intervention: "Angioplasty & stenting",
-    intro:
-      "Narrowing of the arteries supplying the gut leads to severe pain after eating and weight loss. Restoring flow to the mesenteric arteries restores normal digestion.",
-    symptoms: ["Pain after eating", "Weight loss", "Fear of food"],
-    treatments: ["SMA stenting", "Celiac artery angioplasty"],
-  },
-  {
-    slug: "venous-malformations",
-    name: "Venous & lymphatic malformations",
-    region: "legs",
-    intervention: "Sclerotherapy",
-    intro:
-      "Abnormal collections of veins or lymph vessels can cause pain and swelling. Injecting a specialized medicine (sclerotherapy) under image guidance causes them to shrink and disappear.",
-    symptoms: ["Soft swelling", "Pain", "Blue skin discoloration"],
-    treatments: ["Percutaneous sclerotherapy", "Bleomycin injection"],
-  },
-  {
-    slug: "post-thrombotic-syndrome",
-    name: "Post-thrombotic syndrome (PTS)",
-    region: "legs",
-    intervention: "Deep vein recanalization",
-    intro:
-      "Long-term leg damage after an old DVT. Reopening old, blocked deep veins and placing stents can significantly reduce swelling and help heal venous ulcers.",
-    symptoms: ["Chronic leg swelling", "Heaviness", "Venous ulcers"],
-    treatments: ["Deep vein recanalization", "Iliac vein stenting"],
-  },
-  {
-    slug: "vascular-biopsy",
-    name: "Image-guided vascular biopsy",
-    region: "chest",
-    intervention: "Endovascular biopsy",
-    intro:
-      "Taking a sample from a mass or clot inside a blood vessel or the heart, using a specialized catheter without a major operation.",
-    symptoms: ["Intravascular mass", "Unexplained clot"],
-    treatments: ["Endovascular biopsy", "Transjugular biopsy"],
-  },
-  {
-    slug: "preoperative-tumour-embolisation",
-    name: "Pre-operative tumour embolisation",
-    region: "thyroid",
-    intervention: "Tumour embolization",
-    intro:
-      "Blocking the blood supply of a highly vascular tumour shortly before surgery to make the operation safer and reduce blood loss.",
-    symptoms: ["Vascular tumour", "Planned major surgery"],
-    treatments: ["Particle embolization", "Glue/Onyx embolization"],
-  },
-
-  {
-    slug: "bronchial-artery-embolisation",
-    name: "Haemoptysis (Coughing blood)",
-    region: "chest",
-    intervention: "Bronchial artery embolization",
-    intro:
-      "Coughing up blood can be life-threatening. When the source is the bronchial arteries, image-guided embolization stops the bleeding at its source within minutes, avoiding the need for high-risk lung surgery.",
-    symptoms: ["Coughing up bright red blood", "Chest pain", "Shortness of breath"],
-    treatments: ["Emergency bronchial artery embolization"],
-  },
-  {
-    slug: "pelvic-congestion-syndrome",
-    name: "Pelvic congestion syndrome",
-    region: "pelvis",
-    intervention: "Vein embolization",
-    intro:
-      "Chronic pelvic pain in women can be caused by 'varicose veins' deep in the pelvis. Closing these leaking veins from within restores normal pressure and relieves the deep, aching pain that often worsens with standing.",
-    symptoms: ["Deep pelvic ache", "Pain worse at end of day", "Pain during or after intimacy", "Visible veins on thighs/vulva"],
-    treatments: ["Ovarian vein embolization", "Iliac vein stenting"],
-  },
-  {
-    slug: "uterine-fibroid-embolization",
-    name: "Uterine fibroids",
-    region: "pelvis",
-    intervention: "Fibroid embolization (UFE)",
-    intro:
-      "Non-cancerous growths in the uterus that cause heavy bleeding and pressure. By blocking the blood supply to the fibroids through a pinhole in the wrist or groin, they shrink and symptoms resolve without removing the uterus.",
-    symptoms: ["Heavy periods", "Pelvic pressure", "Frequent urination", "Anaemia"],
-    treatments: ["Uterine artery embolization (UAE/UFE)"],
-  },
-  {
-    slug: "prostate-artery-embolization",
-    name: "Enlarged prostate (BPH)",
-    region: "pelvis",
-    intervention: "Prostate embolization (PAE)",
-    intro:
-      "An enlarged prostate can make urination difficult and frequent. Embolization shrinks the gland by reducing its blood supply, offering a path to relief without the sexual or urinary side effects of traditional surgery.",
-    symptoms: ["Frequent night urination", "Weak stream", "Difficulty starting", "Incomplete emptying"],
-    treatments: ["Prostate artery embolization (PAE)"],
-  },
-  {
-    slug: "varicocele",
-    name: "Varicocele",
-    region: "pelvis",
-    intervention: "Varicocele embolization",
-    intro:
-      "Swollen veins in the scrotum can cause pain and affect fertility. Embolization closes the faulty vein from within, redirecting blood to healthy channels with no incision and a return to activity the next day.",
-    symptoms: ["Dull scrotal ache", "Swelling ('bag of worms')", "Fertility concerns"],
-    treatments: ["Percutaneous varicocele embolization"],
-  },
-  {
-    slug: "deep-vein-thrombosis",
-    name: "Deep vein thrombosis (DVT)",
-    region: "veins",
-    intervention: "Thrombectomy & stenting",
-    intro:
-      "A large clot in the deep veins of the leg or pelvis. Beyond the risk of moving to the lungs, it can cause lifelong leg swelling. Removing the clot and stenting the underlying narrowing preserves the vein's function.",
-    symptoms: ["Sudden leg swelling", "Pain and tenderness", "Warmth and redness"],
-    treatments: ["Mechanical thrombectomy", "Catheter-directed thrombolysis", "Venous stenting"],
-  },
-  {
-    slug: "may-thurner-syndrome",
-    name: "May-Thurner syndrome",
-    region: "veins",
-    intervention: "Venous stenting",
-    intro:
-      "A condition where a pelvic artery compresses a pelvic vein, leading to left leg swelling or DVT. A stent placed inside the vein keeps it open, treating the cause rather than just the symptoms.",
-    symptoms: ["Left leg swelling", "Repeated left-sided DVT", "Chronic leg pain"],
-    treatments: ["Iliac vein stenting", "Venoplasty"],
-  },
-  {
-    slug: "varicose-veins-pillar",
-    name: "Varicose veins (Minimally invasive)",
-    region: "veins",
-    intervention: "Laser ablation",
-    intro:
-      "Bulging, twisted veins are more than cosmetic — they cause heaviness, pain and skin ulcers. Closing the leaking vein with laser heat through a needle puncture allows it to disappear while blood flows through healthy veins.",
-    symptoms: ["Bulging leg veins", "Aching and heaviness", "Skin discolouration", "Ulcers"],
-    treatments: ["Endovenous laser ablation (EVLA)", "Sclerotherapy", "Glue closure"],
-  },
-  {
-    slug: "venous-ulcer-pillar",
-    name: "Venous leg ulcers",
-    region: "veins",
-    intervention: "Vein treatment",
-    intro:
-      "Wounds near the ankle that fail to heal are often caused by hidden vein problems. Treating the underlying venous reflux by laser or embolization is the key to closing the ulcer and keeping it closed.",
-    symptoms: ["Open sore near ankle", "Swelling", "Skin hardening", "Dark skin patches"],
-    treatments: ["Laser ablation of refluxing veins", "Compression therapy"],
-  },
-  {
-    slug: "bone-tumours",
-    name: "Bone tumours & metastases",
-    region: "legs",
-    intervention: "Ablation & cementoplasty",
-    intro:
-      "Tumours in the bone can cause severe pain and risk of fracture. Image-guided heat destroys the tumour, and medical cement reinforces the bone — often providing immediate relief and stability.",
-    symptoms: ["Localized bone pain", "Pain worse at night", "Fracture risk"],
-    treatments: ["Radiofrequency ablation", "Cryoablation", "Vertebroplasty / Cementoplasty"],
-  },
-  {
-    slug: "spinal-fractures",
-    name: "Vertebral compression fractures",
-    region: "chest",
-    intervention: "Vertebroplasty",
-    intro:
-      "Painful fractures in the spine, often from osteoporosis. Injecting medical-grade cement into the vertebra under X-ray guidance stabilizes the bone and provides rapid pain relief, helping patients walk again.",
-    symptoms: ["Sudden back pain", "Pain worse when standing", "Loss of height"],
-    treatments: ["Vertebroplasty", "Kyphoplasty"],
+      "Also known as peripheral artery disease (PAD). Narrowed or blocked leg arteries reduce blood supply, causing pain or non-healing wounds.",
+    symptoms: ["Pain while walking", "Cold feet", "Non-healing wounds", "Diabetic foot", "Gangrene"],
+    treatments: ["Angioplasty", "Stenting", "Below-knee revascularisation"],
   },
 
   // ── Veins ───────────────────────────────────────────────────────────────
@@ -601,31 +216,11 @@ export const conditions: Condition[] = [
     slug: "varicose-veins",
     name: "Varicose veins",
     region: "veins",
-    intervention: "Endovenous laser ablation",
+    intervention: "Laser ablation",
     intro:
-      "When the one-way valves in a leg vein fail, blood pools where it should be rising. A fibre passed inside the vein closes it, and healthy veins take over the work the same day.",
-    symptoms: ["Bulging veins", "Aching, heavy legs", "Ankle swelling", "Skin discolouration"],
-    treatments: ["Endovenous laser ablation", "Glue closure", "Foam sclerotherapy"],
-  },
-  {
-    slug: "deep-vein-thrombosis",
-    name: "Deep vein thrombosis",
-    region: "veins",
-    intervention: "Catheter-directed thrombolysis",
-    intro:
-      "A clot in the deep veins of the leg threatens both the lung and the long-term health of the limb. Dissolving and extracting it early protects the valves that would otherwise be destroyed.",
-    symptoms: ["Sudden leg swelling", "Pain in the calf or thigh", "Warmth and redness"],
-    treatments: ["Catheter-directed thrombolysis", "Mechanical thrombectomy", "Venous stenting"],
-  },
-  {
-    slug: "venous-ulcer",
-    name: "Venous leg ulcer",
-    region: "veins",
-    intervention: "Reflux ablation",
-    intro:
-      "An ulcer that will not heal above the ankle is usually a pressure problem, not a wound problem. Correcting the underlying reflux is what finally allows it to close.",
-    symptoms: ["Non-healing ankle ulcer", "Skin thickening", "Chronic swelling"],
-    treatments: ["Endovenous ablation", "Perforator ablation", "Sclerotherapy"],
+      "A failing vein closes and blood reroutes through healthy veins. Treatment for venous insufficiency and related ulcers.",
+    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcers", "Deep vein thrombosis"],
+    treatments: ["Endovenous laser ablation", "Radiofrequency ablation"],
   },
 ];
 
@@ -847,6 +442,7 @@ export const regionProcedures: Record<Region, string[]> = {
   carotid: ["Carotid stenting", "Angioplasty with protection"],
   thyroid: ["Radiofrequency / microwave ablation", "Thyroid artery embolization"],
   chest: ["EVAR / TEVAR", "Bronchial artery embolization", "Aortic stent grafting"],
+  abdomen: ["Visceral aneurysm embolization", "Liver tumour TACE/ablation", "Renal artery stenting"],
   liver: ["TACE", "Microwave ablation", "TIPS", "Portal vein embolization"],
   kidney: ["Renal artery angioplasty", "Renal tumour ablation", "Renal embolization"],
   arms: ["Fistuloplasty", "Declotting", "Central vein recanalisation"],
