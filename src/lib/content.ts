@@ -134,13 +134,13 @@ export const conditions: Condition[] = [
     slug: "thyroid-nodules",
     name: "Thyroid nodules & goitre",
     region: "neck",
-
     intervention: "Ablation or embolization",
     intro:
-      "A benign nodule can press, disfigure and worry without ever being cancer. Heat delivered through a needle shrinks it in place; blocking its artery shrinks a larger goitre. No scar, no thyroid hormone tablets for life.",
-    symptoms: ["Neck swelling", "Pressure when swallowing", "Voice change", "Cosmetic concern", "Thyroid swelling", "Thyroid nodule"],
+      "A benign nodule can press and disfigure without being cancer. Heat delivered through a needle shrinks it in place; blocking its artery shrinks a larger goitre. No scar, no thyroid hormone tablets for life.",
+    symptoms: ["Neck swelling", "Pressure when swallowing", "Thyroid swelling", "Benign thyroid nodules", "Multinodular goitre", "Swelling due to thyroid conditions"],
     treatments: ["Radiofrequency / microwave thyroid ablation", "Thyroid artery embolization"],
   },
+
 
   // ── Abdomen ──────────────────────────────────────────────────────────────
   {
