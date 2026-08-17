@@ -431,11 +431,12 @@ export const procedures: Procedure[] = [
         "Immediate restoration of blood flow.",
       ],
       recovery: [
-        "Close monitoring in a stroke unit.",
-        "Blood pressure management.",
-        "Early rehabilitation (physiotherapy, speech therapy).",
-        "Long-term medication to prevent new clots.",
+        "Procedure: Day 0 - Intensive monitoring",
+        "Day 1-3: Blood pressure management and assessment",
+        "1 Month: Early rehabilitation and follow-up",
+        "3 Months: Long-term recovery and stroke prevention",
       ],
+
     },
   },
   {
