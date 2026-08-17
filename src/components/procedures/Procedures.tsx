@@ -61,7 +61,7 @@ export function Procedures() {
     <div ref={ref} className="relative" style={{ height: `${beats.length * 70}svh` }}>
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center">
         <div className="shell pt-24 sm:pt-28">
-          <p className="text-label">Procedure {String(index + 1).padStart(2, "0")}</p>
+          <p className="text-label">{tx("Procedure")} {String(index + 1).padStart(2, "0")}</p>
           <LocaleLink to="/procedures/$slug" params={{ slug }} data-cursor="link">
             <h3 className="mt-2 text-h2">{tx(name)}</h3>
           </LocaleLink>
