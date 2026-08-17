@@ -334,8 +334,9 @@ export const en = {
             "A stent is placed to keep the artery open if needed."
           ],
           recovery: [
-            "Procedure: Day 0 - Artery opened; stenting if needed. Hospital admission.",
-            "Day 1: Discharged and walking. Puncture site checked.",
+            "Procedure: Day 0 - Artery opened; walking and discharge within hours.",
+            "Day 1: Resume normal light activity. Puncture site check.",
+
             "1 Week: Light activity and routine lifestyle resume.",
             "1 Month: Follow-up imaging and normal life."
 
@@ -347,12 +348,12 @@ export const en = {
         name: "Mechanical thrombectomy",
         oneLiner: "Removing a clot before brain tissue is lost.",
         beats: [
-          "A clot has stopped flow inside a brain blood vessel. Downstream, brain tissue is on a clock.",
-          "A stent retriever is opened inside the clot and positioned to capture it.",
-          "The clot is captured within the retriever.",
-          "A catheter removes the clot as the retriever is withdrawn.",
-          "The clot leaves the body. Blood flow is restored.",
-          "Brain function can recover where tissue remains viable."
+          "Imaging identifies the blocked brain vessel (Clot shown).",
+          "A stent retriever is guided to the site of the clot.",
+          "The retriever is deployed to capture the clot.",
+          "The clot is safely removed from the brain.",
+          "Angiography confirms restored blood flow."
+
         ],
         info: {
           symptoms: [
