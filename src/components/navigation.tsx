@@ -36,7 +36,7 @@ export function Navigation() {
             scrolled ? "bg-[#050B16]/70 backdrop-blur-md" : "bg-transparent"
           }`}
         >
-          <LocaleLink to="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3" data-cursor="link">
+          <LocaleLink to="/" activeProps={{ className: "" }} className="group flex min-w-0 items-center gap-2.5 sm:gap-3" data-cursor="link">
             <span className="inline-block size-2 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <span className="min-w-0 leading-none">
               <span className="block truncate text-nav">{t.brand.name}</span>

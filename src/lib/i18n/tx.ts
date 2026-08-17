@@ -7,5 +7,8 @@ import { stringsMl } from "./strings-ml";
  */
 export function useTx() {
   const locale = useLocale();
-  return (text: string) => (locale === "ml" ? (stringsMl[text] ?? text) : text);
+  return (text: string | undefined) => {
+    if (!text) return "";
+    return locale === "ml" ? (stringsMl[text] ?? text) : text;
+  };
 }
