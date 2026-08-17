@@ -388,8 +388,9 @@ export const procedures: Procedure[] = [
         "A stent is placed to keep the artery open if needed.",
       ],
       recovery: [
-        "Procedure: Day 0 - Artery opened; stenting if needed. Hospital admission.",
-        "Day 1: Discharged and walking. Puncture site checked.",
+      "Procedure: Day 0 - Artery opened; walking and discharge within hours.",
+      "Day 1: Resume normal light activity. Puncture site check.",
+
         "1 Week: Light activity and routine lifestyle resume.",
         "1 Month: Follow-up imaging and normal life.",
       ],
@@ -486,8 +487,9 @@ export const procedures: Procedure[] = [
         "The aneurysm sac is excluded from high-pressure flow.",
       ],
       recovery: [
-        "Procedure: Day 0 - Stent-graft delivered inside vessel. Monitored hospital stay.",
+        "Procedure: Day 0 - Stent-graft delivered inside vessel. Walking same day.",
         "Day 1: Discharged and light activity.",
+
         "1 Month: Follow-up imaging and normal life.",
         "3 Months: Long-term graft surveillance.",
 
@@ -502,12 +504,12 @@ export const procedures: Procedure[] = [
     storyboard: "laser",
     featured: true,
     beats: [
-      "Varicose vein and venous ulcer (Varicose vein + ulcer) shown.",
-      "Under ultrasound guidance, the ablation catheter is passed inside the vein.",
-      "Laser/thermal treatment is delivered inside the vein.",
-      "The vein shrinks and closes, rerouting the blood flow.",
-      "Venous ulcer begins to shrink and heal as the vein closes.",
-      "Ulcer is successfully healed after treatment.",
+      "Ultrasound identifies the failing vein (Varicose vein + ulcer).",
+      "A laser fiber is guided into the vein under ultrasound.",
+      "Laser energy closes the diseased vein from within.",
+      "Blood is rerouted to healthy deep veins.",
+      "The venous ulcer begins to heal immediately.",
+
 
     ],
     info: {
