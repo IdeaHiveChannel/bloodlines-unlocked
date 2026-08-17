@@ -7,7 +7,7 @@ export const stringsMl: Record<string, string> = {
   "Stroke · Brain Aneurysm · Blocked Arteries · Poor Blood Circulation · Diabetic Foot · Varicose Veins · Blood Clots": "ബ്രെയിൻ സ്ട്രോക്ക് · ബ്രെയിൻ അന്യൂറിസം · അടഞ്ഞ ധമനികൾ · കാലിലെ രക്തയോട്ടക്കുറവ് · പ്രമേഹ കാലിലെ മുറിവ് · വരിക്കോസ് വെയിൻ · രക്തക്കട്ടകൾ",
   "Modern medicine, through a pinpoint opening.": "ഏറ്റവും ചെറിയ പ്രവേശനമാർഗത്തിലൂടെ രോഗമുള്ള ഭാഗത്തെ നേരിട്ട് സമീപിക്കുന്ന ആധുനിക ചികിത്സ.",
   "Reach the disease through the smallest possible opening. Leave the rest of the body alone.": "വലിയ ശസ്ത്രക്രിയാ മുറിവുകൾ ഒഴിവാക്കി, ആവശ്യമായിടത്ത് ചെറിയ പ്രവേശനമാർഗത്തിലൂടെ രോഗമുള്ള ഭാഗത്തെ നേരിട്ട് ചികിത്സിക്കുക.",
-  "Explore conditions": "രോഗങ്ങളെക്കുറിച്ച് അറിയുക",
+  
   "Book consultation": "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക",
   "Mangalore · Karnataka, India\nKasaragod · Kerala, India": "മംഗളൂരു · കർണാടക\nകാസർഗോഡ് · കേരളം",
   "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod": "ഡോ. മന്ദീപ് സാഗർ — മംഗളൂരു & കാസർഗോഡിലെ വാസ്കുലർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
@@ -218,7 +218,6 @@ export const stringsMl: Record<string, string> = {
  "A look at how the treatment actually happens.": "ചികിത്സ എങ്ങനെയാണ് നടക്കുന്നതെന്ന് ഒരു നോക്ക്.",
  "Treatment is only one part of recovery.": "ചികിത്സ സുഖപ്പെടലിന്റെ ഒരു ഭാഗം മാത്രമാണ്.",
  "Minimally invasive intervention is designed to reduce trauma, shorten hospital stays and help patients return to daily life sooner, while maintaining long-term follow-up where required.": "കുറഞ്ഞ മുറിവുള്ള ചികിത്സാ രീതികൾ വേദന കുറയ്ക്കാനും വേഗത്തിൽ സാധാരണ ജീവിതത്തിലേക്ക് മടങ്ങാനും സഹായിക്കുന്നു.",
- "Book consultation": "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക",
  "Reserve a slot with Dr. Sagar": "ഡോ. സാഗറുമായി കൂടിക്കാഴ്ച നിശ്ചയിക്കുക",
  "Direct message to the practice": "നേരിട്ട് സന്ദേശം അയക്കുക",
  "Call Dr. Sagar": "ഡോ. സാഗറിനെ വിളിക്കുക",
