@@ -90,7 +90,7 @@ export const stringsMl: Record<string, string> = {
  "Liver Cirrhosis": "കരൾ സിറോസിസ്",
  "Media": "മാധ്യമങ്ങൾ",
  "Mentorship": "മെന്റർഷിപ്പ്",
- "Modern medicine, through a pinpoint opening.": "ഒരു ചെറിയ സുഷിരത്തിലൂടെയുള്ള നവീന ചികിത്സ.",
+ 
  "National conferences": "ദേശീയ കോൺഫറൻസുകൾ",
  "Neurointervention": "ന്യൂറോ ഇന്റർവെൻഷൻ",
  "Next Steps": "അടുത്ത ഘട്ടങ്ങൾ",
