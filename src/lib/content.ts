@@ -353,12 +353,12 @@ export const procedures: Procedure[] = [
     storyboard: "angioplasty",
     featured: true,
     beats: [
-      "Show the narrowed artery with plaque buildup.",
-      "The guidewire crosses the narrowing — the hardest millimetres of the case.",
-      "The balloon is introduced and expanded to open the channel.",
-      "Plaque is compressed as the balloon opens the artery.",
-      "The stent is deployed and holds the artery open.",
-      "Blood flow is fully restored.",
+      "Angiography identifies the narrowed artery (Narrowed artery).",
+      "A guidewire is carefully crossed through the narrowing.",
+      "A balloon is inflated to open the vessel.",
+      "A stent is placed to keep the channel open.",
+      "Restored blood flow is confirmed on angiography.",
+
     ],
     info: {
       symptoms: [
