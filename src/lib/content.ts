@@ -675,6 +675,13 @@ export const procedures: Procedure[] = [
       "The treated tissue shrinks steadily over the following months.",
       "Thyroid function is preserved; no lifelong hormone tablets.",
     ],
+    info: {
+      symptoms: ["Neck swelling", "Thyroid lumps", "Pressure when swallowing"],
+      causes: ["Benign nodules", "Goitre"],
+      diagnosis: ["Ultrasound", "Biopsy"],
+      treatment: ["Radiofrequency ablation", "Microwave ablation"],
+      recovery: ["Discharged same day", "No scar", "Return to normal activity next day"],
+    },
   },
   {
     slug: "genicular-artery-embolization",
@@ -688,7 +695,15 @@ export const procedures: Procedure[] = [
       "The blush disappears under fluoroscopy.",
       "Pain improves over the following weeks. No joint is opened.",
     ],
+    info: {
+      symptoms: ["Chronic knee pain", "Pain not relieved by medicines"],
+      causes: ["Osteoarthritis", "Inflammation"],
+      diagnosis: ["X-ray / MRI", "Clinical exam"],
+      treatment: ["Genicular artery embolization"],
+      recovery: ["Procedure: Day 0", "Day 1: Routine activity", "1 Month: Pain relief onset"],
+    },
   },
+
   {
     slug: "dialysis-fistuloplasty",
     name: "Dialysis fistuloplasty",
