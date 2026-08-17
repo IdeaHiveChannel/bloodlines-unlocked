@@ -1000,7 +1000,7 @@ export const resources: Resource[] = [
     id: "video-aneurysm-coiling",
     kind: "Video",
     title: "Cerebral aneurysm coiling, animated",
-    text: "The aneurysm sac is packed from inside the vessel until flow no longer enters it.",
+    text: "The aneurysm sac is packed from inside the vessel until flow no longer enters it. Real angiography videos available.",
     related: ["cerebral-aneurysm"],
     procedure: "aneurysm-coiling",
   },
