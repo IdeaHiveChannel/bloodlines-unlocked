@@ -23,7 +23,7 @@ function Testimonials() {
     <>
       <main className="min-h-screen bg-[#050B16] pb-24 pt-32 sm:pt-36">
         <div className="shell">
-          <p className="text-label">{tx("Chapter 09 · Patient care today")}</p>
+          <p className="text-label">{tx("Patient stories.")}</p>
           <h1 className="text-display-xl mt-6 max-w-4xl">{tx("Patient stories.")}</h1>
           <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">{tx(consentNote)}</p>
 

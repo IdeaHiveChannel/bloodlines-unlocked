@@ -212,7 +212,7 @@ export function Anatomy() {
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p className="text-label">{tx("Chapter 02 · Anatomy")}</p>
+            <p className="text-label">{tx("Anatomy")}</p>
             <h2 className="mt-4 max-w-2xl text-h1 sm:mt-6">
               {tx("The body, seen through its blood vessels.")}
             </h2>
