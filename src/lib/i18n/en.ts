@@ -424,10 +424,11 @@ export const en = {
             "The aneurysm sac is excluded from high-pressure flow."
           ],
           recovery: [
-            "1-2 days in the hospital.",
-            "Light walking encouraged early.",
-            "Avoid heavy activity for 4 weeks.",
-            "Periodic follow-up scans are essential."
+            "Procedure: Day 0 - Stent-graft delivered inside vessel. Monitored hospital stay.",
+            "Day 1: Discharged and light activity.",
+            "1 Month: Follow-up imaging and normal life.",
+            "3 Months: Long-term graft surveillance."
+
           ]
         }
       },
