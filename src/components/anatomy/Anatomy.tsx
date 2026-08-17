@@ -327,7 +327,7 @@ export function Anatomy() {
                           filter: on ? "drop-shadow(0 0 6px var(--accent))" : "none",
                           paintOrder: "stroke fill",
                           stroke: "rgba(5, 11, 22, 0.95)",
-                          strokeWidth: "3px",
+                          strokeWidth: "4px",
                           strokeLinejoin: "round",
                           overflow: "visible",
                           dominantBaseline: "middle"
@@ -338,10 +338,10 @@ export function Anatomy() {
 
                       {/* Desktop 1024-1279: wrap long labels (using foreignObject for text wrapping in SVG) */}
                       <foreignObject
-                        x={isRight ? labelX : labelX - 140}
-                        y={h.cy - 20}
-                        width="140"
-                        height="40"
+                        x={isRight ? labelX : labelX - 160}
+                        y={h.cy - 25}
+                        width="160"
+                        height="50"
                         className="pointer-events-none hidden lg:block xl:hidden"
                       >
                         <div 
@@ -349,7 +349,7 @@ export function Anatomy() {
                           style={{
                             fontSize: "12px",
                             fontWeight: "600",
-                            lineHeight: "1.2",
+                            lineHeight: "1.15",
                             transition: "all 300ms",
                             filter: on ? "drop-shadow(0 0 6px var(--accent))" : "none",
                             textShadow: "0 0 4px rgba(5, 11, 22, 0.9)"
