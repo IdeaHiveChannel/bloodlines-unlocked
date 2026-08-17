@@ -811,7 +811,13 @@ export const procedures: Procedure[] = [
       causes: ["Uterine fibroids"],
       diagnosis: ["Ultrasound", "MRI"],
       treatment: ["Uterine fibroid embolization"],
-      recovery: ["Overnight stay", "1 week recovery at home", "Significant symptom relief by 3 months"],
+      recovery: [
+        "Procedure: Day 0 - Particles cut off fibroid supply. Overnight stay.",
+        "Day 1: Discharged and light activity.",
+        "1 Week: Recovery at home / routine activity.",
+        "3 Months: Significant symptom relief; follow-up imaging and normal life.",
+      ],
+
     },
   },
 ];
