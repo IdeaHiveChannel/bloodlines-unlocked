@@ -454,12 +454,12 @@ export const procedures: Procedure[] = [
     storyboard: "evar",
     featured: true,
     beats: [
-      "A weakened aortic wall has begun to balloon under pressure.",
-      "Through groin access, a stent-graft is delivered folded inside a sheath.",
-      "The graft unfolds, anchoring above and below the aneurysm.",
-      "Blood now flows through reinforced fabric, not the diseased wall.",
-      "A completion angiogram confirms there is no endoleak.",
-      "Recovery is measured in days, not weeks.",
+      "Aneurysm and blood pressure inside the sac shown (Aneurysm sac).",
+      "A stent-graft is delivered to the site of the aneurysm.",
+      "The graft is deployed, excluding the aneurysm sac.",
+      "Blood now flows through the graft, bypassing the weak wall.",
+      "Restored flow and sealed aneurysm confirmed.",
+
     ],
     info: {
       symptoms: [
