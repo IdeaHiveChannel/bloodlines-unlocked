@@ -113,13 +113,23 @@ export const conditions: Condition[] = [
     slug: "carotid-body-tumour",
     name: "Carotid body tumour",
     region: "neck",
-
     intervention: "Pre-operative embolisation",
     intro:
-      "A carotid body tumour is a highly vascular swelling at the division of the carotid artery in the neck. Embolisation can be used to reduce blood supply before surgery by the appropriate surgical team.",
-    symptoms: ["Lump in the neck", "Pulsating mass"],
+      "A carotid body tumour is a highly vascular swelling at the division of the carotid artery in the neck. Embolisation is performed before the surgeon removes the tumour to reduce blood supply and minimize blood loss during surgery.",
+    symptoms: ["Lump in the neck", "Pulsating mass", "Swelling around the carotid vessel"],
+    treatments: ["Pre-operative tumour embolisation", "Embolisation first → tumour surgery afterwards"],
+  },
+  {
+    slug: "juvenile-angiofibroma",
+    name: "Juvenile angiofibroma",
+    region: "neck",
+    intervention: "Pre-operative embolisation",
+    intro:
+      "A highly vascular tumour occurring in the nasopharynx of young males. Pre-operative embolisation reduces blood supply to make surgical removal safer.",
+    symptoms: ["Nasal obstruction", "Recurrent nosebleeds", "Vascular mass"],
     treatments: ["Pre-operative tumour embolisation"],
   },
+
   {
     slug: "thyroid-nodules",
     name: "Thyroid nodules & goitre",
