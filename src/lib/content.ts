@@ -617,11 +617,12 @@ export const procedures: Procedure[] = [
         "Targeted destruction sparing healthy tissue.",
       ],
       recovery: [
-        "Short hospital stay (often day-case).",
-        "Minimal discomfort, managed with simple pain relief.",
-        "Rapid return to normal activities.",
-        "Surveillance scans to ensure total destruction.",
+        "Procedure: Day 0 - Device enters tumour; heat destruction. Overnight stay or day-case.",
+        "Day 1: Discharged and routine normal lifestyle resume.",
+        "1 Month: Follow-up imaging and normal life.",
+        "3 Months: Decision on further treatment based on imaging surveillance.",
       ],
+
     },
   },
   {
