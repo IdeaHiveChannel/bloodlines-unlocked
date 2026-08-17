@@ -3,13 +3,13 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const steps = [
-  { n: "01", title: "Consultation", body: "Symptoms heard. History reviewed. The first decision is whether intervention is needed at all." },
-  { n: "02", title: "Imaging", body: "Doppler. CT angiography. MR angiography. The disease is seen before it is touched." },
-  { n: "03", title: "Diagnosis", body: "The plan is shared in plain language. Options weighed. Questions answered." },
-  { n: "04", title: "Treatment planning", body: "Every option is put on the table — including doing nothing. Risk, benefit and timing are discussed until the choice is yours." },
-  { n: "05", title: "Procedure", body: "Performed in a hybrid cath lab. Real-time imaging guides every millimetre." },
-  { n: "06", title: "Recovery", body: "Short stay. Same-day or next-day discharge for most procedures." },
-  { n: "07", title: "Follow-up", body: "Imaging review and long-term care to keep what was restored." },
+  { n: "01", title: tx("Consultation"), body: tx("Symptoms heard. History reviewed. The first decision is whether intervention is needed at all.") },
+  { n: "02", title: tx("Imaging"), body: tx("Doppler. CT angiography. MR angiography. The disease is seen before it is touched.") },
+  { n: "03", title: tx("Diagnosis"), body: tx("The plan is shared in plain language. Options weighed. Questions answered.") },
+  { n: "04", title: tx("Treatment planning"), body: tx("Every option is put on the table — including doing nothing. Risk, benefit and timing are discussed until the choice is yours.") },
+  { n: "05", title: tx("Procedure"), body: tx("Performed in a hybrid cath lab. Real-time imaging guides every millimetre.") },
+  { n: "06", title: tx("Recovery"), body: tx("Short stay. Same-day or next-day discharge for most procedures.") },
+  { n: "07", title: tx("Follow-up"), body: tx("Imaging review and long-term care to keep what was restored.") },
 ];
 
 export function Journey() {

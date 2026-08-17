@@ -2,11 +2,11 @@ import { useTx } from "@/lib/i18n/tx";
 import { motion } from "framer-motion";
 
 const stages = [
-  { t: "Day 0", title: "Procedure", body: "A single small puncture. Local anaesthesia. Often the same day, you walk to your room." },
-  { t: "Day 1", title: "Discharge", body: "Most patients return home within 24 hours. No long incisions to heal." },
-  { t: "Week 1", title: "Light activity", body: "Walking is encouraged. The puncture site closes. Routine returns gradually." },
-  { t: "Month 1", title: "Follow-up imaging", body: "Imaging confirms the vessel remains open and flow is normalising." },
-  { t: "Month 3+", title: "Normal life", body: "Most patients are back to full activity with sustained results." },
+  { t: "Day 0", title: tx("Procedure"), body: tx("A single small puncture. Local anaesthesia. Often the same day, you walk to your room.") },
+  { t: "Day 1", title: tx("Discharge"), body: tx("Most patients return home within 24 hours. No long incisions to heal.") },
+  { t: "Week 1", title: tx("Light activity"), body: tx("Walking is encouraged. The puncture site closes. Routine returns gradually.") },
+  { t: "Month 1", title: tx("Follow-up imaging"), body: tx("Imaging confirms the vessel remains open and flow is normalising.") },
+  { t: "Month 3+", title: tx("Normal life"), body: tx("Most patients are back to full activity with sustained results.") },
 ];
 
 export function Recovery() {
