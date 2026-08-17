@@ -34,11 +34,6 @@ export function WhatITreat() {
             const patientText = c.patientLanguage ? tx(c.patientLanguage) : "";
             const descText = tx(c.description);
             
-            // Malayalam mobile design rule: 
-            // If Malayalam and combined text might be too long, 
-            // merge patient language into description or title if preferred.
-            // But here we'll follow the specific hierarchy: Category, Condition, Patient Term, Description.
-            
             return (
               <motion.li
                 key={c.to + i}
@@ -54,12 +49,13 @@ export function WhatITreat() {
                   className="group flex flex-col h-full p-6 sm:p-7 lg:p-8 transition-colors hover:bg-white/[0.03] border border-white/[0.05] rounded-xl lg:border-none lg:rounded-none"
                 >
                   <div className="flex-1">
-                    <span className="text-[10px] font-medium tracking-widest text-[var(--ink-dim)] opacity-40 uppercase lg:text-[12px]">
+                    {/* Desktop only Category */}
+                    <span className="hidden lg:block text-[10px] font-medium tracking-widest text-[var(--ink-dim)] opacity-40 uppercase lg:text-[12px]">
                       {tx(c.category)}
                     </span>
                     
                     <h3 className={`
-                      mt-2 font-display font-semibold transition-colors group-hover:text-[var(--accent)]
+                      mt-0 lg:mt-2 font-display font-semibold transition-colors group-hover:text-[var(--accent)]
                       text-[18px] sm:text-[20px] 
                       ${isMl ? 'leading-[1.4]' : 'leading-[1.3]'}
                     `}>
@@ -75,23 +71,33 @@ export function WhatITreat() {
                       </p>
                     )}
 
+                    {/* Desktop only Description */}
                     <p className={`
-                      mt-3 text-[var(--ink-dim)]
+                      hidden lg:block mt-3 text-[var(--ink-dim)]
                       text-[14px] sm:text-[15px]
                       ${isMl ? 'leading-[1.6]' : 'leading-[1.5]'}
-                      line-clamp-3 lg:line-clamp-none
                     `}>
                       {descText}
                     </p>
                   </div>
                   
-                  <div className="mt-6 flex items-center justify-start lg:justify-end">
-                    <div className="flex items-center gap-2 text-[var(--ink-dim)] group-hover:text-[var(--accent)] transition-colors">
+                  {/* Desktop only CTA */}
+                  <div className="hidden lg:flex mt-6 items-center justify-end">
+                    <div className="flex items-center gap-2 text-[12px] font-medium text-[var(--ink-dim)] group-hover:text-[var(--accent)] transition-colors">
+                      <span>{tx(t.whatITreat.readGuide)}</span>
                       <ArrowRight
-                        size={18}
+                        size={14}
                         className="transition-transform group-hover:translate-x-1"
                       />
                     </div>
+                  </div>
+
+                  {/* Mobile Arrow only */}
+                  <div className="mt-4 flex lg:hidden items-center justify-start">
+                    <ArrowRight
+                      size={18}
+                      className="text-[var(--ink-dim)] opacity-40 group-hover:text-[var(--accent)] group-hover:opacity-100 transition-all group-hover:translate-x-1"
+                    />
                   </div>
                 </LocaleLink>
               </motion.li>

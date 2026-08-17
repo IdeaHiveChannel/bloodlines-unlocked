@@ -56,23 +56,26 @@ export const en = {
   whatITreat: {
     eyebrow: "Conditions",
     h2: "Conditions treated.",
-    intro: "Explore conditions by the part of the body affected and understand the symptoms, diagnosis and image-guided treatment options.",
+    intro: "Explore conditions affecting the brain, blood vessels, veins and other parts of the body, and understand the image-guided treatments available for selected cases.",
     cta: "View all conditions →",
-    moreConditionsLabel: "More conditions",
+    readGuide: "Read guide →",
+    moreConditionsLabel: "Additional conditions",
     moreConditions: [
       "Visceral aneurysm",
+      "Carotid artery disease",
       "Carotid body tumour",
+      "Aortic dissection",
       "Pulmonary AVM",
       "Hemoptysis",
-      "Hepatic hemangioma",
-      "Angiomyolipoma",
-      "Vascular malformations",
-      "Dialysis access problems",
-      "Aortic dissection",
       "Gastrointestinal bleeding",
       "Portal hypertension",
+      "Hepatic hemangioma",
       "Renal tumour",
-      "Others"
+      "Angiomyolipoma",
+      "Peripheral vascular malformations",
+      "Venous leg ulcer",
+      "Dialysis access problems",
+      "Other conditions"
     ],
     items: [
       {
@@ -80,7 +83,7 @@ export const en = {
         category: "Brain & cerebral",
         title: "Acute ischemic stroke",
         patientLanguage: "Blocked blood vessel in the brain",
-        description: "A blood clot can block blood flow to part of the brain and cause a stroke.",
+        description: "A blood clot can block blood flow inside a brain blood vessel and cause a stroke. Selected patients may be treated by removing the clot through a small access point.",
         to: "/diseases/stroke"
       },
       {
@@ -88,15 +91,15 @@ export const en = {
         category: "Brain & cerebral",
         title: "Cerebral aneurysm",
         patientLanguage: "A weak or bulging blood vessel in the brain",
-        description: "A weakened area of a brain blood vessel can enlarge and, in some cases, rupture.",
+        description: "A weakened area of a brain blood vessel can enlarge and, in some cases, rupture. Selected aneurysms can be treated from inside the blood vessel.",
         to: "/diseases/brain-aneurysm"
       },
       {
         id: "03",
         category: "Brain & cerebral",
         title: "Arteriovenous malformation (AVM)",
-        patientLanguage: "An abnormal connection between brain blood vessels",
-        description: "An AVM is an abnormal connection between arteries and veins in or around the brain.",
+        patientLanguage: "An abnormal connection between blood vessels in the brain",
+        description: "An AVM is an abnormal connection between arteries and veins that can sometimes be treated from inside the blood vessels.",
         to: "/diseases/brain-aneurysm"
       },
       {
@@ -104,7 +107,7 @@ export const en = {
         category: "Lower limbs",
         title: "Peripheral artery disease",
         patientLanguage: "Poor blood circulation in the legs",
-        description: "Narrowed or blocked leg arteries can reduce blood flow to the feet and legs.",
+        description: "Narrowed or blocked arteries can reduce blood flow to the legs and cause pain, wounds and other circulation problems.",
         to: "/diseases/poor-blood-circulation"
       },
       {
@@ -112,36 +115,36 @@ export const en = {
         category: "Lower limbs",
         title: "Diabetic foot",
         patientLanguage: "Diabetes-related foot wounds",
-        description: "Poor blood supply can make some diabetic foot wounds difficult to heal.",
+        description: "Poor blood supply can make some diabetic foot wounds difficult to heal. Restoring blood flow may help healing in selected cases.",
         to: "/diseases/diabetic-foot"
       },
       {
         id: "06",
         category: "Veins",
         title: "Varicose veins",
-        patientLanguage: "Swollen, twisted veins in the legs",
-        description: "Faulty valves in the leg veins can cause blood to pool and veins to become enlarged.",
+        patientLanguage: "Swollen and enlarged veins in the legs",
+        description: "When the valves in the leg veins do not work properly, blood can pool in the veins and cause varicose veins.",
         to: "/diseases/varicose-veins"
       },
       {
         id: "07",
         category: "Veins",
-        title: "Deep vein thrombosis (DVT)",
+        title: "Deep vein thrombosis",
         patientLanguage: "A blood clot in a deep vein",
-        description: "A clot in a deep vein, usually in the leg, can affect blood flow and requires medical assessment.",
+        description: "A clot in a deep vein, usually in the leg, can affect circulation and requires medical assessment.",
         to: "/diseases/varicose-veins"
       },
       {
         id: "08",
         category: "Thyroid",
         title: "Thyroid nodules & goitre",
-        patientLanguage: "Thyroid swelling or lumps",
-        description: "Some benign thyroid nodules and thyroid swellings can be treated with image-guided ablation.",
+        patientLanguage: "Thyroid lumps and swelling",
+        description: "Selected benign thyroid nodules and thyroid swellings can be treated using image-guided ablation.",
         to: "/diseases/thyroid-nodules"
       },
       {
         id: "09",
-        category: "Kidneys",
+        category: "Kidney",
         title: "Renal artery stenosis",
         patientLanguage: "Narrowing of the blood vessel supplying the kidney",
         description: "Narrowing of a renal artery can affect blood flow to the kidney and may be associated with difficult-to-control blood pressure.",
@@ -160,15 +163,15 @@ export const en = {
         category: "Pelvis",
         title: "Uterine fibroids",
         patientLanguage: "Non-cancerous growths in the uterus",
-        description: "Fibroids can cause heavy bleeding, pressure or pelvic discomfort.",
+        description: "Fibroids can cause heavy bleeding, pressure and pelvic discomfort. Selected fibroids can be treated through their blood supply.",
         to: "/diseases/uterine-fibroids"
       },
       {
         id: "12",
         category: "Prostate",
         title: "Enlarged prostate (BPH)",
-        patientLanguage: "An enlarged prostate causing urinary symptoms",
-        description: "Prostate enlargement can cause weak urine flow, difficulty passing urine and frequent urination.",
+        patientLanguage: "Prostate enlargement causing urinary symptoms",
+        description: "An enlarged prostate can cause difficulty passing urine, weak urine flow and frequent urination.",
         to: "/diseases/enlarged-prostate"
       },
       {
@@ -176,7 +179,7 @@ export const en = {
         category: "Knee",
         title: "Knee osteoarthritis",
         patientLanguage: "Knee pain caused by arthritis",
-        description: "Osteoarthritis can cause persistent knee pain, stiffness and difficulty with everyday activities.",
+        description: "Osteoarthritis can cause persistent knee pain and stiffness. Selected patients may be considered for image-guided treatment.",
         to: "/diseases/knee-osteoarthritis"
       },
       {
