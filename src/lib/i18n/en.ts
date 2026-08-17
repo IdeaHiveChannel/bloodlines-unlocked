@@ -212,11 +212,6 @@ export const en = {
     treatments: "Treatments",
     patientInfo: "Patient information",
   },
-    patientLanding: "Patient landing page",
-    whatITreat: "What I treat",
-    treatments: "Treatments",
-    patientInfo: "Patient information",
-  },
   dock: {
     whatsapp: "Chat on WhatsApp",
     call: "Call",

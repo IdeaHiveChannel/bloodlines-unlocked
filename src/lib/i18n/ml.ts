@@ -213,11 +213,6 @@ export const ml: Dictionary = {
     treatments: "ചികിത്സകൾ",
     patientInfo: "രോഗികൾക്കുള്ള വിവരങ്ങൾ",
   },
-    patientLanding: "പേഷ്യന്റ് ലാൻഡിംഗ് പേജ്",
-    whatITreat: "ഞാൻ ചികിത്സിക്കുന്ന രോഗങ്ങൾ",
-    treatments: "ചികിത്സകൾ",
-    patientInfo: "രോഗികൾക്കുള്ള വിവരങ്ങൾ",
-  },
   dock: {
     whatsapp: "വാട്സ്ആപ്പിൽ സന്ദേശം അയക്കുക",
     call: "വിളിക്കുക",
