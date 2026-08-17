@@ -285,7 +285,6 @@ export const ml: Dictionary = {
         ]
       }
     ]
-  }
   },
   proceduresPage: {
     eyebrow: "ചികിത്സാ രീതികൾ",

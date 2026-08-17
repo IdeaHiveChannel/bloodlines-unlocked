@@ -284,7 +284,6 @@ export const en = {
         ]
       }
     ]
-  }
   },
   proceduresPage: {
     eyebrow: "Procedures",
