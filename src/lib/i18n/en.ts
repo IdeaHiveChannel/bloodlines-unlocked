@@ -438,12 +438,13 @@ export const en = {
         name: "Endovenous laser ablation",
         oneLiner: "Closing a failing vein from within.",
         beats: [
-          "A vein's one-way valves no longer hold. Blood falls back down the leg.",
-          "Under ultrasound, a thin laser fibre is passed inside the faulty vein.",
-          "Laser energy is delivered along the vein as the fibre is withdrawn.",
-          "The vein collapses and seals behind it.",
-          "Healthy deep veins take over the blood flow.",
-          "The patient walks soon after the procedure."
+          "The animation shows the varicose vein and venous ulcer (Varicose vein + ulcer).",
+          "Under ultrasound guidance, the ablation catheter is passed inside the vein.",
+          "Laser/thermal treatment is delivered inside the vein.",
+          "The vein shrinks and closes, rerouting the blood flow.",
+          "As the vein closes, the venous ulcer begins to shrink and heal.",
+          "The ulcer is successfully healed after treatment."
+
         ],
         info: {
           symptoms: [
