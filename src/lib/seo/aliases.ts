@@ -310,7 +310,17 @@ export const aliases: Record<string, Alias> = {
     mlAlsoKnownAs:
       "ജന്മനാ ഉണ്ടാകുന്ന, കൈകാലുകളിലെ അസാധാരണ രക്തക്കുഴൽ കൂട്ടമാണിത്.",
   },
+  "pelvic-congestion-syndrome": {
+    clinical: "Pelvic congestion syndrome",
+    patient: "Chronic pelvic pain from swollen veins",
+    alsoKnownAs:
+      "Pelvic congestion syndrome is chronic pelvic pain caused by enlarged veins in the pelvis, similar to varicose veins in the legs.",
+    ml: "ഇടുപ്പിലെ ഞരമ്പ് വീക്കം (Pelvic Congestion Syndrome)",
+    mlAlsoKnownAs:
+      "സ്ത്രീകളിൽ ഇടുപ്പിലെ സിരകൾ (veins) വീർത്ത് രക്തം കെട്ടിക്കിടക്കുന്ന അവസ്ഥയാണ് പെൽവിക് കൺജഷൻ സിൻഡ്രോം.",
+  },
 };
+
 
 export function aliasFor(slug: string): Alias | undefined {
   return aliases[slug];
