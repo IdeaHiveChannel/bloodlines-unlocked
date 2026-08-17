@@ -24,7 +24,7 @@ export const ml: Dictionary = {
     book: "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക",
     openMenu: "മെനു തുറക്കുക",
     closeMenu: "മെനു അടയ്ക്കുക",
-    language: "ഭാഷ",
+    language: "മലയാളം",
   },
   common: {
     readMore: "കൂടുതൽ വായിക്കുക",
