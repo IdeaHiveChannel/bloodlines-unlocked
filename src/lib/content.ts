@@ -300,14 +300,15 @@ export const conditions: Condition[] = [
   // ── Veins ───────────────────────────────────────────────────────────────
   {
     slug: "varicose-veins",
-    name: "Varicose veins",
+    name: "Varicose veins & Venous ulcer",
     region: "veins",
     intervention: "Laser ablation",
     intro:
-      "A failing vein closes and blood reroutes through healthy veins. Treatment for venous insufficiency and related ulcers.",
-    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcers", "Deep vein thrombosis"],
-    treatments: ["Endovenous laser ablation", "Radiofrequency ablation"],
+      "Failing vein valves cause blood to pool, leading to bulging veins and ulcers. Closing the vein allows the ulcer to shrink and heal.",
+    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcer", "Clots / blood clots"],
+    treatments: ["Endovenous laser ablation", "Ultrasound-guided ablation"],
   },
+
 ];
 
 export function conditionsByRegion(region: Region) {
