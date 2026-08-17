@@ -325,7 +325,46 @@ export const pillarSeo: Record<string, PillarSeo> = {
       },
     ],
   },
+  "visceral-aneurysm": {
+    answer:
+      "A visceral artery aneurysm — a weak, ballooned area in an artery supplying the liver, spleen or kidneys — can often be treated by endovascular embolisation or stenting without an open operation.",
+    answerMl:
+      "ശരീരത്തിലെ ആന്തരിക അവയവങ്ങളായ കരൾ, പ്ലീഹ, വൃക്ക എന്നിവയിലേക്കുള്ള രക്തക്കുഴലുകളിൽ (ധമനികൾ) ഉണ്ടാകുന്ന ബലൂൺ പോലുള്ള വീർപ്പാണ് വിസറൽ അന്യൂറിസം. ഇത് ശസ്ത്രക്രിയ കൂടാതെ പിൻഹോൾ ദ്വാരത്തിലൂടെ കോയിലിംഗ് അല്ലെങ്കിൽ സ്റ്റെന്റിംഗ് വഴി ചികിത്സിക്കാം.",
+    imageGuided:
+      "A micro-catheter is navigated into the aneurysm and platinum coils or a covered stent are placed to seal the weak spot, protecting the organ's blood flow while removing the risk of rupture.",
+    imageGuidedMl:
+      "മൈക്രോ കത്തീറ്റർ അന്യൂറിസത്തിനുള്ളിൽ എത്തിച്ച് കോയിലുകൾ ഉപയോഗിച്ച് അടയ്ക്കുകയോ അല്ലെങ്കിൽ കവേർഡ് സ്റ്റെന്റ് (covered stent) സ്ഥാപിക്കുകയോ ചെയ്യുന്നു. ഇത് അന്യൂറിസം പൊട്ടാനുള്ള സാധ്യത ഇല്ലാതാക്കുകയും അവയവങ്ങളിലേക്കുള്ള രക്തയോട്ടം നിലനിർത്തുകയും ചെയ്യുന്നു.",
+    procedures: treatedBy(["embolization", "angioplasty"]),
+    searchFaqs: [
+      {
+        q: "How is an abdominal organ aneurysm treated?",
+        a: "Most visceral aneurysms can be reached from inside the blood vessel through a pinhole opening in the groin or wrist. The aneurysm is then sealed with coils or a stent, avoiding the need for a major incision.",
+        qMl: "ഉദരാവയവങ്ങളിലെ അന്യൂറിസം എങ്ങനെയാണ് ചികിത്സിക്കുന്നത്?",
+        aMl: "മിക്കവാറും വിസറൽ അന്യൂറിസങ്ങളും രക്തക്കുഴലുകളിലൂടെ കത്തീറ്റർ കടത്തി കോയിലിംഗ് അല്ലെങ്കിൽ സ്റ്റെന്റിംഗ് വഴി ചികിത്സിക്കാം.",
+      },
+    ],
+  },
+  "pelvic-congestion-syndrome": {
+    answer:
+      "Chronic pelvic pain in women can sometimes be caused by pelvic congestion syndrome — essentially varicose veins in the pelvis. This can be treated by vein embolisation through a pinhole opening.",
+    answerMl:
+      "സ്ത്രീകളിലെ മാറാത്ത ഇടുപ്പ് വേദനയ്ക്ക് (pelvic pain) ഒരു പ്രധാന കാരണം പെൽവിക് കൺജഷൻ സിൻഡ്രോം ആണ്. ഇടുപ്പിലെ സിരകൾ (veins) വീർത്തു വരുന്ന ഈ അവസ്ഥ പിൻഹോൾ ദ്വാരത്തിലൂടെയുള്ള വെയ്ൻ എംബോളൈസേഷൻ വഴി ചികിത്സിക്കാം.",
+    imageGuided:
+      "A catheter is navigated into the refluxing pelvic veins and soft coils or medical foam are used to seal them. Blood is redirected to healthy veins, resolving the congestion and pain.",
+    imageGuidedMl:
+      "കത്തീറ്റർ വഴി വീർത്ത സിരകളിലെത്തി കോയിലുകൾ അല്ലെങ്കിൽ സ്ക്ലിറോസന്റ് (foam) ഉപയോഗിച്ച് അവ അടയ്ക്കുന്നു. ഇതിലൂടെ രക്തയോട്ടം ആരോഗ്യകരമായ സിരകളിലേക്ക് മാറുകയും വേദന കുറയുകയും ചെയ്യുന്നു.",
+    procedures: treatedBy(["embolization"]),
+    searchFaqs: [
+      {
+        q: "Can chronic pelvic pain be treated without surgery?",
+        a: "If the pain is caused by congested veins in the pelvis, it can be treated by embolisation — a procedure performed through a pinhole opening that allows you to return home the same or next day.",
+        qMl: "മാറാത്ത ഇടുപ്പ് വേദന ശസ്ത്രക്രിയ കൂടാതെ ചികിത്സിക്കാമോ?",
+        aMl: "അതെ, പെൽവിക് കൺജഷൻ സിൻഡ്രോം ആണെങ്കിൽ എംബോളൈസേഷൻ വഴി ശസ്ത്രക്രിയ കൂടാതെ ഇത് ചികിത്സിക്കാം.",
+      },
+    ],
+  },
 };
+
 
 export function pillarSeoFor(slug: string): PillarSeo | undefined {
   return pillarSeo[slug];

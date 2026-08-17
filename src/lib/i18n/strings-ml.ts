@@ -1,8 +1,10 @@
 /** English UI copy -> Malayalam. Keyed by the exact English source string. */
 export const stringsMl: Record<string, string> = {
   "What patients call it": "രോഗികൾ ഇതിനെ വിളിക്കുന്ന പേര്",
+  "What patients call this": "രോഗികൾ ഇതിനെ വിളിക്കുന്ന പേര്",
   "Used for": "ഏതൊക്കെ അവസ്ഥകൾക്ക്",
   "Questions patients ask": "രോഗികൾ ചോദിക്കുന്ന ചോദ്യങ്ങൾ",
+
   "What I treat": "ഞാൻ ചികിത്സിക്കുന്നത്",
   "Treatments": "ചികിത്സകൾ",
   "Expertise": "വൈദഗ്ധ്യം",
@@ -47,7 +49,10 @@ export const stringsMl: Record<string, string> = {
   "Preparing for treatment": "ചികിത്സയ്ക്കുള്ള തയ്യാറേടുപ്പ്",
   "After treatment": "ചികിത്സയ്ക്ക് ശേഷം",
   "Image-guided treatment through a pinhole opening for complex vascular, neurovascular and oncological conditions. Minimal intervention. Rapid recovery.":
-    "വാസ്കുലാർ, ന്യൂറോ വാസ്കുലാർ, ഓങ്കോളജിക്കൽ രോഗാവസ്ഥകൾക്കായി ഒരു ചെറിയ ദ്വാരത്തിലൂടെ നൽകുന്ന ഇമേജ്-ഗൈഡഡ് ചികിത്സ. കുറഞ്ഞ ഇടപെടൽ. വേഗത്തിലുള്ള സുഖം പ്രാപിക്കൽ.",
+    "ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ ആധുനിക വൈദ്യശാസ്ത്രം. വാസ്കുലാർ, ന്യൂറോ വാസ്കുലാർ, ഓങ്കോളജിക്കൽ രോഗാവസ്ഥകൾക്കായി ഇമേജ്-ഗൈഡഡ് ചികിത്സ. കുറഞ്ഞ ഇടപെടൽ. വേഗത്തിലുള്ള സുഖം പ്രാപിക്കൽ.",
+  "Modern medicine, through a pinpoint opening. Image-guided treatment for complex vascular, neurovascular and oncological conditions. Minimal intervention. Rapid recovery.":
+    "ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ ആധുനിക വൈദ്യശാസ്ത്രം. വാസ്കുലാർ, ന്യൂറോ വാസ്കുലാർ, ഓങ്കോളജിക്കൽ രോഗാവസ്ഥകൾക്കായി ഇമേജ്-ഗൈഡഡ് ചികിത്സ. കുറഞ്ഞ ഇടപെടൽ. വേഗത്തിലുള്ള സുഖം പ്രാപിക്കൽ.",
+
   "Resources": "വിവര ശേഖരം",
   "Patient stories": "രോഗികളുടെ അനുഭവങ്ങൾ",
   "Media & publications": "മാധ്യമങ്ങളും പ്രസിദ്ധീകരണങ്ങളും",
@@ -63,7 +68,11 @@ export const stringsMl: Record<string, string> = {
   "Non-healing ulcers, gangrene, threatened amputation": "ഉണങ്ങാത്ത വ്രണങ്ങൾ, ഗാൻഗ്രീൻ, കാൽ മുറിക്കേണ്ടി വരുന്ന അവസ്ഥ",
   "Benign thyroid nodules and neck swelling": "അപകടകരമല്ലാത്ത തൈറോയ്ഡ് മുഴകളും കഴുത്തിലെ വീക്കവും",
   "Liver cancer and portal hypertension": "കരൾ അർബുദവും പോർട്ടൽ ഹൈപ്പർടെൻഷനും",
+  "Kidney artery narrowing and tumours": "വൃക്കയിലേക്കുള്ള രക്തക്കുഴൽ ചുരുങ്ങൽ, വൃക്കയിലെ മുഴകൾ",
   "Renal artery narrowing and kidney tumours": "വൃക്കയിലേക്കുള്ള രക്തക്കുഴൽ ചുരുങ്ങൽ, വൃക്കയിലെ മുഴകൾ",
+  "Visceral aneurysm": "വിസറൽ അന്യൂറിസം",
+  "Aneurysms of internal organ arteries": "ആന്തരിക അവയവ ധമനികളിലെ അന്യൂറിസങ്ങൾ",
+
   "Long-standing knee osteoarthritis pain": "കാലങ്ങളായുള്ള മുട്ടുതേയ്മാന വേദന",
   "Fibroids and pelvic congestion": "ഫൈബ്രോയിഡുകളും പെൽവിക് കൺജഷനും",
   "Enlarged prostate and urinary symptoms": "പ്രോസ്റ്റേറ്റ് വലുതാകലും മൂത്ര പ്രശ്നങ്ങളും",

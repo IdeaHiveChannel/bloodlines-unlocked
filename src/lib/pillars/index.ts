@@ -67,7 +67,10 @@ export const conditionToPillar: Record<string, string> = {
   "brain-avm": "brain-avm-avf",
   "dural-avf": "brain-avm-avf",
   "hepatocellular-carcinoma": "liver-tumours",
+  "visceral-aneurysm": "visceral-aneurysm",
+  "pelvic-congestion-syndrome": "pelvic-congestion-syndrome",
 };
+
 
 export function pillarForCondition(slug: string) {
   const target = conditionToPillar[slug];
