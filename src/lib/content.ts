@@ -157,13 +157,14 @@ export const conditions: Condition[] = [
   {
     slug: "hepatic-hemangioma",
     name: "Hepatic hemangioma",
-    region: "abdomen",
+    region: "liver",
     intervention: "Embolization",
     intro:
       "A benign swelling made up of blood vessels, not cancer. Targeted embolization with medicine through a small catheter can shrink the hemangioma without surgery.",
     symptoms: ["Abdominal pain", "Fullness", "Tumour made of blood vessels"],
     treatments: ["Injection / Embolization to shrink hemangioma"],
   },
+
 
   {
     slug: "angiomyolipoma",
