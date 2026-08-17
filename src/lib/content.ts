@@ -306,7 +306,7 @@ export const conditions: Condition[] = [
     intervention: "Laser ablation",
     intro:
       "Failing vein valves cause blood to pool, leading to bulging veins and ulcers. Closing the vein allows the ulcer to shrink and heal.",
-    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcer", "Clots / blood clots"],
+    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcer", "Clots / blood clots", "Varicose vein + ulcer"],
     treatments: ["Endovenous laser ablation", "Ultrasound-guided ablation"],
   },
 
