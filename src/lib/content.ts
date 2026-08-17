@@ -166,14 +166,35 @@ export const conditions: Condition[] = [
 
   {
     slug: "angiomyolipoma",
-    name: "Angiomyolipoma",
+    name: "Angiomyolipoma (AML)",
     region: "abdomen",
     intervention: "Embolization",
     intro:
-      "An angiomyolipoma is a usually benign kidney tumour that contains blood vessels and other tissue. Larger or selected lesions may have a risk of bleeding and can sometimes be treated with embolisation.",
-    symptoms: ["Flank pain", "Blood in urine"],
-    treatments: ["Embolization"],
+      "A kidney tumour that is not cancerous but has a substantial blood-vessel component. Embolisation is performed to reduce the risk of bleeding or rupture.",
+    symptoms: ["Flank pain", "Blood in urine", "Incidental kidney mass"],
+    treatments: ["Embolization to reduce bleeding risk", "Pre-operative embolisation"],
   },
+  {
+    slug: "renal-cell-carcinoma",
+    name: "Renal cell carcinoma",
+    region: "abdomen",
+    intervention: "Pre-operative embolisation",
+    intro:
+      "A vascular kidney cancer. Embolisation can be performed before surgery to reduce blood supply and facilitate safer tumour removal.",
+    symptoms: ["Blood in urine", "Flank pain", "Weight loss"],
+    treatments: ["Pre-operative tumour embolisation", "Tumour ablation"],
+  },
+  {
+    slug: "gastrointestinal-bleeding",
+    name: "Gastrointestinal bleeding",
+    region: "abdomen",
+    intervention: "Embolization",
+    intro:
+      "Acute bleeding within the digestive tract. Minimally invasive embolization can often identify and seal the bleeding source through the blood vessels.",
+    symptoms: ["Vomiting blood", "Black or bloody stools", "Dizziness"],
+    treatments: ["Diagnostic angiography", "Transcatheter embolization"],
+  },
+
 
   // ── Chest ───────────────────────────────────────────────────────
   {
