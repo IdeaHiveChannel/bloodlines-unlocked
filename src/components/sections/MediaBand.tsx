@@ -11,19 +11,19 @@ import { ResponsiveVideo } from "../media/ResponsiveVideo";
 
 
 const stills = [
-  { src: suiteControl, caption: tx("Angiography suite — live vascular roadmap") },
-  { src: microcatheter, caption: tx("Microcatheter and guidewire, ready on the field") },
-  { src: hybridOt, caption: tx("Hybrid theatre, imaging and intervention together") },
-  { src: consultDesk, caption: tx("Planning from your scans, before anything begins") },
-  { src: handsCatheter, caption: tx("Access through a pinpoint opening") },
-  { src: recoveryRoom, caption: tx("Recovery, usually the same or next day") },
+  { src: suiteControl, caption: "Angiography suite — live vascular roadmap" },
+  { src: microcatheter, caption: "Microcatheter and guidewire, ready on the field" },
+  { src: hybridOt, caption: "Hybrid theatre, imaging and intervention together" },
+  { src: consultDesk, caption: "Planning from your scans, before anything begins" },
+  { src: handsCatheter, caption: "Access through a pinpoint opening" },
+  { src: recoveryRoom, caption: "Recovery, usually the same or next day" },
 ];
 
 const films = [
-  { ...procedureVideos["thrombectomy"]!, caption: tx("Mechanical thrombectomy — the clot is withdrawn") },
+  { ...procedureVideos["thrombectomy"]!, caption: "Mechanical thrombectomy — the clot is withdrawn" },
   {
     ...procedureVideos["varicose-vein-ablation"]!,
-    caption: tx("Endovenous ablation — the failing vein is sealed"),
+    caption: "Endovenous ablation — the failing vein is sealed",
   },
 ];
 
@@ -49,7 +49,7 @@ export function MediaBand() {
               />
 
 
-              <figcaption className="px-4 py-3 text-caption text-[var(--ink-dim)]">{f.caption}</figcaption>
+              <figcaption className="px-4 py-3 text-caption text-[var(--ink-dim)]">{tx(f.caption)}</figcaption>
             </figure>
           ))}
         </div>
