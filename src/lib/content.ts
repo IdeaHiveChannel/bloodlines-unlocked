@@ -180,13 +180,14 @@ export const conditions: Condition[] = [
   {
     slug: "renal-cell-carcinoma",
     name: "Renal cell carcinoma",
-    region: "abdomen",
+    region: "kidneys",
     intervention: "Pre-operative embolisation",
     intro:
       "A vascular kidney cancer. Embolisation can be performed before surgery to reduce blood supply and facilitate safer tumour removal.",
     symptoms: ["Blood in urine", "Flank pain", "Weight loss"],
     treatments: ["Pre-operative tumour embolisation", "Tumour ablation"],
   },
+
   {
     slug: "gastrointestinal-bleeding",
     name: "Gastrointestinal bleeding",
