@@ -21,7 +21,7 @@ export function Procedures() {
           {t.proceduresPage.description}
         </p>
       </div>
-      {t.proceduresPage.list.map((p, idx) => (
+      {t.proceduresPage.list.map((p: any, idx: number) => (
         <ProcedureStory
           key={p.slug}
           index={idx}
@@ -29,7 +29,7 @@ export function Procedures() {
           name={p.name}
           oneLiner={p.oneLiner}
           beats={p.beats}
-          storyboard={featuredProcedures.find(fp => fp.slug === p.slug)?.storyboard || "angioplasty"}
+          storyboard={featuredProcedures.find((fp) => fp.slug === p.slug)?.storyboard || "angioplasty"}
         />
       ))}
       <div className="shell pb-20 sm:pb-28">
