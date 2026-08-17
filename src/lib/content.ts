@@ -149,10 +149,11 @@ export const conditions: Condition[] = [
     region: "abdomen",
     intervention: "Embolization & stenting",
     intro:
-      "An angiomyolipoma is a usually benign kidney tumour that contains blood vessels and other tissue. Larger or selected lesions may have a risk of bleeding and can sometimes be treated with embolisation.",
+      "A bulge in the wall of an artery supplying organs in the abdomen (like the spleen, liver, or kidneys). Endovascular treatment can exclude the aneurysm from circulation without open surgery.",
     symptoms: ["Often silent", "Vague abdominal pain", "Pulsating sensation"],
     treatments: ["Coil embolization", "Flow-diverter stenting", "Covered stent exclusion"],
   },
+
   {
     slug: "hepatic-hemangioma",
     name: "Hepatic hemangioma",
@@ -336,10 +337,11 @@ export type Procedure = {
   /** Shown on the homepage scroll chapters. */
   featured?: boolean;
   /** Detailed medical content */
-  info?: ProcedureInfo;
+  info: ProcedureInfo; // Made mandatory to match i18n structure
 };
 
 export const procedures: Procedure[] = [
+
   {
     slug: "angioplasty",
     name: "Angioplasty & stenting",
