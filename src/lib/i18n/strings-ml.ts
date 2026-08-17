@@ -323,4 +323,6 @@ export const stringsMl: Record<string, string> = {
   "VTE is the collective term for DVT and pulmonary embolism (PE).": "DVT, പൾമണറി എംബോളിസം (PE) എന്നിവയെ സംയുക്തമായി വിളിക്കുന്ന പേരാണ് VTE.",
   "Can a clot travel to the lungs?": "രക്തക്കട്ട ശ്വാസകോശത്തിലേക്ക് സഞ്ചരിക്കുമോ?",
   "Yes. This is called a pulmonary embolism and is the primary danger of DVT.": "അതെ. ഇതിനെ പൾമണറി എംബോളിസം എന്ന് വിളിക്കുന്നു, ഇതാണ് DVT-യുടെ പ്രധാന അപകടസാധ്യത.",
+  "Dr. Mandeep Sagar": "ഡോ. മൻദീപ് സാഗർ",
+  "Neuro & Vascular Intervention Radiologist": "ന്യൂറോ & വാസ്കുലർ ഇന്റർവെൻഷൻ റേഡിയോളജിസ്റ്റ്",
 };
