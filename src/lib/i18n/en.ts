@@ -298,11 +298,12 @@ export const en = {
         name: "Angioplasty & stenting",
         oneLiner: "Reopening a narrowed artery from the inside.",
         beats: [
-          "An artery once flowed freely. Over years, plaque settled along its wall.",
-          "A guidewire is steered across the narrowing — the hardest millimetres of the case.",
-          "A balloon expands gently, compressing the plaque outward.",
-          "A fine mesh stent is deployed to hold the channel open.",
-          "Blood begins flowing again. The patient walks the same day."
+          "Show the narrowed artery with plaque buildup.",
+          "The guidewire crosses the narrowing — the hardest millimetres of the case.",
+          "The balloon is introduced and expanded to open the channel.",
+          "Plaque is compressed as the balloon opens the artery.",
+          "The stent is deployed and holds the artery open.",
+          "Blood flow is fully restored."
         ]
       },
       {
@@ -349,11 +350,11 @@ export const en = {
         name: "TACE — chemoembolization",
         oneLiner: "Delivering chemotherapy into a tumour's own artery.",
         beats: [
-          "A liver tumour is supplied by its own artery.",
-          "A microcatheter is guided into the artery supplying the tumour.",
-          "Treatment is delivered directly into the tumour through the feeding artery.",
-          "The blood supply to the tumour is reduced by embolization.",
-          "The treatment is concentrated where it is needed while healthy liver is preserved as much as possible."
+          "A liver tumour is fed by its own feeding artery.",
+          "A microcatheter is navigated into that feeding branch.",
+          "Drug-eluting beads are released directly into the tumour bed.",
+          "The tumour blood supply is reduced by embolization.",
+          "The tumour blush fades as its supply is cut off."
         ]
       },
       {
@@ -362,10 +363,10 @@ export const en = {
         oneLiner: "Destroying a tumour with heat, through a needle.",
         beats: [
           "The tumour is located precisely using CT or ultrasound.",
-          "A thin needle-like antenna is guided through the skin into the tumour.",
-          "Microwave energy raises the temperature inside the tumour.",
-          "The treatment zone expands around the tumour.",
-          "The tumour is destroyed in place through a small skin puncture."
+          "A needle-antenna is guided through the skin into the tumour centre.",
+          "Microwave energy raises the temperature inside the tumour ('burning').",
+          "The treatment zone expands to cover the tumour and its margins.",
+          "The tumour cells are destroyed ('charged') through a single puncture."
         ]
       }
     ]
