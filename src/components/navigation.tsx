@@ -40,7 +40,7 @@ export function Navigation() {
             <span className="min-w-0 leading-none">
               <span className="block truncate text-nav">{t.brand.name}</span>
               <span className="mt-0.5 hidden text-[0.6875rem] font-medium uppercase tracking-[0.24em] text-[var(--ink-dim)] xs:block">
-                {t.brand.tagline}
+                {tx(t.brand.tagline)}
               </span>
             </span>
           </LocaleLink>

@@ -34,13 +34,13 @@ export function ConditionsGateway() {
                 data-cursor="link"
                 className="group flex items-baseline gap-6 border-b border-white/[0.07] py-6 sm:py-7 transition-colors hover:bg-white/[0.02] px-2 -mx-2"
               >
-                <span className="text-label shrink-0 w-10">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-label shrink-0 w-10">{tx(String(i + 1).padStart(2, "0"))}</span>
                 <span className="flex-1 min-w-0">
                   <span className="text-h1 block transition-colors group-hover:text-[color-mix(in_oklab,var(--accent)_75%,white)]">
-                    {p.name}
+                    {tx(p.name)}
                   </span>
                   <span className="mt-2 block text-caption leading-relaxed text-[var(--ink-dim)] max-w-2xl line-clamp-1 sm:line-clamp-none">
-                    {p.summary}
+                    {tx(p.summary)}
                   </span>
                 </span>
                 <ArrowUpRight

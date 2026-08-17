@@ -62,7 +62,7 @@ function PatientLanding() {
                 className="group p-8 bg-[#050B16] hover:bg-white/[0.02] transition-colors flex flex-col justify-between min-h-[200px]"
               >
                 <div>
-                  <h3 className="text-card-title group-hover:text-[var(--accent)] transition-colors">{link.label}</h3>
+                  <h3 className="text-card-title group-hover:text-[var(--accent)] transition-colors">{tx(link.label)}</h3>
                 </div>
                 <div className="mt-8 flex items-center justify-between">
                   <span className="text-caption uppercase tracking-widest text-[var(--ink-dim)]">{tx("Learn more")}</span>

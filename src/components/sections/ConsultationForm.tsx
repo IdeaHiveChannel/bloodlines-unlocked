@@ -210,10 +210,10 @@ export function ConsultationForm() {
         className="mt-9 inline-flex min-h-12 items-center gap-2.5 rounded-full bg-white px-7 text-button text-black transition-colors hover:bg-[var(--accent)]"
       >
         {channel === "whatsapp" ? <MessageCircle size={18} /> : <Mail size={18} />}
-        {channel === "whatsapp" ? "Send on WhatsApp" : "Send by email"}
+        {tx(channel === "whatsapp" ? "Send on WhatsApp" : "Send by email")}
       </button>
       <p className="mt-4 text-caption text-[var(--ink-dim)]">
-        Or call Dr. Sagar directly on{" "}
+        {tx("Or call Dr. Sagar directly on")}{" "}
         <a href={contact.phoneHref} className="text-[var(--ink)]" data-cursor="cta">
           {contact.phoneDisplay}
         </a>
