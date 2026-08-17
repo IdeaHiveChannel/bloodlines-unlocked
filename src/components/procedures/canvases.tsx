@@ -75,6 +75,7 @@ function Thrombectomy({ progress }: P) {
   const clotOpacity = useTransform(progress, [0.75, 0.9], [1, 0]);
   const flowOpacity = useTransform(progress, [0.8, 1], [0.1, 1]);
   const funnelOpacity = useTransform(progress, [0.55, 0.7, 0.95], [0, 1, 0.3]);
+  
   return (
     <Frame>
       {/* branching cerebral vessel */}
@@ -84,19 +85,27 @@ function Thrombectomy({ progress }: P) {
         <path d="M350,282 C400,330 440,380 460,470" />
         <path d="M390,300 C440,344 470,400 486,478" />
       </g>
+
+      {/* Catheter/Suction */}
       <motion.g style={{ x: catheterX }}>
         <line x1="-40" y1="320" x2="300" y2="292" stroke="white" strokeWidth="2" opacity="0.6" />
         <motion.path d="M300,292 L336,270 L336,314 Z" fill="white" opacity="0.5" style={{ opacity: funnelOpacity }} />
       </motion.g>
+
+      {/* Clot being captured and withdrawn */}
       <motion.g style={{ x: clotX, opacity: clotOpacity }}>
         <ellipse cx="392" cy="252" rx="46" ry="26" fill="color-mix(in oklab, var(--blood) 80%, black)" transform="rotate(-22 392 252)" />
       </motion.g>
+
+      {/* Stent Retriever */}
       <motion.g style={{ opacity: retrieverOpacity, scaleY: retrieverScale, x: clotX, transformOrigin: "392px 252px" }} stroke={stroke} strokeWidth="1.4" fill="none">
         <ellipse cx="392" cy="252" rx="54" ry="30" transform="rotate(-22 392 252)" />
         {Array.from({ length: 6 }).map((_, i) => (
           <path key={i} d={`M${346 + i * 18},${268 - i * 6} L${360 + i * 18},${232 - i * 6}`} transform="rotate(-22 392 252)" />
         ))}
       </motion.g>
+
+      {/* Reperfusion */}
       <motion.g style={{ opacity: flowOpacity }} stroke={stroke} strokeWidth="2.6" fill="none" strokeLinecap="round">
         <path d="M30,320 C190,320 268,300 348,252 C408,216 470,200 570,200" strokeDasharray="12 26" style={{ animation: "flow 1.6s linear infinite", filter: "drop-shadow(0 0 6px var(--accent))" }} />
         <path d="M350,282 C400,330 440,380 460,470" strokeDasharray="10 24" style={{ animation: "flow 2.2s linear infinite" }} />
