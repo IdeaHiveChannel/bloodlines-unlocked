@@ -1,5 +1,20 @@
 export const stringsMl: Record<string, string> = {
- "Brain & stroke": "തലച്ചോറും സ്ട്രോക്കും",
+  // Hero Section Malayalam
+  "Dr. Mandeep Sagar": "ഡോ. മന്ദീപ് സാഗർ",
+  "Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod": "മംഗളൂരു & കാസർഗോഡിലെ വാസ്കുലർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
+  "Advanced image-guided treatment through minimally invasive procedures.": "ഇമേജ്-ഗൈഡഡ്, കുറഞ്ഞ മുറിവുള്ള ചികിത്സകൾ.",
+  "Dr. Mandeep Sagar provides image-guided treatment for selected vascular and neurovascular conditions affecting the blood vessels of the brain and body. Where appropriate, treatment is performed through small access points rather than large surgical incisions.": "മസ്തിഷ്കത്തിലെയും ശരീരത്തിലെയും രക്തക്കുഴലുകളുമായി ബന്ധപ്പെട്ട വിവിധ രോഗങ്ങൾക്ക് ഡോ. മന്ദീപ് സാഗർ ഇമേജ്-ഗൈഡഡ് ചികിത്സ നൽകുന്നു. ആവശ്യമായിടത്ത് വലിയ ശസ്ത്രക്രിയാ മുറിവുകൾക്ക് പകരം ചെറിയ പ്രവേശനമാർഗങ്ങളിലൂടെയാണ് ചികിത്സ നടത്തുന്നത്.",
+  "Stroke · Brain Aneurysm · Blocked Arteries · Poor Blood Circulation · Diabetic Foot · Varicose Veins · Blood Clots": "ബ്രെയിൻ സ്ട്രോക്ക് · ബ്രെയിൻ അന്യൂറിസം · അടഞ്ഞ ധമനികൾ · കാലിലെ രക്തയോട്ടക്കുറവ് · പ്രമേഹ കാലിലെ മുറിവ് · വരിക്കോസ് വെയിൻ · രക്തക്കട്ടകൾ",
+  "Modern medicine, through a pinpoint opening.": "ഏറ്റവും ചെറിയ പ്രവേശനമാർഗത്തിലൂടെ രോഗമുള്ള ഭാഗത്തെ നേരിട്ട് സമീപിക്കുന്ന ആധുനിക ചികിത്സ.",
+  "Reach the disease through the smallest possible opening. Leave the rest of the body alone.": "വലിയ ശസ്ത്രക്രിയാ മുറിവുകൾ ഒഴിവാക്കി, ആവശ്യമായിടത്ത് ചെറിയ പ്രവേശനമാർഗത്തിലൂടെ രോഗമുള്ള ഭാഗത്തെ നേരിട്ട് ചികിത്സിക്കുക.",
+  "Explore conditions": "രോഗങ്ങളെക്കുറിച്ച് അറിയുക",
+  "Book consultation": "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക",
+  "Mangalore · Karnataka, India\nKasaragod · Kerala, India": "മംഗളൂരു · കർണാടക\nകാസർഗോഡ് · കേരളം",
+  "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod": "ഡോ. മന്ദീപ് സാഗർ — മംഗളൂരു & കാസർഗോഡിലെ വാസ്കുലർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
+  "Advanced image-guided treatment through minimally invasive procedures for vascular and neurovascular conditions.": "വാസ്കുലർ, ന്യൂറോ വാസ്കുലർ രോഗങ്ങൾക്ക് ഇമേജ്-ഗൈഡഡ്, കുറഞ്ഞ മുറിവുള്ള ചികിത്സകൾ.",
+  "Treatment for conditions affecting the blood vessels of the brain, legs, abdomen and other parts of the body, including stroke, aneurysms, blocked arteries, poor blood circulation, varicose veins and selected vascular conditions.": "മസ്തിഷ്കം, കാലുകൾ, വയറ് തുടങ്ങിയ ശരീരഭാഗങ്ങളിലെ രക്തക്കുഴലുകളെ ബാധിക്കുന്ന സ്ട്രോക്ക്, അന്യൂറിസം, അടഞ്ഞ ധമനികൾ, രക്തയോട്ടക്കുറവ്, വെരിക്കോസ് വെയിൻ തുടങ്ങിയ രോഗങ്ങൾക്കുള്ള ചികിത്സ.",
+
+  "Brain & stroke": "തലച്ചോറും സ്ട്രോക്കും",
  "Leg circulation & PAD": "കാലിലെ രക്തയോട്ടവും PAD-യും",
  "Varicose veins & ulcers": "വെരിക്കോസ് വെയിനും പുണ്ണുകളും",
  "Abdominal aneurysms": "വയറിലെ അന്യൂറിസങ്ങൾ",
