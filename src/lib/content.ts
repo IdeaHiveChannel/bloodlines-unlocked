@@ -715,6 +715,7 @@ export const procedures: Procedure[] = [
       "A high-pressure balloon is inflated across the narrowing.",
       "The thrill returns under the fingertips.",
       "The same access continues to be used — no new line, no new limb.",
+    ],
     info: {
       symptoms: ["Decreased flow for dialysis", "High venous pressures"],
       causes: ["Stenosis", "Clot"],
@@ -723,6 +724,7 @@ export const procedures: Procedure[] = [
       recovery: ["Immediate use for dialysis often possible", "Light activity same day"],
     },
   },
+
   {
     slug: "tips",
     name: "TIPS",
