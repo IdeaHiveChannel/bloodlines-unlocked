@@ -8,8 +8,6 @@ import handsCatheter from "../../assets/hands-catheter.jpg";
 import { procedureVideos } from "../../lib/media";
 import { ResponsiveVideo } from "../media/ResponsiveVideo";
 
-
-
 const stills = [
   { src: suiteControl, caption: "Angiography suite — live vascular roadmap" },
   { src: microcatheter, caption: "Microcatheter and guidewire, ready on the field" },
@@ -26,7 +24,6 @@ const films = [
     caption: "Endovenous ablation — the failing vein is sealed",
   },
 ];
-
 
 export function MediaBand() {
   const tx = useTx();
@@ -45,15 +42,12 @@ export function MediaBand() {
                 ratio={f.ratio}
                 fit="contain"
                 frameClassName="rounded-none border-0"
-                label={`Open fullscreen: ${f.caption}`}
+                label={`${tx("Open fullscreen")}: ${tx(f.caption)}`}
               />
-
-
               <figcaption className="px-4 py-3 text-caption text-[var(--ink-dim)]">{tx(f.caption)}</figcaption>
             </figure>
           ))}
         </div>
-
 
         <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {stills.map((s) => (
