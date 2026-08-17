@@ -321,11 +321,19 @@ export function Anatomy() {
 
                   
                   return (
-                    <g
+                    <LocaleLink
                       key={h.id}
+                      to="/diseases/$slug"
+                      params={{ slug: regionGuide[h.id] || "" }}
                       onPointerEnter={() => setActive(h.id)}
                       onFocus={() => setActive(h.id)}
-                      onClick={() => setActive(h.id)}
+                      onClick={(e) => {
+                        // On mobile/tablet, prevent navigation on first tap if it's just selecting the region
+                        if (window.innerWidth < 1024 && active !== h.id) {
+                          e.preventDefault();
+                        }
+                        setActive(h.id);
+                      }}
                       tabIndex={0}
                       role="button"
                       aria-label={labelText}
@@ -440,7 +448,7 @@ export function Anatomy() {
                       >
                         {labelText.split(' ')[0]}
                       </text>
-                    </g>
+                    </LocaleLink>
                   );
                 })}
               </svg>
