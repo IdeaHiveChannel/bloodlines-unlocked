@@ -380,7 +380,6 @@ export const stringsMl: Record<string, string> = {
   "Currently available clinical guides": "നിലവിൽ ലഭ്യമായ ക്ലിനിക്കൽ ഗൈഡുകൾ",
   "In the patient's own words.": "രോഗികളുടെ സ്വന്തം വാക്കുകളിൽ.",
   "Reports are anonymised. Names are changed. The story remains true.": "റിപ്പോർട്ടുകൾ അജ്ഞാതമാണ്. പേരുകൾ മാറ്റിയിട്ടുണ്ടാകാം, എന്നാൽ കഥകൾ യഥാർത്ഥമാണ്.",
-  "Evidence": "തെളിവുകൾ",
   "Before. After. The same patient, the same vessel.": "ചികിത്സയ്ക്ക് മുൻപും ശേഷവും. ഒരേ രോഗി, ഒരേ രക്തക്കുഴൽ.",
   "Interventional radiology is judged on images, not adjectives. Drag the line across each case to see what changed. Representative illustrations of typical treated cases, not identifiable patient records.": "ഇന്റർവെൻഷണൽ റേഡിയോളജി ഇമേജുകളെ അടിസ്ഥാനമാക്കിയുള്ളതാണ്. ഓരോ ചികിത്സയിലും സംഭവിച്ച മാറ്റം കാണുന്നതിന് ലൈൻ നീക്കി നോക്കുക. ഇവ ചികിത്സാ രീതികൾ വിശദീകരിക്കുന്നതിനുള്ള ഉദാഹരണങ്ങൾ മാത്രമാണ്, രോഗികളുടെ വിവരങ്ങളല്ല.",
   "Before": "മുൻപ്",
