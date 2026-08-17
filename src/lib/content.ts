@@ -442,6 +442,7 @@ export const regionProcedures: Record<Region, string[]> = {
   carotid: ["Carotid stenting", "Angioplasty with protection"],
   thyroid: ["Radiofrequency / microwave ablation", "Thyroid artery embolization"],
   chest: ["EVAR / TEVAR", "Bronchial artery embolization", "Aortic stent grafting"],
+  abdomen: ["Visceral aneurysm embolization", "Liver tumour TACE/ablation", "Renal artery stenting"],
   liver: ["TACE", "Microwave ablation", "TIPS", "Portal vein embolization"],
   kidney: ["Renal artery angioplasty", "Renal tumour ablation", "Renal embolization"],
   arms: ["Fistuloplasty", "Declotting", "Central vein recanalisation"],
