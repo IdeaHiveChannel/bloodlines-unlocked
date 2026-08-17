@@ -601,10 +601,11 @@ export const procedures: Procedure[] = [
     featured: true,
     beats: [
       "Imaging identifies the liver tumour and its exact location.",
-      "A needle-antenna (treatment device) is guided into the tumour centre.",
+      "A needle-antenna is guided into the tumour center.",
       "Microwave energy raises the temperature inside the tumour.",
       "Heat destroys the tumour in its place.",
       "The tumour is successfully treated through a single puncture.",
+
 
     ],
     info: {
@@ -648,6 +649,7 @@ export const procedures: Procedure[] = [
       "Soft platinum coils are packed into the aneurysm.",
       "Blood can no longer enter the sac.",
       "The treatment is completed through a single puncture.",
+
 
     ],
     info: {
