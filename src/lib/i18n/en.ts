@@ -276,7 +276,7 @@ export const en = {
         questions: [
           {
             q: "Can kidney artery blockage cause high blood pressure?",
-            a: "Yes. Renal artery stenosis (narrowing of the kidney's blood supply) can lead to 'renovascular hypertension,' which is often difficult to control with standard medications."
+            a: "Yes. Renal artery stenosis (narrowing of the kidney's blood supply) can lead to 'renovascular hypertension.' When blood pressure remains high despite three or more medications, kidney blood-vessel narrowing is suspected."
           },
           {
             q: "How is renal artery stenosis treated?",
