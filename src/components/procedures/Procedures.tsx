@@ -1,4 +1,5 @@
 import { useTx } from "@/lib/i18n/tx";
+import { useT } from "@/lib/i18n/react";
 import { LocaleLink } from "../../components/locale-link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
