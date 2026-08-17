@@ -227,7 +227,7 @@ export function Anatomy() {
           {/* Anatomy panel */}
           <div className="lg:col-span-5">
             <div className="relative mx-auto aspect-[2/3] w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[520px] rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent overflow-hidden">
-              <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full">
+              <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full overflow-visible">
                 <defs>
                   <radialGradient id="bodyGlow" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="color-mix(in oklab, var(--accent) 30%, transparent)" />
