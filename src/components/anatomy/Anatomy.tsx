@@ -76,12 +76,15 @@ const hotspots: Hotspot[] = [
     side: "right",
     organ: (
       <g>
-        {/* Abdomen: representing the central vascular area */}
-        <path d="M180,205 L200,215 L220,205 L220,245 L200,255 L180,245 Z" />
-        <path d="M200,215 L200,255" />
+        {/* Abdomen: Central vascular area with liver/renal/visceral branches */}
+        <path d="M180,205 C180,195 220,195 220,205 L220,245 C220,255 180,255 180,245 Z" fill="none" strokeWidth="1.5" />
+        <path d="M200,205 L200,245" strokeWidth="1" />
+        <path d="M200,225 L215,225" strokeWidth="1" />
+        <path d="M200,235 L185,235" strokeWidth="1" />
       </g>
     ),
   },
+
   {
     id: "liver",
     cx: 168,

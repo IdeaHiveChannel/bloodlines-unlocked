@@ -76,13 +76,12 @@ export const varicoseVeins: Pillar = {
   ],
   procedures: ["varicose-vein-ablation"],
   recovery: [
-    { when: "Same day", what: "Walking within an hour of the procedure. Compression stocking applied and kept on as directed." },
-    { when: "Days 1 to 3", what: "Most people return to desk work. Mild tightness or bruising along the treated vein is normal." },
-    { when: "Week 1", what: "Duplex check confirms the vein is closed and the deep system is clear." },
-    { when: "Weeks 2 to 6", what: "Aching and heaviness settle. The treated vein is gradually absorbed and becomes impalpable." },
-    { when: "Months 2 to 3", what: "Skin discoloration begins to fade; ulcers, where present, usually close in this window." },
-    { when: "Month 6 to 12", what: "Review scan. New tributaries can be treated with sclerotherapy if they appear." },
+    { when: "Procedure: Day 0", what: "Discharged and walking within an hour of the procedure. Stockings applied." },
+    { when: "Day 1", what: "Back to work / routine activity. Most people return to desk work immediately." },
+    { when: "1 Week", what: "Normal lifestyle resume. Duplex check confirms the vein is closed." },
+    { when: "1 Month", what: "Follow-up imaging and normal life. Discoloration fades and ulcers usually close." },
   ],
+
   prevention: [
     "Avoid standing still for long stretches — shift weight, walk a few steps each half hour",
     "Elevate the legs above hip level for fifteen minutes twice a day",

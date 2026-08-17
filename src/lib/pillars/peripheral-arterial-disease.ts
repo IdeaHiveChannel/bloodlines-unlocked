@@ -81,13 +81,12 @@ export const pad: Pillar = {
   ],
   procedures: ["angioplasty"],
   recovery: [
-    { when: "Day 0", what: "Angioplasty via puncture. Bed rest for four to six hours, then walking. Most patients notice warmth returning." },
-    { when: "Day 1", what: "Discharge for the majority. Puncture site checked and antiplatelet regimen started or adjusted." },
-    { when: "Week 1", what: "Return to light activity. Walking distance usually improves noticeably within days." },
-    { when: "Month 1", what: "Ankle-brachial index repeated to document the gain and set the baseline for surveillance." },
-    { when: "Months 3 to 6", what: "Duplex surveillance to detect re-narrowing early, when it is easiest to treat." },
-    { when: "Yearly", what: "Ongoing review of pressures, symptoms and risk factors, alongside cardiac assessment." },
+    { when: "Procedure: Day 0", what: "Angioplasty via puncture. Bed rest for a few hours, then walking. Most patients notice warmth returning." },
+    { when: "Day 1", what: "Discharged and walking. Puncture site checked and antiplatelet regimen started or adjusted." },
+    { when: "1 Week", what: "Return to light activity and routine lifestyle resume. Walking distance usually improves noticeably." },
+    { when: "1 Month", what: "Follow-up imaging and normal life. Ankle-brachial index repeated to document the gain." },
   ],
+
   prevention: [
     "Stop smoking entirely",
     "Walk daily, pushing to near-maximal pain then resting and repeating",

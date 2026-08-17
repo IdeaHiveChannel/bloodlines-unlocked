@@ -158,11 +158,12 @@ function Laser({ progress }: P) {
   const deepOpacity = useTransform(progress, [0.75, 1], [0.2, 1]);
   
   // Ulcer shrinking
-  const ulcerOpacity = useTransform(progress, [0, 0.85, 1], [1, 1, 0.2]);
-  const ulcerScale = useTransform(progress, [0.8, 1], [1, 0.4]);
+  const ulcerOpacity = useTransform(progress, [0, 0.6, 1], [1, 1, 0.1]);
+  const ulcerScale = useTransform(progress, [0.6, 1], [1, 0.2]);
+
 
   // Ultrasound probe/guidance
-  const usOpacity = useTransform(progress, [0.1, 0.2, 0.8, 0.9], [0, 1, 1, 0]);
+  const usOpacity = useTransform(progress, [0.05, 0.15, 0.5, 0.6], [0, 1, 1, 0]);
 
   return (
     <Frame>
@@ -213,10 +214,11 @@ function Laser({ progress }: P) {
 
 /** 5 — TACE: tumour blush → catheter → beads → devascularisation */
 function Tace({ progress }: P) {
-  const catheterLen = useTransform(progress, [0.1, 0.4], [0, 1]);
-  const beadsOpacity = useTransform(progress, [0.4, 0.55, 0.9], [0, 1, 0.7]);
-  const blushOpacity = useTransform(progress, [0, 0.6, 0.9], [0.9, 0.8, 0.08]);
-  const feedOpacity = useTransform(progress, [0.7, 0.85], [1, 0.15]);
+  const catheterLen = useTransform(progress, [0.05, 0.35], [0, 1]);
+  const beadsOpacity = useTransform(progress, [0.35, 0.5, 0.85], [0, 1, 0.6]);
+  const blushOpacity = useTransform(progress, [0, 0.5, 0.85], [0.9, 0.8, 0.05]);
+  const feedOpacity = useTransform(progress, [0.6, 0.8], [1, 0.1]);
+
   
   return (
     <Frame>
@@ -261,10 +263,11 @@ function Tace({ progress }: P) {
 /** 6 — Microwave ablation: needle → energy → zone grows → tumour gone */
 function Ablation({ progress }: P) {
   const needleX = useTransform(progress, [0.05, 0.35], [-280, 0]);
-  const zoneR = useTransform(progress, [0.4, 0.85], [10, 150]);
-  const zoneOpacity = useTransform(progress, [0.38, 0.5], [0, 0.35]);
-  const tumourOpacity = useTransform(progress, [0.6, 0.95], [1, 0.08]);
-  const wave = useTransform(progress, [0.4, 0.5, 0.85, 0.95], [0, 1, 1, 0]);
+  const zoneR = useTransform(progress, [0.35, 0.85], [5, 160]);
+  const zoneOpacity = useTransform(progress, [0.35, 0.45, 0.9], [0, 0.4, 0.2]);
+  const tumourOpacity = useTransform(progress, [0.5, 0.9], [1, 0.05]);
+  const wave = useTransform(progress, [0.35, 0.45, 0.85, 0.95], [0, 1, 1, 0]);
+
   
   return (
     <Frame>

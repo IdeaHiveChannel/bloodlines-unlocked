@@ -32,6 +32,7 @@ export const regionLabels: Record<Region, string> = {
 };
 
 
+
 export type ProcedureInfo = {
   symptoms: string[];
   causes: string[];
@@ -59,10 +60,11 @@ export const conditions: Condition[] = [
     region: "brain",
     intervention: "Mechanical thrombectomy",
     intro:
-      "When a blood clot blocks a blood vessel in the brain, blood flow to part of the brain is reduced or stopped. In selected patients with acute ischemic stroke, mechanical thrombectomy can be used to remove the clot through a small access point and restore blood flow.",
-    symptoms: ["Sudden weakness on one side", "Facial droop", "Slurred speech", "Loss of vision", "Blocked blood vessel in the brain"],
+      "A blood clot has stopped blood flow inside a brain blood vessel. Downstream, brain tissue is on a clock. In selected patients, mechanical thrombectomy can be used to remove the clot through a small access point and restore blood flow.",
+    symptoms: ["Sudden weakness on one side", "Facial droop", "Slurred speech", "Loss of vision", "Blocked blood vessel in the brain", "Hemiplegia"],
     treatments: ["Mechanical thrombectomy", "Intra-arterial thrombolysis"],
   },
+
   {
     slug: "cerebral-aneurysm",
     name: "Cerebral aneurysm",
@@ -75,14 +77,15 @@ export const conditions: Condition[] = [
   },
   {
     slug: "brain-avm",
-    name: "Arteriovenous malformation (AVM)",
+    name: "Brain AVM & AVF",
     region: "brain",
     intervention: "Embolization",
     intro:
-      "A tangle of vessels where arteries and veins meet directly, bypassing the capillary bed. Targeted embolization closes the abnormal connection from within, often before any incision is considered.",
-    symptoms: ["Headache", "Seizure", "Bleeding", "Progressive weakness", "Abnormal connection between brain arteries and veins"],
+      "A tangle of vessels where arteries and veins meet directly (AVM) or an abnormal connection (AVF). Targeted embolization closes the abnormal connection from within, often before any incision is considered.",
+    symptoms: ["Headache", "Seizure", "Bleeding", "Progressive weakness", "Abnormal connection between brain arteries and veins", "Venous malformations"],
     treatments: ["Endovascular embolization", "Staged embolization before radiosurgery"],
   },
+
   {
     slug: "dural-avf",
     name: "Dural arteriovenous fistula (AVF)",
@@ -110,24 +113,34 @@ export const conditions: Condition[] = [
     slug: "carotid-body-tumour",
     name: "Carotid body tumour",
     region: "neck",
-
     intervention: "Pre-operative embolisation",
     intro:
-      "A carotid body tumour is a highly vascular swelling at the division of the carotid artery in the neck. Embolisation can be used to reduce blood supply before surgery by the appropriate surgical team.",
-    symptoms: ["Lump in the neck", "Pulsating mass"],
+      "A carotid body tumour is a highly vascular swelling at the division of the carotid artery in the neck. Embolisation is performed before the surgeon removes the tumour to reduce blood supply and minimize blood loss during surgery.",
+    symptoms: ["Lump in the neck", "Pulsating mass", "Swelling around the carotid vessel"],
+    treatments: ["Pre-operative tumour embolisation", "Embolisation first → tumour surgery afterwards"],
+  },
+  {
+    slug: "juvenile-angiofibroma",
+    name: "Juvenile angiofibroma",
+    region: "neck",
+    intervention: "Pre-operative embolisation",
+    intro:
+      "A highly vascular tumour occurring in the nasopharynx of young males. Pre-operative embolisation reduces blood supply to make surgical removal safer.",
+    symptoms: ["Nasal obstruction", "Recurrent nosebleeds", "Vascular mass"],
     treatments: ["Pre-operative tumour embolisation"],
   },
+
   {
     slug: "thyroid-nodules",
     name: "Thyroid nodules & goitre",
     region: "neck",
-
     intervention: "Ablation or embolization",
     intro:
-      "A benign nodule can press, disfigure and worry without ever being cancer. Heat delivered through a needle shrinks it in place; blocking its artery shrinks a larger goitre. No scar, no thyroid hormone tablets for life.",
-    symptoms: ["Neck swelling", "Pressure when swallowing", "Voice change", "Cosmetic concern", "Thyroid swelling", "Thyroid nodule"],
+      "A benign nodule can press and disfigure without being cancer. Heat delivered through a needle shrinks it in place; blocking its artery shrinks a larger goitre. No scar, no thyroid hormone tablets for life.",
+    symptoms: ["Neck swelling", "Pressure when swallowing", "Thyroid swelling", "Benign thyroid nodules", "Multinodular goitre", "Swelling due to thyroid conditions"],
     treatments: ["Radiofrequency / microwave thyroid ablation", "Thyroid artery embolization"],
   },
+
 
   // ── Abdomen ──────────────────────────────────────────────────────────────
   {
@@ -136,30 +149,53 @@ export const conditions: Condition[] = [
     region: "abdomen",
     intervention: "Embolization & stenting",
     intro:
-      "An angiomyolipoma is a usually benign kidney tumour that contains blood vessels and other tissue. Larger or selected lesions may have a risk of bleeding and can sometimes be treated with embolisation.",
+      "A bulge in the wall of an artery supplying organs in the abdomen (like the spleen, liver, or kidneys). Endovascular treatment can exclude the aneurysm from circulation without open surgery.",
     symptoms: ["Often silent", "Vague abdominal pain", "Pulsating sensation"],
     treatments: ["Coil embolization", "Flow-diverter stenting", "Covered stent exclusion"],
   },
+
   {
     slug: "hepatic-hemangioma",
     name: "Hepatic hemangioma",
     region: "abdomen",
     intervention: "Embolization",
     intro:
-      "A hepatic hemangioma is a benign blood-vessel tumour of the liver. It is a non-cancerous growth that usually does not require treatment unless it is large or causing symptoms.",
-    symptoms: ["Abdominal pain", "Fullness"],
-    treatments: ["Embolization"],
+      "A benign swelling made up of blood vessels, not cancer. Targeted embolization with medicine through a small catheter can shrink the hemangioma without surgery.",
+    symptoms: ["Abdominal pain", "Fullness", "Tumour made of blood vessels"],
+    treatments: ["Injection / Embolization to shrink hemangioma"],
   },
+
   {
     slug: "angiomyolipoma",
-    name: "Angiomyolipoma",
+    name: "Angiomyolipoma (AML)",
     region: "abdomen",
     intervention: "Embolization",
     intro:
-      "An angiomyolipoma is a usually benign kidney tumour that contains blood vessels and other tissue. Larger or selected lesions may have a risk of bleeding and can sometimes be treated with embolisation.",
-    symptoms: ["Flank pain", "Blood in urine"],
-    treatments: ["Embolization"],
+      "A kidney tumour that is not cancerous but has a substantial blood-vessel component. Embolisation is performed to reduce the risk of bleeding or rupture.",
+    symptoms: ["Flank pain", "Blood in urine", "Incidental kidney mass"],
+    treatments: ["Embolization to reduce bleeding risk", "Pre-operative embolisation"],
   },
+  {
+    slug: "renal-cell-carcinoma",
+    name: "Renal cell carcinoma",
+    region: "abdomen",
+    intervention: "Pre-operative embolisation",
+    intro:
+      "A vascular kidney cancer. Embolisation can be performed before surgery to reduce blood supply and facilitate safer tumour removal.",
+    symptoms: ["Blood in urine", "Flank pain", "Weight loss"],
+    treatments: ["Pre-operative tumour embolisation", "Tumour ablation"],
+  },
+  {
+    slug: "gastrointestinal-bleeding",
+    name: "Gastrointestinal bleeding",
+    region: "abdomen",
+    intervention: "Embolization",
+    intro:
+      "Acute bleeding within the digestive tract. Minimally invasive embolization can often identify and seal the bleeding source through the blood vessels.",
+    symptoms: ["Vomiting blood", "Black or bloody stools", "Dizziness"],
+    treatments: ["Diagnostic angiography", "Transcatheter embolization"],
+  },
+
 
   // ── Chest ───────────────────────────────────────────────────────
   {
@@ -168,10 +204,21 @@ export const conditions: Condition[] = [
     region: "chest",
     intervention: "Bronchial artery embolisation",
     intro:
-      "In selected patients, bleeding may come from abnormal or damaged blood vessels in the lungs. Bronchial artery embolisation can be used to block the responsible blood vessel.",
-    symptoms: ["Coughing up blood", "Blood in the cough"],
+      "Bleeding can arise from abnormal or damaged blood vessels in the lungs, often due to previous damage like tuberculosis. Bronchial artery embolisation blocks the responsible blood vessel.",
+    symptoms: ["Coughing up blood", "Blood in the cough", "Lung damage history"],
     treatments: ["Bronchial artery embolisation"],
   },
+  {
+    slug: "aortic-dissection",
+    name: "Aortic dissection",
+    region: "chest",
+    intervention: "Stent grafting",
+    intro:
+      "A tear in the inner layer of the aorta allows blood to flow between the layers of the wall, forcing them apart. Endovascular stent grafting can seal the tear and reinforce the wall.",
+    symptoms: ["Sudden severe chest or back pain", "Tearing sensation"],
+    treatments: ["Endovascular stent grafting", "TEVAR"],
+  },
+
   {
     slug: "pulmonary-avm",
     name: "Pulmonary AVM",
@@ -202,34 +249,67 @@ export const conditions: Condition[] = [
     region: "kidneys",
     intervention: "Renal artery stenting",
     intro:
-      "When high blood pressure remains difficult to control despite several medicines, narrowing of the renal artery may sometimes be investigated as a possible cause.",
-    symptoms: ["Resistant hypertension", "Declining kidney function"],
+      "When blood pressure remains high despite three or more medications, narrowing of the kidney blood vessels is suspected. Stenting can keep the vessel open and help control pressure.",
+    symptoms: ["High blood pressure needing 3+ medicines", "Declining kidney function", "Kidney blood-vessel problems"],
     treatments: ["Renal artery angioplasty", "Renal artery stenting"],
   },
+  {
+    slug: "dialysis-access-maintenance",
+    name: "Dialysis access maintenance",
+    region: "arms",
+    intervention: "Fistuloplasty & stenting",
+    intro:
+      "Maintaining the flow in dialysis fistulas or grafts. Procedures like angioplasty (fistuloplasty) or stenting ensure reliable access for dialysis.",
+    symptoms: ["Decreased thrill", "Difficult dialysis", "Arm swelling"],
+    treatments: ["Fistuloplasty", "Stenting", "Thrombolysis"],
+  },
+
 
   // ── Lower limbs ─────────────────────────────────────────────────────────
   {
     slug: "poor-blood-circulation",
-    name: "Poor blood circulation in the legs",
+    name: "Poor blood circulation (PAD)",
     region: "legs",
     intervention: "Angioplasty & stenting",
     intro:
-      "Also known as peripheral artery disease (PAD). Narrowed or blocked leg arteries reduce blood supply, causing pain or non-healing wounds.",
-    symptoms: ["Pain while walking", "Cold feet", "Non-healing wounds", "Diabetic foot", "Gangrene"],
+      "Blocked or narrowed arteries reduce blood supply to the legs. Image-guided treatment restores flow to heal wounds and prevent gangrene.",
+    symptoms: ["Blackening/gangrene of the leg", "Non-healing ulcer", "Diabetes-related foot problems", "Poor blood circulation", "Blocked arteries"],
     treatments: ["Angioplasty", "Stenting", "Below-knee revascularisation"],
   },
+  {
+    slug: "peripheral-avm",
+    name: "Peripheral AVM",
+    region: "arms",
+    intervention: "Embolization",
+    intro:
+      "Vascular malformations that occur in extremities like arms or hands. Embolization closes the abnormal vessels without needing major surgery.",
+    symptoms: ["Swelling", "Pulsating mass", "Vascular malformation"],
+    treatments: ["Sclerotherapy", "Embolization"],
+  },
+  {
+    slug: "genicular-artery-embolization",
+    name: "Genicular artery embolization",
+    region: "knee",
+    intervention: "Embolization",
+    intro:
+      "A treatment for chronic knee pain due to osteoarthritis. Embolization reduces inflammation by targeting abnormal blood vessels around the joint.",
+    symptoms: ["Chronic knee pain", "Knee-related vascular pain"],
+    treatments: ["Genicular artery embolization (GAE)"],
+  },
+
 
   // ── Veins ───────────────────────────────────────────────────────────────
   {
     slug: "varicose-veins",
-    name: "Varicose veins",
+    name: "Varicose veins & Venous ulcer",
     region: "veins",
     intervention: "Laser ablation",
     intro:
-      "A failing vein closes and blood reroutes through healthy veins. Treatment for venous insufficiency and related ulcers.",
-    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcers", "Deep vein thrombosis"],
-    treatments: ["Endovenous laser ablation", "Radiofrequency ablation"],
+      "Failing vein valves cause blood to pool, leading to bulging veins and ulcers. Closing the vein allows the ulcer to shrink and heal.",
+    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcer", "Clots / blood clots"],
+    treatments: ["Endovenous laser ablation", "Ultrasound-guided ablation"],
   },
+
 ];
 
 export function conditionsByRegion(region: Region) {
@@ -257,10 +337,11 @@ export type Procedure = {
   /** Shown on the homepage scroll chapters. */
   featured?: boolean;
   /** Detailed medical content */
-  info?: ProcedureInfo;
+  info: ProcedureInfo; // Made mandatory to match i18n structure
 };
 
 export const procedures: Procedure[] = [
+
   {
     slug: "angioplasty",
     name: "Angioplasty & stenting",
@@ -303,11 +384,12 @@ export const procedures: Procedure[] = [
         "A stent is placed to keep the artery open if needed.",
       ],
       recovery: [
-        "Bed rest for a few hours after the procedure.",
-        "Most patients go home the same or next day.",
-        "Resume light activities in 2-3 days.",
-        "Avoid heavy lifting for a week.",
+        "Procedure: Day 0 - Hospital admission",
+        "Day 1: Discharged and walking",
+        "1 Week: Light activity and routine lifestyle resume",
+        "1 Month: Follow-up imaging and normal life",
       ],
+
     },
   },
   {
@@ -317,13 +399,14 @@ export const procedures: Procedure[] = [
     storyboard: "thrombectomy",
     featured: true,
     beats: [
-      "A clot has stopped flow inside a vessel. Downstream, tissue is on a clock.",
-      "A stent retriever is opened inside the clot and left to grip it.",
-      "The clot is captured within the struts of the retriever.",
-      "A large-bore catheter aspirates as the retriever is withdrawn.",
-      "The clot leaves the body. Reperfusion is immediate.",
-      "Function returns where it can.",
+      "A clot has stopped blood flow inside a brain blood vessel. Downstream, brain tissue is on a clock.",
+      "A stent retriever is opened inside the clot and positioned to capture it.",
+      "The clot is captured within the retriever.",
+      "A catheter removes the clot as the retriever is withdrawn.",
+      "The clot leaves the body. Blood flow is restored.",
+      "Brain function can recover where tissue remains viable.",
     ],
+
     info: {
       symptoms: [
         "Sudden numbness or weakness in the face, arm or leg",
@@ -350,11 +433,12 @@ export const procedures: Procedure[] = [
         "Immediate restoration of blood flow.",
       ],
       recovery: [
-        "Close monitoring in a stroke unit.",
-        "Blood pressure management.",
-        "Early rehabilitation (physiotherapy, speech therapy).",
-        "Long-term medication to prevent new clots.",
+        "Procedure: Day 0 - Intensive monitoring",
+        "Day 1-3: Blood pressure management and assessment",
+        "1 Month: Early rehabilitation and follow-up",
+        "3 Months: Long-term recovery and stroke prevention",
       ],
+
     },
   },
   {
@@ -396,11 +480,12 @@ export const procedures: Procedure[] = [
         "The aneurysm sac is excluded from high-pressure flow.",
       ],
       recovery: [
-        "1-2 days in the hospital.",
-        "Light walking encouraged early.",
-        "Avoid heavy activity for 4 weeks.",
-        "Periodic follow-up scans are essential.",
+        "Procedure: Day 0 - Monitored hospital stay",
+        "Day 1: Discharged and light activity",
+        "1 Month: Follow-up imaging and normal life",
+        "3 Months: Long-term graft surveillance",
       ],
+
     },
   },
   {
@@ -442,13 +527,15 @@ export const procedures: Procedure[] = [
         "Rerouting blood to healthy deep veins.",
       ],
       recovery: [
-        "Walking immediately after the procedure.",
-        "Compression stockings worn for 1-2 weeks.",
-        "Most patients return to work in 1-2 days.",
-        "Follow-up scan at 1 week.",
+        "Procedure: Day 0 - Discharged and walking",
+        "Day 1: Back to work / routine activity",
+        "1 Week: Normal lifestyle resume",
+        "Follow-up scan at 1 month.",
       ],
     },
   },
+
+
   {
     slug: "tace",
     name: "TACE — chemoembolization",
@@ -591,6 +678,13 @@ export const procedures: Procedure[] = [
       "The treated tissue shrinks steadily over the following months.",
       "Thyroid function is preserved; no lifelong hormone tablets.",
     ],
+    info: {
+      symptoms: ["Neck swelling", "Thyroid lumps", "Pressure when swallowing"],
+      causes: ["Benign nodules", "Goitre"],
+      diagnosis: ["Ultrasound", "Biopsy"],
+      treatment: ["Radiofrequency ablation", "Microwave ablation"],
+      recovery: ["Discharged same day", "No scar", "Return to normal activity next day"],
+    },
   },
   {
     slug: "genicular-artery-embolization",
@@ -604,7 +698,15 @@ export const procedures: Procedure[] = [
       "The blush disappears under fluoroscopy.",
       "Pain improves over the following weeks. No joint is opened.",
     ],
+    info: {
+      symptoms: ["Chronic knee pain", "Pain not relieved by medicines"],
+      causes: ["Osteoarthritis", "Inflammation"],
+      diagnosis: ["X-ray / MRI", "Clinical exam"],
+      treatment: ["Genicular artery embolization"],
+      recovery: ["Procedure: Day 0", "Day 1: Routine activity", "1 Month: Pain relief onset"],
+    },
   },
+
   {
     slug: "dialysis-fistuloplasty",
     name: "Dialysis fistuloplasty",
@@ -617,7 +719,15 @@ export const procedures: Procedure[] = [
       "The thrill returns under the fingertips.",
       "The same access continues to be used — no new line, no new limb.",
     ],
+    info: {
+      symptoms: ["Decreased flow for dialysis", "High venous pressures"],
+      causes: ["Stenosis", "Clot"],
+      diagnosis: ["Physical exam (thrill)", "Ultrasound"],
+      treatment: ["Angioplasty", "Stenting"],
+      recovery: ["Immediate use for dialysis often possible", "Light activity same day"],
+    },
   },
+
   {
     slug: "tips",
     name: "TIPS",
@@ -630,6 +740,13 @@ export const procedures: Procedure[] = [
       "Portal pressure falls immediately and is measured on the table.",
       "Ascites and variceal bleeding recede.",
     ],
+    info: {
+      symptoms: ["Ascites (fluid in abdomen)", "Variceal bleeding"],
+      causes: ["Liver cirrhosis", "Portal hypertension"],
+      diagnosis: ["Ultrasound", "CT", "Endoscopy"],
+      treatment: ["Transjugular Intrahepatic Portosystemic Shunt"],
+      recovery: ["Hospital stay 2-3 days", "Monitoring for encephalopathy", "Follow-up ultrasound"],
+    },
   },
   {
     slug: "prostate-artery-embolization",
@@ -643,6 +760,13 @@ export const procedures: Procedure[] = [
       "Over weeks the gland softens and shrinks, and the stream improves.",
       "Sexual function is preserved. No catheter through the urethra, no resection.",
     ],
+    info: {
+      symptoms: ["Frequent urination", "Weak stream", "Nocturia"],
+      causes: ["Benign Prostatic Hyperplasia (BPH)"],
+      diagnosis: ["PSA test", "Ultrasound", "Uroflowmetry"],
+      treatment: ["Prostate artery embolization"],
+      recovery: ["Same day or overnight stay", "Return to work in 2-3 days", "Symptoms improve over 1-3 months"],
+    },
   },
   {
     slug: "uterine-fibroid-embolization",
@@ -656,8 +780,16 @@ export const procedures: Procedure[] = [
       "The fibroids infarct and shrink over the following months.",
       "Bleeding settles, pressure eases, and the uterus stays.",
     ],
+    info: {
+      symptoms: ["Heavy menstrual bleeding", "Pelvic pain", "Pressure"],
+      causes: ["Uterine fibroids"],
+      diagnosis: ["Ultrasound", "MRI"],
+      treatment: ["Uterine fibroid embolization"],
+      recovery: ["Overnight stay", "1 week recovery at home", "Significant symptom relief by 3 months"],
+    },
   },
 ];
+
 
 export const featuredProcedures = procedures.filter((p) => p.featured);
 
