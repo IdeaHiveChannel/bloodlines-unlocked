@@ -142,10 +142,10 @@ function Slider({ item }: { item: Case }) {
         </div>
       </div>
       <div className="absolute left-3 top-3 max-w-[45%] truncate rounded-full bg-black/60 px-2.5 py-1 text-label sm:left-4 sm:top-4 sm:px-3">
-        {tx("Before")} · {tx(item.beforeCaption)}
+        {tx("Before")} {item.beforeCaption ? `· ${tx(item.beforeCaption)}` : ""}
       </div>
       <div className="absolute right-3 top-3 max-w-[45%] truncate rounded-full bg-black/60 px-2.5 py-1 text-label sm:right-4 sm:top-4 sm:px-3">
-        {tx("After")} · {tx(item.afterCaption)}
+        {tx("After")} {item.afterCaption ? `· ${tx(item.afterCaption)}` : ""}
       </div>
     </div>
   );
