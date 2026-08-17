@@ -1,7 +1,7 @@
 export const en = {
   brand: {
-    name: "Dr Mandeep Sagar",
-    tagline: "Vascular · neuro interventional",
+    name: "Dr. Mandeep Sagar",
+    tagline: "Neuro & Vascular Intervention Radiologist",
     role: "Vascular & neuro interventional radiology",
   },
   nav: {
