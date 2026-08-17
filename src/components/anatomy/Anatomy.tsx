@@ -326,10 +326,10 @@ export function Anatomy() {
                         fontSize="11"
                         fontWeight="500"
                         fontFamily="var(--font-sans)"
-                        className="pointer-events-none select-none drop-shadow-lg"
+                        className="pointer-events-none select-none"
                         style={{ 
                           transition: "fill 300ms",
-                          filter: "drop-shadow(0 0 4px black)"
+                          filter: "drop-shadow(0 0 2px black) drop-shadow(0 0 8px black)"
                         }}
                       >
                         {tx(regionLabels[h.id])}
