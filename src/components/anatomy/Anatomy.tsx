@@ -542,42 +542,42 @@ export function Anatomy() {
                     </p>
                   </div>
                   
-                    <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                      {(regionProcedures[active] ?? []).map((p) => {
-                        const procedure = procedures.find(proc => proc.name === p || tx(proc.name) === tx(p));
-                        const content = (
-                          <>
-                            <span className="h-1 w-1 rounded-full bg-[var(--accent)] opacity-40 group-hover:opacity-100 transition-opacity" />
-                            <span className="text-small text-[var(--ink-dim)] group-hover:text-[var(--ink)] transition-colors">
-                              {tx(p)}
-                            </span>
-                          </>
-                        );
+                  <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {(regionProcedures[active] ?? []).map((p) => {
+                      const procedure = procedures.find((proc) => proc.name === p || tx(proc.name) === tx(p));
+                      const content = (
+                        <>
+                          <span className="h-1 w-1 rounded-full bg-[var(--accent)] opacity-40 group-hover:opacity-100 transition-opacity" />
+                          <span className="text-small text-[var(--ink-dim)] group-hover:text-[var(--ink)] transition-colors">
+                            {tx(p)}
+                          </span>
+                        </>
+                      );
 
-                        if (procedure) {
-                          return (
-                            <li key={p}>
-                              <LocaleLink
-                                to="/procedures/$slug"
-                                params={{ slug: procedure.slug }}
-                                className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.04] hover:border-white/10"
-                              >
-                                {content}
-                              </LocaleLink>
-                            </li>
-                          );
-                        }
-
+                      if (procedure) {
                         return (
-                          <li
-                            key={p}
-                            className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.04] hover:border-white/10"
-                          >
-                            {content}
+                          <li key={p}>
+                            <LocaleLink
+                              to="/procedures/$slug"
+                              params={{ slug: procedure.slug }}
+                              className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.04] hover:border-white/10"
+                            >
+                              {content}
+                            </LocaleLink>
                           </li>
                         );
-                      })}
-                    </ul>
+                      }
+
+                      return (
+                        <li
+                          key={p}
+                          className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.04] hover:border-white/10"
+                        >
+                          {content}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
 
                 <div className="pt-4">
