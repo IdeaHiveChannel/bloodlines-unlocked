@@ -82,7 +82,7 @@ function SubNav() {
   }, []);
   return (
     <div className="sticky top-[72px] z-30 -mx-5 mb-2 border-y border-white/[0.06] bg-[#050B16]/85 px-5 py-2.5 backdrop-blur-md sm:top-[86px] sm:-mx-10 sm:px-10 sm:py-3">
-      <ul className="scroll-x mx-auto flex max-w-[1480px] items-center gap-5 sm:gap-6">
+      <ul className="mx-auto flex max-w-[1480px] flex-wrap items-center justify-center gap-3 sm:gap-6">
         {doors.map((d) => (
           <li key={d.id}>
             <a
