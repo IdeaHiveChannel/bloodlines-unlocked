@@ -323,13 +323,13 @@ export function Anatomy() {
                         y={h.cy + 4}
                         textAnchor={h.side === "right" ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="11"
-                        fontWeight="500"
+                        fontSize="11.5"
+                        fontWeight="600"
                         fontFamily="var(--font-sans)"
                         className="pointer-events-none select-none"
                         style={{ 
                           transition: "fill 300ms",
-                          filter: "drop-shadow(0 0 2px black) drop-shadow(0 0 8px black)"
+                          filter: "drop-shadow(0 0 2px black) drop-shadow(0 0 10px black)"
                         }}
                       >
                         {tx(regionLabels[h.id])}
