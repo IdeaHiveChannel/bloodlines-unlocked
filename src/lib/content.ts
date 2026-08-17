@@ -502,12 +502,13 @@ export const procedures: Procedure[] = [
     storyboard: "laser",
     featured: true,
     beats: [
-      "Faulty vein and abnormal flow lead to a venous ulcer.",
-      "Under ultrasound guidance, a laser fibre is passed inside.",
-      "Treatment is delivered as the fibre is withdrawn.",
-      "The vein shrinks and closes, rerouting blood flow.",
-      "Healthy circulation is restored to the leg.",
-      "The ulcer gradually shrinks and heals after treatment.",
+      "Varicose vein and venous ulcer (Varicose vein + ulcer) shown.",
+      "Under ultrasound guidance, the ablation catheter is passed inside the vein.",
+      "Laser/thermal treatment is delivered inside the vein.",
+      "The vein shrinks and closes, rerouting the blood flow.",
+      "Venous ulcer begins to shrink and heal as the vein closes.",
+      "Ulcer is successfully healed after treatment.",
+
     ],
     info: {
       symptoms: [
