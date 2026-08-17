@@ -32,6 +32,14 @@ export const regionLabels: Record<Region, string> = {
 };
 
 
+export type ProcedureInfo = {
+  symptoms: string[];
+  causes: string[];
+  diagnosis: string[];
+  treatment: string[];
+  recovery: string[];
+};
+
 export type Condition = {
   slug: string;
   name: string;
@@ -248,6 +256,8 @@ export type Procedure = {
   beats: string[];
   /** Shown on the homepage scroll chapters. */
   featured?: boolean;
+  /** Detailed medical content */
+  info?: ProcedureInfo;
 };
 
 export const procedures: Procedure[] = [
