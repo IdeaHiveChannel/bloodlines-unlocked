@@ -528,10 +528,11 @@ export const procedures: Procedure[] = [
         "Procedure: Day 0 - Discharged and walking",
         "Day 1: Back to work / routine activity",
         "1 Week: Normal lifestyle resume",
-        "1 Month: Follow-up imaging and normal life",
+        "Follow-up scan at 1 month.",
       ],
     },
   },
+
 
   {
     slug: "tace",
