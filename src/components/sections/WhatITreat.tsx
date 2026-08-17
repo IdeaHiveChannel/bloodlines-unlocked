@@ -47,14 +47,13 @@ export function WhatITreat() {
                   </span>
                   <h3 className={`
                     mt-3 font-display font-semibold transition-colors group-hover:text-[var(--accent)]
-                    text-[18px] sm:text-[20px] 
-                    leading-[1.4] sm:leading-[1.5]
+                    ${isMl ? 'text-[18px] sm:text-[20px] leading-[1.6]' : 'text-[18px] sm:text-[20px] leading-[1.4] sm:leading-[1.5]'}
                   `}>
                     {tx(c.title)}
                   </h3>
                   <p className={`
-                    mt-3 text-[14px] sm:text-[15px] text-[var(--ink-dim)]
-                    leading-[1.6] sm:leading-[1.7]
+                    mt-3 text-[var(--ink-dim)]
+                    ${isMl ? 'text-[14px] sm:text-[15px] leading-[1.7]' : 'text-[14px] sm:text-[15px] leading-[1.6] sm:leading-[1.7]'}
                   `}>
                     {tx(c.description)}
                   </p>
