@@ -313,7 +313,7 @@ export const procedureSeo: Record<string, ProcedureSeo> = {
   'pulmonary-avm-embolisation': {
     patientTerm: 'Treatment for abnormal lung blood vessels',
     patientTermMl: 'ശ്വാസകോശത്തിലെ രക്തക്കുഴൽ വൈകല്യത്തിനുള്ള ചികിത്സ',
-    searchIntro: 'Pulmonary AVM embolisation closes abnormal connections between arteries and veins in the lungs. This prevents complications like strokes or brain abscesses that can occur when blood bypasses the lung's filtering mechanism.',
+    searchIntro: "Pulmonary AVM embolisation closes abnormal connections between arteries and veins in the lungs. This prevents complications like strokes or brain abscesses that can occur when blood bypasses the lung's filtering mechanism.",
     searchIntroMl: 'ശ്വാസകോശത്തിലെ ധമനികളും സിരകളും തമ്മിലുള്ള അസ്വാഭാവികമായ ബന്ധം (AVM) അടയ്ക്കുന്ന ചികിത്സയാണിത്.',
     usedFor: ['Pulmonary AVM'],
     usedForMl: ['ശ്വാസകോശത്തിലെ രക്തക്കുഴൽ തകരാർ'],
