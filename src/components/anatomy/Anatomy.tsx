@@ -331,8 +331,8 @@ export function Anatomy() {
                           transition: "all 300ms",
                           filter: on ? "drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 2px black)" : "drop-shadow(0 0 2px black) drop-shadow(0 0 12px black)",
                           paintOrder: "stroke fill",
-                          stroke: on ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.95)",
-                          strokeWidth: on ? "2px" : "1px"
+                          stroke: on ? "rgba(0,0,0,0.8)" : "black",
+                          strokeWidth: on ? "2px" : "3px"
                         }}
                       >
                         {tx(regionLabels[h.id])}
