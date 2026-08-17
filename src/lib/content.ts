@@ -663,11 +663,12 @@ export const procedures: Procedure[] = [
         "Promoting blood to clot and seal the aneurysm.",
       ],
       recovery: [
-        "24-48 hours in ICU for observation.",
-        "Regular neurological checks.",
-        "Gradual return to activity over 1-2 weeks.",
-        "Long-term imaging follow-up.",
+        "Procedure: Day 0 - Sac packed with coils. 24-48 hours in ICU for observation.",
+        "Day 1-3: Discharged from ICU. Regular neurological checks.",
+        "1-2 Weeks: Gradual return to light activity and routine lifestyle resume.",
+        "1 Month: Follow-up imaging and normal life.",
       ],
+
     },
   },
   {
