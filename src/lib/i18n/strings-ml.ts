@@ -191,7 +191,6 @@ export const stringsMl: Record<string, string> = {
   "Previous Prescription": "മുൻപത്തെ കുറിപ്പടി",
   "Patient Landing Page": "രോഗികൾക്കുള്ള വിവരങ്ങൾ",
   "Book Consultation": "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക",
-  "Book consultation": "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക",
   "Reserve a slot with Dr. Sagar": "ഡോ. സാഗറുമായി സമയം മുൻകൂട്ടി നിശ്ചയിക്കുക",
   "WhatsApp": "വാട്സ്ആപ്പ്",
   "Direct message to the practice": "ഡോക്ടറോട് നേരിട്ട് സംസാരിക്കാൻ",
