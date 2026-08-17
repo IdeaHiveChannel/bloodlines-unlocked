@@ -298,8 +298,10 @@ export function Anatomy() {
                   const labelX = isRight ? h.cx + labelOffset : h.cx - labelOffset;
                   
                   // Mobile-specific label adjustments to prevent clipping
-                  // Shift labels closer for mobile SE (375px)
-                  const mobileShift = h.cx < 100 ? 15 : (h.cx > 300 ? -15 : 0);
+                  // If the label would go off-screen (near edge), we nudge it.
+                  // Brain, Eye, Carotid, etc. are central. Arms, Legs are edge-heavy.
+                  const edgeNudge = isRight ? (labelX > 380 ? -15 : 0) : (labelX < 20 ? 15 : 0);
+                  const finalX = labelX + edgeNudge;
                   
                   return (
                     <g
@@ -326,7 +328,7 @@ export function Anatomy() {
                         }}
                       />
                       <text
-                        x={labelX}
+                        x={finalX}
                         y={h.cy + 4}
                         textAnchor={isRight ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
