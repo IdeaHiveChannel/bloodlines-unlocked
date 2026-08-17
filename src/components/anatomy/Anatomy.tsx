@@ -10,6 +10,7 @@ import {
   regionGuide,
   regionLabels,
   regionProcedures,
+  procedures,
   type Region,
 } from "../../lib/content";
 
@@ -321,11 +322,19 @@ export function Anatomy() {
 
                   
                   return (
-                    <g
+                    <LocaleLink
                       key={h.id}
+                      to="/diseases/$slug"
+                      params={{ slug: regionGuide[h.id] || "" }}
                       onPointerEnter={() => setActive(h.id)}
                       onFocus={() => setActive(h.id)}
-                      onClick={() => setActive(h.id)}
+                      onClick={(e) => {
+                        // On mobile/tablet, prevent navigation on first tap if it's just selecting the region
+                        if (window.innerWidth < 1024 && active !== h.id) {
+                          e.preventDefault();
+                        }
+                        setActive(h.id);
+                      }}
                       tabIndex={0}
                       role="button"
                       aria-label={labelText}
@@ -440,7 +449,7 @@ export function Anatomy() {
                       >
                         {labelText.split(' ')[0]}
                       </text>
-                    </g>
+                    </LocaleLink>
                   );
                 })}
               </svg>
@@ -534,17 +543,40 @@ export function Anatomy() {
                   </div>
                   
                   <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    {(regionProcedures[active] ?? []).map((p) => (
-                      <li
-                        key={p}
-                        className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.04] hover:border-white/10"
-                      >
-                        <span className="h-1 w-1 rounded-full bg-[var(--accent)] opacity-40 group-hover:opacity-100 transition-opacity" />
-                        <span className="text-small text-[var(--ink-dim)] group-hover:text-[var(--ink)] transition-colors">
-                          {tx(p)}
-                        </span>
-                      </li>
-                    ))}
+                    {(regionProcedures[active] ?? []).map((p) => {
+                      const procedure = procedures.find((proc) => proc.name === p || tx(proc.name) === tx(p));
+                      const content = (
+                        <>
+                          <span className="h-1 w-1 rounded-full bg-[var(--accent)] opacity-40 group-hover:opacity-100 transition-opacity" />
+                          <span className="text-small text-[var(--ink-dim)] group-hover:text-[var(--ink)] transition-colors">
+                            {tx(p)}
+                          </span>
+                        </>
+                      );
+
+                      if (procedure) {
+                        return (
+                          <li key={p}>
+                            <LocaleLink
+                              to="/procedures/$slug"
+                              params={{ slug: procedure.slug }}
+                              className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.04] hover:border-white/10"
+                            >
+                              {content}
+                            </LocaleLink>
+                          </li>
+                        );
+                      }
+
+                      return (
+                        <li
+                          key={p}
+                          className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.04] hover:border-white/10"
+                        >
+                          {content}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
 

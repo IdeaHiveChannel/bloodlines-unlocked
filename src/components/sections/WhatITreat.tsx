@@ -123,16 +123,23 @@ export function WhatITreat() {
                 <div className="lg:border-t lg:border-white/10 lg:pt-10">
                   <h4 className="hidden lg:block text-label mb-8">{tx(t.whatITreat.moreConditionsLabel)}</h4>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-3">
-                    {t.whatITreat.moreConditions.map((condition: string, i: number) => (
-                      <div 
-                        key={i}
-                        className="flex items-center"
-                      >
-                        <span className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors cursor-default border border-white/10 rounded-full px-3 py-1 bg-white/5">
-                          {tx(condition)}
-                        </span>
-                      </div>
-                    ))}
+                    {t.whatITreat.moreConditions.map((condition: string, i: number) => {
+                      // Attempt to find a condition slug if it's one of the known conditions
+                      const slug = condition.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '');
+                      // This is a simplified lookup, in a real app we'd map condition names to slugs properly.
+                      // For now, we link to the general diseases page if we can't be sure.
+                      
+                      return (
+                        <div key={i} className="flex items-center">
+                          <LocaleLink
+                            to="/diseases"
+                            className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors border border-white/10 rounded-full px-3 py-1 bg-white/5"
+                          >
+                            {tx(condition)}
+                          </LocaleLink>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </motion.div>
