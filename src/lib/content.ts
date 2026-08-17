@@ -371,6 +371,37 @@ export const procedures: Procedure[] = [
       "A completion angiogram confirms there is no endoleak.",
       "Recovery is measured in days, not weeks.",
     ],
+    info: {
+      symptoms: [
+        "Often no symptoms (found during other tests)",
+        "Pulsating feeling near the navel",
+        "Deep, drilling pain in the abdomen or side",
+        "Back pain",
+      ],
+      causes: [
+        "Atherosclerosis",
+        "High blood pressure",
+        "Genetic factors",
+        "Smoking",
+      ],
+      diagnosis: [
+        "Abdominal ultrasound",
+        "CT scan of the abdomen",
+        "MRI",
+      ],
+      treatment: [
+        "Small punctures in the groin.",
+        "A stent-graft is guided to the aneurysm site.",
+        "The graft is expanded to create a new path for blood flow.",
+        "The aneurysm sac is excluded from high-pressure flow.",
+      ],
+      recovery: [
+        "1-2 days in the hospital.",
+        "Light walking encouraged early.",
+        "Avoid heavy activity for 4 weeks.",
+        "Periodic follow-up scans are essential.",
+      ],
+    },
   },
   {
     slug: "varicose-vein-ablation",
