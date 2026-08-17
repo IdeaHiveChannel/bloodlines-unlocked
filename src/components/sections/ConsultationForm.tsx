@@ -85,19 +85,19 @@ export function ConsultationForm() {
     const d = parsed.data;
 
     const lines = [
-      "Consultation request for Dr. Mandeep Sagar.",
+      tx("Consultation request for Dr. Mandeep Sagar."),
       "",
-      `Name: ${d.name}`,
-      `Phone: ${d.phone}`,
-      d.email ? `Email: ${d.email}` : null,
-      d.city ? `City: ${d.city}` : null,
-      `Condition / reason: ${d.reason}`,
-      `Preferred date and time: ${d.preferred || "flexible"}`,
-      `Reports available: ${reports.length ? reports.join(", ") : "none yet"}`,
+      `${tx("Name")}: ${d.name}`,
+      `${tx("Phone")}: ${d.phone}`,
+      d.email ? `${tx("Email")}: ${d.email}` : null,
+      d.city ? `${tx("City")}: ${d.city}` : null,
+      `${tx("Condition / reason")}: ${d.reason}`,
+      `${tx("Preferred date and time")}: ${d.preferred || tx("flexible")}`,
+      `${tx("Reports available")}: ${reports.length ? reports.map(r => tx(r)).join(", ") : tx("none yet")}`,
       "",
       channel === "whatsapp"
-        ? "I am attaching my scans and reports to this chat."
-        : "I am attaching my scans and reports to this email.",
+        ? tx("I am attaching my scans and reports to this chat.")
+        : tx("I am attaching my scans and reports to this email."),
     ].filter(Boolean) as string[];
 
     const body = lines.join("\n");
@@ -106,7 +106,7 @@ export function ConsultationForm() {
       window.open(whatsappLink(body), "_blank", "noopener,noreferrer");
       return;
     }
-    const subject = `Consultation request — ${d.name}`;
+    const subject = `${tx("Consultation request")} — ${d.name}`;
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;

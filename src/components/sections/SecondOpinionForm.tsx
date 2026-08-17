@@ -61,16 +61,18 @@ export function SecondOpinionForm() {
     setErrors({});
     const d = parsed.data;
     const message = [
-      "Second opinion request for Dr. Mandeep Sagar.",
+      tx("Second opinion request for Dr. Mandeep Sagar."),
       "",
-      `Name: ${d.name}`,
-      `Age: ${d.age}`,
-      `City: ${d.city}`,
-      `Diagnosis / main problem: ${d.diagnosis}`,
-      d.advised ? `Advised so far: ${d.advised}` : "Advised so far: not yet discussed",
-      `Reports available: ${reports.length ? reports.join(", ") : "will confirm"}`,
+      `${tx("Name")}: ${d.name}`,
+      `${tx("Age")}: ${d.age}`,
+      `${tx("City")}: ${d.city}`,
+      `${tx("Diagnosis / main problem")}: ${d.diagnosis}`,
+      d.advised 
+        ? `${tx("Advised so far")}: ${d.advised}` 
+        : `${tx("Advised so far")}: ${tx("not yet discussed")}`,
+      `${tx("Reports available")}: ${reports.length ? reports.map(r => tx(r)).join(", ") : tx("will confirm")}`,
       "",
-      "I am attaching my scans and reports to this chat for review.",
+      tx("I am attaching my scans and reports to this chat for review."),
     ].join("\n");
     window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
   }
