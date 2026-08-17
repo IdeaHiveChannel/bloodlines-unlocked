@@ -323,7 +323,7 @@ export function Anatomy() {
                         y={h.cy + 4}
                         textAnchor={h.side === "right" ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="12.5"
+                        fontSize="13"
                         fontWeight="600"
                         fontFamily="var(--font-sans)"
                         className="pointer-events-none select-none"
