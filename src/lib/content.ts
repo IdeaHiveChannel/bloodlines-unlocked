@@ -60,10 +60,11 @@ export const conditions: Condition[] = [
     region: "brain",
     intervention: "Mechanical thrombectomy",
     intro:
-      "When a blood clot blocks a blood vessel in the brain, blood flow to part of the brain is reduced or stopped. In selected patients with acute ischemic stroke, mechanical thrombectomy can be used to remove the clot through a small access point and restore blood flow.",
-    symptoms: ["Sudden weakness on one side", "Facial droop", "Slurred speech", "Loss of vision", "Blocked blood vessel in the brain"],
+      "A blood clot has stopped blood flow inside a brain blood vessel. Downstream, brain tissue is on a clock. In selected patients, mechanical thrombectomy can be used to remove the clot through a small access point and restore blood flow.",
+    symptoms: ["Sudden weakness on one side", "Facial droop", "Slurred speech", "Loss of vision", "Blocked blood vessel in the brain", "Hemiplegia"],
     treatments: ["Mechanical thrombectomy", "Intra-arterial thrombolysis"],
   },
+
   {
     slug: "cerebral-aneurysm",
     name: "Cerebral aneurysm",
