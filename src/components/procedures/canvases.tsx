@@ -204,34 +204,44 @@ function Laser({ progress }: P) {
 
 /** 5 — TACE: tumour blush → catheter → beads → devascularisation */
 function Tace({ progress }: P) {
-  const catheterLen = useTransform(progress, [0.1, 0.45], [0, 1]);
-  const beadsOpacity = useTransform(progress, [0.45, 0.58, 0.9], [0, 1, 0.7]);
+  const catheterLen = useTransform(progress, [0.1, 0.4], [0, 1]);
+  const beadsOpacity = useTransform(progress, [0.4, 0.55, 0.9], [0, 1, 0.7]);
   const blushOpacity = useTransform(progress, [0, 0.6, 0.9], [0.9, 0.8, 0.08]);
   const feedOpacity = useTransform(progress, [0.7, 0.85], [1, 0.15]);
+  
   return (
     <Frame>
       {/* liver silhouette */}
       <path d="M80,220 C180,150 400,150 500,230 C540,300 480,420 350,440 C220,458 100,380 80,220 Z"
         fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
+      
       {/* hepatic artery tree */}
       <g fill="none" stroke={soft} strokeWidth="1.2" opacity="0.75">
         <path d="M60,420 C160,400 200,340 260,310" />
         <path d="M260,310 C310,286 340,270 396,262" />
         <path d="M260,310 C300,340 330,370 360,392" />
       </g>
+
+      {/* Tumour Blush */}
       <motion.g style={{ opacity: blushOpacity }}>
         <circle cx="404" cy="256" r="52" fill="color-mix(in oklab, var(--blood) 70%, transparent)" opacity="0.6" />
         <circle cx="404" cy="256" r="32" fill="color-mix(in oklab, var(--blood) 85%, transparent)" opacity="0.8" />
       </motion.g>
+
+      {/* Microcatheter */}
       <motion.path d="M40,430 C150,408 200,344 262,312 C312,288 342,272 396,262"
         fill="none" stroke="white" strokeWidth="2" opacity="0.7"
         style={{ pathLength: catheterLen }} />
+
+      {/* Drug-Eluting Beads */}
       <motion.g style={{ opacity: beadsOpacity }} fill={stroke}>
         {Array.from({ length: 16 }).map((_, i) => {
           const a = (i / 16) * Math.PI * 2;
           return <circle key={i} cx={404 + Math.cos(a) * (16 + (i % 4) * 8)} cy={256 + Math.sin(a) * (14 + (i % 3) * 8)} r="3.4" />;
         })}
       </motion.g>
+
+      {/* Reduced supply flow */}
       <motion.g style={{ opacity: feedOpacity }} stroke={stroke} strokeWidth="2.4" fill="none" strokeLinecap="round">
         <path d="M60,420 C160,400 200,340 260,310 C310,286 340,270 396,262" strokeDasharray="10 26" style={{ animation: "flow 2s linear infinite" }} />
       </motion.g>
@@ -239,26 +249,36 @@ function Tace({ progress }: P) {
   );
 }
 
-/** 6 — Microwave / thyroid ablation: needle → energy → zone grows → tumour gone */
+/** 6 — Microwave ablation: needle → energy → zone grows → tumour gone */
 function Ablation({ progress }: P) {
-  const needleX = useTransform(progress, [0.1, 0.4], [-280, 0]);
-  const zoneR = useTransform(progress, [0.42, 0.85], [10, 150]);
-  const zoneOpacity = useTransform(progress, [0.4, 0.5], [0, 0.35]);
-  const tumourOpacity = useTransform(progress, [0.6, 0.9], [1, 0.08]);
-  const wave = useTransform(progress, [0.42, 0.5, 0.85, 0.95], [0, 1, 1, 0]);
+  const needleX = useTransform(progress, [0.05, 0.35], [-280, 0]);
+  const zoneR = useTransform(progress, [0.4, 0.85], [10, 150]);
+  const zoneOpacity = useTransform(progress, [0.38, 0.5], [0, 0.35]);
+  const tumourOpacity = useTransform(progress, [0.6, 0.95], [1, 0.08]);
+  const wave = useTransform(progress, [0.4, 0.5, 0.85, 0.95], [0, 1, 1, 0]);
+  
   return (
     <Frame>
+      {/* liver silhouette */}
       <path d="M100,180 C200,120 420,130 500,220 C540,290 470,420 340,440 C210,460 100,360 100,180 Z"
         fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
+      
+      {/* Ablation Zone (Heat Expanding) */}
       <motion.circle cx="320" cy="300" fill="color-mix(in oklab, var(--accent) 55%, transparent)"
         style={{ r: zoneR, opacity: zoneOpacity } as never} />
       <motion.circle cx="320" cy="300" fill="none" stroke={stroke} strokeWidth="1.2" strokeDasharray="6 8"
         style={{ r: zoneR, opacity: zoneOpacity } as never} />
+      
+      {/* Tumour */}
       <motion.circle cx="320" cy="300" r="42" fill="color-mix(in oklab, var(--blood) 80%, black)" style={{ opacity: tumourOpacity }} />
+      
+      {/* Needle Antenna */}
       <motion.g style={{ x: needleX }}>
         <line x1="-60" y1="140" x2="320" y2="300" stroke="white" strokeWidth="2.2" opacity="0.85" />
         <circle cx="320" cy="300" r="4" fill="white" />
       </motion.g>
+
+      {/* Energy Waves */}
       <motion.g style={{ opacity: wave }} stroke={stroke} strokeWidth="1.2" fill="none">
         {[60, 90, 120].map((r, i) => (
           <circle key={r} cx="320" cy="300" r={r} opacity={0.5 - i * 0.12}
