@@ -598,11 +598,12 @@ export const procedures: Procedure[] = [
     storyboard: "ablation",
     featured: true,
     beats: [
-      "The tumour is located precisely on CT or ultrasound.",
-      "A needle-antenna is guided through the skin into the tumour centre.",
-      "Microwave energy raises the temperature inside the tumour ('burning').",
-      "The treatment zone expands to cover the tumour and its margins.",
-      "The tumour cells are destroyed ('charged') through a single puncture.",
+      "Imaging identifies the liver tumour and its exact location.",
+      "A needle-antenna (treatment device) is guided into the tumour centre.",
+      "Microwave energy raises the temperature inside the tumour.",
+      "Heat destroys the tumour in its place.",
+      "The tumour is successfully treated through a single puncture.",
+
     ],
     info: {
       symptoms: [
