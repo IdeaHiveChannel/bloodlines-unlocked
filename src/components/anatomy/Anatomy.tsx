@@ -329,7 +329,10 @@ export function Anatomy() {
                         className="pointer-events-none select-none"
                         style={{ 
                           transition: "all 300ms",
-                          filter: on ? "drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 2px black)" : "drop-shadow(0 0 2px black) drop-shadow(0 0 12px black)"
+                          filter: on ? "drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 2px black)" : "drop-shadow(0 0 2px black) drop-shadow(0 0 12px black)",
+                          paintOrder: "stroke fill",
+                          stroke: "rgba(0,0,0,0.5)",
+                          strokeWidth: "0.2px"
                         }}
                       >
                         {tx(regionLabels[h.id])}
