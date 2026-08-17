@@ -32,6 +32,7 @@ export const regionLabels: Record<Region, string> = {
 };
 
 
+
 export type ProcedureInfo = {
   symptoms: string[];
   causes: string[];
