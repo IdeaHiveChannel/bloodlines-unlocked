@@ -332,10 +332,10 @@ export const procedures: Procedure[] = [
     featured: true,
     beats: [
       "The tumour is located precisely on CT or ultrasound.",
-      "A single antenna is advanced through the skin into its centre.",
-      "Microwave energy raises the temperature within seconds.",
-      "The ablation zone expands outward past the tumour margin.",
-      "The tumour is destroyed in place. One puncture. No incision.",
+      "A needle-antenna is guided through the skin into the tumour centre.",
+      "Microwave energy raises the temperature inside the tumour ('burning').",
+      "The treatment zone expands to cover the tumour and its margins.",
+      "The tumour cells are destroyed ('charged') through a single puncture.",
     ],
   },
   {
