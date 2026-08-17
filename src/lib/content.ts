@@ -417,6 +417,37 @@ export const procedures: Procedure[] = [
       "Healthy circulation is restored to the leg.",
       "The ulcer gradually shrinks and heals after treatment.",
     ],
+    info: {
+      symptoms: [
+        "Bulging, rope-like veins",
+        "Aching or heaviness in the legs",
+        "Swelling in the ankles and feet",
+        "Skin discoloration or hardening",
+        "Non-healing ulcers near the ankle",
+      ],
+      causes: [
+        "Weak or damaged vein valves",
+        "Prolonged standing",
+        "Family history",
+        "Pregnancy",
+      ],
+      diagnosis: [
+        "Clinical examination",
+        "Venous duplex ultrasound (standing)",
+      ],
+      treatment: [
+        "Ultrasound-guided access to the vein.",
+        "Laser or radiofrequency fiber insertion.",
+        "Heat energy delivered to seal the vein.",
+        "Rerouting blood to healthy deep veins.",
+      ],
+      recovery: [
+        "Walking immediately after the procedure.",
+        "Compression stockings worn for 1-2 weeks.",
+        "Most patients return to work in 1-2 days.",
+        "Follow-up scan at 1 week.",
+      ],
+    },
   },
   {
     slug: "tace",
