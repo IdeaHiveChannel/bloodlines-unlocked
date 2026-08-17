@@ -181,10 +181,21 @@ export const conditions: Condition[] = [
     region: "chest",
     intervention: "Bronchial artery embolisation",
     intro:
-      "In selected patients, bleeding may come from abnormal or damaged blood vessels in the lungs. Bronchial artery embolisation can be used to block the responsible blood vessel.",
-    symptoms: ["Coughing up blood", "Blood in the cough"],
+      "Bleeding can arise from abnormal or damaged blood vessels in the lungs, often due to previous damage like tuberculosis. Bronchial artery embolisation blocks the responsible blood vessel.",
+    symptoms: ["Coughing up blood", "Blood in the cough", "Lung damage history"],
     treatments: ["Bronchial artery embolisation"],
   },
+  {
+    slug: "aortic-dissection",
+    name: "Aortic dissection",
+    region: "chest",
+    intervention: "Stent grafting",
+    intro:
+      "A tear in the inner layer of the aorta allows blood to flow between the layers of the wall, forcing them apart. Endovascular stent grafting can seal the tear and reinforce the wall.",
+    symptoms: ["Sudden severe chest or back pain", "Tearing sensation"],
+    treatments: ["Endovascular stent grafting", "TEVAR"],
+  },
+
   {
     slug: "pulmonary-avm",
     name: "Pulmonary AVM",
