@@ -574,10 +574,12 @@ export const procedures: Procedure[] = [
         "Blocking the artery to trap the drug in the tumour.",
       ],
       recovery: [
-        "Overnight stay in the hospital.",
-        "Management of 'post-embolization syndrome' (fever, pain).",
-        "Follow-up scan at 1 month to assess response.",
+        "Procedure: Day 0 - Selective navigation and treatment. Overnight admission for monitoring.",
+        "Day 1-5: Discharged from hospital. Post-embolization syndrome managed.",
+        "1 Month: Follow-up imaging (CT/MRI) and normal life resumes.",
+        "3 Months: Decision on further treatment based on imaging surveillance.",
       ],
+
     },
   },
   {
