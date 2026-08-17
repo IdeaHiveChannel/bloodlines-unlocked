@@ -384,11 +384,12 @@ export const procedures: Procedure[] = [
         "A stent is placed to keep the artery open if needed.",
       ],
       recovery: [
-        "Procedure: Day 0 - Hospital admission",
-        "Day 1: Discharged and walking",
-        "1 Week: Light activity and routine lifestyle resume",
-        "1 Month: Follow-up imaging and normal life",
+        "Procedure: Day 0 - Artery opened; stenting if needed. Hospital admission.",
+        "Day 1: Discharged and walking. Puncture site checked.",
+        "1 Week: Light activity and routine lifestyle resume.",
+        "1 Month: Follow-up imaging and normal life.",
       ],
+
 
     },
   },
