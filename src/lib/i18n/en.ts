@@ -677,10 +677,11 @@ export const en = {
             "Reducing inflammation and pain signals."
           ],
           recovery: [
-            "Walking soon after the procedure.",
-            "Most patients go home the same day.",
-            "Pain relief usually begins within 1-2 weeks.",
-            "Minimal recovery time compared to joint replacement."
+            "Procedure: Day 0 - Walking soon after the procedure. Most patients go home the same day.",
+            "Day 1: Routine normal lifestyle resume.",
+            "2 Weeks: Significant pain reduction.",
+            "1 Month: Follow-up and activity monitoring."
+
           ]
         }
       },
