@@ -279,8 +279,11 @@ export function Anatomy() {
                   const isRight = h.side === "right";
                   const labelX = isRight ? h.cx + labelOffset : h.cx - labelOffset;
                   
-                  // Desktop shows full labels, mobile shows short labels
+                  // Desktop (large) shows full labels, Desktop (medium) allows wrapping, 
+                  // Tablet shortens, Mobile uses short labels.
                   const labelText = t.anatomy.regions[h.id].label;
+                  const shortLabel = labelText.split(' & ')[0].split(' ')[0]; // Very simple fallback for now
+
 
                   
                   return (
@@ -318,7 +321,7 @@ export function Anatomy() {
                         fontSize="13"
                         fontWeight="600"
                         fontFamily="var(--font-sans)"
-                        className="pointer-events-none select-none hidden lg:block"
+                        className="pointer-events-none select-none hidden xl:block"
                         style={{ 
                           transition: "all 300ms",
                           filter: on ? "drop-shadow(0 0 6px var(--accent))" : "none",
@@ -327,9 +330,57 @@ export function Anatomy() {
                           strokeWidth: "3px",
                           strokeLinejoin: "round",
                           overflow: "visible",
+                          dominantBaseline: "middle"
                         }}
                       >
                         {labelText}
+                      </text>
+
+                      {/* Desktop 1024-1279: wrap long labels (using foreignObject for text wrapping in SVG) */}
+                      <foreignObject
+                        x={isRight ? labelX : labelX - 140}
+                        y={h.cy - 20}
+                        width="140"
+                        height="40"
+                        className="pointer-events-none hidden lg:block xl:hidden"
+                      >
+                        <div 
+                          className={`flex h-full items-center ${isRight ? "justify-start text-left" : "justify-end text-right"} ${on ? "text-[var(--ink)]" : "text-[var(--ink-dim)]"}`}
+                          style={{
+                            fontSize: "12px",
+                            fontWeight: "600",
+                            lineHeight: "1.2",
+                            transition: "all 300ms",
+                            filter: on ? "drop-shadow(0 0 6px var(--accent))" : "none",
+                            textShadow: "0 0 4px rgba(5, 11, 22, 0.9)"
+                          }}
+                        >
+                          {labelText}
+                        </div>
+                      </foreignObject>
+                      
+                      {/* Tablet 768-1023: shorten labels & reposition within container if needed */}
+                      <text
+                        x={labelX}
+                        y={h.cy + 4}
+                        textAnchor={isRight ? "start" : "end"}
+                        fill={on ? "var(--ink)" : "var(--ink-dim)"}
+                        fontSize="11"
+                        fontWeight="600"
+                        fontFamily="var(--font-sans)"
+                        className="pointer-events-none select-none hidden sm:block lg:hidden"
+                        style={{ 
+                          transition: "all 300ms",
+                          filter: on ? "drop-shadow(0 0 4px var(--accent))" : "none",
+                          paintOrder: "stroke fill",
+                          stroke: "rgba(5, 11, 22, 0.95)",
+                          strokeWidth: "2.5px",
+                          strokeLinejoin: "round",
+                          overflow: "visible",
+                          dominantBaseline: "middle"
+                        }}
+                      >
+                        {labelText.split(' ')[0]}
                       </text>
                       
                       {/* Mobile Labels: Short identifiers positioned carefully */}
@@ -341,7 +392,7 @@ export function Anatomy() {
                         fontSize="11"
                         fontWeight="600"
                         fontFamily="var(--font-sans)"
-                        className="pointer-events-none select-none lg:hidden"
+                        className="pointer-events-none select-none md:hidden"
                         style={{ 
                           transition: "all 300ms",
                           filter: on ? "drop-shadow(0 0 4px var(--accent))" : "none",
@@ -350,9 +401,10 @@ export function Anatomy() {
                           strokeWidth: "2.5px",
                           strokeLinejoin: "round",
                           overflow: "visible",
+                          dominantBaseline: "middle"
                         }}
                       >
-                        {labelText}
+                        {labelText.split(' ')[0]}
                       </text>
                     </g>
                   );
@@ -364,7 +416,9 @@ export function Anatomy() {
             <div className="mt-8 flex gap-2 overflow-x-auto pb-4 no-scrollbar lg:hidden">
               {hotspots.map((h) => {
                 const labelText = t.anatomy.regions[h.id].label;
+                const shortLabel = labelText.split(' ')[0];
                 return (
+
                   <button
 
                     key={h.id}
@@ -375,8 +429,9 @@ export function Anatomy() {
                         : "border-white/10 bg-white/5 text-[var(--ink-dim)]"
                     }`}
                   >
-                    {labelText}
+                    {shortLabel}
                   </button>
+
                 );
               })}
             </div>
