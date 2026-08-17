@@ -42,10 +42,16 @@ export const en = {
     search: "Search",
   },
   hero: {
-    eyebrow: "Vascular & neuro interventional radiology",
-    headline1: "Modern medicine,", // Design hook
-    headline2: "through a pinpoint opening.",
-    lead: "Modern medicine, through a pinpoint opening. Image-guided treatment for complex vascular, neurovascular and oncological conditions. Minimal intervention. Rapid recovery.",
+    eyebrow: "Dr. Mandeep Sagar",
+    h1: "Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod",
+    supporting: "Advanced image-guided treatment through minimally invasive procedures.",
+    description: "Dr. Mandeep Sagar provides image-guided treatment for selected vascular and neurovascular conditions affecting the blood vessels of the brain and body. Where appropriate, treatment is performed through small access points rather than large surgical incisions.",
+    conditions: "Stroke · Brain Aneurysm · Blocked Arteries · Poor Blood Circulation · Diabetic Foot · Varicose Veins · Blood Clots",
+    brandStatement: "Modern medicine, through a pinpoint opening.",
+    brandCopy: "Reach the disease through the smallest possible opening. Leave the rest of the body alone.",
+    primaryCTA: "Explore conditions",
+    secondaryCTA: "Book consultation",
+    location: "Mangalore · Karnataka, India\nKasaragod · Kerala, India",
   },
 
   footer: {
