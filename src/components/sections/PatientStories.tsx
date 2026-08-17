@@ -10,7 +10,7 @@ export function PatientStories() {
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 09 · Patient stories")}</p>
+        <p className="text-label">{tx("Patient stories")}</p>
         <h2 className="text-h1 mt-6 max-w-3xl">{tx("In the patient's own words.")}</h2>
         <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">{consentNote}</p>
 

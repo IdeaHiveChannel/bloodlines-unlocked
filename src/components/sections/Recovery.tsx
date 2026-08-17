@@ -14,7 +14,7 @@ export function Recovery() {
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 06 · Recovery")}</p>
+        <p className="text-label">{tx("Recovery")}</p>
         <h2 className="text-h1 mt-6 max-w-3xl">
           {tx("Treatment is only one part of recovery.")}
         </h2>

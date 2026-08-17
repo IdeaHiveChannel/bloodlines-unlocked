@@ -10,7 +10,7 @@ export function Doctor() {
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 06 · The physician")}</p>
+        <p className="text-label">{tx("Physician")}</p>
         <div className="mt-10 grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
             <h2 className="text-display-xl">

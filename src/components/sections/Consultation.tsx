@@ -42,7 +42,7 @@ export function Consultation() {
   return (
     <section className="relative bg-[#050B16] section-y border-t border-white/[0.05]">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 08 · Consultation")}</p>
+        <p className="text-label">{tx("Consultation")}</p>
         <h2 className="text-display-xl mt-6 max-w-3xl">
           {tx("When you're ready, we're here.")}
         </h2>

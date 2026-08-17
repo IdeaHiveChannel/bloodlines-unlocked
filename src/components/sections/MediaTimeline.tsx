@@ -17,7 +17,7 @@ export function MediaTimeline() {
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 10 · Beyond the cath lab")}</p>
+        <p className="text-label">{tx("Media & Publications")}</p>
         <h1 className="text-display-xl mt-6 max-w-4xl">{tx("Media, publications and awards.")}</h1>
         <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
           {tx("Interventional radiology moves quickly. What follows is a record of the work outside the procedure room — peer-reviewed papers, conference talks, recognitions and press coverage. Entries are listed only once verified.")}

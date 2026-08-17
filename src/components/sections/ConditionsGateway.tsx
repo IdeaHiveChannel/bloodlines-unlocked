@@ -9,7 +9,7 @@ export function ConditionsGateway() {
   return (
     <section className="relative bg-[#050B16] section-y border-t border-white/[0.05]">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 03 · Conditions")}</p>
+        <p className="text-label">{tx("Conditions")}</p>
         <div className="mt-6 grid lg:grid-cols-12 gap-10">
           <h2 className="text-display-xl lg:col-span-6">
             {tx("Different diseases. One philosophy.")}
