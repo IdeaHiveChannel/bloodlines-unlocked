@@ -531,9 +531,8 @@ export const procedures: Procedure[] = [
         "1 Month: Follow-up imaging and normal life",
       ],
     },
-
-    },
   },
+
   {
     slug: "tace",
     name: "TACE — chemoembolization",
