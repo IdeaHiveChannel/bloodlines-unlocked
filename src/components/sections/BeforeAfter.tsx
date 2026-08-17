@@ -158,7 +158,7 @@ export function BeforeAfter() {
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Chapter 06 · Evidence")}</p>
+        <p className="text-label">{tx("Evidence")}</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
           {tx("Before. After. The same patient, the same vessel.")}
         </h2>

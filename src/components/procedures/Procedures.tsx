@@ -11,7 +11,7 @@ export function Procedures() {
   return (
     <section className="relative bg-[#050B16]">
       <div className="shell pt-20 pb-8 sm:pt-28 sm:pb-12">
-        <p className="text-label">{tx("Chapter 04 · Procedures")}</p>
+        <p className="text-label">{tx("Procedures")}</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
           {tx("Every procedure has its own story.")}
         </h2>
