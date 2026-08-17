@@ -44,8 +44,10 @@ export const stringsMl: Record<string, string> = {
   "Dialysis access treatment": "ഡയാലിസിസ് ആക്സസ് ചികിത്സ",
   "How treatment works": "ചികിത്സ എങ്ങനെയാണ് നടക്കുന്നത്",
   "Before consultation": "കൺസൾട്ടേഷന് മുൻപ്",
-  "Preparing for treatment": "ചികിത്സയ്ക്കുള്ള തയ്യാറെടുപ്പ്",
+  "Preparing for treatment": "ചികിത്സയ്ക്കുള്ള തയ്യാറേടുപ്പ്",
   "After treatment": "ചികിത്സയ്ക്ക് ശേഷം",
+  "Image-guided treatment through a pinhole opening for complex vascular, neurovascular and oncological conditions. Minimal intervention. Rapid recovery.":
+    "വാസ്കുലാർ, ന്യൂറോ വാസ്കുലാർ, ഓങ്കോളജിക്കൽ രോഗാവസ്ഥകൾക്കായി ഒരു ചെറിയ ദ്വാരത്തിലൂടെ നൽകുന്ന ഇമേജ്-ഗൈഡഡ് ചികിത്സ. കുറഞ്ഞ ഇടപെടൽ. വേഗത്തിലുള്ള സുഖം പ്രാപിക്കൽ.",
   "Resources": "വിവര ശേഖരം",
   "Patient stories": "രോഗികളുടെ അനുഭവങ്ങൾ",
   "Media & publications": "മാധ്യമങ്ങളും പ്രസിദ്ധീകരണങ്ങളും",

@@ -20,7 +20,7 @@ export const Route = createFileRoute("/{-$locale}/")({
   head: ({ params }) => localeHead(params, "/", {
     title: "Dr. Mandeep Sagar — Interventional radiologist",
     description:
-      "Image-guided treatment through a pinhole opening — stroke, aneurysms, fibroids, liver tumours, diabetic foot and varicose veins, without major surgery.",
+      "Modern medicine, through a pinpoint opening. Image-guided treatment through a pinhole opening for complex vascular, neurovascular and oncological conditions.",
     ogTitle: "Dr. Mandeep Sagar — Vascular & neuro interventional radiologist",
     ogDescription:
       "Image-guided treatment through a pinhole opening, avoiding major surgery wherever appropriate.",
