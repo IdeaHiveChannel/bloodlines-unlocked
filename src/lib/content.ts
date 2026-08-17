@@ -505,6 +505,34 @@ export const procedures: Procedure[] = [
       "The treatment zone expands to cover the tumour and its margins.",
       "The tumour cells are destroyed ('charged') through a single puncture.",
     ],
+    info: {
+      symptoms: [
+        "Small liver or kidney tumours often have no symptoms",
+        "Found during routine surveillance scans",
+      ],
+      causes: [
+        "Primary liver cancer",
+        "Renal cell carcinoma",
+        "Lung nodules",
+      ],
+      diagnosis: [
+        "CT scan",
+        "Ultrasound",
+        "Biopsy (sometimes)",
+      ],
+      treatment: [
+        "A needle-like antenna is guided into the tumour.",
+        "Microwave energy creates precise heat.",
+        "Cell death occurs within minutes.",
+        "Targeted destruction sparing healthy tissue.",
+      ],
+      recovery: [
+        "Short hospital stay (often day-case).",
+        "Minimal discomfort, managed with simple pain relief.",
+        "Rapid return to normal activities.",
+        "Surveillance scans to ensure total destruction.",
+      ],
+    },
   },
   {
     slug: "aneurysm-coiling",
