@@ -281,12 +281,13 @@ export const conditions: Condition[] = [
   },
   {
     slug: "peripheral-avm",
-    name: "Peripheral AVM",
+    name: "Peripheral AVM / Vascular malformation",
     region: "arms",
-    intervention: "Embolization",
+    intervention: "Embolization & sclerotherapy",
     intro:
-      "Vascular malformations that occur in extremities like arms or hands. Embolization closes the abnormal vessels without needing major surgery.",
-    symptoms: ["Swelling", "Pulsating mass", "Vascular malformation"],
+      "Vascular malformations that occur in extremities like arms, hands, or around the eye. Targeted treatment closes the abnormal vessels without needing major surgery.",
+    symptoms: ["Swelling", "Pulsating mass", "Vascular malformation", "Arm/Hand vascular problems", "Around the eye swelling"],
+
     treatments: ["Sclerotherapy", "Embolization"],
   },
   {
