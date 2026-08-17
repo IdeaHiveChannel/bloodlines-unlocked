@@ -159,10 +159,11 @@ export const conditions: Condition[] = [
     region: "abdomen",
     intervention: "Embolization",
     intro:
-      "A hepatic hemangioma is a benign blood-vessel tumour of the liver. It is a non-cancerous growth that usually does not require treatment unless it is large or causing symptoms.",
-    symptoms: ["Abdominal pain", "Fullness"],
-    treatments: ["Embolization"],
+      "A benign swelling made up of blood vessels, not cancer. Targeted embolization with medicine through a small catheter can shrink the hemangioma without surgery.",
+    symptoms: ["Abdominal pain", "Fullness", "Tumour made of blood vessels"],
+    treatments: ["Injection / Embolization to shrink hemangioma"],
   },
+
   {
     slug: "angiomyolipoma",
     name: "Angiomyolipoma",
