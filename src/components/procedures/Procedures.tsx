@@ -65,8 +65,8 @@ export function Procedures() {
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center">
         <div className="shell pt-24 sm:pt-28">
           <p className="text-label">{t.proceduresPage.procedure} {String(index + 1).padStart(2, "0")}</p>
-          <LocaleLink to="/procedures/$slug" params={{ slug }} data-cursor="link">
-            <h3 className="mt-2 text-h2">{name}</h3>
+          <LocaleLink to="/procedures/$slug" params={{ slug }} data-cursor="link" className="group">
+            <h3 className="mt-2 text-h2 transition-colors group-hover:text-[var(--accent)]">{name}</h3>
           </LocaleLink>
           <p className="mt-2 max-w-md text-small text-[var(--ink-dim)]">{oneLiner}</p>
         </div>
