@@ -298,4 +298,9 @@ export const stringsMl: Record<string, string> = {
   "Vital Flow — Vascular & neuro interventional radiology": "വൈറ്റൽ ഫ്ലോ — വാസ്കുലാർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജി",
   "Dr. Mandeep Sagar — Interventional radiologist": "ഡോ. മന്ദീപ് സാഗർ — ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
   "Open in maps →": "മാപ്പിൽ കാണുക →",
+  "Symptoms": "ലക്ഷണങ്ങൾ",
+  "Treatment": "ചികിത്സ",
+  "Patient information": "രോഗികൾക്കുള്ള വിവരങ്ങൾ",
+  "Treatments": "ചികിത്സാരീതികൾ",
+  "Patient Landing Page": "പേഷ്യന്റ് ലാൻഡിംഗ് പേജ്",
 };
