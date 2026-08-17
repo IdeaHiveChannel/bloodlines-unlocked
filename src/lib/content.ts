@@ -530,9 +530,8 @@ export const procedures: Procedure[] = [
         "1 Week: Normal lifestyle resume",
         "1 Month: Follow-up imaging and normal life",
       ],
+    },
 
-        "Follow-up scan at 1 week.",
-      ],
     },
   },
   {
