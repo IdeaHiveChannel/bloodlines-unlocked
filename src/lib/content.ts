@@ -363,6 +363,128 @@ export const conditions: Condition[] = [
     treatments: ["Cryoablation", "Sclerotherapy", "Embolization"],
   },
 
+  // ── New Conditions (SEO Brief) ───────────────────────────────────────────
+  {
+    slug: "visceral-aneurysm",
+    name: "Visceral artery aneurysm",
+    region: "liver",
+    intervention: "Embolization & stenting",
+    intro:
+      "A weak point on an artery supplying the liver, spleen or gut. Often found by accident, but carries a risk of sudden internal bleeding. Closing the aneurysm from within the vessel secures it while preserving organ blood flow.",
+    symptoms: ["Often silent", "Vague abdominal pain", "Pulsating sensation"],
+    treatments: ["Coil embolization", "Flow-diverter stenting", "Covered stent exclusion"],
+  },
+  {
+    slug: "bronchial-artery-embolisation",
+    name: "Haemoptysis (Coughing blood)",
+    region: "chest",
+    intervention: "Bronchial artery embolization",
+    intro:
+      "Coughing up blood can be life-threatening. When the source is the bronchial arteries, image-guided embolization stops the bleeding at its source within minutes, avoiding the need for high-risk lung surgery.",
+    symptoms: ["Coughing up bright red blood", "Chest pain", "Shortness of breath"],
+    treatments: ["Emergency bronchial artery embolization"],
+  },
+  {
+    slug: "pelvic-congestion-syndrome",
+    name: "Pelvic congestion syndrome",
+    region: "pelvis",
+    intervention: "Vein embolization",
+    intro:
+      "Chronic pelvic pain in women can be caused by 'varicose veins' deep in the pelvis. Closing these leaking veins from within restores normal pressure and relieves the deep, aching pain that often worsens with standing.",
+    symptoms: ["Deep pelvic ache", "Pain worse at end of day", "Pain during or after intimacy", "Visible veins on thighs/vulva"],
+    treatments: ["Ovarian vein embolization", "Iliac vein stenting"],
+  },
+  {
+    slug: "uterine-fibroid-embolization",
+    name: "Uterine fibroids",
+    region: "pelvis",
+    intervention: "Fibroid embolization (UFE)",
+    intro:
+      "Non-cancerous growths in the uterus that cause heavy bleeding and pressure. By blocking the blood supply to the fibroids through a pinhole in the wrist or groin, they shrink and symptoms resolve without removing the uterus.",
+    symptoms: ["Heavy periods", "Pelvic pressure", "Frequent urination", "Anaemia"],
+    treatments: ["Uterine artery embolization (UAE/UFE)"],
+  },
+  {
+    slug: "prostate-artery-embolization",
+    name: "Enlarged prostate (BPH)",
+    region: "pelvis",
+    intervention: "Prostate embolization (PAE)",
+    intro:
+      "An enlarged prostate can make urination difficult and frequent. Embolization shrinks the gland by reducing its blood supply, offering a path to relief without the sexual or urinary side effects of traditional surgery.",
+    symptoms: ["Frequent night urination", "Weak stream", "Difficulty starting", "Incomplete emptying"],
+    treatments: ["Prostate artery embolization (PAE)"],
+  },
+  {
+    slug: "varicocele",
+    name: "Varicocele",
+    region: "pelvis",
+    intervention: "Varicocele embolization",
+    intro:
+      "Swollen veins in the scrotum can cause pain and affect fertility. Embolization closes the faulty vein from within, redirecting blood to healthy channels with no incision and a return to activity the next day.",
+    symptoms: ["Dull scrotal ache", "Swelling ('bag of worms')", "Fertility concerns"],
+    treatments: ["Percutaneous varicocele embolization"],
+  },
+  {
+    slug: "deep-vein-thrombosis",
+    name: "Deep vein thrombosis (DVT)",
+    region: "veins",
+    intervention: "Thrombectomy & stenting",
+    intro:
+      "A large clot in the deep veins of the leg or pelvis. Beyond the risk of moving to the lungs, it can cause lifelong leg swelling. Removing the clot and stenting the underlying narrowing preserves the vein's function.",
+    symptoms: ["Sudden leg swelling", "Pain and tenderness", "Warmth and redness"],
+    treatments: ["Mechanical thrombectomy", "Catheter-directed thrombolysis", "Venous stenting"],
+  },
+  {
+    slug: "may-thurner-syndrome",
+    name: "May-Thurner syndrome",
+    region: "veins",
+    intervention: "Venous stenting",
+    intro:
+      "A condition where a pelvic artery compresses a pelvic vein, leading to left leg swelling or DVT. A stent placed inside the vein keeps it open, treating the cause rather than just the symptoms.",
+    symptoms: ["Left leg swelling", "Repeated left-sided DVT", "Chronic leg pain"],
+    treatments: ["Iliac vein stenting", "Venoplasty"],
+  },
+  {
+    slug: "varicose-veins-pillar",
+    name: "Varicose veins (Minimally invasive)",
+    region: "veins",
+    intervention: "Laser ablation",
+    intro:
+      "Bulging, twisted veins are more than cosmetic — they cause heaviness, pain and skin ulcers. Closing the leaking vein with laser heat through a needle puncture allows it to disappear while blood flows through healthy veins.",
+    symptoms: ["Bulging leg veins", "Aching and heaviness", "Skin discolouration", "Ulcers"],
+    treatments: ["Endovenous laser ablation (EVLA)", "Sclerotherapy", "Glue closure"],
+  },
+  {
+    slug: "venous-ulcer-pillar",
+    name: "Venous leg ulcers",
+    region: "veins",
+    intervention: "Vein treatment",
+    intro:
+      "Wounds near the ankle that fail to heal are often caused by hidden vein problems. Treating the underlying venous reflux by laser or embolization is the key to closing the ulcer and keeping it closed.",
+    symptoms: ["Open sore near ankle", "Swelling", "Skin hardening", "Dark skin patches"],
+    treatments: ["Laser ablation of refluxing veins", "Compression therapy"],
+  },
+  {
+    slug: "bone-tumours",
+    name: "Bone tumours & metastases",
+    region: "legs",
+    intervention: "Ablation & cementoplasty",
+    intro:
+      "Tumours in the bone can cause severe pain and risk of fracture. Image-guided heat destroys the tumour, and medical cement reinforces the bone — often providing immediate relief and stability.",
+    symptoms: ["Localized bone pain", "Pain worse at night", "Fracture risk"],
+    treatments: ["Radiofrequency ablation", "Cryoablation", "Vertebroplasty / Cementoplasty"],
+  },
+  {
+    slug: "spinal-fractures",
+    name: "Vertebral compression fractures",
+    region: "chest",
+    intervention: "Vertebroplasty",
+    intro:
+      "Painful fractures in the spine, often from osteoporosis. Injecting medical-grade cement into the vertebra under X-ray guidance stabilizes the bone and provides rapid pain relief, helping patients walk again.",
+    symptoms: ["Sudden back pain", "Pain worse when standing", "Loss of height"],
+    treatments: ["Vertebroplasty", "Kyphoplasty"],
+  },
+
   // ── Veins ───────────────────────────────────────────────────────────────
   {
     slug: "varicose-veins",
