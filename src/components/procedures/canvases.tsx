@@ -141,12 +141,20 @@ function Evar({ progress }: P) {
 
 /** 4 — Laser vein ablation: reflux → fibre → energy → collapse → reroute */
 function Laser({ progress }: P) {
-  const fibreY = useTransform(progress, [0.15, 0.4], [40, 430]);
+  const fibreY = useTransform(progress, [0.15, 0.35], [40, 430]);
   const fibreOpacity = useTransform(progress, [0.12, 0.2, 0.85, 0.95], [0, 1, 1, 0]);
-  const pulseOpacity = useTransform(progress, [0.42, 0.5, 0.75, 0.85], [0, 1, 1, 0]);
-  const collapse = useTransform(progress, [0.55, 0.85], [1, 0.06]);
-  const refluxOpacity = useTransform(progress, [0, 0.4], [1, 0]);
-  const deepOpacity = useTransform(progress, [0.7, 1], [0.2, 1]);
+  const pulseOpacity = useTransform(progress, [0.4, 0.5, 0.75, 0.85], [0, 1, 1, 0]);
+  const collapse = useTransform(progress, [0.5, 0.8], [1, 0.06]);
+  const refluxOpacity = useTransform(progress, [0, 0.45], [1, 0]);
+  const deepOpacity = useTransform(progress, [0.75, 1], [0.2, 1]);
+  
+  // Ulcer shrinking
+  const ulcerOpacity = useTransform(progress, [0, 0.85, 1], [1, 1, 0.2]);
+  const ulcerScale = useTransform(progress, [0.8, 1], [1, 0.4]);
+
+  // Ultrasound probe/guidance
+  const usOpacity = useTransform(progress, [0.1, 0.2, 0.8, 0.9], [0, 1, 1, 0]);
+
   return (
     <Frame>
       {/* faulty superficial vein */}
@@ -159,16 +167,32 @@ function Laser({ progress }: P) {
           </g>
         ))}
       </motion.g>
-      {/* refluxing (downward) flow */}
+
+      {/* refluxing flow */}
       <motion.g style={{ opacity: refluxOpacity }} stroke="var(--blood)" strokeWidth="2.4" fill="none" strokeLinecap="round">
         <path d="M230,60 L230,540" strokeDasharray="10 26" style={{ animation: "flow 2.4s linear infinite" }} />
       </motion.g>
+
       {/* laser fibre */}
       <motion.g style={{ opacity: fibreOpacity }}>
         <motion.line x1="230" y1="20" x2="230" style={{ y2: fibreY } as never} stroke="white" strokeWidth="1.6" opacity="0.8" />
         <motion.circle cx="230" r="5" fill="white" style={{ cy: fibreY } as never} />
         <motion.circle cx="230" r="18" fill="color-mix(in oklab, var(--accent) 40%, transparent)" style={{ cy: fibreY, opacity: pulseOpacity } as never} />
       </motion.g>
+
+      {/* Ultrasound Guidance overlay */}
+      <motion.g style={{ opacity: usOpacity }}>
+        <rect x="180" y="20" width="100" height="40" rx="4" fill="rgba(255,255,255,0.05)" stroke="white" strokeWidth="0.5" opacity="0.4" />
+        <path d="M200,30 L260,30 M200,40 L240,40 M200,50 L250,50" stroke="white" strokeWidth="1" opacity="0.3" />
+        <text x="230" y="75" textAnchor="middle" fill="white" fontSize="10" opacity="0.5">ULTRASOUND GUIDED</text>
+      </motion.g>
+
+      {/* Venous Ulcer */}
+      <motion.g style={{ opacity: ulcerOpacity, scale: ulcerScale, transformOrigin: "150px 480px" }}>
+        <circle cx="150" cy="480" r="22" fill="color-mix(in oklab, var(--blood) 40%, black)" opacity="0.6" />
+        <path d="M135,475 C140,465 160,465 165,475 C170,485 150,500 135,475" fill="color-mix(in oklab, var(--blood) 60%, transparent)" />
+      </motion.g>
+
       {/* deep vein takes over */}
       <motion.g style={{ opacity: deepOpacity }} stroke={stroke} strokeWidth="2.6" fill="none" strokeLinecap="round">
         <path d="M400,60 C420,200 414,380 396,540" strokeDasharray="12 28" style={{ animation: "flow 2s linear infinite", filter: "drop-shadow(0 0 6px var(--accent))" }} />
