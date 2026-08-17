@@ -163,7 +163,7 @@ export const en = {
         id: "11",
         category: "Pelvis",
         title: "Uterine fibroids",
-        patientLanguage: "Non-cancerous growths in the uterus",
+        patientLanguage: "Uterine fibroids / Heavy bleeding / Pelvic pain",
         description: "Fibroids can cause heavy bleeding, pressure and pelvic discomfort. Selected fibroids can be treated through their blood supply.",
         to: "/diseases/uterine-fibroids"
       },
