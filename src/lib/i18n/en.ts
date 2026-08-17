@@ -394,12 +394,12 @@ export const en = {
         name: "Endovascular aneurysm repair",
         oneLiner: "Excluding the aneurysm from circulation.",
         beats: [
-          "A weakened aortic wall has begun to balloon under pressure.",
-          "Through groin access, a stent-graft is delivered inside the blood vessel.",
-          "The graft unfolds and anchors above and below the aneurysm.",
-          "Blood now flows through the reinforced graft rather than the weakened wall.",
-          "A completion angiogram checks the result.",
-          "Recovery is measured in days rather than weeks in suitable cases."
+          "Aneurysm and blood pressure inside the sac shown (Aneurysm sac).",
+          "A stent-graft is delivered to the site of the aneurysm.",
+          "The graft is deployed, excluding the aneurysm sac.",
+          "Blood now flows through the graft, bypassing the weak wall.",
+          "Restored flow and sealed aneurysm confirmed."
+
         ],
         info: {
           symptoms: [
