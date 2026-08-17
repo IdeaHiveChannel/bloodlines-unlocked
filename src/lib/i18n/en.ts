@@ -121,8 +121,9 @@ export const en = {
       {
         id: "06",
         category: "Veins",
-        title: "Varicose veins",
-        patientLanguage: "Swollen and enlarged veins in the legs",
+        title: "Varicose veins & Venous ulcer (Clots / blood clots)",
+        patientLanguage: "Swollen veins / Non-healing ulcers / Varicose vein + ulcer",
+
         description: "When the valves in the leg veins do not work properly, blood can pool in the veins and cause varicose veins.",
         to: "/diseases/varicose-veins"
       },
