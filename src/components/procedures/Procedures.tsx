@@ -7,6 +7,7 @@ import { featuredProcedures, type Storyboard } from "../../lib/content";
 import { StoryboardCanvas } from "./canvases";
 
 export function Procedures() {
+  const t = useT();
   const tx = useTx();
   return (
     <section className="relative bg-[#050B16]">
@@ -54,6 +55,7 @@ export function Procedures() {
   beats: string[];
   storyboard: Storyboard;
 }) {
+  const t = useT();
   const tx = useTx();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
@@ -100,6 +102,7 @@ export function Procedures() {
   total: number;
   progress: MotionValue<number>;
 }) {
+  const t = useT();
   const tx = useTx();
   const center = (index + 0.5) / total;
   const span = 1 / total;
