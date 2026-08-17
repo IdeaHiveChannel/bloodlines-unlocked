@@ -105,44 +105,48 @@ export function Navigation() {
               <h3 className="mb-4 text-caption uppercase tracking-widest text-[var(--ink-dim)]">
                 {group.label}
               </h3>
-              <ul className="space-y-4">
+              <div className="flex flex-wrap gap-2">
                 {group.links.map((link) => (
-                  <li key={link.to + link.label}>
-                    <LocaleLink
-                      to={link.to}
-                      onClick={() => setOpen(false)}
-                      className="block text-h2 transition-colors hover:text-[var(--accent)]"
-                    >
-                      {link.label}
-                    </LocaleLink>
-                  </li>
+                  <LocaleLink
+                    key={link.to + link.label}
+                    to={link.to}
+                    onClick={() => setOpen(false)}
+                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-h3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
+                  >
+                    {link.label}
+                  </LocaleLink>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
+          
           <div className="mb-8">
-            <LocaleLink
-              to={about.to}
-              onClick={() => setOpen(false)}
-              className="block text-h2 transition-colors hover:text-[var(--accent)]"
-            >
-              {about.label}
-            </LocaleLink>
+            <h3 className="mb-4 text-caption uppercase tracking-widest text-[var(--ink-dim)]">
+              {tx("Information")}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              <LocaleLink
+                to={about.to}
+                onClick={() => setOpen(false)}
+                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-h3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
+              >
+                {about.label}
+              </LocaleLink>
+              <LocaleLink
+                to={secondOpinion.to}
+                onClick={() => setOpen(false)}
+                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-h3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
+              >
+                {secondOpinion.label}
+              </LocaleLink>
+            </div>
           </div>
-          <div className="mb-8">
-            <LocaleLink
-              to={secondOpinion.to}
-              onClick={() => setOpen(false)}
-              className="block text-h2 transition-colors hover:text-[var(--accent)]"
-            >
-              {secondOpinion.label}
-            </LocaleLink>
-          </div>
+
           <div className="mt-4">
             <LocaleLink
               to={book.to}
               onClick={() => setOpen(false)}
-              className="block w-full rounded-full bg-[var(--accent)] py-4 text-center text-label text-white"
+              className="block w-full rounded-full bg-[var(--accent)] py-4 text-center text-label text-white shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)]"
             >
               {book.label}
             </LocaleLink>

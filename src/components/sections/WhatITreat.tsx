@@ -126,14 +126,11 @@ export function WhatITreat() {
                     {t.whatITreat.moreConditions.map((condition: string, i: number) => (
                       <div 
                         key={i}
-                        className="flex items-center gap-3 lg:gap-4"
+                        className="flex items-center"
                       >
-                        <span className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors cursor-default">
+                        <span className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors cursor-default border border-white/10 rounded-full px-3 py-1 bg-white/5">
                           {tx(condition)}
                         </span>
-                        {i < t.whatITreat.moreConditions.length - 1 && (
-                          <span className="text-white/10 select-none">·</span>
-                        )}
                       </div>
                     ))}
                   </div>

@@ -33,7 +33,7 @@ export function Footer() {
           </div>
           <div>
             <p className="text-label">{t.footer.explore}</p>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
               <li><LocaleLink to="/patient-landing" data-cursor="link" className="text-[var(--accent)] font-medium">{t.footer.patientLanding}</LocaleLink></li>
               <li><LocaleLink to="/conditions" data-cursor="link">{t.footer.whatITreat}</LocaleLink></li>
               <li><LocaleLink to="/procedures" data-cursor="link">{t.footer.treatments}</LocaleLink></li>
@@ -47,7 +47,7 @@ export function Footer() {
           </div>
           <div>
             <p className="text-label">{t.footer.contact}</p>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
               <li><LocaleLink to="/contact" data-cursor="link">{t.nav.book}</LocaleLink></li>
               <li><LocaleLink to="/second-opinion" data-cursor="link">{t.nav.secondOpinion}</LocaleLink></li>
               <li><a href={contact.phoneHref} data-cursor="link">{contact.phoneDisplay}</a></li>
@@ -61,7 +61,7 @@ export function Footer() {
           </div>
           <div>
             <p className="text-label">{t.footer.follow}</p>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
               {socialLinks.map((s) => (
                 <li key={s.label}>
                   <a href={s.url} target="_blank" rel="noreferrer" data-cursor="link">{s.label}</a>
