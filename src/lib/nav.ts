@@ -32,17 +32,6 @@ const treatCategories: NavLink[] = [
   { to: "/diseases/uterine-fibroids", label: "Uterine fibroids" },
   { to: "/diseases/enlarged-prostate", label: "Enlarged prostate" },
   { to: "/conditions/dialysis-access-failure", label: "Dialysis access" },
-  { to: "/diseases/stroke", label: "Brain & stroke" },
-  { to: "/diseases/poor-blood-circulation", label: "Blood circulation" },
-  { to: "/diseases/varicose-veins", label: "Veins" },
-  { to: "/diseases/brain-aneurysm", label: "Aneurysms" },
-  { to: "/diseases/thyroid-nodules", label: "Thyroid" },
-  { to: "/diseases/liver-tumours", label: "Liver & tumours" },
-  { to: "/conditions/renal-artery-stenosis", label: "Kidney" },
-  { to: "/diseases/knee-osteoarthritis", label: "Knee & joint pain" },
-  { to: "/diseases/uterine-fibroids", label: "Women's health" },
-  { to: "/diseases/enlarged-prostate", label: "Prostate" },
-  { to: "/conditions/dialysis-access-failure", label: "Dialysis access" },
   { to: "/conditions", label: "Other conditions" },
 ];
 
