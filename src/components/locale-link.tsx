@@ -1,18 +1,16 @@
-import { Link, type LinkComponentProps } from "@tanstack/react-router";
 import { useLocalePath } from "../lib/i18n/react";
+import { Link, type LinkComponentProps } from "@tanstack/react-router";
 
-type Props = Omit<LinkComponentProps, "to" | "params"> & {
-  /** English path, e.g. "/diseases/$slug". The locale prefix is added automatically. */
+type Props = Omit<LinkComponentProps, "to"> & {
   to: string;
-  /** Values for `$param` segments in `to`. */
   params?: Record<string, string>;
 };
 
 /**
- * Locale-aware <Link>. Call sites keep using plain English paths; this adds the
- * /ml prefix when the visitor is on the Malayalam side of the site.
+ * A wrapper around TanStack Link that automatically applies the current locale
+ * prefix to the destination path and handles dynamic path parameters.
  */
-export function LocaleLink({ to, params, ...rest }: Props) {
+export function LocaleLink({ to, params, activeProps, ...rest }: Props & { activeProps?: LinkComponentProps["activeProps"] }) {
   const localise = useLocalePath();
   const [rawPath, hash] = to.split("#");
   let path = rawPath;
@@ -25,6 +23,7 @@ export function LocaleLink({ to, params, ...rest }: Props) {
     <Link
       {...(rest as LinkComponentProps)}
       to={localise(path) as never}
+      activeProps={activeProps}
       {...(hash ? { hash } : {})}
     />
   );

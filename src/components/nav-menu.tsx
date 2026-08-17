@@ -95,6 +95,7 @@ export function NavMenu({
                 <li key={l.to + l.label}>
                   <LocaleLink
                     to={l.to}
+                    activeProps={{ className: "block rounded-xl px-3 py-2 text-small bg-white/[0.06] text-[var(--accent)]" }}
                     onClick={() => setOpen(false)}
                     className="block rounded-xl px-3 py-2 text-small text-[var(--ink-dim)] transition-colors hover:bg-white/[0.06] hover:text-white"
                     data-cursor="link"
