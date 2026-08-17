@@ -15,13 +15,14 @@ type HeadScript = { type: string; children: string };
 /** Malayalam head copy, keyed by the canonical English path. */
 export const metaMl: Record<string, MetaCopy> = {
   "/": {
-    title: "ഡോ. മന്ദീപ് സാഗർ — ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
+    title: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist",
     description:
-      "ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ ആധുനിക വൈദ്യശാസ്ത്രം. വാസ്കുലാർ, ന്യൂറോ വാസ്കുലാർ, ഓങ്കോളജിക്കൽ രോഗാവസ്ഥകൾക്കായി ഇമേജ്-ഗൈഡഡ് ചികിത്സ.",
-    ogTitle: "ഡോ. മന്ദീപ് സാഗർ — വാസ്കുലാർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
+      "Modern medicine, through a pinpoint opening. Specialized image-guided treatment for stroke, aneurysms, varicose veins, liver tumours and diabetic foot without major surgery.",
+    ogTitle: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist",
     ogDescription:
-      "വലിയ ശസ്ത്രക്രിയ ഒഴിവാക്കി, ഒരു സൂചിമുന ദ്വാരത്തിലൂടെ നൽകുന്ന ഇമേജ്-ഗൈഡഡ് ചികിത്സ.",
+      "Modern medicine, through a pinpoint opening. Minimally invasive image-guided vascular care.",
   },
+
   "/about": {
     title: "ഡോ. മന്ദീപ് സാഗറിനെക്കുറിച്ച് — ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
     description:
