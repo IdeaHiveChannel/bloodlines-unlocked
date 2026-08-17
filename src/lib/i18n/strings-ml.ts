@@ -1,7 +1,7 @@
 export const stringsMl: Record<string, string> = {
   // Hero Section Malayalam
   "Dr. Mandeep Sagar": "ഡോ. മന്ദീപ് സാഗർ",
-  "Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod": "മംഗളൂരു & കാസർഗോഡിലെ വാസ്കുലർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
+  "Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod": "മംഗളൂരു & കാസർഗോഡിലെ\nവാസ്കുലർ & ന്യൂറോ\nഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
   "Advanced image-guided treatment through minimally invasive procedures.": "ഇമേജ്-ഗൈഡഡ്, കുറഞ്ഞ മുറിവുള്ള ചികിത്സകൾ.",
   "Dr. Mandeep Sagar provides image-guided treatment for selected vascular and neurovascular conditions affecting the blood vessels of the brain and body. Where appropriate, treatment is performed through small access points rather than large surgical incisions.": "മസ്തിഷ്കത്തിലെയും ശരീരത്തിലെയും രക്തക്കുഴലുകളുമായി ബന്ധപ്പെട്ട വിവിധ രോഗങ്ങൾക്ക് ഡോ. മന്ദീപ് സാഗർ ഇമേജ്-ഗൈഡഡ് ചികിത്സ നൽകുന്നു. ആവശ്യമായിടത്ത് വലിയ ശസ്ത്രക്രിയാ മുറിവുകൾക്ക് പകരം ചെറിയ പ്രവേശനമാർഗങ്ങളിലൂടെയാണ് ചികിത്സ നടത്തുന്നത്.",
   "Stroke · Brain Aneurysm · Blocked Arteries · Poor Blood Circulation · Diabetic Foot · Varicose Veins · Blood Clots": "ബ്രെയിൻ സ്ട്രോക്ക് · ബ്രെയിൻ അന്യൂറിസം · അടഞ്ഞ ധമനികൾ · കാലിലെ രക്തയോട്ടക്കുറവ് · പ്രമേഹ കാലിലെ മുറിവ് · വരിക്കോസ് വെയിൻ · രക്തക്കട്ടകൾ",
