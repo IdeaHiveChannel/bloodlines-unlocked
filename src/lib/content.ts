@@ -760,7 +760,12 @@ export const procedures: Procedure[] = [
       causes: ["Liver cirrhosis", "Portal hypertension"],
       diagnosis: ["Ultrasound", "CT", "Endoscopy"],
       treatment: ["Transjugular Intrahepatic Portosystemic Shunt"],
-      recovery: ["Hospital stay 2-3 days", "Monitoring for encephalopathy", "Follow-up ultrasound"],
+      recovery: [
+        "Procedure: Day 0 - Tract created; portal pressure falls. Hospital stay 2-3 days.",
+        "Day 1: Monitoring for encephalopathy. Early walking encouraged.",
+        "1 Month: Follow-up ultrasound and normal life.",
+      ],
+
     },
   },
   {
