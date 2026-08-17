@@ -300,7 +300,7 @@ export function Anatomy() {
                   // Mobile-specific label adjustments to prevent clipping
                   // If the label would go off-screen (near edge), we nudge it.
                   // Brain, Eye, Carotid, etc. are central. Arms, Legs are edge-heavy.
-                  const edgeNudge = isRight ? (labelX > 380 ? -15 : 0) : (labelX < 20 ? 15 : 0);
+                  const edgeNudge = isRight ? (labelX > 375 ? -25 : 0) : (labelX < 25 ? 25 : 0);
                   const finalX = labelX + edgeNudge;
                   
                   return (
