@@ -34,11 +34,6 @@ export function WhatITreat() {
             const patientText = c.patientLanguage ? tx(c.patientLanguage) : "";
             const descText = tx(c.description);
             
-            // Malayalam mobile design rule: 
-            // If Malayalam and combined text might be too long, 
-            // merge patient language into description or title if preferred.
-            // But here we'll follow the specific hierarchy: Category, Condition, Patient Term, Description.
-            
             return (
               <motion.li
                 key={c.to + i}
@@ -54,12 +49,13 @@ export function WhatITreat() {
                   className="group flex flex-col h-full p-6 sm:p-7 lg:p-8 transition-colors hover:bg-white/[0.03] border border-white/[0.05] rounded-xl lg:border-none lg:rounded-none"
                 >
                   <div className="flex-1">
-                    <span className="text-[10px] font-medium tracking-widest text-[var(--ink-dim)] opacity-40 uppercase lg:text-[12px]">
+                    {/* Desktop only Category */}
+                    <span className="hidden lg:block text-[10px] font-medium tracking-widest text-[var(--ink-dim)] opacity-40 uppercase lg:text-[12px]">
                       {tx(c.category)}
                     </span>
                     
                     <h3 className={`
-                      mt-2 font-display font-semibold transition-colors group-hover:text-[var(--accent)]
+                      mt-0 lg:mt-2 font-display font-semibold transition-colors group-hover:text-[var(--accent)]
                       text-[18px] sm:text-[20px] 
                       ${isMl ? 'leading-[1.4]' : 'leading-[1.3]'}
                     `}>
@@ -75,20 +71,22 @@ export function WhatITreat() {
                       </p>
                     )}
 
+                    {/* Desktop only Description */}
                     <p className={`
-                      mt-3 text-[var(--ink-dim)]
+                      hidden lg:block mt-3 text-[var(--ink-dim)]
                       text-[14px] sm:text-[15px]
                       ${isMl ? 'leading-[1.6]' : 'leading-[1.5]'}
-                      line-clamp-3 lg:line-clamp-none
                     `}>
                       {descText}
                     </p>
                   </div>
                   
-                  <div className="mt-6 flex items-center justify-start lg:justify-end">
-                    <div className="flex items-center gap-2 text-[var(--ink-dim)] group-hover:text-[var(--accent)] transition-colors">
+                  {/* Desktop only CTA */}
+                  <div className="hidden lg:flex mt-auto pt-6 items-center justify-start">
+                    <div className="flex items-center gap-2 text-[12px] font-medium text-[var(--ink-dim)] group-hover:text-[var(--accent)] transition-colors">
+                      <span>{tx(t.whatITreat.readGuide)}</span>
                       <ArrowRight
-                        size={18}
+                        size={14}
                         className="transition-transform group-hover:translate-x-1"
                       />
                     </div>
@@ -122,16 +120,18 @@ export function WhatITreat() {
               >
                 <div className="lg:border-t lg:border-white/10 lg:pt-10">
                   <h4 className="hidden lg:block text-label mb-8">{tx(t.whatITreat.moreConditionsLabel)}</h4>
-                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-4">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-3">
                     {t.whatITreat.moreConditions.map((condition: string, i: number) => (
                       <div 
                         key={i}
-                        className="flex items-center gap-3 py-2 border-b border-white/[0.05] lg:border-none"
+                        className="flex items-center gap-3 lg:gap-4"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] opacity-40 shrink-0" />
-                        <span className="text-[14px] text-[var(--ink-dim)] lg:text-[15px]">
+                        <span className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors cursor-default">
                           {tx(condition)}
                         </span>
+                        {i < t.whatITreat.moreConditions.length - 1 && (
+                          <span className="text-white/10 select-none">·</span>
+                        )}
                       </div>
                     ))}
                   </div>
