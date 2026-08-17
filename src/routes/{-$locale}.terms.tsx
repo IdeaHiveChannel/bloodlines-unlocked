@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useTx } from '@/lib/i18n/tx';
 import { useT } from '@/lib/i18n/react';
 
-export const Route = createFileRoute('/$locale/terms')({
+export const Route = createFileRoute('/{-$locale}/terms')({
   component: TermsPage,
 });
 

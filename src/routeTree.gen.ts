@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as Char123LocaleChar125IndexRouteImport } from './routes/{-$locale}.index'
 import { Route as Char123LocaleChar125TestimonialsRouteImport } from './routes/{-$locale}.testimonials'
+import { Route as Char123LocaleChar125TermsRouteImport } from './routes/{-$locale}.terms'
 import { Route as Char123LocaleChar125SecondOpinionRouteImport } from './routes/{-$locale}.second-opinion'
 import { Route as Char123LocaleChar125ResourcesRouteImport } from './routes/{-$locale}.resources'
+import { Route as Char123LocaleChar125PrivacyRouteImport } from './routes/{-$locale}.privacy'
 import { Route as Char123LocaleChar125PatientLandingRouteImport } from './routes/{-$locale}.patient-landing'
 import { Route as Char123LocaleChar125MediaRouteImport } from './routes/{-$locale}.media'
 import { Route as Char123LocaleChar125ExpertiseRouteImport } from './routes/{-$locale}.expertise'
@@ -47,6 +49,12 @@ const Char123LocaleChar125TestimonialsRoute =
     path: '/{-$locale}/testimonials',
     getParentRoute: () => rootRouteImport,
   } as any)
+const Char123LocaleChar125TermsRoute =
+  Char123LocaleChar125TermsRouteImport.update({
+    id: '/{-$locale}/terms',
+    path: '/{-$locale}/terms',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const Char123LocaleChar125SecondOpinionRoute =
   Char123LocaleChar125SecondOpinionRouteImport.update({
     id: '/{-$locale}/second-opinion',
@@ -57,6 +65,12 @@ const Char123LocaleChar125ResourcesRoute =
   Char123LocaleChar125ResourcesRouteImport.update({
     id: '/{-$locale}/resources',
     path: '/{-$locale}/resources',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char123LocaleChar125PrivacyRoute =
+  Char123LocaleChar125PrivacyRouteImport.update({
+    id: '/{-$locale}/privacy',
+    path: '/{-$locale}/privacy',
     getParentRoute: () => rootRouteImport,
   } as any)
 const Char123LocaleChar125PatientLandingRoute =
@@ -159,8 +173,10 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/expertise': typeof Char123LocaleChar125ExpertiseRoute
   '/{-$locale}/media': typeof Char123LocaleChar125MediaRoute
   '/{-$locale}/patient-landing': typeof Char123LocaleChar125PatientLandingRoute
+  '/{-$locale}/privacy': typeof Char123LocaleChar125PrivacyRoute
   '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/{-$locale}/second-opinion': typeof Char123LocaleChar125SecondOpinionRoute
+  '/{-$locale}/terms': typeof Char123LocaleChar125TermsRoute
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
   '/{-$locale}/': typeof Char123LocaleChar125IndexRoute
   '/{-$locale}/conditions/$slug': typeof Char123LocaleChar125ConditionsSlugRoute
@@ -181,8 +197,10 @@ export interface FileRoutesByTo {
   '/{-$locale}/expertise': typeof Char123LocaleChar125ExpertiseRoute
   '/{-$locale}/media': typeof Char123LocaleChar125MediaRoute
   '/{-$locale}/patient-landing': typeof Char123LocaleChar125PatientLandingRoute
+  '/{-$locale}/privacy': typeof Char123LocaleChar125PrivacyRoute
   '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/{-$locale}/second-opinion': typeof Char123LocaleChar125SecondOpinionRoute
+  '/{-$locale}/terms': typeof Char123LocaleChar125TermsRoute
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
   '/{-$locale}': typeof Char123LocaleChar125IndexRoute
   '/{-$locale}/conditions/$slug': typeof Char123LocaleChar125ConditionsSlugRoute
@@ -204,8 +222,10 @@ export interface FileRoutesById {
   '/{-$locale}/expertise': typeof Char123LocaleChar125ExpertiseRoute
   '/{-$locale}/media': typeof Char123LocaleChar125MediaRoute
   '/{-$locale}/patient-landing': typeof Char123LocaleChar125PatientLandingRoute
+  '/{-$locale}/privacy': typeof Char123LocaleChar125PrivacyRoute
   '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/{-$locale}/second-opinion': typeof Char123LocaleChar125SecondOpinionRoute
+  '/{-$locale}/terms': typeof Char123LocaleChar125TermsRoute
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
   '/{-$locale}/': typeof Char123LocaleChar125IndexRoute
   '/{-$locale}/conditions/$slug': typeof Char123LocaleChar125ConditionsSlugRoute
@@ -228,8 +248,10 @@ export interface FileRouteTypes {
     | '/{-$locale}/expertise'
     | '/{-$locale}/media'
     | '/{-$locale}/patient-landing'
+    | '/{-$locale}/privacy'
     | '/{-$locale}/resources'
     | '/{-$locale}/second-opinion'
+    | '/{-$locale}/terms'
     | '/{-$locale}/testimonials'
     | '/{-$locale}/'
     | '/{-$locale}/conditions/$slug'
@@ -250,8 +272,10 @@ export interface FileRouteTypes {
     | '/{-$locale}/expertise'
     | '/{-$locale}/media'
     | '/{-$locale}/patient-landing'
+    | '/{-$locale}/privacy'
     | '/{-$locale}/resources'
     | '/{-$locale}/second-opinion'
+    | '/{-$locale}/terms'
     | '/{-$locale}/testimonials'
     | '/{-$locale}'
     | '/{-$locale}/conditions/$slug'
@@ -272,8 +296,10 @@ export interface FileRouteTypes {
     | '/{-$locale}/expertise'
     | '/{-$locale}/media'
     | '/{-$locale}/patient-landing'
+    | '/{-$locale}/privacy'
     | '/{-$locale}/resources'
     | '/{-$locale}/second-opinion'
+    | '/{-$locale}/terms'
     | '/{-$locale}/testimonials'
     | '/{-$locale}/'
     | '/{-$locale}/conditions/$slug'
@@ -295,8 +321,10 @@ export interface RootRouteChildren {
   Char123LocaleChar125ExpertiseRoute: typeof Char123LocaleChar125ExpertiseRoute
   Char123LocaleChar125MediaRoute: typeof Char123LocaleChar125MediaRoute
   Char123LocaleChar125PatientLandingRoute: typeof Char123LocaleChar125PatientLandingRoute
+  Char123LocaleChar125PrivacyRoute: typeof Char123LocaleChar125PrivacyRoute
   Char123LocaleChar125ResourcesRoute: typeof Char123LocaleChar125ResourcesRoute
   Char123LocaleChar125SecondOpinionRoute: typeof Char123LocaleChar125SecondOpinionRoute
+  Char123LocaleChar125TermsRoute: typeof Char123LocaleChar125TermsRoute
   Char123LocaleChar125TestimonialsRoute: typeof Char123LocaleChar125TestimonialsRoute
   Char123LocaleChar125IndexRoute: typeof Char123LocaleChar125IndexRoute
   Char123LocaleChar125ConditionsSlugRoute: typeof Char123LocaleChar125ConditionsSlugRoute
@@ -334,6 +362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/{-$locale}/terms': {
+      id: '/{-$locale}/terms'
+      path: '/{-$locale}/terms'
+      fullPath: '/{-$locale}/terms'
+      preLoaderRoute: typeof Char123LocaleChar125TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/{-$locale}/second-opinion': {
       id: '/{-$locale}/second-opinion'
       path: '/{-$locale}/second-opinion'
@@ -346,6 +381,13 @@ declare module '@tanstack/react-router' {
       path: '/{-$locale}/resources'
       fullPath: '/{-$locale}/resources'
       preLoaderRoute: typeof Char123LocaleChar125ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/{-$locale}/privacy': {
+      id: '/{-$locale}/privacy'
+      path: '/{-$locale}/privacy'
+      fullPath: '/{-$locale}/privacy'
+      preLoaderRoute: typeof Char123LocaleChar125PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/{-$locale}/patient-landing': {
@@ -464,9 +506,11 @@ const rootRouteChildren: RootRouteChildren = {
   Char123LocaleChar125MediaRoute: Char123LocaleChar125MediaRoute,
   Char123LocaleChar125PatientLandingRoute:
     Char123LocaleChar125PatientLandingRoute,
+  Char123LocaleChar125PrivacyRoute: Char123LocaleChar125PrivacyRoute,
   Char123LocaleChar125ResourcesRoute: Char123LocaleChar125ResourcesRoute,
   Char123LocaleChar125SecondOpinionRoute:
     Char123LocaleChar125SecondOpinionRoute,
+  Char123LocaleChar125TermsRoute: Char123LocaleChar125TermsRoute,
   Char123LocaleChar125TestimonialsRoute: Char123LocaleChar125TestimonialsRoute,
   Char123LocaleChar125IndexRoute: Char123LocaleChar125IndexRoute,
   Char123LocaleChar125ConditionsSlugRoute:
