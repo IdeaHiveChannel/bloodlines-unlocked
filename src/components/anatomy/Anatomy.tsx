@@ -332,7 +332,7 @@ export function Anatomy() {
                           filter: on ? "drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 2px black)" : "drop-shadow(0 0 2px black) drop-shadow(0 0 12px black)",
                           paintOrder: "stroke fill",
                           stroke: on ? "rgba(0,0,0,0.6)" : "black",
-                          strokeWidth: on ? "1px" : "5px"
+                          strokeWidth: on ? "1px" : "6px"
                         }}
                       >
                         {tx(regionLabels[h.id])}
