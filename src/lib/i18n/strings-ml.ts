@@ -203,7 +203,7 @@ export const stringsMl: Record<string, string> = {
   "A look at how the treatment actually happens.": "ചികിത്സ എങ്ങനെയാണ് നടക്കുന്നതെന്ന് ഒരു നോക്ക്.",
   "Treatment is only one part of recovery.": "ചികിത്സ സുഖപ്പെടലിന്റെ ഒരു ഭാഗം മാത്രമാണ്.",
   "Minimally invasive intervention is designed to reduce trauma, shorten hospital stays and help patients return to daily life sooner, while maintaining long-term follow-up where required.": "കുറഞ്ഞ മുറിവുള്ള ചികിത്സാ രീതികൾ വേദന കുറയ്ക്കാനും വേഗത്തിൽ സാധാരണ ജീവിതത്തിലേക്ക് മടങ്ങാനും സഹായിക്കുന്നു.",
-  "Chapter 06 · Recovery": "അധ്യായം 06 · വിശ്രമം",
+  "Recovery": "വിശ്രമം",
   "Book consultation": "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക",
   "Reserve a slot with Dr. Sagar": "ഡോ. സാഗറുമായി കൂടിക്കാഴ്ച നിശ്ചയിക്കുക",
   "Direct message to the practice": "നേരിട്ട് സന്ദേശം അയക്കുക",
