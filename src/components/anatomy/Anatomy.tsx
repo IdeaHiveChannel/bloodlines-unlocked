@@ -330,6 +330,7 @@ export function Anatomy() {
                           strokeWidth: "3px",
                           strokeLinejoin: "round",
                           overflow: "visible",
+                          dominantBaseline: "middle"
                         }}
                       >
                         {labelText}
@@ -337,14 +338,14 @@ export function Anatomy() {
 
                       {/* Desktop 1024-1279: wrap long labels (using foreignObject for text wrapping in SVG) */}
                       <foreignObject
-                        x={isRight ? labelX : labelX - 120}
-                        y={h.cy - 12}
-                        width="120"
+                        x={isRight ? labelX : labelX - 140}
+                        y={h.cy - 20}
+                        width="140"
                         height="40"
                         className="pointer-events-none hidden lg:block xl:hidden"
                       >
                         <div 
-                          className={`flex h-full items-center ${isRight ? "text-left" : "text-right"} ${on ? "text-[var(--ink)]" : "text-[var(--ink-dim)]"}`}
+                          className={`flex h-full items-center ${isRight ? "justify-start text-left" : "justify-end text-right"} ${on ? "text-[var(--ink)]" : "text-[var(--ink-dim)]"}`}
                           style={{
                             fontSize: "12px",
                             fontWeight: "600",
@@ -376,6 +377,7 @@ export function Anatomy() {
                           strokeWidth: "2.5px",
                           strokeLinejoin: "round",
                           overflow: "visible",
+                          dominantBaseline: "middle"
                         }}
                       >
                         {labelText.split(' ')[0]}
