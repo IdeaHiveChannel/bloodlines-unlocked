@@ -147,7 +147,7 @@ export function BeforeAfter() {
       <div className="shell">
         <p className="text-label">{tx("Chapter 06 · Evidence")}</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
-          {tx("Before. After. The same patient, the same vessel. - Dvt case . Only injections . Laser not done")}
+          {tx("Before. After. The same patient, the same vessel.")}
         </h2>
         <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)]">
           {tx("Interventional radiology is judged on images, not adjectives. Drag the line across each case to see what changed. Representative illustrations of typical treated cases, not identifiable patient records.")}
