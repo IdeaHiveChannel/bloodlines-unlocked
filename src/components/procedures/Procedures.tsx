@@ -118,7 +118,7 @@ export function Procedures() {
   const filter = useTransform(progress, [xa, xb, xc, xd], ["blur(10px)", "blur(0px)", "blur(0px)", "blur(10px)"]);
   return (
     <motion.div style={{ opacity, y, filter }} className="absolute inset-0 flex flex-col justify-center">
-      <p className="text-label">Beat · 0{index + 1}</p>
+      <p className="text-label">{tx("Beat")} · 0{index + 1}</p>
       <p className="mt-3 max-w-md text-h3">{tx(text)}</p>
     </motion.div>
   );
