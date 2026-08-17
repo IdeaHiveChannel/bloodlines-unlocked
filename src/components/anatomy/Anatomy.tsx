@@ -390,7 +390,7 @@ export function Anatomy() {
                         fontSize="11"
                         fontWeight="600"
                         fontFamily="var(--font-sans)"
-                        className="pointer-events-none select-none sm:hidden"
+                        className="pointer-events-none select-none md:hidden"
                         style={{ 
                           transition: "all 300ms",
                           filter: on ? "drop-shadow(0 0 4px var(--accent))" : "none",
@@ -399,6 +399,7 @@ export function Anatomy() {
                           strokeWidth: "2.5px",
                           strokeLinejoin: "round",
                           overflow: "visible",
+                          dominantBaseline: "middle"
                         }}
                       >
                         {labelText.split(' ')[0]}
