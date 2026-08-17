@@ -333,10 +333,11 @@ export const en = {
             "A stent is placed to keep the artery open if needed."
           ],
           recovery: [
-            "Bed rest for a few hours after the procedure.",
-            "Most patients go home the same or next day.",
-            "Resume light activities in 2-3 days.",
-            "Avoid heavy lifting for a week."
+            "Procedure: Day 0 - Artery opened; stenting if needed. Hospital admission.",
+            "Day 1: Discharged and walking. Puncture site checked.",
+            "1 Week: Light activity and routine lifestyle resume.",
+            "1 Month: Follow-up imaging and normal life."
+
           ]
         }
       },
