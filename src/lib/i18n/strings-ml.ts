@@ -336,8 +336,6 @@ export const stringsMl: Record<string, string> = {
  "VTE is the collective term for DVT and pulmonary embolism.": "DVT, പൾമണറി എംബോളിസം എന്നിവയെ സംയുക്തമായി വിളിക്കുന്ന പേരാണ് VTE.",
  "Can a clot travel to the lungs?": "രക്തക്കട്ട ശ്വാസകോശത്തിലേക്ക് സഞ്ചരിക്കുമോ?",
  "Yes. This is called a pulmonary embolism and is the primary danger of DVT.": "അതെ. ഇതിനെ പൾമണറി എംബോളിസം എന്ന് വിളിക്കുന്നു, ഇതാണ് DVT-യുടെ പ്രധാന അപകടസാധ്യത.",
- "Dr. Mandeep Sagar": "ഡോ. മൻദീപ് സാഗർ",
- "Neuro & Vascular Intervention Radiologist": "ന്യൂറോ & വാസ്കുലർ ഇന്റർവെൻഷൻ റേഡിയോളജിസ്റ്റ്",
   "An artery once flowed freely. Over years, plaque settled along its wall.": "ഒരിക്കൽ തടസ്സമില്ലാതെ രക്തമൊഴുകിയിരുന്ന ധമനിയുടെ ഭിത്തികളിൽ വർഷങ്ങൾ കൊണ്ട് കൊഴുപ്പ് അടിഞ്ഞുകൂടുന്നു.",
   "A guidewire is steered across the narrowing — the hardest millimetres of the case.": "ചുരുങ്ങിയ ഭാഗത്തൂടെ ഒരു ഗൈഡ്‌വയർ ശ്രദ്ധാപൂർവ്വം കടത്തിവിടുന്നു — ചികിത്സയിലെ ഏറ്റവും സങ്കീർണ്ണമായ നിമിഷമാണിത്.",
   "A balloon expands gently, compressing the plaque outward.": "ഒരു ചെറിയ ബലൂൺ പതുക്കെ വികസിപ്പിച്ച് അടിഞ്ഞുകൂടിയ കൊഴുപ്പിനെ വശങ്ങളിലേക്ക് അമർത്തുന്നു.",
