@@ -546,6 +546,38 @@ export const procedures: Procedure[] = [
       "The sac packs densely; flow at the neck slows and stops.",
       "The aneurysm is excluded from the circulation.",
     ],
+    info: {
+      symptoms: [
+        "Sudden, extremely severe headache ('thunderclap')",
+        "Nausea and vomiting",
+        "Stiff neck",
+        "Blurred or double vision",
+        "Sensitivity to light",
+      ],
+      causes: [
+        "Weakness in the artery wall",
+        "High blood pressure",
+        "Smoking",
+        "Genetic predisposition",
+      ],
+      diagnosis: [
+        "CT Scan / CTA",
+        "MRI / MRA",
+        "Digital Subtraction Angiography (DSA)",
+      ],
+      treatment: [
+        "Access via the femoral or radial artery.",
+        "Microcatheter placement in the aneurysm sac.",
+        "Packing the sac with platinum coils.",
+        "Promoting blood to clot and seal the aneurysm.",
+      ],
+      recovery: [
+        "24-48 hours in ICU for observation.",
+        "Regular neurological checks.",
+        "Gradual return to activity over 1-2 weeks.",
+        "Long-term imaging follow-up.",
+      ],
+    },
   },
   {
     slug: "thyroid-ablation",
