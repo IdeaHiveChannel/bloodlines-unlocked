@@ -284,6 +284,91 @@ export const en = {
         ]
       }
     ]
+  },
+  proceduresPage: {
+    eyebrow: "Procedures",
+    h2: "Every procedure has its own story.",
+    description: "Advanced image-guided procedures are performed through a small access point, with real-time imaging guiding each step.",
+    beat: "Beat",
+    procedure: "Procedure",
+    seeEvery: "See every procedure →",
+    list: [
+      {
+        slug: "angioplasty",
+        name: "Angioplasty & stenting",
+        oneLiner: "Reopening a narrowed artery from the inside.",
+        beats: [
+          "An artery once flowed freely. Over years, plaque settled along its wall.",
+          "A guidewire is steered across the narrowing — the hardest millimetres of the case.",
+          "A balloon expands gently, compressing the plaque outward.",
+          "A fine mesh stent is deployed to hold the channel open.",
+          "Blood begins flowing again. The patient walks the same day."
+        ]
+      },
+      {
+        slug: "thrombectomy",
+        name: "Mechanical thrombectomy",
+        oneLiner: "Removing a clot before brain tissue is lost.",
+        beats: [
+          "A clot has stopped flow inside a brain blood vessel. Downstream, brain tissue is on a clock.",
+          "A stent retriever is opened inside the clot and positioned to capture it.",
+          "The clot is captured within the retriever.",
+          "A catheter removes the clot as the retriever is withdrawn.",
+          "The clot leaves the body. Blood flow is restored.",
+          "Brain function can recover where tissue remains viable."
+        ]
+      },
+      {
+        slug: "aneurysm-repair",
+        name: "Endovascular aneurysm repair",
+        oneLiner: "Excluding the aneurysm from circulation.",
+        beats: [
+          "A weakened aortic wall has begun to balloon under pressure.",
+          "Through groin access, a stent-graft is delivered inside the blood vessel.",
+          "The graft unfolds and anchors above and below the aneurysm.",
+          "Blood now flows through the reinforced graft rather than the weakened wall.",
+          "A completion angiogram checks the result.",
+          "Recovery is measured in days rather than weeks in suitable cases."
+        ]
+      },
+      {
+        slug: "varicose-vein-ablation",
+        name: "Endovenous laser ablation",
+        oneLiner: "Closing a failing vein from within.",
+        beats: [
+          "A vein's one-way valves no longer hold. Blood falls back down the leg.",
+          "Under ultrasound, a thin laser fibre is passed inside the faulty vein.",
+          "Laser energy is delivered along the vein as the fibre is withdrawn.",
+          "The vein collapses and seals behind it.",
+          "Healthy deep veins take over the blood flow.",
+          "The patient walks soon after the procedure."
+        ]
+      },
+      {
+        slug: "tace",
+        name: "TACE — chemoembolization",
+        oneLiner: "Delivering chemotherapy into a tumour's own artery.",
+        beats: [
+          "A liver tumour is supplied by its own artery.",
+          "A microcatheter is guided into the artery supplying the tumour.",
+          "Treatment is delivered directly into the tumour through the feeding artery.",
+          "The blood supply to the tumour is reduced by embolization.",
+          "The treatment is concentrated where it is needed while healthy liver is preserved as much as possible."
+        ]
+      },
+      {
+        slug: "microwave-ablation",
+        name: "Microwave ablation",
+        oneLiner: "Destroying a tumour with heat, through a needle.",
+        beats: [
+          "The tumour is located precisely using CT or ultrasound.",
+          "A thin needle-like antenna is guided through the skin into the tumour.",
+          "Microwave energy raises the temperature inside the tumour.",
+          "The treatment zone expands around the tumour.",
+          "The tumour is destroyed in place through a small skin puncture."
+        ]
+      }
+    ]
   }
 };
 

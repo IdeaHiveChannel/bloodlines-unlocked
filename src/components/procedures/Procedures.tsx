@@ -1,4 +1,5 @@
 import { useTx } from "@/lib/i18n/tx";
+import { useT } from "@/lib/i18n/react";
 import { LocaleLink } from "../../components/locale-link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
@@ -7,19 +8,20 @@ import { featuredProcedures, type Storyboard } from "../../lib/content";
 import { StoryboardCanvas } from "./canvases";
 
 export function Procedures() {
+  const t = useT();
   const tx = useTx();
   return (
     <section className="relative bg-[#050B16]">
       <div className="shell pt-20 pb-8 sm:pt-28 sm:pb-12">
-        <p className="text-label">{tx("Procedures")}</p>
+        <p className="text-label">{t.proceduresPage.eyebrow}</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
-          {tx("Every procedure has its own story.")}
+          {t.proceduresPage.h2}
         </h2>
         <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)] sm:mt-6">
-          {tx("No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.")}
+          {t.proceduresPage.description}
         </p>
       </div>
-      {featuredProcedures.map((p, idx) => (
+      {t.proceduresPage.list.map((p: any, idx: number) => (
         <ProcedureStory
           key={p.slug}
           index={idx}
@@ -27,12 +29,12 @@ export function Procedures() {
           name={p.name}
           oneLiner={p.oneLiner}
           beats={p.beats}
-          storyboard={p.storyboard}
+          storyboard={featuredProcedures.find((fp) => fp.slug === p.slug)?.storyboard || "angioplasty"}
         />
       ))}
       <div className="shell pb-20 sm:pb-28">
         <LocaleLink to="/procedures" data-cursor="link" className="text-label underline">
-          {tx("See every procedure →")}
+          {t.proceduresPage.seeEvery}
         </LocaleLink>
       </div>
     </section>
@@ -54,6 +56,7 @@ export function Procedures() {
   beats: string[];
   storyboard: Storyboard;
 }) {
+  const t = useT();
   const tx = useTx();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
@@ -61,11 +64,11 @@ export function Procedures() {
     <div ref={ref} className="relative" style={{ height: `${beats.length * 70}svh` }}>
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center">
         <div className="shell pt-24 sm:pt-28">
-          <p className="text-label">{tx("Procedure")} {String(index + 1).padStart(2, "0")}</p>
+          <p className="text-label">{t.proceduresPage.procedure} {String(index + 1).padStart(2, "0")}</p>
           <LocaleLink to="/procedures/$slug" params={{ slug }} data-cursor="link">
-            <h3 className="mt-2 text-h2">{tx(name)}</h3>
+            <h3 className="mt-2 text-h2">{name}</h3>
           </LocaleLink>
-          <p className="mt-2 max-w-md text-small text-[var(--ink-dim)]">{tx(oneLiner)}</p>
+          <p className="mt-2 max-w-md text-small text-[var(--ink-dim)]">{oneLiner}</p>
         </div>
         <div className="shell grid flex-1 items-center gap-5 pb-10 sm:gap-8 lg:grid-cols-2 lg:pb-16">
           <div className="relative mx-auto aspect-square w-full max-w-[260px] sm:max-w-[360px] lg:max-w-[560px] rounded-3xl border border-white/[0.06] overflow-hidden bg-gradient-to-br from-white/[0.02] to-transparent">
@@ -100,6 +103,7 @@ export function Procedures() {
   total: number;
   progress: MotionValue<number>;
 }) {
+  const t = useT();
   const tx = useTx();
   const center = (index + 0.5) / total;
   const span = 1 / total;
@@ -118,8 +122,8 @@ export function Procedures() {
   const filter = useTransform(progress, [xa, xb, xc, xd], ["blur(10px)", "blur(0px)", "blur(0px)", "blur(10px)"]);
   return (
     <motion.div style={{ opacity, y, filter }} className="absolute inset-0 flex flex-col justify-center">
-      <p className="text-label">{tx("Beat")} · 0{index + 1}</p>
-      <p className="mt-3 max-w-md text-h3">{tx(text)}</p>
+      <p className="text-label">{t.proceduresPage.beat} · 0{index + 1}</p>
+      <p className="mt-3 max-w-md text-h3">{text}</p>
     </motion.div>
   );
 }
