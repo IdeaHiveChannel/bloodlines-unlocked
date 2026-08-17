@@ -482,11 +482,12 @@ export const en = {
         name: "TACE — chemoembolization",
         oneLiner: "Delivering chemotherapy into a tumour's own artery.",
         beats: [
-          "A liver tumour is fed by its own feeding artery.",
-          "A microcatheter is navigated into that feeding branch.",
-          "Drug-eluting beads are released directly into the tumour bed.",
-          "The tumour blood supply is reduced by embolization.",
-          "The tumour blush fades as its supply is cut off."
+          "Angiography identifies the liver tumour and its feeding artery.",
+          "A microcatheter is precisely navigated into the feeding branch.",
+          "Drug-eluting beads (treatment) are released directly into the tumour bed.",
+          "The tumour blood supply is cut off by embolization.",
+          "The tumour shrinks as the treatment takes effect."
+
         ],
         info: {
           symptoms: [
