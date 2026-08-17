@@ -85,13 +85,12 @@ export const liverTumours: Pillar = {
   ],
   procedures: ["tace", "microwave-ablation", "embolization"],
   recovery: [
-    { when: "Day 0", what: "TACE is performed through a groin or wrist puncture. Overnight admission is usual, with pain and nausea managed proactively." },
-    { when: "Days 1 to 5", what: "Post-embolization syndrome — fever, right upper abdominal pain, nausea and fatigue — is expected and settles with supportive treatment." },
-    { when: "Week 1 to 2", what: "Return to routine activity. Liver function tests repeated to confirm recovery." },
-    { when: "Month 1", what: "Contrast CT or MRI assesses response by loss of enhancement in the treated tumour." },
-    { when: "Month 3", what: "Decision on whether a further session is needed, based on residual viable tumour." },
-    { when: "Ongoing", what: "Three-monthly imaging and tumour markers, with continued treatment of the underlying liver disease." },
+    { when: "Procedure: Day 0", what: "Performed through a groin or wrist puncture. Overnight admission is usual for monitoring." },
+    { when: "Day 1-5", what: "Discharged from hospital. Post-embolization syndrome symptoms are managed and settle." },
+    { when: "1 Month", what: "Follow-up imaging (CT or MRI) to assess response and normal life resumes." },
+    { when: "3 Months", what: "Decision on further treatment based on imaging and clinical surveillance." },
   ],
+
   prevention: [
     "Vaccinate against hepatitis B",
     "Test for and treat hepatitis B and C — treatment substantially reduces cancer risk",
