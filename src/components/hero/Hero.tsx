@@ -53,7 +53,7 @@ export function Hero() {
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
             <h2 className="text-label">{tx(t.hero.eyebrow)}</h2>
           </div>
-          <h1 className="mt-4 text-display-xxl sm:mt-5 text-balance">
+          <h1 className="mt-4 text-display-xxl sm:mt-5 text-balance break-words">
             {tx(t.hero.h1)}
           </h1>
           <p className="mt-4 max-w-xl text-h3 text-[color-mix(in_oklab,var(--accent)_75%,white)] sm:mt-5">
