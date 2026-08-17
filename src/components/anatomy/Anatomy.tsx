@@ -320,16 +320,19 @@ export function Anatomy() {
                       />
                       <text
                         x={labelX}
-                        y={h.cy + 3}
+                        y={h.cy + 4}
                         textAnchor={h.side === "right" ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
                         fontSize="10"
                         fontWeight="500"
                         fontFamily="var(--font-sans)"
-                        letterSpacing="0.18em"
-                        style={{ textTransform: "uppercase", transition: "fill 300ms" }}
+                        className="pointer-events-none select-none"
+                        style={{ 
+                          transition: "fill 300ms",
+                          textShadow: "0 0 10px rgba(0,0,0,0.8)" 
+                        }}
                       >
-                        {regionLabels[h.id]}
+                        {tx(regionLabels[h.id])}
                       </text>
                     </g>
                   );
