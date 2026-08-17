@@ -377,7 +377,6 @@ export const stringsMl: Record<string, string> = {
   "Search a symptom, condition, or procedure": "ലക്ഷണം, രോഗാവസ്ഥ അല്ലെങ്കിൽ ചികിത്സ തിരയുക",
   "Second opinion on your scans": "നിങ്ങളുടെ സ്കാനുകളിൽ രണ്ടാം അഭിപ്രായം",
   "See clinical expertise": "ചികിത്സാ വൈദഗ്ധ്യം കാണുക",
-  "See clinical expertise": "ചികിത്സാ വൈദഗ്ധ്യം കാണുക",
   "See the procedure.": "ചികിത്സ കാണുക.",
   "Send for review on WhatsApp": "വാട്സ്ആപ്പിൽ പരിശോധനയ്ക്കായി അയക്കുക",
   "Send reports without the form": "ഫോം ഇല്ലാതെ റിപ്പോർട്ടുകൾ അയക്കുക",
