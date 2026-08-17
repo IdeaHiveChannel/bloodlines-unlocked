@@ -141,13 +141,12 @@ export const stroke: Pillar = {
   ],
   procedures: ["thrombectomy", "angioplasty"],
   recovery: [
-    { when: "First hours", what: "Monitored in a stroke or intensive care unit. Blood pressure is kept in a narrow band while the brain reperfuses." },
-    { when: "Day 1", what: "Repeat imaging confirms the territory is open and that no bleeding has occurred. Many patients are already speaking and moving." },
-    { when: "Days 2 to 5", what: "Cause investigation completed. Swallowing assessed, early mobilisation and physiotherapy begin." },
-    { when: "Week 1 to 2", what: "Discharge for most patients, on prevention medication, with a written rehabilitation plan." },
-    { when: "Month 1 to 3", what: "The period of fastest neurological recovery. Speech and physical therapy carry more weight than anything else at this stage." },
-    { when: "Month 6 to 12", what: "Recovery continues more slowly. Risk factor control is reviewed and imaging repeated if indicated." },
+    { when: "Procedure: Day 0", what: "Monitored in an intensive care unit. Blood pressure is kept in a narrow band while the brain reperfuses." },
+    { when: "Day 1-3", what: "Discharged from ICU. Repeat imaging confirms the territory is open. Many patients are already speaking and moving." },
+    { when: "1 Month", what: "Early rehabilitation and follow-up. The period of fastest neurological recovery begins." },
+    { when: "3 Months", what: "Long-term recovery and stroke prevention. Risk factor control is reviewed and lifestyle adjustments solidified." },
   ],
+
   prevention: [
     "Keep blood pressure consistently below target — measured at home, not only in clinic",
     "Treat atrial fibrillation with proper anticoagulation, not aspirin alone",
