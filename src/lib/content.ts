@@ -375,6 +375,117 @@ export const conditions: Condition[] = [
     treatments: ["Coil embolization", "Flow-diverter stenting", "Covered stent exclusion"],
   },
   {
+    slug: "pelvic-congestion-syndrome",
+    name: "Pelvic congestion syndrome",
+    region: "pelvis",
+    intervention: "Vein embolization",
+    intro:
+      "Chronic pelvic pain in women can sometimes be caused by swollen veins in the pelvis, similar to varicose veins in the legs. Vein embolization closes these refluxing vessels and redirects flow to healthy channels.",
+    symptoms: ["Chronic pelvic pain", "Pain worse on standing", "Pain during or after intimacy"],
+    treatments: ["Ovarian vein embolization", "Iliac vein stenting"],
+  },
+  {
+    slug: "bronchial-artery-embolisation",
+    name: "Bronchial artery embolisation",
+    region: "chest",
+    intervention: "Emergency embolization",
+    intro:
+      "Coughing up blood (hemoptysis) can be life-threatening. When it comes from the bronchial arteries, image-guided embolization can identify and close the bleeding vessel rapidly without surgery.",
+    symptoms: ["Coughing up blood", "Chest pain", "Shortness of breath"],
+    treatments: ["Bronchial artery embolization"],
+  },
+  {
+    slug: "dvt-thrombolysis",
+    name: "DVT thrombolysis & stenting",
+    region: "legs",
+    intervention: "Clot removal & stenting",
+    intro:
+      "Large blood clots in the leg or pelvis veins carry a high risk of long-term swelling and ulcers. Active removal of the clot using specialized catheters can restore flow and preserve vein function.",
+    symptoms: ["Sudden leg swelling", "Pain", "Discoloration"],
+    treatments: ["Pharmacomechanical thrombolysis", "Venous stenting"],
+  },
+  {
+    slug: "may-thurner-syndrome",
+    name: "May-Thurner syndrome",
+    region: "pelvis",
+    intervention: "Venous stenting",
+    intro:
+      "A condition where a pelvic artery compresses a pelvic vein, leading to left leg swelling and DVT. A stent placed inside the vein keeps it open and prevents future clots.",
+    symptoms: ["Left leg swelling", "Pain", "Recurrent DVT"],
+    treatments: ["Iliac vein stenting", "Angioplasty"],
+  },
+  {
+    slug: "ivc-filter-placement",
+    name: "IVC filter placement & retrieval",
+    region: "chest",
+    intervention: "Vena cava filter",
+    intro:
+      "When blood thinners cannot be used for DVT, a filter is placed in the main vein (IVC) to catch clots before they reach the lungs. Most modern filters are designed to be removed once the risk passes.",
+    symptoms: ["Risk of pulmonary embolism", "Inability to use anticoagulation"],
+    treatments: ["IVC filter placement", "Complex IVC filter retrieval"],
+  },
+  {
+    slug: "budd-chiari-syndrome",
+    name: "Budd-Chiari syndrome",
+    region: "liver",
+    intervention: "TIPS & recanalization",
+    intro:
+      "Obstruction of the veins draining the liver leads to sudden liver failure or fluid buildup. Reopening the veins or creating a bypass (TIPS) restores drainage and protects liver function.",
+    symptoms: ["Abdominal pain", "Ascites", "Liver enlargement"],
+    treatments: ["Hepatic vein stenting", "TIPS", "DIPS"],
+  },
+  {
+    slug: "mesenteric-ischemia",
+    name: "Mesenteric ischemia",
+    region: "liver",
+    intervention: "Angioplasty & stenting",
+    intro:
+      "Narrowing of the arteries supplying the gut leads to severe pain after eating and weight loss. Restoring flow to the mesenteric arteries restores normal digestion.",
+    symptoms: ["Pain after eating", "Weight loss", "Fear of food"],
+    treatments: ["SMA stenting", "Celiac artery angioplasty"],
+  },
+  {
+    slug: "venous-malformations",
+    name: "Venous & lymphatic malformations",
+    region: "legs",
+    intervention: "Sclerotherapy",
+    intro:
+      "Abnormal collections of veins or lymph vessels can cause pain and swelling. Injecting a specialized medicine (sclerotherapy) under image guidance causes them to shrink and disappear.",
+    symptoms: ["Soft swelling", "Pain", "Blue skin discoloration"],
+    treatments: ["Percutaneous sclerotherapy", "Bleomycin injection"],
+  },
+  {
+    slug: "post-thrombotic-syndrome",
+    name: "Post-thrombotic syndrome (PTS)",
+    region: "legs",
+    intervention: "Deep vein recanalization",
+    intro:
+      "Long-term leg damage after an old DVT. Reopening old, blocked deep veins and placing stents can significantly reduce swelling and help heal venous ulcers.",
+    symptoms: ["Chronic leg swelling", "Heaviness", "Venous ulcers"],
+    treatments: ["Deep vein recanalization", "Iliac vein stenting"],
+  },
+  {
+    slug: "vascular-biopsy",
+    name: "Image-guided vascular biopsy",
+    region: "chest",
+    intervention: "Endovascular biopsy",
+    intro:
+      "Taking a sample from a mass or clot inside a blood vessel or the heart, using a specialized catheter without a major operation.",
+    symptoms: ["Intravascular mass", "Unexplained clot"],
+    treatments: ["Endovascular biopsy", "Transjugular biopsy"],
+  },
+  {
+    slug: "preoperative-tumour-embolisation",
+    name: "Pre-operative tumour embolisation",
+    region: "thyroid",
+    intervention: "Tumour embolization",
+    intro:
+      "Blocking the blood supply of a highly vascular tumour shortly before surgery to make the operation safer and reduce blood loss.",
+    symptoms: ["Vascular tumour", "Planned major surgery"],
+    treatments: ["Particle embolization", "Glue/Onyx embolization"],
+  },
+
+  {
     slug: "bronchial-artery-embolisation",
     name: "Haemoptysis (Coughing blood)",
     region: "chest",
