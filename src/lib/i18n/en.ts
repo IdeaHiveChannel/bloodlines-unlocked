@@ -205,6 +205,12 @@ export const en = {
     disclaimer:
       "The information presented is educational. It does not constitute medical advice. Consult a qualified physician for diagnosis and treatment.",
     rights: "All rights reserved.",
+    privacy: "Privacy policy",
+    terms: "Terms of service",
+    patientLanding: "Patient landing page",
+    whatITreat: "What I treat",
+    treatments: "Treatments",
+    patientInfo: "Patient information",
   },
   dock: {
     whatsapp: "Chat on WhatsApp",

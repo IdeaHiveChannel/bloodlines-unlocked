@@ -34,12 +34,12 @@ export function Footer() {
           <div>
             <p className="text-label">{t.footer.explore}</p>
             <ul className="mt-3 space-y-2">
-              <li><LocaleLink to="/patient-landing" data-cursor="link" className="text-[var(--accent)] font-medium">{tx("Patient Landing Page")}</LocaleLink></li>
-              <li><LocaleLink to="/conditions" data-cursor="link">{tx("What I treat")}</LocaleLink></li>
-              <li><LocaleLink to="/procedures" data-cursor="link">{tx("Treatments")}</LocaleLink></li>
+              <li><LocaleLink to="/patient-landing" data-cursor="link" className="text-[var(--accent)] font-medium">{t.footer.patientLanding}</LocaleLink></li>
+              <li><LocaleLink to="/conditions" data-cursor="link">{t.footer.whatITreat}</LocaleLink></li>
+              <li><LocaleLink to="/procedures" data-cursor="link">{t.footer.treatments}</LocaleLink></li>
               <li><LocaleLink to="/about" data-cursor="link">{t.nav.about}</LocaleLink></li>
               <li><LocaleLink to="/expertise" data-cursor="link">{t.nav.expertise}</LocaleLink></li>
-              <li><LocaleLink to="/patient-information/how-treatment-works" data-cursor="link">{tx("Patient information")}</LocaleLink></li>
+              <li><LocaleLink to="/patient-information/how-treatment-works" data-cursor="link">{t.footer.patientInfo}</LocaleLink></li>
               <li><LocaleLink to="/testimonials" data-cursor="link">{t.nav.stories}</LocaleLink></li>
               <li><LocaleLink to="/media" data-cursor="link">{t.nav.media}</LocaleLink></li>
               <li><LocaleLink to="/resources" data-cursor="link">{t.nav.resources}</LocaleLink></li>
@@ -74,6 +74,10 @@ export function Footer() {
         </div>
         <div className="mt-12 pt-6 border-t border-white/[0.05] flex flex-wrap justify-between gap-4 text-caption text-[var(--ink-dim)]">
           <p>© {new Date().getFullYear()} {t.brand.name}. {t.footer.rights}</p>
+          <div className="flex gap-6">
+            <LocaleLink to="/privacy" className="hover:text-white transition-colors">{t.footer.privacy}</LocaleLink>
+            <LocaleLink to="/terms" className="hover:text-white transition-colors">{t.footer.terms}</LocaleLink>
+          </div>
         </div>
       </div>
     </footer>
