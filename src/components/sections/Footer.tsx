@@ -34,6 +34,7 @@ export function Footer() {
           <div>
             <p className="text-label">{t.footer.explore}</p>
             <ul className="mt-3 space-y-2">
+              <li><LocaleLink to="/patient-landing" data-cursor="link" className="text-[var(--accent)] font-medium">{tx("Patient Landing Page")}</LocaleLink></li>
               <li><LocaleLink to="/conditions" data-cursor="link">{tx("What I treat")}</LocaleLink></li>
               <li><LocaleLink to="/procedures" data-cursor="link">{tx("Treatments")}</LocaleLink></li>
               <li><LocaleLink to="/about" data-cursor="link">{t.nav.about}</LocaleLink></li>

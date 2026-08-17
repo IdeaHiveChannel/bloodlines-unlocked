@@ -226,8 +226,8 @@ export function Anatomy() {
         <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-14 lg:grid-cols-12 lg:gap-16">
           {/* Anatomy panel */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto aspect-[2/3] w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[520px] rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent overflow-hidden">
-              <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full">
+            <div className="relative mx-auto aspect-[2/3] w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[520px] rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent">
+              <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full overflow-visible translate-x-[-1%] sm:translate-x-0">
                 <defs>
                   <radialGradient id="bodyGlow" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="color-mix(in oklab, var(--accent) 30%, transparent)" />
@@ -293,7 +293,8 @@ export function Anatomy() {
                 {/* Hotspots */}
                 {hotspots.map((h) => {
                   const on = active === h.id;
-                  const labelX = h.side === "right" ? h.cx + h.r + 7 : h.cx - h.r - 7;
+                  const labelOffset = h.r + 8;
+                  const labelX = h.side === "right" ? h.cx + labelOffset : h.cx - labelOffset;
                   return (
                     <g
                       key={h.id}
@@ -323,7 +324,7 @@ export function Anatomy() {
                         y={h.cy + 4}
                         textAnchor={h.side === "right" ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="13"
+                        fontSize="clamp(10px, 2.5vw, 13px)"
                         fontWeight="600"
                         fontFamily="var(--font-sans)"
                         className="pointer-events-none select-none"
@@ -331,9 +332,10 @@ export function Anatomy() {
                           transition: "all 300ms",
                           filter: on ? "drop-shadow(0 0 6px var(--accent))" : "none",
                           paintOrder: "stroke fill",
-                          stroke: "rgba(0,0,0,0.8)",
-                          strokeWidth: "3px",
+                          stroke: "rgba(0,0,0,0.85)",
+                          strokeWidth: "2.5px",
                           strokeLinejoin: "round",
+                          overflow: "visible",
                         }}
                       >
                         {tx(regionLabels[h.id])}

@@ -14,6 +14,7 @@ import { Route as Char123LocaleChar125IndexRouteImport } from './routes/{-$local
 import { Route as Char123LocaleChar125TestimonialsRouteImport } from './routes/{-$locale}.testimonials'
 import { Route as Char123LocaleChar125SecondOpinionRouteImport } from './routes/{-$locale}.second-opinion'
 import { Route as Char123LocaleChar125ResourcesRouteImport } from './routes/{-$locale}.resources'
+import { Route as Char123LocaleChar125PatientLandingRouteImport } from './routes/{-$locale}.patient-landing'
 import { Route as Char123LocaleChar125MediaRouteImport } from './routes/{-$locale}.media'
 import { Route as Char123LocaleChar125ExpertiseRouteImport } from './routes/{-$locale}.expertise'
 import { Route as Char123LocaleChar125ContactRouteImport } from './routes/{-$locale}.contact'
@@ -56,6 +57,12 @@ const Char123LocaleChar125ResourcesRoute =
   Char123LocaleChar125ResourcesRouteImport.update({
     id: '/{-$locale}/resources',
     path: '/{-$locale}/resources',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char123LocaleChar125PatientLandingRoute =
+  Char123LocaleChar125PatientLandingRouteImport.update({
+    id: '/{-$locale}/patient-landing',
+    path: '/{-$locale}/patient-landing',
     getParentRoute: () => rootRouteImport,
   } as any)
 const Char123LocaleChar125MediaRoute =
@@ -151,6 +158,7 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/contact': typeof Char123LocaleChar125ContactRoute
   '/{-$locale}/expertise': typeof Char123LocaleChar125ExpertiseRoute
   '/{-$locale}/media': typeof Char123LocaleChar125MediaRoute
+  '/{-$locale}/patient-landing': typeof Char123LocaleChar125PatientLandingRoute
   '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/{-$locale}/second-opinion': typeof Char123LocaleChar125SecondOpinionRoute
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
@@ -172,6 +180,7 @@ export interface FileRoutesByTo {
   '/{-$locale}/contact': typeof Char123LocaleChar125ContactRoute
   '/{-$locale}/expertise': typeof Char123LocaleChar125ExpertiseRoute
   '/{-$locale}/media': typeof Char123LocaleChar125MediaRoute
+  '/{-$locale}/patient-landing': typeof Char123LocaleChar125PatientLandingRoute
   '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/{-$locale}/second-opinion': typeof Char123LocaleChar125SecondOpinionRoute
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
@@ -194,6 +203,7 @@ export interface FileRoutesById {
   '/{-$locale}/contact': typeof Char123LocaleChar125ContactRoute
   '/{-$locale}/expertise': typeof Char123LocaleChar125ExpertiseRoute
   '/{-$locale}/media': typeof Char123LocaleChar125MediaRoute
+  '/{-$locale}/patient-landing': typeof Char123LocaleChar125PatientLandingRoute
   '/{-$locale}/resources': typeof Char123LocaleChar125ResourcesRoute
   '/{-$locale}/second-opinion': typeof Char123LocaleChar125SecondOpinionRoute
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
@@ -217,6 +227,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/contact'
     | '/{-$locale}/expertise'
     | '/{-$locale}/media'
+    | '/{-$locale}/patient-landing'
     | '/{-$locale}/resources'
     | '/{-$locale}/second-opinion'
     | '/{-$locale}/testimonials'
@@ -238,6 +249,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/contact'
     | '/{-$locale}/expertise'
     | '/{-$locale}/media'
+    | '/{-$locale}/patient-landing'
     | '/{-$locale}/resources'
     | '/{-$locale}/second-opinion'
     | '/{-$locale}/testimonials'
@@ -259,6 +271,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/contact'
     | '/{-$locale}/expertise'
     | '/{-$locale}/media'
+    | '/{-$locale}/patient-landing'
     | '/{-$locale}/resources'
     | '/{-$locale}/second-opinion'
     | '/{-$locale}/testimonials'
@@ -281,6 +294,7 @@ export interface RootRouteChildren {
   Char123LocaleChar125ContactRoute: typeof Char123LocaleChar125ContactRoute
   Char123LocaleChar125ExpertiseRoute: typeof Char123LocaleChar125ExpertiseRoute
   Char123LocaleChar125MediaRoute: typeof Char123LocaleChar125MediaRoute
+  Char123LocaleChar125PatientLandingRoute: typeof Char123LocaleChar125PatientLandingRoute
   Char123LocaleChar125ResourcesRoute: typeof Char123LocaleChar125ResourcesRoute
   Char123LocaleChar125SecondOpinionRoute: typeof Char123LocaleChar125SecondOpinionRoute
   Char123LocaleChar125TestimonialsRoute: typeof Char123LocaleChar125TestimonialsRoute
@@ -332,6 +346,13 @@ declare module '@tanstack/react-router' {
       path: '/{-$locale}/resources'
       fullPath: '/{-$locale}/resources'
       preLoaderRoute: typeof Char123LocaleChar125ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/{-$locale}/patient-landing': {
+      id: '/{-$locale}/patient-landing'
+      path: '/{-$locale}/patient-landing'
+      fullPath: '/{-$locale}/patient-landing'
+      preLoaderRoute: typeof Char123LocaleChar125PatientLandingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/{-$locale}/media': {
@@ -441,6 +462,8 @@ const rootRouteChildren: RootRouteChildren = {
   Char123LocaleChar125ContactRoute: Char123LocaleChar125ContactRoute,
   Char123LocaleChar125ExpertiseRoute: Char123LocaleChar125ExpertiseRoute,
   Char123LocaleChar125MediaRoute: Char123LocaleChar125MediaRoute,
+  Char123LocaleChar125PatientLandingRoute:
+    Char123LocaleChar125PatientLandingRoute,
   Char123LocaleChar125ResourcesRoute: Char123LocaleChar125ResourcesRoute,
   Char123LocaleChar125SecondOpinionRoute:
     Char123LocaleChar125SecondOpinionRoute,
