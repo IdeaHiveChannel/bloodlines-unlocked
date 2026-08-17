@@ -267,14 +267,35 @@ export const conditions: Condition[] = [
   // ── Lower limbs ─────────────────────────────────────────────────────────
   {
     slug: "poor-blood-circulation",
-    name: "Poor blood circulation in the legs",
+    name: "Poor blood circulation (PAD)",
     region: "legs",
     intervention: "Angioplasty & stenting",
     intro:
-      "Also known as peripheral artery disease (PAD). Narrowed or blocked leg arteries reduce blood supply, causing pain or non-healing wounds.",
-    symptoms: ["Pain while walking", "Cold feet", "Non-healing wounds", "Diabetic foot", "Gangrene"],
+      "Blocked or narrowed arteries reduce blood supply to the legs. Image-guided treatment restores flow to heal wounds and prevent gangrene.",
+    symptoms: ["Blackening/gangrene of the leg", "Non-healing ulcer", "Diabetes-related foot problems", "Poor blood circulation", "Blocked arteries"],
     treatments: ["Angioplasty", "Stenting", "Below-knee revascularisation"],
   },
+  {
+    slug: "peripheral-avm",
+    name: "Peripheral AVM",
+    region: "arms",
+    intervention: "Embolization",
+    intro:
+      "Vascular malformations that occur in extremities like arms or hands. Embolization closes the abnormal vessels without needing major surgery.",
+    symptoms: ["Swelling", "Pulsating mass", "Vascular malformation"],
+    treatments: ["Sclerotherapy", "Embolization"],
+  },
+  {
+    slug: "genicular-artery-embolization",
+    name: "Genicular artery embolization",
+    region: "knee",
+    intervention: "Embolization",
+    intro:
+      "A treatment for chronic knee pain due to osteoarthritis. Embolization reduces inflammation by targeting abnormal blood vessels around the joint.",
+    symptoms: ["Chronic knee pain", "Knee-related vascular pain"],
+    treatments: ["Genicular artery embolization (GAE)"],
+  },
+
 
   // ── Veins ───────────────────────────────────────────────────────────────
   {
