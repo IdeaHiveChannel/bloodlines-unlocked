@@ -117,14 +117,17 @@ function RootShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isMl = pathname === "/ml" || pathname.startsWith("/ml/");
   const base = isMl ? (pathname === "/ml" ? "/" : pathname.slice(3)) : pathname;
-  const mlPath = base === "/" ? "/ml" : `/ml${base}`;
+  // Ensure the base path starts with a slash
+  const normalizedBase = base.startsWith("/") ? base : `/${base}`;
+  const mlPath = normalizedBase === "/" ? "/ml" : `/ml${normalizedBase}`;
+
   return (
     <html lang={isMl ? "ml" : "en"}>
       <head>
         <HeadContent />
-        <link rel="alternate" hrefLang="en" href={`${SITE}${base}`} />
+        <link rel="alternate" hrefLang="en" href={`${SITE}${normalizedBase}`} />
         <link rel="alternate" hrefLang="ml" href={`${SITE}${mlPath}`} />
-        <link rel="alternate" hrefLang="x-default" href={`${SITE}${base}`} />
+        <link rel="alternate" hrefLang="x-default" href={`${SITE}${normalizedBase}`} />
       </head>
       <body>
         {children}
