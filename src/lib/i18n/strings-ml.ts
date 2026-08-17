@@ -491,6 +491,7 @@ export const stringsMl: Record<string, string> = {
   "Genicular artery embolization for knee osteoarthritis, and image-guided treatment of chronic joint pain.": "കാൽമുട്ട് തേയ്മാനത്തിന് ജെനിക്കുലാർ ആർട്ടറി എംബോളൈസേഷൻ, ദീർഘകാല സന്ധിവേദനയ്ക്ക് ഇമേജ്-ഗൈഡഡ് ചികിത്സ.",
   "Hepatobiliary & portal": "കരൾ, പിത്തരസം & പോർട്ടൽ സിര",
   "Home": "ഹോം",
+  "Patient Landing Page": "രോഗികൾക്കുള്ള പ്രധാന പേജ്",
   "Hybrid operating theatre": "ഹൈബ്രിഡ് ഓപ്പറേഷൻ തിയേറ്റർ",
   "Interventional oncology": "ഇന്റർവെൻഷണൽ ഓങ്കോളജി",
   "Language": "ഭാഷ",
