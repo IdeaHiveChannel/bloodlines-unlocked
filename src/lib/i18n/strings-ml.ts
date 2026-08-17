@@ -147,7 +147,7 @@ export const stringsMl: Record<string, string> = {
   "05": "05",
   "06": "06",
   "07": "07",
-  "08": "08",
+  "Before. After. The same patient, the same vessel. - Dvt case . Only injections . Laser not done": "ചികിത്സയ്ക്ക് മുൻപും ശേഷവും. ഒരേ രോഗി, ഒരേ രക്തക്കുഴൽ. - ഡിവിടി കേസ്. ഇൻജക്ഷനുകൾ മാത്രം. ലേസർ ചെയ്തിട്ടില്ല.",
   "09": "09",
   "10": "10",
   "11": "11",
