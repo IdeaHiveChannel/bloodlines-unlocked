@@ -323,13 +323,6 @@
   @media (width >= 120rem) { padding-inline: 4rem; }
 }
 
-/* Horizontally scrollable chip / tab strip on small screens. */
-@utility scroll-x {
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar { display: none; }
-}
 
 
 /* ------------------------------------------------------------------ */

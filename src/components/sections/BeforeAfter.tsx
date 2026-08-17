@@ -166,7 +166,7 @@ export function BeforeAfter() {
           {tx("Interventional radiology is judged on images, not adjectives. Drag the line across each case to see what changed. Representative illustrations of typical treated cases, not identifiable patient records.")}
         </p>
 
-        <div className="scroll-x -mx-5 mt-8 flex gap-2 px-5 sm:mx-0 sm:flex-wrap sm:px-0 sm:gap-3">
+        <div className="mt-8 flex flex-wrap gap-2 sm:gap-3">
           {cases.map((c, i) => (
             <button
               key={c.id}

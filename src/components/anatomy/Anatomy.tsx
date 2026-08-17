@@ -417,17 +417,16 @@ export function Anatomy() {
             </div>
             
             {/* Mobile Selection Tape - for horizontal scroll/quick picking */}
-            <div className="mt-8 flex gap-2 overflow-x-auto pb-4 no-scrollbar lg:hidden">
+            {/* Selection Buttons - wrap instead of horizontal scroll */}
+            <div className="mt-8 flex flex-wrap gap-2 lg:hidden">
               {hotspots.map((h) => {
                 const labelText = t.anatomy.regions[h.id].label;
                 const shortLabel = labelText.split(' ')[0];
                 return (
-
                   <button
-
                     key={h.id}
                     onClick={() => setActive(h.id)}
-                    className={`shrink-0 rounded-full border px-4 py-2 text-caption transition-all ${
+                    className={`rounded-full border px-4 py-2 text-caption transition-all ${
                       active === h.id 
                         ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--ink)]" 
                         : "border-white/10 bg-white/5 text-[var(--ink-dim)]"
@@ -435,7 +434,6 @@ export function Anatomy() {
                   >
                     {shortLabel}
                   </button>
-
                 );
               })}
             </div>
