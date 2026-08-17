@@ -992,7 +992,7 @@ export const resources: Resource[] = [
     id: "video-thrombectomy",
     kind: "Video",
     title: "Mechanical thrombectomy, animated",
-    text: "How a clot in a brain artery is captured and withdrawn through a single puncture.",
+    text: "How a clot in a brain artery is captured and withdrawn through a single puncture. Real patient imaging included.",
     related: ["acute-ischemic-stroke"],
     procedure: "thrombectomy",
   },
