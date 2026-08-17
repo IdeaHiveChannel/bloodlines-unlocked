@@ -88,7 +88,7 @@ function ProcedureStory({
   );
 }
 
-function Beat({
+ function Beat({
   text,
   index,
   total,
@@ -99,6 +99,7 @@ function Beat({
   total: number;
   progress: MotionValue<number>;
 }) {
+  const tx = useTx();
   const center = (index + 0.5) / total;
   const span = 1 / total;
   const clamp = (n: number) => Math.max(0, Math.min(1, n));
