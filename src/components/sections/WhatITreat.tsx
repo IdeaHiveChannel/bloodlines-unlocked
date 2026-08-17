@@ -128,16 +128,18 @@ export function WhatITreat() {
               >
                 <div className="lg:border-t lg:border-white/10 lg:pt-10">
                   <h4 className="hidden lg:block text-label mb-8">{tx(t.whatITreat.moreConditionsLabel)}</h4>
-                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-4">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-3">
                     {t.whatITreat.moreConditions.map((condition: string, i: number) => (
                       <div 
                         key={i}
-                        className="flex items-center gap-3 py-2 border-b border-white/[0.05] lg:border-none"
+                        className="flex items-center gap-3 lg:gap-4"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] opacity-40 shrink-0" />
-                        <span className="text-[14px] text-[var(--ink-dim)] lg:text-[15px]">
+                        <span className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors cursor-default">
                           {tx(condition)}
                         </span>
+                        {i < t.whatITreat.moreConditions.length - 1 && (
+                          <span className="text-white/10 select-none">·</span>
+                        )}
                       </div>
                     ))}
                   </div>
