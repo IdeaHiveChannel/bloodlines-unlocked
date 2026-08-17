@@ -386,7 +386,6 @@ export const stringsMl: Record<string, string> = {
   "Visceral aneurysm coiling": "വിസറൽ അനെറിസം കോയിലിംഗ്",
   "Biliary drainage / stenting": "ബിലിയറി ഡ്രെയിനേജ് & സ്റ്റെന്റിംഗ്",
   "Varicocele embolization": "വെരിക്കോസീൽ എംബോളൈസേഷൻ",
-  "Beat": "ഘട്ടം",
   "conditions treated here": "രോഗാവസ്ഥകൾ ഇവിടെ ചികിത്സിക്കുന്നു",
   "condition treated here": "രോഗാവസ്ഥ ഇവിടെ ചികിത്സിക്കുന്നു",
   "Conditions &amp; the intervention used": "രോഗാവസ്ഥകളും ചികിത്സാരീതികളും",
@@ -396,8 +395,4 @@ export const stringsMl: Record<string, string> = {
   "All procedures →": "എല്ലാ ചികിത്സകളും →",
   "Read →": "വായിക്കുക →",
   "Region": "ഭാഗം",
-  "Procedures": "ചികിത്സകൾ",
-  "Every procedure has its own story.": "ഓരോ ചികിത്സയ്ക്കും അതിന്റേതായ കഥയുണ്ട്.",
-  "No two interventions are alike. Each follows a different path, guided in real time with advanced imaging and performed through a tiny access point rather than a large incision.": "ഓരോ ചികിത്സയും വ്യത്യസ്തമാണ്. ഇമേജിംഗിന്റെ സഹായത്തോടെ ചെറിയ ദ്വാരത്തിലൂടെയാണ് ഇവ ചെയ്യുന്നത്.",
-  "See every procedure →": "എല്ലാ ചികിത്സകളും കാണുക →",
 };
