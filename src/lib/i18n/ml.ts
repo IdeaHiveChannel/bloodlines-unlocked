@@ -3,7 +3,7 @@ import type { Dictionary } from "./en";
 export const ml: Dictionary = {
   brand: {
     name: "ഡോ. മൻദീപ് സാഗർ",
-    tagline: "വാസ്കുലർ · ന്യൂറോ ഇന്റർവെൻഷണൽ",
+    tagline: "ന്യൂറോ & വാസ്കുലർ ഇന്റർവെൻഷൻ റേഡിയോളജിസ്റ്റ്",
     role: "വാസ്കുലർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജി",
   },
   nav: {
