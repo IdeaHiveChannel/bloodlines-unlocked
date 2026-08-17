@@ -55,6 +55,18 @@ export const conditionNamesMl: Record<string, string> = {
   "varicose-veins": "വെരിക്കോസ് വെയിൻ",
   "deep-vein-thrombosis": "ഡീപ് വെയിൻ ത്രോംബോസിസ്",
   "venous-ulcer": "വെനസ് ലെഗ് അൾസർ",
+  "visceral-aneurysm": "വിസറൽ ധമനി അനൂറിസം",
+  "bronchial-artery-embolisation": "രക്തം തുപ്പുന്നത് (Haemoptysis)",
+  "pelvic-congestion-syndrome": "പെൽവിക് കൺജഷൻ സിൻഡ്രോം",
+  "uterine-fibroid-embolization": "ഗർഭാശയ ഫൈബ്രോയിഡ്",
+  "prostate-artery-embolization": "പ്രോസ്റ്റേറ്റ് വീക്കം (BPH)",
+  "varicocele": "വെരിക്കോസീൽ",
+  "deep-vein-thrombosis": "ഡീപ് വെയിൻ ത്രോംബോസിസ് (DVT)",
+  "may-thurner-syndrome": "മെയ്-തേണർ സിൻഡ്രോം",
+  "varicose-veins-pillar": "വെരിക്കോസ് വെയിൻ",
+  "venous-ulcer-pillar": "വെനസ് ലെഗ് അൾസർ",
+  "bone-tumours": "അസ്ഥിയിലെ മുഴകൾ",
+  "spinal-fractures": "നട്ടെല്ലിലെ ഒടിവ് (Spinal fractures)",
 };
 
 export const procedureNamesMl: Record<string, string> = {

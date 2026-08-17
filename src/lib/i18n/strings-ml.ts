@@ -186,6 +186,7 @@ export const stringsMl: Record<string, string> = {
   "Fourteen conditions, explained end to end.": "പതിനാല് രോഗാവസ്ഥകൾ, വിശദമായി പ്രതിപാദിക്കുന്നു.",
   "From diagnosis to recovery.": "രോഗനിർണ്ണയം മുതൽ പൂർണ്ണ രോഗമുക്തി വരെ.",
   "From the brain to the feet, blood vessels connect every organ. Explore each region to understand how modern image-guided treatment addresses disease throughout the body.": "തലച്ചോറ് മുതൽ പാദം വരെ, രക്തക്കുഴലുകൾ ഓരോ അവയവത്തെയും ബന്ധിപ്പിക്കുന്നു. ആധുനിക ഇമേജ്-ഗൈഡഡ് ചികിത്സ ശരീരത്തിലെ വിവിധ രോഗങ്ങളെ എങ്ങനെ ഭേദമാക്കുന്നു എന്ന് ഓരോ ഭാഗവും പരിശോധിച്ച് മനസ്സിലാക്കൂ.",
+  "Image-guided treatment through a pinhole opening for complex vascular, neurovascular and oncological conditions.": "വാസ്കുലാർ, ന്യൂറോ വാസ്കുലാർ, ഓങ്കോളജിക്കൽ രോഗാവസ്ഥകൾക്കായി ഒരു ചെറിയ ദ്വാരത്തിലൂടെ നൽകുന്ന ഇമേജ്-ഗൈഡഡ് ചികിത്സ.",
   "Full conditions catalogue →": "രോഗാവസ്ഥകളുടെ സമ്പൂർണ്ണ ലിസ്റ്റ് →",
   "Full guide →": "പൂർണ്ണ വിവരങ്ങൾ →",
   "Full name": "പൂർണ്ണ നാമം",
