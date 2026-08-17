@@ -229,6 +229,56 @@ export const en = {
       veins: { label: "Veins", title: "Veins", conditions: "Varicose veins · Blood clots · Venous ulcers" }
     }
   },
+  faq: {
+    eyebrow: "Support",
+    h2: "Common questions.",
+    description: "Understanding vascular and neuro interventional treatments.",
+    cta: "Ask a question",
+    categories: [
+      {
+        id: "brain",
+        label: "Brain & stroke",
+        questions: [
+          {
+            q: "How fast should stroke treatment be started?",
+            a: "Every minute counts. For acute ischemic stroke, 'time is brain.' In selected cases, mechanical thrombectomy can be performed within hours of symptom onset to remove the clot and restore blood flow."
+          },
+          {
+            q: "Can a brain aneurysm be treated without open surgery?",
+            a: "Yes. Many brain aneurysms can be treated using endovascular techniques like coiling or flow diversion, which reach the aneurysm from inside the blood vessel through a small pinhole access in the leg or wrist."
+          }
+        ]
+      },
+      {
+        id: "legs",
+        label: "Legs & circulation",
+        questions: [
+          {
+            q: "Can non-healing foot ulcers be treated by improving circulation?",
+            a: "Often, yes. In patients with peripheral artery disease (PAD) or diabetic foot, restoring blood flow using angioplasty or stenting can help heal ulcers and prevent amputation."
+          },
+          {
+            q: "Is varicose vein treatment permanent?",
+            a: "Modern minimally invasive treatments like laser or radiofrequency ablation are highly effective. While they treat the existing diseased veins, lifestyle changes help prevent new ones from forming."
+          }
+        ]
+      },
+      {
+        id: "kidney",
+        label: "Kidney & pressure",
+        questions: [
+          {
+            q: "Can kidney artery blockage cause high blood pressure?",
+            a: "Yes. Renal artery stenosis (narrowing of the kidney's blood supply) can lead to 'renovascular hypertension,' which is often difficult to control with standard medications."
+          },
+          {
+            q: "How is renal artery stenosis treated?",
+            a: "In selected cases, renal angioplasty and stenting can be performed to open the narrowed artery, potentially helping to better control blood pressure."
+          }
+        ]
+      }
+    ]
+  }
 };
 
 
