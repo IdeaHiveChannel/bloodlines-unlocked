@@ -32,7 +32,7 @@ export const regionLabels: Record<Region, string> = {
   pelvis: "Pelvis",
   knee: "Knee",
   legs: "Legs & peripheral blood vessels",
-  veins: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Audit the other condition pages for unrendered SVGs and malformed translations, fixing them like the anatomy map.\n\nSwitch to Malayalam and check every label, including anatomy and procedure names, is translated naturally.\n\nClick through all 13 anatomy regions and confirm each label reads clearly in English and Malayalam.",
+  veins: "Veins",
 };
 
 export type Condition = {
