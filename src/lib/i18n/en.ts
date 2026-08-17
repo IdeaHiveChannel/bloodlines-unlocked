@@ -139,7 +139,7 @@ export const en = {
         id: "08",
         category: "Thyroid",
         title: "Thyroid nodules & goitre",
-        patientLanguage: "Thyroid lumps and swelling",
+        patientLanguage: "Thyroid lumps and swelling (Swelling)",
         description: "Selected benign thyroid nodules and thyroid swellings can be treated using image-guided ablation.",
         to: "/diseases/thyroid-nodules"
       },
@@ -147,7 +147,7 @@ export const en = {
         id: "09",
         category: "Kidney",
         title: "Renal artery stenosis",
-        patientLanguage: "Narrowing of the blood vessel supplying the kidney",
+        patientLanguage: "Narrowing of the kidney vessel (High Blood Pressure / 3+ Medications)",
         description: "Narrowing of a renal artery can affect blood flow to the kidney and may be associated with difficult-to-control blood pressure.",
         to: "/diseases/poor-blood-circulation"
       },
@@ -155,7 +155,7 @@ export const en = {
         id: "10",
         category: "Liver",
         title: "Hepatocellular carcinoma",
-        patientLanguage: "A type of liver cancer",
+        patientLanguage: "Liver cancer (HCC) / Hemangioma (Shrink by injection)",
         description: "Selected liver tumours can be treated using image-guided procedures.",
         to: "/diseases/liver-tumours"
       },
