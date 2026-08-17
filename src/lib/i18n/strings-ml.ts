@@ -399,8 +399,6 @@ export const stringsMl: Record<string, string> = {
   "Liver · Liver tumour": "കരൾ · ലിവർ ട്യൂമർ",
   "Pelvis · Uterine fibroids": "പെൽവിസ് · ഗർഭാശയ മുഴകൾ",
   "Veins · Varicose veins": "ഞരമ്പുകൾ · വെരിക്കോസ് വെയിൻ",
-  "Deep vein thrombosis": "ഡീപ് വെയിൻ ത്രോംബോസിസ്",
-  "Mechanical thrombectomy": "മെക്കാനിക്കൽ ത്രോംബെക്ടമി",
   "conditions treated here": "രോഗാവസ്ഥകൾ ഇവിടെ ചികിത്സിക്കുന്നു",
   "condition treated here": "രോഗാവസ്ഥ ഇവിടെ ചികിത്സിക്കുന്നു",
   "Conditions &amp; the intervention used": "രോഗാവസ്ഥകളും ചികിത്സാരീതികളും",
