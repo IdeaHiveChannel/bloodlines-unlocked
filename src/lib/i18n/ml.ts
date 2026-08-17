@@ -150,7 +150,7 @@ export const ml: Dictionary = {
         title: "വൃക്കയിലെ ധമനീ തടസ്സം",
         patientLanguage: "വൃക്കയിലേക്കുള്ള രക്തക്കുഴൽ ചുരുങ്ങുന്നത്",
         description: "വൃക്കയിലേക്കുള്ള രക്തക്കുഴൽ ചുരുങ്ങുന്നത് രക്തയോട്ടത്തെ ബാധിക്കുകയും ഇത് ബി.പി നിയന്ത്രിക്കാൻ ബുദ്ധിമുട്ടുണ്ടാക്കുകയും ചെയ്തേക്കാം.",
-        to: "/conditions/renal-artery-stenosis"
+        to: "/diseases/poor-blood-circulation"
       },
       {
         id: "10",
@@ -190,7 +190,7 @@ export const ml: Dictionary = {
         title: "അയോർട്ടിക് അന്യൂറിസം",
         patientLanguage: "പ്രധാന രക്തക്കുഴൽ വീർത്ത് വരുന്നത്",
         description: "ശരീരത്തിലെ പ്രധാന ധമനിയായ അയോർട്ടയുടെ ഭിത്തി ദുർബലമായി വീർത്ത് വരുന്നത് ഭാവിയിൽ അപകടമുണ്ടാക്കാൻ സാധ്യതയുള്ളതിനാൽ കൃത്യമായ നിരീക്ഷണവും ചികിത്സയും ആവശ്യമാണ്.",
-        to: "/conditions/visceral-aneurysm"
+        to: "/diseases/poor-blood-circulation"
       }
     ]
   },

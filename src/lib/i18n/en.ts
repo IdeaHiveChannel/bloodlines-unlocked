@@ -148,7 +148,7 @@ export const en = {
         title: "Renal artery stenosis",
         patientLanguage: "Narrowing of the blood vessel supplying the kidney",
         description: "Narrowing of a renal artery can affect blood flow to the kidney and may be associated with difficult-to-control blood pressure.",
-        to: "/conditions/renal-artery-stenosis"
+        to: "/diseases/poor-blood-circulation"
       },
       {
         id: "10",
@@ -188,7 +188,7 @@ export const en = {
         title: "Aortic aneurysm",
         patientLanguage: "A weakened and enlarged section of the aorta",
         description: "An aortic aneurysm can enlarge over time and may require monitoring or treatment.",
-        to: "/conditions/visceral-aneurysm"
+        to: "/diseases/poor-blood-circulation"
       }
     ]
   },
