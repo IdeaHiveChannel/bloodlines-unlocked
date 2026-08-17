@@ -74,6 +74,10 @@ export function Footer() {
         </div>
         <div className="mt-12 pt-6 border-t border-white/[0.05] flex flex-wrap justify-between gap-4 text-caption text-[var(--ink-dim)]">
           <p>© {new Date().getFullYear()} {t.brand.name}. {t.footer.rights}</p>
+          <div className="flex gap-6">
+            <LocaleLink to="/privacy" className="hover:text-white transition-colors">{t.footer.privacy}</LocaleLink>
+            <LocaleLink to="/terms" className="hover:text-white transition-colors">{t.footer.terms}</LocaleLink>
+          </div>
         </div>
       </div>
     </footer>
