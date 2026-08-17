@@ -1,3 +1,4 @@
+import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import {
   regionProcedures,
   type Region,
 } from "../../lib/content";
+
 
 type Hotspot = {
   id: Region;
@@ -38,41 +40,17 @@ const hotspots: Hotspot[] = [
     ),
   },
   {
-    id: "eye",
-    cx: 216,
-    cy: 76,
-    r: 11,
+    id: "neck",
+    cx: 198,
+    cy: 112,
+    r: 15,
     side: "right",
     organ: (
       <g>
-        <path d="M206,76 C210,70 222,70 226,76 C222,82 210,82 206,76 Z" />
-        <circle cx="216" cy="76" r="3.2" />
-      </g>
-    ),
-  },
-  {
-    id: "carotid",
-    cx: 182,
-    cy: 108,
-    r: 13,
-    side: "left",
-    organ: (
-      <g>
-        <path d="M184,96 L184,118" />
-        <path d="M184,104 L176,94" />
-        <path d="M184,104 L191,95" />
-      </g>
-    ),
-  },
-  {
-    id: "thyroid",
-    cx: 214,
-    cy: 118,
-    r: 12,
-    side: "right",
-    organ: (
-      <g>
-        <path d="M206,113 C210,110 214,113 214,118 C214,113 218,110 222,113 C224,120 219,126 214,126 C209,126 204,120 206,113 Z" />
+        {/* Carotid/Neck area */}
+        <path d="M192,100 L192,125" strokeWidth="2" />
+        <path d="M208,100 L208,125" strokeWidth="2" />
+        <path d="M200,105 C205,108 210,112 210,118 C210,124 205,128 200,131 C195,128 190,124 190,118 C190,112 195,108 200,105 Z" fill="none" strokeWidth="1.5" />
       </g>
     ),
   },
@@ -116,7 +94,7 @@ const hotspots: Hotspot[] = [
     ),
   },
   {
-    id: "kidney",
+    id: "kidneys",
     cx: 232,
     cy: 262,
     r: 20,
@@ -201,30 +179,34 @@ const hotspots: Hotspot[] = [
 ];
 
 export function Anatomy() {
+  const t = useT();
   const tx = useTx();
   const [active, setActive] = useState<Region>("brain");
-  const list = conditionsByRegion(active);
   const spot = hotspots.find((h) => h.id === active)!;
   const guide = regionGuide[active];
 
+  // Access specific translations from the new "anatomy" object
+  const currentRegionContent = t.anatomy.regions[active];
+
+
   return (
-    <section className="relative bg-[#050B16] section-y">
+    <section className="relative bg-[#050B16] section-y overflow-hidden">
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-5">
-          <div>
-            <p className="text-label">{tx("Anatomy")}</p>
-            <h2 className="mt-4 max-w-2xl text-h1 sm:mt-6">
-              {tx("The body, seen through its blood vessels.")}
+          <div className="max-w-2xl">
+            <p className="text-label">{t.anatomy.eyebrow}</p>
+            <h2 className="mt-4 text-h1 sm:mt-6">
+              {t.anatomy.h2}
             </h2>
           </div>
           <p className="max-w-sm text-small text-[var(--ink-dim)]">
-            {tx("From the brain to the feet, blood vessels connect every organ. Explore each region to understand how modern image-guided treatment addresses disease throughout the body.")}
+            {t.anatomy.description}
           </p>
+
         </div>
 
-
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-14 lg:grid-cols-12 lg:gap-16">
-          {/* Anatomy panel */}
+        <div className="mt-10 grid grid-cols-1 gap-12 sm:mt-14 lg:grid-cols-12 lg:gap-16">
+          {/* Anatomy visual */}
           <div className="lg:col-span-5">
             <div className="relative mx-auto aspect-[2/3] w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[520px] rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent">
               <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full overflow-visible translate-x-[-1%] sm:translate-x-0">
@@ -236,7 +218,7 @@ export function Anatomy() {
                 </defs>
                 <ellipse cx="200" cy="300" rx="180" ry="280" fill="url(#bodyGlow)" opacity="0.35" />
 
-                {/* Body silhouette with arms */}
+                {/* Body silhouette */}
                 <path
                   d="M200,30 C220,30 235,45 235,65 C235,85 225,98 220,105 C220,120 235,128 250,140 L290,215 L300,305 L282,308 L272,220 L262,300 L258,400 L240,500 C238,540 245,575 250,595 L215,595 L210,500 L200,500 L190,500 L185,595 L150,595 C155,575 162,540 160,500 L142,400 L138,300 L128,220 L118,308 L100,305 L110,215 L150,140 C165,128 180,120 180,105 C175,98 165,85 165,65 C165,45 180,30 200,30 Z"
                   fill="rgba(255,255,255,0.02)"
@@ -271,7 +253,7 @@ export function Anatomy() {
                   <path d="M200,90 L200,360" strokeDasharray="8 220" style={{ animation: "flow 5s linear infinite" }} />
                 </g>
 
-                {/* Illuminated organ — only the active one */}
+                {/* Illuminated organ */}
                 <AnimatePresence mode="wait">
                   <motion.g
                     key={active}
@@ -290,18 +272,16 @@ export function Anatomy() {
                   </motion.g>
                 </AnimatePresence>
 
-                {/* Hotspots */}
+                {/* Interactive Hotspots & Labels */}
                 {hotspots.map((h) => {
                   const on = active === h.id;
                   const labelOffset = h.r + 10;
                   const isRight = h.side === "right";
                   const labelX = isRight ? h.cx + labelOffset : h.cx - labelOffset;
                   
-                  // Mobile-specific label adjustments to prevent clipping
-                  // If the label would go off-screen (near edge), we nudge it.
-                  // Brain, Eye, Carotid, etc. are central. Arms, Legs are edge-heavy.
-                  const edgeNudge = isRight ? (labelX > 375 ? -25 : 0) : (labelX < 25 ? 25 : 0);
-                  const finalX = labelX + edgeNudge;
+                  // Desktop shows full labels, mobile shows short labels
+                  const labelText = t.anatomy.regions[h.id].label;
+
                   
                   return (
                     <g
@@ -311,9 +291,10 @@ export function Anatomy() {
                       onClick={() => setActive(h.id)}
                       tabIndex={0}
                       role="button"
-                      aria-label={regionLabels[h.id]}
+                      aria-label={labelText}
                       style={{ outline: "none" }}
                       data-cursor="link"
+                      className="cursor-pointer"
                     >
                       <circle
                         cx={h.cx}
@@ -321,21 +302,23 @@ export function Anatomy() {
                         r={h.r}
                         fill={on ? "color-mix(in oklab, var(--accent) 16%, transparent)" : "transparent"}
                         stroke={on ? "var(--accent)" : "rgba(255,255,255,0.1)"}
-                        strokeWidth="1"
+                        strokeWidth="1.5"
                         style={{
-                          transition: "all 360ms cubic-bezier(0.16,1,0.3,1)",
+                          transition: "all 300ms ease",
                           filter: on ? "drop-shadow(0 0 12px var(--accent))" : "none",
                         }}
                       />
+                      
+                      {/* Responsive Labels: Full on desktop, short basic text always preserved by the brief */}
                       <text
-                        x={finalX}
+                        x={labelX}
                         y={h.cy + 4}
                         textAnchor={isRight ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="clamp(11px, 2.6vw, 13px)"
+                        fontSize="13"
                         fontWeight="600"
                         fontFamily="var(--font-sans)"
-                        className="pointer-events-none select-none"
+                        className="pointer-events-none select-none hidden lg:block"
                         style={{ 
                           transition: "all 300ms",
                           filter: on ? "drop-shadow(0 0 6px var(--accent))" : "none",
@@ -346,95 +329,120 @@ export function Anatomy() {
                           overflow: "visible",
                         }}
                       >
-                        {tx(regionLabels[h.id])}
+                        {labelText}
+                      </text>
+                      
+                      {/* Mobile Labels: Short identifiers positioned carefully */}
+                      <text
+                        x={labelX}
+                        y={h.cy + 4}
+                        textAnchor={isRight ? "start" : "end"}
+                        fill={on ? "var(--ink)" : "var(--ink-dim)"}
+                        fontSize="11"
+                        fontWeight="600"
+                        fontFamily="var(--font-sans)"
+                        className="pointer-events-none select-none lg:hidden"
+                        style={{ 
+                          transition: "all 300ms",
+                          filter: on ? "drop-shadow(0 0 4px var(--accent))" : "none",
+                          paintOrder: "stroke fill",
+                          stroke: "rgba(5, 11, 22, 0.95)",
+                          strokeWidth: "2.5px",
+                          strokeLinejoin: "round",
+                          overflow: "visible",
+                        }}
+                      >
+                        {labelText}
                       </text>
                     </g>
                   );
                 })}
               </svg>
             </div>
+            
+            {/* Mobile Selection Tape - for horizontal scroll/quick picking */}
+            <div className="mt-8 flex gap-2 overflow-x-auto pb-4 no-scrollbar lg:hidden">
+              {hotspots.map((h) => {
+                const labelText = t.anatomy.regions[h.id].label;
+                return (
+                  <button
+
+                    key={h.id}
+                    onClick={() => setActive(h.id)}
+                    className={`shrink-0 rounded-full border px-4 py-2 text-caption transition-all ${
+                      active === h.id 
+                        ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--ink)]" 
+                        : "border-white/10 bg-white/5 text-[var(--ink-dim)]"
+                    }`}
+                  >
+                    {labelText}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Right panel */}
+          {/* Region Details Panel */}
           <div className="lg:col-span-7">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, y: 16, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -8, filter: "blur(6px)" }}
-                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="space-y-8"
               >
-                <p className="text-label">{tx("Region")} · {tx(regionLabels[active])}</p>
-                <h3 className="mt-3 text-h3">
-                  {list.length} {tx(list.length === 1 ? "condition treated here" : "conditions treated here")}
-                </h3>
-
-                <p className="mt-8 text-label">{tx("Conditions &amp; the intervention used")}</p>
-                <div className="mt-4 space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
-                  {list.map((c) => (
-                    <LocaleLink
-                      key={c.slug}
-                      to="/conditions/$slug"
-                      params={{ slug: c.slug }}
-                      data-cursor="link"
-                      className="group block bg-white/[0.02] p-4 transition-colors hover:bg-white/[0.04] sm:p-6"
-                    >
-                      <div className="flex items-start justify-between gap-4 sm:gap-6">
-                        <div className="flex-1 min-w-0">
-                          <h4 className="text-card-title">{tx(c.name)}</h4>
-                          <p className="mt-2 text-[0.6875rem] uppercase tracking-[0.16em] text-[var(--accent)]">
-                            ↓ {tx(c.intervention)}
-                          </p>
-                          <p className="mt-2 line-clamp-2 text-small text-[var(--ink-dim)]">
-                            {tx(c.intro)}
-                          </p>
-                        </div>
-                        <span className="hidden shrink-0 text-label opacity-0 transition-opacity group-hover:opacity-100 lg:block">
-                          {tx("Read →")}
-                        </span>
-                      </div>
-                    </LocaleLink>
-                  ))}
+                <div>
+                  <h3 className="text-h3 text-[var(--accent)]">
+                    {currentRegionContent.title}
+                  </h3>
+                  <div className="mt-4 h-px w-12 bg-[var(--accent)]" />
+                  <p className="mt-6 text-h4 leading-relaxed text-[var(--ink)]">
+                    {currentRegionContent.conditions}
+                  </p>
                 </div>
 
-                <p className="mt-8 text-label">{tx("Procedures performed in this region")}</p>
-                <ul className="mt-4 flex flex-wrap gap-2 sm:gap-3">
-                  {(regionProcedures[active] ?? []).map((p) => (
-                    <li
-                      key={p}
-                      className="rounded-full border border-white/[0.1] bg-white/[0.02] px-3.5 py-2 text-caption text-[var(--ink)] sm:px-4"
-                    >
-                      {tx(p)}
-                    </li>
-                  ))}
-                </ul>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                    <p className="text-label text-[var(--ink-dim)] uppercase tracking-wider">
+                      {tx("Procedures performed")}
+                    </p>
+                  </div>
+                  
+                  <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {(regionProcedures[active] ?? []).map((p) => (
+                      <li
+                        key={p}
+                        className="group flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.04] hover:border-white/10"
+                      >
+                        <span className="h-1 w-1 rounded-full bg-[var(--accent)] opacity-40 group-hover:opacity-100 transition-opacity" />
+                        <span className="text-small text-[var(--ink-dim)] group-hover:text-[var(--ink)] transition-colors">
+                          {tx(p)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+                <div className="pt-4">
                   {guide ? (
                     <LocaleLink
                       to="/diseases/$slug"
                       params={{ slug: guide }}
-                      data-cursor="cta"
-                      className="text-label underline"
+                      className="group inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-8 py-4 text-[var(--bg)] font-semibold transition-transform hover:scale-[1.02] active:scale-[0.98]"
                     >
-                      {tx("Read more — complete guide →")}
+                      <span>{t.anatomy.cta}</span>
                     </LocaleLink>
                   ) : (
-                    list[0] && (
-                      <LocaleLink
-                        to="/conditions/$slug"
-                        params={{ slug: list[0].slug }}
-                        data-cursor="cta"
-                        className="text-label underline"
-                      >
-                        {tx("Read more →")}
-                      </LocaleLink>
-                    )
+                    <LocaleLink 
+                      to="/diseases" 
+                      className="group inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-8 py-4 text-[var(--bg)] font-semibold transition-transform hover:scale-[1.02]"
+                    >
+                      <span>{t.anatomy.cta}</span>
+                    </LocaleLink>
                   )}
-                  <LocaleLink to="/procedures" data-cursor="link" className="text-label underline">
-                    {tx("All procedures →")}
-                  </LocaleLink>
                 </div>
 
               </motion.div>
