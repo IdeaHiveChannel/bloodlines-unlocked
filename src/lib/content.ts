@@ -248,10 +248,21 @@ export const conditions: Condition[] = [
     region: "kidneys",
     intervention: "Renal artery stenting",
     intro:
-      "When high blood pressure remains difficult to control despite several medicines, narrowing of the renal artery may sometimes be investigated as a possible cause.",
-    symptoms: ["Resistant hypertension", "Declining kidney function"],
+      "When blood pressure remains high despite three or more medications, narrowing of the kidney blood vessels is suspected. Stenting can keep the vessel open and help control pressure.",
+    symptoms: ["High blood pressure needing 3+ medicines", "Declining kidney function", "Kidney blood-vessel problems"],
     treatments: ["Renal artery angioplasty", "Renal artery stenting"],
   },
+  {
+    slug: "dialysis-access-maintenance",
+    name: "Dialysis access maintenance",
+    region: "arms",
+    intervention: "Fistuloplasty & stenting",
+    intro:
+      "Maintaining the flow in dialysis fistulas or grafts. Procedures like angioplasty (fistuloplasty) or stenting ensure reliable access for dialysis.",
+    symptoms: ["Decreased thrill", "Difficult dialysis", "Arm swelling"],
+    treatments: ["Fistuloplasty", "Stenting", "Thrombolysis"],
+  },
+
 
   // ── Lower limbs ─────────────────────────────────────────────────────────
   {
