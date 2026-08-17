@@ -404,12 +404,12 @@ export const procedures: Procedure[] = [
     storyboard: "thrombectomy",
     featured: true,
     beats: [
-      "A clot has stopped blood flow inside a brain blood vessel. Downstream, brain tissue is on a clock.",
-      "A stent retriever is opened inside the clot and positioned to capture it.",
-      "The clot is captured within the retriever.",
-      "A catheter removes the clot as the retriever is withdrawn.",
-      "The clot leaves the body. Blood flow is restored.",
-      "Brain function can recover where tissue remains viable.",
+      "Imaging confirms a clot blocking a brain artery (Clot shown).",
+      "A stent retriever is navigated and opened within the clot.",
+      "The retriever captures the clot.",
+      "The clot is safely removed from the brain.",
+      "Restored blood flow is confirmed on angiography.",
+
     ],
 
     info: {
