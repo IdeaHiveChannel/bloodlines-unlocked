@@ -275,6 +275,40 @@ export const procedures: Procedure[] = [
       "The stent is deployed and holds the artery open.",
       "Blood flow is fully restored.",
     ],
+    info: {
+      symptoms: [
+        "Pain or cramping in legs when walking (claudication)",
+        "Coldness in the lower leg or foot",
+        "Sores on toes, feet or legs that won't heal",
+        "Change in the color of legs",
+        "Hair loss or slower hair growth on feet and legs",
+      ],
+      causes: [
+        "Atherosclerosis (buildup of fats, cholesterol and other substances)",
+        "Blood clots",
+        "Diabetes",
+        "High blood pressure",
+        "Smoking",
+      ],
+      diagnosis: [
+        "Ankle-brachial index (ABI)",
+        "Doppler ultrasound",
+        "CT angiography",
+        "Catheter angiography",
+      ],
+      treatment: [
+        "A small puncture is made in the groin or wrist.",
+        "A thin wire is passed across the narrowing.",
+        "A balloon is inflated to open the artery.",
+        "A stent is placed to keep the artery open if needed.",
+      ],
+      recovery: [
+        "Bed rest for a few hours after the procedure.",
+        "Most patients go home the same or next day.",
+        "Resume light activities in 2-3 days.",
+        "Avoid heavy lifting for a week.",
+      ],
+    },
   },
   {
     slug: "thrombectomy",
