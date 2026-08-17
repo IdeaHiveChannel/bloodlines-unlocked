@@ -2,7 +2,7 @@ import { LocaleLink } from "./locale-link";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavMenu } from "./nav-menu";
-import { useT } from "../lib/i18n/react";
+import { useT, useTx } from "../lib/i18n/react";
 import { useSiteNav } from "../lib/nav";
 import { LanguageToggle } from "./language-toggle";
 
