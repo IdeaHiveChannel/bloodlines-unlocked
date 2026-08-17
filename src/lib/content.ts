@@ -32,7 +32,7 @@ export const regionLabels: Record<Region, string> = {
   pelvis: "Pelvis",
   knee: "Knee",
   legs: "Legs & peripheral blood vessels",
-  veins: "Veins",
+  veins: " ",
 };
 
 export type Condition = {
