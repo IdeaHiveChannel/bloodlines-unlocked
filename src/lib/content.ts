@@ -688,7 +688,12 @@ export const procedures: Procedure[] = [
       causes: ["Benign nodules", "Goitre"],
       diagnosis: ["Ultrasound", "Biopsy"],
       treatment: ["Radiofrequency ablation", "Microwave ablation"],
-      recovery: ["Discharged same day", "No scar", "Return to normal activity next day"],
+      recovery: [
+        "Procedure: Day 0 - Discharged same day. No scar.",
+        "Day 1: Light activity and routine normal lifestyle resume.",
+        "1 Month: Follow-up imaging and normal life.",
+      ],
+
     },
   },
   {
