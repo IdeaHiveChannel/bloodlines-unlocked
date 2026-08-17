@@ -189,4 +189,6 @@ export const stringsMl: Record<string, string> = {
   "Ultrasound": "അൾട്രാസൗണ്ട്",
   "Blood Reports": "രക്ത പരിശോധനാ റിപ്പോർട്ടുകൾ",
   "Previous Prescription": "മുൻപത്തെ കുറിപ്പടി",
+  "Patient Landing Page": "രോഗികൾക്കുള്ള വിവരങ്ങൾ",
+  "Book Consultation": "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക",
 };
