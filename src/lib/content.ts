@@ -169,13 +169,14 @@ export const conditions: Condition[] = [
   {
     slug: "angiomyolipoma",
     name: "Angiomyolipoma (AML)",
-    region: "abdomen",
+    region: "kidneys",
     intervention: "Embolization",
     intro:
       "A kidney tumour that is not cancerous but has a substantial blood-vessel component. Embolisation is performed to reduce the risk of bleeding or rupture.",
     symptoms: ["Flank pain", "Blood in urine", "Incidental kidney mass"],
     treatments: ["Embolization to reduce bleeding risk", "Pre-operative embolisation"],
   },
+
   {
     slug: "renal-cell-carcinoma",
     name: "Renal cell carcinoma",
