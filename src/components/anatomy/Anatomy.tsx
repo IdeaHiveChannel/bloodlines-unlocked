@@ -293,7 +293,8 @@ export function Anatomy() {
                 {/* Hotspots */}
                 {hotspots.map((h) => {
                   const on = active === h.id;
-                  const labelX = h.side === "right" ? h.cx + h.r + 7 : h.cx - h.r - 7;
+                  const labelOffset = h.r + 8;
+                  const labelX = h.side === "right" ? h.cx + labelOffset : h.cx - labelOffset;
                   return (
                     <g
                       key={h.id}
@@ -323,7 +324,7 @@ export function Anatomy() {
                         y={h.cy + 4}
                         textAnchor={h.side === "right" ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="13"
+                        fontSize="clamp(10px, 2.5vw, 13px)"
                         fontWeight="600"
                         fontFamily="var(--font-sans)"
                         className="pointer-events-none select-none"
@@ -332,7 +333,7 @@ export function Anatomy() {
                           filter: on ? "drop-shadow(0 0 6px var(--accent))" : "none",
                           paintOrder: "stroke fill",
                           stroke: "rgba(0,0,0,0.85)",
-                          strokeWidth: "4px",
+                          strokeWidth: "2.5px",
                           strokeLinejoin: "round",
                           overflow: "visible",
                         }}
