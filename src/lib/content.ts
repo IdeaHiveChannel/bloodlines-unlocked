@@ -785,7 +785,13 @@ export const procedures: Procedure[] = [
       causes: ["Benign Prostatic Hyperplasia (BPH)"],
       diagnosis: ["PSA test", "Ultrasound", "Uroflowmetry"],
       treatment: ["Prostate artery embolization"],
-      recovery: ["Same day or overnight stay", "Return to work in 2-3 days", "Symptoms improve over 1-3 months"],
+      recovery: [
+        "Procedure: Day 0 -Wrist or groin puncture; particles released. Same day or overnight stay.",
+        "Day 1: Discharged and light activity.",
+        "1 Week: Return to work / routine activity.",
+        "1-3 Months: Symptoms improve; follow-up imaging and normal life.",
+      ],
+
     },
   },
   {
