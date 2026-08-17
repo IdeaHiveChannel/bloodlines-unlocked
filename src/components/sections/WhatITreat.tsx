@@ -19,14 +19,14 @@ export function WhatITreat() {
     <section className="relative border-t border-white/[0.05] bg-[#050B16] section-y">
       <div className="shell">
         <p className="text-label">{tx(t.whatITreat.eyebrow)}</p>
-        <div className="mt-4 grid gap-5 lg:mt-6 lg:grid-cols-12 lg:gap-10">
+        <div className="mt-4 grid gap-4 lg:mt-6 lg:grid-cols-12 lg:gap-10">
           <h2 className="text-display-xl lg:col-span-6">{tx(t.whatITreat.h2)}</h2>
           <p className="max-w-xl text-small leading-relaxed text-[var(--ink-dim)] lg:col-span-6 lg:pt-4">
             {tx(t.whatITreat.intro)}
           </p>
         </div>
 
-        <ul className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-5 lg:mt-16 lg:grid-cols-3 lg:gap-px lg:overflow-hidden lg:rounded-2xl lg:border lg:border-white/[0.06] lg:bg-white/[0.06]">
+        <ul className="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:gap-5 lg:mt-16 lg:grid-cols-3 lg:gap-px lg:overflow-hidden lg:rounded-2xl lg:border lg:border-white/[0.06] lg:bg-white/[0.06]">
           {t.whatITreat.items.map((c, i) => (
             <motion.li
               key={c.to + i}
@@ -39,7 +39,7 @@ export function WhatITreat() {
               <LocaleLink
                 to={c.to}
                 data-cursor="link"
-                className="group flex flex-col h-full p-6 sm:p-7 lg:p-8 transition-colors hover:bg-white/[0.03]"
+                className="group flex flex-col h-full p-5 sm:p-7 lg:p-8 transition-colors hover:bg-white/[0.03]"
               >
                 <div className="flex-1">
                   <span className="text-[12px] font-medium tracking-widest text-[var(--ink-dim)] opacity-40 uppercase">
