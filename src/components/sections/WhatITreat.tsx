@@ -28,7 +28,7 @@ export function WhatITreat() {
           </p>
         </div>
 
-        <ul className="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:gap-5 lg:mt-16 lg:grid-cols-3 lg:gap-px lg:overflow-hidden lg:rounded-2xl lg:border lg:border-white/[0.06] lg:bg-white/[0.06]">
+        <ul className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-px lg:overflow-hidden lg:rounded-2xl lg:border lg:border-white/[0.06] lg:bg-white/[0.06]">
           {t.whatITreat.items.map((c: any, i: number) => {
             const titleText = tx(c.title);
             const patientText = c.patientLanguage ? tx(c.patientLanguage) : "";
@@ -51,7 +51,7 @@ export function WhatITreat() {
                 <LocaleLink
                   to={c.to}
                   data-cursor="link"
-                  className="group flex flex-col h-full p-5 sm:p-7 lg:p-8 transition-colors hover:bg-white/[0.03]"
+                  className="group flex flex-col h-full p-6 sm:p-7 lg:p-8 transition-colors hover:bg-white/[0.03] border border-white/[0.05] rounded-xl lg:border-none lg:rounded-none"
                 >
                   <div className="flex-1">
                     <span className="text-[10px] font-medium tracking-widest text-[var(--ink-dim)] opacity-40 uppercase lg:text-[12px]">
@@ -103,7 +103,7 @@ export function WhatITreat() {
         <div className="mt-10 sm:mt-12 lg:mt-16">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="lg:hidden w-full flex items-center justify-between p-5 border border-white/10 rounded-xl bg-white/[0.02] text-label"
+            className="lg:hidden w-full flex items-center justify-between p-6 border border-white/10 rounded-xl bg-white/[0.02] text-label"
           >
             <span>{tx(t.whatITreat.moreConditionsLabel)}</span>
             {isExpanded ? <Minus size={20} /> : <Plus size={20} />}
