@@ -226,7 +226,7 @@ export function Anatomy() {
         <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-14 lg:grid-cols-12 lg:gap-16">
           {/* Anatomy panel */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto aspect-[2/3] w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[520px] rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent overflow-hidden">
+            <div className="relative mx-auto aspect-[2/3] w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[520px] rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent">
               <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full overflow-visible">
                 <defs>
                   <radialGradient id="bodyGlow" cx="50%" cy="50%" r="50%">
