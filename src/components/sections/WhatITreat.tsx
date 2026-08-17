@@ -19,7 +19,7 @@ const categories = [
   { to: "/diseases/knee-osteoarthritis", label: "Knee pain", note: "Long-standing knee osteoarthritis pain" },
   { to: "/diseases/uterine-fibroids", label: "Women's health", note: "Fibroids and pelvic congestion" },
   { to: "/diseases/enlarged-prostate", label: "Prostate", note: "Enlarged prostate and urinary symptoms" },
-  { to: "/diseases/varicose-veins", label: "Visceral aneurysm", note: "Aneurysms of internal organ arteries" },
+  { to: "/conditions/visceral-aneurysm", label: "Visceral aneurysm", note: "Aneurysms of internal organ arteries" },
   { to: "/conditions/dialysis-access-failure", label: "Dialysis access", note: "Failing fistulas and grafts" },
 
 ];
