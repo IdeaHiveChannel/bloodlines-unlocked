@@ -16,30 +16,40 @@ function Frame({ children }: { children: React.ReactNode }) {
 
 /** 1 — Angioplasty: plaque → wire crossing → balloon → stent → flow */
 function Angioplasty({ progress }: P) {
-  const wireX = useTransform(progress, [0.05, 0.35], [-260, 40]);
-  const balloonScale = useTransform(progress, [0.38, 0.55], [0.35, 1.35]);
-  const balloonOpacity = useTransform(progress, [0.35, 0.42, 0.62, 0.7], [0, 1, 1, 0]);
-  const plaqueOpacity = useTransform(progress, [0.45, 0.68], [1, 0.12]);
-  const stentOpacity = useTransform(progress, [0.62, 0.75], [0, 1]);
-  const stentScale = useTransform(progress, [0.62, 0.78], [0.6, 1]);
-  const flowOpacity = useTransform(progress, [0, 0.75, 1], [0.15, 0.3, 1]);
+  const wireX = useTransform(progress, [0.0, 0.25], [-260, 40]);
+  const wireOpacity = useTransform(progress, [0.0, 0.05, 0.45, 0.55], [0, 1, 1, 0]);
+  const balloonScale = useTransform(progress, [0.3, 0.5], [0.35, 1.35]);
+  const balloonOpacity = useTransform(progress, [0.28, 0.35, 0.65, 0.72], [0, 1, 1, 0]);
+  const plaqueOpacity = useTransform(progress, [0.4, 0.65], [1, 0.12]);
+  const stentOpacity = useTransform(progress, [0.65, 0.8], [0, 1]);
+  const stentScale = useTransform(progress, [0.65, 0.85], [0.6, 1]);
+  const flowOpacity = useTransform(progress, [0, 0.8, 1], [0.15, 0.3, 1]);
+  
   return (
     <Frame>
       <path d="M40,260 C160,260 240,258 560,258" fill="none" stroke={soft} strokeWidth="1.2" opacity="0.7" />
       <path d="M40,380 C160,380 240,382 560,382" fill="none" stroke={soft} strokeWidth="1.2" opacity="0.7" />
+      
+      {/* Plaque */}
       <motion.g style={{ opacity: plaqueOpacity }}>
         <path d="M240,258 C280,300 360,300 400,258 Z" fill="color-mix(in oklab, var(--blood) 65%, black)" opacity="0.8" />
         <path d="M240,382 C280,340 360,340 400,382 Z" fill="color-mix(in oklab, var(--blood) 65%, black)" opacity="0.8" />
       </motion.g>
-      <motion.g style={{ x: wireX }}>
+
+      {/* Wire */}
+      <motion.g style={{ x: wireX, opacity: wireOpacity }}>
         <line x1="0" y1="320" x2="360" y2="320" stroke="white" strokeWidth="1.6" opacity="0.7" />
         <circle cx="360" cy="320" r="4" fill="white" />
       </motion.g>
+
+      {/* Balloon */}
       <motion.ellipse
         cx="320" cy="320" rx="80" ry="52"
         style={{ scale: balloonScale, opacity: balloonOpacity, transformOrigin: "320px 320px" }}
         fill="color-mix(in oklab, var(--accent) 22%, transparent)" stroke={stroke} strokeWidth="1.5"
       />
+
+      {/* Stent */}
       <motion.g style={{ opacity: stentOpacity, scale: stentScale, transformOrigin: "320px 320px" }} stroke={stroke} strokeWidth="1.2" fill="none" opacity="0.9">
         {Array.from({ length: 9 }).map((_, i) => (
           <path key={i} d={`M${232 + i * 22},262 L${254 + i * 22},378 M${254 + i * 22},262 L${232 + i * 22},378`} />
@@ -47,6 +57,8 @@ function Angioplasty({ progress }: P) {
         <line x1="232" y1="262" x2="430" y2="262" />
         <line x1="232" y1="378" x2="430" y2="378" />
       </motion.g>
+
+      {/* Restored Flow */}
       <motion.g style={{ opacity: flowOpacity }} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round">
         <path d="M40,320 L560,320" strokeDasharray="14 30" style={{ animation: "flow 2s linear infinite", filter: "drop-shadow(0 0 6px var(--accent))" }} />
       </motion.g>
