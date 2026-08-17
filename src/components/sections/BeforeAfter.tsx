@@ -10,6 +10,8 @@ import fibroidBefore from "../../assets/case-fibroid-before.jpg";
 import fibroidAfter from "../../assets/case-fibroid-after.jpg";
 import veinsBefore from "../../assets/case-veins-before.jpg";
 import veinsAfter from "../../assets/case-veins-after.jpg";
+import dvtBefore from "../../assets/case-dvt-before.jpg.asset.json";
+import dvtAfter from "../../assets/case-dvt-after.jpg.asset.json";
 
 type Case = {
   id: string;
@@ -78,6 +80,17 @@ const cases: Case[] = [
     beforeCaption: "Refluxing, dilated trunk",
     afterCaption: "Closed, flow rerouted",
     note: "The faulty vein is sealed from within. Walking the same day, no stripping.",
+  },
+  {
+    id: "dvt",
+    region: "Veins",
+    title: "Deep vein thrombosis",
+    procedure: "Mechanical thrombectomy",
+    before: dvtBefore.url,
+    after: dvtAfter.url,
+    beforeCaption: "Large, occlusive clot burden",
+    afterCaption: "Vessel cleared, flow restored",
+    note: "Removing a clot from the deep veins prevents pulmonary embolism and protects the valves, avoiding a lifetime of leg swelling.",
   },
 ];
 
