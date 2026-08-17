@@ -320,15 +320,22 @@ export function Anatomy() {
                       />
                       <text
                         x={labelX}
-                        y={h.cy + 3}
+                        y={h.cy + 4}
                         textAnchor={h.side === "right" ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="8.5"
-                        fontFamily="var(--font-mono)"
-                        letterSpacing="0.18em"
-                        style={{ textTransform: "uppercase", transition: "fill 300ms" }}
+                        fontSize="14"
+                        fontWeight="600"
+                        fontFamily="var(--font-sans)"
+                        className="pointer-events-none select-none"
+                        style={{ 
+                          transition: "all 300ms",
+                          filter: on ? "drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 2px black)" : "drop-shadow(0 0 2px black) drop-shadow(0 0 12px black)",
+                          paintOrder: "stroke fill",
+                          stroke: on ? "rgba(0,0,0,0.8)" : "black",
+                          strokeWidth: on ? "2px" : "1500px"
+                        }}
                       >
-                        {regionLabels[h.id]}
+                        {tx(regionLabels[h.id])}
                       </text>
                     </g>
                   );
