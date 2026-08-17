@@ -173,7 +173,7 @@ export function BeforeAfter() {
         <div className="mt-6 grid gap-6 sm:mt-8 lg:grid-cols-[1.7fr_1fr] lg:items-end lg:gap-10">
           <Slider key={item.id} item={item} />
           <div className="pb-2">
-            <p className="text-label">Case {String(active + 1).padStart(2, "0")}</p>
+            <p className="text-label">{tx("Case")} {String(active + 1).padStart(2, "0")}</p>
             <h3 className="mt-3 text-h3">{tx(item.title)}</h3>
             <p className="mt-2 text-[0.6875rem] uppercase tracking-[0.16em] text-[var(--accent)]">
               ↓ {tx(item.procedure)}

@@ -157,7 +157,7 @@ export function ConsultationForm() {
         </div>
         <div>
           <label htmlFor="c-email" className="text-label">
-            Email {channel === "email" ? "" : "(optional)"}
+            {tx("Email")} {channel === "email" ? "" : `(${tx("optional")})`}
           </label>
           <input id="c-email" value={form.email} onChange={set("email")} inputMode="email" maxLength={120} className={field} placeholder={tx("you@example.com")} />
           {errors.email && <p className={err}>{errors.email}</p>}
