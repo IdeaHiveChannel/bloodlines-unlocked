@@ -77,14 +77,15 @@ export const conditions: Condition[] = [
   },
   {
     slug: "brain-avm",
-    name: "Arteriovenous malformation (AVM)",
+    name: "Brain AVM & AVF",
     region: "brain",
     intervention: "Embolization",
     intro:
-      "A tangle of vessels where arteries and veins meet directly, bypassing the capillary bed. Targeted embolization closes the abnormal connection from within, often before any incision is considered.",
-    symptoms: ["Headache", "Seizure", "Bleeding", "Progressive weakness", "Abnormal connection between brain arteries and veins"],
+      "A tangle of vessels where arteries and veins meet directly (AVM) or an abnormal connection (AVF). Targeted embolization closes the abnormal connection from within, often before any incision is considered.",
+    symptoms: ["Headache", "Seizure", "Bleeding", "Progressive weakness", "Abnormal connection between brain arteries and veins", "Venous malformations"],
     treatments: ["Endovascular embolization", "Staged embolization before radiosurgery"],
   },
+
   {
     slug: "dural-avf",
     name: "Dural arteriovenous fistula (AVF)",
