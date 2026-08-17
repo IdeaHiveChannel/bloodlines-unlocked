@@ -82,7 +82,7 @@ export function WhatITreat() {
                   </div>
                   
                   {/* Desktop only CTA */}
-                  <div className="hidden lg:flex mt-6 items-center justify-end">
+                  <div className="hidden lg:flex mt-auto pt-6 items-center justify-start">
                     <div className="flex items-center gap-2 text-[12px] font-medium text-[var(--ink-dim)] group-hover:text-[var(--accent)] transition-colors">
                       <span>{tx(t.whatITreat.readGuide)}</span>
                       <ArrowRight
@@ -90,14 +90,6 @@ export function WhatITreat() {
                         className="transition-transform group-hover:translate-x-1"
                       />
                     </div>
-                  </div>
-
-                  {/* Mobile Arrow only */}
-                  <div className="mt-4 flex lg:hidden items-center justify-start">
-                    <ArrowRight
-                      size={18}
-                      className="text-[var(--ink-dim)] opacity-40 group-hover:text-[var(--accent)] group-hover:opacity-100 transition-all group-hover:translate-x-1"
-                    />
                   </div>
                 </LocaleLink>
               </motion.li>
