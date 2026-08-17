@@ -135,12 +135,6 @@ export const stringsMl: Record<string, string> = {
   "Aneurysms of internal organ arteries": "ആന്തരിക അവയവ ധമനികളിലെ അന്യൂറിസങ്ങൾ",
 
   "Long-standing knee osteoarthritis pain": "കാലങ്ങളായുള്ള മുട്ടുതേയ്മാന വേദന",
-  "Angioplasty & stenting": "ആൻജിയോപ്ലാസ്റ്റിയും സ്റ്റെന്റിംഗും",
-  "Mechanical thrombectomy": "മെക്കാനിക്കൽ ത്രോംബെക്ടമി",
-  "Endovascular aneurysm repair": "എൻഡോവാസ്കുലർ അനൂറിസം റിപ്പയർ",
-  "Endovenous laser ablation": "എൻഡോവീനസ് ലേസർ അബ്ലേഷൻ",
-  "TACE — chemoembolization": "ടേസ് (TACE) - കീമോഎംബോളൈസേഷൻ",
-  "Microwave ablation": "മൈക്രോവേവ് അബ്ലേഷൻ",
   "Cerebral aneurysm coiling": "സെറിബ്രൽ അനൂറിസം കോയിലിംഗ്",
   "Arteriovenous malformation (AVM)": "ആർട്ടീരിയോ വീനസ് മാൽഫോർമേഷൻ (AVM)",
   "Endovascular embolization": "എൻഡോവാസ്കുലർ എംബോളൈസേഷൻ",
