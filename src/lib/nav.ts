@@ -31,7 +31,7 @@ const treatCategories: NavLink[] = [
   { to: "/diseases/knee-osteoarthritis", label: "Knee pain" },
   { to: "/diseases/uterine-fibroids", label: "Uterine fibroids" },
   { to: "/diseases/enlarged-prostate", label: "Enlarged prostate" },
-  { to: "/conditions/dialysis-access-failure", label: "Dialysis access" }
+  { to: "/conditions/dialysis-access-failure", label: "Dialysis access" },
   { to: "/diseases/stroke", label: "Brain & stroke" },
   { to: "/diseases/poor-blood-circulation", label: "Blood circulation" },
   { to: "/diseases/varicose-veins", label: "Veins" },
