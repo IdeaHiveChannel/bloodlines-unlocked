@@ -293,8 +293,16 @@ export function Anatomy() {
                 {/* Hotspots */}
                 {hotspots.map((h) => {
                   const on = active === h.id;
-                  const labelOffset = h.r + 8;
-                  const labelX = h.side === "right" ? h.cx + labelOffset : h.cx - labelOffset;
+                  const labelOffset = h.r + 10;
+                  const isRight = h.side === "right";
+                  const labelX = isRight ? h.cx + labelOffset : h.cx - labelOffset;
+                  
+                  // Mobile-specific label adjustments to prevent clipping
+                  // If the label would go off-screen (near edge), we nudge it.
+                  // Brain, Eye, Carotid, etc. are central. Arms, Legs are edge-heavy.
+                  const edgeNudge = isRight ? (labelX > 375 ? -25 : 0) : (labelX < 25 ? 25 : 0);
+                  const finalX = labelX + edgeNudge;
+                  
                   return (
                     <g
                       key={h.id}
@@ -320,11 +328,11 @@ export function Anatomy() {
                         }}
                       />
                       <text
-                        x={labelX}
+                        x={finalX}
                         y={h.cy + 4}
-                        textAnchor={h.side === "right" ? "start" : "end"}
+                        textAnchor={isRight ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="clamp(10px, 2.5vw, 13px)"
+                        fontSize="clamp(11px, 2.6vw, 13px)"
                         fontWeight="600"
                         fontFamily="var(--font-sans)"
                         className="pointer-events-none select-none"
@@ -332,8 +340,8 @@ export function Anatomy() {
                           transition: "all 300ms",
                           filter: on ? "drop-shadow(0 0 6px var(--accent))" : "none",
                           paintOrder: "stroke fill",
-                          stroke: "rgba(0,0,0,0.85)",
-                          strokeWidth: "2.5px",
+                          stroke: "rgba(5, 11, 22, 0.95)",
+                          strokeWidth: "3px",
                           strokeLinejoin: "round",
                           overflow: "visible",
                         }}
