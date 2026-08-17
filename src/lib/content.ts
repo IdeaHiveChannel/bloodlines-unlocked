@@ -462,6 +462,35 @@ export const procedures: Procedure[] = [
       "The tumour blood supply is reduced by embolization.",
       "The tumour blush fades as its supply is cut off.",
     ],
+    info: {
+      symptoms: [
+        "Abdominal pain",
+        "Unexplained weight loss",
+        "Loss of appetite",
+        "Jaundice",
+      ],
+      causes: [
+        "Primary liver cancer (HCC)",
+        "Metastatic cancer from colon or breast",
+        "Chronic hepatitis infection",
+      ],
+      diagnosis: [
+        "Liver function tests",
+        "Tumour markers (AFP)",
+        "CT or MRI of the liver",
+      ],
+      treatment: [
+        "Access via the groin or wrist artery.",
+        "Selective navigation to the tumour artery.",
+        "Infusion of chemotherapy-laden beads.",
+        "Blocking the artery to trap the drug in the tumour.",
+      ],
+      recovery: [
+        "Overnight stay in the hospital.",
+        "Management of 'post-embolization syndrome' (fever, pain).",
+        "Follow-up scan at 1 month to assess response.",
+      ],
+    },
   },
   {
     slug: "microwave-ablation",
