@@ -482,10 +482,11 @@ export const procedures: Procedure[] = [
         "The aneurysm sac is excluded from high-pressure flow.",
       ],
       recovery: [
-        "Procedure: Day 0 - Monitored hospital stay",
-        "Day 1: Discharged and light activity",
-        "1 Month: Follow-up imaging and normal life",
-        "3 Months: Long-term graft surveillance",
+        "Procedure: Day 0 - Stent-graft delivered inside vessel. Monitored hospital stay.",
+        "Day 1: Discharged and light activity.",
+        "1 Month: Follow-up imaging and normal life.",
+        "3 Months: Long-term graft surveillance.",
+
       ],
 
     },
