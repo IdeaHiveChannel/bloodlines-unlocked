@@ -45,7 +45,7 @@ export const en = {
     eyebrow: "Vascular & neuro interventional radiology",
     headline1: "Modern medicine,",
     headline2: "through a pinpoint opening.",
-    lead: "Advanced image-guided treatment for vascular, neurovascular and minimally invasive procedures, performed with precision through blood vessels rather than large surgical incisions.",
+    lead: "Image-guided treatment through a pinhole opening for complex vascular, neurovascular and oncological conditions. Minimal intervention. Rapid recovery.",
   },
   footer: {
     headline1: "Advanced,",
