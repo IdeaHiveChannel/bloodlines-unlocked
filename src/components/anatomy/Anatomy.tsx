@@ -1,8 +1,9 @@
 import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import {
   conditionsByRegion,
@@ -186,6 +187,35 @@ export function Anatomy() {
   const t = useT();
   const tx = useTx();
   const [active, setActive] = useState<Region>("brain");
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setShowLeftArrow(scrollLeft > 10);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener("resize", checkScroll);
+    return () => window.removeEventListener("resize", checkScroll);
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.8;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const spot = hotspots.find((h) => h.id === active)!;
   const guide = regionGuide[active];
 
@@ -417,25 +447,60 @@ export function Anatomy() {
             </div>
             
             {/* Mobile Selection Tape - for horizontal scroll/quick picking */}
-            {/* Selection Buttons - wrap instead of horizontal scroll */}
-            <div className="mt-8 flex flex-wrap gap-2 lg:hidden">
-              {hotspots.map((h) => {
-                const labelText = t.anatomy.regions[h.id].label;
-                const shortLabel = labelText.split(' ')[0];
-                return (
-                  <button
-                    key={h.id}
-                    onClick={() => setActive(h.id)}
-                    className={`rounded-full border px-4 py-2 text-caption transition-all ${
-                      active === h.id 
-                        ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--ink)]" 
-                        : "border-white/10 bg-white/5 text-[var(--ink-dim)]"
-                    }`}
-                  >
-                    {shortLabel}
-                  </button>
-                );
-              })}
+            {/* Selection Buttons - slidable with arrows */}
+            <div className="relative mt-8 lg:hidden group">
+              {showLeftArrow && (
+                <button
+                  onClick={() => scroll("left")}
+                  className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white backdrop-blur-sm border border-white/10"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+              )}
+              
+              <div
+                ref={scrollRef}
+                onScroll={checkScroll}
+                className="flex overflow-x-auto scrollbar-none gap-2 px-2 py-1 snap-x snap-mandatory"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {hotspots.map((h) => {
+                  const labelText = t.anatomy.regions[h.id].label;
+                  const shortLabel = labelText.split(' ')[0];
+                  return (
+                    <button
+                      key={h.id}
+                      onClick={() => {
+                        setActive(h.id);
+                        // Center the clicked button
+                        const btn = document.getElementById(`btn-${h.id}`);
+                        if (btn) {
+                          btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
+                      }}
+                      id={`btn-${h.id}`}
+                      className={`flex-shrink-0 snap-center rounded-full border px-5 py-2.5 text-caption transition-all whitespace-nowrap ${
+                        active === h.id 
+                          ? "border-[var(--accent)] bg-[var(--accent)]/15 text-[var(--ink)] ring-1 ring-[var(--accent)]/30" 
+                          : "border-white/10 bg-white/5 text-[var(--ink-dim)] hover:bg-white/10"
+                      }`}
+                    >
+                      {shortLabel}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {showRightArrow && (
+                <button
+                  onClick={() => scroll("right")}
+                  className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white backdrop-blur-sm border border-white/10"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              )}
             </div>
           </div>
 
