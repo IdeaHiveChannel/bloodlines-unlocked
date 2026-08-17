@@ -120,7 +120,7 @@ export const stringsMl: Record<string, string> = {
 
   "Long-standing knee osteoarthritis pain": "കാലങ്ങളായുള്ള മുട്ടുതേയ്മാന വേദന",
   "Fibroids and pelvic congestion": "ഫൈബ്രോയിഡുകളും പെൽവിക് കൺജഷനും",
-  "Enlarged prostate and urinary symptoms": "പ്രോസ്റ്റേറ്റ് വലുതാകലും മൂത്ര പ്രശ്നങ്ങളും",
+  
   "Failing fistulas and grafts": "പ്രവർത്തനം കുറഞ്ഞ ഫിസ്റ്റുലകളും ഗ്രാഫ്റ്റുകളും",
   "A clot removed within the treatment window. The angiogram before and after is the whole argument for speed.": "ചികിത്സാ സമയപരിധിക്കുള്ളിൽ രക്തക്കട്ട നീക്കം ചെയ്തു. ചികിത്സയ്ക്കു മുൻപും ശേഷവുമുള്ള ആൻജിയോഗ്രാം തന്നെയാണ് വേഗതയുടെ പ്രാധാന്യം തെളിയിക്കുന്നത്.",
   "A liver, kidney or lung tumour is called inoperable.": "കരൾ, വൃക്ക അല്ലെങ്കിൽ ശ്വാസകോശ ട്യൂമർ ശസ്ത്രക്രിയയ്ക്ക് അനുയോജ്യമല്ല (inoperable) എന്ന് പറയപ്പെടുന്നു.",
