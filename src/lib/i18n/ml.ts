@@ -84,7 +84,7 @@ export const ml: ENDictionary = {
         id: "01",
         category: "മസ്തിഷ്കം",
         title: "ബ്രെയിൻ സ്ട്രോക്ക് (Acute ischemic stroke)",
-        patientLanguage: "മസ്തിഷ്കത്തിലെ രക്തക്കുഴലിൽ രക്തക്കട്ട / ബ്ലോക്ക് (Hemiplegia)",
+        patientLanguage: "മസ്തിഷ്കത്തിലെ രക്തക്കുഴലിൽ രക്തക്കട്ട / ബ്ലോക്ക് (Hemiplegia / Blocked brain blood vessels)",
         description: "മസ്തിഷ്കത്തിലെ ഒരു രക്തക്കുഴലിൽ രക്തക്കട്ട അടിഞ്ഞുകൂടി രക്തയോട്ടം തടസ്സപ്പെടുന്നത് സ്ട്രോക്കിന് കാരണമാകും. ശസ്ത്രക്രിയ കൂടാതെ രക്തക്കട്ട നീക്കം ചെയ്യുന്ന മെക്കാനിക്കൽ ത്രോംബെക്ടമി (Mechanical thrombectomy) ചികിത്സ ലഭ്യമാണ്.",
         to: "/diseases/stroke"
       },
@@ -160,7 +160,7 @@ export const ml: ENDictionary = {
         id: "10",
         category: "കരൾ",
         title: "കരളിലെ മുഴകൾ (Liver Tumours)",
-        patientLanguage: "കരളിലെ ക്യാൻസർ (HCC) / ഹെമാഞ്ചിയോമ",
+        patientLanguage: "കരളിലെ ക്യാൻസർ (HCC) / ഹെമാഞ്ചിയോമ (Shrink by injection)",
         description: "കരളിലെ ക്യാൻസർ മുഴകൾക്ക് TACE അല്ലെങ്കിൽ അബ്ലേഷൻ വഴിയും, ഹെമാഞ്ചിയോമ മുഴകൾക്ക് എംബോളൈസേഷൻ വഴിയും ശസ്ത്രക്രിയയില്ലാത്ത ചികിത്സ നൽകാം.",
         to: "/diseases/liver-tumours"
       },
@@ -177,7 +177,7 @@ export const ml: ENDictionary = {
         id: "12",
         category: "പ്രോസ്റ്റേറ്റ്",
         title: "പ്രോസ്റ്റേറ്റ് വീക്കം",
-        patientLanguage: "മൂത്രപ്രശ്നങ്ങൾക്ക് കാരണമാകുന്ന വീക്കം",
+        patientLanguage: "മൂത്രപ്രശ്നങ്ങൾക്ക് കാരണമാകുന്ന വീക്കം (Enlargement)",
         description: "പ്രോസ്റ്റേറ്റ് ഗ്രന്ഥി വലുതാകുന്നത് മൂത്രം ഒഴിക്കാൻ ബുദ്ധിമുട്ട്, ഒഴുക്ക് കുറയുക, ഇടയ്ക്കിടെ മൂത്രമൊഴിക്കുക തുടങ്ങിയ ലക്ഷണങ്ങൾക്ക് കാരണമാകുന്നു.",
         to: "/diseases/enlarged-prostate"
       },
@@ -185,7 +185,7 @@ export const ml: ENDictionary = {
         id: "13",
         category: "മുട്ട്",
         title: "മുട്ടിലെ തേയ്മാനം",
-        patientLanguage: "ആർത്രൈറ്റിസ് മൂലമുള്ള മുട്ടുവേദന",
+        patientLanguage: "ആർത്രൈറ്റിസ് മൂലമുള്ള മുട്ടുവേദന (Knee Pain)",
         description: "മുട്ടിലെ തേയ്മാനം മൂലം കഠിനമായ വേദനയും ചലന ബുദ്ധിമുട്ടും ഉണ്ടാകാം. ശസ്ത്രക്രിയയില്ലാത്ത ഇമേജ്-ഗൈഡഡ് ചികിത്സ ഇതിന് ഫലപ്രദമാണ്.",
         to: "/diseases/knee-osteoarthritis"
       },

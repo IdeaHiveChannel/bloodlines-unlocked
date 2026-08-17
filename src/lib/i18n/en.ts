@@ -82,7 +82,7 @@ export const en = {
         id: "01",
         category: "Brain & cerebral",
         title: "Acute ischemic stroke",
-        patientLanguage: "Blocked blood vessel in the brain",
+        patientLanguage: "Blocked blood vessel in the brain (Hemiplegia / Stroke)",
         description: "A blood clot can block blood flow inside a brain blood vessel and cause a stroke. Selected patients may be treated by removing the clot through a small access point.",
         to: "/diseases/stroke"
       },
@@ -106,7 +106,7 @@ export const en = {
         id: "04",
         category: "Lower limbs",
         title: "Peripheral artery disease",
-        patientLanguage: "Poor blood circulation in the legs",
+        patientLanguage: "Poor blood circulation in the legs (Gangrene / Non-healing ulcer)",
         description: "Narrowed or blocked arteries can reduce blood flow to the legs and cause pain, wounds and other circulation problems.",
         to: "/diseases/poor-blood-circulation"
       },
@@ -122,7 +122,7 @@ export const en = {
         id: "06",
         category: "Veins",
         title: "Varicose veins & Venous ulcer (Clots / blood clots)",
-        patientLanguage: "Swollen veins / Non-healing ulcers / Varicose vein + ulcer",
+        patientLanguage: "Swollen veins / Non-healing ulcers / Varicose vein + ulcer (Clots)",
 
         description: "When the valves in the leg veins do not work properly, blood can pool in the veins and cause varicose veins.",
         to: "/diseases/varicose-veins"
@@ -171,7 +171,7 @@ export const en = {
         id: "12",
         category: "Prostate",
         title: "Enlarged prostate (BPH)",
-        patientLanguage: "Prostate enlargement causing urinary symptoms",
+        patientLanguage: "Prostate enlargement causing urinary symptoms (Enlargement)",
         description: "An enlarged prostate can cause difficulty passing urine, weak urine flow and frequent urination.",
         to: "/diseases/enlarged-prostate"
       },
@@ -179,7 +179,7 @@ export const en = {
         id: "13",
         category: "Knee",
         title: "Knee osteoarthritis",
-        patientLanguage: "Knee pain caused by arthritis",
+        patientLanguage: "Knee pain caused by arthritis (Knee Pain)",
         description: "Osteoarthritis can cause persistent knee pain and stiffness. Selected patients may be considered for image-guided treatment.",
         to: "/diseases/knee-osteoarthritis"
       },
