@@ -3,13 +3,11 @@
 
 export const regionOrder = [
   "brain",
-  "eye",
-  "carotid",
-  "thyroid",
+  "neck",
   "chest",
   "abdomen",
   "liver",
-  "kidney",
+  "kidneys",
   "arms",
   "pelvis",
   "knee",
@@ -20,20 +18,19 @@ export const regionOrder = [
 export type Region = (typeof regionOrder)[number];
 
 export const regionLabels: Record<Region, string> = {
-  brain: "Brain & brain blood vessels",
-  eye: "Eye",
-  carotid: "Neck & carotid arteries",
-  thyroid: "Thyroid",
-  chest: "Chest & aorta",
-  abdomen: "Abdomen & abdominal blood vessels",
+  brain: "Brain",
+  neck: "Neck",
+  chest: "Chest",
+  abdomen: "Abdomen",
   liver: "Liver",
-  kidney: "Kidneys & renal arteries",
-  arms: "Arms & hands",
+  kidneys: "Kidneys",
+  arms: "Arms",
   pelvis: "Pelvis",
   knee: "Knee",
-  legs: "Legs & peripheral blood vessels",
+  legs: "Legs",
   veins: "Veins",
 };
+
 
 export type Condition = {
   slug: string;
@@ -93,7 +90,8 @@ export const conditions: Condition[] = [
   {
     slug: "carotid-artery-disease",
     name: "Carotid artery disease",
-    region: "carotid",
+    region: "neck",
+
     intervention: "Carotid stenting",
     intro:
       "The carotid arteries carry oxygen-rich blood to the brain. When narrowing develops, the risk is silent until the day it isn't. Targeted intervention restores the channel and protects the brain downstream.",
@@ -103,7 +101,8 @@ export const conditions: Condition[] = [
   {
     slug: "carotid-body-tumour",
     name: "Carotid body tumour",
-    region: "carotid",
+    region: "neck",
+
     intervention: "Pre-operative embolisation",
     intro:
       "A carotid body tumour is a highly vascular swelling at the division of the carotid artery in the neck. Embolisation can be used to reduce blood supply before surgery by the appropriate surgical team.",
@@ -113,7 +112,8 @@ export const conditions: Condition[] = [
   {
     slug: "thyroid-nodules",
     name: "Thyroid nodules & goitre",
-    region: "thyroid",
+    region: "neck",
+
     intervention: "Ablation or embolization",
     intro:
       "A benign nodule can press, disfigure and worry without ever being cancer. Heat delivered through a needle shrinks it in place; blocking its artery shrinks a larger goitre. No scar, no thyroid hormone tablets for life.",
@@ -191,7 +191,7 @@ export const conditions: Condition[] = [
   {
     slug: "renal-artery-stenosis",
     name: "Renal artery stenosis",
-    region: "kidney",
+    region: "kidneys",
     intervention: "Renal artery stenting",
     intro:
       "When high blood pressure remains difficult to control despite several medicines, narrowing of the renal artery may sometimes be investigated as a possible cause.",
@@ -438,13 +438,11 @@ export const featuredProcedures = procedures.filter((p) => p.featured);
 /** Procedures offered per anatomical region, shown alongside conditions on the map. */
 export const regionProcedures: Record<Region, string[]> = {
   brain: ["Mechanical thrombectomy", "Aneurysm coiling", "Flow diversion", "AVM embolization"],
-  eye: ["Transvenous embolization", "Balloon-assisted closure"],
-  carotid: ["Carotid stenting", "Angioplasty with protection"],
-  thyroid: ["Radiofrequency / microwave ablation", "Thyroid artery embolization"],
+  neck: ["Carotid stenting", "Angioplasty with protection", "Radiofrequency / microwave ablation", "Thyroid artery embolization"],
   chest: ["EVAR / TEVAR", "Bronchial artery embolization", "Aortic stent grafting"],
   abdomen: ["Visceral aneurysm embolization", "Liver tumour TACE/ablation", "Renal artery stenting"],
   liver: ["TACE", "Microwave ablation", "TIPS", "Portal vein embolization"],
-  kidney: ["Renal artery angioplasty", "Renal tumour ablation", "Renal embolization"],
+  kidneys: ["Renal artery angioplasty", "Renal tumour ablation", "Renal embolization"],
   arms: ["Fistuloplasty", "Declotting", "Central vein recanalisation"],
   pelvis: ["Uterine fibroid embolization", "Prostate artery embolization", "Pelvic vein embolization"],
   knee: ["Genicular artery embolization"],
@@ -452,16 +450,18 @@ export const regionProcedures: Record<Region, string[]> = {
   veins: ["Endovenous laser ablation", "Catheter-directed thrombolysis", "Venous stenting"],
 };
 
+
 /** Region → the pillar guide that best represents it, when one exists. */
 export const regionGuide: Partial<Record<Region, string>> = {
   brain: "stroke",
-  thyroid: "thyroid-nodules",
+  neck: "thyroid-nodules",
   liver: "liver-tumours",
   pelvis: "uterine-fibroids",
   knee: "knee-osteoarthritis",
   legs: "peripheral-arterial-disease",
   veins: "varicose-veins",
 };
+
 
 // ── Professional journey ───────────────────────────────────────────────────
 

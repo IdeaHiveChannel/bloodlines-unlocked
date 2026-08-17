@@ -163,7 +163,27 @@ export const en = {
     whatsapp: "Chat on WhatsApp",
     call: "Call",
   },
+  anatomy: {
+    eyebrow: "Anatomy",
+    h2: "The body, seen through its blood vessels.",
+    description: "From the brain to the feet, explore the blood vessels and the conditions that can affect them.",
+    cta: "Explore conditions →",
+    regions: {
+      brain: { label: "Brain", title: "Brain & blood vessels", conditions: "Stroke · Brain aneurysm · AVM / AVF" },
+      neck: { label: "Neck", title: "Neck & carotid arteries", conditions: "Carotid artery disease · Carotid body tumour" },
+      chest: { label: "Chest", title: "Chest & aorta", conditions: "Aortic aneurysm · Aortic dissection · Coughing up blood · Pulmonary AVM" },
+      abdomen: { label: "Abdomen", title: "Abdominal blood vessels", conditions: "Visceral aneurysm · Gastrointestinal bleeding · Other abdominal vascular conditions" },
+      liver: { label: "Liver", title: "Liver & its blood vessels", conditions: "Liver tumours · Hepatic hemangioma · Portal hypertension" },
+      kidneys: { label: "Kidneys", title: "Kidneys & renal arteries", conditions: "Renal artery stenosis · Kidney tumours · Angiomyolipoma" },
+      arms: { label: "Arms", title: "Arms & blood vessels", conditions: "Dialysis access problems · Central venous problems · Vascular malformations" },
+      pelvis: { label: "Pelvis", title: "Pelvic conditions", conditions: "Uterine fibroids · Pelvic vascular conditions · Enlarged prostate" },
+      knee: { label: "Knee", title: "Knee & surrounding blood vessels", conditions: "Knee osteoarthritis · Chronic knee pain" },
+      legs: { label: "Legs", title: "Legs & peripheral blood vessels", conditions: "Poor blood circulation · Blocked arteries · Diabetic foot · Non-healing wounds · Gangrene" },
+      veins: { label: "Veins", title: "Vein problems", conditions: "Varicose veins · Blood clots · Venous ulcers" }
+    }
+  },
 };
+
 
 
 export type Dictionary = typeof en;
