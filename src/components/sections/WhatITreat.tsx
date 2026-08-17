@@ -56,8 +56,9 @@ export function WhatITreat() {
                     
                     <h3 className={`
                       mt-0 lg:mt-2 font-display font-semibold transition-colors group-hover:text-[var(--accent)]
-                      text-[18px] sm:text-[20px] 
-                      ${isMl ? 'leading-[1.4]' : 'leading-[1.3]'}
+                      text-[18px] sm:text-[20px] lg:text-[22px]
+                      ${isMl ? 'leading-[1.5] py-1' : 'leading-[1.3]'}
+                      break-words hyphens-auto
                     `}>
                       {titleText}
                     </h3>
@@ -75,7 +76,8 @@ export function WhatITreat() {
                     <p className={`
                       hidden lg:block mt-3 text-[var(--ink-dim)]
                       text-[14px] sm:text-[15px]
-                      ${isMl ? 'leading-[1.6]' : 'leading-[1.5]'}
+                      ${isMl ? 'leading-[1.7]' : 'leading-[1.5]'}
+                      line-clamp-4
                     `}>
                       {descText}
                     </p>

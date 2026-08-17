@@ -13,6 +13,7 @@ import { PatientStories } from "../components/sections/PatientStories";
 import { MediaBand } from "../components/sections/MediaBand";
 import { Journey } from "../components/sections/Journey";
 import { Doctor } from "../components/sections/Doctor";
+import { FAQ } from "../components/sections/FAQ";
 import { Consultation } from "../components/sections/Consultation";
 import { Footer } from "../components/sections/Footer";
 
@@ -65,6 +66,7 @@ function Index() {
       <Journey />
       <PatientStories />
       <MediaBand />
+      <FAQ />
       <Consultation />
       <Footer />
     </main>
