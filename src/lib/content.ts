@@ -527,11 +527,12 @@ export const procedures: Procedure[] = [
         "Rerouting blood to healthy deep veins.",
       ],
       recovery: [
-        "Procedure: Day 0 - Discharged and walking",
-        "Day 1: Back to work / routine activity",
-        "1 Week: Normal lifestyle resume",
-        "Follow-up scan at 1 month.",
+        "Procedure: Day 0 - Discharged and walking within an hour.",
+        "Day 1: Back to work / routine activity.",
+        "1 Week: Normal lifestyle resume / walking distance improves.",
+        "1 Month: Follow-up imaging and normal life / ulcers usually close.",
       ],
+
     },
   },
 
