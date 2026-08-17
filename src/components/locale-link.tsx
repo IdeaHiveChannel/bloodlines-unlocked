@@ -1,4 +1,4 @@
-import { useLocalePath } from "../lib/i18n";
+import { useLocalePath } from "../lib/i18n/react";
 import { Link, type LinkComponentProps } from "@tanstack/react-router";
 
 type Props = Omit<LinkComponentProps, "to"> & {
