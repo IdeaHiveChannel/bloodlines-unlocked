@@ -53,26 +53,15 @@ export function Hero() {
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
             <h2 className="text-label">{tx(t.hero.eyebrow)}</h2>
           </div>
-          <h1 className="mt-4 text-display-xxl sm:mt-5 text-balance break-words !whitespace-pre-line">
+          <h1 className="mt-4 text-display-xxl sm:mt-5 text-balance break-words !whitespace-pre-line leading-tight">
             {tx(t.hero.h1)}
           </h1>
           <p className="mt-4 max-w-xl text-h3 text-[color-mix(in_oklab,var(--accent)_75%,white)] sm:mt-5">
             {tx(t.hero.supporting)}
           </p>
-          <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--ink-dim)]">
+          <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block">
             {tx(t.hero.description)}
           </p>
-          <p className="mt-4 text-button text-[var(--accent)] font-medium">
-            {tx(t.hero.conditions)}
-          </p>
-          <div className="mt-6 border-l-2 border-white/10 pl-5">
-             <p className="text-body-lg text-white font-medium italic opacity-90">
-               {tx(t.hero.brandStatement)}
-             </p>
-             <p className="mt-1 text-small text-[var(--ink-dim)]">
-               {tx(t.hero.brandCopy)}
-             </p>
-          </div>
           <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4">
             <LocaleLink to="/diseases" data-cursor="link" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
               {tx(t.hero.primaryCTA)}
