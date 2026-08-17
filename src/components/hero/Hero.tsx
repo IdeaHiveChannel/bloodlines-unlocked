@@ -46,20 +46,20 @@ export function Hero() {
       <Particles />
 
       {/* Content grid */}
-      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-12 sm:pt-28 lg:flex-row lg:items-center lg:gap-10 lg:pt-32">
+      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-20 sm:pt-28 lg:flex-row lg:items-center lg:gap-10 lg:pt-32 lg:pb-12">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
             <h2 className="text-label">{tx(t.hero.eyebrow)}</h2>
           </div>
-          <h1 className="mt-4 text-display-xxl sm:mt-5 text-balance">
+          <h1 className="mt-4 text-display-xxl sm:mt-5 text-balance break-words">
             {tx(t.hero.h1)}
           </h1>
           <p className="mt-4 max-w-xl text-h3 text-[color-mix(in_oklab,var(--accent)_75%,white)] sm:mt-5">
             {tx(t.hero.supporting)}
           </p>
-          <p className="mt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
+          <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--ink-dim)]">
             {tx(t.hero.description)}
           </p>
           <p className="mt-4 text-button text-[var(--accent)] font-medium">
