@@ -373,5 +373,5 @@ export const ml: Dictionary = {
   }
 };
 
-export type MLDictionary = typeof ml;
+export type Dictionary = typeof ml;
 
