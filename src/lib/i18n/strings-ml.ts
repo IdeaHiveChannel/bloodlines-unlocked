@@ -115,7 +115,6 @@ export const stringsMl: Record<string, string> = {
   "Benign thyroid nodules and neck swelling": "അപകടകരമല്ലാത്ത തൈറോയ്ഡ് മുഴകളും കഴുത്തിലെ വീക്കവും",
   "Liver cancer and portal hypertension": "കരൾ അർബുദവും പോർട്ടൽ ഹൈപ്പർടെൻഷനും",
   "Kidney artery narrowing and tumours": "വൃക്കയിലേക്കുള്ള രക്തക്കുഴൽ ചുരുങ്ങൽ, വൃക്കയിലെ മുഴകൾ",
-  "Renal artery narrowing and kidney tumours": "വൃക്കയിലേക്കുള്ള രക്തക്കുഴൽ ചുരുങ്ങൽ, വൃക്കയിലെ മുഴകൾ",
   "Visceral aneurysm": "വിസറൽ അന്യൂറിസം",
   "Aneurysms of internal organ arteries": "ആന്തരിക അവയവ ധമനികളിലെ അന്യൂറിസങ്ങൾ",
 
@@ -166,7 +165,6 @@ export const stringsMl: Record<string, string> = {
   "CT / MR angiography": "സിടി / എംആർ ആൻജിയോഗ്രഫി",
   "CT scan": "സിടി സ്കാൻ",
   "Call": "വിളിക്കുക",
-  "Call Dr. Sagar": "ഡോ. സാഗറിനെ വിളിക്കുക",
   "Carotid": "കരോട്ടിഡ്",
   "Case and technique presentations at national interventional and radiology conferences.": "ദേശീയ ഇന്റർവെൻഷണൽ, റേഡിയോളജി സമ്മേളനങ്ങളിൽ കേസുകളും ചികിത്സാരീതികളും അവതരിപ്പിക്കുന്നു.",
   "Catalogue": "കാറ്റലോഗ്",

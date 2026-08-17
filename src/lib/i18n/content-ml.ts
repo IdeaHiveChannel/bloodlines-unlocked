@@ -19,11 +19,11 @@ export const pillarNamesMl: Record<string, { name: string; title: string }> = {
   "thyroid-nodules": { name: "തൈറോയ്ഡ് മുഴകൾ", title: "തൈറോയ്ഡ് മുഴകളും കഴുത്തിലെ വീക്കവും" },
   "uterine-fibroids": { name: "ഗർഭാശയ ഫൈബ്രോയിഡ്", title: "ഗർഭാശയത്തിലെ ഫൈബ്രോയിഡ് മുഴകൾ" },
   "varicose-veins": { name: "വെരിക്കോസ് വെയിൻ", title: "വെരിക്കോസ് വെയിൻ (ഞരമ്പു വീക്കം)" },
-  "hemoptysis": "രക്തം ചുമയ്ക്കൽ (Hemoptysis)",
-  "pulmonary-avm": "ശ്വാസകോശത്തിലെ രക്തക്കുഴൽ തകരാർ",
-  "hepatic-hemangioma": "കരളിലെ രക്തക്കുഴൽ മുഴ (Hemangioma)",
-  "angiomyolipoma": "വൃക്കയിലെ മുഴ (Angiomyolipoma)",
-  "carotid-body-tumour": "കഴുത്തിലെ മുഴ (Carotid Body Tumour)",
+  "hemoptysis": { name: "രക്തം ചുമയ്ക്കൽ", title: "രക്തം ചുമയ്ക്കൽ (Hemoptysis)" },
+  "pulmonary-avm": { name: "ശ്വാസകോശത്തിലെ രക്തക്കുഴൽ തകരാർ", title: "ശ്വാസകോശത്തിലെ രക്തക്കുഴൽ തകരാർ (Pulmonary AVM)" },
+  "hepatic-hemangioma": { name: "കരളിലെ ഹേമാഞ്ചിയോമ", title: "കരളിലെ രക്തക്കുഴൽ മുഴ (Hemangioma)" },
+  "angiomyolipoma": { name: "വൃക്കയിലെ മുഴ", title: "വൃക്കയിലെ മുഴ (Angiomyolipoma)" },
+  "carotid-body-tumour": { name: "കഴുത്തിലെ മുഴ", title: "കഴുത്തിലെ മുഴ (Carotid Body Tumour)" },
 };
 
 export const conditionNamesMl: Record<string, string> = {
