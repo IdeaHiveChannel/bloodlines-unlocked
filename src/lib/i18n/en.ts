@@ -82,7 +82,7 @@ export const en = {
         id: "01",
         category: "Brain & cerebral",
         title: "Acute ischemic stroke",
-        patientLanguage: "Blocked blood vessel in the brain",
+        patientLanguage: "Blocked blood vessel in the brain (Hemiplegia / Stroke)",
         description: "A blood clot can block blood flow inside a brain blood vessel and cause a stroke. Selected patients may be treated by removing the clot through a small access point.",
         to: "/diseases/stroke"
       },
@@ -106,7 +106,7 @@ export const en = {
         id: "04",
         category: "Lower limbs",
         title: "Peripheral artery disease",
-        patientLanguage: "Poor blood circulation in the legs",
+        patientLanguage: "Poor blood circulation in the legs (Gangrene / Non-healing ulcer)",
         description: "Narrowed or blocked arteries can reduce blood flow to the legs and cause pain, wounds and other circulation problems.",
         to: "/diseases/poor-blood-circulation"
       },
@@ -121,8 +121,9 @@ export const en = {
       {
         id: "06",
         category: "Veins",
-        title: "Varicose veins",
-        patientLanguage: "Swollen and enlarged veins in the legs",
+        title: "Varicose veins & Venous ulcer (Clots / blood clots)",
+        patientLanguage: "Swollen veins / Non-healing ulcers / Varicose vein + ulcer (Clots)",
+
         description: "When the valves in the leg veins do not work properly, blood can pool in the veins and cause varicose veins.",
         to: "/diseases/varicose-veins"
       },
@@ -138,7 +139,7 @@ export const en = {
         id: "08",
         category: "Thyroid",
         title: "Thyroid nodules & goitre",
-        patientLanguage: "Thyroid lumps and swelling",
+        patientLanguage: "Thyroid lumps and swelling (Swelling)",
         description: "Selected benign thyroid nodules and thyroid swellings can be treated using image-guided ablation.",
         to: "/diseases/thyroid-nodules"
       },
@@ -146,7 +147,7 @@ export const en = {
         id: "09",
         category: "Kidney",
         title: "Renal artery stenosis",
-        patientLanguage: "Narrowing of the blood vessel supplying the kidney",
+        patientLanguage: "Narrowing of the kidney vessel (High Blood Pressure / 3+ Medications)",
         description: "Narrowing of a renal artery can affect blood flow to the kidney and may be associated with difficult-to-control blood pressure.",
         to: "/diseases/poor-blood-circulation"
       },
@@ -154,7 +155,7 @@ export const en = {
         id: "10",
         category: "Liver",
         title: "Hepatocellular carcinoma",
-        patientLanguage: "A type of liver cancer",
+        patientLanguage: "Liver cancer (HCC) / Hemangioma (Shrink by injection)",
         description: "Selected liver tumours can be treated using image-guided procedures.",
         to: "/diseases/liver-tumours"
       },
@@ -162,7 +163,7 @@ export const en = {
         id: "11",
         category: "Pelvis",
         title: "Uterine fibroids",
-        patientLanguage: "Non-cancerous growths in the uterus",
+        patientLanguage: "Uterine fibroids / Heavy bleeding / Pelvic pain",
         description: "Fibroids can cause heavy bleeding, pressure and pelvic discomfort. Selected fibroids can be treated through their blood supply.",
         to: "/diseases/uterine-fibroids"
       },
@@ -170,7 +171,7 @@ export const en = {
         id: "12",
         category: "Prostate",
         title: "Enlarged prostate (BPH)",
-        patientLanguage: "Prostate enlargement causing urinary symptoms",
+        patientLanguage: "Prostate enlargement causing urinary symptoms (Enlargement)",
         description: "An enlarged prostate can cause difficulty passing urine, weak urine flow and frequent urination.",
         to: "/diseases/enlarged-prostate"
       },
@@ -178,7 +179,7 @@ export const en = {
         id: "13",
         category: "Knee",
         title: "Knee osteoarthritis",
-        patientLanguage: "Knee pain caused by arthritis",
+        patientLanguage: "Knee pain caused by arthritis (Knee Pain)",
         description: "Osteoarthritis can cause persistent knee pain and stiffness. Selected patients may be considered for image-guided treatment.",
         to: "/diseases/knee-osteoarthritis"
       },
@@ -275,7 +276,7 @@ export const en = {
         questions: [
           {
             q: "Can kidney artery blockage cause high blood pressure?",
-            a: "Yes. Renal artery stenosis (narrowing of the kidney's blood supply) can lead to 'renovascular hypertension,' which is often difficult to control with standard medications."
+            a: "Yes. Renal artery stenosis (narrowing of the kidney's blood supply) can lead to 'renovascular hypertension.' When blood pressure remains high despite three or more medications, kidney blood-vessel narrowing is suspected."
           },
           {
             q: "How is renal artery stenosis treated?",
@@ -333,10 +334,12 @@ export const en = {
             "A stent is placed to keep the artery open if needed."
           ],
           recovery: [
-            "Bed rest for a few hours after the procedure.",
-            "Most patients go home the same or next day.",
-            "Resume light activities in 2-3 days.",
-            "Avoid heavy lifting for a week."
+            "Procedure: Day 0 - Artery opened; walking and discharge within hours.",
+            "Day 1: Resume normal light activity. Puncture site check.",
+
+            "1 Week: Light activity and routine lifestyle resume.",
+            "1 Month: Follow-up imaging and normal life."
+
           ]
         }
       },
@@ -345,12 +348,12 @@ export const en = {
         name: "Mechanical thrombectomy",
         oneLiner: "Removing a clot before brain tissue is lost.",
         beats: [
-          "A clot has stopped flow inside a brain blood vessel. Downstream, brain tissue is on a clock.",
-          "A stent retriever is opened inside the clot and positioned to capture it.",
-          "The clot is captured within the retriever.",
-          "A catheter removes the clot as the retriever is withdrawn.",
-          "The clot leaves the body. Blood flow is restored.",
-          "Brain function can recover where tissue remains viable."
+          "Imaging identifies the blocked brain vessel (Clot shown).",
+          "A stent retriever is guided to the site of the clot.",
+          "The retriever is deployed to capture the clot.",
+          "The clot is safely removed from the brain.",
+          "Angiography confirms restored blood flow."
+
         ],
         info: {
           symptoms: [
@@ -378,10 +381,11 @@ export const en = {
             "Immediate restoration of blood flow."
           ],
           recovery: [
-            "Close monitoring in a stroke unit.",
-            "Blood pressure management.",
-            "Early rehabilitation (physiotherapy, speech therapy).",
-            "Long-term medication to prevent new clots."
+            "Procedure: Day 0 - Clot removed; monitored in ICU.",
+            "Day 1-3: Discharged from ICU; brain reperfused.",
+            "1 Month: Early rehabilitation and follow-up.",
+            "3 Months: Long-term recovery and stroke prevention."
+
           ]
         }
       },
@@ -390,12 +394,12 @@ export const en = {
         name: "Endovascular aneurysm repair",
         oneLiner: "Excluding the aneurysm from circulation.",
         beats: [
-          "A weakened aortic wall has begun to balloon under pressure.",
-          "Through groin access, a stent-graft is delivered inside the blood vessel.",
-          "The graft unfolds and anchors above and below the aneurysm.",
-          "Blood now flows through the reinforced graft rather than the weakened wall.",
-          "A completion angiogram checks the result.",
-          "Recovery is measured in days rather than weeks in suitable cases."
+          "Aneurysm and blood pressure inside the sac shown (Aneurysm sac).",
+          "A stent-graft is delivered to the site of the aneurysm.",
+          "The graft is deployed, excluding the aneurysm sac.",
+          "Blood now flows through the graft, bypassing the weak wall.",
+          "Restored flow and sealed aneurysm confirmed."
+
         ],
         info: {
           symptoms: [
@@ -422,10 +426,11 @@ export const en = {
             "The aneurysm sac is excluded from high-pressure flow."
           ],
           recovery: [
-            "1-2 days in the hospital.",
-            "Light walking encouraged early.",
-            "Avoid heavy activity for 4 weeks.",
-            "Periodic follow-up scans are essential."
+            "Procedure: Day 0 - Stent-graft delivered inside vessel. Monitored hospital stay.",
+            "Day 1: Discharged and light activity.",
+            "1 Month: Follow-up imaging and normal life.",
+            "3 Months: Long-term graft surveillance."
+
           ]
         }
       },
@@ -434,12 +439,13 @@ export const en = {
         name: "Endovenous laser ablation",
         oneLiner: "Closing a failing vein from within.",
         beats: [
-          "A vein's one-way valves no longer hold. Blood falls back down the leg.",
-          "Under ultrasound, a thin laser fibre is passed inside the faulty vein.",
-          "Laser energy is delivered along the vein as the fibre is withdrawn.",
-          "The vein collapses and seals behind it.",
-          "Healthy deep veins take over the blood flow.",
-          "The patient walks soon after the procedure."
+          "Ultrasound identifies the failing vein (Varicose vein + ulcer).",
+          "A laser fiber is guided into the vein under ultrasound.",
+          "Laser energy closes the diseased vein from within.",
+          "Blood is rerouted to healthy deep veins.",
+          "The venous ulcer begins to heal immediately.",
+
+
         ],
         info: {
           symptoms: [
@@ -478,11 +484,13 @@ export const en = {
         name: "TACE — chemoembolization",
         oneLiner: "Delivering chemotherapy into a tumour's own artery.",
         beats: [
-          "A liver tumour is fed by its own feeding artery.",
-          "A microcatheter is navigated into that feeding branch.",
-          "Drug-eluting beads are released directly into the tumour bed.",
-          "The tumour blood supply is reduced by embolization.",
-          "The tumour blush fades as its supply is cut off."
+          "Angiography identifies the liver tumour and its feeding artery.",
+          "A microcatheter is precisely navigated into the feeding branch.",
+          "Drug-eluting beads (treatment) are released directly into the tumour bed.",
+          "The tumour blood supply is cut off by embolization.",
+          "The tumour shrinks as the treatment takes effect.",
+
+
         ],
         info: {
           symptoms: [
@@ -519,11 +527,13 @@ export const en = {
         name: "Microwave ablation",
         oneLiner: "Destroying a tumour with heat, through a needle.",
         beats: [
-          "The tumour is located precisely using CT or ultrasound.",
-          "A needle-antenna is guided through the skin into the tumour centre.",
-          "Microwave energy raises the temperature inside the tumour ('burning').",
-          "The treatment zone expands to cover the tumour and its margins.",
-          "The tumour cells are destroyed ('charged') through a single puncture."
+          "Imaging identifies the liver tumour and its exact location.",
+          "A needle-antenna is guided into the tumour center.",
+          "Microwave energy raises the temperature inside the tumour.",
+          "Heat destroys the tumour in its place.",
+
+          "The tumour is successfully treated through a single puncture."
+
         ],
         info: {
           symptoms: [
@@ -559,11 +569,13 @@ export const en = {
         name: "Cerebral aneurysm coiling",
         oneLiner: "Packing an aneurysm until blood no longer enters it.",
         beats: [
-          "An aneurysm sac fills with every heartbeat.",
-          "A microcatheter is parked at the neck of the sac.",
-          "Soft platinum coils are delivered one by one into the dome.",
-          "The sac packs densely; flow at the neck slows and stops.",
-          "The aneurysm is excluded from the circulation."
+          "The cerebral aneurysm fills under pressure.",
+          "A microcatheter is navigated to the neck of the sac.",
+          "Soft platinum coils are packed into the aneurysm.",
+          "Blood can no longer enter the sac.",
+          "The treatment is completed through a single puncture.",
+
+
         ],
         info: {
           symptoms: [
@@ -673,10 +685,11 @@ export const en = {
             "Reducing inflammation and pain signals."
           ],
           recovery: [
-            "Walking soon after the procedure.",
-            "Most patients go home the same day.",
-            "Pain relief usually begins within 1-2 weeks.",
-            "Minimal recovery time compared to joint replacement."
+            "Procedure: Day 0 - Walking soon after the procedure. Most patients go home the same day.",
+            "Day 1: Routine normal lifestyle resume.",
+            "2 Weeks: Significant pain reduction.",
+            "1 Month: Follow-up and activity monitoring."
+
           ]
         }
       },
@@ -800,11 +813,12 @@ export const en = {
             "The procedure is performed under local anaesthesia."
           ],
           recovery: [
-            "Most patients go home the same day.",
-            "Minimal discomfort, managed with simple pain relief.",
-            "Gradual improvement in symptoms over 1-3 months.",
-            "No risk of urinary incontinence or sexual dysfunction."
+            "Procedure: Day 0 - Most patients go home the same day. Minimal discomfort.",
+            "Day 1: Routine normal lifestyle resume.",
+            "1 Month: Gradual symptom improvement starts.",
+            "3 Months: Significant relief and quality of life improvement."
           ]
+
         }
       },
       {

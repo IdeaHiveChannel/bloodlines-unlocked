@@ -157,7 +157,7 @@ export const conditions: Condition[] = [
   {
     slug: "hepatic-hemangioma",
     name: "Hepatic hemangioma",
-    region: "abdomen",
+    region: "liver",
     intervention: "Embolization",
     intro:
       "A benign swelling made up of blood vessels, not cancer. Targeted embolization with medicine through a small catheter can shrink the hemangioma without surgery.",
@@ -165,26 +165,29 @@ export const conditions: Condition[] = [
     treatments: ["Injection / Embolization to shrink hemangioma"],
   },
 
+
   {
     slug: "angiomyolipoma",
     name: "Angiomyolipoma (AML)",
-    region: "abdomen",
+    region: "kidneys",
     intervention: "Embolization",
     intro:
       "A kidney tumour that is not cancerous but has a substantial blood-vessel component. Embolisation is performed to reduce the risk of bleeding or rupture.",
     symptoms: ["Flank pain", "Blood in urine", "Incidental kidney mass"],
     treatments: ["Embolization to reduce bleeding risk", "Pre-operative embolisation"],
   },
+
   {
     slug: "renal-cell-carcinoma",
     name: "Renal cell carcinoma",
-    region: "abdomen",
+    region: "kidneys",
     intervention: "Pre-operative embolisation",
     intro:
       "A vascular kidney cancer. Embolisation can be performed before surgery to reduce blood supply and facilitate safer tumour removal.",
     symptoms: ["Blood in urine", "Flank pain", "Weight loss"],
     treatments: ["Pre-operative tumour embolisation", "Tumour ablation"],
   },
+
   {
     slug: "gastrointestinal-bleeding",
     name: "Gastrointestinal bleeding",
@@ -278,12 +281,13 @@ export const conditions: Condition[] = [
   },
   {
     slug: "peripheral-avm",
-    name: "Peripheral AVM",
+    name: "Peripheral AVM / Vascular malformation",
     region: "arms",
-    intervention: "Embolization",
+    intervention: "Embolization & sclerotherapy",
     intro:
-      "Vascular malformations that occur in extremities like arms or hands. Embolization closes the abnormal vessels without needing major surgery.",
-    symptoms: ["Swelling", "Pulsating mass", "Vascular malformation"],
+      "Vascular malformations that occur in extremities like arms, hands, or around the eye. Targeted treatment closes the abnormal vessels without needing major surgery.",
+    symptoms: ["Swelling", "Pulsating mass", "Vascular malformation", "Arm/Hand vascular problems", "Around the eye swelling"],
+
     treatments: ["Sclerotherapy", "Embolization"],
   },
   {
@@ -306,8 +310,8 @@ export const conditions: Condition[] = [
     intervention: "Laser ablation",
     intro:
       "Failing vein valves cause blood to pool, leading to bulging veins and ulcers. Closing the vein allows the ulcer to shrink and heal.",
-    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcer", "Clots / blood clots"],
-    treatments: ["Endovenous laser ablation", "Ultrasound-guided ablation"],
+    symptoms: ["Bulging veins", "Leg swelling", "Venous ulcer", "Clots / blood clots", "Varicose vein + ulcer"],
+    treatments: ["Endovenous laser ablation", "Ultrasound-guided ablation", "Ultrasound guidance element"],
   },
 
 ];
@@ -349,12 +353,12 @@ export const procedures: Procedure[] = [
     storyboard: "angioplasty",
     featured: true,
     beats: [
-      "Show the narrowed artery with plaque buildup.",
-      "The guidewire crosses the narrowing — the hardest millimetres of the case.",
-      "The balloon is introduced and expanded to open the channel.",
-      "Plaque is compressed as the balloon opens the artery.",
-      "The stent is deployed and holds the artery open.",
-      "Blood flow is fully restored.",
+      "Angiography identifies the narrowed artery (Narrowed artery).",
+      "A guidewire is carefully crossed through the narrowing.",
+      "A balloon is inflated to open the vessel.",
+      "A stent is placed to keep the channel open.",
+      "Restored blood flow is confirmed on angiography.",
+
     ],
     info: {
       symptoms: [
@@ -384,11 +388,13 @@ export const procedures: Procedure[] = [
         "A stent is placed to keep the artery open if needed.",
       ],
       recovery: [
-        "Procedure: Day 0 - Hospital admission",
-        "Day 1: Discharged and walking",
-        "1 Week: Light activity and routine lifestyle resume",
-        "1 Month: Follow-up imaging and normal life",
+      "Procedure: Day 0 - Artery opened; walking and discharge within hours.",
+      "Day 1: Resume normal light activity. Puncture site check.",
+
+        "1 Week: Light activity and routine lifestyle resume.",
+        "1 Month: Follow-up imaging and normal life.",
       ],
+
 
     },
   },
@@ -399,12 +405,12 @@ export const procedures: Procedure[] = [
     storyboard: "thrombectomy",
     featured: true,
     beats: [
-      "A clot has stopped blood flow inside a brain blood vessel. Downstream, brain tissue is on a clock.",
-      "A stent retriever is opened inside the clot and positioned to capture it.",
-      "The clot is captured within the retriever.",
-      "A catheter removes the clot as the retriever is withdrawn.",
-      "The clot leaves the body. Blood flow is restored.",
-      "Brain function can recover where tissue remains viable.",
+      "Imaging confirms a clot blocking a brain artery (Clot shown).",
+      "A stent retriever is navigated and opened within the clot.",
+      "The retriever captures the clot.",
+      "The clot is safely removed from the brain.",
+      "Restored blood flow is confirmed on angiography.",
+
     ],
 
     info: {
@@ -433,10 +439,11 @@ export const procedures: Procedure[] = [
         "Immediate restoration of blood flow.",
       ],
       recovery: [
-        "Procedure: Day 0 - Intensive monitoring",
-        "Day 1-3: Blood pressure management and assessment",
-        "1 Month: Early rehabilitation and follow-up",
-        "3 Months: Long-term recovery and stroke prevention",
+        "Procedure: Day 0 - Clot removed; monitored in ICU.",
+        "Day 1-3: Discharged from ICU; brain reperfused.",
+        "1 Month: Early rehabilitation and follow-up.",
+        "3 Months: Long-term recovery and stroke prevention.",
+
       ],
 
     },
@@ -448,12 +455,12 @@ export const procedures: Procedure[] = [
     storyboard: "evar",
     featured: true,
     beats: [
-      "A weakened aortic wall has begun to balloon under pressure.",
-      "Through groin access, a stent-graft is delivered folded inside a sheath.",
-      "The graft unfolds, anchoring above and below the aneurysm.",
-      "Blood now flows through reinforced fabric, not the diseased wall.",
-      "A completion angiogram confirms there is no endoleak.",
-      "Recovery is measured in days, not weeks.",
+      "Aneurysm and blood pressure inside the sac shown (Aneurysm sac).",
+      "A stent-graft is delivered to the site of the aneurysm.",
+      "The graft is deployed, excluding the aneurysm sac.",
+      "Blood now flows through the graft, bypassing the weak wall.",
+      "Restored flow and sealed aneurysm confirmed.",
+
     ],
     info: {
       symptoms: [
@@ -480,10 +487,12 @@ export const procedures: Procedure[] = [
         "The aneurysm sac is excluded from high-pressure flow.",
       ],
       recovery: [
-        "Procedure: Day 0 - Monitored hospital stay",
-        "Day 1: Discharged and light activity",
-        "1 Month: Follow-up imaging and normal life",
-        "3 Months: Long-term graft surveillance",
+        "Procedure: Day 0 - Stent-graft delivered inside vessel. Walking same day.",
+        "Day 1: Discharged and light activity.",
+
+        "1 Month: Follow-up imaging and normal life.",
+        "3 Months: Long-term graft surveillance.",
+
       ],
 
     },
@@ -495,12 +504,13 @@ export const procedures: Procedure[] = [
     storyboard: "laser",
     featured: true,
     beats: [
-      "Faulty vein and abnormal flow lead to a venous ulcer.",
-      "Under ultrasound guidance, a laser fibre is passed inside.",
-      "Treatment is delivered as the fibre is withdrawn.",
-      "The vein shrinks and closes, rerouting blood flow.",
-      "Healthy circulation is restored to the leg.",
-      "The ulcer gradually shrinks and heals after treatment.",
+      "Ultrasound identifies the failing vein (Varicose vein + ulcer).",
+      "A laser fiber is guided into the vein under ultrasound.",
+      "Laser energy closes the diseased vein from within.",
+      "Blood is rerouted to healthy deep veins.",
+      "The venous ulcer begins to heal immediately.",
+
+
     ],
     info: {
       symptoms: [
@@ -527,11 +537,12 @@ export const procedures: Procedure[] = [
         "Rerouting blood to healthy deep veins.",
       ],
       recovery: [
-        "Procedure: Day 0 - Discharged and walking",
-        "Day 1: Back to work / routine activity",
-        "1 Week: Normal lifestyle resume",
-        "Follow-up scan at 1 month.",
+        "Procedure: Day 0 - Discharged and walking within an hour.",
+        "Day 1: Back to work / routine activity.",
+        "1 Week: Normal lifestyle resume / walking distance improves.",
+        "1 Month: Follow-up imaging and normal life / ulcers usually close.",
       ],
+
     },
   },
 
@@ -543,11 +554,12 @@ export const procedures: Procedure[] = [
     storyboard: "tace",
     featured: true,
     beats: [
-      "A liver tumour is fed by its own feeding artery.",
-      "A microcatheter is navigated into that feeding branch.",
-      "Drug-eluting beads are released directly into the tumour bed.",
-      "The tumour blood supply is reduced by embolization.",
-      "The tumour blush fades as its supply is cut off.",
+      "Angiography identifies the liver tumour and its feeding artery.",
+      "A microcatheter is precisely navigated into the feeding branch.",
+      "Drug-eluting beads (treatment) are released directly into the tumour bed.",
+      "The tumour blood supply is cut off by embolization.",
+      "The tumour shrinks as the treatment takes effect.",
+
     ],
     info: {
       symptoms: [
@@ -573,10 +585,12 @@ export const procedures: Procedure[] = [
         "Blocking the artery to trap the drug in the tumour.",
       ],
       recovery: [
-        "Overnight stay in the hospital.",
-        "Management of 'post-embolization syndrome' (fever, pain).",
-        "Follow-up scan at 1 month to assess response.",
+        "Procedure: Day 0 - Selective navigation and treatment. Overnight admission for monitoring.",
+        "Day 1-5: Discharged from hospital. Post-embolization syndrome managed.",
+        "1 Month: Follow-up imaging (CT/MRI) and normal life resumes.",
+        "3 Months: Decision on further treatment based on imaging surveillance.",
       ],
+
     },
   },
   {
@@ -586,11 +600,13 @@ export const procedures: Procedure[] = [
     storyboard: "ablation",
     featured: true,
     beats: [
-      "The tumour is located precisely on CT or ultrasound.",
-      "A needle-antenna is guided through the skin into the tumour centre.",
-      "Microwave energy raises the temperature inside the tumour ('burning').",
-      "The treatment zone expands to cover the tumour and its margins.",
-      "The tumour cells are destroyed ('charged') through a single puncture.",
+      "Imaging identifies the liver tumour and its exact location.",
+      "A needle-antenna is guided into the tumour center.",
+      "Microwave energy raises the temperature inside the tumour.",
+      "Heat destroys the tumour in its place.",
+      "The tumour is successfully treated through a single puncture.",
+
+
     ],
     info: {
       symptoms: [
@@ -614,11 +630,12 @@ export const procedures: Procedure[] = [
         "Targeted destruction sparing healthy tissue.",
       ],
       recovery: [
-        "Short hospital stay (often day-case).",
-        "Minimal discomfort, managed with simple pain relief.",
-        "Rapid return to normal activities.",
-        "Surveillance scans to ensure total destruction.",
+        "Procedure: Day 0 - Device enters tumour; heat destruction. Overnight stay or day-case.",
+        "Day 1: Discharged and routine normal lifestyle resume.",
+        "1 Month: Follow-up imaging and normal life.",
+        "3 Months: Decision on further treatment based on imaging surveillance.",
       ],
+
     },
   },
   {
@@ -627,11 +644,13 @@ export const procedures: Procedure[] = [
     oneLiner: "Packing an aneurysm until blood no longer enters it.",
     storyboard: "coiling",
     beats: [
-      "An aneurysm sac fills with every heartbeat.",
-      "A microcatheter is parked at the neck of the sac.",
-      "Soft platinum coils are delivered one by one into the dome.",
-      "The sac packs densely; flow at the neck slows and stops.",
-      "The aneurysm is excluded from the circulation.",
+      "The cerebral aneurysm fills under pressure.",
+      "A microcatheter is navigated to the neck of the sac.",
+      "Soft platinum coils are packed into the aneurysm.",
+      "Blood can no longer enter the sac.",
+      "The treatment is completed through a single puncture.",
+
+
     ],
     info: {
       symptoms: [
@@ -659,11 +678,12 @@ export const procedures: Procedure[] = [
         "Promoting blood to clot and seal the aneurysm.",
       ],
       recovery: [
-        "24-48 hours in ICU for observation.",
-        "Regular neurological checks.",
-        "Gradual return to activity over 1-2 weeks.",
-        "Long-term imaging follow-up.",
+        "Procedure: Day 0 - Sac packed with coils. 24-48 hours in ICU for observation.",
+        "Day 1-3: Discharged from ICU. Regular neurological checks.",
+        "1-2 Weeks: Gradual return to light activity and routine lifestyle resume.",
+        "1 Month: Follow-up imaging and normal life.",
       ],
+
     },
   },
   {
@@ -683,7 +703,12 @@ export const procedures: Procedure[] = [
       causes: ["Benign nodules", "Goitre"],
       diagnosis: ["Ultrasound", "Biopsy"],
       treatment: ["Radiofrequency ablation", "Microwave ablation"],
-      recovery: ["Discharged same day", "No scar", "Return to normal activity next day"],
+      recovery: [
+        "Procedure: Day 0 - Discharged same day. No scar.",
+        "Day 1: Light activity and routine normal lifestyle resume.",
+        "1 Month: Follow-up imaging and normal life.",
+      ],
+
     },
   },
   {
@@ -724,7 +749,12 @@ export const procedures: Procedure[] = [
       causes: ["Stenosis", "Clot"],
       diagnosis: ["Physical exam (thrill)", "Ultrasound"],
       treatment: ["Angioplasty", "Stenting"],
-      recovery: ["Immediate use for dialysis often possible", "Light activity same day"],
+      recovery: [
+        "Procedure: Day 0 - High-pressure balloon inflation. Light activity same day.",
+        "Day 1: Discharged and back to work. Immediate use for dialysis often possible.",
+        "1 Week: Routine normal lifestyle resume.",
+      ],
+
     },
   },
 
@@ -745,7 +775,12 @@ export const procedures: Procedure[] = [
       causes: ["Liver cirrhosis", "Portal hypertension"],
       diagnosis: ["Ultrasound", "CT", "Endoscopy"],
       treatment: ["Transjugular Intrahepatic Portosystemic Shunt"],
-      recovery: ["Hospital stay 2-3 days", "Monitoring for encephalopathy", "Follow-up ultrasound"],
+      recovery: [
+        "Procedure: Day 0 - Tract created; portal pressure falls. Hospital stay 2-3 days.",
+        "Day 1: Monitoring for encephalopathy. Early walking encouraged.",
+        "1 Month: Follow-up ultrasound and normal life.",
+      ],
+
     },
   },
   {
@@ -765,7 +800,13 @@ export const procedures: Procedure[] = [
       causes: ["Benign Prostatic Hyperplasia (BPH)"],
       diagnosis: ["PSA test", "Ultrasound", "Uroflowmetry"],
       treatment: ["Prostate artery embolization"],
-      recovery: ["Same day or overnight stay", "Return to work in 2-3 days", "Symptoms improve over 1-3 months"],
+      recovery: [
+        "Procedure: Day 0 -Wrist or groin puncture; particles released. Same day or overnight stay.",
+        "Day 1: Discharged and light activity.",
+        "1 Week: Return to work / routine activity.",
+        "1-3 Months: Symptoms improve; follow-up imaging and normal life.",
+      ],
+
     },
   },
   {
@@ -785,7 +826,13 @@ export const procedures: Procedure[] = [
       causes: ["Uterine fibroids"],
       diagnosis: ["Ultrasound", "MRI"],
       treatment: ["Uterine fibroid embolization"],
-      recovery: ["Overnight stay", "1 week recovery at home", "Significant symptom relief by 3 months"],
+      recovery: [
+        "Procedure: Day 0 - Particles cut off fibroid supply. Overnight stay.",
+        "Day 1: Discharged and light activity.",
+        "1 Week: Recovery at home / routine activity.",
+        "3 Months: Significant symptom relief; follow-up imaging and normal life.",
+      ],
+
     },
   },
 ];
@@ -800,7 +847,7 @@ export const regionProcedures: Record<Region, string[]> = {
   brain: ["Mechanical thrombectomy", "Aneurysm coiling", "Flow diversion", "AVM embolization"],
   neck: ["Carotid stenting", "Angioplasty with protection", "Radiofrequency / microwave ablation", "Thyroid artery embolization"],
   chest: ["EVAR / TEVAR", "Bronchial artery embolization", "Aortic stent grafting"],
-  abdomen: ["Visceral aneurysm embolization", "Liver tumour TACE/ablation", "Renal artery stenting"],
+  abdomen: ["Visceral aneurysm embolization", "Liver tumour TACE/ablation", "Renal artery stenting", "Gastrointestinal bleeding treatment"],
   liver: ["TACE", "Microwave ablation", "TIPS", "Portal vein embolization"],
   kidneys: ["Renal artery angioplasty", "Renal tumour ablation", "Renal embolization"],
   arms: ["Fistuloplasty", "Declotting", "Central vein recanalisation"],
@@ -957,7 +1004,7 @@ export const resources: Resource[] = [
     id: "video-thrombectomy",
     kind: "Video",
     title: "Mechanical thrombectomy, animated",
-    text: "How a clot in a brain artery is captured and withdrawn through a single puncture.",
+    text: "How a clot in a brain artery is captured and withdrawn through a single puncture. Real patient imaging included.",
     related: ["acute-ischemic-stroke"],
     procedure: "thrombectomy",
   },
@@ -965,7 +1012,7 @@ export const resources: Resource[] = [
     id: "video-aneurysm-coiling",
     kind: "Video",
     title: "Cerebral aneurysm coiling, animated",
-    text: "The aneurysm sac is packed from inside the vessel until flow no longer enters it.",
+    text: "The aneurysm sac is packed from inside the vessel until flow no longer enters it. Real angiography videos available.",
     related: ["cerebral-aneurysm"],
     procedure: "aneurysm-coiling",
   },
@@ -1031,7 +1078,8 @@ export const resources: Resource[] = [
     id: "faq-second-opinion",
     kind: "FAQ",
     title: "Can I get a second opinion on my scans?",
-    text: "Yes. Share your CT, MRI or angiography reports and they will be reviewed before any recommendation is made.",
+    text: "Yes. Share your CT, MRI or angiography reports and real clinical images/videos, and they will be reviewed before any recommendation is made.",
+
     related: [],
   },
   {
