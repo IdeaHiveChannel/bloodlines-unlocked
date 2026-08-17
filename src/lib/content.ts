@@ -397,13 +397,14 @@ export const procedures: Procedure[] = [
     storyboard: "thrombectomy",
     featured: true,
     beats: [
-      "A clot has stopped flow inside a vessel. Downstream, tissue is on a clock.",
-      "A stent retriever is opened inside the clot and left to grip it.",
-      "The clot is captured within the struts of the retriever.",
-      "A large-bore catheter aspirates as the retriever is withdrawn.",
-      "The clot leaves the body. Reperfusion is immediate.",
-      "Function returns where it can.",
+      "A clot has stopped blood flow inside a brain blood vessel. Downstream, brain tissue is on a clock.",
+      "A stent retriever is opened inside the clot and positioned to capture it.",
+      "The clot is captured within the retriever.",
+      "A catheter removes the clot as the retriever is withdrawn.",
+      "The clot leaves the body. Blood flow is restored.",
+      "Brain function can recover where tissue remains viable.",
     ],
+
     info: {
       symptoms: [
         "Sudden numbness or weakness in the face, arm or leg",
