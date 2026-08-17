@@ -715,7 +715,13 @@ export const procedures: Procedure[] = [
       "A high-pressure balloon is inflated across the narrowing.",
       "The thrill returns under the fingertips.",
       "The same access continues to be used — no new line, no new limb.",
-    ],
+    info: {
+      symptoms: ["Decreased flow for dialysis", "High venous pressures"],
+      causes: ["Stenosis", "Clot"],
+      diagnosis: ["Physical exam (thrill)", "Ultrasound"],
+      treatment: ["Angioplasty", "Stenting"],
+      recovery: ["Immediate use for dialysis often possible", "Light activity same day"],
+    },
   },
   {
     slug: "tips",
@@ -729,6 +735,13 @@ export const procedures: Procedure[] = [
       "Portal pressure falls immediately and is measured on the table.",
       "Ascites and variceal bleeding recede.",
     ],
+    info: {
+      symptoms: ["Ascites (fluid in abdomen)", "Variceal bleeding"],
+      causes: ["Liver cirrhosis", "Portal hypertension"],
+      diagnosis: ["Ultrasound", "CT", "Endoscopy"],
+      treatment: ["Transjugular Intrahepatic Portosystemic Shunt"],
+      recovery: ["Hospital stay 2-3 days", "Monitoring for encephalopathy", "Follow-up ultrasound"],
+    },
   },
   {
     slug: "prostate-artery-embolization",
@@ -742,6 +755,13 @@ export const procedures: Procedure[] = [
       "Over weeks the gland softens and shrinks, and the stream improves.",
       "Sexual function is preserved. No catheter through the urethra, no resection.",
     ],
+    info: {
+      symptoms: ["Frequent urination", "Weak stream", "Nocturia"],
+      causes: ["Benign Prostatic Hyperplasia (BPH)"],
+      diagnosis: ["PSA test", "Ultrasound", "Uroflowmetry"],
+      treatment: ["Prostate artery embolization"],
+      recovery: ["Same day or overnight stay", "Return to work in 2-3 days", "Symptoms improve over 1-3 months"],
+    },
   },
   {
     slug: "uterine-fibroid-embolization",
@@ -755,8 +775,16 @@ export const procedures: Procedure[] = [
       "The fibroids infarct and shrink over the following months.",
       "Bleeding settles, pressure eases, and the uterus stays.",
     ],
+    info: {
+      symptoms: ["Heavy menstrual bleeding", "Pelvic pain", "Pressure"],
+      causes: ["Uterine fibroids"],
+      diagnosis: ["Ultrasound", "MRI"],
+      treatment: ["Uterine fibroid embolization"],
+      recovery: ["Overnight stay", "1 week recovery at home", "Significant symptom relief by 3 months"],
+    },
   },
 ];
+
 
 export const featuredProcedures = procedures.filter((p) => p.featured);
 
