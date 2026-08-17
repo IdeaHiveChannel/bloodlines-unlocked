@@ -1070,7 +1070,8 @@ export const resources: Resource[] = [
     id: "faq-second-opinion",
     kind: "FAQ",
     title: "Can I get a second opinion on my scans?",
-    text: "Yes. Share your CT, MRI or angiography reports and they will be reviewed before any recommendation is made.",
+    text: "Yes. Share your CT, MRI or angiography reports and real clinical images/videos, and they will be reviewed before any recommendation is made.",
+
     related: [],
   },
   {
