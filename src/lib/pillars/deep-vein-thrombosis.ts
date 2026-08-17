@@ -101,6 +101,8 @@ export const dvt: Pillar = {
     { q: "Who benefits from clot removal rather than tablets alone?", a: "Typically younger, active patients with extensive clot in the thigh and pelvic veins, treated within about two weeks of onset." },
     { q: "What is post-thrombotic syndrome?", a: "Chronic swelling, heaviness, discoloration and sometimes ulceration after a DVT, caused by damaged valves and residual obstruction." },
     { q: "Can DVT come back?", a: "Yes, particularly after unprovoked clots. Recurrence risk guides how long anticoagulation continues." },
+    { q: "What is venous thromboembolism (VTE)?", a: "VTE is the collective term for DVT and pulmonary embolism (PE)." },
+    { q: "Can a clot travel to the lungs?", a: "Yes. This is called a pulmonary embolism and is the primary danger of DVT." },
     { q: "What is May-Thurner syndrome?", a: "Compression of the left iliac vein by the overlying right iliac artery, predisposing to left leg DVT. It is treated by stenting the vein." },
     { q: "Is flying safe after a DVT?", a: "Usually, once established on anticoagulation, with compression stockings, hydration and regular movement. Check with your physician first." },
     { q: "Does DVT happen in the arm?", a: "Yes, most often around central lines and pacemaker leads, or in athletes with thoracic outlet compression." },

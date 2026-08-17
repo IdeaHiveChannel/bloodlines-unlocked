@@ -319,4 +319,8 @@ export const stringsMl: Record<string, string> = {
   "Pulmonary embolism: Sudden breathlessness, chest pain on breathing, coughing blood or fainting — this is a life-threatening emergency.": "പൾമണറി എംബോളിസം: ശ്വാസംമുട്ടൽ, നെഞ്ചുവേദന, ചുമയ്ക്കുമ്പോൾ രക്തം വരിക അല്ലെങ്കിൽ ബോധക്ഷയം - ഇത് ജീവന് തന്നെ ഭീഷണിയായ ഒരു അടിയന്തിര സാഹചര്യമാണ്.",
   "Venous thromboembolism (VTE): The collective term for DVT and PE.": "വീനസ് ത്രോംബോ എംബോളിസം (VTE): DVT, PE എന്നിവയെ സംയുക്തമായി വിളിക്കുന്ന പേര്.",
   "A piece of the blood clot can break off, travel through the bloodstream, and block a blood vessel in the lungs.": "രക്തക്കട്ടയുടെ ഒരു ഭാഗം വേർപെട്ട് രക്തപ്രവാഹത്തിലൂടെ സഞ്ചരിച്ച് ശ്വാസകോശത്തിലെ രക്തക്കുഴലുകളിൽ തടസ്സം സൃഷ്ടിക്കാം.",
+  "What is venous thromboembolism (VTE)?": "എന്താണ് വീനസ് ത്രോംബോ എംബോളിസം (VTE)?",
+  "VTE is the collective term for DVT and pulmonary embolism (PE).": "DVT, പൾമണറി എംബോളിസം (PE) എന്നിവയെ സംയുക്തമായി വിളിക്കുന്ന പേരാണ് VTE.",
+  "Can a clot travel to the lungs?": "രക്തക്കട്ട ശ്വാസകോശത്തിലേക്ക് സഞ്ചരിക്കുമോ?",
+  "Yes. This is called a pulmonary embolism and is the primary danger of DVT.": "അതെ. ഇതിനെ പൾമണറി എംബോളിസം എന്ന് വിളിക്കുന്നു, ഇതാണ് DVT-യുടെ പ്രധാന അപകടസാധ്യത.",
 };
