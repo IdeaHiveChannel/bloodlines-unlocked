@@ -85,19 +85,19 @@ export function ConsultationForm() {
     const d = parsed.data;
 
     const lines = [
-      "Consultation request for Dr. Mandeep Sagar.",
+      tx("Consultation request for Dr. Mandeep Sagar."),
       "",
-      `Name: ${d.name}`,
-      `Phone: ${d.phone}`,
-      d.email ? `Email: ${d.email}` : null,
-      d.city ? `City: ${d.city}` : null,
-      `Condition / reason: ${d.reason}`,
-      `Preferred date and time: ${d.preferred || "flexible"}`,
-      `Reports available: ${reports.length ? reports.join(", ") : "none yet"}`,
+      `${tx("Name")}: ${d.name}`,
+      `${tx("Phone")}: ${d.phone}`,
+      d.email ? `${tx("Email")}: ${d.email}` : null,
+      d.city ? `${tx("City")}: ${d.city}` : null,
+      `${tx("Condition / reason")}: ${d.reason}`,
+      `${tx("Preferred date and time")}: ${d.preferred || tx("flexible")}`,
+      `${tx("Reports available")}: ${reports.length ? reports.map(r => tx(r)).join(", ") : tx("none yet")}`,
       "",
       channel === "whatsapp"
-        ? "I am attaching my scans and reports to this chat."
-        : "I am attaching my scans and reports to this email.",
+        ? tx("I am attaching my scans and reports to this chat.")
+        : tx("I am attaching my scans and reports to this email."),
     ].filter(Boolean) as string[];
 
     const body = lines.join("\n");
@@ -106,7 +106,7 @@ export function ConsultationForm() {
       window.open(whatsappLink(body), "_blank", "noopener,noreferrer");
       return;
     }
-    const subject = `Consultation request — ${d.name}`;
+    const subject = `${tx("Consultation request")} — ${d.name}`;
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
@@ -157,7 +157,7 @@ export function ConsultationForm() {
         </div>
         <div>
           <label htmlFor="c-email" className="text-label">
-            Email {channel === "email" ? "" : "(optional)"}
+            {tx("Email")} {channel === "email" ? "" : `(${tx("optional")})`}
           </label>
           <input id="c-email" value={form.email} onChange={set("email")} inputMode="email" maxLength={120} className={field} placeholder={tx("you@example.com")} />
           {errors.email && <p className={err}>{errors.email}</p>}
@@ -210,10 +210,10 @@ export function ConsultationForm() {
         className="mt-9 inline-flex min-h-12 items-center gap-2.5 rounded-full bg-white px-7 text-button text-black transition-colors hover:bg-[var(--accent)]"
       >
         {channel === "whatsapp" ? <MessageCircle size={18} /> : <Mail size={18} />}
-        {channel === "whatsapp" ? "Send on WhatsApp" : "Send by email"}
+        {tx(channel === "whatsapp" ? "Send on WhatsApp" : "Send by email")}
       </button>
       <p className="mt-4 text-caption text-[var(--ink-dim)]">
-        Or call Dr. Sagar directly on{" "}
+        {tx("Or call Dr. Sagar directly on")}{" "}
         <a href={contact.phoneHref} className="text-[var(--ink)]" data-cursor="cta">
           {contact.phoneDisplay}
         </a>

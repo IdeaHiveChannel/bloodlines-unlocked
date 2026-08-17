@@ -44,7 +44,7 @@ export function ExpertiseTimeline() {
               >
                 <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
                   <span className="text-label text-[var(--accent)]">
-                    {String(i + 1).padStart(2, "0")}
+                    {tx(String(i + 1).padStart(2, "0"))}
                   </span>
                   <span className="text-h3">{tx(m.title)}</span>
                   <span className="text-label">{tx(m.meta)}</span>

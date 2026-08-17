@@ -88,13 +88,13 @@ export function MediaTimeline() {
                       >
                         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                           <span className="rounded-full border border-white/[0.1] px-3 py-1 text-caption uppercase tracking-[0.16em] text-[var(--accent)]">
-                            {pressKinds.find((k) => k.key === e.kind)?.label ?? e.kind}
+                            {tx(pressKinds.find((k) => k.key === e.kind)?.label ?? e.kind)}
                           </span>
-                          <span className="text-caption text-[var(--ink-dim)]">{e.outlet}</span>
+                          <span className="text-caption text-[var(--ink-dim)]">{tx(e.outlet)}</span>
                         </div>
                         <h3 className="text-card-title mt-3">{e.title}</h3>
                         <p className="mt-2 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-                          {e.summary}
+                          {tx(e.summary)}
                         </p>
                         <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                           {e.url && (

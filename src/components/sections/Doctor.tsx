@@ -25,10 +25,10 @@ export function Doctor() {
 
             <div className="mt-12 grid sm:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
               {[
-                { k: "Specialty", v: "Vascular & Neuro Interventional Radiology" },
-                { k: "Modalities", v: "Fluoroscopy · CT · MR · Ultrasound guidance" },
-                { k: "Scope", v: "Brain · Carotid · Aorta · Peripheral · Venous" },
-                { k: "Setting", v: "Hybrid Cath Lab" },
+                { k: tx("Specialty"), v: tx("Vascular & Neuro Interventional Radiology") },
+                { k: tx("Modalities"), v: tx("Fluoroscopy · CT · MR · Ultrasound guidance") },
+                { k: tx("Scope"), v: tx("Brain · Carotid · Aorta · Peripheral · Venous") },
+                { k: tx("Setting"), v: tx("Hybrid Cath Lab") },
               ].map((d) => (
                 <div key={d.k} className="bg-[#050B16] p-6">
                   <p className="text-label">{d.k}</p>

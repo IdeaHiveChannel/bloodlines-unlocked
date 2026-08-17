@@ -55,7 +55,7 @@ export function Hero() {
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
-            <h2 className="text-label">Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod</h2>
+            <h2 className="text-label">{tx("Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod")}</h2>
           </div>
           <h1 className="mt-4 text-display-xxl sm:mt-5">
             {t.hero.headline1}
@@ -63,10 +63,10 @@ export function Hero() {
             <span className="text-[color-mix(in_oklab,var(--accent)_75%,white)]">{t.hero.headline2}</span>
           </h1>
           <p className="mt-4 max-w-xl text-body-lg text-[var(--ink-dim)] sm:mt-5">
-            Advanced image-guided treatment through minimally invasive procedures for vascular and neurovascular conditions.
+            {tx("Advanced image-guided treatment through minimally invasive procedures for vascular and neurovascular conditions.")}
           </p>
           <p className="mt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-            Treatment for conditions affecting the blood vessels of the brain, legs, abdomen and other parts of the body, including stroke, aneurysms, blocked arteries, poor blood circulation, varicose veins and selected vascular conditions.
+            {tx("Treatment for conditions affecting the blood vessels of the brain, legs, abdomen and other parts of the body, including stroke, aneurysms, blocked arteries, poor blood circulation, varicose veins and selected vascular conditions.")}
           </p>
           <div className="mt-6 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 sm:mt-7">
             <LocaleLink to="/contact" data-cursor="cta" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
