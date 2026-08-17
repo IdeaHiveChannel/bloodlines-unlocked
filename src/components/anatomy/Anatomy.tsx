@@ -1,3 +1,4 @@
+import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import {
   regionProcedures,
   type Region,
 } from "../../lib/content";
+
 
 type Hotspot = {
   id: Region;
@@ -177,27 +179,30 @@ const hotspots: Hotspot[] = [
 ];
 
 export function Anatomy() {
+  const t = useT();
   const tx = useTx();
   const [active, setActive] = useState<Region>("brain");
   const spot = hotspots.find((h) => h.id === active)!;
   const guide = regionGuide[active];
 
   // Access specific translations from the new "anatomy" object
-  const currentRegionContent = tx(`anatomy.regions.${active}` as any) as any;
+  const currentRegionContent = t.anatomy.regions[active];
+
 
   return (
     <section className="relative bg-[#050B16] section-y overflow-hidden">
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div className="max-w-2xl">
-            <p className="text-label">{tx("anatomy.eyebrow")}</p>
+            <p className="text-label">{t.anatomy.eyebrow}</p>
             <h2 className="mt-4 text-h1 sm:mt-6">
-              {tx("anatomy.h2")}
+              {t.anatomy.h2}
             </h2>
           </div>
           <p className="max-w-sm text-small text-[var(--ink-dim)]">
-            {tx("anatomy.description")}
+            {t.anatomy.description}
           </p>
+
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-12 sm:mt-14 lg:grid-cols-12 lg:gap-16">
@@ -275,8 +280,8 @@ export function Anatomy() {
                   const labelX = isRight ? h.cx + labelOffset : h.cx - labelOffset;
                   
                   // Desktop shows full labels, mobile shows short labels
-                  const labelKey = `anatomy.regions.${h.id}.label`;
-                  const labelText = tx(labelKey as any);
+                  const labelText = t.anatomy.regions[h.id].label;
+
                   
                   return (
                     <g
@@ -358,9 +363,10 @@ export function Anatomy() {
             {/* Mobile Selection Tape - for horizontal scroll/quick picking */}
             <div className="mt-8 flex gap-2 overflow-x-auto pb-4 no-scrollbar lg:hidden">
               {hotspots.map((h) => {
-                const labelText = tx(`anatomy.regions.${h.id}.label` as any);
+                const labelText = t.anatomy.regions[h.id].label;
                 return (
                   <button
+
                     key={h.id}
                     onClick={() => setActive(h.id)}
                     className={`shrink-0 rounded-full border px-4 py-2 text-caption transition-all ${
@@ -427,17 +433,18 @@ export function Anatomy() {
                       params={{ slug: guide }}
                       className="group inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-8 py-4 text-[var(--bg)] font-semibold transition-transform hover:scale-[1.02] active:scale-[0.98]"
                     >
-                      <span>{tx("anatomy.cta")}</span>
+                      <span>{t.anatomy.cta}</span>
                     </LocaleLink>
                   ) : (
                     <LocaleLink 
                       to="/diseases" 
                       className="group inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-8 py-4 text-[var(--bg)] font-semibold transition-transform hover:scale-[1.02]"
                     >
-                      <span>{tx("anatomy.cta")}</span>
+                      <span>{t.anatomy.cta}</span>
                     </LocaleLink>
                   )}
                 </div>
+
               </motion.div>
             </AnimatePresence>
           </div>
