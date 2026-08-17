@@ -154,16 +154,73 @@ function ProcedurePage() {
             </section>
           )}
           {video && <ProcedureVideo video={video} />}
-          <ol className="mt-16 space-y-10">
-            {p.beats.map((b: string, i: number) => (
-              <li key={i} className="grid grid-cols-[44px_minmax(0,1fr)] gap-4 sm:grid-cols-[60px_minmax(0,1fr)] sm:gap-6">
-                <span className="text-label pt-2">0{i + 1}</span>
-                <p className="text-card-title">{b}</p>
-              </li>
-            ))}
-          </ol>
+          {p.info && (
+            <div className="mt-16 space-y-16">
+              <section>
+                <h2 className="text-h2">{tx("Symptoms & Causes")}</h2>
+                <div className="mt-8 grid gap-8 sm:grid-cols-2">
+                  <div className="space-y-4">
+                    <h3 className="text-label text-[var(--accent)]">{tx("Symptoms")}</h3>
+                    <ul className="space-y-2">
+                      {p.info.symptoms.map(s => <li key={s} className="text-small text-[var(--ink-dim)]">— {s}</li>)}
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-label text-[var(--accent)]">{tx("Common Causes")}</h3>
+                    <ul className="space-y-2">
+                      {p.info.causes.map(c => <li key={c} className="text-small text-[var(--ink-dim)]">— {c}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-h2">{tx("Diagnosis & Treatment")}</h2>
+                <div className="mt-8 grid gap-8 sm:grid-cols-2">
+                  <div className="space-y-4">
+                    <h3 className="text-label text-[var(--accent)]">{tx("How it is diagnosed")}</h3>
+                    <ul className="space-y-2">
+                      {p.info.diagnosis.map(d => <li key={d} className="text-small text-[var(--ink-dim)]">— {d}</li>)}
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-label text-[var(--accent)]">{tx("The Procedure")}</h3>
+                    <ul className="space-y-2">
+                      {p.info.treatment.map(t => <li key={t} className="text-small text-[var(--ink-dim)]">— {t}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-h2">{tx("Recovery & Benefits")}</h2>
+                <div className="mt-6 space-y-4">
+                   <ul className="grid gap-3 sm:grid-cols-2">
+                    {p.info.recovery.map(r => (
+                      <li key={r} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 text-small text-[var(--ink-dim)]">
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            </div>
+          )}
+
+          <section className="mt-20">
+            <h2 className="text-h2">{tx("Procedure sequence")}</h2>
+            <ol className="mt-10 space-y-10">
+              {p.beats.map((b: string, i: number) => (
+                <li key={i} className="grid grid-cols-[44px_minmax(0,1fr)] gap-4 sm:grid-cols-[60px_minmax(0,1fr)] sm:gap-6">
+                  <span className="text-label pt-2">0{i + 1}</span>
+                  <p className="text-card-title">{b}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
           {faqs.length > 0 && (
-            <section className="mt-16">
+            <section className="mt-20">
               <h2 className="text-h2">{tx("Questions patients ask")}</h2>
               <div className="mt-6 divide-y divide-white/[0.06] border-y border-white/[0.06]">
                 {faqs.map((f) => (
