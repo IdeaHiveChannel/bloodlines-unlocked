@@ -52,7 +52,7 @@ export function Navigation() {
                 key={group.key}
                 label={group.label}
                 links={group.links}
-                columns={group.columns}
+                columns={group.columns as 1 | 2}
               />
             ))}
             <li>
