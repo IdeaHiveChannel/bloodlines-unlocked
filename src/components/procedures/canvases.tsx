@@ -16,30 +16,40 @@ function Frame({ children }: { children: React.ReactNode }) {
 
 /** 1 — Angioplasty: plaque → wire crossing → balloon → stent → flow */
 function Angioplasty({ progress }: P) {
-  const wireX = useTransform(progress, [0.05, 0.35], [-260, 40]);
-  const balloonScale = useTransform(progress, [0.38, 0.55], [0.35, 1.35]);
-  const balloonOpacity = useTransform(progress, [0.35, 0.42, 0.62, 0.7], [0, 1, 1, 0]);
-  const plaqueOpacity = useTransform(progress, [0.45, 0.68], [1, 0.12]);
-  const stentOpacity = useTransform(progress, [0.62, 0.75], [0, 1]);
-  const stentScale = useTransform(progress, [0.62, 0.78], [0.6, 1]);
-  const flowOpacity = useTransform(progress, [0, 0.75, 1], [0.15, 0.3, 1]);
+  const wireX = useTransform(progress, [0.0, 0.25], [-260, 40]);
+  const wireOpacity = useTransform(progress, [0.0, 0.05, 0.45, 0.55], [0, 1, 1, 0]);
+  const balloonScale = useTransform(progress, [0.3, 0.5], [0.35, 1.35]);
+  const balloonOpacity = useTransform(progress, [0.28, 0.35, 0.65, 0.72], [0, 1, 1, 0]);
+  const plaqueOpacity = useTransform(progress, [0.4, 0.65], [1, 0.12]);
+  const stentOpacity = useTransform(progress, [0.65, 0.8], [0, 1]);
+  const stentScale = useTransform(progress, [0.65, 0.85], [0.6, 1]);
+  const flowOpacity = useTransform(progress, [0, 0.8, 1], [0.15, 0.3, 1]);
+  
   return (
     <Frame>
       <path d="M40,260 C160,260 240,258 560,258" fill="none" stroke={soft} strokeWidth="1.2" opacity="0.7" />
       <path d="M40,380 C160,380 240,382 560,382" fill="none" stroke={soft} strokeWidth="1.2" opacity="0.7" />
+      
+      {/* Plaque */}
       <motion.g style={{ opacity: plaqueOpacity }}>
         <path d="M240,258 C280,300 360,300 400,258 Z" fill="color-mix(in oklab, var(--blood) 65%, black)" opacity="0.8" />
         <path d="M240,382 C280,340 360,340 400,382 Z" fill="color-mix(in oklab, var(--blood) 65%, black)" opacity="0.8" />
       </motion.g>
-      <motion.g style={{ x: wireX }}>
+
+      {/* Wire */}
+      <motion.g style={{ x: wireX, opacity: wireOpacity }}>
         <line x1="0" y1="320" x2="360" y2="320" stroke="white" strokeWidth="1.6" opacity="0.7" />
         <circle cx="360" cy="320" r="4" fill="white" />
       </motion.g>
+
+      {/* Balloon */}
       <motion.ellipse
         cx="320" cy="320" rx="80" ry="52"
         style={{ scale: balloonScale, opacity: balloonOpacity, transformOrigin: "320px 320px" }}
         fill="color-mix(in oklab, var(--accent) 22%, transparent)" stroke={stroke} strokeWidth="1.5"
       />
+
+      {/* Stent */}
       <motion.g style={{ opacity: stentOpacity, scale: stentScale, transformOrigin: "320px 320px" }} stroke={stroke} strokeWidth="1.2" fill="none" opacity="0.9">
         {Array.from({ length: 9 }).map((_, i) => (
           <path key={i} d={`M${232 + i * 22},262 L${254 + i * 22},378 M${254 + i * 22},262 L${232 + i * 22},378`} />
@@ -47,6 +57,8 @@ function Angioplasty({ progress }: P) {
         <line x1="232" y1="262" x2="430" y2="262" />
         <line x1="232" y1="378" x2="430" y2="378" />
       </motion.g>
+
+      {/* Restored Flow */}
       <motion.g style={{ opacity: flowOpacity }} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round">
         <path d="M40,320 L560,320" strokeDasharray="14 30" style={{ animation: "flow 2s linear infinite", filter: "drop-shadow(0 0 6px var(--accent))" }} />
       </motion.g>
@@ -63,6 +75,7 @@ function Thrombectomy({ progress }: P) {
   const clotOpacity = useTransform(progress, [0.75, 0.9], [1, 0]);
   const flowOpacity = useTransform(progress, [0.8, 1], [0.1, 1]);
   const funnelOpacity = useTransform(progress, [0.55, 0.7, 0.95], [0, 1, 0.3]);
+  
   return (
     <Frame>
       {/* branching cerebral vessel */}
@@ -72,19 +85,27 @@ function Thrombectomy({ progress }: P) {
         <path d="M350,282 C400,330 440,380 460,470" />
         <path d="M390,300 C440,344 470,400 486,478" />
       </g>
+
+      {/* Catheter/Suction */}
       <motion.g style={{ x: catheterX }}>
         <line x1="-40" y1="320" x2="300" y2="292" stroke="white" strokeWidth="2" opacity="0.6" />
         <motion.path d="M300,292 L336,270 L336,314 Z" fill="white" opacity="0.5" style={{ opacity: funnelOpacity }} />
       </motion.g>
+
+      {/* Clot being captured and withdrawn */}
       <motion.g style={{ x: clotX, opacity: clotOpacity }}>
         <ellipse cx="392" cy="252" rx="46" ry="26" fill="color-mix(in oklab, var(--blood) 80%, black)" transform="rotate(-22 392 252)" />
       </motion.g>
+
+      {/* Stent Retriever */}
       <motion.g style={{ opacity: retrieverOpacity, scaleY: retrieverScale, x: clotX, transformOrigin: "392px 252px" }} stroke={stroke} strokeWidth="1.4" fill="none">
         <ellipse cx="392" cy="252" rx="54" ry="30" transform="rotate(-22 392 252)" />
         {Array.from({ length: 6 }).map((_, i) => (
           <path key={i} d={`M${346 + i * 18},${268 - i * 6} L${360 + i * 18},${232 - i * 6}`} transform="rotate(-22 392 252)" />
         ))}
       </motion.g>
+
+      {/* Reperfusion */}
       <motion.g style={{ opacity: flowOpacity }} stroke={stroke} strokeWidth="2.6" fill="none" strokeLinecap="round">
         <path d="M30,320 C190,320 268,300 348,252 C408,216 470,200 570,200" strokeDasharray="12 26" style={{ animation: "flow 1.6s linear infinite", filter: "drop-shadow(0 0 6px var(--accent))" }} />
         <path d="M350,282 C400,330 440,380 460,470" strokeDasharray="10 24" style={{ animation: "flow 2.2s linear infinite" }} />
@@ -129,12 +150,20 @@ function Evar({ progress }: P) {
 
 /** 4 — Laser vein ablation: reflux → fibre → energy → collapse → reroute */
 function Laser({ progress }: P) {
-  const fibreY = useTransform(progress, [0.15, 0.4], [40, 430]);
+  const fibreY = useTransform(progress, [0.15, 0.35], [40, 430]);
   const fibreOpacity = useTransform(progress, [0.12, 0.2, 0.85, 0.95], [0, 1, 1, 0]);
-  const pulseOpacity = useTransform(progress, [0.42, 0.5, 0.75, 0.85], [0, 1, 1, 0]);
-  const collapse = useTransform(progress, [0.55, 0.85], [1, 0.06]);
-  const refluxOpacity = useTransform(progress, [0, 0.4], [1, 0]);
-  const deepOpacity = useTransform(progress, [0.7, 1], [0.2, 1]);
+  const pulseOpacity = useTransform(progress, [0.4, 0.5, 0.75, 0.85], [0, 1, 1, 0]);
+  const collapse = useTransform(progress, [0.5, 0.8], [1, 0.06]);
+  const refluxOpacity = useTransform(progress, [0, 0.45], [1, 0]);
+  const deepOpacity = useTransform(progress, [0.75, 1], [0.2, 1]);
+  
+  // Ulcer shrinking
+  const ulcerOpacity = useTransform(progress, [0, 0.85, 1], [1, 1, 0.2]);
+  const ulcerScale = useTransform(progress, [0.8, 1], [1, 0.4]);
+
+  // Ultrasound probe/guidance
+  const usOpacity = useTransform(progress, [0.1, 0.2, 0.8, 0.9], [0, 1, 1, 0]);
+
   return (
     <Frame>
       {/* faulty superficial vein */}
@@ -147,16 +176,32 @@ function Laser({ progress }: P) {
           </g>
         ))}
       </motion.g>
-      {/* refluxing (downward) flow */}
+
+      {/* refluxing flow */}
       <motion.g style={{ opacity: refluxOpacity }} stroke="var(--blood)" strokeWidth="2.4" fill="none" strokeLinecap="round">
         <path d="M230,60 L230,540" strokeDasharray="10 26" style={{ animation: "flow 2.4s linear infinite" }} />
       </motion.g>
+
       {/* laser fibre */}
       <motion.g style={{ opacity: fibreOpacity }}>
         <motion.line x1="230" y1="20" x2="230" style={{ y2: fibreY } as never} stroke="white" strokeWidth="1.6" opacity="0.8" />
         <motion.circle cx="230" r="5" fill="white" style={{ cy: fibreY } as never} />
         <motion.circle cx="230" r="18" fill="color-mix(in oklab, var(--accent) 40%, transparent)" style={{ cy: fibreY, opacity: pulseOpacity } as never} />
       </motion.g>
+
+      {/* Ultrasound Guidance overlay */}
+      <motion.g style={{ opacity: usOpacity }}>
+        <rect x="180" y="20" width="100" height="40" rx="4" fill="rgba(255,255,255,0.05)" stroke="white" strokeWidth="0.5" opacity="0.4" />
+        <path d="M200,30 L260,30 M200,40 L240,40 M200,50 L250,50" stroke="white" strokeWidth="1" opacity="0.3" />
+        <text x="230" y="75" textAnchor="middle" fill="white" fontSize="10" opacity="0.5">ULTRASOUND GUIDED</text>
+      </motion.g>
+
+      {/* Venous Ulcer */}
+      <motion.g style={{ opacity: ulcerOpacity, scale: ulcerScale, transformOrigin: "150px 480px" }}>
+        <circle cx="150" cy="480" r="22" fill="color-mix(in oklab, var(--blood) 40%, black)" opacity="0.6" />
+        <path d="M135,475 C140,465 160,465 165,475 C170,485 150,500 135,475" fill="color-mix(in oklab, var(--blood) 60%, transparent)" />
+      </motion.g>
+
       {/* deep vein takes over */}
       <motion.g style={{ opacity: deepOpacity }} stroke={stroke} strokeWidth="2.6" fill="none" strokeLinecap="round">
         <path d="M400,60 C420,200 414,380 396,540" strokeDasharray="12 28" style={{ animation: "flow 2s linear infinite", filter: "drop-shadow(0 0 6px var(--accent))" }} />
@@ -168,34 +213,44 @@ function Laser({ progress }: P) {
 
 /** 5 — TACE: tumour blush → catheter → beads → devascularisation */
 function Tace({ progress }: P) {
-  const catheterLen = useTransform(progress, [0.1, 0.45], [0, 1]);
-  const beadsOpacity = useTransform(progress, [0.45, 0.58, 0.9], [0, 1, 0.7]);
+  const catheterLen = useTransform(progress, [0.1, 0.4], [0, 1]);
+  const beadsOpacity = useTransform(progress, [0.4, 0.55, 0.9], [0, 1, 0.7]);
   const blushOpacity = useTransform(progress, [0, 0.6, 0.9], [0.9, 0.8, 0.08]);
   const feedOpacity = useTransform(progress, [0.7, 0.85], [1, 0.15]);
+  
   return (
     <Frame>
       {/* liver silhouette */}
       <path d="M80,220 C180,150 400,150 500,230 C540,300 480,420 350,440 C220,458 100,380 80,220 Z"
         fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
+      
       {/* hepatic artery tree */}
       <g fill="none" stroke={soft} strokeWidth="1.2" opacity="0.75">
         <path d="M60,420 C160,400 200,340 260,310" />
         <path d="M260,310 C310,286 340,270 396,262" />
         <path d="M260,310 C300,340 330,370 360,392" />
       </g>
+
+      {/* Tumour Blush */}
       <motion.g style={{ opacity: blushOpacity }}>
         <circle cx="404" cy="256" r="52" fill="color-mix(in oklab, var(--blood) 70%, transparent)" opacity="0.6" />
         <circle cx="404" cy="256" r="32" fill="color-mix(in oklab, var(--blood) 85%, transparent)" opacity="0.8" />
       </motion.g>
+
+      {/* Microcatheter */}
       <motion.path d="M40,430 C150,408 200,344 262,312 C312,288 342,272 396,262"
         fill="none" stroke="white" strokeWidth="2" opacity="0.7"
         style={{ pathLength: catheterLen }} />
+
+      {/* Drug-Eluting Beads */}
       <motion.g style={{ opacity: beadsOpacity }} fill={stroke}>
         {Array.from({ length: 16 }).map((_, i) => {
           const a = (i / 16) * Math.PI * 2;
           return <circle key={i} cx={404 + Math.cos(a) * (16 + (i % 4) * 8)} cy={256 + Math.sin(a) * (14 + (i % 3) * 8)} r="3.4" />;
         })}
       </motion.g>
+
+      {/* Reduced supply flow */}
       <motion.g style={{ opacity: feedOpacity }} stroke={stroke} strokeWidth="2.4" fill="none" strokeLinecap="round">
         <path d="M60,420 C160,400 200,340 260,310 C310,286 340,270 396,262" strokeDasharray="10 26" style={{ animation: "flow 2s linear infinite" }} />
       </motion.g>
@@ -203,26 +258,36 @@ function Tace({ progress }: P) {
   );
 }
 
-/** 6 — Microwave / thyroid ablation: needle → energy → zone grows → tumour gone */
+/** 6 — Microwave ablation: needle → energy → zone grows → tumour gone */
 function Ablation({ progress }: P) {
-  const needleX = useTransform(progress, [0.1, 0.4], [-280, 0]);
-  const zoneR = useTransform(progress, [0.42, 0.85], [10, 150]);
-  const zoneOpacity = useTransform(progress, [0.4, 0.5], [0, 0.35]);
-  const tumourOpacity = useTransform(progress, [0.6, 0.9], [1, 0.08]);
-  const wave = useTransform(progress, [0.42, 0.5, 0.85, 0.95], [0, 1, 1, 0]);
+  const needleX = useTransform(progress, [0.05, 0.35], [-280, 0]);
+  const zoneR = useTransform(progress, [0.4, 0.85], [10, 150]);
+  const zoneOpacity = useTransform(progress, [0.38, 0.5], [0, 0.35]);
+  const tumourOpacity = useTransform(progress, [0.6, 0.95], [1, 0.08]);
+  const wave = useTransform(progress, [0.4, 0.5, 0.85, 0.95], [0, 1, 1, 0]);
+  
   return (
     <Frame>
+      {/* liver silhouette */}
       <path d="M100,180 C200,120 420,130 500,220 C540,290 470,420 340,440 C210,460 100,360 100,180 Z"
         fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
+      
+      {/* Ablation Zone (Heat Expanding) */}
       <motion.circle cx="320" cy="300" fill="color-mix(in oklab, var(--accent) 55%, transparent)"
         style={{ r: zoneR, opacity: zoneOpacity } as never} />
       <motion.circle cx="320" cy="300" fill="none" stroke={stroke} strokeWidth="1.2" strokeDasharray="6 8"
         style={{ r: zoneR, opacity: zoneOpacity } as never} />
+      
+      {/* Tumour */}
       <motion.circle cx="320" cy="300" r="42" fill="color-mix(in oklab, var(--blood) 80%, black)" style={{ opacity: tumourOpacity }} />
+      
+      {/* Needle Antenna */}
       <motion.g style={{ x: needleX }}>
         <line x1="-60" y1="140" x2="320" y2="300" stroke="white" strokeWidth="2.2" opacity="0.85" />
         <circle cx="320" cy="300" r="4" fill="white" />
       </motion.g>
+
+      {/* Energy Waves */}
       <motion.g style={{ opacity: wave }} stroke={stroke} strokeWidth="1.2" fill="none">
         {[60, 90, 120].map((r, i) => (
           <circle key={r} cx="320" cy="300" r={r} opacity={0.5 - i * 0.12}

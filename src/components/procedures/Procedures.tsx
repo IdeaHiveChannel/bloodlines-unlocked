@@ -81,7 +81,7 @@ export function Procedures() {
               ))}
             </div>
           </div>
-          <div className="relative h-[28svh] sm:h-[34svh] lg:h-[46vh]">
+          <div className="relative h-[32svh] sm:h-[38svh] lg:h-[46vh] mb-12 sm:mb-16 lg:mb-0">
             {beats.map((b, i) => (
               <Beat key={i} text={b} index={i} total={beats.length} progress={scrollYProgress} />
             ))}

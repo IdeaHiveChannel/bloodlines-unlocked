@@ -32,6 +32,14 @@ export const regionLabels: Record<Region, string> = {
 };
 
 
+export type ProcedureInfo = {
+  symptoms: string[];
+  causes: string[];
+  diagnosis: string[];
+  treatment: string[];
+  recovery: string[];
+};
+
 export type Condition = {
   slug: string;
   name: string;
@@ -248,6 +256,8 @@ export type Procedure = {
   beats: string[];
   /** Shown on the homepage scroll chapters. */
   featured?: boolean;
+  /** Detailed medical content */
+  info?: ProcedureInfo;
 };
 
 export const procedures: Procedure[] = [
@@ -258,12 +268,47 @@ export const procedures: Procedure[] = [
     storyboard: "angioplasty",
     featured: true,
     beats: [
-      "An artery once flowed freely. Over years, plaque settled along its wall.",
-      "A guidewire is steered across the narrowing — the hardest millimetres of the case.",
-      "A balloon expands gently, compressing the plaque outward.",
-      "A fine mesh stent is deployed to hold the channel open.",
-      "Blood begins flowing again. The patient walks the same day.",
+      "Show the narrowed artery with plaque buildup.",
+      "The guidewire crosses the narrowing — the hardest millimetres of the case.",
+      "The balloon is introduced and expanded to open the channel.",
+      "Plaque is compressed as the balloon opens the artery.",
+      "The stent is deployed and holds the artery open.",
+      "Blood flow is fully restored.",
     ],
+    info: {
+      symptoms: [
+        "Pain or cramping in legs when walking (claudication)",
+        "Coldness in the lower leg or foot",
+        "Sores on toes, feet or legs that won't heal",
+        "Change in the color of legs",
+        "Hair loss or slower hair growth on feet and legs",
+      ],
+      causes: [
+        "Atherosclerosis (buildup of fats, cholesterol and other substances)",
+        "Blood clots",
+        "Diabetes",
+        "High blood pressure",
+        "Smoking",
+      ],
+      diagnosis: [
+        "Ankle-brachial index (ABI)",
+        "Doppler ultrasound",
+        "CT angiography",
+        "Catheter angiography",
+      ],
+      treatment: [
+        "A small puncture is made in the groin or wrist.",
+        "A thin wire is passed across the narrowing.",
+        "A balloon is inflated to open the artery.",
+        "A stent is placed to keep the artery open if needed.",
+      ],
+      recovery: [
+        "Bed rest for a few hours after the procedure.",
+        "Most patients go home the same or next day.",
+        "Resume light activities in 2-3 days.",
+        "Avoid heavy lifting for a week.",
+      ],
+    },
   },
   {
     slug: "thrombectomy",
@@ -279,6 +324,38 @@ export const procedures: Procedure[] = [
       "The clot leaves the body. Reperfusion is immediate.",
       "Function returns where it can.",
     ],
+    info: {
+      symptoms: [
+        "Sudden numbness or weakness in the face, arm or leg",
+        "Sudden confusion or trouble speaking",
+        "Sudden trouble seeing in one or both eyes",
+        "Sudden trouble walking or loss of balance",
+        "Sudden severe headache",
+      ],
+      causes: [
+        "Blood clot traveling from the heart (atrial fibrillation)",
+        "Blood clot forming on a plaque in the brain artery",
+        "Carotid artery disease",
+      ],
+      diagnosis: [
+        "CT scan of the brain",
+        "CT angiography (CTA)",
+        "CT perfusion scan",
+        "MRI scan",
+      ],
+      treatment: [
+        "Rapid access to the brain vessel via groin or wrist.",
+        "Navigating a catheter to the site of the clot.",
+        "Using a stent retriever or suction to remove the clot.",
+        "Immediate restoration of blood flow.",
+      ],
+      recovery: [
+        "Close monitoring in a stroke unit.",
+        "Blood pressure management.",
+        "Early rehabilitation (physiotherapy, speech therapy).",
+        "Long-term medication to prevent new clots.",
+      ],
+    },
   },
   {
     slug: "aneurysm-repair",
@@ -294,6 +371,37 @@ export const procedures: Procedure[] = [
       "A completion angiogram confirms there is no endoleak.",
       "Recovery is measured in days, not weeks.",
     ],
+    info: {
+      symptoms: [
+        "Often no symptoms (found during other tests)",
+        "Pulsating feeling near the navel",
+        "Deep, drilling pain in the abdomen or side",
+        "Back pain",
+      ],
+      causes: [
+        "Atherosclerosis",
+        "High blood pressure",
+        "Genetic factors",
+        "Smoking",
+      ],
+      diagnosis: [
+        "Abdominal ultrasound",
+        "CT scan of the abdomen",
+        "MRI",
+      ],
+      treatment: [
+        "Small punctures in the groin.",
+        "A stent-graft is guided to the aneurysm site.",
+        "The graft is expanded to create a new path for blood flow.",
+        "The aneurysm sac is excluded from high-pressure flow.",
+      ],
+      recovery: [
+        "1-2 days in the hospital.",
+        "Light walking encouraged early.",
+        "Avoid heavy activity for 4 weeks.",
+        "Periodic follow-up scans are essential.",
+      ],
+    },
   },
   {
     slug: "varicose-vein-ablation",
@@ -302,13 +410,44 @@ export const procedures: Procedure[] = [
     storyboard: "laser",
     featured: true,
     beats: [
-      "A vein's one-way valves no longer hold. Blood falls back down the leg.",
-      "Under ultrasound, a thin laser fibre is passed inside the faulty vein.",
-      "Energy is delivered along its length as the fibre is withdrawn.",
-      "The vein collapses and seals behind it.",
-      "Healthy deep veins reroute the flow.",
-      "The patient walks out; discomfort fades within days.",
+      "Faulty vein and abnormal flow lead to a venous ulcer.",
+      "Under ultrasound guidance, a laser fibre is passed inside.",
+      "Treatment is delivered as the fibre is withdrawn.",
+      "The vein shrinks and closes, rerouting blood flow.",
+      "Healthy circulation is restored to the leg.",
+      "The ulcer gradually shrinks and heals after treatment.",
     ],
+    info: {
+      symptoms: [
+        "Bulging, rope-like veins",
+        "Aching or heaviness in the legs",
+        "Swelling in the ankles and feet",
+        "Skin discoloration or hardening",
+        "Non-healing ulcers near the ankle",
+      ],
+      causes: [
+        "Weak or damaged vein valves",
+        "Prolonged standing",
+        "Family history",
+        "Pregnancy",
+      ],
+      diagnosis: [
+        "Clinical examination",
+        "Venous duplex ultrasound (standing)",
+      ],
+      treatment: [
+        "Ultrasound-guided access to the vein.",
+        "Laser or radiofrequency fiber insertion.",
+        "Heat energy delivered to seal the vein.",
+        "Rerouting blood to healthy deep veins.",
+      ],
+      recovery: [
+        "Walking immediately after the procedure.",
+        "Compression stockings worn for 1-2 weeks.",
+        "Most patients return to work in 1-2 days.",
+        "Follow-up scan at 1 week.",
+      ],
+    },
   },
   {
     slug: "tace",
@@ -317,12 +456,41 @@ export const procedures: Procedure[] = [
     storyboard: "tace",
     featured: true,
     beats: [
-      "A liver tumour lights up on angiography, fed by its own artery.",
-      "A microcatheter is navigated into that feeding branch alone.",
+      "A liver tumour is fed by its own feeding artery.",
+      "A microcatheter is navigated into that feeding branch.",
       "Drug-eluting beads are released directly into the tumour bed.",
-      "The feeding artery is blocked behind them.",
-      "The tumour blush fades. Healthy liver is untouched.",
+      "The tumour blood supply is reduced by embolization.",
+      "The tumour blush fades as its supply is cut off.",
     ],
+    info: {
+      symptoms: [
+        "Abdominal pain",
+        "Unexplained weight loss",
+        "Loss of appetite",
+        "Jaundice",
+      ],
+      causes: [
+        "Primary liver cancer (HCC)",
+        "Metastatic cancer from colon or breast",
+        "Chronic hepatitis infection",
+      ],
+      diagnosis: [
+        "Liver function tests",
+        "Tumour markers (AFP)",
+        "CT or MRI of the liver",
+      ],
+      treatment: [
+        "Access via the groin or wrist artery.",
+        "Selective navigation to the tumour artery.",
+        "Infusion of chemotherapy-laden beads.",
+        "Blocking the artery to trap the drug in the tumour.",
+      ],
+      recovery: [
+        "Overnight stay in the hospital.",
+        "Management of 'post-embolization syndrome' (fever, pain).",
+        "Follow-up scan at 1 month to assess response.",
+      ],
+    },
   },
   {
     slug: "microwave-ablation",
@@ -332,11 +500,39 @@ export const procedures: Procedure[] = [
     featured: true,
     beats: [
       "The tumour is located precisely on CT or ultrasound.",
-      "A single antenna is advanced through the skin into its centre.",
-      "Microwave energy raises the temperature within seconds.",
-      "The ablation zone expands outward past the tumour margin.",
-      "The tumour is destroyed in place. One puncture. No incision.",
+      "A needle-antenna is guided through the skin into the tumour centre.",
+      "Microwave energy raises the temperature inside the tumour ('burning').",
+      "The treatment zone expands to cover the tumour and its margins.",
+      "The tumour cells are destroyed ('charged') through a single puncture.",
     ],
+    info: {
+      symptoms: [
+        "Small liver or kidney tumours often have no symptoms",
+        "Found during routine surveillance scans",
+      ],
+      causes: [
+        "Primary liver cancer",
+        "Renal cell carcinoma",
+        "Lung nodules",
+      ],
+      diagnosis: [
+        "CT scan",
+        "Ultrasound",
+        "Biopsy (sometimes)",
+      ],
+      treatment: [
+        "A needle-like antenna is guided into the tumour.",
+        "Microwave energy creates precise heat.",
+        "Cell death occurs within minutes.",
+        "Targeted destruction sparing healthy tissue.",
+      ],
+      recovery: [
+        "Short hospital stay (often day-case).",
+        "Minimal discomfort, managed with simple pain relief.",
+        "Rapid return to normal activities.",
+        "Surveillance scans to ensure total destruction.",
+      ],
+    },
   },
   {
     slug: "aneurysm-coiling",
@@ -350,6 +546,38 @@ export const procedures: Procedure[] = [
       "The sac packs densely; flow at the neck slows and stops.",
       "The aneurysm is excluded from the circulation.",
     ],
+    info: {
+      symptoms: [
+        "Sudden, extremely severe headache ('thunderclap')",
+        "Nausea and vomiting",
+        "Stiff neck",
+        "Blurred or double vision",
+        "Sensitivity to light",
+      ],
+      causes: [
+        "Weakness in the artery wall",
+        "High blood pressure",
+        "Smoking",
+        "Genetic predisposition",
+      ],
+      diagnosis: [
+        "CT Scan / CTA",
+        "MRI / MRA",
+        "Digital Subtraction Angiography (DSA)",
+      ],
+      treatment: [
+        "Access via the femoral or radial artery.",
+        "Microcatheter placement in the aneurysm sac.",
+        "Packing the sac with platinum coils.",
+        "Promoting blood to clot and seal the aneurysm.",
+      ],
+      recovery: [
+        "24-48 hours in ICU for observation.",
+        "Regular neurological checks.",
+        "Gradual return to activity over 1-2 weeks.",
+        "Long-term imaging follow-up.",
+      ],
+    },
   },
   {
     slug: "thyroid-ablation",
