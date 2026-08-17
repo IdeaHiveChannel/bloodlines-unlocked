@@ -488,7 +488,8 @@ export const en = {
           "A microcatheter is precisely navigated into the feeding branch.",
           "Drug-eluting beads (treatment) are released directly into the tumour bed.",
           "The tumour blood supply is cut off by embolization.",
-          "The tumour shrinks as the treatment takes effect."
+          "The tumour shrinks as the treatment takes effect.",
+
 
         ],
         info: {
@@ -527,9 +528,10 @@ export const en = {
         oneLiner: "Destroying a tumour with heat, through a needle.",
         beats: [
           "Imaging identifies the liver tumour and its exact location.",
-          "A needle-antenna (treatment device) is guided into the tumour centre.",
+          "A needle-antenna is guided into the tumour center.",
           "Microwave energy raises the temperature inside the tumour.",
           "Heat destroys the tumour in its place.",
+
           "The tumour is successfully treated through a single puncture."
 
         ],
@@ -571,7 +573,8 @@ export const en = {
           "A microcatheter is navigated to the neck of the sac.",
           "Soft platinum coils are packed into the aneurysm.",
           "Blood can no longer enter the sac.",
-          "The treatment is completed through a single puncture."
+          "The treatment is completed through a single puncture.",
+
 
         ],
         info: {
