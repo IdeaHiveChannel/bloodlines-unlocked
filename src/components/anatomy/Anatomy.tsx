@@ -355,9 +355,9 @@ export function Anatomy() {
                 exit={{ opacity: 0, y: -8, filter: "blur(6px)" }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="text-label">Region · {regionLabels[active]}</p>
+                <p className="text-label">{tx("Region")} · {tx(regionLabels[active])}</p>
                 <h3 className="mt-3 text-h3">
-                  {list.length} condition{list.length === 1 ? "" : "s"} treated here
+                  {list.length} {tx(list.length === 1 ? "condition treated here" : "conditions treated here")}
                 </h3>
 
                 <p className="mt-8 text-label">{tx("Conditions &amp; the intervention used")}</p>
@@ -408,7 +408,7 @@ export function Anatomy() {
                       data-cursor="cta"
                       className="text-label underline"
                     >
-                      Read more — complete guide →
+                      {tx("Read more — complete guide →")}
                     </LocaleLink>
                   ) : (
                     list[0] && (
@@ -418,7 +418,7 @@ export function Anatomy() {
                         data-cursor="cta"
                         className="text-label underline"
                       >
-                        Read more →
+                        {tx("Read more →")}
                       </LocaleLink>
                     )
                   )}
