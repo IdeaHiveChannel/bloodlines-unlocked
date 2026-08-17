@@ -1,5 +1,5 @@
-import { useLocale } from "../lib/i18n/react";
-import { stringsMl } from "../lib/i18n/strings-ml";
+import { useLocale } from "./react";
+import { stringsMl } from "./strings-ml";
 
 /**
  * Looks up UI copy by its English source string. Falls back to English when a
