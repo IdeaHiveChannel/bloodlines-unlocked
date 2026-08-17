@@ -323,8 +323,9 @@ export function Anatomy() {
                         y={h.cy + 3}
                         textAnchor={h.side === "right" ? "start" : "end"}
                         fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="8.5"
-                        fontFamily="var(--font-mono)"
+                        fontSize="10"
+                        fontWeight="500"
+                        fontFamily="var(--font-sans)"
                         letterSpacing="0.18em"
                         style={{ textTransform: "uppercase", transition: "fill 300ms" }}
                       >
