@@ -566,11 +566,12 @@ export const en = {
         name: "Cerebral aneurysm coiling",
         oneLiner: "Packing an aneurysm until blood no longer enters it.",
         beats: [
-          "An aneurysm sac fills with every heartbeat.",
-          "A microcatheter is parked at the neck of the sac.",
-          "Soft platinum coils are delivered one by one into the dome.",
-          "The sac packs densely; flow at the neck slows and stops.",
-          "The aneurysm is excluded from the circulation."
+          "The cerebral aneurysm fills under pressure.",
+          "A microcatheter is navigated to the neck of the sac.",
+          "Soft platinum coils are packed into the aneurysm.",
+          "Blood can no longer enter the sac.",
+          "The treatment is completed through a single puncture."
+
         ],
         info: {
           symptoms: [
