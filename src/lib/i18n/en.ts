@@ -439,12 +439,12 @@ export const en = {
         name: "Endovenous laser ablation",
         oneLiner: "Closing a failing vein from within.",
         beats: [
-          "The animation shows the varicose vein and venous ulcer (Varicose vein + ulcer).",
-          "Under ultrasound guidance, the ablation catheter is passed inside the vein.",
-          "Laser/thermal treatment is delivered inside the vein.",
-          "The vein shrinks and closes, rerouting the blood flow.",
-          "As the vein closes, the venous ulcer begins to shrink and heal.",
-          "The ulcer is successfully healed after treatment."
+          "Ultrasound identifies the failing vein (Varicose vein + ulcer).",
+          "A laser fiber is guided into the vein under ultrasound.",
+          "Laser energy closes the diseased vein from within.",
+          "Blood is rerouted to healthy deep veins.",
+          "The venous ulcer begins to heal immediately.",
+
 
         ],
         info: {
