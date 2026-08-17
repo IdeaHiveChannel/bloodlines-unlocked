@@ -1,7 +1,7 @@
 import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, ChevronRight } from "lucide-react";
+import { Plus, Minus, ChevronRight, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 export function FAQ() {
@@ -52,10 +52,12 @@ export function FAQ() {
             
             <div className="mt-10 pt-10 border-t border-white/5 hidden lg:block">
                <a 
-                href="#contact" 
+                href="https://wa.me/916366330505" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-label text-[var(--accent)] hover:opacity-80 transition-opacity flex items-center gap-2"
               >
-                {tx(t.faq.cta)} <ChevronRight size={14} />
+                <MessageCircle size={14} /> {tx(t.faq.cta)} <ChevronRight size={14} />
               </a>
             </div>
           </div>

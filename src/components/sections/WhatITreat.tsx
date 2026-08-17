@@ -28,7 +28,7 @@ export function WhatITreat() {
           </p>
         </div>
 
-        <ul className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-px lg:overflow-hidden lg:rounded-2xl lg:border lg:border-white/[0.06] lg:bg-white/[0.06]">
+        <ul className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-px lg:overflow-hidden lg:rounded-2xl lg:border lg:border-white/[0.06] lg:bg-white/[0.06] items-stretch">
           {t.whatITreat.items.map((c: any, i: number) => {
             const titleText = tx(c.title);
             const patientText = c.patientLanguage ? tx(c.patientLanguage) : "";
@@ -41,7 +41,7 @@ export function WhatITreat() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.45, delay: Math.min(i, 6) * 0.04 }}
-                className="bg-[#050B16]"
+                className="bg-[#050B16] flex flex-col"
               >
                 <LocaleLink
                   to={c.to}
