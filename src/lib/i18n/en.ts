@@ -43,7 +43,7 @@ export const en = {
   },
   hero: {
     eyebrow: "Vascular & neuro interventional radiology",
-    headline1: "Modern medicine,",
+    headline1: "Modern medicine,", // Design hook
     headline2: "through a pinpoint opening.",
     lead: "Modern medicine, through a pinpoint opening. Image-guided treatment for complex vascular, neurovascular and oncological conditions. Minimal intervention. Rapid recovery.",
   },

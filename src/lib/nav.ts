@@ -21,6 +21,18 @@ export const expertiseAreas = [
 
 const treatCategories: NavLink[] = [
   { to: "/diseases/stroke", label: "Brain & stroke" },
+  { to: "/diseases/poor-blood-circulation", label: "Leg circulation & PAD" },
+  { to: "/diseases/varicose-veins", label: "Varicose veins & ulcers" },
+  { to: "/conditions/visceral-aneurysm", label: "Abdominal aneurysms" },
+  { to: "/diseases/diabetic-foot", label: "Diabetic foot & wounds" },
+  { to: "/diseases/thyroid-nodules", label: "Thyroid swellings" },
+  { to: "/diseases/liver-tumours", label: "Liver tumours" },
+  { to: "/conditions/renal-artery-stenosis", label: "Kidney blood vessels" },
+  { to: "/diseases/knee-osteoarthritis", label: "Knee pain" },
+  { to: "/diseases/uterine-fibroids", label: "Uterine fibroids" },
+  { to: "/diseases/enlarged-prostate", label: "Enlarged prostate" },
+  { to: "/conditions/dialysis-access-failure", label: "Dialysis access" }
+  { to: "/diseases/stroke", label: "Brain & stroke" },
   { to: "/diseases/poor-blood-circulation", label: "Blood circulation" },
   { to: "/diseases/varicose-veins", label: "Veins" },
   { to: "/diseases/brain-aneurysm", label: "Aneurysms" },
