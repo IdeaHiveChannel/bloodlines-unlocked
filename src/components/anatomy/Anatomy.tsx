@@ -10,6 +10,7 @@ import {
   regionGuide,
   regionLabels,
   regionProcedures,
+  procedures,
   type Region,
 } from "../../lib/content";
 
