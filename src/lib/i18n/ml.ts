@@ -109,7 +109,7 @@ export const ml: ENDictionary = {
         id: "04",
         category: "കാലുകൾ",
         title: "കാലിലെ ധമനികളിലെ തടസ്സം (PAD)",
-        patientLanguage: "കാലിലെ രക്തയോട്ടക്കുറവ് / രക്തചംക്രമണ പ്രശ്നങ്ങൾ",
+        patientLanguage: "കാലിലെ രക്തയോട്ടക്കുറവ് / രക്തചംക്രമണ പ്രശ്നങ്ങൾ (Gangrene/Non-healing ulcer)",
         description: "കാലുകളിലേക്കുള്ള രക്തക്കുഴലുകൾ ചുരുങ്ങുകയോ അടയുകയോ ചെയ്യുമ്പോൾ വേദന, മുറിവുകൾ, ഗാംഗ്രീൻ എന്നിവ ഉണ്ടാകുന്നു. ആൻജിയോപ്ലാസ്റ്റി വഴി രക്തയോട്ടം പുനഃസ്ഥാപിക്കാവുന്നതാണ്.",
         to: "/diseases/poor-blood-circulation"
       },
@@ -125,7 +125,7 @@ export const ml: ENDictionary = {
       {
         id: "06",
         category: "സിരകൾ",
-        title: "വരിക്കോസ് വെയിൻ & വീനസ് അൾസർ (ക്ലോട്ട് / ക്ലോട്ടുകൾ)",
+        title: "വരിക്കോസ് വെയിൻ & വീനസ് അൾസർ (ക്ലോട്ട് / ക്ലോട്ടുകൾ / Clots)",
         patientLanguage: "കാലിലെ വീർത്ത സിരകൾ / ഉണങ്ങാത്ത മുറിവുകൾ",
         description: "സിരകളിലെ വാൽവുകൾ തകരാറിലാകുമ്പോൾ രക്തം കെട്ടിക്കിടന്ന് വരിക്കോസ് വെയിൻ ഉണ്ടാകുന്നു. ലേസർ ചികിത്സ വഴി ഈ സിരകൾ അടയ്ക്കാനും മുറിവുകൾ ഉണക്കാനും സാധിക്കും.",
         to: "/diseases/varicose-veins"
@@ -143,7 +143,7 @@ export const ml: ENDictionary = {
         id: "08",
         category: "തൈറോയ്ഡ്",
         title: "തൈറോയ്ഡ് മുഴകളും വീക്കവും",
-        patientLanguage: "തൈറോയ്ഡ് മുഴകളും വീക്കവും",
+        patientLanguage: "തൈറോയ്ഡ് മുഴകളും വീക്കവും (Swelling)",
         description: "ക്യാൻസർ അല്ലാത്ത തൈറോയ്ഡ് മുഴകൾക്കും വീക്കങ്ങൾക്കും ഇമേജ്-ഗൈഡഡ് അബ്ലേഷൻ വഴി ശസ്ത്രക്രിയയില്ലാത്ത ചികിത്സ നൽകാം.",
         to: "/diseases/thyroid-nodules"
       },
@@ -151,7 +151,7 @@ export const ml: ENDictionary = {
         id: "09",
         category: "വൃക്കകൾ",
         title: "വൃക്കയിലെ ധമനീ തടസ്സം (Renal artery stenosis)",
-        patientLanguage: "നിയന്ത്രിക്കാനാകാത്ത രക്തസമ്മർദ്ദം (High Blood Pressure)",
+        patientLanguage: "നിയന്ത്രിക്കാനാകാത്ത രക്തസമ്മർദ്ദം (High Blood Pressure / 3+ Medications)",
         description: "ഒന്നിലധികം മരുന്നുകൾ കഴിച്ചിട്ടും ബി.പി നിയന്ത്രണവിധേയമാകാത്ത അവസ്ഥയിൽ വൃക്കയിലെ രക്തക്കുഴൽ ചുരുങ്ങുന്നത് ഒരു കാരണമാകാം. ഇത് സ്റ്റെന്റിംഗ് വഴി പരിഹരിക്കാം.",
         to: "/diseases/poor-blood-circulation"
       },
