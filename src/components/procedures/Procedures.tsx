@@ -39,7 +39,7 @@ export function Procedures() {
   );
 }
 
-function ProcedureStory({
+ function ProcedureStory({
   index,
   slug,
   name,
@@ -54,6 +54,7 @@ function ProcedureStory({
   beats: string[];
   storyboard: Storyboard;
 }) {
+  const tx = useTx();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   return (
