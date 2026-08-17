@@ -324,6 +324,38 @@ export const procedures: Procedure[] = [
       "The clot leaves the body. Reperfusion is immediate.",
       "Function returns where it can.",
     ],
+    info: {
+      symptoms: [
+        "Sudden numbness or weakness in the face, arm or leg",
+        "Sudden confusion or trouble speaking",
+        "Sudden trouble seeing in one or both eyes",
+        "Sudden trouble walking or loss of balance",
+        "Sudden severe headache",
+      ],
+      causes: [
+        "Blood clot traveling from the heart (atrial fibrillation)",
+        "Blood clot forming on a plaque in the brain artery",
+        "Carotid artery disease",
+      ],
+      diagnosis: [
+        "CT scan of the brain",
+        "CT angiography (CTA)",
+        "CT perfusion scan",
+        "MRI scan",
+      ],
+      treatment: [
+        "Rapid access to the brain vessel via groin or wrist.",
+        "Navigating a catheter to the site of the clot.",
+        "Using a stent retriever or suction to remove the clot.",
+        "Immediate restoration of blood flow.",
+      ],
+      recovery: [
+        "Close monitoring in a stroke unit.",
+        "Blood pressure management.",
+        "Early rehabilitation (physiotherapy, speech therapy).",
+        "Long-term medication to prevent new clots.",
+      ],
+    },
   },
   {
     slug: "aneurysm-repair",
