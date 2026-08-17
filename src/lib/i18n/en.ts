@@ -805,11 +805,12 @@ export const en = {
             "The procedure is performed under local anaesthesia."
           ],
           recovery: [
-            "Most patients go home the same day.",
-            "Minimal discomfort, managed with simple pain relief.",
-            "Gradual improvement in symptoms over 1-3 months.",
-            "No risk of urinary incontinence or sexual dysfunction."
+            "Procedure: Day 0 - Most patients go home the same day. Minimal discomfort.",
+            "Day 1: Routine normal lifestyle resume.",
+            "1 Month: Gradual symptom improvement starts.",
+            "3 Months: Significant relief and quality of life improvement."
           ]
+
         }
       },
       {
