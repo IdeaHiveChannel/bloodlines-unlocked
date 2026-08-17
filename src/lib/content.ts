@@ -734,7 +734,12 @@ export const procedures: Procedure[] = [
       causes: ["Stenosis", "Clot"],
       diagnosis: ["Physical exam (thrill)", "Ultrasound"],
       treatment: ["Angioplasty", "Stenting"],
-      recovery: ["Immediate use for dialysis often possible", "Light activity same day"],
+      recovery: [
+        "Procedure: Day 0 - High-pressure balloon inflation. Light activity same day.",
+        "Day 1: Discharged and back to work. Immediate use for dialysis often possible.",
+        "1 Week: Routine normal lifestyle resume.",
+      ],
+
     },
   },
 
