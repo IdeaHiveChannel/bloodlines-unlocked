@@ -1,6 +1,6 @@
-import type { Dictionary } from "./en";
+import type { Dictionary as ENDictionary } from "./en";
 
-export const ml: Dictionary = {
+export const ml: ENDictionary = {
   brand: {
     name: "ഡോ. മന്ദീപ് സാഗർ",
     tagline: "ന്യൂറോ & വാസ്കുലർ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
