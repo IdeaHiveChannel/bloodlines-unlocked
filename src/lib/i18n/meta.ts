@@ -17,11 +17,12 @@ export const metaMl: Record<string, MetaCopy> = {
   "/": {
     title: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist",
     description:
-      "Modern medicine, through a pinpoint opening. Specialized image-guided treatment for stroke, aneurysms, varicose veins, liver tumours and diabetic foot without major surgery.",
+      "ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ ആധുനിക വൈദ്യശാസ്ത്രം. Modern medicine, through a pinpoint opening. specialized image-guided treatment for stroke, aneurysms, varicose veins and tumours.",
     ogTitle: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist",
     ogDescription:
-      "Modern medicine, through a pinpoint opening. Minimally invasive image-guided vascular care.",
+      "Modern medicine, through a pinpoint opening. ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ ആധുനിക വൈദ്യശാസ്ത്രം.",
   },
+
 
   "/about": {
     title: "ഡോ. മന്ദീപ് സാഗറിനെക്കുറിച്ച് — ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
