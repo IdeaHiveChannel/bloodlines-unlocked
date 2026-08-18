@@ -1,3 +1,4 @@
+import { useT } from "./i18n/react";
 import { useTx } from "./i18n/tx";
 
 export type NavLink = { to: string; label: string };
@@ -67,19 +68,20 @@ const patientInfo: NavLink[] = [
  */
 export function useSiteNav() {
   const tx = useTx();
+  const t = useT();
   const localise = (links: NavLink[]) => links.map((l) => ({ ...l, label: tx(l.label) }));
 
   const groups: NavGroup[] = [
-    { key: "treat", label: tx("What I treat"), links: localise(treatCategories), columns: 2 },
-    { key: "procedures", label: tx("Procedures"), links: localise(treatmentCategories), columns: 2 },
-    { key: "patient", label: tx("For patients"), links: localise(patientInfo) },
+    { key: "treat", label: tx(t.nav.treat), links: localise(treatCategories), columns: 2 },
+    { key: "procedures", label: tx(t.nav.procedures), links: localise(treatmentCategories), columns: 2 },
+    { key: "patient", label: tx(t.nav.patient), links: localise(patientInfo) },
   ];
 
   return {
     groups,
-    about: { to: "/about", label: tx("About") },
-    expertise: { to: "/expertise", label: tx("Expertise") },
-    secondOpinion: { to: "/second-opinion", label: tx("Second opinion") },
-    book: { to: "/contact", label: tx("Book consultation") },
+    about: { to: "/about", label: tx(t.nav.about) },
+    expertise: { to: "/expertise", label: tx(t.nav.expertise) },
+    secondOpinion: { to: "/second-opinion", label: tx(t.nav.secondOpinion) },
+    book: { to: "/contact", label: tx(t.nav.book) },
   };
 }
