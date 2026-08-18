@@ -35,7 +35,7 @@ export function Hero() {
 
       {/* Content grid */}
 
-      <div className="shell relative z-10 flex h-full flex-col pt-32 pb-24 sm:pt-40 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
+      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-20 sm:pt-40 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
@@ -48,13 +48,13 @@ export function Hero() {
           <div className="mt-4 text-h3 font-medium text-[var(--ink-dim)] lg:text-[1.5rem] html-ml:lg:text-[1.3rem]">
             {tx(t.hero.location)}
           </div>
-          <p className="mt-6 max-w-xl text-body font-medium text-[color-mix(in_oklab,var(--accent)_85%,white)] sm:mt-8 lg:text-[1.0625rem] html-ml:lg:text-[0.95rem] html-ml:lg:leading-relaxed whitespace-pre-line">
+          <p className="mt-5 max-w-xl text-body font-medium text-[color-mix(in_oklab,var(--accent)_85%,white)] sm:mt-8 lg:text-[1.0625rem] html-ml:lg:text-[0.95rem] html-ml:lg:leading-relaxed whitespace-pre-line">
             {tx(t.hero.supporting)}
           </p>
-          <p className="mt-4 max-w-lg text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block lg:text-[1rem] html-ml:lg:text-[0.9rem] html-ml:lg:leading-relaxed">
+          <p className="mt-3 max-w-lg text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block lg:text-[1rem] html-ml:lg:text-[0.9rem] html-ml:lg:leading-relaxed">
             {tx(t.hero.description)}
           </p>
-          <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-5">
+          <div className="mt-6 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-5">
             <LocaleLink to="/contact" data-cursor="link" className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[var(--accent)] px-8 py-3.5 text-button text-white shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)] hover:brightness-110 transition-all">
               {tx(t.hero.secondaryCTA)}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
