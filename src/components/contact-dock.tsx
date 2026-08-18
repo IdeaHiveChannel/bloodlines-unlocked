@@ -35,7 +35,7 @@ const socialIcon: Record<string, ComponentType<IconProps>> = {
 export function ContactDock() {
   const t = useT();
   return (
-    <div className="fixed right-0 bottom-0 z-[60] flex flex-col items-end gap-2.5 p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:p-8">
+    <div className="fixed right-0 bottom-0 z-[60] flex flex-col items-end gap-2.5 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:p-6 lg:p-8">
       <ul className="flex flex-col items-center gap-2.5 rounded-full border border-white/[0.08] bg-[#050B16]/60 p-2 shadow-lg backdrop-blur-xl">
         {socialLinks.map((s) => {
           const Icon = socialIcon[s.label] ?? MapPin;
