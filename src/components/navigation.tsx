@@ -46,7 +46,7 @@ export function Navigation() {
             </span>
           </LocaleLink>
 
-          <ul className="hidden items-center gap-5 lg:flex xl:gap-7">
+          <ul className="hidden items-center gap-3 lg:flex xl:gap-5">
             {groups.map((group) => (
               <NavMenu 
                 key={group.key}
@@ -58,7 +58,7 @@ export function Navigation() {
             <li>
               <LocaleLink
                 to={about.to}
-                className="text-nav text-[var(--ink-dim)] transition-colors hover:text-white"
+                className="text-[0.875rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white"
                 data-cursor="link"
               >
                 {about.label}
@@ -67,7 +67,7 @@ export function Navigation() {
             <li>
               <LocaleLink
                 to={secondOpinion.to}
-                className="text-nav text-[var(--ink-dim)] transition-colors hover:text-white"
+                className="text-[0.875rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white"
                 data-cursor="link"
               >
                 {secondOpinion.label}
