@@ -3,11 +3,11 @@
 export const contact = {
   // Digits only, international format, no "+" — used to build wa.me links.
   whatsappNumber: "916366330505",
-  phoneDisplay: "063663 30505",
+  phoneDisplay: "+91 63663 30505",
   phoneHref: "tel:+916366330505",
-  coordinatorDisplay: "063663 30505",
+  coordinatorDisplay: "+91 63663 30505",
   coordinatorHref: "tel:+916366330505",
-  email: "vascularcaredr@gmail.com",
+  email: "Vascularcaredr@gmail.com",
   emailHref: "mailto:vascularcaredr@gmail.com",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Mangalore%2C%20Karnataka",
   verified: true,
