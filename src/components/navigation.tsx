@@ -43,11 +43,11 @@ export function Navigation() {
             </span>
           </LocaleLink>
 
-          <ul className="hidden items-center gap-1.5 lg:flex xl:gap-5 html-ml:lg:gap-3">
+          <ul className="hidden items-center gap-1 lg:flex xl:gap-3 html-ml:lg:gap-2">
             <li>
               <LocaleLink
                 to={about.to}
-                className="whitespace-nowrap text-[0.75rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white lg:text-[0.8125rem] xl:text-[0.875rem] html-ml:lg:text-[0.7rem] html-ml:xl:text-[0.8125rem]"
+                className="whitespace-nowrap text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white lg:text-[0.8125rem] xl:text-[0.875rem] html-ml:lg:text-[0.68rem] html-ml:xl:text-[0.78rem]"
                 data-cursor="link"
               >
                 {about.label}
@@ -64,7 +64,7 @@ export function Navigation() {
             <li>
               <LocaleLink
                 to="/expertise"
-                className="whitespace-nowrap text-[0.75rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white lg:text-[0.8125rem] xl:text-[0.875rem] html-ml:lg:text-[0.7rem] html-ml:xl:text-[0.8125rem]"
+                className="whitespace-nowrap text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white lg:text-[0.8125rem] xl:text-[0.875rem] html-ml:lg:text-[0.68rem] html-ml:xl:text-[0.78rem]"
                 data-cursor="link"
               >
                 {expertise.label}
@@ -73,7 +73,7 @@ export function Navigation() {
             <li>
               <LocaleLink
                 to={secondOpinion.to}
-                className="whitespace-nowrap text-[0.75rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white lg:text-[0.8125rem] xl:text-[0.875rem] html-ml:lg:text-[0.7rem] html-ml:xl:text-[0.8125rem]"
+                className="whitespace-nowrap text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white lg:text-[0.8125rem] xl:text-[0.875rem] html-ml:lg:text-[0.68rem] html-ml:xl:text-[0.78rem]"
                 data-cursor="link"
               >
                 {secondOpinion.label}
