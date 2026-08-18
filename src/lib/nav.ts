@@ -1,3 +1,4 @@
+import { useT } from "./i18n/react";
 import { useTx } from "./i18n/tx";
 
 export type NavLink = { to: string; label: string };
@@ -67,6 +68,7 @@ const patientInfo: NavLink[] = [
  */
 export function useSiteNav() {
   const tx = useTx();
+  const t = useT();
   const localise = (links: NavLink[]) => links.map((l) => ({ ...l, label: tx(l.label) }));
 
   const groups: NavGroup[] = [
