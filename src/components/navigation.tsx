@@ -44,8 +44,6 @@ export function Navigation() {
           </LocaleLink>
 
           <ul className="hidden items-center gap-3 lg:flex xl:gap-5">
-            {groups.map((group) => (
-              <NavMenu 
             <li>
               <LocaleLink
                 to={about.to}
