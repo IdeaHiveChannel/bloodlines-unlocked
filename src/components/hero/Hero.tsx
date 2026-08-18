@@ -83,7 +83,6 @@ export function Hero() {
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"
               style={{
                 filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6))",
-                animation: "heartbeat 8s ease-in-out infinite",
               }}
               draggable={false}
             />
