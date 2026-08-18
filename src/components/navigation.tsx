@@ -32,7 +32,7 @@ export function Navigation() {
     <>
       <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-8 sm:pt-6">
         <nav
-          className={`mx-auto flex max-w-[1480px] items-center justify-between gap-3 rounded-full border border-white/[0.06] px-4 py-2.5 transition-all duration-500 sm:px-5 sm:py-3 ${
+          className={`mx-auto flex max-w-[1480px] items-center justify-between gap-2 rounded-full border border-white/[0.06] px-3 py-2.5 transition-all duration-500 sm:px-5 sm:py-3 ${
             scrolled ? "bg-[#050B16]/70 backdrop-blur-md" : "bg-transparent"
           }`}
         >
@@ -43,11 +43,11 @@ export function Navigation() {
             </span>
           </LocaleLink>
 
-          <ul className="hidden items-center gap-2 lg:flex xl:gap-5">
+          <ul className="hidden items-center gap-1.5 lg:flex xl:gap-5">
             <li>
               <LocaleLink
                 to={about.to}
-                className="text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
+                className="whitespace-nowrap text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
                 data-cursor="link"
               >
                 {about.label}
@@ -64,7 +64,7 @@ export function Navigation() {
             <li>
               <LocaleLink
                 to="/expertise"
-                className="text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
+                className="whitespace-nowrap text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
                 data-cursor="link"
               >
                 {tx("Expertise")}
@@ -73,7 +73,7 @@ export function Navigation() {
             <li>
               <LocaleLink
                 to={secondOpinion.to}
-                className="text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
+                className="whitespace-nowrap text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
                 data-cursor="link"
               >
                 {secondOpinion.label}
@@ -81,11 +81,11 @@ export function Navigation() {
             </li>
           </ul>
 
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-4">
             <LanguageToggle />
             <LocaleLink
               to={book.to}
-              className="hidden rounded-full bg-[var(--accent)] px-4 py-1.5 text-[0.8125rem] font-semibold uppercase tracking-wider text-white transition-all hover:bg-[var(--accent)]/90 sm:block"
+              className="hidden whitespace-nowrap rounded-full bg-[var(--accent)] px-3 py-1.5 text-[0.8125rem] font-semibold uppercase tracking-wider text-white transition-all hover:bg-[var(--accent)]/90 sm:block xl:px-4"
             >
               {book.label}
             </LocaleLink>
