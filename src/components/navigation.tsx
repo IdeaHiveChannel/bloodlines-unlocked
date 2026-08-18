@@ -128,7 +128,7 @@ export function Navigation() {
           
           <div className="mb-8">
             <h3 className="mb-4 text-caption uppercase tracking-widest text-[var(--ink-dim)]">
-              {tx(t.nav.about)}
+              {tx(t.nav.about)} & {tx("Expertise")}
             </h3>
             <div className="flex flex-wrap gap-2">
               <LocaleLink
@@ -137,6 +137,13 @@ export function Navigation() {
                 className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-h3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
               >
                 {about.label}
+              </LocaleLink>
+              <LocaleLink
+                to="/expertise"
+                onClick={() => setOpen(false)}
+                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-h3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
+              >
+                {tx("Expertise")}
               </LocaleLink>
               <LocaleLink
                 to={secondOpinion.to}
