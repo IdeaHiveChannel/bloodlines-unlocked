@@ -62,11 +62,11 @@ export function ContactDock() {
         target="_blank"
         rel="noreferrer"
         data-cursor="cta"
-        aria-label={t.dock.whatsapp}
+        aria-label={`${t.dock.whatsapp} ${contact.phoneDisplay}`}
         className="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-[#1FAF54] px-4 text-[0.8125rem] font-bold tracking-wide text-white shadow-2xl transition-all hover:-translate-y-0.5 hover:shadow-green-900/20 sm:min-h-13 sm:px-6"
       >
         <MessageCircle size={18} />
-        <span className="hidden sm:inline uppercase tracking-widest">{t.common.whatsapp}</span>
+        <span className="hidden sm:inline tracking-wide">{contact.phoneDisplay}</span>
       </a>
 
       <a
@@ -76,7 +76,7 @@ export function ContactDock() {
         className="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-[var(--accent)] px-4 text-[0.8125rem] font-bold tracking-wide text-white shadow-2xl transition-all hover:-translate-y-0.5 hover:shadow-blue-900/20 sm:min-h-13 sm:px-6"
       >
         <Phone size={18} />
-        <span className="hidden sm:inline uppercase tracking-widest">{t.common.call}</span>
+        <span className="hidden sm:inline tracking-wide">{contact.phoneDisplay}</span>
       </a>
     </div>
   );
