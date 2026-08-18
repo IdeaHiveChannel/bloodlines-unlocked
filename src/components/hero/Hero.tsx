@@ -45,8 +45,7 @@ export function Hero() {
       {/* Layer 3: particles */}
       <Particles />
 
-      {/* Content grid */}
-      <div className="shell relative z-10 flex h-full flex-col pt-32 pb-24 sm:pt-40 lg:flex-row lg:items-center lg:gap-12 lg:pt-36 lg:pb-16">
+      <div className="shell relative z-10 flex h-full flex-col pt-32 pb-24 sm:pt-40 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
