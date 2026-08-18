@@ -71,22 +71,14 @@ export function useSiteNav() {
 
   const groups: NavGroup[] = [
     { key: "treat", label: tx("What I treat"), links: localise(treatCategories), columns: 2 },
-    { key: "treatments", label: tx("Treatments"), links: localise(treatmentCategories), columns: 2 },
-    {
-      key: "expertise",
-      label: tx("Expertise"),
-      links: [
-        ...expertiseAreas.map((a) => ({ to: `/expertise#${a.id}`, label: tx(a.label) })),
-        { to: "/expertise", label: tx("All areas of expertise") },
-      ],
-      columns: 2,
-    },
-    { key: "patient", label: tx("Patient information"), links: localise(patientInfo) },
+    { key: "procedures", label: tx("Procedures"), links: localise(treatmentCategories), columns: 2 },
+    { key: "patient", label: tx("For patients"), links: localise(patientInfo) },
   ];
 
   return {
     groups,
     about: { to: "/about", label: tx("About") },
+    expertise: { to: "/expertise", label: tx("Expertise") },
     secondOpinion: { to: "/second-opinion", label: tx("Second opinion") },
     book: { to: "/contact", label: tx("Book consultation") },
   };
