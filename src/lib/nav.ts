@@ -79,9 +79,9 @@ export function useSiteNav() {
 
   return {
     groups,
-    about: { to: "/about", label: tx("About") },
-    expertise: { to: "/expertise", label: tx("Expertise") },
-    secondOpinion: { to: "/second-opinion", label: tx("Second opinion") },
-    book: { to: "/contact", label: tx("Book consultation") },
+    about: { to: "/about", label: tx(t.nav.about) },
+    expertise: { to: "/expertise", label: tx(t.nav.expertise) },
+    secondOpinion: { to: "/second-opinion", label: tx(t.nav.secondOpinion) },
+    book: { to: "/contact", label: tx(t.nav.book) },
   };
 }

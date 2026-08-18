@@ -67,7 +67,7 @@ export function Navigation() {
                 className="whitespace-nowrap text-[0.75rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white lg:text-[0.8125rem] xl:text-[0.875rem] html-ml:lg:text-[0.7rem] html-ml:xl:text-[0.8125rem]"
                 data-cursor="link"
               >
-                {tx("Expertise")}
+                {expertise.label}
               </LocaleLink>
             </li>
             <li>
