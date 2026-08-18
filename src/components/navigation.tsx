@@ -40,9 +40,6 @@ export function Navigation() {
             <span className="inline-block size-2 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <span className="min-w-0 leading-none">
               <span className="block truncate text-nav">{t.brand.name}</span>
-              <span className="mt-0.5 hidden text-[0.6875rem] font-medium uppercase tracking-[0.24em] text-[var(--ink-dim)] xs:block">
-                {t.brand.tagline}
-              </span>
             </span>
           </LocaleLink>
 
@@ -79,7 +76,7 @@ export function Navigation() {
             <LanguageToggle />
             <LocaleLink
               to={book.to}
-              className="hidden rounded-full bg-[var(--accent)] px-5 py-2 text-label text-white transition-all hover:bg-[var(--accent)]/90 sm:block"
+              className="hidden rounded-full bg-[var(--accent)] px-4 py-1.5 text-[0.8125rem] font-semibold uppercase tracking-wider text-white transition-all hover:bg-[var(--accent)]/90 sm:block"
             >
               {book.label}
             </LocaleLink>
