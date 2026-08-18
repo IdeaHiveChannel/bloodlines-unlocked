@@ -30,20 +30,10 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.6)_0%,rgba(5,11,22,0.92)_100%)]" />
       </motion.div>
 
-      {/* Layer 2: ambient blue drift */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0" style={{
-          background: "radial-gradient(60% 50% at 70% 40%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 70%)",
-          animation: "ambient-drift 24s ease-in-out infinite",
-        }} />
-        <div className="absolute inset-0" style={{
-          background: "radial-gradient(40% 35% at 25% 70%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 70%)",
-          animation: "ambient-drift 32s ease-in-out infinite reverse",
-        }} />
-      </div>
-
-      {/* Layer 3: particles */}
+      {/* Layer 2: particles */}
       <Particles />
+
+      {/* Content grid */}
 
       <div className="shell relative z-10 flex h-full flex-col pt-32 pb-24 sm:pt-40 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
         {/* Left: content */}
@@ -100,7 +90,7 @@ export function Hero() {
           <line x1="1" y1="0" x2="1" y2="15" stroke="var(--accent)" strokeWidth="1"
             strokeDasharray="15 45" style={{ animation: "flowDown 2.4s linear infinite" }} />
         </svg>
-        <style>{`@keyframes flowDown { 0% { stroke-dashoffset: -80; } 100% { stroke-dashoffset: 0; } }`}</style>
+        <style>{`@keyframes flowDown { 0% { stroke-dashoffset: -60; } 100% { stroke-dashoffset: 0; } }`}</style>
       </div>
     </section>
   );
@@ -109,7 +99,7 @@ export function Hero() {
 function Particles() {
   return (
     <div className="pointer-events-none absolute inset-0 opacity-50">
-      {Array.from({ length: 28 }).map((_, i) => {
+      {Array.from({ length: 18 }).map((_, i) => {
         const left = (i * 37) % 100;
         const top = (i * 53) % 100;
         const dur = 18 + (i % 8) * 3;
