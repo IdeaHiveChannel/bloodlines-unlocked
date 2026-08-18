@@ -12,7 +12,7 @@ export function Navigation() {
   const [open, setOpen] = useState(false);
   const t = useT();
   const tx = useTx();
-  const { groups, about, secondOpinion, book } = useSiteNav();
+  const { groups, about, expertise, secondOpinion, book } = useSiteNav();
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 40);
