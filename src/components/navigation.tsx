@@ -128,7 +128,7 @@ export function Navigation() {
           
           <div className="mb-8">
             <h3 className="mb-4 text-caption uppercase tracking-widest text-[var(--ink-dim)]">
-              {tx(t.nav.about)} & {tx("Expertise")}
+              {about.label} & {expertise.label}
             </h3>
             <div className="flex flex-wrap gap-2">
               <LocaleLink
