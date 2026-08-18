@@ -26,8 +26,8 @@ export function Hero() {
     >
       {/* Layer 1: cinematic bg */}
       <motion.div style={{ scale: bgScale }} className="absolute inset-0">
-        <img src={heroBg} alt="" className="h-full w-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.35)_0%,rgba(5,11,22,0.88)_100%)]" />
+        <img src={heroBg} alt="" className="h-full w-full object-cover opacity-25 grayscale-[20%]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.6)_0%,rgba(5,11,22,0.92)_100%)]" />
       </motion.div>
 
       {/* Layer 2: ambient blue drift */}
@@ -46,33 +46,33 @@ export function Hero() {
       <Particles />
 
       {/* Content grid */}
-      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-20 sm:pt-28 lg:flex-row lg:items-center lg:gap-10 lg:pt-32 lg:pb-12">
+      <div className="shell relative z-10 flex h-full flex-col pt-32 pb-24 sm:pt-40 lg:flex-row lg:items-center lg:gap-12 lg:pt-36 lg:pb-16">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
           <div className="flex items-center gap-3">
-            <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)] animate-pulse" />
+            <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <h2 className="text-label">{tx(t.hero.eyebrow)}</h2>
           </div>
-          <h1 className="mt-4 text-display-xxl sm:mt-5 text-balance break-words !whitespace-pre-line leading-tight">
+          <h1 className="mt-4 text-h1 sm:mt-5 text-balance font-bold leading-[1.1] tracking-tight text-white lg:text-[3.25rem]">
             {tx(t.hero.h1)}
           </h1>
-          <p className="mt-4 max-w-xl text-h3 text-[color-mix(in_oklab,var(--accent)_75%,white)] sm:mt-5">
+          <div className="mt-2 text-h3 font-medium text-[var(--ink-dim)] lg:text-[1.75rem]">
+            {tx(t.hero.location)}
+          </div>
+          <p className="mt-6 max-w-xl text-body-lg font-medium text-[color-mix(in_oklab,var(--accent)_85%,white)] sm:mt-8 lg:text-[1.25rem]">
             {tx(t.hero.supporting)}
           </p>
-          <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block">
+          <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block lg:text-[1.0625rem]">
             {tx(t.hero.description)}
           </p>
-          <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4">
-            <LocaleLink to="/diseases" data-cursor="link" className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-button text-black hover:bg-[var(--accent)] transition-colors">
-              {tx(t.hero.primaryCTA)}
-              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-            </LocaleLink>
-            <LocaleLink to="/contact" data-cursor="link" className="inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-3 text-button hover:bg-white/5 transition-colors">
+          <div className="mt-10 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-5">
+            <LocaleLink to="/contact" data-cursor="link" className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[var(--accent)] px-8 py-3.5 text-button text-white shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)] hover:brightness-110 transition-all">
               {tx(t.hero.secondaryCTA)}
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </LocaleLink>
-          </div>
-          <div className="mt-8 text-caption text-[var(--ink-dim)] whitespace-pre-line">
-            {tx(t.hero.location)}
+            <LocaleLink to="/diseases" data-cursor="link" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-button text-[var(--ink)] hover:bg-white/10 transition-colors">
+              {tx(t.hero.primaryCTA)}
+            </LocaleLink>
           </div>
         </motion.div>
 
@@ -83,7 +83,6 @@ export function Hero() {
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"
               style={{
                 filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6))",
-                animation: "heartbeat 8s ease-in-out infinite",
               }}
               draggable={false}
             />

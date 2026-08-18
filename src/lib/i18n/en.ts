@@ -43,15 +43,16 @@ export const en = {
   },
   hero: {
     eyebrow: "Dr. Mandeep Sagar",
-    h1: "Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod",
+    h1: "Vascular & Neuro Interventional Radiologist",
+    location: "Mangalore & Kasaragod",
     supporting: "Advanced image-guided treatment through minimally invasive procedures.",
-    description: "Treating selected vascular and neurovascular conditions through image-guided procedures and small access points.",
+    description: "Treating selected conditions affecting the brain and its blood vessels, arteries and veins of the body, legs and abdomen through image-guided procedures.",
     brandStatement: "Modern medicine, through a pinpoint opening.",
     brandCopy: "Reach the disease through the smallest possible opening. Leave the rest of the body alone.",
     conditions: "Stroke · Brain Aneurysm · Blocked Arteries · Poor Blood Circulation · Diabetic Foot · Varicose Veins · Blood Clots",
     primaryCTA: "Explore conditions",
     secondaryCTA: "Book consultation",
-    location: "Mangalore · Karnataka\nKasaragod · Kerala",
+    
   },
   whatITreat: {
     eyebrow: "Conditions",
