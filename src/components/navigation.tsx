@@ -46,12 +46,6 @@ export function Navigation() {
           <ul className="hidden items-center gap-3 lg:flex xl:gap-5">
             {groups.map((group) => (
               <NavMenu 
-                key={group.key}
-                label={group.label}
-                links={group.links}
-                columns={group.columns as 1 | 2}
-              />
-            ))}
             <li>
               <LocaleLink
                 to={about.to}
@@ -61,6 +55,14 @@ export function Navigation() {
                 {about.label}
               </LocaleLink>
             </li>
+            {groups.map((group) => (
+              <NavMenu 
+                key={group.key}
+                label={group.label}
+                links={group.links}
+                columns={group.columns as 1 | 2}
+              />
+            ))}
             <li>
               <LocaleLink
                 to={secondOpinion.to}
