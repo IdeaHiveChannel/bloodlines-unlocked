@@ -70,9 +70,9 @@ export function useSiteNav() {
   const localise = (links: NavLink[]) => links.map((l) => ({ ...l, label: tx(l.label) }));
 
   const groups: NavGroup[] = [
-    { key: "treat", label: tx("What I treat"), links: localise(treatCategories), columns: 2 },
-    { key: "procedures", label: tx("Procedures"), links: localise(treatmentCategories), columns: 2 },
-    { key: "patient", label: tx("For patients"), links: localise(patientInfo) },
+    { key: "treat", label: tx(t.nav.treat), links: localise(treatCategories), columns: 2 },
+    { key: "procedures", label: tx(t.nav.procedures), links: localise(treatmentCategories), columns: 2 },
+    { key: "patient", label: tx(t.nav.patient), links: localise(patientInfo) },
   ];
 
   return {

@@ -7,10 +7,10 @@ export const ml: ENDictionary = {
     role: "വാസ്കുലർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജി",
   },
   nav: {
-    about: "പരിചയം",
+    about: "ഡോക്ടറെക്കുറിച്ച്",
     diseases: "രോഗങ്ങൾ",
     conditions: "അവസ്ഥകൾ",
-    procedures: "ചികിത്സകൾ",
+    procedures: "ചികിത്സാ രീതികൾ",
     more: "കൂടുതൽ",
     expertise: "വൈദഗ്ധ്യം",
     media: "മീഡിയ",
