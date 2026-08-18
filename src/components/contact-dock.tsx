@@ -35,8 +35,8 @@ const socialIcon: Record<string, ComponentType<IconProps>> = {
 export function ContactDock() {
   const t = useT();
   return (
-    <div className="fixed bottom-0 right-0 z-[60] flex flex-col items-end gap-2 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:p-6">
-      <ul className="flex flex-col items-center gap-2 rounded-2xl border border-white/[0.08] bg-[#050B16]/80 px-1.5 py-2 backdrop-blur-md">
+    <div className="fixed right-0 bottom-0 z-[60] flex flex-col items-end gap-2.5 p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:p-8">
+      <ul className="flex flex-col items-center gap-2.5 rounded-full border border-white/[0.08] bg-[#050B16]/60 p-2 shadow-lg backdrop-blur-xl">
         {socialLinks.map((s) => {
           const Icon = socialIcon[s.label] ?? MapPin;
           return (
@@ -48,9 +48,9 @@ export function ContactDock() {
                 aria-label={s.label}
                 title={s.label}
                 data-cursor="link"
-                className="grid size-6 place-items-center text-[var(--ink-dim)] transition-colors hover:text-white"
+                className="grid size-7 place-items-center text-[var(--ink-dim)] transition-colors hover:text-white"
               >
-                <Icon size={14} />
+                <Icon size={13} />
               </a>
             </li>
           );
@@ -63,20 +63,20 @@ export function ContactDock() {
         rel="noreferrer"
         data-cursor="cta"
         aria-label={t.dock.whatsapp}
-        className="inline-flex min-h-14 items-center gap-2.5 rounded-full bg-[#1FAF54] px-4 text-button text-black shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)] transition-transform hover:scale-[1.03] sm:px-6"
+        className="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-[#1FAF54] px-4 text-[0.8125rem] font-bold tracking-wide text-white shadow-2xl transition-all hover:-translate-y-0.5 hover:shadow-green-900/20 sm:min-h-13 sm:px-6"
       >
-        <MessageCircle size={20} />
-        <span className="hidden sm:inline">{t.common.whatsapp}</span>
+        <MessageCircle size={18} />
+        <span className="hidden sm:inline uppercase tracking-widest">{t.common.whatsapp}</span>
       </a>
 
       <a
         href={contact.phoneHref}
         data-cursor="cta"
         aria-label={`${t.dock.call} ${contact.phoneDisplay}`}
-        className="inline-flex min-h-14 items-center gap-2.5 rounded-full bg-[var(--accent)] px-4 text-button text-black shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)] transition-transform hover:scale-[1.03] sm:px-6"
+        className="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-[var(--accent)] px-4 text-[0.8125rem] font-bold tracking-wide text-white shadow-2xl transition-all hover:-translate-y-0.5 hover:shadow-blue-900/20 sm:min-h-13 sm:px-6"
       >
-        <Phone size={20} />
-        <span className="hidden sm:inline">{t.common.call}</span>
+        <Phone size={18} />
+        <span className="hidden sm:inline uppercase tracking-widest">{t.common.call}</span>
       </a>
     </div>
   );
