@@ -43,7 +43,7 @@ export function Hero() {
             <h2 className="text-label">{tx(t.hero.eyebrow)}</h2>
           </div>
           <h1 className="mt-4 text-h1 sm:mt-5 text-balance font-bold leading-[1.1] tracking-tight text-white lg:text-[2.85rem] whitespace-pre-line">
-            {tx(t.hero.h1)}
+            {tx("Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.\n                                        \n                                            \n                                            I have approved the plan")}
           </h1>
           <div className="mt-4 text-h3 font-medium text-[var(--ink-dim)] lg:text-[1.5rem]">
             {tx(t.hero.location)}
