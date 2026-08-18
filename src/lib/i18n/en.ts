@@ -52,7 +52,7 @@ export const en = {
     conditions: "Stroke · Brain Aneurysm · Blocked Arteries · Poor Blood Circulation · Diabetic Foot · Varicose Veins · Blood Clots",
     primaryCTA: "Explore conditions",
     secondaryCTA: "Book consultation",
-    location: "Mangalore · Karnataka\nKasaragod · Kerala",
+    
   },
   whatITreat: {
     eyebrow: "Conditions",
