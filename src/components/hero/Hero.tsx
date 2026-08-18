@@ -42,16 +42,16 @@ export function Hero() {
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <h2 className="text-label">{tx(t.hero.eyebrow)}</h2>
           </div>
-          <h1 className="mt-4 text-h1 sm:mt-5 text-balance font-bold leading-[1.1] tracking-tight text-white lg:text-[2.85rem] whitespace-pre-line">
+          <h1 className="mt-4 text-h1 sm:mt-5 text-balance font-bold leading-[1.1] tracking-tight text-white lg:text-[2.85rem] html-ml:lg:text-[2.4rem] html-ml:lg:leading-[1.3] whitespace-pre-line">
             {tx(t.hero.h1)}
           </h1>
-          <div className="mt-4 text-h3 font-medium text-[var(--ink-dim)] lg:text-[1.5rem]">
+          <div className="mt-4 text-h3 font-medium text-[var(--ink-dim)] lg:text-[1.5rem] html-ml:lg:text-[1.3rem]">
             {tx(t.hero.location)}
           </div>
-          <p className="mt-8 max-w-xl text-body font-medium text-[color-mix(in_oklab,var(--accent)_85%,white)] sm:mt-10 lg:text-[1.0625rem]">
+          <p className="mt-6 max-w-xl text-body font-medium text-[color-mix(in_oklab,var(--accent)_85%,white)] sm:mt-8 lg:text-[1.0625rem] html-ml:lg:text-[0.95rem] html-ml:lg:leading-relaxed whitespace-pre-line">
             {tx(t.hero.supporting)}
           </p>
-          <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block lg:text-[1rem]">
+          <p className="mt-4 max-w-lg text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block lg:text-[1rem] html-ml:lg:text-[0.9rem] html-ml:lg:leading-relaxed">
             {tx(t.hero.description)}
           </p>
           <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-5">

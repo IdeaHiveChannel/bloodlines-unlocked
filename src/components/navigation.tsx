@@ -39,15 +39,15 @@ export function Navigation() {
           <LocaleLink to="/" activeProps={{ className: "" }} className="group flex min-w-0 items-center gap-2.5 sm:gap-3" data-cursor="link">
             <span className="inline-block size-2 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <span className="min-w-0 leading-none">
-              <span className="block text-nav whitespace-nowrap">{t.brand.name}</span>
+              <span className="block text-nav whitespace-nowrap lg:max-xl:max-w-[120px] lg:max-xl:overflow-hidden lg:max-xl:text-ellipsis">{t.brand.name}</span>
             </span>
           </LocaleLink>
 
-          <ul className="hidden items-center gap-3 lg:flex xl:gap-5">
+          <ul className="hidden items-center gap-2 lg:flex xl:gap-5">
             <li>
               <LocaleLink
                 to={about.to}
-                className="text-[0.875rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white"
+                className="text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
                 data-cursor="link"
               >
                 {about.label}
@@ -64,7 +64,7 @@ export function Navigation() {
             <li>
               <LocaleLink
                 to="/expertise"
-                className="text-[0.875rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white"
+                className="text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
                 data-cursor="link"
               >
                 {tx("Expertise")}
@@ -73,7 +73,7 @@ export function Navigation() {
             <li>
               <LocaleLink
                 to={secondOpinion.to}
-                className="text-[0.875rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white"
+                className="text-[0.8125rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white xl:text-[0.875rem]"
                 data-cursor="link"
               >
                 {secondOpinion.label}
