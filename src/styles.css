@@ -385,6 +385,20 @@
 @custom-variant html-ml (&:where(html[lang="ml"] *));
 
 html[lang="ml"] {
+  /* Prevent word breaking in navigation and headings */
+  --nav-wrap: nowrap;
+  --nav-break: keep-all;
+}
+
+html[lang="ml"] .text-nav,
+html[lang="ml"] nav a,
+html[lang="ml"] nav button {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+
+html[lang="ml"] {
   --font-display: "Noto Sans Malayalam", "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Noto Sans Malayalam", "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Noto Sans Malayalam", "Poppins", ui-sans-serif, system-ui, sans-serif;
