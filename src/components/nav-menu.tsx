@@ -69,7 +69,7 @@ export function NavMenu({
         aria-expanded={open}
         aria-haspopup="true"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 text-[0.875rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white"
+        className="flex items-center gap-1 whitespace-nowrap text-[0.75rem] font-medium tracking-tight text-[var(--ink-dim)] transition-colors hover:text-white lg:text-[0.8125rem] xl:text-[0.875rem]"
         data-cursor="link"
       >
         {label}

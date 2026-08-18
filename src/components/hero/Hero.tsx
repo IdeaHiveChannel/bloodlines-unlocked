@@ -35,26 +35,26 @@ export function Hero() {
 
       {/* Content grid */}
 
-      <div className="shell relative z-10 flex h-full flex-col pt-32 pb-24 sm:pt-40 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
+      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-12 sm:pt-36 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 html-ml:lg:gap-2">
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
-            <h2 className="text-label">{tx(t.hero.eyebrow)}</h2>
+            <h2 className="text-label html-ml:lg:text-[0.7rem]">{tx(t.hero.eyebrow)}</h2>
           </div>
-          <h1 className="mt-4 text-h1 sm:mt-5 text-balance font-bold leading-[1.1] tracking-tight text-white lg:text-[2.85rem] whitespace-pre-line">
+          <h1 className="mt-4 text-h1 sm:mt-5 text-balance font-bold leading-[1.1] tracking-tight text-white lg:text-[2.85rem] html-ml:lg:text-[2.4rem] html-ml:lg:leading-[1.3] whitespace-pre-line">
             {tx(t.hero.h1)}
           </h1>
-          <div className="mt-4 text-h3 font-medium text-[var(--ink-dim)] lg:text-[1.5rem]">
+          <div className="mt-4 text-h3 font-medium text-[var(--ink-dim)] lg:text-[1.5rem] html-ml:lg:text-[1.3rem]">
             {tx(t.hero.location)}
           </div>
-          <p className="mt-8 max-w-xl text-body font-medium text-[color-mix(in_oklab,var(--accent)_85%,white)] sm:mt-10 lg:text-[1.0625rem]">
+          <p className="mt-5 max-w-xl text-body font-medium text-[color-mix(in_oklab,var(--accent)_85%,white)] sm:mt-8 lg:text-[1.0625rem] html-ml:lg:text-[0.95rem] html-ml:lg:leading-relaxed whitespace-pre-line">
             {tx(t.hero.supporting)}
           </p>
-          <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block lg:text-[1rem]">
+          <p className="mt-3 max-w-lg text-body leading-relaxed text-[var(--ink-dim)] hidden sm:block lg:text-[1rem] html-ml:lg:text-[0.9rem] html-ml:lg:leading-relaxed">
             {tx(t.hero.description)}
           </p>
-          <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-5">
+          <div className="mt-6 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:gap-5">
             <LocaleLink to="/contact" data-cursor="link" className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[var(--accent)] px-8 py-3.5 text-button text-white shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)] hover:brightness-110 transition-all">
               {tx(t.hero.secondaryCTA)}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -67,7 +67,7 @@ export function Hero() {
         </motion.div>
 
         {/* Right: portrait */}
-        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-10 flex-1 lg:mt-0 lg:w-[45%] flex flex-col justify-end min-h-[400px] lg:min-h-0">
+        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-6 flex-1 lg:mt-0 lg:w-[45%] flex flex-col justify-end min-h-[300px] sm:min-h-[400px] lg:min-h-0">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[300px] sm:max-w-[380px] lg:aspect-auto lg:h-[620px] lg:max-w-[500px] lg:-mb-16">
             <img src={portraitAsset.url} alt={tx("Dr. Mandeep Sagar, interventional radiologist")}
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"

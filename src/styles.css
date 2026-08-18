@@ -382,8 +382,7 @@
 
 /* ------------------------------------------------------------------ */
 /* Malayalam typography — scoped to html[lang="ml"] only.              */
-/* Unlayered, so these win over the generated utility layer.           */
-/* ------------------------------------------------------------------ */
+@custom-variant html-ml (&:where(html[lang="ml"] *));
 
 html[lang="ml"] {
   --font-display: "Noto Sans Malayalam", "Poppins", ui-sans-serif, system-ui, sans-serif;
