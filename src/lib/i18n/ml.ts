@@ -9,7 +9,6 @@ export const ml: ENDictionary = {
   nav: {
     about: "ഡോക്ടറെക്കുറിച്ച്",
     conditions: "രോഗങ്ങൾ",
-    conditions: "രോഗങ്ങൾ",
     treat: "ഞാൻ ചികിത്സിക്കുന്ന രോഗങ്ങൾ",
     procedures: "ചികിത്സാ രീതികൾ",
     patient: "രോഗികൾക്കുള്ള വിവരങ്ങൾ",
@@ -20,7 +19,6 @@ export const ml: ENDictionary = {
     resources: "വിവരങ്ങൾ",
     secondOpinion: "രണ്ടാം അഭിപ്രായം",
     contact: "ബന്ധപ്പെടുക",
-    allDiseases: "എല്ലാ രോഗങ്ങളും",
     allConditions: "എല്ലാ രോഗങ്ങളും",
     allProcedures: "എല്ലാ ചികിത്സകളും",
     book: "കൺസൾട്ടേഷൻ",

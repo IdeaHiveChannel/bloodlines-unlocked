@@ -6,7 +6,6 @@ export const en = {
   },
   nav: {
     about: "About",
-    diseases: "Diseases",
     conditions: "Conditions",
     treat: "What I treat",
     procedures: "Procedures",
@@ -18,7 +17,6 @@ export const en = {
     resources: "Resources",
     secondOpinion: "Second opinion",
     contact: "Contact",
-    allDiseases: "All diseases",
     allConditions: "All conditions",
     allProcedures: "All procedures",
     book: "Book consultation",
