@@ -21,7 +21,7 @@ export const expertiseAreas = [
 ];
 
 const treatCategories: NavLink[] = [
-  { to: "/diseases/stroke", label: "Acute ischemic stroke" },
+  { to: "/diseases/acute-ischemic-stroke", label: "Acute ischemic stroke" },
   { to: "/diseases/poor-blood-circulation", label: "Leg circulation & PAD" },
   { to: "/diseases/varicose-veins", label: "Varicose veins & ulcers" },
   { to: "/diseases/visceral-aneurysm", label: "Abdominal aneurysms" },
