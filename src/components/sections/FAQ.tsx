@@ -50,7 +50,7 @@ export function FAQ() {
               ))}
             </nav>
             
-            <div className="mt-10 pt-10 border-t border-white/5 hidden lg:block">
+            <div className="mt-10 pt-10 border-t border-white/5">
                <a 
                 href="https://wa.me/916366330505" 
                 target="_blank"
