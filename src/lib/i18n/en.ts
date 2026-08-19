@@ -87,7 +87,7 @@ export const en = {
         title: "Acute ischemic stroke",
         patientLanguage: "Blocked blood vessel in the brain (Hemiplegia / Stroke)",
         description: "A blood clot can block blood flow inside a brain blood vessel and cause a stroke. Selected patients may be treated by removing the clot through a small access point.",
-        to: "/diseases/acute-ischemic-stroke"
+        to: "/conditions/acute-ischemic-stroke"
       },
       {
         id: "02",
@@ -95,7 +95,7 @@ export const en = {
         title: "Cerebral aneurysm",
         patientLanguage: "A weak or bulging blood vessel in the brain",
         description: "A weakened area of a brain blood vessel can enlarge and, in some cases, rupture. Selected aneurysms can be treated from inside the blood vessel.",
-        to: "/diseases/cerebral-aneurysm"
+        to: "/conditions/cerebral-aneurysm"
       },
       {
         id: "03",
@@ -103,7 +103,7 @@ export const en = {
         title: "Arteriovenous malformation (AVM)",
         patientLanguage: "An abnormal connection between blood vessels in the brain",
         description: "An AVM is an abnormal connection between arteries and veins that can sometimes be treated from inside the blood vessels.",
-        to: "/diseases/brain-avm"
+        to: "/conditions/brain-avm"
       },
       {
         id: "04",
@@ -111,7 +111,7 @@ export const en = {
         title: "Peripheral artery disease",
         patientLanguage: "Poor blood circulation in the legs (Gangrene / Non-healing ulcer)",
         description: "Narrowed or blocked arteries can reduce blood flow to the legs and cause pain, wounds and other circulation problems.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/conditions/poor-blood-circulation"
       },
       {
         id: "05",
@@ -119,7 +119,7 @@ export const en = {
         title: "Diabetic foot",
         patientLanguage: "Diabetes-related foot wounds",
         description: "Poor blood supply can make some diabetic foot wounds difficult to heal. Restoring blood flow may help healing in selected cases.",
-        to: "/diseases/diabetic-foot"
+        to: "/conditions/diabetic-foot"
       },
       {
         id: "06",
@@ -128,7 +128,7 @@ export const en = {
         patientLanguage: "Swollen veins / Non-healing ulcers / Varicose vein + ulcer (Clots)",
 
         description: "When the valves in the leg veins do not work properly, blood can pool in the veins and cause varicose veins.",
-        to: "/diseases/varicose-veins"
+        to: "/conditions/varicose-veins"
       },
       {
         id: "07",
@@ -136,7 +136,7 @@ export const en = {
         title: "Deep vein thrombosis",
         patientLanguage: "A blood clot in a deep vein",
         description: "A clot in a deep vein, usually in the leg, can affect circulation and requires medical assessment.",
-        to: "/diseases/varicose-veins"
+        to: "/conditions/varicose-veins"
       },
       {
         id: "08",
@@ -144,7 +144,7 @@ export const en = {
         title: "Thyroid nodules & goitre",
         patientLanguage: "Thyroid lumps and swelling (Swelling)",
         description: "Selected benign thyroid nodules and thyroid swellings can be treated using image-guided ablation.",
-        to: "/diseases/thyroid-nodules"
+        to: "/conditions/thyroid-nodules"
       },
       {
         id: "09",
@@ -152,7 +152,7 @@ export const en = {
         title: "Renal artery stenosis",
         patientLanguage: "Narrowing of the kidney vessel (High Blood Pressure / 3+ Medications)",
         description: "Narrowing of a renal artery can affect blood flow to the kidney and may be associated with difficult-to-control blood pressure.",
-        to: "/diseases/renal-artery-stenosis"
+        to: "/conditions/renal-artery-stenosis"
       },
       {
         id: "10",
@@ -160,7 +160,7 @@ export const en = {
         title: "Hepatocellular carcinoma",
         patientLanguage: "Liver cancer (HCC) / Hemangioma (Shrink by injection)",
         description: "Selected liver tumours can be treated using image-guided procedures.",
-        to: "/diseases/hepatocellular-carcinoma"
+        to: "/conditions/hepatocellular-carcinoma"
       },
       {
         id: "11",
@@ -168,7 +168,7 @@ export const en = {
         title: "Uterine fibroids",
         patientLanguage: "Uterine fibroids / Heavy bleeding / Pelvic pain",
         description: "Fibroids can cause heavy bleeding, pressure and pelvic discomfort. Selected fibroids can be treated through their blood supply.",
-        to: "/diseases/uterine-fibroids"
+        to: "/conditions/uterine-fibroids"
       },
       {
         id: "12",
@@ -176,7 +176,7 @@ export const en = {
         title: "Enlarged prostate (BPH)",
         patientLanguage: "Prostate enlargement causing urinary symptoms (Enlargement)",
         description: "An enlarged prostate can cause difficulty passing urine, weak urine flow and frequent urination.",
-        to: "/diseases/enlarged-prostate"
+        to: "/conditions/enlarged-prostate"
       },
       {
         id: "13",
@@ -184,7 +184,7 @@ export const en = {
         title: "Knee osteoarthritis",
         patientLanguage: "Knee pain caused by arthritis (Knee Pain)",
         description: "Osteoarthritis can cause persistent knee pain and stiffness. Selected patients may be considered for image-guided treatment.",
-        to: "/diseases/knee-osteoarthritis"
+        to: "/conditions/knee-osteoarthritis"
       },
       {
         id: "14",
@@ -192,7 +192,7 @@ export const en = {
         title: "Aortic aneurysm",
         patientLanguage: "A weakened and enlarged section of the aorta",
         description: "An aortic aneurysm can enlarge over time and may require monitoring or treatment.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/conditions/poor-blood-circulation"
       }
     ]
   },

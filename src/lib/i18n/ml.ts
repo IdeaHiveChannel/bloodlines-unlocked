@@ -89,7 +89,7 @@ export const ml: ENDictionary = {
         title: "ബ്രെയിൻ സ്ട്രോക്ക് (Acute ischemic stroke)",
         patientLanguage: "മസ്തിഷ്കത്തിലെ രക്തക്കുഴലിൽ രക്തക്കട്ട / ബ്ലോക്ക് (Hemiplegia / Blocked brain blood vessels)",
         description: "മസ്തിഷ്കത്തിലെ ഒരു രക്തക്കുഴലിൽ രക്തക്കട്ട അടിഞ്ഞുകൂടി രക്തയോട്ടം തടസ്സപ്പെടുന്നത് സ്ട്രോക്കിന് കാരണമാകും. ശസ്ത്രക്രിയ കൂടാതെ രക്തക്കട്ട നീക്കം ചെയ്യുന്ന മെക്കാനിക്കൽ ത്രോംബെക്ടമി (Mechanical thrombectomy) ചികിത്സ ലഭ്യമാണ്.",
-        to: "/diseases/acute-ischemic-stroke"
+        to: "/conditions/acute-ischemic-stroke"
       },
 
       {
@@ -98,7 +98,7 @@ export const ml: ENDictionary = {
         title: "ബ്രെയിൻ അന്യൂറിസം",
         patientLanguage: "മസ്തിഷ്കത്തിലെ രക്തക്കുഴൽ വീർത്ത് വരുന്നത്",
         description: "മസ്തിഷ്കത്തിലെ ഒരു രക്തക്കുഴലിന്റെ ഭിത്തി ദുർബലമായി വീർന്നു വരുന്ന അവസ്ഥയാണ് അന്യൂറിസം. ഇത് പൊട്ടാൻ സാധ്യതയുള്ളതിനാൽ രക്തക്കുഴലിനുള്ളിലൂടെയുള്ള ഇന്റർവെൻഷണൽ ചികിത്സ നൽകാവുന്നതാണ്.",
-        to: "/diseases/cerebral-aneurysm"
+        to: "/conditions/cerebral-aneurysm"
       },
       {
         id: "03",
@@ -106,7 +106,7 @@ export const ml: ENDictionary = {
         title: "ബ്രെയിൻ AVM",
         patientLanguage: "രക്തക്കുഴലുകളുടെ അസാധാരണ ബന്ധം",
         description: "മസ്തിഷ്കത്തിലെ ധമനികളും സിരകളും തമ്മിൽ സാധാരണയല്ലാത്ത രീതിയിൽ ബന്ധിക്കപ്പെടുന്ന അവസ്ഥയാണിത്. ഇത് രക്തക്കുഴലുകൾക്കുള്ളിലൂടെയുള്ള ചികിത്സാരീതികളാൽ നിയന്ത്രിക്കാനാകും.",
-        to: "/diseases/brain-avm"
+        to: "/conditions/brain-avm"
       },
       {
         id: "04",
@@ -114,7 +114,7 @@ export const ml: ENDictionary = {
         title: "കാലിലെ ധമനികളിലെ തടസ്സം (PAD)",
         patientLanguage: "കാലിലെ രക്തയോട്ടക്കുറവ് / രക്തചംക്രമണ പ്രശ്നങ്ങൾ (Gangrene/Non-healing ulcer)",
         description: "കാലുകളിലേക്കുള്ള രക്തക്കുഴലുകൾ ചുരുങ്ങുകയോ അടയുകയോ ചെയ്യുമ്പോൾ വേദന, മുറിവുകൾ, ഗാംഗ്രീൻ എന്നിവ ഉണ്ടാകുന്നു. ആൻജിയോപ്ലാസ്റ്റി വഴി രക്തയോട്ടം പുനഃസ്ഥാപിക്കാവുന്നതാണ്.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/conditions/poor-blood-circulation"
       },
 
       {
@@ -123,7 +123,7 @@ export const ml: ENDictionary = {
         title: "പ്രമേഹ കാലിലെ മുറിവ്",
         patientLanguage: "പ്രമേഹം മൂലമുള്ള മുറിവുകൾ",
         description: "രക്തയോട്ടക്കുറവ് മൂലം പ്രമേഹരോഗികളിലെ ചില മുറിവുകൾ ഉണങ്ങാൻ വൈകിയേക്കാം. രക്തയോട്ടം പുനഃസ്ഥാപിക്കുന്നത് മുറിവുകൾ വേഗത്തിൽ ഉണങ്ങാൻ സഹായിക്കും.",
-        to: "/diseases/diabetic-foot"
+        to: "/conditions/diabetic-foot"
       },
       {
         id: "06",
@@ -131,7 +131,7 @@ export const ml: ENDictionary = {
         title: "വരിക്കോസ് വെയിൻ & വീനസ് അൾസർ (ക്ലോട്ട് / ക്ലോട്ടുകൾ / Clots)",
         patientLanguage: "കാലിലെ വീർത്ത സിരകൾ / ഉണങ്ങാത്ത മുറിവുകൾ",
         description: "സിരകളിലെ വാൽവുകൾ തകരാറിലാകുമ്പോൾ രക്തം കെട്ടിക്കിടന്ന് വരിക്കോസ് വെയിൻ ഉണ്ടാകുന്നു. ലേസർ ചികിത്സ വഴി ഈ സിരകൾ അടയ്ക്കാനും മുറിവുകൾ ഉണക്കാനും സാധിക്കും.",
-        to: "/diseases/varicose-veins"
+        to: "/conditions/varicose-veins"
       },
 
       {
@@ -140,7 +140,7 @@ export const ml: ENDictionary = {
         title: "ഡീപ് വെയിൻ ത്രോംബോസിസ്",
         patientLanguage: "സിരയിൽ രക്തക്കട്ട",
         description: "കാലിലെ ആഴത്തിലുള്ള സിരകളിൽ രക്തക്കട്ട രൂപപ്പെടുന്ന അവസ്ഥയാണിത്. ഇത് രക്തയോട്ടത്തെ ബാധിക്കുമെന്നതിനാൽ കൃത്യമായ വൈദ്യപരിശോധന ആവശ്യമാണ്.",
-        to: "/diseases/varicose-veins"
+        to: "/conditions/varicose-veins"
       },
       {
         id: "08",
@@ -148,7 +148,7 @@ export const ml: ENDictionary = {
         title: "തൈറോയ്ഡ് മുഴകളും വീക്കവും",
         patientLanguage: "തൈറോയ്ഡ് മുഴകളും വീക്കവും (Swelling)",
         description: "ക്യാൻസർ അല്ലാത്ത തൈറോയ്ഡ് മുഴകൾക്കും വീക്കങ്ങൾക്കും ഇമേജ്-ഗൈഡഡ് അബ്ലേഷൻ വഴി ശസ്ത്രക്രിയയില്ലാത്ത ചികിത്സ നൽകാം.",
-        to: "/diseases/thyroid-nodules"
+        to: "/conditions/thyroid-nodules"
       },
       {
         id: "09",
@@ -156,7 +156,7 @@ export const ml: ENDictionary = {
         title: "വൃക്കയിലെ ധമനീ തടസ്സം (Renal artery stenosis)",
         patientLanguage: "നിയന്ത്രിക്കാനാകാത്ത രക്തസമ്മർദ്ദം (High Blood Pressure / 3+ Medications)",
         description: "ഒന്നിലധികം മരുന്നുകൾ കഴിച്ചിട്ടും ബി.പി നിയന്ത്രണവിധേയമാകാത്ത അവസ്ഥയിൽ വൃക്കയിലെ രക്തക്കുഴൽ ചുരുങ്ങുന്നത് ഒരു കാരണമാകാം. ഇത് സ്റ്റെന്റിംഗ് വഴി പരിഹരിക്കാം.",
-        to: "/diseases/renal-artery-stenosis"
+        to: "/conditions/renal-artery-stenosis"
       },
 
       {
@@ -165,7 +165,7 @@ export const ml: ENDictionary = {
         title: "കരളിലെ മുഴകൾ (Liver Tumours)",
         patientLanguage: "കരളിലെ ക്യാൻസർ (HCC) / ഹെമാഞ്ചിയോമ (Shrink by injection)",
         description: "കരളിലെ ക്യാൻസർ മുഴകൾക്ക് TACE അല്ലെങ്കിൽ അബ്ലേഷൻ വഴിയും, ഹെമാഞ്ചിയോമ മുഴകൾക്ക് എംബോളൈസേഷൻ വഴിയും ശസ്ത്രക്രിയയില്ലാത്ത ചികിത്സ നൽകാം.",
-        to: "/diseases/hepatocellular-carcinoma"
+        to: "/conditions/hepatocellular-carcinoma"
       },
 
       {
@@ -174,7 +174,7 @@ export const ml: ENDictionary = {
         title: "ഗർഭപാത്രത്തിലെ ഫൈബ്രോയ്ഡ്",
         patientLanguage: "ഗർഭപാത്രത്തിലെ മുഴകൾ / അമിത രക്തസ്രാവം / പെൽവിക് വേദന",
         description: "അമിത രക്തസ്രാവം, പെൽവിക് ഭാഗത്തെ അസ്വസ്ഥത എന്നിവയ്ക്ക് ഫൈബ്രോയ്ഡ് കാരണമാകാം. ഗർഭപാത്രം നീക്കം ചെയ്യാതെ തന്നെ ഇവയ്ക്കുള്ള ചികിത്സ സാധ്യമാണ്.",
-        to: "/diseases/uterine-fibroids"
+        to: "/conditions/uterine-fibroids"
       },
       {
         id: "12",
@@ -182,7 +182,7 @@ export const ml: ENDictionary = {
         title: "പ്രോസ്റ്റേറ്റ് വീക്കം",
         patientLanguage: "മൂത്രപ്രശ്നങ്ങൾക്ക് കാരണമാകുന്ന വീക്കം (Enlargement)",
         description: "പ്രോസ്റ്റേറ്റ് ഗ്രന്ഥി വലുതാകുന്നത് മൂത്രം ഒഴിക്കാൻ ബുദ്ധിമുട്ട്, ഒഴുക്ക് കുറയുക, ഇടയ്ക്കിടെ മൂത്രമൊഴിക്കുക തുടങ്ങിയ ലക്ഷണങ്ങൾക്ക് കാരണമാകുന്നു.",
-        to: "/diseases/enlarged-prostate"
+        to: "/conditions/enlarged-prostate"
       },
       {
         id: "13",
@@ -190,7 +190,7 @@ export const ml: ENDictionary = {
         title: "മുട്ടിലെ തേയ്മാനം",
         patientLanguage: "ആർത്രൈറ്റിസ് മൂലമുള്ള മുട്ടുവേദന (Knee Pain)",
         description: "മുട്ടിലെ തേയ്മാനം മൂലം കഠിനമായ വേദനയും ചലന ബുദ്ധിമുട്ടും ഉണ്ടാകാം. ശസ്ത്രക്രിയയില്ലാത്ത ഇമേജ്-ഗൈഡഡ് ചികിത്സ ഇതിന് ഫലപ്രദമാണ്.",
-        to: "/diseases/knee-osteoarthritis"
+        to: "/conditions/knee-osteoarthritis"
       },
       {
         id: "14",
@@ -198,7 +198,7 @@ export const ml: ENDictionary = {
         title: "അയോർട്ടിക് അന്യൂറിസം",
         patientLanguage: "പ്രധാന രക്തക്കുഴൽ വീർത്ത് വരുന്നത്",
         description: "ശരീരത്തിലെ പ്രധാന ധമനിയായ അയോർട്ടയുടെ ഭിത്തി ദുർബലമായി വീർത്ത് വരുന്നത് ഭാവിയിൽ അപകടമുണ്ടാക്കാൻ സാധ്യതയുള്ളതിനാൽ കൃത്യമായ നിരീക്ഷണവും ചികിത്സയും ആവശ്യമാണ്.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/conditions/poor-blood-circulation"
       }
     ]
   },
