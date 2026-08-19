@@ -256,6 +256,10 @@ export const en = {
           {
             q: "Can a brain aneurysm be treated without open surgery?",
             a: "Yes. Many brain aneurysms can be treated using endovascular techniques like coiling or flow diversion, which reach the aneurysm from inside the blood vessel through a small pinhole access in the leg or wrist."
+          },
+          {
+            q: "Can brain vascular malformations (AVM) be treated without open surgery?",
+            a: "Yes. In selected cases, endovascular embolization can be used to treat these malformations from within the blood vessels, avoiding major surgery."
           }
         ]
       },
@@ -270,6 +274,36 @@ export const en = {
           {
             q: "Is varicose vein treatment permanent?",
             a: "Modern minimally invasive treatments like laser or radiofrequency ablation are highly effective. While they treat the existing diseased veins, lifestyle changes help prevent new ones from forming."
+          },
+          {
+            q: "How are blood clots (DVT) treated?",
+            a: "Clots in the blood vessels can be dissolved with medication or removed using special devices. This reduces leg swelling and potential future complications."
+          }
+        ]
+      },
+      {
+        id: "organ",
+        label: "Organs & tumours",
+        questions: [
+          {
+            q: "Can liver tumours be treated without surgery?",
+            a: "Yes. Selected liver tumours can be treated via chemoembolization (TACE), where medicine is delivered directly to the tumour, or through ablation using heat to destroy the tumour cells."
+          },
+          {
+            q: "Can uterine fibroids be treated without removing the uterus?",
+            a: "Certainly. Uterine Fibroid Embolization (UFE) is a minimally invasive procedure that cuts off the blood supply to the fibroids, causing them to shrink while preserving the uterus."
+          },
+          {
+            q: "Is there a non-surgical treatment for an enlarged prostate?",
+            a: "Yes. Prostate Artery Embolization (PAE) is an effective non-surgical way to treat Benign Prostatic Hyperplasia (BPH) and its symptoms while maintaining sexual function."
+          },
+          {
+            q: "Can thyroid nodules be treated without surgery?",
+            a: "Yes. Benign thyroid nodules can often be treated using ultrasound-guided ablation, which destroys the nodule without surgical incisions or scarring."
+          },
+          {
+            q: "Is treatment available for chronic knee pain?",
+            a: "Yes. Genicular Artery Embolization (GAE) is a procedure that can provide relief for chronic knee pain by reducing abnormal blood flow to the joint lining."
           }
         ]
       },
@@ -284,6 +318,10 @@ export const en = {
           {
             q: "How is renal artery stenosis treated?",
             a: "In selected cases, renal angioplasty and stenting can be performed to open the narrowed artery, potentially helping to better control blood pressure."
+          },
+          {
+            q: "Can dialysis fistula problems be fixed?",
+            a: "Yes. Blockages or narrowings in a dialysis fistula can often be treated using angioplasty to restore proper flow for dialysis."
           }
         ]
       }
