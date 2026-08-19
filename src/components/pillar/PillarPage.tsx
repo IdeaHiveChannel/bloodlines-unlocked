@@ -378,7 +378,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 16 */}
-          <Section id="related-diseases" index={16} label={tx("Related diseases")} title={tx("Conditions that travel together.")}>
+          <Section id="related-conditions" index={16} label={tx("Related conditions")} title={tx("Conditions that travel together.")}>
             <ul className="grid gap-px overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) =>
                 r.pillar ? (

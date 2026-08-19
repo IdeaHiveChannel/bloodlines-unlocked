@@ -8,7 +8,7 @@ export const ml: ENDictionary = {
   },
   nav: {
     about: "ഡോക്ടറെക്കുറിച്ച്",
-    diseases: "രോഗങ്ങൾ",
+    conditions: "രോഗങ്ങൾ",
     conditions: "രോഗങ്ങൾ",
     treat: "ഞാൻ ചികിത്സിക്കുന്ന രോഗങ്ങൾ",
     procedures: "ചികിത്സാ രീതികൾ",

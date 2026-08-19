@@ -12,7 +12,7 @@ export function ConditionsGateway() {
         <p className="text-label">{tx("Conditions")}</p>
         <div className="mt-6 grid lg:grid-cols-12 gap-10">
           <h2 className="text-display-xl lg:col-span-6">
-            {tx("Different diseases. One philosophy.")}
+            {tx("Different conditions. One philosophy.")}
           </h2>
           <p className="lg:col-span-6 lg:pt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
             {tx("Every condition has its own cause, its own behaviour and its own treatment pathway. Explore how image-guided intervention is used across the body — from emergency stroke care to limb salvage, thyroid nodules and liver tumours.")}
