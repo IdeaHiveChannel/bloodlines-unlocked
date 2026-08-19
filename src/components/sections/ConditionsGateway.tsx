@@ -29,7 +29,7 @@ export function ConditionsGateway() {
               transition={{ duration: 0.5, delay: Math.min(i, 6) * 0.04 }}
             >
               <LocaleLink
-                to="/diseases/$slug"
+                to="/conditions/$slug"
                 params={{ slug: p.slug }}
                 data-cursor="link"
                 className="group flex items-baseline gap-6 border-b border-white/[0.07] py-6 sm:py-7 transition-colors hover:bg-white/[0.02] px-2 -mx-2"
@@ -53,7 +53,7 @@ export function ConditionsGateway() {
         </ol>
 
         <div className="mt-12 flex flex-wrap gap-6">
-          <LocaleLink to="/diseases" data-cursor="link" className="text-label underline">
+          <LocaleLink to="/conditions" data-cursor="link" className="text-label underline">
             {tx("All disease guides →")}
           </LocaleLink>
           <LocaleLink to="/conditions" data-cursor="link" className="text-label underline">

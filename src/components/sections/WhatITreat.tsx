@@ -147,7 +147,7 @@ export function WhatITreat() {
           </AnimatePresence>
 
           <div className="mt-10 sm:mt-12 lg:mt-20">
-            <LocaleLink to="/diseases" data-cursor="link" className="group inline-flex items-center gap-2 text-label underline decoration-white/20 underline-offset-4 hover:decoration-[var(--accent)] transition-colors">
+            <LocaleLink to="/conditions" data-cursor="link" className="group inline-flex items-center gap-2 text-label underline decoration-white/20 underline-offset-4 hover:decoration-[var(--accent)] transition-colors">
               {tx(t.whatITreat.cta)}
             </LocaleLink>
           </div>

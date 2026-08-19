@@ -134,7 +134,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
         <div className="shell">
           {/* 01 — Hero */}
           <header className="pb-14 pt-6">
-            <LocaleLink to="/diseases" className="text-label" data-cursor="link">
+            <LocaleLink to="/conditions" className="text-label" data-cursor="link">
               {tx("← All conditions")}
             </LocaleLink>
             <p className="mt-10 text-label text-[var(--accent)]">
@@ -384,7 +384,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 r.pillar ? (
                   <li key={r.slug} className="bg-[#050B16]">
                     <LocaleLink
-                      to="/diseases/$slug"
+                      to="/conditions/$slug"
                       params={{ slug: r.slug }}
                       data-cursor="link"
                       className="block h-full p-6 transition-colors hover:bg-white/[0.03]"

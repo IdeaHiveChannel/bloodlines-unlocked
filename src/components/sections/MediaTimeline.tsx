@@ -110,7 +110,7 @@ export function MediaTimeline() {
                           )}
                           {e.guide && (
                             <LocaleLink
-                              to="/diseases/$slug"
+                              to="/conditions/$slug"
                               params={{ slug: e.guide }}
                               data-cursor="link"
                               className="text-label underline"

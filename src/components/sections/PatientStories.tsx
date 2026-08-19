@@ -22,7 +22,7 @@ export function PatientStories() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
               <LocaleLink
-                to="/diseases"
+                to="/conditions"
                 data-cursor="cta"
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]"
               >
@@ -66,7 +66,7 @@ export function PatientStories() {
                     </p>
                     {s.guide ? (
                       <LocaleLink
-                        to="/diseases/$slug"
+                        to="/conditions/$slug"
                         params={{ slug: s.guide }}
                         data-cursor="link"
                         className="mt-3 inline-block text-label underline"

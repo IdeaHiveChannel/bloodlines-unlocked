@@ -59,7 +59,7 @@ export function Hero() {
               {tx(t.hero.secondaryCTA)}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </LocaleLink>
-            <LocaleLink to="/diseases" data-cursor="link" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-button text-[var(--ink)] hover:bg-white/10 transition-colors">
+            <LocaleLink to="/conditions" data-cursor="link" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-button text-[var(--ink)] hover:bg-white/10 transition-colors">
               {tx(t.hero.primaryCTA)}
               <ArrowRight size={16} className="opacity-0 -ml-2 transition-all group-hover:opacity-100 group-hover:ml-0" />
             </LocaleLink>

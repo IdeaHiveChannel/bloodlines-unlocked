@@ -19,7 +19,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/about", changefreq: "monthly", priority: "0.8" },
           { path: "/expertise", changefreq: "monthly", priority: "0.8" },
-          { path: "/diseases", changefreq: "weekly", priority: "0.9" },
+          { path: "/conditions", changefreq: "weekly", priority: "0.9" },
           { path: "/conditions", changefreq: "weekly", priority: "0.9" },
           { path: "/procedures", changefreq: "weekly", priority: "0.9" },
           { path: "/second-opinion", changefreq: "monthly", priority: "0.8" },
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/resources", changefreq: "monthly", priority: "0.6" },
           { path: "/contact", changefreq: "monthly", priority: "0.7" },
           ...pillars.map((p) => ({
-            path: `/diseases/${p.slug}`,
+            path: `/conditions/${p.slug}`,
             changefreq: "monthly" as const,
             priority: "0.8",
           })),
