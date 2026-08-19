@@ -109,7 +109,7 @@ export function Navigation() {
           {groups.map((group) => (
             <div key={group.key} className="mb-8">
               <h3 className="mb-4 text-caption uppercase tracking-widest text-[var(--ink-dim)]">
-                {group.label}
+                {group.label === t.nav.diseases ? t.nav.conditions : group.label}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {group.links.map((link) => (

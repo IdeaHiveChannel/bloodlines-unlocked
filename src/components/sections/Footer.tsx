@@ -35,7 +35,7 @@ export function Footer() {
             <p className="text-label">{tx(t.footer.explore)}</p>
             <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
               <li><LocaleLink to="/patient-landing" data-cursor="link" className="text-[var(--accent)] font-medium">{tx(t.footer.patientLanding)}</LocaleLink></li>
-              <li><LocaleLink to="/conditions" data-cursor="link">{tx(t.footer.whatITreat)}</LocaleLink></li>
+              <li><LocaleLink to="/conditions" data-cursor="link">{tx(t.nav.conditions)}</LocaleLink></li>
               <li><LocaleLink to="/procedures" data-cursor="link">{tx(t.footer.treatments)}</LocaleLink></li>
               <li><LocaleLink to="/about" data-cursor="link">{tx(t.nav.about)}</LocaleLink></li>
               <li><LocaleLink to="/expertise" data-cursor="link">{tx(t.nav.expertise)}</LocaleLink></li>
