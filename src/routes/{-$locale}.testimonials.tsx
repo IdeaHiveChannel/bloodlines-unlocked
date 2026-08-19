@@ -56,7 +56,7 @@ function Testimonials() {
                       {tx(s.condition)} · {tx(s.city)}{s.year ? ` · ${s.year}` : ""}
                     </p>
                     {s.guide ? (
-                      <LocaleLink to="/diseases/$slug" params={{ slug: s.guide }} data-cursor="link" className="mt-3 inline-block text-label underline">
+                      <LocaleLink to="/conditions/$slug" params={{ slug: s.guide }} data-cursor="link" className="mt-3 inline-block text-label underline">
                         {tx("Read the case guide →")}
                       </LocaleLink>
                     ) : s.conditionSlug ? (

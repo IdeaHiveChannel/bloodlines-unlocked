@@ -22,14 +22,12 @@ import { Route as Char123LocaleChar125ExpertiseRouteImport } from './routes/{-$l
 import { Route as Char123LocaleChar125ContactRouteImport } from './routes/{-$locale}.contact'
 import { Route as Char123LocaleChar125AboutRouteImport } from './routes/{-$locale}.about'
 import { Route as Char123LocaleChar125ProceduresIndexRouteImport } from './routes/{-$locale}.procedures.index'
-import { Route as Char123LocaleChar125DiseasesIndexRouteImport } from './routes/{-$locale}.diseases.index'
 import { Route as Char123LocaleChar125ConditionsIndexRouteImport } from './routes/{-$locale}.conditions.index'
 import { Route as Char123LocaleChar125ProceduresSlugRouteImport } from './routes/{-$locale}.procedures.$slug'
 import { Route as Char123LocaleChar125PatientInformationPreparingForTreatmentRouteImport } from './routes/{-$locale}.patient-information.preparing-for-treatment'
 import { Route as Char123LocaleChar125PatientInformationHowTreatmentWorksRouteImport } from './routes/{-$locale}.patient-information.how-treatment-works'
 import { Route as Char123LocaleChar125PatientInformationBeforeConsultationRouteImport } from './routes/{-$locale}.patient-information.before-consultation'
 import { Route as Char123LocaleChar125PatientInformationAfterTreatmentRouteImport } from './routes/{-$locale}.patient-information.after-treatment'
-import { Route as Char123LocaleChar125DiseasesSlugRouteImport } from './routes/{-$locale}.diseases.$slug'
 import { Route as Char123LocaleChar125ConditionsSlugRouteImport } from './routes/{-$locale}.conditions.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -109,12 +107,6 @@ const Char123LocaleChar125ProceduresIndexRoute =
     path: '/{-$locale}/procedures/',
     getParentRoute: () => rootRouteImport,
   } as any)
-const Char123LocaleChar125DiseasesIndexRoute =
-  Char123LocaleChar125DiseasesIndexRouteImport.update({
-    id: '/{-$locale}/diseases/',
-    path: '/{-$locale}/diseases/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const Char123LocaleChar125ConditionsIndexRoute =
   Char123LocaleChar125ConditionsIndexRouteImport.update({
     id: '/{-$locale}/conditions/',
@@ -153,12 +145,6 @@ const Char123LocaleChar125PatientInformationAfterTreatmentRoute =
     path: '/{-$locale}/patient-information/after-treatment',
     getParentRoute: () => rootRouteImport,
   } as any)
-const Char123LocaleChar125DiseasesSlugRoute =
-  Char123LocaleChar125DiseasesSlugRouteImport.update({
-    id: '/{-$locale}/diseases/$slug',
-    path: '/{-$locale}/diseases/$slug',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const Char123LocaleChar125ConditionsSlugRoute =
   Char123LocaleChar125ConditionsSlugRouteImport.update({
     id: '/{-$locale}/conditions/$slug',
@@ -180,14 +166,12 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
   '/{-$locale}/': typeof Char123LocaleChar125IndexRoute
   '/{-$locale}/conditions/$slug': typeof Char123LocaleChar125ConditionsSlugRoute
-  '/{-$locale}/diseases/$slug': typeof Char123LocaleChar125DiseasesSlugRoute
   '/{-$locale}/patient-information/after-treatment': typeof Char123LocaleChar125PatientInformationAfterTreatmentRoute
   '/{-$locale}/patient-information/before-consultation': typeof Char123LocaleChar125PatientInformationBeforeConsultationRoute
   '/{-$locale}/patient-information/how-treatment-works': typeof Char123LocaleChar125PatientInformationHowTreatmentWorksRoute
   '/{-$locale}/patient-information/preparing-for-treatment': typeof Char123LocaleChar125PatientInformationPreparingForTreatmentRoute
   '/{-$locale}/procedures/$slug': typeof Char123LocaleChar125ProceduresSlugRoute
   '/{-$locale}/conditions/': typeof Char123LocaleChar125ConditionsIndexRoute
-  '/{-$locale}/diseases/': typeof Char123LocaleChar125DiseasesIndexRoute
   '/{-$locale}/procedures/': typeof Char123LocaleChar125ProceduresIndexRoute
 }
 export interface FileRoutesByTo {
@@ -204,14 +188,12 @@ export interface FileRoutesByTo {
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
   '/{-$locale}': typeof Char123LocaleChar125IndexRoute
   '/{-$locale}/conditions/$slug': typeof Char123LocaleChar125ConditionsSlugRoute
-  '/{-$locale}/diseases/$slug': typeof Char123LocaleChar125DiseasesSlugRoute
   '/{-$locale}/patient-information/after-treatment': typeof Char123LocaleChar125PatientInformationAfterTreatmentRoute
   '/{-$locale}/patient-information/before-consultation': typeof Char123LocaleChar125PatientInformationBeforeConsultationRoute
   '/{-$locale}/patient-information/how-treatment-works': typeof Char123LocaleChar125PatientInformationHowTreatmentWorksRoute
   '/{-$locale}/patient-information/preparing-for-treatment': typeof Char123LocaleChar125PatientInformationPreparingForTreatmentRoute
   '/{-$locale}/procedures/$slug': typeof Char123LocaleChar125ProceduresSlugRoute
   '/{-$locale}/conditions': typeof Char123LocaleChar125ConditionsIndexRoute
-  '/{-$locale}/diseases': typeof Char123LocaleChar125DiseasesIndexRoute
   '/{-$locale}/procedures': typeof Char123LocaleChar125ProceduresIndexRoute
 }
 export interface FileRoutesById {
@@ -229,14 +211,12 @@ export interface FileRoutesById {
   '/{-$locale}/testimonials': typeof Char123LocaleChar125TestimonialsRoute
   '/{-$locale}/': typeof Char123LocaleChar125IndexRoute
   '/{-$locale}/conditions/$slug': typeof Char123LocaleChar125ConditionsSlugRoute
-  '/{-$locale}/diseases/$slug': typeof Char123LocaleChar125DiseasesSlugRoute
   '/{-$locale}/patient-information/after-treatment': typeof Char123LocaleChar125PatientInformationAfterTreatmentRoute
   '/{-$locale}/patient-information/before-consultation': typeof Char123LocaleChar125PatientInformationBeforeConsultationRoute
   '/{-$locale}/patient-information/how-treatment-works': typeof Char123LocaleChar125PatientInformationHowTreatmentWorksRoute
   '/{-$locale}/patient-information/preparing-for-treatment': typeof Char123LocaleChar125PatientInformationPreparingForTreatmentRoute
   '/{-$locale}/procedures/$slug': typeof Char123LocaleChar125ProceduresSlugRoute
   '/{-$locale}/conditions/': typeof Char123LocaleChar125ConditionsIndexRoute
-  '/{-$locale}/diseases/': typeof Char123LocaleChar125DiseasesIndexRoute
   '/{-$locale}/procedures/': typeof Char123LocaleChar125ProceduresIndexRoute
 }
 export interface FileRouteTypes {
@@ -255,14 +235,12 @@ export interface FileRouteTypes {
     | '/{-$locale}/testimonials'
     | '/{-$locale}/'
     | '/{-$locale}/conditions/$slug'
-    | '/{-$locale}/diseases/$slug'
     | '/{-$locale}/patient-information/after-treatment'
     | '/{-$locale}/patient-information/before-consultation'
     | '/{-$locale}/patient-information/how-treatment-works'
     | '/{-$locale}/patient-information/preparing-for-treatment'
     | '/{-$locale}/procedures/$slug'
     | '/{-$locale}/conditions/'
-    | '/{-$locale}/diseases/'
     | '/{-$locale}/procedures/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -279,14 +257,12 @@ export interface FileRouteTypes {
     | '/{-$locale}/testimonials'
     | '/{-$locale}'
     | '/{-$locale}/conditions/$slug'
-    | '/{-$locale}/diseases/$slug'
     | '/{-$locale}/patient-information/after-treatment'
     | '/{-$locale}/patient-information/before-consultation'
     | '/{-$locale}/patient-information/how-treatment-works'
     | '/{-$locale}/patient-information/preparing-for-treatment'
     | '/{-$locale}/procedures/$slug'
     | '/{-$locale}/conditions'
-    | '/{-$locale}/diseases'
     | '/{-$locale}/procedures'
   id:
     | '__root__'
@@ -303,14 +279,12 @@ export interface FileRouteTypes {
     | '/{-$locale}/testimonials'
     | '/{-$locale}/'
     | '/{-$locale}/conditions/$slug'
-    | '/{-$locale}/diseases/$slug'
     | '/{-$locale}/patient-information/after-treatment'
     | '/{-$locale}/patient-information/before-consultation'
     | '/{-$locale}/patient-information/how-treatment-works'
     | '/{-$locale}/patient-information/preparing-for-treatment'
     | '/{-$locale}/procedures/$slug'
     | '/{-$locale}/conditions/'
-    | '/{-$locale}/diseases/'
     | '/{-$locale}/procedures/'
   fileRoutesById: FileRoutesById
 }
@@ -328,14 +302,12 @@ export interface RootRouteChildren {
   Char123LocaleChar125TestimonialsRoute: typeof Char123LocaleChar125TestimonialsRoute
   Char123LocaleChar125IndexRoute: typeof Char123LocaleChar125IndexRoute
   Char123LocaleChar125ConditionsSlugRoute: typeof Char123LocaleChar125ConditionsSlugRoute
-  Char123LocaleChar125DiseasesSlugRoute: typeof Char123LocaleChar125DiseasesSlugRoute
   Char123LocaleChar125PatientInformationAfterTreatmentRoute: typeof Char123LocaleChar125PatientInformationAfterTreatmentRoute
   Char123LocaleChar125PatientInformationBeforeConsultationRoute: typeof Char123LocaleChar125PatientInformationBeforeConsultationRoute
   Char123LocaleChar125PatientInformationHowTreatmentWorksRoute: typeof Char123LocaleChar125PatientInformationHowTreatmentWorksRoute
   Char123LocaleChar125PatientInformationPreparingForTreatmentRoute: typeof Char123LocaleChar125PatientInformationPreparingForTreatmentRoute
   Char123LocaleChar125ProceduresSlugRoute: typeof Char123LocaleChar125ProceduresSlugRoute
   Char123LocaleChar125ConditionsIndexRoute: typeof Char123LocaleChar125ConditionsIndexRoute
-  Char123LocaleChar125DiseasesIndexRoute: typeof Char123LocaleChar125DiseasesIndexRoute
   Char123LocaleChar125ProceduresIndexRoute: typeof Char123LocaleChar125ProceduresIndexRoute
 }
 
@@ -432,13 +404,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125ProceduresIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/{-$locale}/diseases/': {
-      id: '/{-$locale}/diseases/'
-      path: '/{-$locale}/diseases'
-      fullPath: '/{-$locale}/diseases/'
-      preLoaderRoute: typeof Char123LocaleChar125DiseasesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/{-$locale}/conditions/': {
       id: '/{-$locale}/conditions/'
       path: '/{-$locale}/conditions'
@@ -481,13 +446,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125PatientInformationAfterTreatmentRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/{-$locale}/diseases/$slug': {
-      id: '/{-$locale}/diseases/$slug'
-      path: '/{-$locale}/diseases/$slug'
-      fullPath: '/{-$locale}/diseases/$slug'
-      preLoaderRoute: typeof Char123LocaleChar125DiseasesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/{-$locale}/conditions/$slug': {
       id: '/{-$locale}/conditions/$slug'
       path: '/{-$locale}/conditions/$slug'
@@ -515,7 +473,6 @@ const rootRouteChildren: RootRouteChildren = {
   Char123LocaleChar125IndexRoute: Char123LocaleChar125IndexRoute,
   Char123LocaleChar125ConditionsSlugRoute:
     Char123LocaleChar125ConditionsSlugRoute,
-  Char123LocaleChar125DiseasesSlugRoute: Char123LocaleChar125DiseasesSlugRoute,
   Char123LocaleChar125PatientInformationAfterTreatmentRoute:
     Char123LocaleChar125PatientInformationAfterTreatmentRoute,
   Char123LocaleChar125PatientInformationBeforeConsultationRoute:
@@ -528,8 +485,6 @@ const rootRouteChildren: RootRouteChildren = {
     Char123LocaleChar125ProceduresSlugRoute,
   Char123LocaleChar125ConditionsIndexRoute:
     Char123LocaleChar125ConditionsIndexRoute,
-  Char123LocaleChar125DiseasesIndexRoute:
-    Char123LocaleChar125DiseasesIndexRoute,
   Char123LocaleChar125ProceduresIndexRoute:
     Char123LocaleChar125ProceduresIndexRoute,
 }

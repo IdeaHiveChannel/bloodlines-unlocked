@@ -860,12 +860,16 @@ export const regionProcedures: Record<Region, string[]> = {
 
 /** Region → the pillar guide that best represents it, when one exists. */
 export const regionGuide: Partial<Record<Region, string>> = {
-  brain: "stroke",
+  brain: "acute-ischemic-stroke",
   neck: "thyroid-nodules",
-  liver: "liver-tumours",
+  chest: "hemoptysis",
+  abdomen: "visceral-aneurysm",
+  liver: "hepatocellular-carcinoma",
+  kidneys: "renal-artery-stenosis",
+  arms: "dialysis-access-maintenance",
   pelvis: "uterine-fibroids",
-  knee: "knee-osteoarthritis",
-  legs: "peripheral-arterial-disease",
+  knee: "genicular-artery-embolization",
+  legs: "poor-blood-circulation",
   veins: "varicose-veins",
 };
 

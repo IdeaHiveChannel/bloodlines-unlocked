@@ -2,109 +2,71 @@ import { localeHead } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
-import { useConditions } from "../lib/i18n/data";
-import { conditionToPillar } from "../lib/pillars";
+import { usePillars } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
+import { Consultation } from "../components/sections/Consultation";
 
 export const Route = createFileRoute("/{-$locale}/conditions/")({
   head: ({ params }) => localeHead(params, "/conditions", {
-    title: "Conditions treated — Dr. Mandeep Sagar",
+    title: "Patient guides — Dr. Mandeep Sagar",
     description:
-      "The full disease library treated through image-guided intervention — from stroke and aneurysms to fibroids, liver tumours, diabetic foot and varicose veins.",
-    ogTitle: "Conditions treated by Dr. Mandeep Sagar",
+      "Complete patient guides to stroke, varicose veins, diabetic foot, PAD, DVT, fibroids, prostate, brain aneurysm and liver tumours.",
+    ogTitle: "Patient guides — Dr. Mandeep Sagar",
     ogDescription:
-      "Featured guides and the complete catalogue of conditions treated without major surgery.",
+      "Symptoms, tests, treatment options and recovery, explained condition by condition.",
   }),
-  component: ConditionsIndex,
+  component: DiseasesIndex,
 });
 
-const labels: Record<string, string> = {
-  brain: "Brain & cerebral",
-  neck: "Carotid & neck",
-  chest: "Aorta & chest",
-  abdomen: "Abdomen",
-  pelvis: "Pelvis",
-  legs: "Lower limbs",
-};
-
-function ConditionsIndex() {
+function DiseasesIndex() {
   const tx = useTx();
-  const conditions = useConditions();
-  const featured = conditions.filter((c) => conditionToPillar[c.slug]);
-  const others = conditions.filter((c) => !conditionToPillar[c.slug]);
-
-  const byRegion = others.reduce<Record<string, typeof conditions>>((acc, c) => {
-    (acc[c.region] ||= []).push(c);
-    return acc;
-  }, {});
-
+  const items = usePillars();
   return (
     <>
-      <main className="pt-36 pb-24 bg-[#050B16]">
+      <main className="bg-[#050B16] pt-36 pb-24">
         <div className="shell">
-          <p className="text-label">{tx("Catalogue")}</p>
+          <p className="text-label">{tx("Patient guides")}</p>
           <h1 className="text-display-xl mt-6 max-w-3xl">
-            {tx("Conditions treated.")}
+            {tx("Fourteen conditions, explained end to end.")}
           </h1>
           <p className="mt-6 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-            {tx("Each condition links to a focused explanation of what it is, what it feels like, and how it is treated through image-guided intervention. The featured diseases carry a complete guide — symptoms, causes, diagnosis, treatment options, recovery and questions.")}
+            {tx("Each guide runs from the first symptom to the final follow-up — what it is, which tests answer it, every treatment route, how it is treated here, and what recovery actually looks like.")}
           </p>
 
-          <section className="mt-20">
-            <h2 className="text-label">{tx("Featured — complete guides")}</h2>
-            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
-              {featured.map((c) => (
+          <ol className="mt-16 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+            {items.map((p, i) => (
+              <li key={p.slug}>
                 <LocaleLink
-                  key={c.slug}
                   to="/conditions/$slug"
-                  params={{ slug: c.slug }}
+                  params={{ slug: p.slug }}
                   data-cursor="link"
-                  className="group bg-[#050B16] p-8 hover:bg-white/[0.03] transition-colors"
+                  className="group grid items-start gap-5 px-2 py-8 transition-colors hover:bg-white/[0.02] sm:grid-cols-[70px_minmax(0,1fr)_auto]"
                 >
-                  <p className="text-label">{labels[c.region] ?? c.region}</p>
-                  <h3 className="text-card-title mt-4">{c.name}</h3>
-                  <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)] line-clamp-3">
-                    {c.intro}
-                  </p>
-                  <p className="mt-5 text-caption tracking-[0.16em] uppercase text-[var(--accent)]">
-                    {tx("Complete guide →")}
-                  </p>
+                  <span className="text-label pt-2">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h2 className="text-h1">
+                      {p.name}
+                      {p.patientTerm && (
+                        <span className="ml-3 align-middle text-label text-[var(--accent)]">
+                          {tx("Patient term")}
+                        </span>
+                      )}
+                    </h2>
+                    <p className="mt-3 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
+                      {p.summary}
+                    </p>
+                  </div>
+                  <span className="text-label opacity-0 transition-opacity group-hover:opacity-100 sm:pt-3">
+                    {tx("Read →")}
+                  </span>
                 </LocaleLink>
-              ))}
-            </div>
-          </section>
-
-          <section className="mt-24 space-y-16">
-            <p className="text-label">{tx("Other conditions treated")}</p>
-            {Object.entries(byRegion).map(([region, list]) => (
-              <div key={region}>
-                <h2 className="text-label">{labels[region] ?? region}</h2>
-                <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
-                  {list.map((c) => (
-                    <LocaleLink
-                      key={c.slug}
-                      to="/conditions/$slug"
-                      params={{ slug: c.slug }}
-                      data-cursor="link"
-                      className="group bg-[#050B16] p-6 hover:bg-white/[0.03] transition-colors"
-                    >
-                      <h3 className="text-card-title">{c.name}</h3>
-                      <p className="mt-3 text-caption leading-relaxed text-[var(--ink-dim)] line-clamp-3">
-                        {c.intro}
-                      </p>
-                      <p className="mt-4 text-label opacity-0 group-hover:opacity-100 transition-opacity">
-                        {tx("Read →")}
-                      </p>
-                    </LocaleLink>
-                  ))}
-                </div>
-              </div>
+              </li>
             ))}
-          </section>
+          </ol>
         </div>
       </main>
+      <Consultation />
       <Footer />
     </>
   );
 }
-

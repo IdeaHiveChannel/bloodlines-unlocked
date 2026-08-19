@@ -324,7 +324,7 @@ export function Anatomy() {
                   return (
                     <LocaleLink
                       key={h.id}
-                      to="/diseases/$slug"
+                      to="/conditions/$slug"
                       params={{ slug: regionGuide[h.id] || "" }}
                       onPointerEnter={() => setActive(h.id)}
                       onFocus={() => setActive(h.id)}
@@ -583,7 +583,7 @@ export function Anatomy() {
                 <div className="pt-4">
                   {guide ? (
                     <LocaleLink
-                      to="/diseases/$slug"
+                      to="/conditions/$slug"
                       params={{ slug: guide }}
                       className="group inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-8 py-4 text-[var(--bg)] font-semibold transition-transform hover:scale-[1.02] active:scale-[0.98]"
                     >
@@ -591,7 +591,7 @@ export function Anatomy() {
                     </LocaleLink>
                   ) : (
                     <LocaleLink 
-                      to="/diseases" 
+                      to="/conditions" 
                       className="group inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-8 py-4 text-[var(--bg)] font-semibold transition-transform hover:scale-[1.02]"
                     >
                       <span>{t.anatomy.cta}</span>

@@ -6,7 +6,6 @@ export const en = {
   },
   nav: {
     about: "About",
-    diseases: "Diseases",
     conditions: "Conditions",
     treat: "What I treat",
     procedures: "Procedures",
@@ -18,7 +17,6 @@ export const en = {
     resources: "Resources",
     secondOpinion: "Second opinion",
     contact: "Contact",
-    allDiseases: "All diseases",
     allConditions: "All conditions",
     allProcedures: "All procedures",
     book: "Book consultation",
@@ -87,7 +85,7 @@ export const en = {
         title: "Acute ischemic stroke",
         patientLanguage: "Blocked blood vessel in the brain (Hemiplegia / Stroke)",
         description: "A blood clot can block blood flow inside a brain blood vessel and cause a stroke. Selected patients may be treated by removing the clot through a small access point.",
-        to: "/diseases/stroke"
+        to: "/conditions/acute-ischemic-stroke"
       },
       {
         id: "02",
@@ -95,7 +93,7 @@ export const en = {
         title: "Cerebral aneurysm",
         patientLanguage: "A weak or bulging blood vessel in the brain",
         description: "A weakened area of a brain blood vessel can enlarge and, in some cases, rupture. Selected aneurysms can be treated from inside the blood vessel.",
-        to: "/diseases/brain-aneurysm"
+        to: "/conditions/cerebral-aneurysm"
       },
       {
         id: "03",
@@ -103,7 +101,7 @@ export const en = {
         title: "Arteriovenous malformation (AVM)",
         patientLanguage: "An abnormal connection between blood vessels in the brain",
         description: "An AVM is an abnormal connection between arteries and veins that can sometimes be treated from inside the blood vessels.",
-        to: "/diseases/brain-aneurysm"
+        to: "/conditions/brain-avm"
       },
       {
         id: "04",
@@ -111,7 +109,7 @@ export const en = {
         title: "Peripheral artery disease",
         patientLanguage: "Poor blood circulation in the legs (Gangrene / Non-healing ulcer)",
         description: "Narrowed or blocked arteries can reduce blood flow to the legs and cause pain, wounds and other circulation problems.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/conditions/poor-blood-circulation"
       },
       {
         id: "05",
@@ -119,7 +117,7 @@ export const en = {
         title: "Diabetic foot",
         patientLanguage: "Diabetes-related foot wounds",
         description: "Poor blood supply can make some diabetic foot wounds difficult to heal. Restoring blood flow may help healing in selected cases.",
-        to: "/diseases/diabetic-foot"
+        to: "/conditions/diabetic-foot"
       },
       {
         id: "06",
@@ -128,7 +126,7 @@ export const en = {
         patientLanguage: "Swollen veins / Non-healing ulcers / Varicose vein + ulcer (Clots)",
 
         description: "When the valves in the leg veins do not work properly, blood can pool in the veins and cause varicose veins.",
-        to: "/diseases/varicose-veins"
+        to: "/conditions/varicose-veins"
       },
       {
         id: "07",
@@ -136,7 +134,7 @@ export const en = {
         title: "Deep vein thrombosis",
         patientLanguage: "A blood clot in a deep vein",
         description: "A clot in a deep vein, usually in the leg, can affect circulation and requires medical assessment.",
-        to: "/diseases/varicose-veins"
+        to: "/conditions/varicose-veins"
       },
       {
         id: "08",
@@ -144,7 +142,7 @@ export const en = {
         title: "Thyroid nodules & goitre",
         patientLanguage: "Thyroid lumps and swelling (Swelling)",
         description: "Selected benign thyroid nodules and thyroid swellings can be treated using image-guided ablation.",
-        to: "/diseases/thyroid-nodules"
+        to: "/conditions/thyroid-nodules"
       },
       {
         id: "09",
@@ -152,7 +150,7 @@ export const en = {
         title: "Renal artery stenosis",
         patientLanguage: "Narrowing of the kidney vessel (High Blood Pressure / 3+ Medications)",
         description: "Narrowing of a renal artery can affect blood flow to the kidney and may be associated with difficult-to-control blood pressure.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/conditions/renal-artery-stenosis"
       },
       {
         id: "10",
@@ -160,7 +158,7 @@ export const en = {
         title: "Hepatocellular carcinoma",
         patientLanguage: "Liver cancer (HCC) / Hemangioma (Shrink by injection)",
         description: "Selected liver tumours can be treated using image-guided procedures.",
-        to: "/diseases/liver-tumours"
+        to: "/conditions/hepatocellular-carcinoma"
       },
       {
         id: "11",
@@ -168,7 +166,7 @@ export const en = {
         title: "Uterine fibroids",
         patientLanguage: "Uterine fibroids / Heavy bleeding / Pelvic pain",
         description: "Fibroids can cause heavy bleeding, pressure and pelvic discomfort. Selected fibroids can be treated through their blood supply.",
-        to: "/diseases/uterine-fibroids"
+        to: "/conditions/uterine-fibroids"
       },
       {
         id: "12",
@@ -176,7 +174,7 @@ export const en = {
         title: "Enlarged prostate (BPH)",
         patientLanguage: "Prostate enlargement causing urinary symptoms (Enlargement)",
         description: "An enlarged prostate can cause difficulty passing urine, weak urine flow and frequent urination.",
-        to: "/diseases/enlarged-prostate"
+        to: "/conditions/enlarged-prostate"
       },
       {
         id: "13",
@@ -184,7 +182,7 @@ export const en = {
         title: "Knee osteoarthritis",
         patientLanguage: "Knee pain caused by arthritis (Knee Pain)",
         description: "Osteoarthritis can cause persistent knee pain and stiffness. Selected patients may be considered for image-guided treatment.",
-        to: "/diseases/knee-osteoarthritis"
+        to: "/conditions/knee-osteoarthritis"
       },
       {
         id: "14",
@@ -192,7 +190,7 @@ export const en = {
         title: "Aortic aneurysm",
         patientLanguage: "A weakened and enlarged section of the aorta",
         description: "An aortic aneurysm can enlarge over time and may require monitoring or treatment.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/conditions/poor-blood-circulation"
       }
     ]
   },
@@ -256,6 +254,10 @@ export const en = {
           {
             q: "Can a brain aneurysm be treated without open surgery?",
             a: "Yes. Many brain aneurysms can be treated using endovascular techniques like coiling or flow diversion, which reach the aneurysm from inside the blood vessel through a small pinhole access in the leg or wrist."
+          },
+          {
+            q: "Can brain vascular malformations (AVM) be treated without open surgery?",
+            a: "Yes. In selected cases, endovascular embolization can be used to treat these malformations from within the blood vessels, avoiding major surgery."
           }
         ]
       },
@@ -270,6 +272,36 @@ export const en = {
           {
             q: "Is varicose vein treatment permanent?",
             a: "Modern minimally invasive treatments like laser or radiofrequency ablation are highly effective. While they treat the existing diseased veins, lifestyle changes help prevent new ones from forming."
+          },
+          {
+            q: "How are blood clots (DVT) treated?",
+            a: "Clots in the blood vessels can be dissolved with medication or removed using special devices. This reduces leg swelling and potential future complications."
+          }
+        ]
+      },
+      {
+        id: "organ",
+        label: "Organs & tumours",
+        questions: [
+          {
+            q: "Can liver tumours be treated without surgery?",
+            a: "Yes. Selected liver tumours can be treated via chemoembolization (TACE), where medicine is delivered directly to the tumour, or through ablation using heat to destroy the tumour cells."
+          },
+          {
+            q: "Can uterine fibroids be treated without removing the uterus?",
+            a: "Certainly. Uterine Fibroid Embolization (UFE) is a minimally invasive procedure that cuts off the blood supply to the fibroids, causing them to shrink while preserving the uterus."
+          },
+          {
+            q: "Is there a non-surgical treatment for an enlarged prostate?",
+            a: "Yes. Prostate Artery Embolization (PAE) is an effective non-surgical way to treat Benign Prostatic Hyperplasia (BPH) and its symptoms while maintaining sexual function."
+          },
+          {
+            q: "Can thyroid nodules be treated without surgery?",
+            a: "Yes. Benign thyroid nodules can often be treated using ultrasound-guided ablation, which destroys the nodule without surgical incisions or scarring."
+          },
+          {
+            q: "Is treatment available for chronic knee pain?",
+            a: "Yes. Genicular Artery Embolization (GAE) is a procedure that can provide relief for chronic knee pain by reducing abnormal blood flow to the joint lining."
           }
         ]
       },
@@ -284,6 +316,10 @@ export const en = {
           {
             q: "How is renal artery stenosis treated?",
             a: "In selected cases, renal angioplasty and stenting can be performed to open the narrowed artery, potentially helping to better control blood pressure."
+          },
+          {
+            q: "Can dialysis fistula problems be fixed?",
+            a: "Yes. Blockages or narrowings in a dialysis fistula can often be treated using angioplasty to restore proper flow for dialysis."
           }
         ]
       }
