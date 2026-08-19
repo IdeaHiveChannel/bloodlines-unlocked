@@ -21,33 +21,33 @@ export const expertiseAreas = [
 ];
 
 const treatCategories: NavLink[] = [
-  { to: "/diseases/stroke", label: "Brain & stroke" },
+  { to: "/diseases/stroke", label: "Acute ischemic stroke" },
   { to: "/diseases/poor-blood-circulation", label: "Leg circulation & PAD" },
   { to: "/diseases/varicose-veins", label: "Varicose veins & ulcers" },
-  { to: "/conditions/visceral-aneurysm", label: "Abdominal aneurysms" },
+  { to: "/diseases/brain-aneurysm", label: "Abdominal aneurysms" },
   { to: "/diseases/diabetic-foot", label: "Diabetic foot & wounds" },
   { to: "/diseases/thyroid-nodules", label: "Thyroid swellings" },
   { to: "/diseases/liver-tumours", label: "Liver tumours" },
-  { to: "/conditions/renal-artery-stenosis", label: "Kidney blood vessels" },
+  { to: "/diseases/poor-blood-circulation", label: "Kidney blood vessels" },
   { to: "/diseases/knee-osteoarthritis", label: "Knee pain" },
   { to: "/diseases/uterine-fibroids", label: "Uterine fibroids" },
   { to: "/diseases/enlarged-prostate", label: "Enlarged prostate" },
-  { to: "/conditions/dialysis-access-failure", label: "Dialysis access" },
-  { to: "/conditions", label: "Other conditions" },
+  { to: "/diseases/poor-blood-circulation", label: "Dialysis access" },
+  { to: "/diseases", label: "Other conditions" },
 ];
 
 const treatmentCategories: NavLink[] = [
   { to: "/procedures/angioplasty", label: "Restore blood flow" },
   { to: "/procedures/thrombectomy", label: "Remove blood clots" },
-  { to: "/diseases/brain-avm-avf", label: "Brain vessel treatment" },
+  { to: "/diseases/brain-aneurysm", label: "Brain vessel treatment" },
   { to: "/procedures/aneurysm-repair", label: "Aneurysm treatment" },
-  { to: "/procedures/varicose-vein-ablation", label: "Vein treatment" },
-  { to: "/procedures/tace", label: "Tumour treatment" },
-  { to: "/procedures/thyroid-ablation", label: "Thyroid treatment" },
-  { to: "/procedures/genicular-artery-embolization", label: "Knee pain treatment" },
-  { to: "/procedures/uterine-fibroid-embolization", label: "Fibroid treatment" },
-  { to: "/procedures/prostate-artery-embolization", label: "Prostate treatment" },
-  { to: "/procedures/dialysis-fistuloplasty", label: "Dialysis access treatment" },
+  { to: "/procedures/angioplasty", label: "Vein treatment" },
+  { to: "/procedures/angioplasty", label: "Tumour treatment" },
+  { to: "/procedures/angioplasty", label: "Thyroid treatment" },
+  { to: "/procedures/angioplasty", label: "Knee pain treatment" },
+  { to: "/procedures/angioplasty", label: "Fibroid treatment" },
+  { to: "/procedures/angioplasty", label: "Prostate treatment" },
+  { to: "/procedures/angioplasty", label: "Dialysis access treatment" },
   { to: "/procedures", label: "All treatments" },
 ];
 
