@@ -89,7 +89,7 @@ export const ml: ENDictionary = {
         title: "ബ്രെയിൻ സ്ട്രോക്ക് (Acute ischemic stroke)",
         patientLanguage: "മസ്തിഷ്കത്തിലെ രക്തക്കുഴലിൽ രക്തക്കട്ട / ബ്ലോക്ക് (Hemiplegia / Blocked brain blood vessels)",
         description: "മസ്തിഷ്കത്തിലെ ഒരു രക്തക്കുഴലിൽ രക്തക്കട്ട അടിഞ്ഞുകൂടി രക്തയോട്ടം തടസ്സപ്പെടുന്നത് സ്ട്രോക്കിന് കാരണമാകും. ശസ്ത്രക്രിയ കൂടാതെ രക്തക്കട്ട നീക്കം ചെയ്യുന്ന മെക്കാനിക്കൽ ത്രോംബെക്ടമി (Mechanical thrombectomy) ചികിത്സ ലഭ്യമാണ്.",
-        to: "/diseases/stroke"
+        to: "/diseases/acute-ischemic-stroke"
       },
 
       {
@@ -98,7 +98,7 @@ export const ml: ENDictionary = {
         title: "ബ്രെയിൻ അന്യൂറിസം",
         patientLanguage: "മസ്തിഷ്കത്തിലെ രക്തക്കുഴൽ വീർത്ത് വരുന്നത്",
         description: "മസ്തിഷ്കത്തിലെ ഒരു രക്തക്കുഴലിന്റെ ഭിത്തി ദുർബലമായി വീർന്നു വരുന്ന അവസ്ഥയാണ് അന്യൂറിസം. ഇത് പൊട്ടാൻ സാധ്യതയുള്ളതിനാൽ രക്തക്കുഴലിനുള്ളിലൂടെയുള്ള ഇന്റർവെൻഷണൽ ചികിത്സ നൽകാവുന്നതാണ്.",
-        to: "/diseases/brain-aneurysm"
+        to: "/diseases/cerebral-aneurysm"
       },
       {
         id: "03",
@@ -106,7 +106,7 @@ export const ml: ENDictionary = {
         title: "ബ്രെയിൻ AVM",
         patientLanguage: "രക്തക്കുഴലുകളുടെ അസാധാരണ ബന്ധം",
         description: "മസ്തിഷ്കത്തിലെ ധമനികളും സിരകളും തമ്മിൽ സാധാരണയല്ലാത്ത രീതിയിൽ ബന്ധിക്കപ്പെടുന്ന അവസ്ഥയാണിത്. ഇത് രക്തക്കുഴലുകൾക്കുള്ളിലൂടെയുള്ള ചികിത്സാരീതികളാൽ നിയന്ത്രിക്കാനാകും.",
-        to: "/diseases/brain-aneurysm"
+        to: "/diseases/brain-avm"
       },
       {
         id: "04",
@@ -156,7 +156,7 @@ export const ml: ENDictionary = {
         title: "വൃക്കയിലെ ധമനീ തടസ്സം (Renal artery stenosis)",
         patientLanguage: "നിയന്ത്രിക്കാനാകാത്ത രക്തസമ്മർദ്ദം (High Blood Pressure / 3+ Medications)",
         description: "ഒന്നിലധികം മരുന്നുകൾ കഴിച്ചിട്ടും ബി.പി നിയന്ത്രണവിധേയമാകാത്ത അവസ്ഥയിൽ വൃക്കയിലെ രക്തക്കുഴൽ ചുരുങ്ങുന്നത് ഒരു കാരണമാകാം. ഇത് സ്റ്റെന്റിംഗ് വഴി പരിഹരിക്കാം.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/diseases/renal-artery-stenosis"
       },
 
       {
@@ -165,7 +165,7 @@ export const ml: ENDictionary = {
         title: "കരളിലെ മുഴകൾ (Liver Tumours)",
         patientLanguage: "കരളിലെ ക്യാൻസർ (HCC) / ഹെമാഞ്ചിയോമ (Shrink by injection)",
         description: "കരളിലെ ക്യാൻസർ മുഴകൾക്ക് TACE അല്ലെങ്കിൽ അബ്ലേഷൻ വഴിയും, ഹെമാഞ്ചിയോമ മുഴകൾക്ക് എംബോളൈസേഷൻ വഴിയും ശസ്ത്രക്രിയയില്ലാത്ത ചികിത്സ നൽകാം.",
-        to: "/diseases/liver-tumours"
+        to: "/diseases/hepatocellular-carcinoma"
       },
 
       {

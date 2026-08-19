@@ -87,7 +87,7 @@ export const en = {
         title: "Acute ischemic stroke",
         patientLanguage: "Blocked blood vessel in the brain (Hemiplegia / Stroke)",
         description: "A blood clot can block blood flow inside a brain blood vessel and cause a stroke. Selected patients may be treated by removing the clot through a small access point.",
-        to: "/diseases/stroke"
+        to: "/diseases/acute-ischemic-stroke"
       },
       {
         id: "02",
@@ -95,7 +95,7 @@ export const en = {
         title: "Cerebral aneurysm",
         patientLanguage: "A weak or bulging blood vessel in the brain",
         description: "A weakened area of a brain blood vessel can enlarge and, in some cases, rupture. Selected aneurysms can be treated from inside the blood vessel.",
-        to: "/diseases/brain-aneurysm"
+        to: "/diseases/cerebral-aneurysm"
       },
       {
         id: "03",
@@ -103,7 +103,7 @@ export const en = {
         title: "Arteriovenous malformation (AVM)",
         patientLanguage: "An abnormal connection between blood vessels in the brain",
         description: "An AVM is an abnormal connection between arteries and veins that can sometimes be treated from inside the blood vessels.",
-        to: "/diseases/brain-aneurysm"
+        to: "/diseases/brain-avm"
       },
       {
         id: "04",
@@ -152,7 +152,7 @@ export const en = {
         title: "Renal artery stenosis",
         patientLanguage: "Narrowing of the kidney vessel (High Blood Pressure / 3+ Medications)",
         description: "Narrowing of a renal artery can affect blood flow to the kidney and may be associated with difficult-to-control blood pressure.",
-        to: "/diseases/poor-blood-circulation"
+        to: "/diseases/renal-artery-stenosis"
       },
       {
         id: "10",
@@ -160,7 +160,7 @@ export const en = {
         title: "Hepatocellular carcinoma",
         patientLanguage: "Liver cancer (HCC) / Hemangioma (Shrink by injection)",
         description: "Selected liver tumours can be treated using image-guided procedures.",
-        to: "/diseases/liver-tumours"
+        to: "/diseases/hepatocellular-carcinoma"
       },
       {
         id: "11",
