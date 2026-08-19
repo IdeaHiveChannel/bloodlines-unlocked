@@ -58,7 +58,7 @@ export function WhatITreat() {
                       mt-0 lg:mt-2 font-display font-semibold transition-colors group-hover:text-[var(--accent)]
                       text-[18px] sm:text-[20px] lg:text-[22px]
                       ${isMl ? 'leading-[1.5] py-1' : 'leading-[1.3]'}
-                      break-words hyphens-auto
+                      break-words hyphens-auto line-clamp-2
                     `}>
                       {titleText}
                     </h3>
@@ -66,7 +66,7 @@ export function WhatITreat() {
                     {patientText && (
                       <p className={`
                         mt-1 font-medium text-[var(--accent)] opacity-80
-                        text-[13px] sm:text-[14px] leading-tight
+                        text-[13px] sm:text-[14px] leading-tight line-clamp-1
                       `}>
                         {patientText}
                       </p>
@@ -124,15 +124,15 @@ export function WhatITreat() {
                   <h4 className="hidden lg:block text-label mb-8">{tx(t.whatITreat.moreConditionsLabel)}</h4>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-3">
                     {t.whatITreat.moreConditions.map((condition: string, i: number) => {
-                      // Attempt to find a condition slug if it's one of the known conditions
-                      const slug = condition.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '');
-                      // This is a simplified lookup, in a real app we'd map condition names to slugs properly.
-                      // For now, we link to the general diseases page if we can't be sure.
+                      const conditionSlug = condition.toLowerCase()
+                        .replace(/\s+/g, '-')
+                        .replace(/[()]/g, '')
+                        .replace(/[^a-z0-9-]/g, '');
                       
                       return (
                         <div key={i} className="flex items-center">
                           <LocaleLink
-                            to="/diseases"
+                            to={`/conditions/${conditionSlug}`}
                             className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors border border-white/10 rounded-full px-3 py-1 bg-white/5"
                           >
                             {tx(condition)}
