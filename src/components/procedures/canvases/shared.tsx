@@ -121,3 +121,8 @@ export function UltrasoundSector({ opacity = 1 }: { opacity?: number }) {
 }
 
 export { motion, useTransform };
+
+/** Map a 0→1 ramp onto a numeric range. */
+export function useRange(mv: MotionValue<number>, a: number, b: number) {
+  return useTransform(mv, [0, 1], [a, b]);
+}
