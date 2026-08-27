@@ -36,10 +36,11 @@ export function StoryboardCanvas({
   storyboard,
   progress,
 }: {
-  storyboard: Storyboard;
+  storyboard?: Storyboard;
   progress: MotionValue<number>;
 }) {
-  const Scene = scenes[storyboard] ?? Angioplasty;
+  const Scene = storyboard ? scenes[storyboard] : undefined;
+  if (!Scene) return null;
   return (
     <div className="absolute inset-0">
       <Scene progress={progress} />

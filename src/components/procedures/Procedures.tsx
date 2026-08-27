@@ -4,7 +4,12 @@ import { LocaleLink } from "../../components/locale-link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
-import { featuredProcedures, type Storyboard } from "../../lib/content";
+import { procedures, type Storyboard } from "../../lib/content";
+
+/** Every procedure has its own scene — look up the full list, not the featured subset. */
+const storyboardBySlug = new Map<string, Storyboard>(
+  procedures.map((p) => [p.slug, p.storyboard]),
+);
 import { StoryboardCanvas } from "./canvases";
 
 export function Procedures() {
@@ -29,7 +34,7 @@ export function Procedures() {
           name={p.name}
           oneLiner={p.oneLiner}
           beats={p.beats}
-          storyboard={featuredProcedures.find((fp) => fp.slug === p.slug)?.storyboard || "angioplasty"}
+          storyboard={storyboardBySlug.get(p.slug)}
         />
       ))}
       <div className="shell pb-20 sm:pb-28">
@@ -54,7 +59,7 @@ export function Procedures() {
   name: string;
   oneLiner: string;
   beats: string[];
-  storyboard: Storyboard;
+  storyboard?: Storyboard;
 }) {
   const t = useT();
   const tx = useTx();
