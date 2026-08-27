@@ -1,6 +1,8 @@
 import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../locale-link";
+import { trackEvent } from "../../lib/analytics";
+
 import { ArrowRight } from "lucide-react";
 
 /**
@@ -24,8 +26,10 @@ export function ConditionsEntry() {
             <LocaleLink
               to="/conditions"
               data-cursor="link"
+              onClick={() => trackEvent("select_conditions_gateway", { surface: "conditions_entry" })}
               className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full border border-white/15 bg-white/5 px-7 py-3 text-button text-[var(--ink)] transition-colors hover:bg-white/10"
             >
+
               {tx(t.whatITreat.cta)}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </LocaleLink>

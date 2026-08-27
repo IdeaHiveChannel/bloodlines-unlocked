@@ -571,10 +571,18 @@ export function Anatomy() {
                     <LocaleLink
                       to="/conditions/$slug"
                       params={{ slug: guide }}
+                      onClick={() =>
+                        trackEvent("select_anatomy_region", {
+                          region: active,
+                          destination: guide,
+                          surface: "anatomy_cta",
+                        })
+                      }
                       className="group inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-8 py-4 text-[var(--bg)] font-semibold transition-transform hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <span>{t.anatomy.cta}</span>
                     </LocaleLink>
+
                   ) : (
                     <LocaleLink 
                       to="/conditions" 
