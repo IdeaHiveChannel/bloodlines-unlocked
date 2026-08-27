@@ -155,6 +155,16 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">
               {pillar.heroLead}
             </p>
+            {heroImage && (
+              <img
+                src={heroImage}
+                alt={pillar.title}
+                width={1600}
+                height={900}
+                className="mt-10 aspect-[16/9] w-full rounded-2xl border border-white/[0.06] object-cover opacity-90"
+              />
+            )}
+
             {(alias || seo) && (
               <div className="mt-8 max-w-2xl space-y-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
                 {alias && (
@@ -237,7 +247,13 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
 
           {/* 06 */}
           <Section id="diagnosis" index={6} label={tx("Diagnosis")} title={tx("How it is confirmed.")}>
-            <ol className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
+            <Figure
+              src={diagnosisImg}
+              alt={tx("Vascular imaging reviewed on a diagnostic workstation")}
+              caption={tx("The diagnosis is built on imaging — ultrasound, CT or MR angiography — before anything is treated.")}
+            />
+            <ol className="mt-8 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+
               {pillar.diagnosis.map((d, i) => (
                 <li key={d.step} className="grid gap-3 py-5 sm:grid-cols-[56px_170px_minmax(0,1fr)] sm:gap-4 sm:py-6">
                   <span className="text-label pt-1">0{i + 1}</span>
@@ -261,8 +277,14 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
           </Section>
 
           {/* 08 */}
-          <Section id="treatment" index={8} label={tx("Treatment options")} title={tx("Every route, stated plainly.")}>
-            <ul className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
+          <Section id="treatment" index={8} label={tx("Image-guided treatment options")} title={tx("Every route, stated plainly.")}>
+            <Figure
+              src={treatmentImg}
+              alt={tx("Catheter and guidewire handled under image guidance")}
+              caption={tx("Image-guided treatment is carried out through a small puncture, guided by live imaging.")}
+            />
+            <ul className="mt-8 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+
               {pillar.treatments.map((t) => (
                 <li key={t.name} className="grid gap-3 py-5 sm:grid-cols-[minmax(0,1fr)_2fr] sm:py-6">
                   <div>
@@ -275,8 +297,43 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             </ul>
           </Section>
 
-          {/* 09 */}
-          <Section id="approach" index={9} label={tx("The approach")} title={tx("How Dr. Mandeep treats it.")}>
+          {/* 09 — Evidence */}
+          <Section id="evidence" index={9} label={tx("Evidence")} title={tx("What the imaging shows.")}>
+            {evidence ? (
+              <figure>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {[
+                    { src: evidence.before, label: evidence.beforeLabel },
+                    { src: evidence.after, label: evidence.afterLabel },
+                  ].map((im) => (
+                    <div key={im.label} className="overflow-hidden rounded-2xl border border-white/[0.06]">
+                      <img
+                        src={im.src}
+                        alt={`${pillar.title} — ${tx(im.label)}`}
+                        loading="lazy"
+                        width={1024}
+                        height={768}
+                        className="aspect-[4/3] w-full object-cover"
+                      />
+                      <p className="bg-white/[0.02] px-4 py-3 text-label">{tx(im.label)}</p>
+                    </div>
+                  ))}
+                </div>
+                <figcaption className="mt-5 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
+                  {tx(evidence.note)}{" "}
+                  {tx("Imaging figures are illustrative of the technique. They are not a patient case report and results differ from person to person.")}
+                </figcaption>
+              </figure>
+            ) : (
+              <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
+                {tx("Imaging figures for this condition are being prepared. Case imaging is published only once it is anonymised and verified.")}
+              </p>
+            )}
+          </Section>
+
+          {/* 10 */}
+          <Section id="approach" index={10} label={tx("The approach")} title={tx("How Dr. Mandeep treats it.")}>
+
             <ol className="space-y-6">
               {pillar.approach.map((a, i) => (
                 <li key={a} className="grid grid-cols-[40px_minmax(0,1fr)] gap-4 sm:grid-cols-[54px_minmax(0,1fr)] sm:gap-5">
@@ -287,8 +344,9 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             </ol>
           </Section>
 
-          {/* 10 */}
-          <Section id="procedures" index={10} label={tx("Procedures")} title={tx("What is actually performed.")}>
+          {/* 11 */}
+          <Section id="procedures" index={11} label={tx("Procedures")} title={tx("What is actually performed.")}>
+
             <ul className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {pillarProcedures.map(({ slug, entry }) =>
                 entry ? (
@@ -318,9 +376,15 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             </ul>
           </Section>
 
-          {/* 11 */}
-          <Section id="recovery" index={11} label={tx("Recovery")} title={tx("What the timeline looks like.")}>
-            <ol className="relative border-l border-white/[0.08] pl-8">
+          {/* 12 */}
+          <Section id="recovery" index={12} label={tx("Recovery")} title={tx("What the timeline looks like.")}>
+            <Figure
+              src={recoveryImg}
+              alt={tx("Patient walking in a hospital corridor after treatment")}
+              caption={tx("Most image-guided treatments involve a short stay, with walking resumed early where the treating team allows it.")}
+            />
+            <ol className="relative mt-8 border-l border-white/[0.08] pl-8">
+
               {pillar.recovery.map((r) => (
                 <li key={r.when} className="relative pb-9 last:pb-0">
                   <span className="absolute -left-[37px] top-2 size-2 rounded-full bg-[var(--accent)]" />
@@ -331,15 +395,17 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             </ol>
           </Section>
 
-          {/* 12 */}
-          <Section id="prevention" index={12} label={tx("Prevention")} title={tx("What keeps it from returning.")}>
+          {/* 13 */}
+          <Section id="prevention" index={13} label={tx("Prevention")} title={tx("What keeps it from returning.")}>
+
             <Bullets items={pillar.prevention} />
           </Section>
 
-          {/* 13 */}
+          {/* 14 */}
           <Section
             id="faqs"
-            index={13}
+            index={14}
+
             label={tx("Questions")}
             title={`${allFaqs.length} ${tx("questions patients ask.")}`}
           >
@@ -358,8 +424,9 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             </div>
           </Section>
 
-          {/* 14 */}
-          <Section id="patient-stories" index={14} label={tx("Patient stories")} title={tx("Verified accounts only.")}>
+          {/* 15 */}
+          <Section id="patient-stories" index={15} label={tx("Patient stories")} title={tx("Verified accounts only.")}>
+
             <p className="max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
               {tx("No testimonials are published here yet. Patient accounts will appear only once they are consented and verified — nothing on this page is written on a patient's behalf.")}
             </p>
@@ -368,8 +435,9 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             </LocaleLink>
           </Section>
 
-          {/* 15 */}
-          <Section id="videos" index={15} label={tx("Videos")} title={tx("See the procedure.")}>
+          {/* 16 */}
+          <Section id="videos" index={16} label={tx("Videos")} title={tx("See the procedure.")}>
+
             {videos.length > 0 ? (
               <div className="grid gap-8">
                 {videos.map((v) => (
@@ -383,8 +451,9 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             )}
           </Section>
 
-          {/* 16 */}
-          <Section id="related-conditions" index={16} label={tx("Related conditions")} title={tx("Conditions that travel together.")}>
+          {/* 17 */}
+          <Section id="related-conditions" index={17} label={tx("Related conditions")} title={tx("Conditions that travel together.")}>
+
             <ul className="grid gap-px overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) =>
                 r.pillar ? (
