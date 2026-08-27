@@ -1,6 +1,8 @@
 import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
+import { trackEvent } from "../../lib/analytics";
+
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -332,9 +334,16 @@ export function Anatomy() {
                         // On mobile/tablet, prevent navigation on first tap if it's just selecting the region
                         if (window.innerWidth < 1024 && active !== h.id) {
                           e.preventDefault();
+                        } else {
+                          trackEvent("select_anatomy_region", {
+                            region: h.id,
+                            destination: regionGuide[h.id] ?? "conditions",
+                            surface: "anatomy_hotspot",
+                          });
                         }
                         setActive(h.id);
                       }}
+
                       tabIndex={0}
                       role="button"
                       aria-label={labelText}
