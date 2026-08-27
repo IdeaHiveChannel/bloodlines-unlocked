@@ -1,6 +1,8 @@
 import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
+import { trackEvent } from "../../lib/analytics";
+
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -332,9 +334,16 @@ export function Anatomy() {
                         // On mobile/tablet, prevent navigation on first tap if it's just selecting the region
                         if (window.innerWidth < 1024 && active !== h.id) {
                           e.preventDefault();
+                        } else {
+                          trackEvent("select_anatomy_region", {
+                            region: h.id,
+                            destination: regionGuide[h.id] ?? "conditions",
+                            surface: "anatomy_hotspot",
+                          });
                         }
                         setActive(h.id);
                       }}
+
                       tabIndex={0}
                       role="button"
                       aria-label={labelText}
@@ -562,10 +571,18 @@ export function Anatomy() {
                     <LocaleLink
                       to="/conditions/$slug"
                       params={{ slug: guide }}
+                      onClick={() =>
+                        trackEvent("select_anatomy_region", {
+                          region: active,
+                          destination: guide,
+                          surface: "anatomy_cta",
+                        })
+                      }
                       className="group inline-flex items-center gap-3 rounded-full bg-[var(--accent)] px-8 py-4 text-[var(--bg)] font-semibold transition-transform hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <span>{t.anatomy.cta}</span>
                     </LocaleLink>
+
                   ) : (
                     <LocaleLink 
                       to="/conditions" 

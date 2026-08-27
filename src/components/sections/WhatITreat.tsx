@@ -3,6 +3,8 @@ import { useTx } from "@/lib/i18n/tx";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { LocaleLink } from "../locale-link";
+import { trackEvent } from "../../lib/analytics";
+
 import { useLocale } from "@/lib/i18n/react";
 import { useState } from "react";
 import { conditionImageFor } from "@/lib/condition-images";
@@ -47,8 +49,16 @@ export function WhatITreat() {
                 <LocaleLink
                   to={c.to}
                   data-cursor="link"
+                  onClick={() =>
+                    trackEvent("select_condition_card", {
+                      condition: c.to.split("/").filter(Boolean).pop(),
+                      position: i + 1,
+                      surface: "what_i_treat",
+                    })
+                  }
                   className="group flex flex-col h-full overflow-hidden transition-colors hover:bg-white/[0.03] border border-white/[0.05] rounded-xl lg:border-none lg:rounded-none"
                 >
+
                   {conditionImageFor(c.to) && (
                     <img
                       src={conditionImageFor(c.to)}
