@@ -18,6 +18,8 @@ import { Loader } from "../components/loader";
 import { Navigation } from "../components/navigation";
 import { ContactDock } from "../components/contact-dock";
 import { useTx } from "../lib/i18n/tx";
+import { initAnalytics, trackPageView } from "../lib/analytics";
+
 
 function NotFoundComponent() {
   const tx = useTx();
@@ -140,6 +142,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  useEffect(() => {
+    trackPageView(pathname, pathname === "/ml" || pathname.startsWith("/ml/") ? "ml" : "en");
+  }, [pathname]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <LenisProvider>
@@ -152,3 +164,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+
