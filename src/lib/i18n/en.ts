@@ -56,7 +56,7 @@ export const en = {
   },
   whatITreat: {
     eyebrow: "Conditions",
-    h2: "Conditions treated.",
+    h2: "Different conditions. One philosophy.",
     intro: "Explore conditions affecting the blood vessels of the body, and understand the image guided treatments available for selected cases.",
     cta: "View all conditions →",
     readGuide: "Read guide →",
@@ -81,115 +81,114 @@ export const en = {
     items: [
       {
         id: "01",
-        category: "Brain & cerebral",
+        category: "Brain",
         title: "Acute ischemic stroke",
-        patientLanguage: "Blocked blood vessel in the brain (Hemiplegia / Stroke)",
-        description: "A blood clot can block blood flow inside a brain blood vessel and cause a stroke. Selected patients may be treated by removing the clot through a small access point.",
-        to: "/conditions/acute-ischemic-stroke"
+        patientLanguage: "Sudden weakness, facial droop or loss of speech",
+        description: "A clot can block a blood vessel supplying the brain. In selected patients, the clot can be removed from inside the vessel within a narrow time window.",
+        to: "/conditions/stroke"
       },
       {
         id: "02",
-        category: "Brain & cerebral",
+        category: "Brain",
         title: "Cerebral aneurysm",
-        patientLanguage: "A weak or bulging blood vessel in the brain",
-        description: "A weakened area of a brain blood vessel can enlarge and, in some cases, rupture. Selected aneurysms can be treated from inside the blood vessel.",
-        to: "/conditions/cerebral-aneurysm"
+        patientLanguage: "A weakened, ballooned area of a brain blood vessel",
+        description: "A weakened segment of a brain artery can enlarge and, in some cases, bleed. Selected aneurysms can be treated from inside the blood vessel.",
+        to: "/conditions/brain-aneurysm"
       },
       {
         id: "03",
-        category: "Brain & cerebral",
-        title: "Arteriovenous malformation (AVM)",
-        patientLanguage: "An abnormal connection between blood vessels in the brain",
-        description: "An AVM is an abnormal connection between arteries and veins that can sometimes be treated from inside the blood vessels.",
-        to: "/conditions/brain-avm"
+        category: "Brain",
+        title: "Brain AVM and dural AVF",
+        patientLanguage: "An abnormal connection between arteries and veins",
+        description: "An abnormal direct connection between arteries and veins in or around the brain, assessed with angiography and treated selectively.",
+        to: "/conditions/brain-avm-avf"
       },
       {
         id: "04",
-        category: "Lower limbs",
-        title: "Peripheral artery disease",
-        patientLanguage: "Poor blood circulation in the legs (Gangrene / Non-healing ulcer)",
-        description: "Narrowed or blocked arteries can reduce blood flow to the legs and cause pain, wounds and other circulation problems.",
-        to: "/conditions/poor-blood-circulation"
+        category: "Legs",
+        title: "Peripheral arterial disease",
+        patientLanguage: "Leg pain on walking, cold feet, wounds that do not heal",
+        description: "Narrowed or blocked leg arteries reduce blood flow, causing cramping pain, slow-healing wounds and, in advanced cases, tissue loss.",
+        to: "/conditions/peripheral-arterial-disease"
       },
       {
         id: "05",
-        category: "Lower limbs",
+        category: "Legs",
         title: "Diabetic foot",
-        patientLanguage: "Diabetes-related foot wounds",
-        description: "Poor blood supply can make some diabetic foot wounds difficult to heal. Restoring blood flow may help healing in selected cases.",
+        patientLanguage: "Diabetes-related foot wounds and ulcers",
+        description: "Reduced blood supply and nerve damage make some diabetic foot wounds difficult to heal. Assessment looks at circulation, infection and pressure.",
         to: "/conditions/diabetic-foot"
       },
       {
         id: "06",
-        category: "Veins",
-        title: "Varicose veins & Venous ulcer (Clots / blood clots)",
-        patientLanguage: "Swollen veins / Non-healing ulcers / Varicose vein + ulcer (Clots)",
-
-        description: "When the valves in the leg veins do not work properly, blood can pool in the veins and cause varicose veins.",
-        to: "/conditions/varicose-veins"
+        category: "Legs",
+        title: "Gangrene and tissue loss",
+        patientLanguage: "Blackened toes or dead tissue in the foot",
+        description: "When blood supply falls critically low, tissue can die. Urgent assessment of the arteries determines whether flow can be restored.",
+        to: "/conditions/gangrene"
       },
       {
         id: "07",
         category: "Veins",
-        title: "Deep vein thrombosis",
-        patientLanguage: "A blood clot in a deep vein",
-        description: "A clot in a deep vein, usually in the leg, can affect circulation and requires medical assessment.",
+        title: "Varicose veins and venous ulcer",
+        patientLanguage: "Bulging leg veins, aching legs, ankle ulcers",
+        description: "When valves in the leg veins stop working, blood pools in the veins. This can cause visible varicose veins, swelling and skin changes at the ankle.",
         to: "/conditions/varicose-veins"
       },
       {
         id: "08",
-        category: "Thyroid",
-        title: "Thyroid nodules & goitre",
-        patientLanguage: "Thyroid lumps and swelling (Swelling)",
-        description: "Selected benign thyroid nodules and thyroid swellings can be treated using image-guided ablation.",
-        to: "/conditions/thyroid-nodules"
+        category: "Veins",
+        title: "Deep vein thrombosis",
+        patientLanguage: "A blood clot in a deep leg vein",
+        description: "A clot in a deep vein, usually in the leg, causes swelling and pain and needs prompt assessment because of the risk to the lungs.",
+        to: "/conditions/deep-vein-thrombosis"
       },
       {
         id: "09",
-        category: "Kidney",
-        title: "Renal artery stenosis",
-        patientLanguage: "Narrowing of the kidney vessel (High Blood Pressure / 3+ Medications)",
-        description: "Narrowing of a renal artery can affect blood flow to the kidney and may be associated with difficult-to-control blood pressure.",
-        to: "/conditions/renal-artery-stenosis"
+        category: "Thyroid",
+        title: "Thyroid nodules and goitre",
+        patientLanguage: "A lump or swelling in the front of the neck",
+        description: "Thyroid nodules and swellings are assessed with ultrasound and, where indicated, biopsy. Selected benign nodules can be treated with image-guided ablation.",
+        to: "/conditions/thyroid-nodules"
       },
       {
         id: "10",
-        category: "Liver",
-        title: "Hepatocellular carcinoma",
-        patientLanguage: "Liver cancer (HCC) / Hemangioma (Shrink by injection)",
-        description: "Selected liver tumours can be treated using image-guided procedures.",
-        to: "/conditions/hepatocellular-carcinoma"
-      },
-      {
-        id: "11",
-        category: "Pelvis",
-        title: "Uterine fibroids",
-        patientLanguage: "Uterine fibroids / Heavy bleeding / Pelvic pain",
-        description: "Fibroids can cause heavy bleeding, pressure and pelvic discomfort. Selected fibroids can be treated through their blood supply.",
-        to: "/conditions/uterine-fibroids"
-      },
-      {
-        id: "12",
-        category: "Prostate",
-        title: "Enlarged prostate (BPH)",
-        patientLanguage: "Prostate enlargement causing urinary symptoms (Enlargement)",
-        description: "An enlarged prostate can cause difficulty passing urine, weak urine flow and frequent urination.",
-        to: "/conditions/enlarged-prostate"
-      },
-      {
-        id: "13",
         category: "Knee",
         title: "Knee osteoarthritis",
-        patientLanguage: "Knee pain caused by arthritis (Knee Pain)",
-        description: "Osteoarthritis can cause persistent knee pain and stiffness. Selected patients may be considered for image-guided treatment.",
+        patientLanguage: "Persistent knee pain and stiffness",
+        description: "Wear of the knee joint causes pain and stiffness. Selected patients who are not ready for surgery may be considered for image-guided treatment.",
         to: "/conditions/knee-osteoarthritis"
       },
       {
+        id: "11",
+        category: "Prostate",
+        title: "Enlarged prostate (BPH)",
+        patientLanguage: "Weak urine flow and frequent night-time urination",
+        description: "An enlarged prostate can cause difficulty passing urine, weak flow and frequent urination, assessed with ultrasound and symptom scoring.",
+        to: "/conditions/enlarged-prostate"
+      },
+      {
+        id: "12",
+        category: "Pelvis",
+        title: "Uterine fibroids",
+        patientLanguage: "Heavy periods, pelvic pressure and pain",
+        description: "Fibroids are benign growths in the wall of the uterus. They can cause heavy bleeding, pressure symptoms and pelvic discomfort.",
+        to: "/conditions/uterine-fibroids"
+      },
+      {
+        id: "13",
+        category: "Liver",
+        title: "Liver tumours",
+        patientLanguage: "Liver cancer (HCC) and benign liver lesions",
+        description: "Liver tumours include hepatocellular carcinoma, metastases and benign lesions such as haemangioma. Imaging determines the type and the options.",
+        to: "/conditions/liver-tumours"
+      },
+      {
         id: "14",
-        category: "Aorta & chest",
-        title: "Aortic aneurysm",
-        patientLanguage: "A weakened and enlarged section of the aorta",
-        description: "An aortic aneurysm can enlarge over time and may require monitoring or treatment.",
+        category: "Circulation",
+        title: "Poor blood circulation",
+        patientLanguage: "A symptom pattern, not a diagnosis on its own",
+        description: "Cold limbs, cramping, colour change or slow-healing wounds point towards a circulation problem. Testing identifies the underlying vessel disease.",
         to: "/conditions/poor-blood-circulation"
       }
     ]
