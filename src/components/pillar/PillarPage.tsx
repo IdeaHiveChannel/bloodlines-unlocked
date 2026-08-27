@@ -132,6 +132,10 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
   const seo = pillarSeoFor(pillar.slug);
   const procedures = useProcedures();
   const conditions = useConditions();
+  const heroImage = conditionImages[pillar.slug];
+  const evidence = evidenceFor(pillar.slug);
+
+
 
   const pillarProcedures = pillar.procedures.map((slug) => ({
     slug,
