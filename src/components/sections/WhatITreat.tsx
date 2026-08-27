@@ -1,10 +1,11 @@
 import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Plus, Minus } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { LocaleLink } from "../locale-link";
 import { useLocale } from "@/lib/i18n/react";
 import { useState } from "react";
+import { conditionImageFor } from "@/lib/condition-images";
 
 /**
  * Fourteen anatomical categories, each a doorway into the relevant guide.
@@ -46,9 +47,19 @@ export function WhatITreat() {
                 <LocaleLink
                   to={c.to}
                   data-cursor="link"
-                  className="group flex flex-col h-full p-6 sm:p-7 lg:p-8 transition-colors hover:bg-white/[0.03] border border-white/[0.05] rounded-xl lg:border-none lg:rounded-none"
+                  className="group flex flex-col h-full overflow-hidden transition-colors hover:bg-white/[0.03] border border-white/[0.05] rounded-xl lg:border-none lg:rounded-none"
                 >
-                  <div className="flex-1">
+                  {conditionImageFor(c.to) && (
+                    <img
+                      src={conditionImageFor(c.to)}
+                      alt={titleText}
+                      loading="lazy"
+                      width={1024}
+                      height={576}
+                      className="aspect-[16/9] w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                  )}
+                  <div className="flex flex-1 flex-col p-6 sm:p-7 lg:p-8">
                     {/* Desktop only Category */}
                     <span className="hidden lg:block text-[10px] font-medium tracking-widest text-[var(--ink-dim)] opacity-40 uppercase lg:text-[12px]">
                       {tx(c.category)}
@@ -81,16 +92,9 @@ export function WhatITreat() {
                     `}>
                       {descText}
                     </p>
-                  </div>
-                  
-                  {/* Desktop only CTA */}
-                  <div className="hidden lg:flex mt-auto pt-6 items-center justify-start">
-                    <div className="flex items-center gap-2 text-[12px] font-medium text-[var(--ink-dim)] group-hover:text-[var(--accent)] transition-colors">
+
+                    <div className="mt-4 flex items-center gap-2 pt-2 text-[12px] font-medium text-[var(--ink-dim)] transition-colors group-hover:text-[var(--accent)] lg:mt-auto lg:pt-6">
                       <span>{tx(t.whatITreat.readGuide)}</span>
-                      <ArrowRight
-                        size={14}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
                     </div>
                   </div>
                 </LocaleLink>
@@ -123,23 +127,16 @@ export function WhatITreat() {
                 <div className="lg:border-t lg:border-white/10 lg:pt-10">
                   <h4 className="hidden lg:block text-label mb-8">{tx(t.whatITreat.moreConditionsLabel)}</h4>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-3">
-                    {t.whatITreat.moreConditions.map((condition: string, i: number) => {
-                      const conditionSlug = condition.toLowerCase()
-                        .replace(/\s+/g, '-')
-                        .replace(/[()]/g, '')
-                        .replace(/[^a-z0-9-]/g, '');
-                      
-                      return (
-                        <div key={i} className="flex items-center">
-                          <LocaleLink
-                            to={`/conditions/${conditionSlug}`}
-                            className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors border border-white/10 rounded-full px-3 py-1 bg-white/5"
-                          >
-                            {tx(condition)}
-                          </LocaleLink>
-                        </div>
-                      );
-                    })}
+                    {t.whatITreat.moreConditions.map((condition: string, i: number) => (
+                      <div key={i} className="flex items-center">
+                        <LocaleLink
+                          to="/conditions"
+                          className="text-[14px] text-[var(--ink-dim)] lg:text-[15px] hover:text-[var(--accent)] transition-colors border border-white/10 rounded-full px-3 py-1 bg-white/5"
+                        >
+                          {tx(condition)}
+                        </LocaleLink>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </motion.div>
