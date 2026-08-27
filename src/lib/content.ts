@@ -328,9 +328,14 @@ export type Storyboard =
   | "evar"
   | "laser"
   | "tace"
-  | "ablation"
+  | "microwave-ablation"
   | "coiling"
-  | "embolization";
+  | "thyroid-ablation"
+  | "genicular"
+  | "fistuloplasty"
+  | "tips"
+  | "prostate"
+  | "fibroid";
 
 export type Procedure = {
   slug: string;
@@ -597,7 +602,7 @@ export const procedures: Procedure[] = [
     slug: "microwave-ablation",
     name: "Microwave ablation",
     oneLiner: "Destroying a tumour with heat, through a needle.",
-    storyboard: "ablation",
+    storyboard: "microwave-ablation",
     featured: true,
     beats: [
       "Imaging identifies the liver tumour and its exact location.",
@@ -690,7 +695,7 @@ export const procedures: Procedure[] = [
     slug: "thyroid-ablation",
     name: "Thyroid nodule ablation",
     oneLiner: "Shrinking a nodule without removing the gland.",
-    storyboard: "ablation",
+    storyboard: "thyroid-ablation",
     beats: [
       "A benign nodule is mapped on ultrasound.",
       "A fine electrode enters through the skin — no incision, no scar.",
@@ -715,7 +720,7 @@ export const procedures: Procedure[] = [
     slug: "genicular-artery-embolization",
     name: "Genicular artery embolization",
     oneLiner: "Reducing the abnormal blood supply that drives knee pain.",
-    storyboard: "embolization",
+    storyboard: "genicular",
     beats: [
       "Angiography shows an abnormal blush over the inflamed knee lining.",
       "A microcatheter is advanced into the genicular branch feeding it.",
@@ -736,7 +741,7 @@ export const procedures: Procedure[] = [
     slug: "dialysis-fistuloplasty",
     name: "Dialysis fistuloplasty",
     oneLiner: "Keeping a lifeline open.",
-    storyboard: "angioplasty",
+    storyboard: "fistuloplasty",
     beats: [
       "Dialysis flows have fallen. A stenosis is found in the outflow vein.",
       "The fistula itself is punctured and crossed with a wire.",
@@ -762,7 +767,7 @@ export const procedures: Procedure[] = [
     slug: "tips",
     name: "TIPS",
     oneLiner: "Giving portal pressure somewhere to go.",
-    storyboard: "embolization",
+    storyboard: "tips",
     beats: [
       "Scarred liver tissue resists the blood trying to cross it.",
       "From a neck vein, a tract is created through the liver parenchyma.",
@@ -787,7 +792,7 @@ export const procedures: Procedure[] = [
     slug: "prostate-artery-embolization",
     name: "Prostate artery embolization (PAE)",
     oneLiner: "Shrinking the prostate by closing its supply.",
-    storyboard: "embolization",
+    storyboard: "prostate",
     beats: [
       "An enlarged prostate presses on the urethra and rules the day by the hour.",
       "A microcatheter is navigated into the prostatic arteries from a single wrist or groin puncture.",
@@ -813,7 +818,7 @@ export const procedures: Procedure[] = [
     slug: "uterine-fibroid-embolization",
     name: "Uterine fibroid embolization (UFE)",
     oneLiner: "Treating fibroids without removing the uterus.",
-    storyboard: "embolization",
+    storyboard: "fibroid",
     beats: [
       "Fibroids grow on a dense, abnormal blood supply of their own.",
       "Both uterine arteries are catheterised through one small puncture.",

@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import { type MotionValue } from "framer-motion";
 import type { Storyboard } from "../../../lib/content";
 import { Angioplasty } from "./Angioplasty";
@@ -15,7 +16,7 @@ import { ProstateEmbolization } from "./ProstateEmbolization";
 import { FibroidEmbolization } from "./FibroidEmbolization";
 
 /** Each procedure gets its own anatomy, device and sequence — never a shared template. */
-const scenes: Record<Storyboard, (p: { progress: MotionValue<number> }) => JSX.Element> = {
+const scenes: Record<Storyboard, (p: { progress: MotionValue<number> }) => ReactElement> = {
   angioplasty: Angioplasty,
   thrombectomy: Thrombectomy,
   evar: Evar,
