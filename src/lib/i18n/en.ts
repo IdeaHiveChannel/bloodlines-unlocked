@@ -46,7 +46,7 @@ export const en = {
     h1: "Vascular & Neuro\nInterventional Radiologist",
     location: "in Mangalore & Kasaragod",
     supporting: "Advanced image-guided treatment through minimally invasive procedures.",
-    description: "Treating selected conditions affecting the brain and blood vessels throughout the body, including the legs and abdomen.",
+    description: "Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery.",
     brandStatement: "Modern medicine, through a pinpoint opening.",
     brandCopy: "Reach the disease through the smallest possible opening. Leave the rest of the body alone.",
     conditions: "Stroke · Brain Aneurysm · Blocked Arteries · Poor Blood Circulation · Diabetic Foot · Varicose Veins · Blood Clots",
@@ -57,7 +57,7 @@ export const en = {
   whatITreat: {
     eyebrow: "Conditions",
     h2: "Conditions treated.",
-    intro: "Explore conditions affecting the brain, blood vessels, veins and other parts of the body, and understand the image-guided treatments available for selected cases.",
+    intro: "Explore conditions affecting the blood vessels of the body, and understand the image guided treatments available for selected cases.",
     cta: "View all conditions →",
     readGuide: "Read guide →",
     moreConditionsLabel: "Additional conditions",

@@ -240,11 +240,11 @@ export function Anatomy() {
 
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-12 sm:mt-14 lg:grid-cols-12 lg:gap-16">
+        <div className="mt-8 grid grid-cols-1 gap-10 sm:mt-12 lg:mt-10 lg:grid-cols-12 lg:gap-14">
           {/* Anatomy visual */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto aspect-[2/3] w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[520px] rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent">
-              <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full overflow-visible translate-x-[-1%] sm:translate-x-0">
+            <div className="relative mx-auto aspect-[2/3] w-full max-w-[240px] sm:max-w-[380px] lg:h-[min(58vh,520px)] lg:w-auto lg:max-w-none rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent">
+              <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full overflow-hidden">
                 <defs>
                   <radialGradient id="bodyGlow" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="color-mix(in oklab, var(--accent) 30%, transparent)" />
@@ -426,30 +426,7 @@ export function Anatomy() {
                         {labelText.split(' ')[0]}
                       </text>
                       
-                      {/* Mobile Labels: Short identifiers positioned carefully */}
-                      <text
-                        x={labelX}
-                        y={h.cy + 4}
-                        textAnchor={isRight ? "start" : "end"}
-                        fill={on ? "var(--ink)" : "var(--ink-dim)"}
-                        fontSize="11"
-                        fontWeight="600"
-                        fontFamily="var(--font-sans)"
-                        className="pointer-events-none select-none md:hidden"
-                        style={{ 
-                          transition: "all 300ms",
-                          filter: on ? "drop-shadow(0 0 4px var(--accent))" : "none",
-                          paintOrder: "stroke fill",
-                          stroke: "rgba(5, 11, 22, 0.95)",
-                          strokeWidth: "2.5px",
-                          strokeLinejoin: "round",
-                          overflow: "visible",
-                          dominantBaseline: "middle"
-                        }}
-                      >
-                        {labelText.split(' ')[0]}
-                      </text>
-                    </LocaleLink>
+                      </LocaleLink>
                   );
                 })}
               </svg>

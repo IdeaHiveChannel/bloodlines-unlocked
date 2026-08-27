@@ -2,10 +2,9 @@ import { localeHead, SITE } from "@/lib/i18n/meta";
 import { createFileRoute } from "@tanstack/react-router";
 import { socialUrls } from "../lib/contact";
 import { Hero } from "../components/hero/Hero";
-import { WhatITreat } from "../components/sections/WhatITreat";
+import { ConditionsEntry } from "../components/sections/ConditionsEntry";
 import { Transition } from "../components/sections/Transition";
 import { Anatomy } from "../components/anatomy/Anatomy";
-import { ConditionsGateway } from "../components/sections/ConditionsGateway";
 import { Procedures } from "../components/procedures/Procedures";
 import { BeforeAfter } from "../components/sections/BeforeAfter";
 import { Recovery } from "../components/sections/Recovery";
@@ -55,10 +54,9 @@ function Index() {
   return (
     <main>
       <Hero />
-      <WhatITreat />
+      <ConditionsEntry />
       <Transition />
       <Anatomy />
-      <ConditionsGateway />
       <Procedures />
       <BeforeAfter />
       <Recovery />
