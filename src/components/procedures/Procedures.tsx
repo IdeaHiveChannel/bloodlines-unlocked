@@ -65,7 +65,7 @@ export function Procedures() {
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center">
         {/* left column on desktop: identity + beat; right column: the scene */}
         <div className="shell grid flex-1 content-center items-center gap-5 pt-20 pb-10 sm:gap-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:pb-14">
-          <div className="order-1 flex flex-col justify-center lg:h-full">
+          <div className="order-2 flex flex-col justify-center lg:order-1 lg:h-full">
             <p className="text-label">{t.proceduresPage.procedure} {String(index + 1).padStart(2, "0")}</p>
             <LocaleLink to="/procedures/$slug" params={{ slug }} data-cursor="link" className="group">
               <h3 className="mt-2 text-h2 transition-colors group-hover:text-[var(--accent)]">{name}</h3>
@@ -79,8 +79,8 @@ export function Procedures() {
           </div>
           {/* the scene never exceeds the space left by the header and the copy */}
           <div
-            className="order-2 relative mx-auto aspect-square w-full overflow-hidden rounded-3xl border border-white/[0.06] bg-gradient-to-br from-white/[0.02] to-transparent"
-            style={{ maxWidth: "min(100%, 46svh)", maxHeight: "46svh" }}
+            className="order-1 relative mx-auto aspect-square lg:order-2 w-full overflow-hidden rounded-3xl border border-white/[0.06] bg-gradient-to-br from-white/[0.02] to-transparent"
+            style={{ maxWidth: "min(100%, 52svh)", maxHeight: "52svh" }}
           >
             <StoryboardCanvas storyboard={storyboard} progress={scrollYProgress} />
             <div className="absolute bottom-4 left-4 right-4 flex gap-1">
