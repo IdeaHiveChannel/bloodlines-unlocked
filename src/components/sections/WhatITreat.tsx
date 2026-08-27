@@ -1,7 +1,7 @@
 import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Plus, Minus } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { LocaleLink } from "../locale-link";
 import { useLocale } from "@/lib/i18n/react";
 import { useState } from "react";
