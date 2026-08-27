@@ -69,6 +69,24 @@ function Bullets({ items }: { items: string[] }) {
   );
 }
 
+function Figure({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+  return (
+    <figure>
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        width={1600}
+        height={900}
+        className="aspect-[16/9] w-full rounded-2xl border border-white/[0.06] object-cover opacity-90"
+      />
+      <figcaption className="mt-3 max-w-2xl text-caption text-[var(--ink-dim)]">{caption}</figcaption>
+    </figure>
+  );
+}
+
+
+
 function SubNav() {
   const tx = useTx();
   const [active, setActive] = useState<string>("symptoms");
