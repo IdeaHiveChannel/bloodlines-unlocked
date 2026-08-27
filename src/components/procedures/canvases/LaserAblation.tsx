@@ -44,10 +44,10 @@ export function LaserAblation({ progress }: P) {
 
       {/* laser fibre withdrawn along the vein */}
       <motion.g style={{ opacity: fibreOpacity }}>
-        <motion.line x1="236" y1="110" x2="236" style={{ y2: fibreY }} stroke={contrast} strokeWidth="1.6" />
-        <motion.circle cx="236" r="4" fill={contrast} style={{ cy: fibreY }} />
+        <motion.line x1="236" y1="110" x2="236" y2={fibreY} stroke={contrast} strokeWidth="1.6" />
+        <motion.circle cx="236" r="4" fill={contrast} cy={fibreY} />
         <motion.circle cx="236" r="14" fill="color-mix(in oklab, var(--accent) 26%, transparent)"
-          style={{ cy: fibreY, opacity: energy }} />
+          cy={fibreY} style={{ opacity: energy }} />
       </motion.g>
 
       {/* deep vein carries the return */}
