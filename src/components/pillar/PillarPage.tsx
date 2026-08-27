@@ -7,11 +7,17 @@ import { useConditions, useProcedures } from "../../lib/i18n/data";
 import { useLocale } from "../../lib/i18n/react";
 import { aliasFor } from "../../lib/seo/aliases";
 import { pillarSeoFor } from "../../lib/seo/pillar-seo";
+import { conditionImages } from "../../lib/condition-images";
+import { evidenceFor } from "../../lib/condition-evidence";
+import diagnosisImg from "../../assets/section-diagnosis.jpg";
+import treatmentImg from "../../assets/hands-catheter.jpg";
+import recoveryImg from "../../assets/section-recovery.jpg";
 
 import { procedureVideos } from "../../lib/media";
 import { ProcedureVideo } from "../procedures/ProcedureVideo";
 import { Consultation } from "../sections/Consultation";
 import { Footer } from "../sections/Footer";
+
 
 const doors = [
   { id: "symptoms", label: "Symptoms" },
