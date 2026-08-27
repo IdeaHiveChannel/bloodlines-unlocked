@@ -858,20 +858,23 @@ export const regionProcedures: Record<Region, string[]> = {
 };
 
 
-/** Region → the pillar guide that best represents it, when one exists. */
+/**
+ * Region → the published condition guide that best represents it.
+ * Only slugs that exist under /conditions/$slug may appear here; regions with
+ * no dedicated guide are omitted and fall back to the conditions index.
+ */
 export const regionGuide: Partial<Record<Region, string>> = {
-  brain: "acute-ischemic-stroke",
+  brain: "stroke",
   neck: "thyroid-nodules",
-  chest: "hemoptysis",
-  abdomen: "visceral-aneurysm",
-  liver: "hepatocellular-carcinoma",
-  kidneys: "renal-artery-stenosis",
-  arms: "dialysis-access-maintenance",
+  chest: "deep-vein-thrombosis",
+  abdomen: "liver-tumours",
+  liver: "liver-tumours",
   pelvis: "uterine-fibroids",
-  knee: "genicular-artery-embolization",
-  legs: "poor-blood-circulation",
+  knee: "knee-osteoarthritis",
+  legs: "peripheral-arterial-disease",
   veins: "varicose-veins",
 };
+
 
 
 // ── Professional journey ───────────────────────────────────────────────────
