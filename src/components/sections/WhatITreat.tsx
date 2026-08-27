@@ -95,10 +95,6 @@ export function WhatITreat() {
 
                     <div className="mt-4 flex items-center gap-2 pt-2 text-[12px] font-medium text-[var(--ink-dim)] transition-colors group-hover:text-[var(--accent)] lg:mt-auto lg:pt-6">
                       <span>{tx(t.whatITreat.readGuide)}</span>
-                      <ArrowRight
-                        size={14}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
                     </div>
                   </div>
                 </LocaleLink>
