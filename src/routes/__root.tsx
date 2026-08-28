@@ -149,7 +149,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 { "@type": "PostalAddress", addressLocality: "Mangalore", addressRegion: "Karnataka", addressCountry: "IN" },
                 { "@type": "PostalAddress", addressLocality: "Kasaragod", addressRegion: "Kerala", addressCountry: "IN" },
               ],
-              areaServed: ["Mangalore, Karnataka", "Kasaragod, Kerala", "Dakshina Kannada", "Kannur", "Udupi"],
+              areaServed: ["Mangalore, Karnataka", "Kasaragod, Kerala", "Dakshina Kannada", "Udupi"],
               employee: { "@id": "https://vascularcaredr.com/#physician" },
             },
           ],
