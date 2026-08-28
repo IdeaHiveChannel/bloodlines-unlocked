@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as LlmDottxtRouteImport } from './routes/llm[.]txt'
 import { Route as Char123LocaleChar125IndexRouteImport } from './routes/{-$locale}.index'
 import { Route as Char123LocaleChar125TestimonialsRouteImport } from './routes/{-$locale}.testimonials'
 import { Route as Char123LocaleChar125TermsRouteImport } from './routes/{-$locale}.terms'
@@ -39,6 +40,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
   path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmDottxtRoute = LlmDottxtRouteImport.update({
+  id: '/llm.txt',
+  path: '/llm.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Char123LocaleChar125IndexRoute =
@@ -159,6 +165,7 @@ const Char123LocaleChar125ConditionsSlugRoute =
   } as any)
 
 export interface FileRoutesByFullPath {
+  '/llm.txt': typeof LlmDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$locale}/about': typeof Char123LocaleChar125AboutRoute
@@ -182,6 +189,7 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/procedures/': typeof Char123LocaleChar125ProceduresIndexRoute
 }
 export interface FileRoutesByTo {
+  '/llm.txt': typeof LlmDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$locale}/about': typeof Char123LocaleChar125AboutRoute
@@ -206,6 +214,7 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/llm.txt': typeof LlmDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/{-$locale}/about': typeof Char123LocaleChar125AboutRoute
@@ -231,6 +240,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/llm.txt'
     | '/llms.txt'
     | '/sitemap.xml'
     | '/{-$locale}/about'
@@ -254,6 +264,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/procedures/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/llm.txt'
     | '/llms.txt'
     | '/sitemap.xml'
     | '/{-$locale}/about'
@@ -277,6 +288,7 @@ export interface FileRouteTypes {
     | '/{-$locale}/procedures'
   id:
     | '__root__'
+    | '/llm.txt'
     | '/llms.txt'
     | '/sitemap.xml'
     | '/{-$locale}/about'
@@ -301,6 +313,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  LlmDottxtRoute: typeof LlmDottxtRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Char123LocaleChar125AboutRoute: typeof Char123LocaleChar125AboutRoute
@@ -338,6 +351,13 @@ declare module '@tanstack/react-router' {
       path: '/llms.txt'
       fullPath: '/llms.txt'
       preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llm.txt': {
+      id: '/llm.txt'
+      path: '/llm.txt'
+      fullPath: '/llm.txt'
+      preLoaderRoute: typeof LlmDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/{-$locale}/': {
@@ -477,6 +497,7 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  LlmDottxtRoute: LlmDottxtRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   Char123LocaleChar125AboutRoute: Char123LocaleChar125AboutRoute,
