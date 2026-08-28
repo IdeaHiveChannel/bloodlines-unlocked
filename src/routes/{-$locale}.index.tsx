@@ -1,6 +1,7 @@
 import { localeHead, SITE } from "@/lib/i18n/meta";
 import { createFileRoute } from "@tanstack/react-router";
 import { socialUrls } from "../lib/contact";
+import { en } from "../lib/i18n/en";
 import { Hero } from "../components/hero/Hero";
 import { ConditionsEntry } from "../components/sections/ConditionsEntry";
 import { Transition } from "../components/sections/Transition";
