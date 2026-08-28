@@ -20,6 +20,11 @@ import { ContactDock } from "../components/contact-dock";
 import { CookieConsent } from "../components/cookie-consent";
 import { useTx } from "../lib/i18n/tx";
 import { initAnalytics, trackPageView } from "../lib/analytics";
+import { socialUrls } from "../lib/contact";
+
+const SITE_DESCRIPTION =
+  "Advanced image-guided treatment through minimally invasive procedures. Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery.";
+
 
 
 function NotFoundComponent() {
