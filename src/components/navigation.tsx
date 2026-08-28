@@ -1,5 +1,5 @@
 import { LocaleLink } from "./locale-link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavMenu } from "./nav-menu";
 import { useT } from "../lib/i18n/react";
@@ -9,17 +9,35 @@ import { LanguageToggle } from "./language-toggle";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const lastScrollY = useRef(0);
   const t = useT();
   const tx = useTx();
   const { groups, about, expertise, secondOpinion, book } = useSiteNav();
 
   useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 40);
+    const threshold = 10;
+    const showUntil = 80;
+    const on = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      if (open) {
+        setHidden(false);
+      } else {
+        const delta = y - lastScrollY.current;
+        if (delta > threshold && y > showUntil) {
+          setHidden(true);
+        } else if (delta < -threshold) {
+          setHidden(false);
+        }
+      }
+      lastScrollY.current = y;
+    };
     on();
     window.addEventListener("scroll", on, { passive: true });
     return () => window.removeEventListener("scroll", on);
-  }, []);
+  }, [open]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
