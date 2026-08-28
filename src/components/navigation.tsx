@@ -48,9 +48,13 @@ export function Navigation() {
 
   return (
     <>
-      <header className="fixed left-0 right-0 top-0 z-50 px-2 pt-3 sm:px-8 sm:pt-6">
+      <header
+        className={`fixed left-0 right-0 top-0 z-50 px-2 pt-3 transition-transform duration-500 sm:px-8 sm:pt-6 ${
+          hidden ? "-translate-y-full" : "translate-y-0"
+        }`}
+      >
         <nav
-          className={`mx-auto flex max-w-[1480px] items-center justify-between gap-2 rounded-full border border-white/[0.06] px-3 py-2.5 transition-all duration-500 sm:px-5 sm:py-3 html-ml:lg:max-w-none html-ml:lg:w-[98%] ${
+          className={`mx-auto flex max-w-[1480px] items-center justify-between gap-2 rounded-full border border-white/[0.06] px-3 py-2.5 transition-colors duration-500 sm:px-5 sm:py-3 html-ml:lg:max-w-none html-ml:lg:w-[98%] ${
             scrolled ? "bg-[#050B16]/70 backdrop-blur-md" : "bg-transparent"
           }`}
         >
