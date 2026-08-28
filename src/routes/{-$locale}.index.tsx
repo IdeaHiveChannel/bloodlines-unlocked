@@ -64,9 +64,9 @@ function Index() {
   return (
     <main>
       <Hero />
+      <Anatomy />
       <ConditionsEntry />
       <Transition />
-      <Anatomy />
       <Procedures />
       <BeforeAfter />
       <Recovery />
