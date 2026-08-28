@@ -16,7 +16,7 @@ import { ProstateEmbolization } from "./ProstateEmbolization";
 import { FibroidEmbolization } from "./FibroidEmbolization";
 
 /** Each procedure gets its own anatomy, device and sequence — never a shared template. */
-const scenes: Record<Storyboard, (p: { progress: MotionValue<number> }) => ReactElement> = {
+const scenes: Record<Storyboard, (p: { progress: MotionValue<number>; beats?: number }) => ReactElement> = {
   angioplasty: Angioplasty,
   thrombectomy: Thrombectomy,
   evar: Evar,
@@ -35,15 +35,18 @@ const scenes: Record<Storyboard, (p: { progress: MotionValue<number> }) => React
 export function StoryboardCanvas({
   storyboard,
   progress,
+  beats,
 }: {
   storyboard?: Storyboard;
   progress: MotionValue<number>;
+  beats?: number;
 }) {
   const Scene = storyboard ? scenes[storyboard] : undefined;
   if (!Scene) return null;
   return (
     <div className="absolute inset-0">
-      <Scene progress={progress} />
+      <Scene progress={progress} beats={beats} />
     </div>
   );
 }
+
