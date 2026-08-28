@@ -31,7 +31,7 @@ export function buildLlmsTxt(): string {
 
   const procedureLines = procedures.map(
     (p) =>
-      `- [${p.name}](${SITE_URL}/procedures/${p.slug}) — ${p.summary ?? p.name}` +
+      `- [${p.name}](${SITE_URL}/procedures/${p.slug}) — ${p.oneLiner}` +
       ` (Malayalam: ${SITE_URL}/ml/procedures/${p.slug})`,
   );
 
