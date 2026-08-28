@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { conditions, procedures } from "../lib/content";
 import { pillars } from "../lib/pillars";
 
-const BASE_URL = "https://bloodlines-unlocked.lovable.app";
+const BASE_URL = "https://vascularcaredr.com";
 
 interface SitemapEntry {
   path: string;
