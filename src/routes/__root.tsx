@@ -17,6 +17,7 @@ import { Cursor } from "../components/cursor";
 import { Loader } from "../components/loader";
 import { Navigation } from "../components/navigation";
 import { ContactDock } from "../components/contact-dock";
+import { CookieConsent } from "../components/cookie-consent";
 import { useTx } from "../lib/i18n/tx";
 import { initAnalytics, trackPageView } from "../lib/analytics";
 
@@ -160,6 +161,7 @@ function RootComponent() {
         <Navigation />
         <Outlet />
         <ContactDock />
+        <CookieConsent />
       </LenisProvider>
     </QueryClientProvider>
   );
