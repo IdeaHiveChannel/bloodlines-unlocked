@@ -2233,7 +2233,7 @@ Never include:
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://bloodlines-unlocked.lovable.app
+**Live app**: https://vascularcaredr.com
 
 ## Build with Lovable
 

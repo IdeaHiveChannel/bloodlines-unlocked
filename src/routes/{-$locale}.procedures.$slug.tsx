@@ -13,7 +13,7 @@ import { getConditions } from "../lib/i18n/data";
 import { localePath } from "../lib/i18n";
 import { useLocale } from "../lib/i18n/react";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
+const SITE = "https://vascularcaredr.com";
 
 export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
   head: ({ params }) => {

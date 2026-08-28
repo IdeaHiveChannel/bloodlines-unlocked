@@ -6,7 +6,7 @@ import { localePath } from "../lib/i18n";
 import { PillarPage } from "../components/pillar/PillarPage";
 import { pillarSeoFor } from "../lib/seo/pillar-seo";
 
-const SITE = "https://bloodlines-unlocked.lovable.app";
+const SITE = "https://vascularcaredr.com";
 
 export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
   head: ({ params }) => {
