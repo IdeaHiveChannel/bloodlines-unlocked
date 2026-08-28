@@ -458,4 +458,9 @@ export const stringsMl: Record<string, string> = {
   "Gland softens, channel opens": "ഗ്രന്ഥി ചുരുങ്ങി, നാളി തുറന്നു",
   "Fibroid blood supply": "ഫൈബ്രോയിഡിന്റെ രക്തയോട്ടം",
   "Fibroids shrink over months": "ഫൈബ്രോയിഡുകൾ ക്രമേണ ചുരുങ്ങുന്നു",
+  "Cookie consent": "കുക്കി സമ്മതം",
+  "We use analytics cookies to understand how visitors use this site. No cookies are set until you agree.": "ഈ വെബ്സൈറ്റ് സന്ദർശകർ എങ്ങനെ ഉപയോഗിക്കുന്നു എന്നറിയാൻ ഞങ്ങൾ അനലിറ്റിക്സ് കുക്കികൾ ഉപയോഗിക്കുന്നു. നിങ്ങൾ സമ്മതിക്കുന്നതുവരെ ഒരു കുക്കിയും സജ്ജമാക്കില്ല.",
+  "Privacy policy": "സ്വകാര്യതാ നയം",
+  "Accept": "സമ്മതിക്കുന്നു",
+  "Decline": "വേണ്ട",
 };
