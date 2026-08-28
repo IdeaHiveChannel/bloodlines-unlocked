@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** EVAR — aorta with aneurysm sac and iliac bifurcation.
  *  sac fills → delivery system ascends → graft unsheathes → sac excluded. */
-export function Evar({ progress }: P) {
-  const deliver = useRamp(progress, 0.16, 0.42);
-  const deviceOpacity = usePresence(progress, 0.14, 0.22, 0.74, 0.86);
-  const deploy = useRamp(progress, 0.46, 0.68);
-  const exclude = useRamp(progress, 0.62, 0.86);
-  const sacFlow = usePresence(progress, 0, 0.02, 0.6, 0.8);
-  const graftFlow = useRamp(progress, 0.7, 0.9);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.36);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function Evar({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const deliver = useSpan(progress, b(1), b(1), n);
+  const deviceOpacity = useBeatWindow(progress, b(1), b(2), n);
+  const deploy = useSpan(progress, b(2), b(2), n);
+  const exclude = useSpan(progress, b(2), b(3), n);
+  const sacFlow = useFadeOut(progress, b(2), n);
+  const graftFlow = useHoldFrom(progress, b(3), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, n - 1, n);
 
   const deviceY = useRange(deliver, 300, 0);
   const graftWidth = useRange(deploy, 0.22, 1);

@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useRamp, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** Aneurysm coiling — cerebral artery with a saccular aneurysm.
  *  sac fills → microcatheter into the neck → coils packed loop by loop → sac excluded. */
-export function Coiling({ progress }: P) {
-  const reach = useRamp(progress, 0.16, 0.42);
-  const catheterOpacity = usePresence(progress, 0.14, 0.22, 0.9, 0.98);
-  const pack = useRamp(progress, 0.44, 0.8);
-  const exclude = useRamp(progress, 0.62, 0.92);
-  const sacFill = usePresence(progress, 0, 0.02, 0.5, 0.72);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.36);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function Coiling({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const reach = useSpan(progress, b(1), b(1), n);
+  const catheterOpacity = useBeatWindow(progress, b(1), b(3), n);
+  const pack = useSpan(progress, b(2), b(3), n);
+  const exclude = useSpan(progress, b(3), n - 1, n);
+  const sacFill = useFadeOut(progress, b(2), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, b(3), n);
 
   const catheterLen = useRange(reach, 0, 1);
   const sacOpacity = useRange(exclude, 0.85, 0.12);
@@ -21,10 +23,13 @@ export function Coiling({ progress }: P) {
   const parent = "M40,470 C150,452 236,404 300,330 C348,274 420,236 566,220";
   const access = "M40,470 C150,452 236,404 300,330 C324,302 348,282 366,270";
 
+  const coilStart = b(2) / n;
+  const coilEnd = (b(3) + 1) / n;
   const coils = Array.from({ length: 7 }).map((_, i) => ({
     r: 12 + i * 5,
     rot: i * 26,
-    at: 0.44 + i * 0.045,
+    at: coilStart + (i / 7) * (coilEnd - coilStart),
+    step: (coilEnd - coilStart) / 9,
   }));
 
   return (
@@ -48,7 +53,7 @@ export function Coiling({ progress }: P) {
       {/* coil mass built loop by loop */}
       <g fill="none" stroke={stroke} strokeWidth="1.5">
         {coils.map((c, i) => (
-          <CoilLoop key={i} progress={progress} at={c.at} r={c.r} rot={c.rot} />
+          <CoilLoop key={i} progress={progress} at={c.at} step={c.step} r={c.r} rot={c.rot} />
         ))}
       </g>
       <motion.circle cx="392" cy="200" r="52" fill="color-mix(in oklab, var(--accent) 8%, transparent)" style={{ opacity: pack }} />
@@ -62,8 +67,8 @@ export function Coiling({ progress }: P) {
   );
 }
 
-function CoilLoop({ progress, at, r, rot }: P & { at: number; r: number; rot: number }) {
-  const on = useRamp(progress, at, at + 0.06);
+function CoilLoop({ progress, at, step, r, rot }: P & { at: number; step: number; r: number; rot: number }) {
+  const on = useRamp(progress, at, at + step);
   const scale = useRange(on, 0.3, 1);
   return (
     <motion.ellipse

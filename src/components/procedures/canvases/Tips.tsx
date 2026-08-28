@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** TIPS — portal hypertension in a cirrhotic liver.
  *  high portal pressure and varices → needle from hepatic to portal vein → shunt → pressure falls. */
-export function Tips({ progress }: P) {
-  const puncture = useRamp(progress, 0.2, 0.44);
-  const shunt = useRamp(progress, 0.48, 0.72);
-  const decompress = useRamp(progress, 0.66, 0.94);
-  const needleOut = usePresence(progress, 0.18, 0.28, 0.72, 0.84);
-  const congested = usePresence(progress, 0, 0.02, 0.6, 0.82);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.36);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function Tips({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const puncture = useSpan(progress, b(1), b(1), n);
+  const shunt = useSpan(progress, b(2), b(2), n);
+  const decompress = useSpan(progress, b(3), n - 1, n);
+  const needleOut = useBeatWindow(progress, b(1), b(2), n);
+  const congested = useFadeOut(progress, b(3), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, b(3), n);
 
   const needleLen = useRange(puncture, 0, 1);
   const varices = useRange(decompress, 1, 0.42);

@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** TACE — liver with a tumour fed by a branch of the hepatic artery.
  *  tumour blush → microcatheter selects the feeder → beads delivered → supply cut → blush fades. */
-export function Tace({ progress }: P) {
-  const select = useRamp(progress, 0.16, 0.44);
-  const catheterOpacity = usePresence(progress, 0.14, 0.22, 0.94, 1);
-  const beads = useRamp(progress, 0.46, 0.74);
-  const devascularise = useRamp(progress, 0.62, 0.92);
-  const feed = usePresence(progress, 0, 0.02, 0.5, 0.7);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.36);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function Tace({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const select = useSpan(progress, b(1), b(1), n);
+  const catheterOpacity = useBeatWindow(progress, b(1), b(3), n);
+  const beads = useSpan(progress, b(2), b(2), n);
+  const devascularise = useSpan(progress, b(3), n - 1, n);
+  const feed = useFadeOut(progress, b(3), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, b(3), n);
 
   const catheterLen = useRange(select, 0, 1);
   const blush = useRange(devascularise, 0.85, 0.16);

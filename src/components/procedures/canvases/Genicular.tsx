@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** Genicular artery embolization — knee joint with an inflamed, over-vascular synovium.
  *  abnormal blush → microcatheter into the genicular branch → particles → blush settles. */
-export function Genicular({ progress }: P) {
-  const select = useRamp(progress, 0.18, 0.46);
-  const catheterOpacity = usePresence(progress, 0.16, 0.24, 0.94, 1);
-  const particles = useRamp(progress, 0.48, 0.74);
-  const settle = useRamp(progress, 0.64, 0.94);
-  const inflamed = usePresence(progress, 0, 0.02, 0.56, 0.78);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.36);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function Genicular({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const select = useSpan(progress, b(1), b(1), n);
+  const catheterOpacity = useBeatWindow(progress, b(1), b(3), n);
+  const particles = useSpan(progress, b(2), b(2), n);
+  const settle = useSpan(progress, b(3), n - 1, n);
+  const inflamed = useFadeOut(progress, b(2), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, b(3), n);
 
   const catheterLen = useRange(select, 0, 1);
   const blush = useRange(settle, 0.7, 0.1);

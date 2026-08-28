@@ -1,21 +1,23 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** Mechanical thrombectomy — cerebral vessel tree.
  *  occlusion → catheter reaches → retriever expands in clot → clot withdrawn → reperfusion. */
-export function Thrombectomy({ progress }: P) {
-  const reach = useRamp(progress, 0.14, 0.38);
-  const catheterOpacity = usePresence(progress, 0.12, 0.2, 0.92, 1);
-  const expand = useRamp(progress, 0.4, 0.55);
-  const retrieverOpacity = usePresence(progress, 0.38, 0.46, 0.9, 0.98);
-  const withdraw = useRamp(progress, 0.6, 0.82);
-  const reperfusion = useRamp(progress, 0.78, 0.94);
-  const occluded = usePresence(progress, 0, 0.02, 0.62, 0.76);
-  const startCaption = usePresence(progress, 0, 0.03, 0.24, 0.34);
-  const endCaption = useRamp(progress, 0.86, 0.96);
+export function Thrombectomy({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const reach = useSpan(progress, b(1), b(1), n);
+  const catheterOpacity = useBeatWindow(progress, b(1), b(3), n);
+  const expand = useSpan(progress, b(2), b(2), n);
+  const retrieverOpacity = useBeatWindow(progress, b(2), b(3), n);
+  const withdraw = useSpan(progress, b(3), b(3), n);
+  const reperfusion = useHoldFrom(progress, n - 1, n);
+  const occluded = useFadeOut(progress, b(3), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, n - 1, n);
 
   const catheterX = useRange(reach, -300, 0);
   const clotX = useRange(withdraw, 0, -420);

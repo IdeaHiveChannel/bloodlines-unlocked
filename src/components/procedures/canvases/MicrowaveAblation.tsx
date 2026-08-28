@@ -1,18 +1,20 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Caption, UltrasoundSector, usePresence, useRamp, useRange,
+  Frame, Caption, UltrasoundSector, useSpan, useHoldFrom, useBeatWindow, useRange,
   type P, contrast,
 } from "./shared";
 
 /** Microwave ablation — CT/ultrasound-style targeting of a liver lesion.
  *  lesion located → antenna passed through skin → heat zone grows past the margin → lesion destroyed. */
-export function MicrowaveAblation({ progress }: P) {
-  const needle = useRamp(progress, 0.18, 0.46);
-  const heat = useRamp(progress, 0.5, 0.78);
-  const destroy = useRamp(progress, 0.66, 0.92);
-  const needleOut = usePresence(progress, 0.18, 0.3, 0.86, 0.96);
-  const startCaption = usePresence(progress, 0, 0.03, 0.28, 0.38);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function MicrowaveAblation({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const needle = useSpan(progress, b(1), b(1), n);
+  const heat = useSpan(progress, b(2), b(2), n);
+  const destroy = useSpan(progress, b(3), n - 1, n);
+  const needleOut = useBeatWindow(progress, b(1), b(3), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, b(3), n);
 
   const needleLen = useRange(needle, 0, 1);
   const zone = useRange(heat, 8, 96);

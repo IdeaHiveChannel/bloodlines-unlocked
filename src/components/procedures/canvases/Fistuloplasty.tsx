@@ -1,21 +1,23 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** Fistuloplasty — dialysis access in the forearm.
  *  stenosis at the outflow → wire and balloon → dilatation → thrill restored. */
-export function Fistuloplasty({ progress }: P) {
-  const wire = useRamp(progress, 0.14, 0.38);
-  const wireOpacity = usePresence(progress, 0.12, 0.2, 0.88, 0.96);
-  const balloon = useRamp(progress, 0.4, 0.56);
-  const inflate = useRamp(progress, 0.56, 0.74);
-  const balloonOut = usePresence(progress, 0.4, 0.5, 0.78, 0.88);
-  const flow = useRamp(progress, 0.76, 0.94);
-  const poor = usePresence(progress, 0, 0.02, 0.6, 0.78);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.36);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function Fistuloplasty({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const wire = useSpan(progress, b(1), b(1), n);
+  const wireOpacity = useBeatWindow(progress, b(1), b(3), n);
+  const balloon = useSpan(progress, b(2), b(2), n);
+  const inflate = useSpan(progress, b(2), b(3), n);
+  const balloonOut = useBeatWindow(progress, b(2), b(3), n);
+  const flow = useHoldFrom(progress, n - 1, n);
+  const poor = useFadeOut(progress, b(3), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, n - 1, n);
 
   const wireX = useRange(wire, -280, 120);
   const balloonX = useRange(balloon, -240, 0);

@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, UltrasoundSector, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, UltrasoundSector, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, contrast,
 } from "./shared";
 
 /** Endovenous laser ablation — ultrasound-style greyscale view of the leg vein.
  *  refluxing vein → fibre in vein → energy along the segment → vein shrinks → flow reroutes. */
-export function LaserAblation({ progress }: P) {
-  const fibre = useRamp(progress, 0.2, 0.42);
-  const fibreOpacity = usePresence(progress, 0.18, 0.26, 0.82, 0.94);
-  const energy = useRamp(progress, 0.44, 0.66);
-  const close = useRamp(progress, 0.56, 0.86);
-  const reroute = useRamp(progress, 0.7, 0.94);
-  const reflux = usePresence(progress, 0, 0.02, 0.44, 0.62);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.36);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function LaserAblation({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const fibre = useSpan(progress, b(1), b(1), n);
+  const fibreOpacity = useBeatWindow(progress, b(1), b(2), n);
+  const energy = useSpan(progress, b(2), b(2), n);
+  const close = useSpan(progress, b(2), b(3), n);
+  const reroute = useHoldFrom(progress, b(3), n);
+  const reflux = useFadeOut(progress, b(2), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, b(3), n);
 
   const fibreY = useRange(fibre, 130, 486);
   const veinWidth = useRange(close, 1, 0.16);
