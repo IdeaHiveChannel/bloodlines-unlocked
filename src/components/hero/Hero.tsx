@@ -37,7 +37,7 @@ export function Hero() {
 
       <div className="shell relative z-10 flex h-full flex-col pt-24 pb-12 sm:pt-36 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
         {/* Left: content */}
-        <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[55%]">
+        <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[60%]">
           <div className="flex items-center gap-3 html-ml:lg:gap-2">
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <h2 className="text-label html-ml:lg:text-[0.7rem]">{tx(t.hero.eyebrow)}</h2>
@@ -67,8 +67,8 @@ export function Hero() {
         </motion.div>
 
         {/* Right: portrait */}
-        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-6 flex-1 lg:mt-0 lg:w-[45%] flex flex-col justify-end min-h-[300px] sm:min-h-[400px] lg:min-h-0">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[300px] sm:max-w-[380px] lg:aspect-auto lg:h-[620px] lg:max-w-[500px] lg:-mb-16">
+        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-6 flex-1 lg:mt-0 lg:w-[40%] flex flex-col justify-center min-h-[240px] sm:min-h-[320px] lg:min-h-0">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[240px] sm:max-w-[300px] lg:aspect-auto lg:h-[500px] lg:max-w-[380px]">
             <img src={portraitAsset.url} alt={tx("Dr. Mandeep Sagar, interventional radiologist")}
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"
               style={{
