@@ -1,6 +1,10 @@
-import { motion, useTransform, type MotionValue } from "framer-motion";
+import { motion, useReducedMotion, useTransform, type MotionValue } from "framer-motion";
+import { useLocale } from "../../../lib/i18n/react";
+import { useTx } from "../../../lib/i18n/tx";
 
-export type P = { progress: MotionValue<number> };
+/** Every scene receives the scroll progress and how many beats the text track has,
+ *  so the visual stages land on the sentence that describes them. */
+export type P = { progress: MotionValue<number>; beats?: number };
 
 export const stroke = "var(--accent)";
 export const soft = "var(--accent-soft)";
@@ -18,9 +22,12 @@ export function Frame({ children }: { children: React.ReactNode }) {
   );
 }
 
+/** Devices decelerate as they arrive instead of stopping dead. */
+const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+
 /** Linear 0→1 ramp between two scroll positions. */
 export function useRamp(progress: MotionValue<number>, a: number, b: number) {
-  return useTransform(progress, [a, b], [0, 1], { clamp: true });
+  return useTransform(progress, [a, b], [0, 1], { clamp: true, ease });
 }
 
 /** Ramp up, hold, ramp down — for devices that enter and leave. */
@@ -34,7 +41,55 @@ export function usePresence(
   return useTransform(progress, [a, b, c, d], [0, 1, 1, 0], { clamp: true });
 }
 
-/** Dashed, slowly travelling flow line — angiographic contrast running in a vessel. */
+/* ---------- beat-aligned stage helpers ----------
+ * The text track divides the scroll evenly by beat count, so a stage expressed
+ * in beat indices always plays under the sentence that describes it. */
+
+const clamp01 = (n: number) => Math.max(0, Math.min(1, n));
+
+function bounds(i: number, j: number, n: number) {
+  const total = Math.max(1, n);
+  const a = clamp01(i / total + 0.06 / total);
+  const b = clamp01((j + 1) / total - 0.14 / total);
+  return [a, Math.max(a + 0.0001, b)] as const;
+}
+
+/** 0→1 across beats i…j inclusive — the stage runs with its own sentence. */
+export function useSpan(progress: MotionValue<number>, i: number, j: number, n: number) {
+  const [a, b] = bounds(i, j, n);
+  return useTransform(progress, [a, b], [0, 1], { clamp: true, ease });
+}
+
+/** Appears during beat i and then stays — the treated state holds to the end. */
+export function useHoldFrom(progress: MotionValue<number>, i: number, n: number) {
+  const total = Math.max(1, n);
+  const a = clamp01(i / total);
+  const b = clamp01(i / total + 0.55 / total);
+  return useTransform(progress, [a, Math.max(a + 0.0001, b)], [0, 1], { clamp: true, ease });
+}
+
+/** Full until beat i, then fades away — the untreated state giving way. */
+export function useFadeOut(progress: MotionValue<number>, i: number, n: number) {
+  const total = Math.max(1, n);
+  const a = clamp01(i / total);
+  const b = clamp01((i + 1) / total);
+  return useTransform(progress, [a, Math.max(a + 0.0001, b)], [1, 0], { clamp: true, ease });
+}
+
+/** Visible from the start of beat i until the end of beat j. */
+export function useBeatWindow(progress: MotionValue<number>, i: number, j: number, n: number) {
+  const total = Math.max(1, n);
+  const a = clamp01(i / total);
+  const b = clamp01(i / total + 0.4 / total);
+  const c = clamp01((j + 1) / total - 0.1 / total);
+  const d = clamp01((j + 1) / total + 0.4 / total);
+  const s = [a, Math.max(a + 1e-4, b)];
+  const e = [Math.max(s[1] + 1e-4, c), Math.max(s[1] + 2e-4, d)];
+  return useTransform(progress, [s[0], s[1], e[0], e[1]], [0, 1, 1, 0], { clamp: true });
+}
+
+/** Dashed, slowly travelling flow line — angiographic contrast running in a vessel.
+ *  Slower and quieter when the vessel is still occluded; still when motion is reduced. */
 export function Flow({
   d,
   width = 2.4,
@@ -48,6 +103,7 @@ export function Flow({
   color?: string;
   dash?: string;
 }) {
+  const reduced = useReducedMotion();
   return (
     <path
       d={d}
@@ -56,12 +112,12 @@ export function Flow({
       strokeWidth={width}
       strokeLinecap="round"
       strokeDasharray={dash}
-      style={{ animation: `flow ${dur}s linear infinite` }}
+      style={reduced ? undefined : { animation: `flow ${dur}s linear infinite` }}
     />
   );
 }
 
-/** One quiet caption per stage — never more than a couple on screen. */
+/** One quiet caption per stage — localized, and legible in the compact mobile frame. */
 export function Caption({
   x,
   y,
@@ -73,17 +129,24 @@ export function Caption({
   children: React.ReactNode;
   anchor?: "start" | "middle" | "end";
 }) {
+  const locale = useLocale();
+  const tx = useTx();
+  const ml = locale === "ml";
+  const text = typeof children === "string" ? tx(children) : children;
   return (
     <text
       x={x}
       y={y}
       textAnchor={anchor}
-      fill="rgba(226,236,248,0.55)"
-      fontSize="13"
-      letterSpacing="0.14em"
-      style={{ textTransform: "uppercase" }}
+      fill="rgba(226,236,248,0.62)"
+      fontSize={ml ? 17 : 15}
+      letterSpacing={ml ? "0" : "0.12em"}
+      style={{
+        textTransform: ml ? "none" : "uppercase",
+        fontFamily: ml ? "var(--font-ml, inherit)" : "inherit",
+      }}
     >
-      {children}
+      {text}
     </text>
   );
 }

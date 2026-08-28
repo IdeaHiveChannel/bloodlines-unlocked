@@ -66,7 +66,7 @@ export function Procedures() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   return (
-    <div ref={ref} className="relative" style={{ height: `${beats.length * 62}svh` }}>
+    <div ref={ref} className="relative" style={{ height: `${Math.min(beats.length * 52 + 40, 340)}svh` }}>
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center">
         {/* left column on desktop: identity + beat; right column: the scene */}
         <div className="shell grid flex-1 content-center items-center gap-5 pt-20 pb-10 sm:gap-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:pb-14">
@@ -85,9 +85,10 @@ export function Procedures() {
           {/* the scene never exceeds the space left by the header and the copy */}
           <div
             className="order-1 relative mx-auto aspect-square lg:order-2 w-full overflow-hidden rounded-3xl border border-white/[0.06] bg-gradient-to-br from-white/[0.02] to-transparent"
-            style={{ maxWidth: "min(100%, 52svh)", maxHeight: "52svh" }}
+            style={{ maxWidth: "min(100%, 46svh)", maxHeight: "46svh" }}
           >
-            <StoryboardCanvas storyboard={storyboard} progress={scrollYProgress} />
+            <StoryboardCanvas storyboard={storyboard} progress={scrollYProgress} beats={beats.length} />
+
             <div className="absolute bottom-4 left-4 right-4 flex gap-1">
               {beats.map((_, i) => (
                 <div key={i} className="h-px flex-1 bg-white/10 overflow-hidden">

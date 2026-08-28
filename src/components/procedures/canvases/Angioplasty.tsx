@@ -1,23 +1,25 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** Angioplasty & stenting — peripheral artery, angiographic look.
  *  wire travels → balloon crosses → inflation compresses plaque → stent → flow. */
-export function Angioplasty({ progress }: P) {
-  const wire = useRamp(progress, 0.08, 0.34);
-  const wireOpacity = usePresence(progress, 0.06, 0.14, 0.86, 0.96);
-  const balloon = useRamp(progress, 0.3, 0.46);
-  const balloonPresence = usePresence(progress, 0.3, 0.4, 0.78, 0.9);
-  const inflate = useRamp(progress, 0.46, 0.62);
-  const stentOpacity = useRamp(progress, 0.66, 0.8);
-  const stentOpen = useRamp(progress, 0.66, 0.84);
-  const flowOpacity = useRamp(progress, 0.78, 0.95);
-  const earlyFlow = usePresence(progress, 0, 0.02, 0.6, 0.78);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.38);
-  const endCaption = useRamp(progress, 0.86, 0.96);
+export function Angioplasty({ progress, beats = 6 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const wire = useSpan(progress, b(1), b(1), n);
+  const wireOpacity = useBeatWindow(progress, b(1), b(3), n);
+  const balloon = useSpan(progress, b(2), b(2), n);
+  const balloonPresence = useBeatWindow(progress, b(2), b(3), n);
+  const inflate = useSpan(progress, b(2), b(3), n);
+  const stentOpacity = useHoldFrom(progress, b(4), n);
+  const stentOpen = useSpan(progress, b(4), b(4), n);
+  const flowOpacity = useHoldFrom(progress, n - 1, n);
+  const earlyFlow = useFadeOut(progress, b(3), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, n - 1, n);
 
   const wireX = useRange(wire, -300, 130);
   const balloonX = useRange(balloon, -260, 0);

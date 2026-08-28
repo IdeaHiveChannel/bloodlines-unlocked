@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
 import {
-  Frame, Flow, Caption, usePresence, useRamp, useRange,
+  Frame, Flow, Caption, useSpan, useHoldFrom, useFadeOut, useBeatWindow, useRange,
   type P, stroke, soft, blood, contrast,
 } from "./shared";
 
 /** Uterine fibroid embolization — uterus with fibroids fed by both uterine arteries.
  *  fibroid blush → catheter into the uterine artery → particles both sides → fibroids shrink. */
-export function FibroidEmbolization({ progress }: P) {
-  const select = useRamp(progress, 0.16, 0.4);
-  const secondSide = useRamp(progress, 0.44, 0.62);
-  const catheterOpacity = usePresence(progress, 0.14, 0.22, 0.92, 1);
-  const particles = useRamp(progress, 0.5, 0.74);
-  const shrink = useRamp(progress, 0.66, 0.94);
-  const supplied = usePresence(progress, 0, 0.02, 0.58, 0.78);
-  const startCaption = usePresence(progress, 0, 0.03, 0.26, 0.36);
-  const endCaption = useRamp(progress, 0.86, 0.97);
+export function FibroidEmbolization({ progress, beats = 5 }: P) {
+  const n = beats;
+  const b = (k: number) => Math.min(k, n - 1);
+  const select = useSpan(progress, b(1), b(1), n);
+  const secondSide = useSpan(progress, b(2), b(2), n);
+  const catheterOpacity = useBeatWindow(progress, b(1), b(3), n);
+  const particles = useSpan(progress, b(3), b(3), n);
+  const shrink = useSpan(progress, b(3), n - 1, n);
+  const supplied = useFadeOut(progress, b(3), n);
+  const startCaption = useBeatWindow(progress, 0, 0, n);
+  const endCaption = useHoldFrom(progress, b(3), n);
 
   const leftLen = useRange(select, 0, 1);
   const rightLen = useRange(secondSide, 0, 1);
