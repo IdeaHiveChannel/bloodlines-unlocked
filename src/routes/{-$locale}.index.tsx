@@ -30,20 +30,28 @@ export const Route = createFileRoute("/{-$locale}/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Physician",
-          sameAs: socialUrls,
-          name: "Dr. Mandeep Sagar",
-          medicalSpecialty: "Radiology",
-          description:
-            "Vascular and neuro interventional radiologist treating disease through image-guided, minimally invasive procedures.",
+          "@type": "MedicalWebPage",
+          name: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod",
           url: `${SITE}/`,
-          telephone: "+91 63663 30505",
-          email: "vascularcaredr@gmail.com",
-          areaServed: ["Mangalore, Karnataka", "Kasaragod, Kerala"],
-          address: [
-            { "@type": "PostalAddress", addressLocality: "Mangalore", addressRegion: "Karnataka", addressCountry: "IN" },
-            { "@type": "PostalAddress", addressLocality: "Kasaragod", addressRegion: "Kerala", addressCountry: "IN" },
-          ],
+          inLanguage: "en",
+          about: { "@id": `${SITE}/#physician` },
+          mainEntity: { "@id": `${SITE}/#physician` },
+          publisher: { "@id": `${SITE}/#practice` },
+          sameAs: socialUrls,
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: en.faq.categories.flatMap((cat: { questions: { q: string; a: string }[] }) =>
+            cat.questions.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          ),
         }),
       },
     ],
