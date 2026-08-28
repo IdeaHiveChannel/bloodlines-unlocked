@@ -1,7 +1,7 @@
 import type { Locale } from "./index";
 import { isLocale } from "./index";
 
-export const SITE = "https://bloodlines-unlocked.lovable.app";
+export const SITE = "https://vascularcaredr.com";
 
 export type MetaCopy = {
   title: string;
@@ -17,10 +17,10 @@ export const metaMl: Record<string, MetaCopy> = {
   "/": {
     title: "ഡോ. മന്ദീപ് സാഗർ — വാസ്കുലാർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ് | മംഗളൂരു & കാസർകോട്",
     description:
-      "ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ ആധുനിക വൈദ്യശാസ്ത്രം. മസ്തിഷ്കം, രക്തക്കുഴലുകൾ, കാലുകൾ, വയർ എന്നിവയെ ബാധിക്കുന്ന സങ്കീർണ്ണമായ രോഗങ്ങൾക്ക് ഇമേജ്-ഗൈഡഡ് ചികിത്സ.",
-    ogTitle: "ഡോ. മന്ദീപ് സാഗർ — വാസ്കുലാർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",
+      "സ്കാൻ ചിത്രങ്ങളുടെ സഹായത്തോടെ, ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ (പിൻ ഹോൾ സർജറി) ചെയ്യുന്ന ആധുനിക ചികിത്സ. ശരീരത്തിലെ രക്തക്കുഴലുകളെ ബാധിക്കുന്ന തിരഞ്ഞെടുത്ത രോഗാവസ്ഥകൾക്കുള്ള ചികിത്സ.",
+    ogTitle: "ഡോ. മന്ദീപ് സാഗർ — വാസ്കുലാർ & ന്യൂറോ ഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ് | മംഗളൂരു & കാസർകോട്",
     ogDescription:
-      "ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ ആധുനിക വൈദ്യശാസ്ത്രം. മംഗളൂരുവിലും കാസർഗോഡും അത്യാധുനിക ഇമേജ്-ഗൈഡഡ് ചികിത്സകൾ.",
+      "സ്കാൻ ചിത്രങ്ങളുടെ സഹായത്തോടെ, ഒരു സൂചിമുന വലുപ്പമുള്ള ദ്വാരത്തിലൂടെ (പിൻ ഹോൾ സർജറി) ചെയ്യുന്ന ആധുനിക ചികിത്സ. ശരീരത്തിലെ രക്തക്കുഴലുകളെ ബാധിക്കുന്ന തിരഞ്ഞെടുത്ത രോഗാവസ്ഥകൾക്കുള്ള ചികിത്സ.",
   },
 
 
@@ -155,6 +155,8 @@ export function localeHead(
       { property: "og:url", content: url },
       { property: "og:locale", content: locale === "ml" ? "ml_IN" : "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: `${SITE}/og-card.jpg` },
+      { name: "twitter:image", content: `${SITE}/og-card.jpg` },
     ],
     links: [{ rel: "canonical", href: url }],
     ...(en.scripts ? { scripts: en.scripts } : {}),
