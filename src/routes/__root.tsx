@@ -99,11 +99,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Vital Flow — Dr. Mandeep Sagar",
-          url: "https://bloodlines-unlocked.lovable.app",
+          name: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist",
+          url: "https://vascularcaredr.com",
           inLanguage: "en",
           description:
-            "Image-guided vascular and neurointerventional treatment by Dr. Mandeep Sagar.",
+            "Advanced image-guided treatment through minimally invasive procedures. Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery.",
         }),
       },
     ],
