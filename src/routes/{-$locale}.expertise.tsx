@@ -1,4 +1,5 @@
 import { localeHead } from "@/lib/i18n/meta";
+import { sectionSchema } from "@/lib/seo/schema";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/{-$locale}/expertise")({
       "Neurointervention, stroke care, peripheral vascular and aortic disease, venous disease, interventional oncology, thyroid, renal and dialysis access work.",
     ogDescription:
       "The full scope of image-guided vascular, neuro and oncologic intervention practised by Dr. Mandeep Sagar.",
+    scripts: sectionSchema({ path: "/expertise", name: "Areas of expertise", description: "Neurointervention, stroke care, peripheral vascular and aortic disease, venous disease, interventional oncology, thyroid, renal and dialysis access work." }),
   }),
   component: Expertise,
 });

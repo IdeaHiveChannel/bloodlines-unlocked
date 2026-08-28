@@ -1,4 +1,5 @@
 import { localeHead } from "@/lib/i18n/meta";
+import { sectionSchema } from "@/lib/seo/schema";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/{-$locale}/second-opinion")({
     ogTitle: "Second opinion on your scans",
     ogDescription:
       "An interventional radiology review of your existing scans and reports, before you commit to major surgery.",
+    scripts: sectionSchema({ path: "/second-opinion", name: "Second opinion on your scans", description: "An interventional radiology review of existing CT, MRI, angiography and doppler studies before committing to major surgery." }),
   }),
   component: SecondOpinion,
 });

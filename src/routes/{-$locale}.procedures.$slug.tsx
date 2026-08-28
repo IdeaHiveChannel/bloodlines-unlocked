@@ -128,7 +128,31 @@ function ProcedurePage() {
               </p>
             </div>
           )}
+          {/* At a glance — compact, quotable summary for search and AI assistants */}
+          <section
+            aria-label={tx("At a glance")}
+            className="mt-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"
+          >
+            <p className="text-label text-[var(--accent)]">{tx("At a glance")}</p>
+            <dl className="mt-5 grid gap-5 sm:grid-cols-2">
+              {[
+                { k: "What it does", v: p.oneLiner },
+                { k: "Used for", v: usedFor.slice(0, 3).join(" · ") },
+                { k: "How it is done", v: p.beats.slice(0, 3).join(" → ") },
+                { k: "Recovery", v: (p.info?.recovery ?? []).slice(0, 2).join(" · ") },
+              ]
+                .filter((row) => row.v)
+                .map((row) => (
+                  <div key={row.k}>
+                    <dt className="text-label text-[var(--ink-dim)]">{tx(row.k)}</dt>
+                    <dd className="mt-2 text-small leading-relaxed">{row.v}</dd>
+                  </div>
+                ))}
+            </dl>
+          </section>
+
           {usedFor.length > 0 && (
+
             <section className="mt-12">
               <h2 className="text-h2">{tx("Used for")}</h2>
               <ul className="mt-5 space-y-2">

@@ -20,6 +20,11 @@ import { ContactDock } from "../components/contact-dock";
 import { CookieConsent } from "../components/cookie-consent";
 import { useTx } from "../lib/i18n/tx";
 import { initAnalytics, trackPageView } from "../lib/analytics";
+import { socialUrls } from "../lib/contact";
+
+const SITE_DESCRIPTION =
+  "Advanced image-guided treatment through minimally invasive procedures. Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery.";
+
 
 
 function NotFoundComponent() {
@@ -98,12 +103,56 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist",
-          url: "https://vascularcaredr.com",
-          inLanguage: "en",
-          description:
-            "Advanced image-guided treatment through minimally invasive procedures. Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery.",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://vascularcaredr.com/#website",
+              name: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist",
+              url: "https://vascularcaredr.com",
+              inLanguage: ["en", "ml"],
+              publisher: { "@id": "https://vascularcaredr.com/#practice" },
+              description: SITE_DESCRIPTION,
+            },
+            {
+              "@type": "Physician",
+              "@id": "https://vascularcaredr.com/#physician",
+              name: "Dr. Mandeep Sagar",
+              honorificPrefix: "Dr.",
+              jobTitle: "Vascular & Neuro Interventional Radiologist",
+              medicalSpecialty: ["Radiology", "VascularSurgery", "Neurologic"],
+              description: SITE_DESCRIPTION,
+              url: "https://vascularcaredr.com",
+              image: "https://vascularcaredr.com/og-card.jpg",
+              telephone: "+91 63663 30505",
+              email: "vascularcaredr@gmail.com",
+              knowsLanguage: ["en", "ml", "kn", "hi"],
+              sameAs: socialUrls,
+              areaServed: [
+                { "@type": "City", name: "Mangalore", address: { "@type": "PostalAddress", addressRegion: "Karnataka", addressCountry: "IN" } },
+                { "@type": "City", name: "Kasaragod", address: { "@type": "PostalAddress", addressRegion: "Kerala", addressCountry: "IN" } },
+              ],
+              worksFor: { "@id": "https://vascularcaredr.com/#practice" },
+            },
+            {
+              "@type": "MedicalBusiness",
+              "@id": "https://vascularcaredr.com/#practice",
+              name: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiology",
+              description: SITE_DESCRIPTION,
+              url: "https://vascularcaredr.com",
+              logo: "https://vascularcaredr.com/favicon.png",
+              image: "https://vascularcaredr.com/og-card.jpg",
+              telephone: "+91 63663 30505",
+              email: "vascularcaredr@gmail.com",
+              sameAs: socialUrls,
+              availableLanguage: ["English", "Malayalam", "Kannada", "Hindi"],
+              address: [
+                { "@type": "PostalAddress", addressLocality: "Mangalore", addressRegion: "Karnataka", addressCountry: "IN" },
+                { "@type": "PostalAddress", addressLocality: "Kasaragod", addressRegion: "Kerala", addressCountry: "IN" },
+              ],
+              areaServed: ["Mangalore, Karnataka", "Kasaragod, Kerala", "Dakshina Kannada", "Udupi"],
+              employee: { "@id": "https://vascularcaredr.com/#physician" },
+            },
+          ],
         }),
       },
     ],

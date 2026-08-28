@@ -236,7 +236,38 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             </div>
           </header>
 
+          {/* Key facts — a compact, quotable answer block for search and AI assistants */}
+          <section
+            aria-label={tx("Key facts")}
+            className="mb-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 sm:p-8"
+          >
+            <p className="text-label text-[var(--accent)]">{tx("Key facts")}</p>
+            <p className="mt-4 max-w-3xl text-small leading-relaxed">{pillar.summary}</p>
+            <dl className="mt-6 grid gap-5 sm:grid-cols-2">
+              {[
+                { k: "Common symptoms", v: pillar.symptoms.slice(0, 3).join(" · ") },
+                { k: "Tests used", v: pillar.tests.slice(0, 3).map((t) => t.name).join(" · ") },
+                {
+                  k: "Treatment options",
+                  v: pillar.treatments.slice(0, 3).map((t) => t.name).join(" · "),
+                },
+                {
+                  k: "Recovery",
+                  v: pillar.recovery.slice(0, 2).map((r) => `${r.when}: ${r.what}`).join(" · "),
+                },
+              ]
+                .filter((row) => row.v)
+                .map((row) => (
+                  <div key={row.k}>
+                    <dt className="text-label text-[var(--ink-dim)]">{tx(row.k)}</dt>
+                    <dd className="mt-2 text-small leading-relaxed">{row.v}</dd>
+                  </div>
+                ))}
+            </dl>
+          </section>
+
           <SubNav />
+
 
           {/* 02 */}
           <Section id="symptoms" index={2} label={tx("Symptoms")} title={tx("What patients notice.")}>

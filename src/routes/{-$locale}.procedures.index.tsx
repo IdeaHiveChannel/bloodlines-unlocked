@@ -1,4 +1,5 @@
 import { localeHead } from "@/lib/i18n/meta";
+import { sectionSchema } from "@/lib/seo/schema";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/{-$locale}/procedures/")({
     ogTitle: "Procedures performed by Dr. Mandeep Sagar",
     ogDescription:
       "Angioplasty, thrombectomy, aneurysm repair, embolization and vein ablation — every procedure told as a story.",
+    scripts: sectionSchema({ path: "/procedures", name: "Procedures", description: "Angioplasty, thrombectomy, aneurysm repair, embolization and vein ablation — image-guided procedures explained step by step." }),
   }),
   component: ProceduresIndex,
 });

@@ -1,4 +1,5 @@
 import { localeHead } from "@/lib/i18n/meta";
+import { sectionSchema } from "@/lib/seo/schema";
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../components/locale-link";
 import { createFileRoute } from "@tanstack/react-router";
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/{-$locale}/conditions/")({
     ogTitle: "Patient guides — Dr. Mandeep Sagar",
     ogDescription:
       "Symptoms, tests, treatment options and recovery, explained condition by condition.",
+    scripts: sectionSchema({ path: "/conditions", name: "Conditions treated", description: "Complete patient guides to stroke, varicose veins, diabetic foot, PAD, DVT, fibroids, prostate, brain aneurysm and liver tumours." }),
   }),
   component: DiseasesIndex,
 });
