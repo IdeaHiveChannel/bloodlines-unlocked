@@ -191,6 +191,8 @@ export const stringsMl: Record<string, string> = {
  "Performed in a hybrid cath lab. Real-time imaging guides every millimetre.": "ഹൈബ്രിഡ് കാത്ത് ലാബിൽ ചെയ്യുന്നു. തത്സമയ ഇമേജിംഗിലൂടെ ഓരോ ഘട്ടവും കൃത്യമായി നിയന്ത്രിക്കുന്നു.",
  "Recovery": "വിശ്രമം",
  "Key facts": "പ്രധാന വിവരങ്ങൾ",
+ "Used for": "ഏതൊക്കെ അവസ്ഥകൾക്ക്",
+ "How it is done": "എങ്ങനെ ചെയ്യുന്നു",
  "Common symptoms": "സാധാരണ ലക്ഷണങ്ങൾ",
  "Tests used": "ഉപയോഗിക്കുന്ന പരിശോധനകൾ",
  "Treatment options": "ചികിത്സാ മാർഗങ്ങൾ",
