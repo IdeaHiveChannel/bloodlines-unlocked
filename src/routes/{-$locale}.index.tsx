@@ -19,12 +19,12 @@ import { Footer } from "../components/sections/Footer";
 
 export const Route = createFileRoute("/{-$locale}/")({
   head: ({ params }) => localeHead(params, "/", {
-    title: "Dr. Mandeep Sagar — Interventional radiologist",
+    title: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod",
     description:
-      "Modern medicine, through a pinpoint opening. Image-guided treatment through a pinhole opening for complex vascular, neurovascular and oncological conditions.",
-    ogTitle: "Dr. Mandeep Sagar — Vascular & neuro interventional radiologist",
+      "Advanced image-guided treatment through minimally invasive procedures. Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery.",
+    ogTitle: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod",
     ogDescription:
-      "Image-guided treatment through a pinhole opening, avoiding major surgery wherever appropriate.",
+      "Advanced image-guided treatment through minimally invasive procedures. Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery.",
     scripts: [
       {
         type: "application/ld+json",
