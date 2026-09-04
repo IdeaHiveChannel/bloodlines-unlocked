@@ -323,11 +323,12 @@ export function Anatomy() {
 
 
                   
+                  const guideSlug = regionGuide[h.id];
                   return (
                     <LocaleLink
                       key={h.id}
-                      to="/conditions/$slug"
-                      params={{ slug: regionGuide[h.id] || "" }}
+                      to={guideSlug ? "/conditions/$slug" : "/conditions"}
+                      {...(guideSlug ? { params: { slug: guideSlug } } : {})}
                       onPointerEnter={() => setActive(h.id)}
                       onFocus={() => setActive(h.id)}
                       onClick={(e) => {
@@ -337,7 +338,7 @@ export function Anatomy() {
                         } else {
                           trackEvent("select_anatomy_region", {
                             region: h.id,
-                            destination: regionGuide[h.id] ?? "conditions",
+                            destination: guideSlug ?? "conditions",
                             surface: "anatomy_hotspot",
                           });
                         }
