@@ -219,6 +219,9 @@ export function ConsultationForm() {
         </a>
         .
       </p>
+      <p className="mt-3 max-w-xl text-caption leading-relaxed text-red-200/75">
+        {tx("This is a routine enquiry route, not an emergency service. For sudden or rapidly worsening symptoms, call 112 or go immediately to the nearest emergency department.")}
+      </p>
     </form>
   );
 }
