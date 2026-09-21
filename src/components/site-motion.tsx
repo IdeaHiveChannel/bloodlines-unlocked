@@ -33,7 +33,7 @@ export function SiteMotion() {
             const controls = animate(
               candidates,
               { opacity: 1, transform: "none", filter: ["blur(5px)", "blur(0px)"] },
-              { duration: 0.55, delay: stagger(0.07, { maxDelay: 0.42 }), ease: [0.16, 1, 0.3, 1] },
+              { duration: 0.55, delay: stagger(0.07), ease: [0.16, 1, 0.3, 1] },
             );
             return () => controls.stop();
           },

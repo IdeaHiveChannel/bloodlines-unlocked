@@ -11,7 +11,7 @@ export function EmergencyTicker() {
 
   return (
     <aside
-      className="emergency-ticker fixed inset-x-0 top-0 z-[80] border-b border-red-300/15 bg-[#100b13] text-red-50"
+      className="emergency-ticker fixed inset-x-0 top-0 z-[100] border-b border-red-300/15 bg-[#100b13] text-red-50"
       aria-label={`${label}: ${message}`}
     >
       <div className="sr-only">{label}: {message}</div>
