@@ -49,7 +49,11 @@ export function Navigation() {
       dialogRef.current?.querySelector<HTMLElement>(focusables)?.focus();
     });
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") { setOpen(false); return; }
+      if (event.key === "Escape") {
+        setOpen(false);
+        requestAnimationFrame(() => toggleRef.current?.focus());
+        return;
+      }
       if (event.key !== "Tab" || !dialogRef.current) return;
       const items = Array.from(dialogRef.current.querySelectorAll<HTMLElement>(focusables));
       const first = items[0];
