@@ -4,9 +4,7 @@ import microcatheter from "../../assets/microcatheter.jpg";
 import consultDesk from "../../assets/consult-desk.jpg";
 import recoveryRoom from "../../assets/recovery-room.jpg";
 import hybridOt from "../../assets/hybrid-ot.jpg";
-import hybridOt480 from "../../assets/responsive/hybrid-ot-480.webp";
 import handsCatheter from "../../assets/hands-catheter.jpg";
-import handsCatheter480 from "../../assets/responsive/hands-catheter-480.webp";
 import { procedureVideos } from "../../lib/media";
 import { ResponsiveVideo } from "../media/ResponsiveVideo";
 
