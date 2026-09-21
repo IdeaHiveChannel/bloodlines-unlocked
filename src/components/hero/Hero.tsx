@@ -1,5 +1,5 @@
 import { LocaleLink } from "../../components/locale-link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
@@ -12,6 +12,7 @@ export function Hero() {
   const t = useT();
   const tx = useTx();
   const ref = useRef<HTMLElement>(null);
+  const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const headlineY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const headlineOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
@@ -22,10 +23,11 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100svh] w-full overflow-hidden bg-[#050B16] lg:h-[100dvh] lg:min-h-[720px]"
+      data-motion-skip
+      className="relative min-h-[calc(100svh-var(--ticker-h))] w-full overflow-hidden bg-[#050B16] lg:h-[calc(100dvh-var(--ticker-h))] lg:min-h-[720px]"
     >
       {/* Layer 1: cinematic bg */}
-      <motion.div style={{ scale: bgScale }} className="absolute inset-0">
+      <motion.div style={reduced ? undefined : { scale: bgScale }} className="absolute inset-0">
         <img src={heroBg} alt="" className="h-full w-full object-cover opacity-25 grayscale-[20%]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.6)_0%,rgba(5,11,22,0.92)_100%)]" />
       </motion.div>
@@ -35,9 +37,9 @@ export function Hero() {
 
       {/* Content grid */}
 
-      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-12 sm:pt-36 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
+      <div className="shell relative z-10 flex h-full flex-col pt-28 pb-12 sm:pt-36 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
         {/* Left: content */}
-        <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[60%]">
+        <motion.div style={reduced ? undefined : { y: headlineY, opacity: headlineOpacity }} className="lg:w-[60%]">
           <div className="flex items-center gap-3 html-ml:lg:gap-2">
             <span className="size-1.5 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
             <h2 className="text-label html-ml:lg:text-[0.7rem]">{tx(t.hero.eyebrow)}</h2>
@@ -67,7 +69,7 @@ export function Hero() {
         </motion.div>
 
         {/* Right: portrait */}
-        <motion.div style={{ y: portraitY, scale: portraitScale }} className="relative mt-6 flex-1 lg:mt-0 lg:w-[40%] flex flex-col justify-center min-h-[240px] sm:min-h-[320px] lg:min-h-0">
+        <motion.div style={reduced ? undefined : { y: portraitY, scale: portraitScale }} className="relative mt-6 flex-1 lg:mt-0 lg:w-[40%] flex flex-col justify-center min-h-[240px] sm:min-h-[320px] lg:min-h-0">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[240px] sm:max-w-[300px] lg:aspect-auto lg:h-[500px] lg:max-w-[380px]">
             <img src={portraitAsset.url} alt={tx("Dr. Mandeep Sagar, interventional radiologist")}
               className="absolute inset-0 h-full w-full object-contain object-bottom select-none"

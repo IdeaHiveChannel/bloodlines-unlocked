@@ -25,6 +25,7 @@ export function CookieConsent() {
 
   return (
     <div
+      data-cookie-consent
       role="dialog"
       aria-live="polite"
       aria-label={tx("Cookie consent")}

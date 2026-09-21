@@ -17,6 +17,8 @@ import { Cursor } from "../components/cursor";
 import { Loader } from "../components/loader";
 import { Navigation } from "../components/navigation";
 import { ContactDock } from "../components/contact-dock";
+import { EmergencyTicker } from "../components/emergency-ticker";
+import { SiteMotion } from "../components/site-motion";
 import { CookieConsent } from "../components/cookie-consent";
 import { useTx } from "../lib/i18n/tx";
 import { initAnalytics, trackPageView } from "../lib/analytics";
@@ -207,7 +209,9 @@ function RootComponent() {
       <LenisProvider>
         <Loader />
         <Cursor />
+        <EmergencyTicker />
         <Navigation />
+        <SiteMotion />
         <Outlet />
         <ContactDock />
         <CookieConsent />
