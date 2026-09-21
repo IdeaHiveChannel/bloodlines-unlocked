@@ -43,7 +43,6 @@ export function Navigation() {
 
   useEffect(() => {
     if (!open) return;
-    const previous = document.activeElement as HTMLElement | null;
     document.body.classList.add("mobile-menu-open");
     document.body.style.overflow = "hidden";
     const frame = requestAnimationFrame(() => {
@@ -65,7 +64,7 @@ export function Navigation() {
       document.removeEventListener("keydown", onKeyDown);
       document.body.classList.remove("mobile-menu-open");
       document.body.style.overflow = "";
-      (previous ?? toggleRef.current)?.focus();
+      toggleRef.current?.focus();
     };
   }, [open]);
 
