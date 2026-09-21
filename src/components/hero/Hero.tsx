@@ -22,7 +22,8 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100svh] w-full overflow-hidden bg-[#050B16] lg:h-[100dvh] lg:min-h-[720px]"
+      data-motion-skip
+      className="relative min-h-[calc(100svh-var(--ticker-h))] w-full overflow-hidden bg-[#050B16] lg:h-[calc(100dvh-var(--ticker-h))] lg:min-h-[720px]"
     >
       {/* Layer 1: cinematic bg */}
       <motion.div style={{ scale: bgScale }} className="absolute inset-0">
@@ -35,7 +36,7 @@ export function Hero() {
 
       {/* Content grid */}
 
-      <div className="shell relative z-10 flex h-full flex-col pt-24 pb-12 sm:pt-36 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
+      <div className="shell relative z-10 flex h-full flex-col pt-28 pb-12 sm:pt-36 lg:flex-row lg:items-center lg:gap-12 lg:pt-32 lg:pb-16">
         {/* Left: content */}
         <motion.div style={{ y: headlineY, opacity: headlineOpacity }} className="lg:w-[60%]">
           <div className="flex items-center gap-3 html-ml:lg:gap-2">

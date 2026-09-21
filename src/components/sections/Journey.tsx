@@ -18,8 +18,8 @@ export function Journey() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const x = useTransform(scrollYProgress, [0, 1], ["5vw", `-${(steps.length - 1) * 80}vw`]);
   return (
-    <section ref={ref} className="relative bg-[#050B16]" style={{ height: `${steps.length * 90}vh` }}>
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
+    <section ref={ref} data-motion-skip className="relative bg-[#050B16]" style={{ height: `${steps.length * 90}vh` }}>
+      <div className="sticky top-[var(--ticker-h)] h-[calc(100svh-var(--ticker-h))] overflow-hidden flex flex-col justify-center">
         <div className="shell mb-12">
           <p className="text-label">{tx("Patient journey")}</p>
           <h2 className="text-h1 mt-4">{tx("From diagnosis to recovery.")}</h2>

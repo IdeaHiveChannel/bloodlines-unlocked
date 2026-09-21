@@ -17,7 +17,6 @@ import { FAQ } from "../components/sections/FAQ";
 import { WhatITreat } from "../components/sections/WhatITreat";
 import { Consultation } from "../components/sections/Consultation";
 import { Footer } from "../components/sections/Footer";
-import { EmergencyNotice } from "../components/emergency-notice";
 
 export const Route = createFileRoute("/{-$locale}/")({
   head: ({ params }) => localeHead(params, "/", {
@@ -65,7 +64,6 @@ function Index() {
   return (
     <main>
       <Hero />
-      <EmergencyNotice />
       <Anatomy />
       <ConditionsEntry />
       <Transition />

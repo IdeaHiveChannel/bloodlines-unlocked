@@ -16,7 +16,7 @@ export function Procedures() {
   const t = useT();
   const tx = useTx();
   return (
-    <section className="relative bg-[#050B16]">
+    <section data-motion-skip className="relative bg-[#050B16]">
       <div className="shell pt-20 pb-8 sm:pt-28 sm:pb-12">
         <p className="text-label">{t.proceduresPage.eyebrow}</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
@@ -67,7 +67,7 @@ export function Procedures() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   return (
     <div ref={ref} className="relative" style={{ height: `${Math.min(beats.length * 52 + 40, 340)}svh` }}>
-      <div className="sticky top-0 flex h-[100svh] flex-col justify-center">
+      <div className="sticky top-[var(--ticker-h)] flex h-[calc(100svh-var(--ticker-h))] flex-col justify-center">
         {/* left column on desktop: identity + beat; right column: the scene */}
         <div className="shell grid flex-1 content-center items-center gap-5 pt-20 pb-10 sm:gap-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:pb-14">
           <div className="order-2 flex flex-col justify-center lg:order-1 lg:h-full">
