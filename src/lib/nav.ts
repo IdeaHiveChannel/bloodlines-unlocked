@@ -21,25 +21,25 @@ export const expertiseAreas = [
 ];
 
 const treatCategories: NavLink[] = [
-  { to: "/conditions/acute-ischemic-stroke", label: "Acute ischemic stroke" },
+  { to: "/conditions/stroke", label: "Acute ischemic stroke" },
   { to: "/conditions/poor-blood-circulation", label: "Leg circulation & PAD" },
   { to: "/conditions/varicose-veins", label: "Varicose veins & ulcers" },
-  { to: "/conditions/visceral-aneurysm", label: "Abdominal aneurysms" },
+  { to: "/conditions/brain-aneurysm", label: "Abdominal aneurysms" },
   { to: "/conditions/diabetic-foot", label: "Diabetic foot & wounds" },
   { to: "/conditions/thyroid-nodules", label: "Thyroid swellings" },
-  { to: "/conditions/hepatocellular-carcinoma", label: "Liver tumours" },
-  { to: "/conditions/renal-artery-stenosis", label: "Kidney blood vessels" },
+  { to: "/conditions/liver-tumours", label: "Liver tumours" },
+  { to: "/conditions", label: "Kidney blood vessels" },
   { to: "/conditions/knee-osteoarthritis", label: "Knee pain" },
   { to: "/conditions/uterine-fibroids", label: "Uterine fibroids" },
   { to: "/conditions/enlarged-prostate", label: "Enlarged prostate" },
-  { to: "/conditions/dialysis-access-maintenance", label: "Dialysis access" },
+  { to: "/procedures/dialysis-fistuloplasty", label: "Dialysis access" },
   { to: "/conditions", label: "Other conditions" },
 ];
 
 const treatmentCategories: NavLink[] = [
   { to: "/procedures/angioplasty", label: "Restore blood flow" },
   { to: "/procedures/thrombectomy", label: "Remove blood clots" },
-  { to: "/conditions/brain-avm", label: "Brain vessel treatment" },
+  { to: "/conditions/brain-avm-avf", label: "Brain vessel treatment" },
   { to: "/procedures/aneurysm-repair", label: "Aneurysm treatment" },
   { to: "/procedures/varicose-vein-ablation", label: "Vein treatment" },
   { to: "/procedures/tace", label: "Tumour treatment" },

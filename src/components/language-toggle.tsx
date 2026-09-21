@@ -18,7 +18,7 @@ export function LanguageToggle() {
 
   return (
     <div
-      className="flex items-center rounded-full border border-white/[0.1] p-0.5 text-[0.6875rem] font-medium"
+      className="flex min-h-11 items-center rounded-full border border-white/[0.1] p-0.5 text-[0.6875rem] font-medium"
       role="group"
       aria-label={tx("Language")}
     >
@@ -26,7 +26,7 @@ export function LanguageToggle() {
         type="button"
         onClick={() => go("en")}
         aria-pressed={locale === "en"}
-        className={`rounded-full px-2.5 py-1.5 transition-colors ${
+        className={`min-h-10 rounded-full px-3 py-2 transition-colors ${
           locale === "en" ? "bg-white text-black" : "text-[var(--ink-dim)] hover:text-white"
         }`}
         data-cursor="link"
@@ -37,7 +37,7 @@ export function LanguageToggle() {
         type="button"
         onClick={() => go("ml")}
         aria-pressed={locale === "ml"}
-        className={`rounded-full px-2.5 py-1.5 transition-colors ${
+        className={`min-h-10 rounded-full px-3 py-2 transition-colors ${
           locale === "ml" ? "bg-white text-black" : "text-[var(--ink-dim)] hover:text-white"
         }`}
         data-cursor="link"
