@@ -11,11 +11,11 @@ export const Route = createFileRoute("/{-$locale}/second-opinion")({
   head: ({ params }) => localeHead(params, "/second-opinion", {
     title: "Second opinion on your scans — Dr. Sagar",
     description:
-      "Already advised surgery or amputation? Send your CT, MRI, angiography or doppler reports for an image-guided second opinion from Dr. Mandeep Sagar.",
+      "Send existing CT, MRI, angiography or Doppler studies for an interventional radiology review to support an informed treatment decision.",
     ogTitle: "Second opinion on your scans",
     ogDescription:
-      "An interventional radiology review of your existing scans and reports, before you commit to major surgery.",
-    scripts: sectionSchema({ path: "/second-opinion", name: "Second opinion on your scans", description: "An interventional radiology review of existing CT, MRI, angiography and doppler studies before committing to major surgery." }),
+      "An interventional radiology review of existing scans and reports to support an informed treatment decision.",
+    scripts: sectionSchema({ path: "/second-opinion", name: "Second opinion on your scans", description: "An interventional radiology review of existing CT, MRI, angiography and Doppler studies to support an informed treatment decision." }),
   }),
   component: SecondOpinion,
 });
@@ -56,10 +56,10 @@ function SecondOpinion() {
           <div className="shell">
             <p className="text-label">{tx("Second opinion")}</p>
             <h1 className="text-display-xl mt-6 max-w-4xl">
-              {tx("Before major surgery, have the images read again.")}
+              {tx("Understand the options before deciding on treatment.")}
             </h1>
             <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">
-              {tx("A second opinion is not a challenge to your doctor. It is a second reading of the same evidence by a different specialty. Interventional radiology treats through a pinhole opening — and there are cases where a blocked artery, a bleeding vessel, a fibroid or a threatened limb can be treated without an open operation. Equally, there are cases where surgery is the right answer, and you will be told that plainly.")}
+              {tx("A second opinion adds another specialist reading of the same evidence. It can clarify whether image-guided treatment, surgery, medication, observation, or a combined approach may be appropriate. It does not assume that surgery can or should be avoided, and it does not replace an examination by your treating team.")}
             </p>
 
             <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-14">
@@ -84,7 +84,7 @@ function SecondOpinion() {
 
                 <p className="mt-10 text-label">{tx("Privacy")}</p>
                 <p className="mt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-                  {tx("This website stores nothing. Your details and files travel directly to Dr. Sagar over WhatsApp, and are used only for the review you asked for.")}
+                  {tx("This website does not upload or store your details or files. Continuing opens WhatsApp, which handles the transfer under its own privacy terms. Information received for a review is accessed only by authorised people involved in responding or providing care, subject to applicable record-keeping duties.")}
                 </p>
               </div>
 

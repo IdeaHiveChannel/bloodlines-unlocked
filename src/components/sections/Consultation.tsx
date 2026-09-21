@@ -77,6 +77,9 @@ export function Consultation() {
         <p className="mt-8 text-caption text-[var(--ink-dim)]">
           {tx("Reports can be shared directly on WhatsApp — PDFs, CD images, angiography stills or photographs of a wound.")}
         </p>
+        <p className="mt-3 max-w-2xl text-caption leading-relaxed text-red-200/75">
+          {tx("Routine contact only. For an emergency, call 112 or go immediately to the nearest emergency department; do not wait for a reply here.")}
+        </p>
       </div>
     </section>
   );

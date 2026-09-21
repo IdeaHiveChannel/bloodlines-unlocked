@@ -8,7 +8,8 @@ import { useLocale } from "../../lib/i18n/react";
 import { aliasFor } from "../../lib/seo/aliases";
 import { pillarSeoFor } from "../../lib/seo/pillar-seo";
 import { conditionImages } from "../../lib/condition-images";
-import { evidenceFor } from "../../lib/condition-evidence";
+import { evidenceFor, IMAGING_DISCLAIMER } from "../../lib/condition-evidence";
+import { EmergencyNotice, emergencyConditionSlugs } from "../emergency-notice";
 import diagnosisImg from "../../assets/section-diagnosis.jpg";
 import treatmentImg from "../../assets/hands-catheter.jpg";
 import recoveryImg from "../../assets/section-recovery.jpg";
@@ -134,6 +135,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
   const conditions = useConditions();
   const heroImage = conditionImages[pillar.slug];
   const evidence = evidenceFor(pillar.slug);
+  const isUrgent = emergencyConditionSlugs.has(pillar.slug);
 
 
 
@@ -177,6 +179,11 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">
               {pillar.heroLead}
             </p>
+            {isUrgent && (
+              <div className="mt-8 max-w-3xl">
+                <EmergencyNotice compact />
+              </div>
+            )}
             {heroImage && (
               <img
                 src={heroImage}
@@ -296,6 +303,11 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 </li>
               ))}
             </ul>
+            {isUrgent && (
+              <div className="mt-6">
+                <EmergencyNotice compact />
+              </div>
+            )}
           </Section>
 
           {/* 06 */}
@@ -373,8 +385,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                   ))}
                 </div>
                 <figcaption className="mt-5 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-                  {tx(evidence.note)}{" "}
-                  {tx("Imaging figures are illustrative of the technique. They are not a patient case report and results differ from person to person.")}
+                  {tx(evidence.note)} {tx(IMAGING_DISCLAIMER)}
                 </figcaption>
               </figure>
             ) : (
@@ -446,6 +457,9 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 </li>
               ))}
             </ol>
+            <p className="mt-6 max-w-3xl text-caption leading-relaxed text-[var(--ink-dim)]">
+              {tx("This timeline is educational, not a personal recovery promise. Timing varies with the procedure, condition, other illnesses, and complications. Follow your treating team's discharge instructions.")}
+            </p>
           </Section>
 
           {/* 13 */}

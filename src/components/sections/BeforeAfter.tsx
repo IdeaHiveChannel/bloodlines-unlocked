@@ -12,6 +12,7 @@ import veinsBefore from "../../assets/case-veins-before.jpg";
 import veinsAfter from "../../assets/case-veins-after.jpg";
 import dvtBefore from "../../assets/case-dvt-before.jpg.asset.json";
 import dvtAfter from "../../assets/case-dvt-after.jpg.asset.json";
+import { IMAGING_DISCLAIMER } from "../../lib/condition-evidence";
 
 type Case = {
   id: string;
@@ -35,7 +36,7 @@ const cases: Case[] = [
     after: strokeAfter,
     beforeCaption: "Vessel cut off mid-course",
     afterCaption: "Territory refilled",
-    note: "A clot removed within the treatment window. The angiogram before and after is the whole argument for speed.",
+    note: "Illustrates how angiography may appear before and after clot retrieval in an eligible stroke treatment.",
   },
   {
     id: "pad",
@@ -46,7 +47,7 @@ const cases: Case[] = [
     after: angioAfter,
     beforeCaption: "Tight, calcified narrowing",
     afterCaption: "Line restored to the foot",
-    note: "Rest pain and non-healing wounds change course once inline flow reaches the foot again.",
+    note: "Illustrates the intended change in vessel appearance after angioplasty and stenting.",
   },
   {
     id: "liver",
@@ -57,7 +58,7 @@ const cases: Case[] = [
     after: liverAfter,
     beforeCaption: "Enhancing, blood-hungry lesion",
     afterCaption: "Devascularised, no enhancement",
-    note: "Treatment delivered into the tumour's own artery, sparing the healthy liver around it.",
+    note: "Illustrates targeted treatment delivered through an artery supplying a liver tumour.",
   },
   {
     id: "fibroids",
@@ -68,7 +69,7 @@ const cases: Case[] = [
     after: fibroidAfter,
     beforeCaption: "Bulky fibroid mass",
     afterCaption: "Infarcted and shrunken",
-    note: "Bleeding and pressure settle over months. The uterus stays.",
+    note: "Illustrates the intended reduction in fibroid blood supply after embolization.",
   },
   {
     id: "veins",
@@ -79,7 +80,7 @@ const cases: Case[] = [
     after: veinsAfter,
     beforeCaption: "Refluxing, dilated trunk",
     afterCaption: "Closed, flow rerouted",
-    note: "The faulty vein is sealed from within. Walking the same day, no stripping.",
+    note: "Illustrates closure of a refluxing surface vein after endovenous treatment.",
   },
   {
     id: "dvt",
@@ -90,7 +91,7 @@ const cases: Case[] = [
     after: dvtBefore.url,
     beforeCaption: "Large, occlusive clot burden",
     afterCaption: "Vessel cleared, flow restored",
-    note: "Removing a clot from the deep veins prevents pulmonary embolism and protects the valves, avoiding a lifetime of leg swelling.",
+    note: "Illustrates how a treated deep vein may appear after catheter-directed clot removal.",
   },
 ];
 
@@ -158,12 +159,12 @@ export function BeforeAfter() {
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
-        <p className="text-label">{tx("Evidence")}</p>
+        <p className="text-label">{tx("Representative imaging")}</p>
         <h2 className="mt-4 max-w-3xl text-h1 sm:mt-6">
-          {tx("Before. After. The same patient, the same vessel.")}
+          {tx("How imaging may change after treatment.")}
         </h2>
         <p className="mt-4 max-w-xl text-body text-[var(--ink-dim)]">
-          {tx("Interventional radiology is judged on images, not adjectives. Drag the line across each case to see what changed. Representative illustrations of typical treated cases, not identifiable patient records.")}
+          {tx("Drag the line to compare representative educational images before and after a procedure.")}
         </p>
 
         <div className="mt-8 flex flex-wrap gap-2 sm:gap-3">
@@ -192,6 +193,7 @@ export function BeforeAfter() {
               ↓ {tx(item.procedure)}
             </p>
             <p className="mt-4 text-body text-[var(--ink-dim)]">{tx(item.note)}</p>
+            <p className="mt-4 text-caption leading-relaxed text-[var(--ink-dim)]">{tx(IMAGING_DISCLAIMER)}</p>
           </div>
         </div>
       </div>

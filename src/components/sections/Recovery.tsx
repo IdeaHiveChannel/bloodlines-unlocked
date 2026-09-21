@@ -2,11 +2,11 @@ import { useTx } from "@/lib/i18n/tx";
 import { motion } from "framer-motion";
 
 const stages = [
-  { t: "Day 0", title: "Procedure", body: "A single small puncture. Local anaesthesia. Often the same day, you walk to your room." },
-  { t: "Day 1", title: "Discharge", body: "Most patients return home within 24 hours. No long incisions to heal." },
-  { t: "Week 1", title: "Light activity", body: "Walking is encouraged. The puncture site closes. Routine returns gradually." },
-  { t: "Month 1", title: "Follow-up imaging", body: "Imaging confirms the vessel remains open and flow is normalising." },
-  { t: "Month 3+", title: "Normal life", body: "Most patients are back to full activity with sustained results." },
+  { t: "Before discharge", title: "Individual review", body: "The treating team checks the access site, symptoms, medicines, and whether observation or a longer stay is needed." },
+  { t: "Early recovery", title: "Activity guidance", body: "Walking, lifting, wound care, and return to work depend on the procedure and your health." },
+  { t: "Follow-up", title: "Clinical review", body: "The timing and type of follow-up are chosen for the condition and treatment performed." },
+  { t: "Ongoing care", title: "Medicines and risk factors", body: "Some patients need long-term medicines, wound care, rehabilitation, or specialist follow-up." },
+  { t: "If symptoms change", title: "Seek advice", body: "Follow the discharge instructions and seek urgent help for the warning signs your treating team explains." },
 ];
 
 export function Recovery() {
@@ -19,7 +19,7 @@ export function Recovery() {
           {tx("Treatment is only one part of recovery.")}
         </h2>
         <p className="mt-6 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
-          {tx("Minimally invasive intervention is designed to reduce trauma, shorten hospital stays and help patients return to daily life sooner, while maintaining long-term follow-up where required.")}
+          {tx("Recovery is different for every procedure and patient. These stages explain what is usually planned, not how quickly any individual will recover. Your treating team's instructions take priority.")}
         </p>
         <ol className="mt-16 relative grid gap-6 md:grid-cols-5">
           <div className="hidden md:block absolute top-[34px] left-6 right-6 h-px bg-white/10">

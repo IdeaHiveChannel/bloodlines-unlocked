@@ -39,6 +39,7 @@ export function SecondOpinionForm() {
   const [form, setForm] = useState({ name: "", age: "", city: "", diagnosis: "", advised: "" });
   const [reports, setReports] = useState<string[]>([]);
   const [errors, setErrors] = useState<Errors>({});
+  const [acknowledged, setAcknowledged] = useState(false);
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -48,6 +49,7 @@ export function SecondOpinionForm() {
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!acknowledged) return;
     const parsed = schema.safeParse({ ...form, reports });
     if (!parsed.success) {
       const next: Errors = {};
@@ -141,15 +143,25 @@ export function SecondOpinionForm() {
         </div>
       </fieldset>
 
+      <label className="mt-8 flex cursor-pointer items-start gap-3 text-caption leading-relaxed text-[var(--ink-dim)]">
+        <input
+          type="checkbox"
+          checked={acknowledged}
+          onChange={(event) => setAcknowledged(event.target.checked)}
+          className="mt-1 size-4 shrink-0 accent-[var(--accent)]"
+        />
+        <span>{tx("I understand that this is not an emergency service, does not replace an in-person assessment, and that WhatsApp handles the information after I continue.")}</span>
+      </label>
       <button
         type="submit"
+        disabled={!acknowledged}
         data-cursor="cta"
-        className="mt-9 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-white px-7 text-button text-black transition-colors hover:bg-[var(--accent)] sm:w-auto"
+        className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-white px-7 text-button text-black transition-colors hover:bg-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-40 sm:w-auto"
       >
         {tx("Send for review on WhatsApp")}
       </button>
       <p className="mt-4 text-caption text-[var(--ink-dim)]">
-        {tx("A reply usually follows within one working day. Urgent symptoms need emergency care, not a second opinion form.")}
+        {tx("Response times are not guaranteed. Urgent symptoms need emergency care, not a second-opinion form.")}
       </p>
     </form>
   );
