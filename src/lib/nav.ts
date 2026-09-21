@@ -24,7 +24,7 @@ const treatCategories: NavLink[] = [
   { to: "/conditions/stroke", label: "Acute ischemic stroke" },
   { to: "/conditions/poor-blood-circulation", label: "Leg circulation & PAD" },
   { to: "/conditions/varicose-veins", label: "Varicose veins & ulcers" },
-  { to: "/conditions/brain-aneurysm", label: "Abdominal aneurysms" },
+  { to: "/conditions", label: "Abdominal aneurysms" },
   { to: "/conditions/diabetic-foot", label: "Diabetic foot & wounds" },
   { to: "/conditions/thyroid-nodules", label: "Thyroid swellings" },
   { to: "/conditions/liver-tumours", label: "Liver tumours" },
