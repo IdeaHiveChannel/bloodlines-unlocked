@@ -404,17 +404,14 @@ body.mobile-menu-open [data-contact-dock] {
     transition-duration: 0.001ms !important;
   }
   .emergency-ticker-viewport {
-    height: auto;
-    min-height: var(--ticker-h);
-    overflow: visible;
+    overflow-x: auto;
   }
   .emergency-ticker-track {
     min-width: 0;
     animation: none !important;
   }
   .emergency-ticker-track > div {
-    white-space: normal;
-    padding-block: 0.4rem;
+    white-space: nowrap;
   }
   .emergency-ticker-track > div:nth-child(2) { display: none; }
 }

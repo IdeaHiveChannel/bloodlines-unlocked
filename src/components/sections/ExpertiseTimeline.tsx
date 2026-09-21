@@ -1,6 +1,6 @@
 import { LocaleLink } from "../../components/locale-link";
 import { useRef, useState } from "react";
-import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, useScroll, useSpring } from "framer-motion";
 
 import { milestones } from "../../lib/content";
 import { useTx } from "../../lib/i18n/tx";
@@ -8,6 +8,7 @@ import { useTx } from "../../lib/i18n/tx";
 export function ExpertiseTimeline() {
   const tx = useTx();
   const ref = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 80%", "end 60%"] });
   const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
   const [open, setOpen] = useState<string | null>(milestones[0]?.id ?? null);
@@ -17,7 +18,7 @@ export function ExpertiseTimeline() {
       {/* rail */}
       <div className="absolute left-[7px] sm:left-[11px] top-2 bottom-2 w-px bg-white/[0.08]" />
       <motion.div
-        style={{ scaleY, originY: 0 }}
+        style={reduced ? { scaleY: 1, originY: 0 } : { scaleY, originY: 0 }}
         className="absolute left-[7px] sm:left-[11px] top-2 bottom-2 w-px bg-[var(--accent)]"
       />
 
@@ -53,10 +54,10 @@ export function ExpertiseTimeline() {
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
+                      initial={reduced ? false : { height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: reduced ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
                       <p className="mt-4 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">

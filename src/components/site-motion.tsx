@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useRouterState } from "@tanstack/react-router";
 
 const SECTION_SELECTOR = "main section, main > header, main > div > header";
-const ITEM_SELECTOR = "h1, h2, h3, figure, ol > li, ul > li, [data-motion-item]";
+const ITEM_SELECTOR = "h1, h2, h3, p, figure, article, ol > li, ul > li, .grid > div, [data-motion-item]";
 
 /** Progressive enhancement for shared editorial reveals. HTML stays visible to SSR and search. */
 export function SiteMotion() {
