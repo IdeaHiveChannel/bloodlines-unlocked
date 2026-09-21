@@ -12,9 +12,10 @@ export function SiteMotion() {
 
   useEffect(() => {
     if (reduced) return;
+    let cleanups: Array<() => void> = [];
     const frame = window.requestAnimationFrame(() => {
       const sections = Array.from(document.querySelectorAll<HTMLElement>(SECTION_SELECTOR));
-      const cleanups = sections.map((section) => {
+      cleanups = sections.map((section) => {
         if (section.closest("[data-motion-skip]")) return () => undefined;
         const candidates = Array.from(section.querySelectorAll<HTMLElement>(ITEM_SELECTOR))
           .filter((item) => !item.closest("[data-motion-skip]") && item.dataset.motionSeen !== "true")
@@ -40,9 +41,11 @@ export function SiteMotion() {
           { amount: 0.12, margin: "0px 0px -8% 0px" },
         );
       });
-      return () => cleanups.forEach((cleanup) => cleanup());
     });
-    return () => window.cancelAnimationFrame(frame);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      cleanups.forEach((cleanup) => cleanup());
+    };
   }, [pathname, reduced]);
 
   return null;
