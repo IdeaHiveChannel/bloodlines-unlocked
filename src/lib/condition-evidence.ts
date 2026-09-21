@@ -19,6 +19,9 @@ export type EvidenceCase = {
   note: string;
 };
 
+export const IMAGING_DISCLAIMER =
+  "These are representative educational illustrations, not an identifiable patient's records, not clinical evidence of an expected result, and not a prediction of your outcome. Results and recovery vary by condition, procedure, and patient.";
+
 /**
  * Condition guide slug → paired imaging figures.
  * These are imaging illustrations of the appearance before and after an
