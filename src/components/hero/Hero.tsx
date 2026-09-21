@@ -3,6 +3,9 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { useRef } from "react";
 import portraitAsset from "../../assets/dr-mandeep-sagar.webp.asset.json";
 import heroBg from "../../assets/hero-bg.jpg";
+import hero768 from "../../assets/responsive/hero-bg-768.webp";
+import hero1280 from "../../assets/responsive/hero-bg-1280.webp";
+import hero1920 from "../../assets/responsive/hero-bg-1920.webp";
 import { ArrowRight } from "lucide-react";
 import { useT } from "../../lib/i18n/react";
 import { useTx } from "../../lib/i18n/tx";
