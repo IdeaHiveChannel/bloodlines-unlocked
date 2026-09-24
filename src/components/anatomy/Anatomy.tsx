@@ -227,7 +227,7 @@ export function Anatomy() {
 
 
   return (
-    <section className="relative bg-[#050B16] section-y overflow-hidden">
+    <section data-motion-skip className="relative bg-[#050B16] section-y overflow-hidden">
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div className="max-w-2xl">
