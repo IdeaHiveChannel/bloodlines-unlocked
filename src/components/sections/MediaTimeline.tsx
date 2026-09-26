@@ -80,7 +80,7 @@ export function MediaTimeline() {
                     {entries.map((e, i) => (
                       <motion.li
                         key={`${e.title}-${i}`}
-                        initial={{ opacity: 0, y: 16 }}
+                         initial={false}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-60px" }}
                         transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}

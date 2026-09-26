@@ -27,7 +27,7 @@ export function Recovery() {
           </div>
           {stages.map((s, i) => (
             <motion.li key={tx(s.t)}
-              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+               initial={false}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}

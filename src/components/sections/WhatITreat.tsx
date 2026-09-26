@@ -40,7 +40,7 @@ export function WhatITreat() {
             return (
               <motion.li
                 key={c.to + i}
-                initial={{ opacity: 0, y: 12 }}
+                 initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.45, delay: Math.min(i, 6) * 0.04 }}

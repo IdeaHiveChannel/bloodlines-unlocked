@@ -14,7 +14,7 @@ export function Transition() {
       />
       <div className="relative mx-auto max-w-[1100px] px-5 sm:px-10 text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -23,7 +23,7 @@ export function Transition() {
           {tx("Every organ depends on blood.")}
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
@@ -32,7 +32,7 @@ export function Transition() {
           {tx("When disease begins inside a vessel, treatment changes.")}
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
