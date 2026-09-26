@@ -5,6 +5,6 @@
 - [x] Create clinician review checklist
 - [x] Run and document five mobile-first patient journeys
 - [x] Verify routes, language switching, actions, overflow, and 404 behavior
-- [ ] Fix sections below anatomy that remain hidden or leave excessive blank space
-- [ ] Verify all homepage sections remain visible with reduced motion enabled in English and Malayalam
+- [x] Fix sections below anatomy that remain hidden or leave excessive blank space
+- [x] Verify all homepage sections remain visible with reduced motion enabled in English and Malayalam
 - [ ] Await verified credentials, affiliations, enquiry ownership, retention schedules, and clinician sign-off
