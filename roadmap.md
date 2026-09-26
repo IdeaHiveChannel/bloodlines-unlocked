@@ -7,4 +7,6 @@
 - [x] Verify routes, language switching, actions, overflow, and 404 behavior
 - [x] Fix sections below anatomy that remain hidden or leave excessive blank space
 - [x] Verify all homepage sections remain visible with reduced motion enabled in English and Malayalam
+- [x] Ensure all WhatsApp links use the direct number and preserve complete form details
+- [ ] Send consultation forms automatically to vascularcaredr@gmail.com — blocked until a sender domain is configured and verified
 - [ ] Await verified credentials, affiliations, enquiry ownership, retention schedules, and clinician sign-off
