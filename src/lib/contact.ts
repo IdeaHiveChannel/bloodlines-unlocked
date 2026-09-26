@@ -7,7 +7,7 @@ export const contact = {
   phoneHref: "tel:+916366330505",
   coordinatorDisplay: "+91 63663 30505",
   coordinatorHref: "tel:+916366330505",
-  email: "Vascularcaredr@gmail.com",
+  email: "vascularcaredr@gmail.com",
   emailHref: "mailto:vascularcaredr@gmail.com",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Mangalore%2C%20Karnataka",
   verified: true,
@@ -34,7 +34,7 @@ export const locations = [
 }));
 
 export function whatsappLink(message: string) {
-  return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(message.slice(0, 900))}`;
+  return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
 export const whatsappMessages = {

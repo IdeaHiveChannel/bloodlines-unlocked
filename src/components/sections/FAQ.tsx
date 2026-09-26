@@ -3,6 +3,7 @@ import { useTx } from "@/lib/i18n/tx";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, ChevronRight, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { whatsappLink, whatsappMessages } from "@/lib/contact";
 
 export function FAQ() {
   const t = useT();
@@ -52,7 +53,7 @@ export function FAQ() {
             
             <div className="mt-10 pt-10 border-t border-white/5">
                <a 
-                href="https://wa.me/916366330505" 
+                 href={whatsappLink(whatsappMessages.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-label text-[var(--accent)] hover:opacity-80 transition-opacity flex items-center gap-2"
