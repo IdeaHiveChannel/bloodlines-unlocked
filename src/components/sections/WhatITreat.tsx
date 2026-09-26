@@ -1,6 +1,6 @@
 import { useT } from "@/lib/i18n/react";
 import { useTx } from "@/lib/i18n/tx";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { LocaleLink } from "../locale-link";
 import { trackEvent } from "../../lib/analytics";
@@ -15,7 +15,6 @@ import { conditionImageFor } from "@/lib/condition-images";
  */
 export function WhatITreat() {
   const t = useT();
-  const reduced = useReducedMotion();
   const tx = useTx();
   const locale = useLocale();
   const isMl = locale === "ml";
@@ -41,7 +40,7 @@ export function WhatITreat() {
             return (
               <motion.li
                 key={c.to + i}
-                 initial={reduced ? false : { opacity: 0, y: 12 }}
+                 initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.45, delay: Math.min(i, 6) * 0.04 }}
