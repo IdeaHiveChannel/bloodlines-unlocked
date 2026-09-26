@@ -1,10 +1,11 @@
 import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { patientStories, consentNote } from "../../lib/stories";
 
 export function PatientStories() {
   const tx = useTx();
+  const reduced = useReducedMotion();
   const stories = patientStories;
 
   return (
@@ -43,7 +44,7 @@ export function PatientStories() {
               {stories.slice(0, 6).map((s, i) => (
                 <motion.li
                   key={`${tx(s.name)}-${i}`}
-                  initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                   initial={reduced ? false : { opacity: 0, y: 20, filter: "blur(8px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.7, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}

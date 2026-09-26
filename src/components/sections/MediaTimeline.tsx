@@ -2,11 +2,12 @@ import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../../components/locale-link";
 import { useMemo, useState } from "react";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { pressEntries, pressKinds, groupByYear, type PressKind } from "../../lib/press";
 
 export function MediaTimeline() {
   const tx = useTx();
+  const reduced = useReducedMotion();
   const [filter, setFilter] = useState<PressKind | "all">("all");
 
   const grouped = useMemo(
@@ -80,7 +81,7 @@ export function MediaTimeline() {
                     {entries.map((e, i) => (
                       <motion.li
                         key={`${e.title}-${i}`}
-                        initial={{ opacity: 0, y: 16 }}
+                         initial={reduced ? false : { opacity: 0, y: 16 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-60px" }}
                         transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}

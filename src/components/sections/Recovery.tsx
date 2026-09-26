@@ -1,5 +1,5 @@
 import { useTx } from "@/lib/i18n/tx";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const stages = [
   { t: "Before discharge", title: "Individual review", body: "The treating team checks the access site, symptoms, medicines, and whether observation or a longer stay is needed." },
@@ -11,6 +11,7 @@ const stages = [
 
 export function Recovery() {
   const tx = useTx();
+  const reduced = useReducedMotion();
   return (
     <section className="relative bg-[#050B16] section-y">
       <div className="shell">
@@ -27,7 +28,7 @@ export function Recovery() {
           </div>
           {stages.map((s, i) => (
             <motion.li key={tx(s.t)}
-              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+               initial={reduced ? false : { opacity: 0, y: 20, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}

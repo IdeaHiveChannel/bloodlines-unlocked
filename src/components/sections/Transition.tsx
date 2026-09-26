@@ -1,8 +1,9 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useTx } from "../../lib/i18n/tx";
 
 export function Transition() {
   const tx = useTx();
+  const reduced = useReducedMotion();
   return (
     <section className="relative bg-[#050B16] section-y sm:py-44 border-t border-white/[0.05]">
       <div
@@ -14,7 +15,7 @@ export function Transition() {
       />
       <div className="relative mx-auto max-w-[1100px] px-5 sm:px-10 text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
+          initial={reduced ? false : { opacity: 0, y: 24, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -23,7 +24,7 @@ export function Transition() {
           {tx("Every organ depends on blood.")}
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduced ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
@@ -32,7 +33,7 @@ export function Transition() {
           {tx("When disease begins inside a vessel, treatment changes.")}
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduced ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
