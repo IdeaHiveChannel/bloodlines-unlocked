@@ -35,9 +35,11 @@ export function SiteMotion() {
           section,
           () => {
             candidates.forEach((item) => { item.dataset.motionSeen = "true"; });
+            // Animate toward the visible state without first dimming or moving
+            // content that was already readable on the page.
             animate(
               candidates,
-              { opacity: [0.75, 1], transform: ["translateY(12px)", "none"] },
+              { opacity: 1, transform: "none" },
               { duration: 0.45, delay: stagger(0.06), ease: [0.16, 1, 0.3, 1] },
             );
           },
