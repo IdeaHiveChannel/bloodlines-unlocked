@@ -167,8 +167,6 @@ export function localeHead(
       { property: "og:url", content: url },
       { property: "og:locale", content: locale === "ml" ? "ml_IN" : "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: `${SITE}/og-card.jpg` },
-      { name: "twitter:image", content: `${SITE}/og-card.jpg` },
     ],
     links: [{ rel: "canonical", href: url }],
     ...(en.scripts ? { scripts: en.scripts } : {}),
