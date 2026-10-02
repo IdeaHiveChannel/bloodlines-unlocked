@@ -10,3 +10,6 @@
 - [x] Ensure all WhatsApp links use the direct number and preserve complete form details
 - [ ] Send consultation forms automatically to vascularcaredr@gmail.com — blocked until a sender domain is configured and verified
 - [ ] Await verified credentials, affiliations, enquiry ownership, retention schedules, and clinician sign-off
+- [ ] Complete bilingual on-site SEO/GEO review, verified source links and safe medical attribution
+- [ ] Check live sitemap/indexing and mobile English/Malayalam patient journeys; link Search Console
+- [ ] Provide separate off-site verification and directory/Bing checklist

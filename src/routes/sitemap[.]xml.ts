@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { conditions, procedures } from "../lib/content";
+import { procedures } from "../lib/content";
 import { pillars } from "../lib/pillars";
 
 const BASE_URL = "https://vascularcaredr.com";
@@ -13,19 +13,10 @@ interface SitemapEntry {
 
 /** Every indexable English path. Malayalam twins are derived from these. */
 function englishEntries(): SitemapEntry[] {
-  const slugs = new Set<string>();
-  const conditionPaths: SitemapEntry[] = [];
-
-  for (const p of pillars) {
-    if (slugs.has(p.slug)) continue;
-    slugs.add(p.slug);
-    conditionPaths.push({ path: `/conditions/${p.slug}`, changefreq: "monthly", priority: "0.8" });
-  }
-  for (const c of conditions) {
-    if (slugs.has(c.slug)) continue;
-    slugs.add(c.slug);
-    conditionPaths.push({ path: `/conditions/${c.slug}`, changefreq: "monthly", priority: "0.7" });
-  }
+  // Only pillar slugs have a rendered guide; catalogue-only conditions return 404.
+  const conditionPaths: SitemapEntry[] = pillars.map((p) => ({
+    path: `/conditions/${p.slug}`, changefreq: "monthly", priority: "0.8",
+  }));
 
   return [
     { path: "/", changefreq: "weekly", priority: "1.0" },
