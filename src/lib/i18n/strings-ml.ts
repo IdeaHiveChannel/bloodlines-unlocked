@@ -517,4 +517,8 @@ export const stringsMl: Record<string, string> = {
   "Illustrates the intended reduction in fibroid blood supply after embolization.": "എംബോളൈസേഷനുശേഷം ഫൈബ്രോയിഡിലേക്കുള്ള രക്തയോട്ടത്തിൽ ലക്ഷ്യമിടുന്ന കുറവ് വിശദീകരിക്കുന്നു.",
   "Illustrates closure of a refluxing surface vein after endovenous treatment.": "എൻഡോവീനസ് ചികിത്സയ്ക്കുശേഷം തകരാറുള്ള ഉപരിതല സിര അടയുന്നത് വിശദീകരിക്കുന്നു.",
   "Illustrates how a treated deep vein may appear after catheter-directed clot removal.": "കത്തീറ്റർ ഉപയോഗിച്ച് രക്തക്കട്ട നീക്കിയശേഷം ആഴത്തിലുള്ള സിരയിൽ കാണാവുന്ന രൂപം വിശദീകരിക്കുന്നു.",
+  "Sources": "അവലംബങ്ങൾ",
+  "Independent clinical guidance.": "സ്വതന്ത്ര ക്ലിനിക്കൽ മാർഗനിർദേശങ്ങൾ.",
+  "These independent clinical guidelines support further reading. They do not replace assessment by your treating team, and inclusion does not mean every recommendation applies to every patient.": "കൂടുതൽ വായനയ്ക്കായുള്ള സ്വതന്ത്ര ക്ലിനിക്കൽ മാർഗനിർദേശങ്ങളാണിവ. നിങ്ങളുടെ ചികിത്സാ ടീമിന്റെ വിലയിരുത്തലിന് ഇവ പകരമല്ല; എല്ലാ നിർദേശങ്ങളും എല്ലാ രോഗികൾക്കും ബാധകമാണെന്നും അർത്ഥമില്ല.",
+  "Browse patient guides →": "രോഗി ഗൈഡുകൾ കാണുക →",
 };
