@@ -9,6 +9,7 @@ import { aliasFor } from "../../lib/seo/aliases";
 import { pillarSeoFor } from "../../lib/seo/pillar-seo";
 import { conditionImages } from "../../lib/condition-images";
 import { evidenceFor, IMAGING_DISCLAIMER } from "../../lib/condition-evidence";
+import { clinicalSources } from "../../lib/seo/clinical-sources";
 import { EmergencyNotice, emergencyConditionSlugs } from "../emergency-notice";
 import diagnosisImg from "../../assets/section-diagnosis.jpg";
 import treatmentImg from "../../assets/hands-catheter.jpg";
@@ -136,6 +137,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
   const heroImage = conditionImages[pillar.slug];
   const evidence = evidenceFor(pillar.slug);
   const isUrgent = emergencyConditionSlugs.has(pillar.slug);
+  const sources = clinicalSources[pillar.slug] ?? [];
 
 
 
@@ -468,6 +470,30 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             <Bullets items={pillar.prevention} />
           </Section>
 
+          {sources.length > 0 && (
+            <Section id="sources" index={14} label={tx("Sources")} title={tx("Independent clinical guidance.")}>
+              <p className="max-w-3xl text-small leading-relaxed text-[var(--ink-dim)]">
+                {tx("These independent clinical guidelines support further reading. They do not replace assessment by your treating team, and inclusion does not mean every recommendation applies to every patient.")}
+              </p>
+              <ul className="mt-6 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+                {sources.map((source) => (
+                  <li key={source.url}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-start justify-between gap-5 py-5 text-small leading-relaxed transition-colors hover:text-[var(--accent)]"
+                      data-cursor="link"
+                    >
+                      <span>{source.name}</span>
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Section>
+          )}
+
           {/* 14 */}
           <Section
             id="faqs"
@@ -538,8 +564,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                 ) : (
                   <li key={r.slug} className="bg-[#050B16]">
                     <LocaleLink
-                      to="/conditions/$slug"
-                      params={{ slug: r.slug }}
+                      to="/conditions"
                       data-cursor="link"
                       className="block h-full p-6 transition-colors hover:bg-white/[0.03]"
                     >
@@ -547,6 +572,7 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
                       <p className="mt-3 line-clamp-2 text-caption text-[var(--ink-dim)]">
                         {r.condition?.intro}
                       </p>
+                      <p className="mt-3 text-label">{tx("Browse patient guides →")}</p>
                     </LocaleLink>
                   </li>
                 ),

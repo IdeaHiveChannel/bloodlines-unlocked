@@ -12,6 +12,7 @@ import { procedureSeoFor } from "../lib/seo/procedure-seo";
 import { getConditions } from "../lib/i18n/data";
 import { localePath } from "../lib/i18n";
 import { useLocale } from "../lib/i18n/react";
+import { pillarForCondition } from "../lib/pillars";
 
 const SITE = "https://vascularcaredr.com";
 
@@ -49,6 +50,7 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
                 description: intro ?? p.oneLiner,
                 url,
                 procedureType: "https://schema.org/PercutaneousProcedure",
+                bodyLocation: p.slug === "thrombectomy" || p.slug === "coiling" ? "Brain" : p.slug.includes("vein") ? "Veins" : "Arteries",
                 howPerformed: p.beats.join(" "),
               }),
             },
@@ -108,8 +110,12 @@ function ProcedurePage() {
   const usedFor = seo ? (isMl ? seo.usedForMl : seo.usedFor) : [];
   const faqs = (seo?.faqs ?? []).map((f) => (isMl ? { q: f.qMl, a: f.aMl } : { q: f.q, a: f.a }));
   const linkedConditions = (seo?.conditions ?? [])
-    .map((slug) => conditions.find((c) => c.slug === slug))
-    .filter((c): c is NonNullable<typeof c> => Boolean(c));
+    .map((slug) => {
+      const condition = conditions.find((c) => c.slug === slug);
+      const guide = pillarForCondition(slug);
+      return condition && guide ? { condition, guideSlug: guide.slug } : undefined;
+    })
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
   const video = procedureVideos[p.slug];
   return (
     <>
@@ -162,15 +168,15 @@ function ProcedurePage() {
               </ul>
               {linkedConditions.length > 0 && (
                 <div className="mt-6 flex flex-wrap gap-3">
-                  {linkedConditions.map((c) => (
+                  {linkedConditions.map(({ condition, guideSlug }) => (
                     <LocaleLink
-                      key={c.slug}
+                      key={condition.slug}
                       to="/conditions/$slug"
-                      params={{ slug: c.slug }}
+                      params={{ slug: guideSlug }}
                       className="rounded-full border border-white/[0.12] px-4 py-2 text-label"
                       data-cursor="link"
                     >
-                      {c.name}
+                      {condition.name}
                     </LocaleLink>
                   ))}
                 </div>

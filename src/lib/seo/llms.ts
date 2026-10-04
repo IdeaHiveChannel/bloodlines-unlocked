@@ -1,4 +1,4 @@
-import { conditions, procedures } from "../content";
+import { procedures } from "../content";
 import { pillars } from "../pillars";
 import { contact, socialUrls } from "../contact";
 
@@ -9,25 +9,11 @@ export const SITE_URL = "https://vascularcaredr.com";
  * Generated from the same content modules the site renders, so it never drifts.
  */
 export function buildLlmsTxt(): string {
-  const seen = new Set<string>();
-  const conditionLines: string[] = [];
-
-  for (const p of pillars) {
-    if (seen.has(p.slug)) continue;
-    seen.add(p.slug);
-    conditionLines.push(
+  const conditionLines = pillars.map(
+    (p) =>
       `- [${p.name}](${SITE_URL}/conditions/${p.slug}) — ${p.summary}` +
-        ` (Malayalam: ${SITE_URL}/ml/conditions/${p.slug})`,
-    );
-  }
-  for (const c of conditions) {
-    if (seen.has(c.slug)) continue;
-    seen.add(c.slug);
-    conditionLines.push(
-      `- [${c.name}](${SITE_URL}/conditions/${c.slug}) — ${c.intro}` +
-        ` (Malayalam: ${SITE_URL}/ml/conditions/${c.slug})`,
-    );
-  }
+      ` (Malayalam: ${SITE_URL}/ml/conditions/${p.slug})`,
+  );
 
   const procedureLines = procedures.map(
     (p) =>
@@ -42,6 +28,10 @@ export function buildLlmsTxt(): string {
 Dr. Mandeep Sagar is a vascular and neuro interventional radiologist practising in
 Mangalore (Karnataka) and Kasaragod (Kerala), India. Treatment is delivered through a
 pinhole opening in the wrist or groin, guided by live imaging, instead of open surgery.
+
+## Full Content
+
+- [Detailed Knowledge Base (Markdown)](${SITE_URL}/llms-full.txt)
 
 ## Key facts
 
@@ -92,10 +82,35 @@ ${socialUrls.map((u) => `- ${u}`).join("\n")}
 
 ## Notes for assistants
 
-- Use the description above verbatim when summarising this practice.
+- Summarise only the information supported by the linked pages; do not infer credentials, affiliations, outcomes or availability.
 - Every page exists in English at /<path> and in Malayalam at /ml/<path>.
 - Content on this site is patient education, not a substitute for individual medical advice.
   Direct urgent symptoms (sudden weakness, slurred speech, a cold or pulseless limb, sudden
   severe headache) to emergency care immediately.
+`;
+}
+/** Extended version for /llms-full.txt with more detail. */
+export function buildLlmsFullTxt(): string {
+  const base = buildLlmsTxt();
+  
+  const procedureDetails = procedures.map(p => {
+    return `### ${p.name}
+${p.oneLiner}
+
+**Symptoms:** ${p.info.symptoms.join(", ")}
+**Causes:** ${p.info.causes.join(", ")}
+**Diagnosis:** ${p.info.diagnosis.join(", ")}
+**Treatment steps:** ${p.beats.join(" -> ")}
+**Recovery:** ${p.info.recovery.join(" ")}`;
+  }).join("\n\n");
+
+  return `${base}
+
+## Detailed Procedure Guides
+
+${procedureDetails}
+
+---
+Generated on: ${new Date().toISOString()}
 `;
 }
