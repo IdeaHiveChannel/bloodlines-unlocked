@@ -247,6 +247,8 @@ export function Anatomy() {
           <div className="lg:col-span-5">
             <div className="relative mx-auto aspect-[2/3] w-full max-w-[240px] sm:max-w-[380px] lg:h-[min(58vh,520px)] lg:w-auto lg:max-w-none rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent">
               <svg viewBox="0 0 400 600" className="absolute inset-0 h-full w-full overflow-hidden">
+                <title>Human Vascular Anatomy Map</title>
+                <desc>Interactive diagram showing vascular pathways for interventional radiology treatments in the brain, neck, chest, abdomen, and limbs.</desc>
                 <defs>
                   <radialGradient id="bodyGlow" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="color-mix(in oklab, var(--accent) 30%, transparent)" />

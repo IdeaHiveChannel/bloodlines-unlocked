@@ -29,6 +29,10 @@ Dr. Mandeep Sagar is a vascular and neuro interventional radiologist practising 
 Mangalore (Karnataka) and Kasaragod (Kerala), India. Treatment is delivered through a
 pinhole opening in the wrist or groin, guided by live imaging, instead of open surgery.
 
+## Full Content
+
+- [Detailed Knowledge Base (Markdown)](${SITE_URL}/llms-full.txt)
+
 ## Key facts
 
 - Name: Dr. Mandeep Sagar
@@ -83,5 +87,30 @@ ${socialUrls.map((u) => `- ${u}`).join("\n")}
 - Content on this site is patient education, not a substitute for individual medical advice.
   Direct urgent symptoms (sudden weakness, slurred speech, a cold or pulseless limb, sudden
   severe headache) to emergency care immediately.
+`;
+}
+/** Extended version for /llms-full.txt with more detail. */
+export function buildLlmsFullTxt(): string {
+  const base = buildLlmsTxt();
+  
+  const procedureDetails = procedures.map(p => {
+    return `### ${p.name}
+${p.oneLiner}
+
+**Symptoms:** ${p.info.symptoms.join(", ")}
+**Causes:** ${p.info.causes.join(", ")}
+**Diagnosis:** ${p.info.diagnosis.join(", ")}
+**Treatment steps:** ${p.beats.join(" -> ")}
+**Recovery:** ${p.info.recovery.join(" ")}`;
+  }).join("\n\n");
+
+  return `${base}
+
+## Detailed Procedure Guides
+
+${procedureDetails}
+
+---
+Generated on: ${new Date().toISOString()}
 `;
 }

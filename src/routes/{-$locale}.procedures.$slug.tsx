@@ -50,6 +50,7 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
                 description: intro ?? p.oneLiner,
                 url,
                 procedureType: "https://schema.org/PercutaneousProcedure",
+                bodyLocation: p.slug === "thrombectomy" || p.slug === "coiling" ? "Brain" : p.slug.includes("vein") ? "Veins" : "Arteries",
                 howPerformed: p.beats.join(" "),
               }),
             },
