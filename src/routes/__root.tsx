@@ -81,7 +81,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod" },
       { name: "description", content: "Advanced image-guided treatment through minimally invasive procedures. Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery." },
-      { name: "author", content: "Dr. Mandeep Sagar" },
       { name: "theme-color", content: "#050B16" },
       { property: "og:site_name", content: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist" },
       { property: "og:title", content: "Dr. Mandeep Sagar — Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod" },
