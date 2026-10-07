@@ -181,6 +181,10 @@ export function PillarPage({ pillar }: { pillar: Pillar }) {
             <p className="mt-8 max-w-2xl text-body leading-relaxed text-[var(--ink-dim)]">
               {pillar.heroLead}
             </p>
+            <p className="mt-4 max-w-2xl text-caption leading-relaxed text-[var(--ink-dim)]">
+              {tx("Patient education from the practice of Dr. Mandeep Sagar. This guide does not replace individual medical advice.")} {" "}
+              <LocaleLink to="/about" className="underline" data-cursor="link">{tx("About Dr. Mandeep Sagar")}</LocaleLink>
+            </p>
             {isUrgent && (
               <div className="mt-8 max-w-3xl">
                 <EmergencyNotice compact />

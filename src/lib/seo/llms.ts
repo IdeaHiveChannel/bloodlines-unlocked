@@ -26,8 +26,8 @@ export function buildLlmsTxt(): string {
 > Advanced image-guided treatment through minimally invasive procedures. Treating selected conditions affecting the blood vessels throughout the body, with Pin hole Surgery.
 
 Dr. Mandeep Sagar is a vascular and neuro interventional radiologist practising in
-Mangalore (Karnataka) and Kasaragod (Kerala), India. Treatment is delivered through a
-pinhole opening in the wrist or groin, guided by live imaging, instead of open surgery.
+Mangalore (Karnataka) and Kasaragod (Kerala), India. Selected treatments use small
+access points under image guidance. Suitability depends on individual assessment.
 
 ## Full Content
 
@@ -50,8 +50,8 @@ pinhole opening in the wrist or groin, guided by live imaging, instead of open s
 Interventional radiology treats disease from inside the blood vessels or directly through
 the skin, using CT, ultrasound and live X-ray (fluoroscopy) for guidance. Access is through
 a needle puncture roughly the size of a pinhole, so there is usually no large incision, and
-most patients go home within a day or two. Patients often search for this as "pinhole
-surgery", "keyhole treatment" or "scarless treatment".
+recovery and discharge depend on the condition, procedure and individual health.
+Patients often search for this as "pinhole surgery" or "keyhole treatment".
 
 ## Conditions treated
 
@@ -97,11 +97,12 @@ export function buildLlmsFullTxt(): string {
     return `### ${p.name}
 ${p.oneLiner}
 
-**Symptoms:** ${p.info.symptoms.join(", ")}
-**Causes:** ${p.info.causes.join(", ")}
-**Diagnosis:** ${p.info.diagnosis.join(", ")}
+**Symptoms:** ${(p.info?.symptoms ?? []).join(", ")}
+**Causes:** ${(p.info?.causes ?? []).join(", ")}
+**Diagnosis:** ${(p.info?.diagnosis ?? []).join(", ")}
 **Treatment steps:** ${p.beats.join(" -> ")}
-**Recovery:** ${p.info.recovery.join(" ")}`;
+**Recovery:** ${(p.info?.recovery ?? []).join(" ")}
+Recovery varies; follow the treating team's instructions.`;
   }).join("\n\n");
 
   return `${base}
@@ -110,7 +111,6 @@ ${p.oneLiner}
 
 ${procedureDetails}
 
----
-Generated on: ${new Date().toISOString()}
+Content is educational. No authorship, clinical review date or qualification should be inferred from this file.
 `;
 }

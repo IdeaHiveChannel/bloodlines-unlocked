@@ -7,6 +7,7 @@ import { Search } from "lucide-react";
 import { resources } from "../lib/content";
 import { useConditions, useProcedures } from "../lib/i18n/data";
 import { Footer } from "../components/sections/Footer";
+import { pillarForCondition } from "../lib/pillars";
 
 export const Route = createFileRoute("/{-$locale}/resources")({
   head: ({ params }) => localeHead(params, "/resources", {
@@ -41,7 +42,8 @@ function Resources() {
     const all: Item[] = [
       ...conditions.map((c) => ({
         type: "Condition", name: c.name, text: c.intro,
-        to: "/conditions/$slug" as const, params: { slug: c.slug },
+        to: "/conditions/$slug" as const, params: { slug: pillarForCondition(c.slug)?.slug ?? c.slug },
+        disabled: !pillarForCondition(c.slug),
       })),
       ...procedures.map((p) => ({
         type: "Procedure", name: p.name, text: p.oneLiner,

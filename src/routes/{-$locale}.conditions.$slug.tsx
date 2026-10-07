@@ -5,6 +5,7 @@ import { getPillar } from "../lib/i18n/data";
 import { localePath } from "../lib/i18n";
 import { PillarPage } from "../components/pillar/PillarPage";
 import { pillarSeoFor } from "../lib/seo/pillar-seo";
+import { clinicalSources } from "../lib/seo/clinical-sources";
 
 const SITE = "https://vascularcaredr.com";
 
@@ -38,6 +39,9 @@ export const Route = createFileRoute("/{-$locale}/conditions/$slug")({
             name: p.title,
             description: p.summary,
             url,
+            inLanguage: locale,
+            publisher: { "@id": `${SITE}/#practice` },
+            citation: (clinicalSources[p.slug] ?? []).map((source) => source.url),
             about: {
               "@type": "MedicalCondition",
               name: p.title,

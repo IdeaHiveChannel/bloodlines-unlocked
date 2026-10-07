@@ -521,4 +521,5 @@ export const stringsMl: Record<string, string> = {
   "Independent clinical guidance.": "സ്വതന്ത്ര ക്ലിനിക്കൽ മാർഗനിർദേശങ്ങൾ.",
   "These independent clinical guidelines support further reading. They do not replace assessment by your treating team, and inclusion does not mean every recommendation applies to every patient.": "കൂടുതൽ വായനയ്ക്കായുള്ള സ്വതന്ത്ര ക്ലിനിക്കൽ മാർഗനിർദേശങ്ങളാണിവ. നിങ്ങളുടെ ചികിത്സാ ടീമിന്റെ വിലയിരുത്തലിന് ഇവ പകരമല്ല; എല്ലാ നിർദേശങ്ങളും എല്ലാ രോഗികൾക്കും ബാധകമാണെന്നും അർത്ഥമില്ല.",
   "Browse patient guides →": "രോഗി ഗൈഡുകൾ കാണുക →",
+  "Patient education from the practice of Dr. Mandeep Sagar. This guide does not replace individual medical advice.": "ഡോ. മന്ദീപ് സാഗറിന്റെ ചികിത്സാ സേവനവുമായി ബന്ധപ്പെട്ട രോഗികൾക്കുള്ള പൊതുവിവരമാണിത്. വ്യക്തിഗത വൈദ്യോപദേശത്തിന് ഈ ഗൈഡ് പകരമല്ല.",
 };

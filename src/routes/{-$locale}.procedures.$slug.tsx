@@ -50,7 +50,6 @@ export const Route = createFileRoute("/{-$locale}/procedures/$slug")({
                 description: intro ?? p.oneLiner,
                 url,
                 procedureType: "https://schema.org/PercutaneousProcedure",
-                bodyLocation: p.slug === "thrombectomy" || p.slug === "coiling" ? "Brain" : p.slug.includes("vein") ? "Veins" : "Arteries",
                 howPerformed: p.beats.join(" "),
               }),
             },
@@ -124,6 +123,10 @@ function ProcedurePage() {
           <LocaleLink to="/procedures" className="text-label" data-cursor="link">{tx("← All procedures")}</LocaleLink>
           <h1 className="text-display-xl mt-8">{p.name}</h1>
           <p className="mt-6 text-body text-[var(--ink-dim)]">{p.oneLiner}</p>
+          <p className="mt-4 text-caption leading-relaxed text-[var(--ink-dim)]">
+            {tx("Patient education from the practice of Dr. Mandeep Sagar. This guide does not replace individual medical advice.")} {" "}
+            <LocaleLink to="/about" className="underline" data-cursor="link">{tx("About Dr. Mandeep Sagar")}</LocaleLink>
+          </p>
           {seo && (
             <div className="mt-8 space-y-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <p className="text-small leading-relaxed">{isMl ? seo.searchIntroMl : seo.searchIntro}</p>

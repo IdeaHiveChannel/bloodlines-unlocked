@@ -5,8 +5,13 @@ import { Anatomy } from "@/components/anatomy/Anatomy";
 import { useSiteNav } from "@/lib/nav";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, UserCheck, MessageSquare } from "lucide-react";
+import { localeHead } from "@/lib/i18n/meta";
 
 export const Route = createFileRoute("/{-$locale}/patient-landing")({
+  head: ({ params }) => localeHead(params, "/patient-landing", {
+    title: "Find care for your condition — Dr. Mandeep Sagar",
+    description: "Explore condition guides, image-guided treatment options and consultation information for patients and families in English and Malayalam.",
+  }),
   component: PatientLanding,
 });
 
