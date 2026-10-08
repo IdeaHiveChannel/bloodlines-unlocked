@@ -9,44 +9,34 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Char123LocaleChar125RouteImport } from './routes/{-$locale}'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
-import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
 import { Route as LlmDottxtRouteImport } from './routes/llm[.]txt'
+import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as Char123LocaleChar125RouteImport } from './routes/{-$locale}'
 import { Route as Char123LocaleChar125IndexRouteImport } from './routes/{-$locale}.index'
-import { Route as Char123LocaleChar125TestimonialsRouteImport } from './routes/{-$locale}.testimonials'
-import { Route as Char123LocaleChar125TermsRouteImport } from './routes/{-$locale}.terms'
-import { Route as Char123LocaleChar125SecondOpinionRouteImport } from './routes/{-$locale}.second-opinion'
-import { Route as Char123LocaleChar125ResourcesRouteImport } from './routes/{-$locale}.resources'
-import { Route as Char123LocaleChar125PrivacyRouteImport } from './routes/{-$locale}.privacy'
-import { Route as Char123LocaleChar125PatientLandingRouteImport } from './routes/{-$locale}.patient-landing'
-import { Route as Char123LocaleChar125MediaRouteImport } from './routes/{-$locale}.media'
-import { Route as Char123LocaleChar125ExpertiseRouteImport } from './routes/{-$locale}.expertise'
-import { Route as Char123LocaleChar125ContactRouteImport } from './routes/{-$locale}.contact'
 import { Route as Char123LocaleChar125AboutRouteImport } from './routes/{-$locale}.about'
-import { Route as Char123LocaleChar125ProceduresIndexRouteImport } from './routes/{-$locale}.procedures.index'
+import { Route as Char123LocaleChar125ContactRouteImport } from './routes/{-$locale}.contact'
+import { Route as Char123LocaleChar125ExpertiseRouteImport } from './routes/{-$locale}.expertise'
+import { Route as Char123LocaleChar125MediaRouteImport } from './routes/{-$locale}.media'
+import { Route as Char123LocaleChar125PatientLandingRouteImport } from './routes/{-$locale}.patient-landing'
+import { Route as Char123LocaleChar125PrivacyRouteImport } from './routes/{-$locale}.privacy'
+import { Route as Char123LocaleChar125ResourcesRouteImport } from './routes/{-$locale}.resources'
+import { Route as Char123LocaleChar125SecondOpinionRouteImport } from './routes/{-$locale}.second-opinion'
+import { Route as Char123LocaleChar125TermsRouteImport } from './routes/{-$locale}.terms'
+import { Route as Char123LocaleChar125TestimonialsRouteImport } from './routes/{-$locale}.testimonials'
 import { Route as Char123LocaleChar125ConditionsIndexRouteImport } from './routes/{-$locale}.conditions.index'
-import { Route as Char123LocaleChar125ProceduresSlugRouteImport } from './routes/{-$locale}.procedures.$slug'
-import { Route as Char123LocaleChar125PatientInformationPreparingForTreatmentRouteImport } from './routes/{-$locale}.patient-information.preparing-for-treatment'
-import { Route as Char123LocaleChar125PatientInformationHowTreatmentWorksRouteImport } from './routes/{-$locale}.patient-information.how-treatment-works'
-import { Route as Char123LocaleChar125PatientInformationBeforeConsultationRouteImport } from './routes/{-$locale}.patient-information.before-consultation'
-import { Route as Char123LocaleChar125PatientInformationAfterTreatmentRouteImport } from './routes/{-$locale}.patient-information.after-treatment'
 import { Route as Char123LocaleChar125ConditionsSlugRouteImport } from './routes/{-$locale}.conditions.$slug'
+import { Route as Char123LocaleChar125PatientInformationAfterTreatmentRouteImport } from './routes/{-$locale}.patient-information.after-treatment'
+import { Route as Char123LocaleChar125PatientInformationBeforeConsultationRouteImport } from './routes/{-$locale}.patient-information.before-consultation'
+import { Route as Char123LocaleChar125PatientInformationHowTreatmentWorksRouteImport } from './routes/{-$locale}.patient-information.how-treatment-works'
+import { Route as Char123LocaleChar125PatientInformationPreparingForTreatmentRouteImport } from './routes/{-$locale}.patient-information.preparing-for-treatment'
+import { Route as Char123LocaleChar125ProceduresIndexRouteImport } from './routes/{-$locale}.procedures.index'
+import { Route as Char123LocaleChar125ProceduresSlugRouteImport } from './routes/{-$locale}.procedures.$slug'
 
-const Char123LocaleChar125Route = Char123LocaleChar125RouteImport.update({
-  id: '/{-$locale}',
-  path: '/{-$locale}',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
-  id: '/llms.txt',
-  path: '/llms.txt',
+const LlmDottxtRoute = LlmDottxtRouteImport.update({
+  id: '/llm.txt',
+  path: '/llm.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
@@ -54,9 +44,19 @@ const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
   path: '/llms-full.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LlmDottxtRoute = LlmDottxtRouteImport.update({
-  id: '/llm.txt',
-  path: '/llm.txt',
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Char123LocaleChar125Route = Char123LocaleChar125RouteImport.update({
+  id: '/{-$locale}',
+  path: '/{-$locale}',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Char123LocaleChar125IndexRoute =
@@ -65,52 +65,10 @@ const Char123LocaleChar125IndexRoute =
     path: '/',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
-const Char123LocaleChar125TestimonialsRoute =
-  Char123LocaleChar125TestimonialsRouteImport.update({
-    id: '/testimonials',
-    path: '/testimonials',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125TermsRoute =
-  Char123LocaleChar125TermsRouteImport.update({
-    id: '/terms',
-    path: '/terms',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125SecondOpinionRoute =
-  Char123LocaleChar125SecondOpinionRouteImport.update({
-    id: '/second-opinion',
-    path: '/second-opinion',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125ResourcesRoute =
-  Char123LocaleChar125ResourcesRouteImport.update({
-    id: '/resources',
-    path: '/resources',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125PrivacyRoute =
-  Char123LocaleChar125PrivacyRouteImport.update({
-    id: '/privacy',
-    path: '/privacy',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125PatientLandingRoute =
-  Char123LocaleChar125PatientLandingRouteImport.update({
-    id: '/patient-landing',
-    path: '/patient-landing',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125MediaRoute =
-  Char123LocaleChar125MediaRouteImport.update({
-    id: '/media',
-    path: '/media',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125ExpertiseRoute =
-  Char123LocaleChar125ExpertiseRouteImport.update({
-    id: '/expertise',
-    path: '/expertise',
+const Char123LocaleChar125AboutRoute =
+  Char123LocaleChar125AboutRouteImport.update({
+    id: '/about',
+    path: '/about',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
 const Char123LocaleChar125ContactRoute =
@@ -119,16 +77,52 @@ const Char123LocaleChar125ContactRoute =
     path: '/contact',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
-const Char123LocaleChar125AboutRoute =
-  Char123LocaleChar125AboutRouteImport.update({
-    id: '/about',
-    path: '/about',
+const Char123LocaleChar125ExpertiseRoute =
+  Char123LocaleChar125ExpertiseRouteImport.update({
+    id: '/expertise',
+    path: '/expertise',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
-const Char123LocaleChar125ProceduresIndexRoute =
-  Char123LocaleChar125ProceduresIndexRouteImport.update({
-    id: '/procedures/',
-    path: '/procedures/',
+const Char123LocaleChar125MediaRoute =
+  Char123LocaleChar125MediaRouteImport.update({
+    id: '/media',
+    path: '/media',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125PatientLandingRoute =
+  Char123LocaleChar125PatientLandingRouteImport.update({
+    id: '/patient-landing',
+    path: '/patient-landing',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125PrivacyRoute =
+  Char123LocaleChar125PrivacyRouteImport.update({
+    id: '/privacy',
+    path: '/privacy',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125ResourcesRoute =
+  Char123LocaleChar125ResourcesRouteImport.update({
+    id: '/resources',
+    path: '/resources',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125SecondOpinionRoute =
+  Char123LocaleChar125SecondOpinionRouteImport.update({
+    id: '/second-opinion',
+    path: '/second-opinion',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125TermsRoute =
+  Char123LocaleChar125TermsRouteImport.update({
+    id: '/terms',
+    path: '/terms',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125TestimonialsRoute =
+  Char123LocaleChar125TestimonialsRouteImport.update({
+    id: '/testimonials',
+    path: '/testimonials',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
 const Char123LocaleChar125ConditionsIndexRoute =
@@ -137,10 +131,28 @@ const Char123LocaleChar125ConditionsIndexRoute =
     path: '/conditions/',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
-const Char123LocaleChar125ProceduresSlugRoute =
-  Char123LocaleChar125ProceduresSlugRouteImport.update({
-    id: '/procedures/$slug',
-    path: '/procedures/$slug',
+const Char123LocaleChar125ConditionsSlugRoute =
+  Char123LocaleChar125ConditionsSlugRouteImport.update({
+    id: '/conditions/$slug',
+    path: '/conditions/$slug',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125PatientInformationAfterTreatmentRoute =
+  Char123LocaleChar125PatientInformationAfterTreatmentRouteImport.update({
+    id: '/patient-information/after-treatment',
+    path: '/patient-information/after-treatment',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125PatientInformationBeforeConsultationRoute =
+  Char123LocaleChar125PatientInformationBeforeConsultationRouteImport.update({
+    id: '/patient-information/before-consultation',
+    path: '/patient-information/before-consultation',
+    getParentRoute: () => Char123LocaleChar125Route,
+  } as any)
+const Char123LocaleChar125PatientInformationHowTreatmentWorksRoute =
+  Char123LocaleChar125PatientInformationHowTreatmentWorksRouteImport.update({
+    id: '/patient-information/how-treatment-works',
+    path: '/patient-information/how-treatment-works',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
 const Char123LocaleChar125PatientInformationPreparingForTreatmentRoute =
@@ -151,28 +163,16 @@ const Char123LocaleChar125PatientInformationPreparingForTreatmentRoute =
       getParentRoute: () => Char123LocaleChar125Route,
     } as any,
   )
-const Char123LocaleChar125PatientInformationHowTreatmentWorksRoute =
-  Char123LocaleChar125PatientInformationHowTreatmentWorksRouteImport.update({
-    id: '/patient-information/how-treatment-works',
-    path: '/patient-information/how-treatment-works',
+const Char123LocaleChar125ProceduresIndexRoute =
+  Char123LocaleChar125ProceduresIndexRouteImport.update({
+    id: '/procedures/',
+    path: '/procedures/',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
-const Char123LocaleChar125PatientInformationBeforeConsultationRoute =
-  Char123LocaleChar125PatientInformationBeforeConsultationRouteImport.update({
-    id: '/patient-information/before-consultation',
-    path: '/patient-information/before-consultation',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125PatientInformationAfterTreatmentRoute =
-  Char123LocaleChar125PatientInformationAfterTreatmentRouteImport.update({
-    id: '/patient-information/after-treatment',
-    path: '/patient-information/after-treatment',
-    getParentRoute: () => Char123LocaleChar125Route,
-  } as any)
-const Char123LocaleChar125ConditionsSlugRoute =
-  Char123LocaleChar125ConditionsSlugRouteImport.update({
-    id: '/conditions/$slug',
-    path: '/conditions/$slug',
+const Char123LocaleChar125ProceduresSlugRoute =
+  Char123LocaleChar125ProceduresSlugRouteImport.update({
+    id: '/procedures/$slug',
+    path: '/procedures/$slug',
     getParentRoute: () => Char123LocaleChar125Route,
   } as any)
 
@@ -344,25 +344,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/{-$locale}': {
-      id: '/{-$locale}'
-      path: '/{-$locale}'
-      fullPath: '/{-$locale}'
-      preLoaderRoute: typeof Char123LocaleChar125RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/llms.txt': {
-      id: '/llms.txt'
-      path: '/llms.txt'
-      fullPath: '/llms.txt'
-      preLoaderRoute: typeof LlmsDottxtRouteImport
+    '/llm.txt': {
+      id: '/llm.txt'
+      path: '/llm.txt'
+      fullPath: '/llm.txt'
+      preLoaderRoute: typeof LlmDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/llms-full.txt': {
@@ -372,11 +358,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LlmsFullDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/llm.txt': {
-      id: '/llm.txt'
-      path: '/llm.txt'
-      fullPath: '/llm.txt'
-      preLoaderRoute: typeof LlmDottxtRouteImport
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/{-$locale}': {
+      id: '/{-$locale}'
+      path: '/{-$locale}'
+      fullPath: '/{-$locale}'
+      preLoaderRoute: typeof Char123LocaleChar125RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/{-$locale}/': {
@@ -386,60 +386,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125IndexRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
-    '/{-$locale}/testimonials': {
-      id: '/{-$locale}/testimonials'
-      path: '/testimonials'
-      fullPath: '/{-$locale}/testimonials'
-      preLoaderRoute: typeof Char123LocaleChar125TestimonialsRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/terms': {
-      id: '/{-$locale}/terms'
-      path: '/terms'
-      fullPath: '/{-$locale}/terms'
-      preLoaderRoute: typeof Char123LocaleChar125TermsRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/second-opinion': {
-      id: '/{-$locale}/second-opinion'
-      path: '/second-opinion'
-      fullPath: '/{-$locale}/second-opinion'
-      preLoaderRoute: typeof Char123LocaleChar125SecondOpinionRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/resources': {
-      id: '/{-$locale}/resources'
-      path: '/resources'
-      fullPath: '/{-$locale}/resources'
-      preLoaderRoute: typeof Char123LocaleChar125ResourcesRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/privacy': {
-      id: '/{-$locale}/privacy'
-      path: '/privacy'
-      fullPath: '/{-$locale}/privacy'
-      preLoaderRoute: typeof Char123LocaleChar125PrivacyRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/patient-landing': {
-      id: '/{-$locale}/patient-landing'
-      path: '/patient-landing'
-      fullPath: '/{-$locale}/patient-landing'
-      preLoaderRoute: typeof Char123LocaleChar125PatientLandingRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/media': {
-      id: '/{-$locale}/media'
-      path: '/media'
-      fullPath: '/{-$locale}/media'
-      preLoaderRoute: typeof Char123LocaleChar125MediaRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/expertise': {
-      id: '/{-$locale}/expertise'
-      path: '/expertise'
-      fullPath: '/{-$locale}/expertise'
-      preLoaderRoute: typeof Char123LocaleChar125ExpertiseRouteImport
+    '/{-$locale}/about': {
+      id: '/{-$locale}/about'
+      path: '/about'
+      fullPath: '/{-$locale}/about'
+      preLoaderRoute: typeof Char123LocaleChar125AboutRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
     '/{-$locale}/contact': {
@@ -449,18 +400,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125ContactRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
-    '/{-$locale}/about': {
-      id: '/{-$locale}/about'
-      path: '/about'
-      fullPath: '/{-$locale}/about'
-      preLoaderRoute: typeof Char123LocaleChar125AboutRouteImport
+    '/{-$locale}/expertise': {
+      id: '/{-$locale}/expertise'
+      path: '/expertise'
+      fullPath: '/{-$locale}/expertise'
+      preLoaderRoute: typeof Char123LocaleChar125ExpertiseRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
-    '/{-$locale}/procedures/': {
-      id: '/{-$locale}/procedures/'
-      path: '/procedures'
-      fullPath: '/{-$locale}/procedures/'
-      preLoaderRoute: typeof Char123LocaleChar125ProceduresIndexRouteImport
+    '/{-$locale}/media': {
+      id: '/{-$locale}/media'
+      path: '/media'
+      fullPath: '/{-$locale}/media'
+      preLoaderRoute: typeof Char123LocaleChar125MediaRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/patient-landing': {
+      id: '/{-$locale}/patient-landing'
+      path: '/patient-landing'
+      fullPath: '/{-$locale}/patient-landing'
+      preLoaderRoute: typeof Char123LocaleChar125PatientLandingRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/privacy': {
+      id: '/{-$locale}/privacy'
+      path: '/privacy'
+      fullPath: '/{-$locale}/privacy'
+      preLoaderRoute: typeof Char123LocaleChar125PrivacyRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/resources': {
+      id: '/{-$locale}/resources'
+      path: '/resources'
+      fullPath: '/{-$locale}/resources'
+      preLoaderRoute: typeof Char123LocaleChar125ResourcesRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/second-opinion': {
+      id: '/{-$locale}/second-opinion'
+      path: '/second-opinion'
+      fullPath: '/{-$locale}/second-opinion'
+      preLoaderRoute: typeof Char123LocaleChar125SecondOpinionRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/terms': {
+      id: '/{-$locale}/terms'
+      path: '/terms'
+      fullPath: '/{-$locale}/terms'
+      preLoaderRoute: typeof Char123LocaleChar125TermsRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/testimonials': {
+      id: '/{-$locale}/testimonials'
+      path: '/testimonials'
+      fullPath: '/{-$locale}/testimonials'
+      preLoaderRoute: typeof Char123LocaleChar125TestimonialsRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
     '/{-$locale}/conditions/': {
@@ -470,32 +463,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125ConditionsIndexRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
-    '/{-$locale}/procedures/$slug': {
-      id: '/{-$locale}/procedures/$slug'
-      path: '/procedures/$slug'
-      fullPath: '/{-$locale}/procedures/$slug'
-      preLoaderRoute: typeof Char123LocaleChar125ProceduresSlugRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/patient-information/preparing-for-treatment': {
-      id: '/{-$locale}/patient-information/preparing-for-treatment'
-      path: '/patient-information/preparing-for-treatment'
-      fullPath: '/{-$locale}/patient-information/preparing-for-treatment'
-      preLoaderRoute: typeof Char123LocaleChar125PatientInformationPreparingForTreatmentRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/patient-information/how-treatment-works': {
-      id: '/{-$locale}/patient-information/how-treatment-works'
-      path: '/patient-information/how-treatment-works'
-      fullPath: '/{-$locale}/patient-information/how-treatment-works'
-      preLoaderRoute: typeof Char123LocaleChar125PatientInformationHowTreatmentWorksRouteImport
-      parentRoute: typeof Char123LocaleChar125Route
-    }
-    '/{-$locale}/patient-information/before-consultation': {
-      id: '/{-$locale}/patient-information/before-consultation'
-      path: '/patient-information/before-consultation'
-      fullPath: '/{-$locale}/patient-information/before-consultation'
-      preLoaderRoute: typeof Char123LocaleChar125PatientInformationBeforeConsultationRouteImport
+    '/{-$locale}/conditions/$slug': {
+      id: '/{-$locale}/conditions/$slug'
+      path: '/conditions/$slug'
+      fullPath: '/{-$locale}/conditions/$slug'
+      preLoaderRoute: typeof Char123LocaleChar125ConditionsSlugRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
     '/{-$locale}/patient-information/after-treatment': {
@@ -505,11 +477,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125PatientInformationAfterTreatmentRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
-    '/{-$locale}/conditions/$slug': {
-      id: '/{-$locale}/conditions/$slug'
-      path: '/conditions/$slug'
-      fullPath: '/{-$locale}/conditions/$slug'
-      preLoaderRoute: typeof Char123LocaleChar125ConditionsSlugRouteImport
+    '/{-$locale}/patient-information/before-consultation': {
+      id: '/{-$locale}/patient-information/before-consultation'
+      path: '/patient-information/before-consultation'
+      fullPath: '/{-$locale}/patient-information/before-consultation'
+      preLoaderRoute: typeof Char123LocaleChar125PatientInformationBeforeConsultationRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/patient-information/how-treatment-works': {
+      id: '/{-$locale}/patient-information/how-treatment-works'
+      path: '/patient-information/how-treatment-works'
+      fullPath: '/{-$locale}/patient-information/how-treatment-works'
+      preLoaderRoute: typeof Char123LocaleChar125PatientInformationHowTreatmentWorksRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/patient-information/preparing-for-treatment': {
+      id: '/{-$locale}/patient-information/preparing-for-treatment'
+      path: '/patient-information/preparing-for-treatment'
+      fullPath: '/{-$locale}/patient-information/preparing-for-treatment'
+      preLoaderRoute: typeof Char123LocaleChar125PatientInformationPreparingForTreatmentRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/procedures/': {
+      id: '/{-$locale}/procedures/'
+      path: '/procedures'
+      fullPath: '/{-$locale}/procedures/'
+      preLoaderRoute: typeof Char123LocaleChar125ProceduresIndexRouteImport
+      parentRoute: typeof Char123LocaleChar125Route
+    }
+    '/{-$locale}/procedures/$slug': {
+      id: '/{-$locale}/procedures/$slug'
+      path: '/procedures/$slug'
+      fullPath: '/{-$locale}/procedures/$slug'
+      preLoaderRoute: typeof Char123LocaleChar125ProceduresSlugRouteImport
       parentRoute: typeof Char123LocaleChar125Route
     }
   }
