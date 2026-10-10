@@ -1,4 +1,8 @@
 # Roadmap
+- [ ] Create bilingual patient-focused ChatGPT/AI reference hub covering existing treatment guides
+- [ ] Implement scheduled SEO monitoring with bounded runs and approval-gated recommendations
+- [ ] Verify AI hub discovery, English/Malayalam rendering and preserved routes
+- [ ] Verify evidence for “one of the best in India” — supporting evidence not supplied
 - [x] Add bilingual emergency guidance to home and urgent condition guides
 - [x] Replace Privacy and Terms placeholders with accurate bilingual disclosures
 - [x] Qualify homepage recovery, representative imaging, and second-opinion claims
