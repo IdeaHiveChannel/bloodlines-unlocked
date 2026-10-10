@@ -1,4 +1,5 @@
 # Roadmap
+- [ ] Verify published sources for user-supplied fetal transfusion and placental chorioangioma team cases before public attribution
 - [ ] Create bilingual patient-focused ChatGPT/AI reference hub covering existing treatment guides
 - [ ] Implement scheduled SEO monitoring with bounded runs and approval-gated recommendations
 - [ ] Verify AI hub discovery, English/Malayalam rendering and preserved routes
