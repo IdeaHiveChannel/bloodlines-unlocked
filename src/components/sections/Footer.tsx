@@ -41,6 +41,7 @@ export function Footer() {
               <li><LocaleLink to="/expertise" data-cursor="link">{tx(t.nav.expertise)}</LocaleLink></li>
               <li><LocaleLink to="/patient-information/how-treatment-works" data-cursor="link">{tx(t.footer.patientInfo)}</LocaleLink></li>
               <li><LocaleLink to="/testimonials" data-cursor="link">{tx(t.nav.stories)}</LocaleLink></li>
+              <li><LocaleLink to="/reviews" data-cursor="link">{tx("Share your experience")}</LocaleLink></li>
               <li><LocaleLink to="/media" data-cursor="link">{tx(t.nav.media)}</LocaleLink></li>
               <li><LocaleLink to="/resources" data-cursor="link">{tx(t.nav.resources)}</LocaleLink></li>
             </ul>

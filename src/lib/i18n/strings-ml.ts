@@ -524,4 +524,8 @@ export const stringsMl: Record<string, string> = {
   "Patient education from the practice of Dr. Mandeep Sagar. This guide does not replace individual medical advice.": "ഡോ. മന്ദീപ് സാഗറിന്റെ ചികിത്സാ സേവനവുമായി ബന്ധപ്പെട്ട രോഗികൾക്കുള്ള പൊതുവിവരമാണിത്. വ്യക്തിഗത വൈദ്യോപദേശത്തിന് ഈ ഗൈഡ് പകരമല്ല.",
   "Book a consultation.": "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക.",
   "About Dr. Mandeep Sagar": "ഡോ. മന്ദീപ് സാഗറിനെക്കുറിച്ച്",
+  "Share your experience": "നിങ്ങളുടെ അനുഭവം പങ്കുവെക്കുക",
+  "Patient Experiences": "രോഗികളുടെ അനുഭവങ്ങൾ",
+  "Experiences shared by patients and families who consulted Dr. Mandeep Sagar.": "ഡോ. മന്ദീപ് സാഗറിനെ കണ്ട രോഗികളും കുടുംബങ്ങളും പങ്കുവെച്ച അനുഭവങ്ങൾ.",
+  "Verified Google reviews will appear here once the practice's Google Business Profile is connected. No review is shown that a patient did not write.": "ഗൂഗിൾ ബിസിനസ് പ്രൊഫൈൽ ബന്ധിപ്പിച്ചാൽ യഥാർത്ഥ ഗൂഗിൾ റിവ്യൂകൾ ഇവിടെ കാണാം. രോഗികൾ എഴുതാത്ത ഒരു റിവ്യൂവും ഇവിടെ കാണിക്കില്ല.",
 };

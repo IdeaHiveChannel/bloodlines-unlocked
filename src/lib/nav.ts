@@ -58,6 +58,7 @@ const patientInfo: NavLink[] = [
   { to: "/patient-information/after-treatment", label: "After treatment" },
   { to: "/resources", label: "Resources" },
   { to: "/testimonials", label: "Patient stories" },
+  { to: "/reviews", label: "Share your experience" },
   { to: "/media", label: "Media & publications" },
   { to: "/contact", label: "Contact" },
 ];
