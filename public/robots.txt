@@ -53,4 +53,16 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
 Sitemap: https://vascularcaredr.com/sitemap.xml
