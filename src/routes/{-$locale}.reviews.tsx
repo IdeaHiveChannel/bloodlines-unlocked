@@ -78,79 +78,104 @@ function ReviewsPage() {
     try { await navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); } catch { /* clipboard blocked */ }
   };
 
+  const step = (n: number, label: string) => (
+    <span className="flex items-center gap-3">
+      <span aria-hidden className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/15 text-caption text-[var(--accent)]">{n}</span>
+      <span className="text-label">{label}</span>
+    </span>
+  );
+
+  const actions = (
+    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <button type="button" onClick={onCopy} disabled={!text.trim()} className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5 disabled:opacity-40">
+        {copied ? `✓ ${c.copied}` : c.copyBtn}
+      </button>
+      <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-white px-6 text-center text-button text-black transition-colors hover:bg-[var(--accent)]">
+        {c.google} ↗
+      </a>
+    </div>
+  );
+
   return (
     <>
-      <main className="pb-20 pt-32">
-        <div className="shell max-w-3xl">
-          <h1 className="text-display-lg">{c.h1}</h1>
-          <p className="mt-6 text-body leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
-          <p className="mt-4 text-caption text-[var(--ink-dim)]">{c.emergency}</p>
+      <main className="pb-32 pt-28 sm:pt-32 lg:pb-20">
+        <div className="shell max-w-6xl">
+          <div className="max-w-3xl">
+            <h1 className="text-display-lg">{c.h1}</h1>
+            <p className="mt-5 text-body leading-relaxed text-[var(--ink-dim)]">{c.intro}</p>
+            <p className="mt-4 text-caption text-[var(--ink-dim)]">{c.emergency}</p>
+          </div>
 
-          <form className="mt-12 space-y-10" onSubmit={(e) => e.preventDefault()}>
-            <fieldset>
-              <legend className="text-label">{c.visit}</legend>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {(Object.keys(c.visits) as VisitType[]).map((v) => (
-                  <label key={v} className={`inline-flex min-h-11 cursor-pointer items-center rounded-full border px-5 text-button ${visit === v ? "border-[var(--accent)] text-[var(--accent)]" : "border-white/15"}`}>
-                    <input type="radio" name="visit" value={v} checked={visit === v} onChange={() => setVisit(v)} className="sr-only" />
-                    {c.visits[v]}
-                  </label>
-                ))}
+          <form className="mt-10 grid gap-10 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-14" onSubmit={(e) => e.preventDefault()}>
+            <div className="min-w-0 space-y-10">
+              <fieldset>
+                <legend>{step(1, c.visit)}</legend>
+                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  {(Object.keys(c.visits) as VisitType[]).map((v) => (
+                    <label key={v} className={`inline-flex min-h-12 cursor-pointer items-center justify-center rounded-2xl border px-4 text-center text-button transition-colors focus-within:ring-2 focus-within:ring-[var(--accent)] ${visit === v ? "border-[var(--accent)] bg-white/[0.04] text-[var(--accent)]" : "border-white/15 hover:bg-white/[0.03]"}`}>
+                      <input type="radio" name="visit" value={v} checked={visit === v} onChange={() => setVisit(v)} className="sr-only" />
+                      {c.visits[v]}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+
+              <div>
+                <label htmlFor="cond-search">{step(2, c.condition)}</label>
+                <input id="cond-search" type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={c.search} className={`${field} mt-4 min-h-12`} />
+                {condition && (
+                  <p className="mt-3 text-small text-[var(--accent)]">✓ {condition}</p>
+                )}
+                <ul role="listbox" aria-label={c.condition} className="mt-3 max-h-60 overflow-y-auto overscroll-contain rounded-2xl border border-white/10">
+                  {options.map((o) => (
+                    <li key={o} role="option" aria-selected={condition === o}>
+                      <button type="button" onClick={() => setCondition(o)} className={`flex min-h-12 w-full items-center justify-between gap-3 px-4 text-left text-small ${condition === o ? "bg-white/[0.06] text-[var(--accent)]" : "hover:bg-white/[0.03]"}`}>
+                        <span className="min-w-0">{o}</span>{condition === o && <span aria-hidden>✓</span>}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                {condition === OTHER && (
+                  <input aria-label={c.other} value={otherText} maxLength={80} onChange={(e) => setOtherText(e.target.value)} placeholder={c.other} className={`${field} mt-3 min-h-12`} />
+                )}
+                <label className="mt-4 flex min-h-11 cursor-pointer items-start gap-3 text-small">
+                  <input type="checkbox" checked={include} onChange={(e) => setInclude(e.target.checked)} className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--accent)]" />
+                  <span className="min-w-0">{c.include}</span>
+                </label>
               </div>
-            </fieldset>
 
-            <div>
-              <label htmlFor="cond-search" className="text-label">{c.condition}</label>
-              <input id="cond-search" type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={c.search} className={`${field} mt-4`} />
-              <ul role="listbox" aria-label={c.condition} className="mt-3 max-h-56 overflow-y-auto rounded-2xl border border-white/10">
-                {options.map((o) => (
-                  <li key={o} role="option" aria-selected={condition === o}>
-                    <button type="button" onClick={() => setCondition(o)} className={`block min-h-11 w-full px-4 text-left text-small ${condition === o ? "bg-white/[0.06] text-[var(--accent)]" : "hover:bg-white/[0.03]"}`}>{o}</button>
-                  </li>
-                ))}
-              </ul>
-              {condition === OTHER && (
-                <input aria-label={c.other} value={otherText} maxLength={80} onChange={(e) => setOtherText(e.target.value)} placeholder={c.other} className={`${field} mt-3`} />
-              )}
-            </div>
+              <fieldset>
+                <legend>{step(3, c.rating)}</legend>
+                <div className="mt-4 flex gap-1 sm:gap-2">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <button key={n} type="button" aria-label={c.stars(n)} aria-pressed={rating === n} onClick={() => setRating(n)}
+                      className={`grid h-12 w-12 place-items-center rounded-full text-3xl transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent)] ${n <= rating ? "text-[var(--accent)]" : "text-white/25 hover:text-white/50"}`}>★</button>
+                  ))}
+                </div>
+              </fieldset>
 
-            <fieldset>
-              <legend className="text-label">{c.rating}</legend>
-              <div className="mt-4 flex gap-2">
-                {[1, 2, 3, 4, 5].map((n) => (
-                  <button key={n} type="button" aria-label={c.stars(n)} aria-pressed={rating === n} onClick={() => setRating(n)}
-                    className={`h-11 w-11 rounded-full text-xl ${n <= rating ? "text-[var(--accent)]" : "text-white/25"}`}>★</button>
-                ))}
+              <div>
+                <label htmlFor="experience">{step(4, c.question)}</label>
+                <textarea id="experience" rows={5} maxLength={2000} value={experience} onChange={(e) => setExperience(e.target.value)} className={`${field} mt-4`} />
+                <p className="mt-2 text-right text-caption text-[var(--ink-dim)]">{experience.length}/2000</p>
               </div>
-            </fieldset>
-
-            <div>
-              <label htmlFor="experience" className="text-label">{c.question}</label>
-              <textarea id="experience" rows={5} maxLength={2000} value={experience} onChange={(e) => setExperience(e.target.value)} className={`${field} mt-4`} />
             </div>
 
-            <label className="flex min-h-11 items-start gap-3 text-small">
-              <input type="checkbox" checked={include} onChange={(e) => setInclude(e.target.checked)} className="mt-1 h-5 w-5 accent-[var(--accent)]" />
-              {c.include}
-            </label>
-
-            <div>
-              <label htmlFor="preview" className="text-label">{c.preview}</label>
-              <textarea id="preview" rows={6} value={text} onChange={(e) => { setEdited(true); setText(e.target.value); }} className={`${field} mt-4`} />
+            <div className="min-w-0 lg:sticky lg:top-28 lg:self-start">
+              <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-5 sm:p-7">
+                <label htmlFor="preview">{step(5, c.preview)}</label>
+                <textarea id="preview" rows={8} value={text} onChange={(e) => { setEdited(true); setText(e.target.value); }} className={`${field} mt-4 min-h-48 resize-y`} />
+                <div className="mt-5 hidden lg:block">{actions}</div>
+                <p className="mt-5 text-caption leading-relaxed text-[var(--ink-dim)]">{c.note}</p>
+                <p aria-live="polite" className="sr-only">{copied ? c.copied : ""}</p>
+              </div>
             </div>
-
-            <div className="flex flex-wrap gap-3 sm:gap-4">
-              <button type="button" onClick={onCopy} className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-button hover:bg-white/5">
-                {copied ? c.copied : c.copyBtn}
-              </button>
-              <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black hover:bg-[var(--accent)]">
-                {c.google} ↗
-              </a>
-            </div>
-            <p className="text-caption leading-relaxed text-[var(--ink-dim)]">{c.note}</p>
           </form>
         </div>
       </main>
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#050B16]/95 px-4 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-3 backdrop-blur lg:hidden">
+        {actions}
+      </div>
       <Footer />
     </>
   );
