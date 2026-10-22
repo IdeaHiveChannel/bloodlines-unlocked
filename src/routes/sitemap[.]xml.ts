@@ -34,6 +34,7 @@ function englishEntries(): SitemapEntry[] {
     { path: "/testimonials", changefreq: "monthly", priority: "0.5" },
     { path: "/resources", changefreq: "monthly", priority: "0.6" },
     { path: "/contact", changefreq: "monthly", priority: "0.7" },
+    { path: "/reviews", changefreq: "monthly", priority: "0.5" },
     ...conditionPaths,
     ...procedures.map((p) => ({
       path: `/procedures/${p.slug}`,
