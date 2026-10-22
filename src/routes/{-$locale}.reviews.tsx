@@ -85,12 +85,12 @@ function ReviewsPage() {
     </span>
   );
 
-  const actions = (
-    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-      <button type="button" onClick={onCopy} disabled={!text.trim()} className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5 disabled:opacity-40">
+  const actions = (row: boolean) => (
+    <div className={row ? "flex gap-2" : "flex flex-col gap-3"}>
+      <button type="button" onClick={onCopy} disabled={!text.trim()} className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full border border-white/15 px-4 text-button transition-colors hover:bg-white/5 disabled:opacity-40">
         {copied ? `✓ ${c.copied}` : c.copyBtn}
       </button>
-      <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-white px-6 text-center text-button text-black transition-colors hover:bg-[var(--accent)]">
+      <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-white px-4 py-2 leading-tight text-center text-button text-black transition-colors hover:bg-[var(--accent)]">
         {c.google} ↗
       </a>
     </div>
@@ -165,7 +165,7 @@ function ReviewsPage() {
               <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-5 sm:p-7">
                 <label htmlFor="preview">{step(5, c.preview)}</label>
                 <textarea id="preview" rows={8} value={text} onChange={(e) => { setEdited(true); setText(e.target.value); }} className={`${field} mt-4 min-h-48 resize-y`} />
-                <div className="mt-5 hidden lg:block">{actions}</div>
+                <div className="mt-5 hidden lg:block">{actions(false)}</div>
                 <p className="mt-5 text-caption leading-relaxed text-[var(--ink-dim)]">{c.note}</p>
                 <p aria-live="polite" className="sr-only">{copied ? c.copied : ""}</p>
               </div>
@@ -174,7 +174,7 @@ function ReviewsPage() {
         </div>
       </main>
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#050B16]/95 px-4 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-3 backdrop-blur lg:hidden">
-        {actions}
+        {actions(true)}
       </div>
       <Footer />
     </>
