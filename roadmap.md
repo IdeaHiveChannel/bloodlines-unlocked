@@ -20,3 +20,8 @@
 - [x] Provide separate off-site verification and directory/Bing checklist
 - [ ] Verify and submit Bing/IndexNow — requires Bing ownership and approved submission credentials
 - [ ] Publish new on-site search improvements — awaits publishing approval
+- [x] Share Your Experience page (/reviews, /ml/reviews), menu + footer links, QR code + A4 poster
+- [x] robots.txt: added Perplexity-User, Claude search agents, DuckAssistBot, Meta, Amazonbot
+- [ ] Patient Experiences carousel with real Google reviews — blocked: Google Business Profile not connected
+- [ ] 38 excluded pages per-URL Search Console review; 14 video watch pages; mobile performance/accessibility pass — not yet done
+- [ ] Publish, then scan-test the QR code on the live site
