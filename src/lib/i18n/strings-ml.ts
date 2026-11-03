@@ -1,4 +1,27 @@
 export const stringsMl: Record<string, string> = {
+  // Verified credentials
+  "Verified credentials": "സ്ഥിരീകരിച്ച യോഗ്യതകൾ",
+  "Qualifications and registration.": "യോഗ്യതകളും രജിസ്ട്രേഷനും.",
+  "Each entry below is supported by an original document reviewed for this website.": "താഴെയുള്ള ഓരോ വിവരവും ഈ വെബ്സൈറ്റിനായി പരിശോധിച്ച യഥാർത്ഥ രേഖകളുടെ അടിസ്ഥാനത്തിലാണ്.",
+  "Medical registration": "മെഡിക്കൽ രജിസ്ട്രേഷൻ",
+  "Academic appointment": "അക്കാദമിക് പദവി",
+  "Fellowship": "ഫെലോഷിപ്പ്",
+  "View certificate": "സർട്ടിഫിക്കറ്റ് കാണുക",
+  "Verify on the Indian Medical Register": "ഇന്ത്യൻ മെഡിക്കൽ രജിസ്റ്ററിൽ പരിശോധിക്കുക",
+  "Education": "വിദ്യാഭ്യാസം",
+  "Scientific presentation": "ശാസ്ത്രീയ അവതരണം",
+  "Teaching & faculty": "അധ്യാപനവും ഫാക്കൽറ്റിയും",
+  "Conference & CME": "കോൺഫറൻസും CME-യും",
+  "Hands-on workshop": "പ്രായോഗിക വർക്ക്ഷോപ്പ്",
+  "Academic role": "അക്കാദമിക് ചുമതല",
+  "Full profile": "പൂർണ്ണ പ്രൊഫൈൽ",
+  "Academic note": "അക്കാദമിക് കുറിപ്പ്",
+  "See the presentation →": "അവതരണം കാണുക →",
+  "Read about fistuloplasty": "ഫിസ്റ്റുലോപ്ലാസ്റ്റിയെക്കുറിച്ച് വായിക്കുക",
+  "Year by year — degrees and fellowship, scientific presentations, faculty teaching, conferences and hands-on workshops. Open any entry to see its supporting evidence.": "വർഷം തിരിച്ച് — ബിരുദങ്ങളും ഫെലോഷിപ്പും, ശാസ്ത്രീയ അവതരണങ്ങൾ, ഫാക്കൽറ്റി അധ്യാപനം, കോൺഫറൻസുകൾ, പ്രായോഗിക വർക്ക്ഷോപ്പുകൾ. തെളിവുകൾ കാണാൻ ഏതെങ്കിലും വിവരം തുറക്കുക.",
+  "Associate Professor, Department of Interventional Radiology": "അസോസിയേറ്റ് പ്രൊഫസർ, ഇന്റർവെൻഷണൽ റേഡിയോളജി വിഭാഗം",
+  "Dr. Mandeep Sagar with Prof. Jacques Moret": "ഡോ. മന്ദീപ് സാഗർ പ്രൊഫ. ജാക്ക് മൊറെയോടൊപ്പം",
+
   // Hero Section Malayalam
   "Dr. Mandeep Sagar": "ഡോ. മന്ദീപ് സാഗർ",
   "Vascular & Neuro Interventional Radiologist in Mangalore & Kasaragod": "മംഗളൂരു & കാസർഗോഡിലെ\nവാസ്കുലർ & ന്യൂറോ\nഇന്റർവെൻഷണൽ റേഡിയോളജിസ്റ്റ്",

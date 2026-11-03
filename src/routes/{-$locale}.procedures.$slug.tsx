@@ -268,6 +268,15 @@ function ProcedurePage() {
               </div>
             </section>
           )}
+          {p.slug === "dialysis-fistuloplasty" && (
+            <aside className="mt-14 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+              <p className="text-label">{tx("Academic note")}</p>
+              <p className="mt-3 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">
+                {tx("Dr. Mandeep Sagar presented \"Outcomes of Arteriovenous Fistuloplasty via Distal Radial Access\" as an oral scientific presentation at KCR 2025, the 81st Korean Congress of Radiology in Seoul.")}
+              </p>
+              <LocaleLink to="/expertise" hash="kcr-2025" className="mt-4 inline-flex text-label underline">{tx("See the presentation →")}</LocaleLink>
+            </aside>
+          )}
           <div className="mt-14 flex flex-wrap gap-3">
             <LocaleLink to="/second-opinion" className="rounded-full border border-white/[0.12] px-5 py-3 text-button" data-cursor="link">
               {tx("Get a second opinion")}

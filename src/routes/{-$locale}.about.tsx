@@ -2,6 +2,7 @@ import { localeHead, SITE } from "@/lib/i18n/meta";
 import { useTx } from "@/lib/i18n/tx";
 import { createFileRoute } from "@tanstack/react-router";
 import { Doctor } from "../components/sections/Doctor";
+import { Qualifications } from "../components/credentials/Qualifications";
 import { Footer } from "../components/sections/Footer";
 import { contact, socialUrls } from "../lib/contact";
 
@@ -23,6 +24,17 @@ export const Route = createFileRoute("/{-$locale}/about")({
           sameAs: socialUrls,
           name: "Dr. Mandeep Sagar",
           medicalSpecialty: "Radiology",
+          alumniOf: [
+            { "@type": "CollegeOrUniversity", name: "Vijayanagara Institute of Medical Sciences, Bellary" },
+            { "@type": "CollegeOrUniversity", name: "Gauhati Medical College" },
+            { "@type": "CollegeOrUniversity", name: "Government Medical College & Hospital, Nagpur" },
+          ],
+          hasCredential: [
+            { "@type": "EducationalOccupationalCredential", credentialCategory: "degree", name: "MBBS" },
+            { "@type": "EducationalOccupationalCredential", credentialCategory: "degree", name: "MD Radiodiagnosis" },
+            { "@type": "EducationalOccupationalCredential", credentialCategory: "certificate", name: "Fellowship in Vascular and Interventional Radiology", recognizedBy: { "@type": "Organization", name: "Maharashtra University of Health Sciences" } },
+            { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "Karnataka Medical Council registration 114492", recognizedBy: { "@type": "Organization", name: "Karnataka Medical Council" } },
+          ],
           url: `${SITE}/about`,
           telephone: "+91 63663 30505",
           email: contact.email,
@@ -54,6 +66,7 @@ function About() {
           </p>
         </div>
         <Doctor />
+        <Qualifications />
       </main>
       <Footer />
     </>
