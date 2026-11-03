@@ -19,9 +19,11 @@ export function Doctor() {
             <p className="mt-8 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
               {tx("Dr. Mandeep Sagar is a Vascular and Neuro Interventional Radiologist. The work spans the full vascular system — from cerebral aneurysms to below-knee revascularisation — performed through pinpoint access, under real-time imaging.")}
             </p>
-            <p className="mt-6 max-w-xl text-caption leading-relaxed text-[var(--ink-dim)] italic">
-              {tx("Verified credentials, fellowships, hospital affiliations and publications will be listed here once supplied. No claims are made on this page without source.")}
-            </p>
+            <ul className="mt-6 flex max-w-xl flex-wrap gap-2" aria-label={tx("Verified credentials")}>
+              {["MBBS", "MD Radiodiagnosis", "Fellowship, Vascular & Interventional Radiology — GMC Nagpur", "KMC Reg. No. 114492", "Associate Professor, Interventional Radiology — Father Muller Medical College", "Oral presenter, KCR 2025 Seoul", "Faculty, ISVIR 2026 workshop"].map((c) => (
+                <li key={c} className="rounded-full border border-white/[0.1] bg-white/[0.02] px-3 py-1.5 text-caption text-[var(--ink)]">{tx(c)}</li>
+              ))}
+            </ul>
 
             <div className="mt-12 grid sm:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
               {[

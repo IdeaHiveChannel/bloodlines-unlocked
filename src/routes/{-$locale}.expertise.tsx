@@ -56,7 +56,7 @@ function Expertise() {
               {tx("Training, teaching, and the practice it built.")}
             </h2>
             <p className="mt-4 max-w-xl text-small leading-relaxed text-[var(--ink-dim)]">
-              {tx("In sequence — foundation, fellowship, high-volume practice, and the international courses that keep technique current.")}
+              {tx("Year by year — degrees and fellowship, scientific presentations, faculty teaching, conferences and hands-on workshops. Open any entry to see its supporting evidence.")}
             </p>
             <ExpertiseTimeline />
           </div>
