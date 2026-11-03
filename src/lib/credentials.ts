@@ -20,7 +20,6 @@ export type Evidence = { src: string; alt: string; kind: "photo" | "certificate"
 
 export const KMC_REG_NO = "114492";
 export const KMC_VERIFY_URL = "https://www.nmc.org.in/information-desk/indian-medical-register/";
-export const SLICE_POST_URL = "https://www.linkedin.com/company/slice-workshops/posts/";
 
 export const fellowshipCertificate: Evidence = {
   src: fellowship.url,
@@ -123,7 +122,6 @@ export const journey: JourneyItem[] = [
     id: "slice-india", year: 2026, category: "Hands-on workshop", title: "SLICE Workshops — Neurovascular intervention, India",
     meta: "Gurgaon", summary: "Participated in SLICE's neurointerventional workshops on endovascular treatment of haemorrhagic neurovascular conditions: flow-diverter techniques, intrasaccular treatment, hands-on practice on anatomical models and complex-case decision-making. Participation is acknowledged in an official SLICE Workshops publication.",
     evidence: [{ src: sliceIndia.url, alt: "Dr. Mandeep Sagar at a SLICE neurovascular workshop in India", kind: "photo" }],
-    link: { href: SLICE_POST_URL, label: "View official organiser publication" },
   },
   {
     id: "isvir-2026", year: 2026, category: "Teaching & faculty", title: "ISVIR Neurointerventional Training Workshop — Faculty",
