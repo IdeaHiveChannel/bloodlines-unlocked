@@ -134,3 +134,131 @@ export const journey: JourneyItem[] = [
     internal: { to: "/about", label: "Full profile" },
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Public showcase: curated photographs and certificates with patient-readable
+// descriptions. Reused on the homepage, About, Media and in structured data.
+// ---------------------------------------------------------------------------
+
+export type ShowcaseItem = {
+  id: string; // matches a journey id so "Details" can deep-link to /expertise#id
+  category: Category;
+  title: string;
+  meta: string;
+  description: string;
+  image: Evidence;
+  certificates?: Evidence[];
+  link?: { href: string; label: string };
+};
+
+const byId = (id: string) => journey.find((j) => j.id === id)!;
+const photo = (id: string, i = 0) => byId(id).evidence!.filter((e) => e.kind === "photo")[i];
+const certs = (id: string) => byId(id).evidence?.filter((e) => e.kind === "certificate");
+
+export const showcase: ShowcaseItem[] = [
+  {
+    id: "kcr-2025", category: "Scientific presentation",
+    title: "Oral scientific presentation at KCR 2025, Seoul",
+    meta: "81st Korean Congress of Radiology · September 2025",
+    description: "Dr. Mandeep Sagar presented his work \"Outcomes of Arteriovenous Fistuloplasty via Distal Radial Access\" to an international radiology audience. The research relates to keeping dialysis fistulas working through a small wrist puncture.",
+    image: photo("kcr-2025", 0),
+    certificates: certs("kcr-2025"),
+  },
+  {
+    id: "kcr-2025-slides", category: "Scientific presentation",
+    title: "Presenting clinical results, KCR 2025",
+    meta: "COEX, Seoul, South Korea · Session SS 15-IR-02",
+    description: "Discussing treatment outcomes beside the projected clinical slides during the oral session on fistuloplasty for dialysis access.",
+    image: photo("kcr-2025", 1),
+  },
+  {
+    id: "linnc-2026-moret", category: "Conference & CME",
+    title: "With Prof. Jacques Moret, Paris 2026",
+    meta: "LINNC Paris Course · June 2026",
+    description: "Photographed with Prof. Jacques Moret, a pioneering figure in interventional neuroradiology, during an international neurointerventional education visit to Paris. A professional encounter, not a training relationship.",
+    image: photo("linnc-2026", 1),
+  },
+  {
+    id: "linnc-2026", category: "Conference & CME",
+    title: "LINNC Paris Course 2026",
+    meta: "Carrousel du Louvre, Paris · 1–3 June 2026 · 20 EBAC CME credits",
+    description: "Live course in interventional neuroradiology, neurosurgery and neurology, where brain aneurysm, stroke and vascular malformation treatments are demonstrated and discussed by international specialists.",
+    image: photo("linnc-2026", 0),
+    certificates: certs("linnc-2026"),
+  },
+  {
+    id: "slice-paris", category: "Hands-on workshop",
+    title: "Neurointerventional simulation, SLICE Paris",
+    meta: "SLICE Workshops · Paris 2026",
+    description: "Hands-on practice with catheter-based simulation of brain blood-vessel procedures, alongside the LINNC Paris course. A practice activity, not a formally assessed course.",
+    image: photo("slice-paris"),
+  },
+  {
+    id: "slice-india", category: "Hands-on workshop",
+    title: "Neurovascular intervention workshop, SLICE India",
+    meta: "SLICE Workshops · Gurgaon",
+    description: "Training in treating bleeding-related brain blood-vessel conditions: flow-diverter techniques, intrasaccular devices for aneurysms, practice on anatomical models and decision-making in complex cases.",
+    image: photo("slice-india"),
+  },
+  {
+    id: "isvir-2026", category: "Teaching & faculty",
+    title: "Faculty, ISVIR haemorrhagic stroke workshop",
+    meta: "GMC Nagpur · 17–18 July 2026",
+    description: "Taught as faculty at the Indian Society of Vascular and Interventional Radiology hands-on workshop on haemorrhagic stroke. The certificate names him \"As Faculty\".",
+    image: byId("isvir-2026").evidence![0],
+  },
+  {
+    id: "fellowship", category: "Education",
+    title: "Fellowship in Vascular and Interventional Radiology",
+    meta: "Government Medical College & Hospital, Nagpur · MUHS · 2023",
+    description: "One year of formal specialist training in treating blood-vessel disease from inside the vessel, under imaging guidance.",
+    image: fellowshipCertificate,
+  },
+  {
+    id: "wlnc-2026", category: "Conference & CME",
+    title: "World Live Neurovascular Conference 2026",
+    meta: "Lisbon, Portugal · April 2026 · 23 European CME credits",
+    description: "International live-case conference on stroke, brain aneurysm and neurovascular treatment.",
+    image: byId("wlnc-2026").evidence![0],
+    certificates: [byId("wlnc-2026").evidence![1]],
+  },
+  {
+    id: "wlnc-2024", category: "Conference & CME",
+    title: "WLNC–ICURE STROKE Joint Meeting 2024",
+    meta: "Istanbul, Turkey · May 2024 · 28 European CME credits",
+    description: "International meeting focused on stroke treatment and neurovascular intervention.",
+    image: byId("wlnc-2024").evidence![0],
+  },
+  {
+    id: "isvir-2025", category: "Conference & CME",
+    title: "25th Annual Conference of ISVIR",
+    meta: "Kochi · February 2025 · 6 CME points",
+    description: "National conference of the Indian Society of Vascular and Interventional Radiology.",
+    image: byId("isvir-2025").evidence![0],
+  },
+];
+
+/** Homepage highlights — the clearest photographs plus the faculty certificate. */
+export const featuredShowcaseIds = ["kcr-2025", "linnc-2026-moret", "slice-india", "isvir-2026"];
+
+/** schema.org ImageObject entries for every public evidence image. */
+export function showcaseImageObjects(site: string) {
+  return showcase.flatMap((s) =>
+    [s.image, ...(s.certificates ?? [])].map((e) => ({
+      "@type": "ImageObject",
+      contentUrl: `${site}${e.src}`,
+      url: `${site}${e.src}`,
+      name: e === s.image ? s.title : e.alt,
+      caption: e.alt,
+      description: `${s.description} ${s.meta}.`,
+      about: { "@id": `${site}/#physician` },
+    })),
+  );
+}
+
+/** schema.org Event entries for conferences, presentations and workshops attended. */
+export function credentialEventsSchema() {
+  return journey
+    .filter((j) => j.category !== "Education" && j.category !== "Academic role")
+    .map((j) => ({ "@type": "Event", name: j.title, description: j.summary, startDate: String(j.year), location: { "@type": "Place", name: j.meta } }));
+}
