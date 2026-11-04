@@ -255,10 +255,3 @@ export function showcaseImageObjects(site: string) {
     })),
   );
 }
-
-/** schema.org Event entries for conferences, presentations and workshops attended. */
-export function credentialEventsSchema() {
-  return journey
-    .filter((j) => j.category !== "Education" && j.category !== "Academic role")
-    .map((j) => ({ "@type": "Event", name: j.title, description: j.summary, startDate: String(j.year), location: { "@type": "Place", name: j.meta } }));
-}
