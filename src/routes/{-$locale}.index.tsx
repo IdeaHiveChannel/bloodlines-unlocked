@@ -14,6 +14,8 @@ import { PatientExperiences } from "../components/sections/PatientExperiences";
 import { MediaBand } from "../components/sections/MediaBand";
 import { Journey } from "../components/sections/Journey";
 import { Doctor } from "../components/sections/Doctor";
+import { CredentialsShowcase } from "../components/credentials/CredentialsShowcase";
+import { showcase, featuredShowcaseIds, showcaseImageObjects } from "../lib/credentials";
 import { FAQ } from "../components/sections/FAQ";
 import { WhatITreat } from "../components/sections/WhatITreat";
 import { Consultation } from "../components/sections/Consultation";
@@ -40,6 +42,7 @@ export const Route = createFileRoute("/{-$locale}/")({
           mainEntity: { "@id": `${SITE}/#physician` },
           publisher: { "@id": `${SITE}/#practice` },
           sameAs: socialUrls,
+          image: showcaseImageObjects(SITE).filter((img) => showcase.some((s) => featuredShowcaseIds.includes(s.id) && `${SITE}${s.image.src}` === img.contentUrl)),
         }),
       },
       {
@@ -72,6 +75,7 @@ function Index() {
       <BeforeAfter />
       <Recovery />
       <Doctor />
+      <CredentialsShowcase variant="home" />
       <Journey />
       <PatientExperiences />
       <PatientStories />
