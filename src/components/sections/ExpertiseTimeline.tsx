@@ -1,5 +1,5 @@
 import { LocaleLink } from "../../components/locale-link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion, useScroll, useSpring } from "framer-motion";
 
 import { journey } from "../../lib/credentials";
@@ -13,6 +13,19 @@ export function ExpertiseTimeline() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 80%", "end 60%"] });
   const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
   const [open, setOpen] = useState<string | null>(null);
+  // Deep links such as /expertise#kcr-2025 open and reveal that entry.
+  useEffect(() => {
+    const sync = () => {
+      const id = window.location.hash.slice(1);
+      if (id && journey.some((j) => j.id === id)) {
+        setOpen(id);
+        requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: "start" }));
+      }
+    };
+    sync();
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
   const years = [...new Set(journey.map((j) => j.year))];
 
   return (
