@@ -47,7 +47,7 @@ export function MediaTimeline() {
           <div className="mt-14 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 sm:p-10">
             <p className="text-label">{tx("Currently")}</p>
             <p className="text-card-title mt-4 max-w-2xl">
-              {tx("This record is being compiled. Entries are added as each publication, award and appearance is verified — nothing is listed before then.")}
+              {tx("Publications and press coverage are added only once verified. Conference photographs and certificates are shown below.")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
               <LocaleLink
