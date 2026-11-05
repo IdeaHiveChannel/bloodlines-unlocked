@@ -1,4 +1,14 @@
 export const stringsMl: Record<string, string> = {
+  "Training & academic work": "പരിശീലനവും അക്കാദമിക് പ്രവർത്തനവും",
+  "Trained, teaching and presenting — documented.": "പരിശീലനം, അധ്യാപനം, അവതരണം — രേഖകളോടെ.",
+  "Conferences, teaching & workshops": "കോൺഫറൻസുകൾ, അധ്യാപനം, വർക്ക്ഷോപ്പുകൾ",
+  "Continuing education, in pictures.": "തുടർ വിദ്യാഭ്യാസം, ചിത്രങ്ങളിലൂടെ.",
+  "Photographs & certificates": "ഫോട്ടോകളും സർട്ടിഫിക്കറ്റുകളും",
+  "Conference and training gallery.": "കോൺഫറൻസ്, പരിശീലന ഗാലറി.",
+  "See the full professional journey": "പൂർണ്ണ പ്രൊഫഷണൽ യാത്ര കാണുക",
+  "All photographs & certificates": "എല്ലാ ഫോട്ടോകളും സർട്ടിഫിക്കറ്റുകളും",
+  "On the timeline": "ടൈംലൈനിൽ കാണുക",
+  "Open image": "ചിത്രം തുറക്കുക",
   // Verified credentials
   "Verified credentials": "സ്ഥിരീകരിച്ച യോഗ്യതകൾ",
   "Qualifications and registration.": "യോഗ്യതകളും രജിസ്ട്രേഷനും.",
