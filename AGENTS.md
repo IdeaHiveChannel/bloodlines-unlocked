@@ -14,3 +14,4 @@
 - Keep public clinical guidance in a shared source registry used by visible guide references and structured data, so citations stay consistent.
 - Do not assert clinician authorship, review dates, qualifications or medical codes until supplied and verified; practice attribution is not a clinical sign-off.
 - Generate AI-readable content from public content modules without runtime timestamps or inferred anatomical mappings, to prevent fabricated freshness and medical classifications.
+- Public credential photos/certificates and their descriptions live only in src/lib/credentials.ts (journey + showcase); pages, JSON-LD ImageObjects and sitemap image entries all derive from it, so captions stay consistent.
