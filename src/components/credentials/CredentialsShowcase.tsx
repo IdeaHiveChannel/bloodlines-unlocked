@@ -3,6 +3,7 @@ import { useTx } from "@/lib/i18n/tx";
 import { LocaleLink } from "../locale-link";
 import { showcase, featuredShowcaseIds, type Evidence } from "@/lib/credentials";
 import { CertificateButton, EvidenceDialog } from "./EvidenceViewer";
+import { HomeCredentialsShowcase } from "./HomeCredentialsShowcase";
 
 type Props = { variant: "home" | "about" | "media" };
 
@@ -32,13 +33,13 @@ export function CredentialsShowcase({ variant }: Props) {
   const headingId = `showcase-${variant}-h`;
 
   return (
-    <section className="relative bg-[#050B16] section-y border-t border-white/[0.05]" aria-labelledby={headingId}>
+    <section className="relative bg-background section-y border-t border-border" aria-labelledby={headingId}>
       <div className="shell">
         <p className="text-label">{tx(c.label)}</p>
-        <h2 id={headingId} className="text-h1 mt-5 max-w-3xl">{tx(c.title)}</h2>
+        <h2 id={headingId} className="text-h1 mt-5 max-w-3xl tracking-normal">{tx(c.title)}</h2>
         <p className="mt-4 max-w-2xl text-small leading-relaxed text-[var(--ink-dim)]">{tx(c.intro)}</p>
 
-        <ul className={`mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2 ${variant === "home" ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
+        {variant === "home" ? <HomeCredentialsShowcase items={items} onOpen={setActive} /> : <ul className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((s) => {
             const isCert = s.image.kind === "certificate";
             const anchor = s.id.startsWith("kcr-2025") ? "kcr-2025" : s.id.startsWith("linnc-2026") ? "linnc-2026" : s.id;
@@ -71,29 +72,16 @@ export function CredentialsShowcase({ variant }: Props) {
                       {s.certificates?.map((cert) => (
                         <CertificateButton key={cert.src} item={cert} onOpen={setActive} />
                       ))}
-                      {variant !== "home" && (
-                        <LocaleLink to={`/expertise#${anchor}`} data-cursor="link" className="text-caption underline">
-                          {tx("On the timeline")} →
-                        </LocaleLink>
-                      )}
+                      <LocaleLink to={`/expertise#${anchor}`} data-cursor="link" className="text-caption underline">
+                        {tx("On the timeline")} →
+                      </LocaleLink>
                     </div>
                   </figcaption>
                 </figure>
               </li>
             );
           })}
-        </ul>
-
-        {variant === "home" && (
-          <div className="mt-10 flex flex-wrap gap-3">
-            <LocaleLink to="/expertise" data-cursor="cta" className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-button text-black transition-colors hover:bg-[var(--accent)]">
-              {tx("See the full professional journey")}
-            </LocaleLink>
-            <LocaleLink to="/media" data-cursor="link" className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-button transition-colors hover:bg-white/5">
-              {tx("All photographs & certificates")}
-            </LocaleLink>
-          </div>
-        )}
+        </ul>}
       </div>
       <EvidenceDialog item={active} onClose={() => setActive(null)} />
     </section>
