@@ -72,11 +72,9 @@ export function CredentialsShowcase({ variant }: Props) {
                       {s.certificates?.map((cert) => (
                         <CertificateButton key={cert.src} item={cert} onOpen={setActive} />
                       ))}
-                      {variant !== "home" && (
-                        <LocaleLink to={`/expertise#${anchor}`} data-cursor="link" className="text-caption underline">
-                          {tx("On the timeline")} →
-                        </LocaleLink>
-                      )}
+                      <LocaleLink to={`/expertise#${anchor}`} data-cursor="link" className="text-caption underline">
+                        {tx("On the timeline")} →
+                      </LocaleLink>
                     </div>
                   </figcaption>
                 </figure>
