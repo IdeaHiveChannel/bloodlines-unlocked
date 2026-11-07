@@ -15,3 +15,4 @@
 - Do not assert clinician authorship, review dates, qualifications or medical codes until supplied and verified; practice attribution is not a clinical sign-off.
 - Generate AI-readable content from public content modules without runtime timestamps or inferred anatomical mappings, to prevent fabricated freshness and medical classifications.
 - Public credential photos/certificates and their descriptions live only in src/lib/credentials.ts (journey + showcase); pages, JSON-LD ImageObjects and sitemap image entries all derive from it, so captions stay consistent.
+- The homepage uses a dedicated image-led credential presentation fed by the shared registry; About and Media retain the full gallery so homepage layout changes do not affect their inventories.
