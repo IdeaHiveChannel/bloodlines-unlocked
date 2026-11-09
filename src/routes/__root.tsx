@@ -206,7 +206,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LenisProvider>
-        {null}
         <Cursor />
         <EmergencyTicker />
         <Navigation />

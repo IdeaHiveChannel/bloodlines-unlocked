@@ -5,6 +5,7 @@ type Variant = "default" | "link" | "cta" | "scan";
 export function Cursor() {
   const [variant, setVariant] = useState<Variant>("default");
   const [enabled, setEnabled] = useState(false);
+  const [active, setActive] = useState(false);
   const ringRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
 
@@ -18,8 +19,13 @@ export function Cursor() {
     let mx = window.innerWidth / 2, my = window.innerHeight / 2;
     let rx = mx, ry = my, dx = mx, dy = my;
     let raf = 0;
+    let active0 = false;
+    const onLeave = () => { active0 = false; setActive(false); };
 
     const onMove = (e: PointerEvent) => {
+      if (e.pointerType !== "mouse") { setActive(false); return; }
+      if (!active0) { rx = dx = e.clientX; ry = dy = e.clientY; active0 = true; }
+      setActive(true);
       mx = e.clientX; my = e.clientY;
       const t = e.target as HTMLElement | null;
       if (!t) return;
@@ -40,8 +46,9 @@ export function Cursor() {
       raf = requestAnimationFrame(tick);
     };
     window.addEventListener("pointermove", onMove);
+    document.documentElement.addEventListener("pointerleave", onLeave);
     raf = requestAnimationFrame(tick);
-    return () => { window.removeEventListener("pointermove", onMove); cancelAnimationFrame(raf); };
+    return () => { window.removeEventListener("pointermove", onMove); document.documentElement.removeEventListener("pointerleave", onLeave); cancelAnimationFrame(raf); };
   }, []);
 
   if (!enabled) return null;
@@ -54,9 +61,9 @@ export function Cursor() {
   return (
     <>
       <div ref={ringRef} className="pointer-events-none fixed left-0 top-0 z-[100] rounded-full"
-        style={{ width: ringSize, height: ringSize, background: ringBg, border: ringBorder, transition: "width 240ms cubic-bezier(0.16,1,0.3,1), height 240ms cubic-bezier(0.16,1,0.3,1), background 240ms" }} />
+        style={{ opacity: active ? 1 : 0, width: ringSize, height: ringSize, background: ringBg, border: ringBorder, transition: "width 240ms cubic-bezier(0.16,1,0.3,1), height 240ms cubic-bezier(0.16,1,0.3,1), background 240ms" }} />
       <div ref={dotRef} className="pointer-events-none fixed left-0 top-0 z-[100] rounded-full"
-        style={{ width: 4, height: 4, background: "var(--accent)", boxShadow: "0 0 8px var(--accent)" }} />
+        style={{ opacity: active ? 1 : 0, width: 4, height: 4, background: "var(--accent)", boxShadow: "0 0 8px var(--accent)" }} />
     </>
   );
 }
