@@ -34,6 +34,7 @@ export const pillarSeo: Record<string, PillarSeo> = {
       "ലൈവ് എക്സ്-റേ മാർഗനിർദേശത്തിൽ, കൈത്തണ്ടയിലെയോ തുടയിലെയോ ധമനിയിലൂടെ കത്തീറ്റർ മസ്തിഷ്കത്തിലെ ബ്ലോക്കിലേക്ക് എത്തിക്കുന്നു. രക്തക്കട്ട പിടിച്ചെടുത്ത് പുറത്തെടുക്കുമ്പോൾ രക്തയോട്ടം പുനഃസ്ഥാപിക്കപ്പെടുന്നു.",
     procedures: treatedBy(["thrombectomy", "angioplasty"]),
     searchFaqs: [
+      { q: 'Who treats stroke with thrombectomy in Mangalore?', a: 'A stroke is an emergency: call 112 or go to the nearest emergency department immediately — do not wait for a clinic appointment. For follow-up or a planned review of brain blood-vessel problems, Dr. Mandeep Sagar consults at Tara Hospital, Mangalore (Monday to Saturday, 12:00 to 7:30 pm), and also sees patients travelling from Kasaragod and nearby areas. Please call or message before visiting to confirm availability.', qMl: 'മംഗലാപുരത്ത് ത്രോംബെക്ടമി വഴി സ്ട്രോക്ക് ചികിത്സ ആരാണ് ചെയ്യുന്നത്?', aMl: 'സ്ട്രോക്ക് അടിയന്തരാവസ്ഥയാണ്: ഉടൻ 112 വിളിക്കുക അല്ലെങ്കിൽ അടുത്തുള്ള എമർജൻസി വിഭാഗത്തിൽ പോകുക — ക്ലിനിക് അപ്പോയിന്റ്മെന്റിനായി കാത്തിരിക്കരുത്. തുടർ പരിശോധനയ്ക്ക്, ഡോ. മൻദീപ് സാഗർ മംഗലാപുരത്തെ താര ഹോസ്പിറ്റലിൽ (തിങ്കൾ മുതൽ ശനി വരെ, ഉച്ചയ്ക്ക് 12 മുതൽ വൈകിട്ട് 7:30 വരെ) കൺസൾട്ടേഷൻ നടത്തുന്നു. കാസർകോട്ടുനിന്നും സമീപ പ്രദേശങ്ങളിൽ നിന്നും വരുന്നവരെയും കാണുന്നു. വരുന്നതിന് മുമ്പ് വിളിച്ചോ മെസേജ് ചെയ്തോ സമയം ഉറപ്പാക്കുക.' },
       {
         q: "What is the treatment for a blocked blood vessel in the brain?",
         a: "When a large brain artery is blocked, mechanical thrombectomy removes the clot through a pinhole opening in an artery. Clot-dissolving medicine may be given as well, depending on how long ago symptoms began.",
@@ -153,6 +154,7 @@ export const pillarSeo: Record<string, PillarSeo> = {
       "ആൻജിയോഗ്രഫിയിലൂടെ കാൽമുട്ടിന് താഴെയുള്ള രക്തക്കുഴലുകൾ പരിശോധിക്കുന്നു; ബലൂൺ ഉപയോഗിച്ച് ബ്ലോക്കുകൾ തുറന്ന് മുറിവിലേക്ക് രക്തയോട്ടം എത്തിക്കുന്നു.",
     procedures: treatedBy(["angioplasty"]),
     searchFaqs: [
+      { q: 'Where can I see a specialist for a diabetic foot wound in Mangalore?', a: "A non-healing diabetic foot wound needs checking of the leg's blood supply; if the arteries are narrowed, opening them may help the wound heal. Dr. Mandeep Sagar consults at Tara Hospital, Mangalore (Monday to Saturday, 12:00 to 7:30 pm), and also sees patients travelling from Kasaragod and nearby areas. Please call or message before visiting to confirm availability.", qMl: 'മംഗലാപുരത്ത് പ്രമേഹ പാദ മുറിവിന് സ്പെഷ്യലിസ്റ്റിനെ എവിടെ കാണാം?', aMl: 'ഉണങ്ങാത്ത പ്രമേഹ മുറിവിൽ കാലിലെ രക്തയോട്ടം പരിശോധിക്കണം; ധമനികൾ ചുരുങ്ങിയിട്ടുണ്ടെങ്കിൽ അവ തുറക്കുന്നത് മുറിവ് ഉണങ്ങാൻ സഹായിച്ചേക്കാം. ഡോ. മൻദീപ് സാഗർ മംഗലാപുരത്തെ താര ഹോസ്പിറ്റലിൽ (തിങ്കൾ മുതൽ ശനി വരെ, ഉച്ചയ്ക്ക് 12 മുതൽ വൈകിട്ട് 7:30 വരെ) കൺസൾട്ടേഷൻ നടത്തുന്നു. കാസർകോട്ടുനിന്നും സമീപ പ്രദേശങ്ങളിൽ നിന്നും വരുന്നവരെയും കാണുന്നു. വരുന്നതിന് മുമ്പ് വിളിച്ചോ മെസേജ് ചെയ്തോ സമയം ഉറപ്പാക്കുക.' },
       {
         q: "Why is my diabetic foot wound not healing?",
         a: "A wound cannot heal without blood supply. In diabetes, the small arteries below the knee are often narrowed, so the wound is starved even when dressings and antibiotics are correct.",
@@ -197,6 +199,7 @@ export const pillarSeo: Record<string, PillarSeo> = {
       "അൾട്രാസൗണ്ട് ഉപയോഗിച്ച് തകരാറുള്ള ഞരമ്പ് കണ്ടെത്തി, നേർത്ത ഫൈബർ ഉള്ളിൽ കടത്തി ചൂട് ഉപയോഗിച്ച് അടയ്ക്കുന്നു.",
     procedures: treatedBy(["varicose-vein-ablation"]),
     searchFaqs: [
+      { q: 'Where can I get varicose vein treatment in Mangalore?', a: 'For varicose veins, an ultrasound (venous Doppler) scan is usually done at the first visit to decide whether laser or other vein treatment suits you. Dr. Mandeep Sagar consults at Tara Hospital, Mangalore (Monday to Saturday, 12:00 to 7:30 pm), and also sees patients travelling from Kasaragod and nearby areas. Please call or message before visiting to confirm availability.', qMl: 'മംഗലാപുരത്ത് വെരിക്കോസ് വെയിൻ ചികിത്സ എവിടെ ലഭിക്കും?', aMl: 'ആദ്യ സന്ദർശനത്തിൽ സാധാരണയായി ഡോപ്ലർ സ്കാൻ ചെയ്ത് ഏത് ചികിത്സയാണ് അനുയോജ്യം എന്ന് തീരുമാനിക്കുന്നു. ഡോ. മൻദീപ് സാഗർ മംഗലാപുരത്തെ താര ഹോസ്പിറ്റലിൽ (തിങ്കൾ മുതൽ ശനി വരെ, ഉച്ചയ്ക്ക് 12 മുതൽ വൈകിട്ട് 7:30 വരെ) കൺസൾട്ടേഷൻ നടത്തുന്നു. കാസർകോട്ടുനിന്നും സമീപ പ്രദേശങ്ങളിൽ നിന്നും വരുന്നവരെയും കാണുന്നു. വരുന്നതിന് മുമ്പ് വിളിച്ചോ മെസേജ് ചെയ്തോ സമയം ഉറപ്പാക്കുക.' },
       {
         q: "What is the best treatment for varicose veins?",
         a: "For most people with truncal reflux, endovenous laser ablation is the current standard — a day-care treatment through a needle puncture, without the cuts of traditional stripping surgery.",
