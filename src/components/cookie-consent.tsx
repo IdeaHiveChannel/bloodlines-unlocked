@@ -29,9 +29,9 @@ export function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label={tx("Cookie consent")}
-      className="fixed inset-x-3 bottom-3 z-[80] mx-auto max-w-2xl rounded-2xl border border-white/10 bg-[#0A1220]/95 p-4 shadow-2xl backdrop-blur-md sm:inset-x-6 sm:p-5"
+      className="fixed inset-x-3 bottom-3 z-[80] mx-auto flex max-w-2xl flex-col gap-3 rounded-2xl border border-white/10 bg-[#0A1220]/95 p-3 shadow-2xl backdrop-blur-md sm:inset-x-6 sm:flex-row sm:items-center sm:p-4"
     >
-      <p className="text-sm leading-relaxed text-[var(--ink-dim)]">
+      <p className="text-xs leading-snug text-[var(--ink-dim)] sm:text-sm">
         {tx(
           "We use analytics cookies to understand how visitors use this site. No cookies are set until you agree.",
         )}{" "}
@@ -39,18 +39,18 @@ export function CookieConsent() {
           {tx("Privacy policy")}
         </LocaleLink>
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="flex shrink-0 gap-2">
         <button
           type="button"
           onClick={() => decide("granted")}
-          className="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm text-black transition-opacity hover:opacity-90"
+          className="rounded-full bg-[var(--accent)] px-4 py-2 text-sm text-black transition-opacity hover:opacity-90"
         >
           {tx("Accept")}
         </button>
         <button
           type="button"
           onClick={() => decide("denied")}
-          className="rounded-full border border-white/15 px-5 py-2.5 text-sm transition-colors hover:bg-white/5"
+          className="rounded-full border border-white/15 px-4 py-2 text-sm transition-colors hover:bg-white/5"
         >
           {tx("Decline")}
         </button>

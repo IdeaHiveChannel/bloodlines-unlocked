@@ -15,7 +15,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LenisProvider } from "../components/lenis-provider";
 import { Cursor } from "../components/cursor";
-import { Loader } from "../components/loader";
 import { Navigation } from "../components/navigation";
 import { ContactDock } from "../components/contact-dock";
 import { EmergencyTicker } from "../components/emergency-ticker";
@@ -207,7 +206,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LenisProvider>
-        <Loader />
         <Cursor />
         <EmergencyTicker />
         <Navigation />
